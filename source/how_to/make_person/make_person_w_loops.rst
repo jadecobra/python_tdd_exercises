@@ -658,6 +658,21 @@ extract test_say_hello_function
 
 The tests for the :ref:`say_hello function<test say_hello function>` in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` then compare the result with a string_.
 
+.. code-block:: python
+
+    self.assertEqual(
+        src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        ),
+        (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {self.calculate_age(year_of_birth)}.'
+        )
+    )
+
 I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
 ----
@@ -671,110 +686,58 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 I add a test for the :ref:`say_hello function<test say_hello function>`
 
 .. code-block:: python
-  :lineno-start: 39
-  :emphasize-lines: 3-14, 16-22
+  :lineno-start: 30
+  :emphasize-lines: 19-30, 32-36
 
-              self.assertEqual(reality, my_expectation)
-
-      def test_say_hello_function(self):
-          people = (
-              ('jane', 'doe', 'F', 1991),
-              ('joe', 'blow', 'M', 1996),
-              ('mary', 'public', 'F', 2000),
-              ('john', 'smith', 'M', 1980),
-              ('first_name', 'last_name', 'F', 'a string'),
-          )
-          for person in people:
-              first_name = person[0]
-              last_name = person[1]
-              year_of_birth = person[3]
-
-              reality = src.person.say_hello(
-                  first_name=first_name,
-                  last_name=last_name,
-                  year_of_birth=year_of_birth,
-              )
-              my_expectation = None
-              self.assertEqual(reality, my_expectation)
-
-      def test_joe(self):
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  AssertionError:
-      'Hello, my name is jane doe and I am 35.'
-   != None
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I change ``my_expectation`` in :ref:`test_say_hello_function<extract test_say_hello_function>` to match the string_ in the terminal_
-
-  .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 6-9
-
-                reality = src.person.say_hello(
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.Person(
                     first_name=first_name,
                     last_name=last_name,
+                    sex=sex,
                     year_of_birth=year_of_birth,
-                )
-                my_expectation = (
-                    'Hello, my name is jane doe'
-                    ' and I am 35.'
-                )
-                self.assertEqual(reality, my_expectation)
-
-        def test_joe(self):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError:
-        'Hello, my name is joe blow and I am 30.'
-     != 'Hello, my name is jane doe and I am 35.'
-
-  the test passed for ``jane`` but fails for ``joe``.
-
-* I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
-
-  .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 6-14
-
-                reality = src.person.say_hello(
-                    first_name=first_name,
-                    last_name=last_name,
-                    year_of_birth=year_of_birth,
-                )
-                # my_expectation = (
-                #     'Hello, my name is jane doe'
-                #     ' and I am 35.'
-                # )
-                my_expectation = (
+                ).say_hello(),
+                (
                     f'Hello, my name is {first_name}'
                     f' {last_name} and I am'
                     f' {self.calculate_age(year_of_birth)}.'
                 )
-                self.assertEqual(reality, my_expectation)
+            )
 
-        def test_joe(self):
+        def test_say_hello_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a_string')
+            )
+            for a_person in people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                year_of_birth = a_person[3]
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+                self.assert_say_hello_works(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth,
+                )
 
-  .. code-block:: python
+        def test_person_factory(self):
 
-    E           TypeError
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  because the :ref:`say_hello function<test say_hello function>` calls the :ref:`calculate_age function<extract calculate_age function>` which raises :ref:`TypeError<what causes TypeError?>` when ``year_of_birth`` is not an integer_
+.. code-block:: python
+
+  E           TypeError
+
+because
+
+- the the :ref:`say_hello function<test say_hello function>` :ref:`calls<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>`
+- the :ref:`calculate_age function<extract calculate_age function>` raises :ref:`TypeError<what causes TypeError?>` when ``year_of_birth`` is not an integer_. ``year_of_birth`` is a string_ in the last tuple_ in the ``people`` tuple_ (``('first_name', 'last_name', 'F', 'a_string')``)
 
   .. code-block:: shell
 
@@ -785,8 +748,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         │   ('john', 'smith', 'M', 1980),
     ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
     │   ):
-    ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-    ├── first_name = person[0]
+    ├────── a_person = ('first_name', 'last_name', 'F', 'a string')
+    ├────── first_name = a_person[0]    # 'first_name'
+    ├────── last_name = a_person[1]     # 'last_name'
+    ├────── year_of_birth = a_person[3] # 'a string'
+    └────── self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            └── def assert_person_factory_works(
+                    self, first_name, last_name,
+                    sex, year_of_birth
+                ):
+                └── self.assertEqual(
+                ┌────── src.person.person(
+
     ├── last_name = person[1]
     ├── year_of_birth = person[3]
     └── reality = src.person.say_hello(
@@ -813,6 +790,58 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                                 ):
                                 └── raise TypeError
                                 ...
+
+        for a_person in (
+        │   ('joe', 'blow', 'M', 1996),
+        │   ('jane', 'doe', 'F', 1991),
+        │   ('mary', 'public', 'F', 2000),
+    ┌───┴── ('john', 'smith', 'M', 1980),
+    │   ):
+    ├────── a_person = ('john', 'smith', 'M', 1980)
+    └────── self.assert_person_factory_works(
+                first_name=a_person[0],     # 'john'
+                last_name=a_person[1],      # 'smith'
+                sex=a_person[2],            # 'M'
+                year_of_birth=a_person[3],  # 1980
+            )
+            └── def assert_person_factory_works(
+                    self, first_name, last_name,
+                    sex, year_of_birth
+                ):
+                └── self.assertEqual(
+                ┌────── src.person.person(
+                │           first_name=first_name,        # 'john'
+                │           last_name=last_name,          # 'smith'
+                │           sex=sex,                      # 'M'
+                │           year_of_birth=year_of_birth,  # 1980
+                │       ),
+                │       (
+                │           f'{first_name}, {last_name},'
+                │           f' {sex}, {year_of_birth}'
+                │       )
+                │   )
+                └────── src/person/__init__.py
+                        └── def person(
+                                first_name, last_name,
+                                sex, year_of_birth,
+                            ):
+                            ├── first_name    = 'john'    # a_person[0]
+                            ├── last_name     = 'smith'  # a_person[1]
+                            ├── sex           = 'M'       # a_person[2]
+                            ├── year_of_birth = 1980      # a_person[3]
+                            └── return (
+                                    f'{first_name}, {last_name},'
+                                    f' {sex}, {year_of_birth}'
+                                )
+                                return 'john, smith, M, 1980'
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 
 * I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
 
