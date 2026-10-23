@@ -593,6 +593,8 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
         def test_joe(self):
 
+  the test passes.
+
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
@@ -762,78 +764,37 @@ because
                     sex, year_of_birth
                 ):
                 └── self.assertEqual(
-                ┌────── src.person.person(
-
-    ├── last_name = person[1]
-    ├── year_of_birth = person[3]
-    └── reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        └── src/person/__init__.py
-            └── def say_hello(
-                    first_name, last_name, year_of_birth,
-                ):
-                ├── first_name    = 'first_name'
-                ├── last_name     = 'last_name'
-                ├── year_of_birth = 'a string'
-                └── return (
-                    ├── f'Hello, my name is {first_name}'
-                    ├── f' {last_name} and I am'
-                    └──  f' {calculate_age(year_of_birth)}.'
-                    )   │
-                        └── def calculate_age(year_of_birth):
-                            ├── year_of_birth = 'a string'
-                            └── if not isinstance(
-                                      year_of_birth, int
-                                ):
-                                └── raise TypeError
-                                ...
-
-        for a_person in (
-        │   ('joe', 'blow', 'M', 1996),
-        │   ('jane', 'doe', 'F', 1991),
-        │   ('mary', 'public', 'F', 2000),
-    ┌───┴── ('john', 'smith', 'M', 1980),
-    │   ):
-    ├────── a_person = ('john', 'smith', 'M', 1980)
-    └────── self.assert_person_factory_works(
-                first_name=a_person[0],     # 'john'
-                last_name=a_person[1],      # 'smith'
-                sex=a_person[2],            # 'M'
-                year_of_birth=a_person[3],  # 1980
-            )
-            └── def assert_person_factory_works(
-                    self, first_name, last_name,
-                    sex, year_of_birth
-                ):
-                └── self.assertEqual(
-                ┌────── src.person.person(
-                │           first_name=first_name,        # 'john'
-                │           last_name=last_name,          # 'smith'
-                │           sex=sex,                      # 'M'
-                │           year_of_birth=year_of_birth,  # 1980
+                ┌────── src.person.say_hello(
+                │           first_name=first_name,
+                │           last_name=last_name,
+                │           year_of_birth=year_of_birth,
                 │       ),
                 │       (
-                │           f'{first_name}, {last_name},'
-                │           f' {sex}, {year_of_birth}'
+                │           f'Hello, my name is {first_name}'
+                │           f' {last_name} and I am'
+                │           f' {self.calculate_age(year_of_birth)}.'
                 │       )
                 │   )
                 └────── src/person/__init__.py
-                        └── def person(
-                                first_name, last_name,
-                                sex, year_of_birth,
-                            ):
-                            ├── first_name    = 'john'    # a_person[0]
-                            ├── last_name     = 'smith'  # a_person[1]
-                            ├── sex           = 'M'       # a_person[2]
-                            ├── year_of_birth = 1980      # a_person[3]
-                            └── return (
-                                    f'{first_name}, {last_name},'
-                                    f' {sex}, {year_of_birth}'
-                                )
-                                return 'john, smith, M, 1980'
+                        └── def say_hello(
+                                    first_name, last_name, year_of_birth
+                                ):
+                                ├── first_name    = 'first_name'  # a_person[0]
+                                ├── last_name     = 'last_name'   # a_person[1]
+                                ├── year_of_birth = 'a string'    # a_person[3]
+                                └── return (
+                                        f'Hello, my name is {first_name}'
+                                        f' {last_name} and I am'
+                                        f' {calculate_age(year_of_birth)}.'
+                                    )   │
+                                        └── def calculate_age(year_of_birth):
+                                            ├── year_of_birth = 'a string'
+                                            └── if not isinstance(
+                                                    year_of_birth, int
+                                                ):
+                                                └── raise TypeError
+                                                ...
+
 ----
 
 =================================================================================
@@ -842,13 +803,12 @@ because
 
 ----
 
-
 * I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
 
 * I add a message to the :ref:`calculate_age function<extract calculate_age function>` for when :ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>`, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 37
     :emphasize-lines: 3-5
 
     def calculate_age(year_of_birth):
@@ -865,94 +825,43 @@ because
 
   better.
 
-* I add a :ref:`try statement<how to handle Exceptions>` to :ref:`test_say_hello_function<extract test_say_hello_function>` in ``tests/test_person.py``
+* I change the statements in the :ref:`assert_say_hello_works method<extract assert_say_hello_works functions>` to a :ref:`try statement with an else clause<how to use try...except...else>` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 6-13
+    :lineno-start: 13
+    :emphasize-lines: 5-26
 
-            for person in people:
-                first_name = person[0]
-                last_name = person[1]
-                year_of_birth = person[3]
-
-                try:
-                    reality = src.person.say_hello(
-                        first_name=first_name,
-                        last_name=last_name,
-                        year_of_birth=year_of_birth,
-                    )
-                except TypeError:
-                    pass
-
-                # my_expectation = (
-                #     'Hello, my name is jane doe'
-                #     ' and I am 35.'
-                # )
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: unsupported operand type(s) for -: 'int' and 'str'
-
-  because ``my_expectation`` in :ref:`test_say_hello_function<extract test_say_hello_function>` makes a :ref:`call<how to call a function with input>` to the :ref:`calculate_age method of TestPerson<extract calculate_age method>` which raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot do subtraction with a string and a number<test_type_error_w_the_unmixables>`.
-
-  .. code-block:: shell
-
-        for person in (
-        │   ('jane', 'doe', 'F', 1991),
-        │   ('joe', 'blow', 'M', 1996),
-        │   ('mary', 'public', 'F', 2000),
-        │   ('john', 'smith', 'M', 1980),
-    ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
-    │   ):
-    ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-    ├── first_name = person[0]
-    ├── last_name = person[1]
-    ├── year_of_birth = person[3]
-    │   ...
-    └── my_expectation = (
-        ├── f'Hello, my name is {first_name}'
-        ├── f' {last_name} and I am'
-        └── f' {self.calculate_age(year_of_birth)}.'
-        )   │
-            │   @staticmethod
-            └── def calculate_age(year_of_birth):
-                ├── year_of_birth = 'a string'
-                └── return (
-                        datetime.date.today().year
-                      - year_of_birth
-                    )
-
-* I add an :ref:`else clause<how to use try...except...else>` to :ref:`test_say_hello_function<extract test_say_hello_function>` so that it only runs the :ref:`assertion<what is an assertion?>` if the :ref:`call to the say_hello function<test say_hello function>` does not raise :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 9-15
-
-                try:
-                    reality = src.person.say_hello(
-                        first_name=first_name,
-                        last_name=last_name,
-                        year_of_birth=year_of_birth,
-                    )
-                except TypeError:
-                    pass
-                else:
-                    my_expectation = (
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            try:
+                reality = src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth,
+                )
+            except TypeError:
+                pass
+            else:
+                self.assertEqual(
+                    reality,
+                    # src.person.say_hello(
+                    #     first_name=first_name,
+                    #     last_name=last_name,
+                    #     year_of_birth=year_of_birth,
+                    # ),
+                    (
                         f'Hello, my name is {first_name}'
                         f' {last_name} and I am'
                         f' {self.calculate_age(year_of_birth)}.'
                     )
-                    self.assertEqual(reality, my_expectation)
+                )
 
-                # my_expectation = (
-                #     'Hello, my name is jane doe'
-                #     ' and I am 35.'
-                # )
-
-        def test_joe(self):
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
 
   the test passes.
 
@@ -964,28 +873,28 @@ because
 
 ----
 
-* I want to test the error message to make sure :ref:`test_say_hello_function<extract test_say_hello_function>` only catches :ref:`TypeError<what causes TypeError?>` with this specific message. I can use the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>` as an :ref:`object<everything is an object>`.
+* I want to test the error message to make sure the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` only catches :ref:`TypeError<what causes TypeError?>` with this specific message. I can use the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>` as an :ref:`object<everything is an object>` to do this
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 17
     :emphasize-lines: 7
 
-                try:
-                    reality = src.person.say_hello(
-                        first_name=first_name,
-                        last_name=last_name,
-                        year_of_birth=year_of_birth,
-                    )
-                except TypeError as error:
-                    pass
-                else:
+            try:
+                reality = src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth,
+                )
+            except TypeError as error:
+                pass
+            else:
 
-  the test is still green
+  the test is still green.
 
-* I add :ref:`assertEqual<test_assertEqual>` to the :ref:`except block<how to handle Exceptions>` with the `dir built-in function`_ to see the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>`
+* I add :ref:`assertEqual<test_assertEqual>` to the :ref:`except block<how to handle Exceptions>` with the `dir built-in function`_ to see the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Exception object<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 23
     :emphasize-lines: 2
 
                 except TypeError as error:
@@ -994,10 +903,10 @@ because
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with the list of :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>`. Three of the names stand out because they do not have double underscores (``__``) before and after - ``add_note``, ``args`` and ``with_traceback``.
 
-* I change the :ref:`assertion<what is an assertion?>` to see what is in ``add_note``
+* I change the :ref:`assertion<what is an assertion?>` to see what ``add_note`` is
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 23
     :emphasize-lines: 2-3
 
                 except TypeError as error:
@@ -1019,7 +928,7 @@ because
 * I :ref:`call<how to call a function with input>` the ``add_note`` :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 23
     :emphasize-lines: 3
 
                 except TypeError as error:
@@ -1036,10 +945,10 @@ because
 
   this is not what I want, on to the next one.
 
-* I change the :ref:`assertion<what is an assertion?>` to see what is in ``args``
+* I change the :ref:`assertion<what is an assertion?>` to see what ``args`` is
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 23
     :emphasize-lines: 3-4
 
                 except TypeError as error:
@@ -1059,7 +968,7 @@ because
 * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the error message with an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 23
     :emphasize-lines: 4-7
 
                 except TypeError as error:
@@ -1076,7 +985,7 @@ because
 * I change the message for :ref:`TypeError<what causes TypeError?>` in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py`` to test my change
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 37
     :emphasize-lines: 3
 
     def calculate_age(year_of_birth):
@@ -1092,10 +1001,63 @@ because
 
     AssertionError: 'BOOM!!!' != "'a string' is not an integer"
 
+  because the error message is not correct
+
+  .. code-block:: shell
+
+            for a_person in (
+            │   ('jane', 'doe', 'F', 1991),
+            │   ('joe', 'blow', 'M', 1996),
+            │   ('mary', 'public', 'F', 2000),
+            │   ('john', 'smith', 'M', 1980),
+        ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
+        │   ):
+        ├────── first_name = a_person[0]    # 'first_name'
+        ├────── last_name = a_person[1]     # 'last_name'
+        ├────── year_of_birth = a_person[3] # 'a string'
+        └────── self.assert_say_hello_works(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth,
+                )
+                └── def assert_say_hello_works(
+                        self, first_name, last_name,
+                        year_of_birth,
+                    ):
+                    └── try:
+                            reality = src.person.say_hello(
+                                first_name=first_name,
+                                last_name=last_name,
+                                year_of_birth=year_of_birth,
+                            )
+                            └── src/person/__init__.py
+                                  └── def say_hello(
+                                          first_name, last_name, year_of_birth,
+                                      ):
+                                      └── return (
+                                          ├── f'Hello, my name is {first_name}'
+                                          ├── f' {last_name} and I am'
+                                          └── f' {calculate_age(year_of_birth)}.'
+                                          )   │
+                                              └── def calculate_age(year_of_birth):
+                                                  ├── year_of_birth = 'a string'
+                                                  └── if not isinstance(
+                                                          year_of_birth, int
+                                                      ):
+                      ┌───────────────────────────────┴── raise TypeError('BOOM!!!')
+                      └── except TypeError as error:
+                          └── self.assertEqual(
+                                  error.args[0],
+                                  f"'{year_of_birth}' is not an integer"
+                              )
+                              └── raise AssertionError
+                          else:
+                              ...
+
 * I undo the change
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 37
 
     def calculate_age(year_of_birth):
         if not isinstance(year_of_birth, int):
@@ -1108,21 +1070,92 @@ because
           - year_of_birth
         )
 
-        if age > 120:
+        if age < 0 or age > 120:
             raise ValueError
         return age
 
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-
   the test is green again.
 
-* I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>` in ``tests/test_person.py``
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_joe` since it is now a repetition
 
   .. code-block:: python
-    :emphasize-lines: 41
+    :lineno-start: 109
+
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+            ...
+
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_jane` since it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 131
+
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            ...
+
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_john` since it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 154
+
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1980
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            ...
+
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_mary` since it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 178
+
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            ...
+
+* I no longer need the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` because it is only used by :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :lineno-start: 63
 
         def test_say_hello_function(self):
             people = (
@@ -1130,12 +1163,22 @@ because
                 ('joe', 'blow', 'M', 1996),
                 ('mary', 'public', 'F', 2000),
                 ('john', 'smith', 'M', 1980),
-                ('first_name', 'last_name', 'F', 'a string'),
+                ('first_name', 'last_name', 'F', 'a_string')
             )
-            for person in people:
-                first_name = person[0]
-                last_name = person[1]
-                year_of_birth = person[3]
+            for a_person in people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                year_of_birth = a_person[3]
+
+                self.assert_say_hello_works(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth,
+                )
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 1-16
 
                 try:
                     reality = src.person.say_hello(
@@ -1149,146 +1192,122 @@ because
                         f"'{year_of_birth}' is not an integer"
                     )
                 else:
-                    my_expectation = (
-                        f'Hello, my name is {first_name}'
-                        f' {last_name} and I am'
-                        f' {self.calculate_age(year_of_birth)}.'
+                    self.assertEqual(
+                        reality,
+                        None
                     )
-                    self.assertEqual(reality, my_expectation)
 
-        def test_joe(self):
+        def test_person_factory(self):
 
-* I move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>` then remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_joe` since it is now a repetition
-
-  .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 15-19
-
-        def test_joe(self):
-            first_name = 'joe'
-            last_name = 'blow'
-            sex = 'M'
-            year_of_birth = 1996
-
-            joe = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = joe.say_hello()
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-            self.assertEqual(joe.can_vote(), True)
-            self.assertEqual(joe.can_get_license(), False)
-
-        def test_jane(self):
-
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_jane` since it is now a repetition, I move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 97
-    :emphasize-lines: 16-20
 
-        def test_jane(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = 1991
+    AssertionError: 'Hello, my name is jane doe and I am 35.' != None
 
-            jane = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-                passed_test=True,
-            )
-
-            reality = jane.say_hello()
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-            self.assertEqual(jane.can_vote(), True)
-            self.assertEqual(jane.can_get_license(), True)
-
-        def test_john(self):
-
-* I move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>` then remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_john` since it is now a repetition
+* I change the expectation to ``'Hello, my name is jane doe and I am 35.'``
 
   .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 16-20
+    :lineno-start: 93
+    :emphasize-lines: 3
 
-        def test_john(self):
-            first_name = 'john'
-            last_name = 'smith'
-            sex = 'M'
-            year_of_birth = 1980
+                else:
+                    self.assertEqual(
+                        reality,
+                        'Hello, my name is jane doe and I am 35.'
+                    )
 
-            john = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-                is_citizen=False,
-            )
+        def test_person_factory(self):
 
-            reality = john.say_hello()
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-            self.assertEqual(john.can_vote(), False)
-            self.assertEqual(john.can_get_license(), False)
-
-        def test_mary(self):
-
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_mary` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 147
-    :emphasize-lines: 17-21
 
-        def test_mary(self):
-            first_name = 'mary'
-            last_name = 'public'
-            sex = 'F'
-            year_of_birth = 2000
+    AssertionError: 'Hello, my name is joe blow and I am 30.'
+                 != 'Hello, my name is jane doe and I am 35.'
 
-            mary = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-                is_citizen=False,
-                passed_test=True,
+  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``'joe'``)
+
+* I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>`
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 8-11
+
+                else:
+                    self.assertEqual(
+                        reality,
+                        (
+                            f'Hello, my name is {first_name}'
+                            f' {last_name} and I am'
+                            f' {self.calculate_age(year_of_birth)}.'
+                        )
+                    )
+
+        def test_person_factory(self):
+
+  the test passes.
+
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_say_hello_function`
+
+  .. code-block:: python
+    :lineno-start: 63
+
+        def test_say_hello_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a_string')
             )
+            for a_person in people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                year_of_birth = a_person[3]
 
-            reality = mary.say_hello()
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-            self.assertEqual(mary.can_vote(), False)
-            self.assertEqual(mary.can_get_license(), True)
+  .. code-block:: python
+    :lineno-start: 76
 
-        def test_underage_citizen(self):
+                try:
+                    reality = src.person.say_hello(
+                        first_name=first_name,
+                        last_name=last_name,
+                        year_of_birth=year_of_birth,
+                    )
+                except TypeError as error:
+                    self.assertEqual(
+                        error.args[0],
+                        f"'{year_of_birth}' is not an integer"
+                    )
+                else:
+                    self.assertEqual(
+                        reality,
+                        (
+                            f'Hello, my name is {first_name}'
+                            f' {last_name} and I am'
+                            f' {self.calculate_age(year_of_birth)}.'
+                        )
+                    )
+
+        def test_person_factory(self):
+
+* I remove the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :emphasize-lines: 6
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+
+        def calculate_age(self, year_of_birth):
+            return self.this_year - year_of_birth
+
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
 
 * I add a git_ commit message
 
@@ -1303,105 +1322,56 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 
   - If the error message is not correct it raises :ref:`AssertionError<what causes AssertionError?>`
 
-    .. code-block:: shell
-
-          for person in (
-          │   ('jane', 'doe', 'F', 1991),
-          │   ('joe', 'blow', 'M', 1996),
-          │   ('mary', 'public', 'F', 2000),
-          │   ('john', 'smith', 'M', 1980),
-      ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
-      │   ):
-      ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-      ├── first_name = person[0]
-      ├── last_name = person[1]
-      ├── year_of_birth = person[3]
-      └── try:
-              reality = src.person.say_hello(
-                  first_name=first_name,
-                  last_name=last_name,
-                  year_of_birth=year_of_birth,
-              )
-              └── src/person/__init__.py
-                  └── def say_hello(
-                          first_name, last_name, year_of_birth,
-                      ):
-                      ├── first_name    = 'first_name'
-                      ├── last_name     = 'last_name'
-                      ├── year_of_birth = 'a string'
-                      └── return (
-                          ├── f'Hello, my name is {first_name}'
-                          ├── f' {last_name} and I am'
-                          └── f' {calculate_age(year_of_birth)}.'
-                          )   │
-                              └── def calculate_age(year_of_birth):
-                                  ├── year_of_birth = 'a string'
-                                  └── if not isinstance(
-                                          year_of_birth, int
-                                      ):
-      ┌───────────────────────────────┴── raise TypeError(
-      │                                       'BOOM!!!'
-      │                                   )
-      └── except TypeError as error:
-          └── self.assertEqual(
-                  error.args[0],
-                  f"'{year_of_birth}' is not an integer"
-              )
-              └── raise AssertionError
-          else:
-              ...
-
   - If the error message is correct the test passes
 
     .. code-block:: shell
 
-          for person in (
-          │   ('jane', 'doe', 'F', 1991),
-          │   ('joe', 'blow', 'M', 1996),
-          │   ('mary', 'public', 'F', 2000),
-          │   ('john', 'smith', 'M', 1980),
-      ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
-      │   ):
-      ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-      ├── first_name = person[0]
-      ├── last_name = person[1]
-      ├── year_of_birth = person[3]
-      └── try:
-              reality = src.person.say_hello(
-                  first_name=first_name,
-                  last_name=last_name,
-                  year_of_birth=year_of_birth,
-              )
-              └── src/person/__init__.py
-                  └── def say_hello(
-                          first_name, last_name, year_of_birth,
-                      ):
-                      ├── first_name    = 'first_name'
-                      ├── last_name     = 'last_name'
-                      ├── year_of_birth = 'a string'
-                      └── return (
-                          ├── f'Hello, my name is {first_name}'
-                          ├── f' {last_name} and I am'
-                          └── f' {calculate_age(year_of_birth)}.'
-                          )   │
-                              └── def calculate_age(year_of_birth):
-                                  ├── year_of_birth = 'a string'
-                                  └── if not isinstance(
-                                          year_of_birth, int
-                                      ):
-      ┌───────────────────────────────┴── raise TypeError(
-      │                                       f"'{year_of_birth}'"
-      │                                       " is not an integer"
-      │                                   )
-      └── except TypeError as error:
-          └── self.assertEqual(
-                  error.args[0],
-                  f"'{year_of_birth}' is not an integer"
-              )
-          else:
-              ...
+              for a_person in (
+              │   ('jane', 'doe', 'F', 1991),
+              │   ('joe', 'blow', 'M', 1996),
+              │   ('mary', 'public', 'F', 2000),
+              │   ('john', 'smith', 'M', 1980),
+          ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
+          │   ):
+          ├────── first_name = a_person[0]    # 'first_name'
+          ├────── last_name = a_person[1]     # 'last_name'
+          ├────── year_of_birth = a_person[3] # 'a string'
+          └────── try:
+                      reality = src.person.say_hello(
+                          first_name=first_name,
+                          last_name=last_name,
+                          year_of_birth=year_of_birth,
+                      )
+                      └── src/person/__init__.py
+                            └── def say_hello(
+                                    first_name, last_name, year_of_birth,
+                                ):
+                                ├── first_name    = 'first_name'  # a_person[0]
+                                ├── last_name     = 'last_name'   # a_person[1]
+                                ├── year_of_birth = 'a string'    # a_person[3]
+                                └── return (
+                                    ├── f'Hello, my name is {first_name}'
+                                    ├── f' {last_name} and I am'
+                                    └── f' {calculate_age(year_of_birth)}.'
+                                    )   │
+                                        └── def calculate_age(year_of_birth):
+                                            ├── year_of_birth = 'a string'
+                                            └── if not isinstance(
+                                                    year_of_birth, int
+                                                ):
+              ┌─────────────────────────────────┴── raise TypeError(
+              │                                       f"'{year_of_birth}'"
+              │                                       " is not an integer"
+              │                                   )
+              └── except TypeError as error:
+                  └── self.assertEqual(
+                          error.args[0],
+                          f"'{year_of_birth}' is not an integer"
+                      )
+                  else:
+                      ...
 
-* If the :ref:`call to the say_hello function<test say_hello function>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` matches the expectation
+* If the :ref:`call to the calculate_age function<extract calculate_age function>` from the :ref:`say_hello function<test say_hello function>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` matches the expectation
 
   .. code-block:: shell
 
@@ -1412,47 +1382,44 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
       ┌───┴── ('john', 'smith', 'M', 1980),
       │       ('first_name', 'last_name', 'F', 'a string'),
       │   ):
-      ├── a_person = ('john', 'smith', 'M', 1980),
-      ├── first_name = person[0]
-      ├── last_name = person[1]
-      ├── year_of_birth = person[3]
-      ├── try:
-      │       reality = src.person.say_hello(
-      │           first_name=first_name,
-      │           last_name=last_name,
-      │           year_of_birth=year_of_birth,
-      │       )
-      │       └── src/person/__init__.py
-      │           └── def say_hello(
-      │                   first_name, last_name, year_of_birth,
-      │               ):
-      │               ├── first_name    = 'john'
-      │               ├── last_name     = 'smith'
-      │               ├── year_of_birth = 1980
-      │               └── return (
-      │                   ├── f'Hello, my name is {first_name}'
-      │                   ├── f' {last_name} and I am'
-      │                   └── f' {calculate_age(year_of_birth)}.'
-      │                   )   │
-      │                       └── def calculate_age(year_of_birth):
-      │                           ├── ...
-      │                           └── return age
-      │   except TypeError as error:
-      │       ...
-      └── else:
-          ├── my_expectation = (
-          │   ├── f'Hello, my name is {first_name}'
-          │   ├── f' {last_name} and I am'
-          │   └── f' {self.calculate_age(year_of_birth)}.'
-          │   )   │
-          │       │   @staticmethod
-          │       └── def calculate_age(year_of_birth):
-          │           ├── year_of_birth = 2000
-          │           └── return (
-          │                   datetime.date.today().year
-          │                 - year_of_birth
-          │               )
-          └── self.assertEqual(reality, my_expectation)
+      ├────── first_name = a_person[0]    # 'john'
+      ├────── last_name = a_person[1]     # 'smith'
+      ├────── year_of_birth = a_person[3] # 1980
+      └───┬── try:
+          │       reality = src.person.say_hello(
+          │           first_name=first_name,
+          │           last_name=last_name,
+          │           year_of_birth=year_of_birth,
+          │       )
+          │       └── src/person/__init__.py
+          │             └── def say_hello(
+          │                     first_name, last_name, year_of_birth,
+          │                 ):
+          │                 ├── first_name    = 'john'  # a_person[0]
+          │                 ├── last_name     = 'smith' # a_person[1]
+          │                 ├── year_of_birth = 1980    # a_person[3]
+          │                 └── return (
+          │                     ├── f'Hello, my name is {first_name}'
+          │                     ├── f' {last_name} and I am'
+          │                     └── f' {calculate_age(year_of_birth)}.'
+          │                     )   │
+          │                         └── def calculate_age(year_of_birth):
+          │                             ├── year_of_birth = 1980 # a_person[3]
+          │                             ├── ...
+          │                             └── return age
+          │   except TypeError as error:
+          │       ...
+          └── else:
+              └── self.assertEqual(
+                      reality,
+                      (
+                          f'Hello, my name is {first_name}'
+                          f' {last_name} and I am'
+                          f' {self.calculate_age(year_of_birth)}.'
+                      )   │
+                  )       └── def calculate_age(self, year_of_birth):
+                              ├── year_of_birth = 1980  # a_person[3]
+                              └── return self.this_year - year_of_birth
 
 ----
 
