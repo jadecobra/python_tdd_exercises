@@ -241,7 +241,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
     :lineno-start: 65
     :emphasize-lines: 3
 
-        def test_factory_function(self):
+        def test_person_factory(self):
             people = (
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
@@ -300,7 +300,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
     :lineno-start: 65
     :emphasize-lines: 5
 
-        def test_factory_function(self):
+        def test_person_factory(self):
             people = (
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
@@ -361,7 +361,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
     :lineno-start: 65
     :emphasize-lines: 6
 
-        def test_factory_function(self):
+        def test_person_factory(self):
             people = (
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
@@ -423,7 +423,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
   .. code-block:: python
     :lineno-start: 15
 
-        def test_factory_function(self):
+        def test_person_factory(self):
             people = (
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
@@ -2260,77 +2260,64 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 extract people object attribute
 *********************************************************************************
 
-:ref:`test_factory_function<extract test_person_factory>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
+:ref:`test_person_factory<extract test_person_factory>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
 
-* I add a :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
+* I add an :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 3-9
+    :emphasize-lines: 4-10
 
     class TestPerson(unittest.TestCase):
 
+        this_year = datetime.date.today().year
         people = (
             ('jane', 'doe', 'F', 1991),
             ('joe', 'blow', 'M', 1996),
             ('mary', 'public', 'F', 2000),
             ('john', 'smith', 'M', 1980),
-            ('first_name', 'last_name', 'F', 'a string'),
+            ('first_name', 'last_name', 'F', 'a_string')
         )
 
-        @staticmethod
-        def calculate_age(year_of_birth):
+        def calculate_age(self, year_of_birth):
 
-* I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_factory_function<extract test_person_factory>`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 20
     :emphasize-lines: 2-10
 
-        def test_factory_function(self):
+        def test_say_hello_method(self):
             # people = (
             #     ('jane', 'doe', 'F', 1991),
             #     ('joe', 'blow', 'M', 1996),
             #     ('mary', 'public', 'F', 2000),
             #     ('john', 'smith', 'M', 1980),
-            #     ('first_name', 'last_name', 'F', '2026'),
+            #     ('first_name', 'last_name', 'F', 'a_string')
             # )
-            # for person in people:
-            for person in self.people:
-                first_name = person[0]
+            # for a_person in people:
+            for a_person in self.people:
+                first_name = a_person[0]
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_factory_function<extract test_person_factory>`
+* I remove the commented lines from :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 20
 
-        def test_factory_function(self):
-            for person in self.people:
-                first_name = person[0]
-                last_name = person[1]
-                sex = person[2]
-                year_of_birth = person[3]
-
-                reality = src.person.person(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    year_of_birth=year_of_birth,
-                )
-                my_expectation = (
-                    f'{first_name}, {last_name},'
-                    f' {sex}, {year_of_birth}'
-                )
-                self.assertEqual(reality, my_expectation)
-
-        def test_say_hello_function(self):
+        def test_say_hello_method(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+                ...
 
 * I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 53
     :emphasize-lines: 2-10
 
         def test_say_hello_function(self):
@@ -2339,109 +2326,58 @@ extract people object attribute
             #     ('joe', 'blow', 'M', 1996),
             #     ('mary', 'public', 'F', 2000),
             #     ('john', 'smith', 'M', 1980),
-            #     ('first_name', 'last_name', 'F', 'a string'),
+            #     ('first_name', 'last_name', 'F', 'a_string')
             # )
-            # for person in people:
-            for person in self.people:
-                first_name = person[0]
+            # for a_person in people:
+            for a_person in self.people:
+                first_name = a_person[0]
 
   still green.
 
 * I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 53
 
         def test_say_hello_function(self):
-            for person in self.people:
-                first_name = person[0]
-                last_name = person[1]
-                year_of_birth = person[3]
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                year_of_birth = a_person[3]
+                ...
 
-                with self.subTest(
-                    first_name=first_name,
-                    year_of_birth=year_of_birth,
-                ):
-                    try:
-                        reality = src.person.say_hello(
-                            first_name=first_name,
-                            last_name=last_name,
-                            year_of_birth=year_of_birth,
-                        )
-                    except TypeError as error:
-                        self.assertEqual(
-                            error.args[0],
-                            f"'{year_of_birth}' is not an integer"
-                        )
-                    else:
-                        my_expectation = (
-                            f'Hello, my name is {first_name}'
-                            f' {last_name} and I am'
-                            f' {self.calculate_age(year_of_birth)}.'
-                        )
-                        self.assertEqual(reality, my_expectation)
-
-        def test_say_hello_method(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 84
     :emphasize-lines: 2-10
 
-        def test_say_hello_method(self):
+        def test_person_factory(self):
             # people = (
             #     ('jane', 'doe', 'F', 1991),
             #     ('joe', 'blow', 'M', 1996),
             #     ('mary', 'public', 'F', 2000),
             #     ('john', 'smith', 'M', 1980),
-            #     ('first_name', 'last_name', 'F', 'a string'),
+            #     ('first_name', 'last_name', 'F', 'a_string')
             # )
-            # for person in people:
-            for person in self.people:
-                first_name = person[0]
+            # for a_person in people:
+            for a_person in self.people:
+                first_name = a_person[0]
 
-  green.
+  the test is still green.
 
-* I remove the commented lines from :ref:`test_say_hello_method<extract test_say_hello_method>`
+* I remove the commented lines from :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 84
 
-        def test_say_hello_method(self):
-            for person in self.people:
-                first_name = person[0]
-                last_name = person[1]
-                sex = person[2]
-                year_of_birth = person[3]
-
-                with self.subTest(
-                    first_name=first_name,
-                    year_of_birth=year_of_birth,
-                ):
-                    try:
-                        a_person = src.person.Person(
-                            first_name=first_name,
-                            last_name=last_name,
-                            sex=sex,
-                            year_of_birth=year_of_birth,
-                        )
-                    except TypeError as error:
-                        self.assertEqual(
-                            error.args[0],
-                            f"'{year_of_birth}' is not an integer"
-                        )
-                    else:
-                        self.assertEqual(
-                            a_person.say_hello(),
-                            (
-                                f'Hello, my name is {first_name}'
-                                f' {last_name} and I am'
-                                f' {self.calculate_age(year_of_birth)}.'
-                            )
-                        )
-
-        def test_joe(self):
+        def test_person_factory(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+                ...
 
 * I add a git_ commit message
 
@@ -2456,7 +2392,7 @@ extract people object attribute
 extract test_can_person_vote
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_joe`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary`, :ref:`test_underage_citizen<add condition to can_vote>`, :ref:`test_when_person_is_older_than_120`, :ref:`test_when_year_of_birth_is_the_future` and :ref:`test_when_year_of_birth_is_not_an_integer`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot vote` or :green:`can vote`.
 
