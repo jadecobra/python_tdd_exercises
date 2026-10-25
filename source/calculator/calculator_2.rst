@@ -164,7 +164,7 @@ I can use :ref:`assertRaises<another way to test if an Exception is raised>` to 
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error>` and
-* :ref:`The Mother of all Exceptions<test_catching_exceptions>`
+* :ref:`The Mother of all Exceptions<how to test that an Exception is raised>`
 
 *************************************************************************************
 code from the chapter

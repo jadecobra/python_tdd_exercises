@@ -262,7 +262,7 @@ I ran tests to show that
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
   - :ref:`ZeroDivisionError<test_catching_zero_division_error>`
-  - :ref:`The Mother of all Exceptions<test_catching_exceptions>`
+  - :ref:`The Mother of all Exceptions<how to test that an Exception is raised>`
 
 * I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test that an Exception is raised>` with messages
 * I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test that an Exception is raised>` are raised

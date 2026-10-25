@@ -3027,14 +3027,13 @@ the test passes.
 extract truth_table object attribute
 *********************************************************************************
 
-The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`
-.
+The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`.
 
 * I add an :ref:`object attribute<what is an object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 10-15
+    :emphasize-lines: 11-16
 
     class TestPerson(unittest.TestCase):
 
@@ -3059,15 +3058,15 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 
   .. code-block:: python
     :lineno-start: 110
-    :emphasize-lines:
+    :emphasize-lines: 2-9
 
         def test_if_person_can_vote(self):
-            truth_table = (
-                (datetime.date.today().year-17, True, False),
-                (datetime.date.today().year-17, False, False),
-                (datetime.date.today().year-18, True, True),
-                (datetime.date.today().year-18, False, False),
-            )
+            # truth_table = (
+            #     (datetime.date.today().year-17, True, False),
+            #     (datetime.date.today().year-17, False, False),
+            #     (datetime.date.today().year-18, True, True),
+            #     (datetime.date.today().year-18, False, False),
+            # )
             # for row in truth_table:
             for row in self.truth_table:
                 with self.subTest(row=row):
@@ -3079,31 +3078,445 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
   .. code-block:: python
     :lineno-start: 110
 
-* I use the :ref:`object attribute<what is an object attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_if_person_can_vote<extract test_if_person_can_vote>`
+        def test_if_person_can_vote(self):
+            for row in self.truth_table:
+                with self.subTest(row=row):
+                    a_person = src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='F',
+                        year_of_birth=row[0],
+                        is_citizen=row[1],
+                    )
+                    self.assertEqual(a_person.can_vote(), row[2])
+
+        def test_if_person_can_get_license(self):
+
+* I use the :ref:`object attribute<what is an object attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 122
     :emphasize-lines:
+
+        def test_if_person_can_get_license(self):
+            # truth_table = (
+            #     (datetime.date.today().year-17, True, False),
+            #     (datetime.date.today().year-17, False, False),
+            #     (datetime.date.today().year-18, True, True),
+            #     (datetime.date.today().year-18, False, False),
+            # )
+            # for row in truth_table:
+            for row in self.truth_table:
+                with self.subTest(row=row):
 
   still green.
 
 * I remove the commented lines from :ref:`test_if_person_can_vote<extract test_if_person_can_vote>`
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 122
+
+        def test_if_person_can_get_license(self):
+            for row in self.truth_table:
+                with self.subTest(row=row):
+                    a_person = src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=row[0],
+                        passed_test=row[1],
+                    )
+                    self.assertEqual(
+                        a_person.can_get_license(), row[-1]
+                    )
+
+        def test_when_person_is_older_than_120(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract truth_table object attribute'
 
 ----
 
 *********************************************************************************
-use assertRaises with test_when_person_is_too_old_to_be_alive
+use assertRaises with test_when_person_is_older_than_120
 *********************************************************************************
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I use the :ref:`assertRaises method<another way to test if an Exception is raised>` to replace the :ref:`try statement<how to handle Exceptions>` in :ref:`test_when_person_is_older_than_120`
+
+.. code-block:: python
+  :lineno-start: 136
+  :emphasize-lines: 2-3, 10-11
+
+      def test_when_person_is_older_than_120(self):
+          # try:
+          with self.assertRaises(TypeError):
+              src.person.Person(
+                  first_name='first_name',
+                  last_name='last_name',
+                  sex='M',
+                  year_of_birth=self.this_year-121
+              )
+          # except ValueError:
+          #     pass
+
+      def test_when_year_of_birth_is_the_future(self):
+
+the terminal_ is my friend, and shows ValueError_
+
+.. code-block:: python
+
+  E           ValueError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`Exception<how to test that an Exception is raised>` to match
+
+.. code-block:: python
+  :lineno-start: 136
+  :emphasize-lines: 3
+
+      def test_when_person_is_older_than_120(self):
+          # try:
+          with self.assertRaises(ValueError):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertRaisesRegex<how to test the message of an Exception>` to test the message of the :ref:`Exception<how to test that an Exception is raised>`
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 3-4, 6-9, 14-15
+
+        def test_when_person_is_older_than_120(self):
+            # try:
+            year_of_birth = self.this_year - 121
+            age = self.calculate_age(year_of_birth)
+
+            with self.assertRaisesRegex(
+                ValueError,
+                f'a {age} year old person is too old to be alive.'
+            ):
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    # year_of_birth=self.this_year-121,
+                    year_of_birth=year_of_birth,
+                )
+            # except ValueError:
+            #     pass
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        "a 121 year old person is too old to be alive."
+        does not match ""
+
+* I add a message to the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 13-15
+
+    def calculate_age(year_of_birth):
+        if not isinstance(year_of_birth, int):
+            raise TypeError(
+                f"'{year_of_birth}' is not an integer"
+            )
+
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+
+        if age < 0 or age > 120:
+            raise ValueError(
+                f'a {age} year old person is too old to be alive.'
+            )
+        return age
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 136
+
+        def test_when_person_is_older_than_120(self):
+            year_of_birth = self.this_year - 121
+            age = self.calculate_age(year_of_birth)
+
+            with self.assertRaisesRegex(
+                ValueError,
+                f'a {age} year old person is too old to be alive.'
+            ):
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=year_of_birth,
+                )
+
+        def test_when_year_of_birth_is_the_future(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'use assertRaises with test_when_person_is_older_than_120'
 
 ----
 
 *********************************************************************************
-test_when_year_of_birth_is_not_an_integer
+use assertRaises with test_when_year_of_birth_is_the_future
 *********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I use the :ref:`assertRaisesRegex method<how to test the message of an Exception>` to replace the :ref:`try statement<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_the_future`
+
+.. code-block:: python
+  :lineno-start: 151
+  :emphasize-lines: 2-5, 12-13
+
+      def test_when_year_of_birth_is_the_future(self):
+          # try:
+          with self.assertRaisesRegex(
+              ValueError, 'BOOM!!!'
+          ):
+              src.person.Person(
+                  first_name='first_name',
+                  last_name='last_name',
+                  sex='F',
+                  year_of_birth=self.this_year+1,
+              )
+          # except ValueError:
+          #     pass
+
+      def test_when_year_of_birth_is_not_an_integer(self):
+
+the terminal_ is my friend, and shows ValueError_
+
+.. code-block:: python
+
+  E           ValueError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`Exception<how to test that an Exception is raised>` to match
+
+.. code-block:: python
+  :lineno-start: 136
+  :emphasize-lines: 3
+
+      def test_when_year_of_birth_is_the_future(self):
+          # try:
+          with self.assertRaises(ValueError):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertRaisesRegex<how to test the message of an Exception>` to test the message of the :ref:`Exception<how to test that an Exception is raised>`
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 3-5, 12-13
+
+        def test_when_year_of_birth_is_the_future(self):
+            # try:
+            with self.assertRaisesRegex(
+                ValueError, 'BOOM!!!'
+            ):
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    year_of_birth=self.this_year+1,
+                )
+            # except ValueError:
+            #     pass
+
+        def test_when_year_of_birth_is_not_an_integer(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        "BOOM!!!" does not match
+        "a -1 year old person is too old to be alive."
+
+  I need a better message for if a person is too old to be alive or too young to be alive.
+
+* I change the message of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 14
+
+    def calculate_age(year_of_birth):
+        if not isinstance(year_of_birth, int):
+            raise TypeError(
+                f"'{year_of_birth}' is not an integer"
+            )
+
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+
+        if age < 0 or age > 120:
+            raise ValueError(
+                f'a {age} year old person is not alive.'
+            )
+        return age
+
+  the terminal is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    FAILED ...test_when_person_is_older_than_120 -
+        AssertionError: "a 121 year old person is too old to be alive."
+         does not match "a 121 year old person is not alive."
+    FAILED ...test_when_year_of_birth_is_the_future -
+        AssertionError: "BOOM!!!" does not match
+                        "a -1 year old person is not alive."
+
+* I change the error message in :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 7
+
+        def test_when_person_is_older_than_120(self):
+            year_of_birth = self.this_year - 121
+            age = self.calculate_age(year_of_birth)
+
+            with self.assertRaisesRegex(
+                ValueError,
+                f'a {age} year old person is not alive.'
+            ):
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=year_of_birth,
+                )
+
+        def test_when_year_of_birth_is_the_future(self):
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I change the error message in :ref:`test_when_year_of_birth_is_the_future`
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 3-4, 7-8, 14-15
+
+        def test_when_year_of_birth_is_the_future(self):
+            # try:
+            year_of_birth = self.this_year + 1
+            age = self.calculate_age(year_of_birth)
+
+            with self.assertRaisesRegex(
+                ValueError,
+                f'a {age} year old person is not alive.'
+            ):
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    # year_of_birth=self.this_year+1,
+                    year_of_birth=year_of_birth,
+                )
+            # except ValueError:
+            #     pass
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_when_year_of_birth_is_the_future`
+
+  .. code-block:: python
+    :lineno-start: 151
+
+        def test_when_year_of_birth_is_the_future(self):
+            year_of_birth = self.this_year + 1
+            age = self.calculate_age(year_of_birth)
+
+            with self.assertRaisesRegex(
+                ValueError,
+                f'a {age} year old person is not alive.'
+            ):
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    year_of_birth=year_of_birth,
+                )
+
+        def test_when_year_of_birth_is_not_an_integer(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'use assertRaises with test_when_year_of_birth_is_the_future'
+
+----
+
+*********************************************************************************
+use loops in test_when_year_of_birth_is_not_an_integer
+*********************************************************************************
+
+:ref:`test_when_perso`
 
 
 * I change the :ref:`Exception raised<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` if the value of the ``year_of_birth`` parameter is not an integer_
