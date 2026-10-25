@@ -741,7 +741,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                             f' {last_name} and I am'
                             f' {2026-year_of_birth}.'
                         )
-                        return 'Hello, my name is joe blow and I am 30.'
+                        return 'Hello, my name is joe blow and I am XX.'
 
 ----
 
@@ -905,7 +905,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     AssertionError:
         assert None
-            == 'Hello, my name is joe blow and I am 30.'
+            == 'Hello, my name is joe blow and I am XX.'
 
 * I change :ref:`the return statement` to match
 
@@ -918,7 +918,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         # def say_hello(first_name, last_name):
         def say_hello(first_name, last_name, year_of_birth):
             # return None
-            return 'Hello, my name is joe blow and I am 30.'
+            return 'Hello, my name is joe blow and I am XX.'
 
 
     def assert_say_hello_works(
@@ -940,7 +940,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             ├── first_name    = 'joe'
             ├── last_name     = 'blow'
             ├── year_of_birth = 1996
-            └── return 'Hello, my name is joe blow and I am 30.'
+            └── return 'Hello, my name is joe blow and I am XX.'
 
 * I add a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>` in :ref:`test_jane`
 
@@ -993,8 +993,8 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   .. code-block:: python
 
-    AssertionError: assert 'Hello, my name ... and I am 30.'
-                        == 'Hello, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am XX.'
+                        == 'Hello, my name ... and I am YY.'
 
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` like I did with the :ref:`say_hello function<test say_hello function>`
 
@@ -1007,7 +1007,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         # def say_hello(first_name, last_name):
         def say_hello(first_name, last_name, year_of_birth):
             # return None
-            # return 'Hello, my name is joe blow and I am 30.'
+            # return 'Hello, my name is joe blow and I am XX.'
             return (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
@@ -1066,7 +1066,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                 f' {last_name} and I am'
                 f' {2026-year_of_birth}.'
             )
-            return 'Hello, my name is jane doe and I am 35.'
+            return 'Hello, my name is jane doe and I am YY.'
 
 * I add an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add Person class>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` because the :ref:`instance<how to test if something is an instance>` has the :ref:`attributes<what is an object attribute?>` I use in the :ref:`method<what is a method?>`
 
@@ -1114,7 +1114,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                 person, first_name, last_name, year_of_birth,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am 30.'
+            # return 'Hello, my name is joe blow and I am XX.'
             return (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
@@ -1168,7 +1168,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                 person, first_name, last_name, year_of_birth,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am 30.'
+            # return 'Hello, my name is joe blow and I am XX.'
             return (
                 # f'Hello, my name is {first_name}'
                 # f' {last_name} and I am'
@@ -1288,7 +1288,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                 person,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am 30.'
+            # return 'Hello, my name is joe blow and I am XX.'
             return (
                 # f'Hello, my name is {first_name}'
                 # f' {last_name} and I am'
@@ -1459,7 +1459,7 @@ what is the staticmethod decorator?
                 person=None,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am 30.'
+            # return 'Hello, my name is joe blow and I am XX.'
             return (
                 # f'Hello, my name is {first_name}'
                 # f' {last_name} and I am'
@@ -1651,7 +1651,7 @@ what is the staticmethod decorator?
   .. code-block:: python
 
     AssertionError:
-        assert 'Hello, my name is john smith and I am 446.'
+        assert 'Hello, my name is john smith and I am AAA.'
             == None
 
 * I change my expectation to match ``reality`` in :ref:`test_john`
@@ -1722,7 +1722,7 @@ what is the staticmethod decorator?
   .. code-block:: python
 
     AssertionError:
-        assert 'Hello, my name is mary public and I am 26.'
+        assert 'Hello, my name is mary public and I am ZZ.'
              == None
 
 * I change my expectation to match ``reality`` in :ref:`test_mary`
@@ -2247,7 +2247,7 @@ separate and equal Person class
 
     AssertionError:
         assert None
-            == 'Hello, my name is mary public and I am 26.'
+            == 'Hello, my name is mary public and I am ZZ.'
 
 * I copy and paste the string_ from the terminal_ to use as :ref:`the return statement`
 
@@ -2258,7 +2258,7 @@ separate and equal Person class
         # def say_hello():
         def say_hello(argument):
             # return None
-            return 'Hello, my name is mary public and I am 26.'
+            return 'Hello, my name is mary public and I am ZZ.'
 
 
     def say_hello(
@@ -2353,8 +2353,8 @@ separate and equal Person class
 
   .. code-block:: python
 
-    AssertionError: assert 'Hello, my name ... and I am 26.'
-                        == 'Hello, my name ...and I am 446.'
+    AssertionError: assert 'Hello, my name ... and I am ZZ.'
+                        == 'Hello, my name ...and I am AAA.'
 
 * I change :ref:`the return statement` of the :ref:`say_hello method<add say_hello method>` to return the input, in ``src/person/__init__.py``
 
@@ -2365,7 +2365,7 @@ separate and equal Person class
         # def say_hello():
         def say_hello(argument):
             # return None
-            # return 'Hello, my name is mary public and I am 26.'
+            # return 'Hello, my name is mary public and I am ZZ.'
             return argument
 
 
@@ -2379,7 +2379,7 @@ separate and equal Person class
 
     AssertionError:
         assert <src.person.Person object at 0xffffb012cd34>
-            == 'Hello, my name is mary public and I am 26.'
+            == 'Hello, my name is mary public and I am ZZ.'
 
   because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`Person class<add Person class>`.
 
@@ -2392,7 +2392,7 @@ separate and equal Person class
         # def say_hello():
         def say_hello(argument):
             # return None
-            # return 'Hello, my name is mary public and I am 26.'
+            # return 'Hello, my name is mary public and I am ZZ.'
             # return argument
             return (
                 f'Hello, my name is {argument.first_name}'
@@ -2504,7 +2504,7 @@ separate and equal Person class
         # def say_hello(argument):
         def say_hello(self):
             # return None
-            # return 'Hello, my name is mary public and I am 26.'
+            # return 'Hello, my name is mary public and I am ZZ.'
             # return argument
             return (
                 # f'Hello, my name is {argument.first_name}'
@@ -2906,8 +2906,8 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 
   .. code-block:: python
 
-    AssertionError: assert 'Hello, my name is joe blow and I am 30.'
-                        != 'Hello, my name is joe blow and I am 30.'
+    AssertionError: assert 'Hello, my name is joe blow and I am XX.'
+                        != 'Hello, my name is joe blow and I am XX.'
 
 ----
 
@@ -3405,13 +3405,13 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
   .. code-block:: python
 
     FAILED ...::test_joe - AssertionError:
-        assert 'Hello, my name is joe blow and I am 30.' != ...
+        assert 'Hello, my name is joe blow and I am XX.' != ...
     FAILED ...::test_jane - AssertionError:
-        assert 'Hello, my name is jane doe and I am 35.' != ...
+        assert 'Hello, my name is jane doe and I am YY.' != ...
     FAILED ...::test_john - AssertionError:
-        assert 'Hello, my name is john smith and I am 446.' ...
+        assert 'Hello, my name is john smith and I am AAA.' ...
     FAILED ...::test_mary - AssertionError:
-        assert 'Hello, my name is mary public and I am 26.' ...
+        assert 'Hello, my name is mary public and I am ZZ.' ...
 
 ----
 

@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with unittest — move the person project's tests onto unittest.TestCase, then move helper assert functions onto TestPerson as methods. Open person; uv run pytest-watcher . --now (6 passed). Add class TestPerson(object) with test_failure → AttributeError: 'TestPerson' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: False != True then green with assertEqual(True, True). For test_joe, test_jane, test_john, test_mary: move into TestPerson → TypeError takes 0 positional arguments but 1 was given; @staticmethod then later self. For test_dir_person_class and test_dir_person_instance: add self; assert_equal to self.assertNotEqual then self.assertEqual. Move assert_person_can_say_hello, assert_say_hello_works, assert_person_factory_works onto TestPerson → TypeError missing self / got multiple values for argument 'first_name'; add self; self.assertNotEqual → AssertionError e.g. 'Hello, my name is joe blow and I am 30.' == same / 'joe, blow, M, 1996' == same; switch to self.assertEqual; drop unused assert_equal; git commit. Ends with TestPerson + 3 helper methods + 6 tests + # Exceptions seen AssertionError NameError TypeError AttributeError SyntaxError. Review: unittest.TestCase methods or bare assert; tests still repeat the same three calls per person. What is next: test telephone with unittest.
-  :keywords: Jacob Itegboje, Pumping Python, test person with unittest, person unittest, TestPerson, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError False != True, TypeError takes 0 positional arguments but 1 was given, TypeError missing self, got multiple values for argument first_name, self first argument method, staticmethod, assertNotEqual, assertEqual, assert_person_factory_works, assert_say_hello_works, assert_person_can_say_hello, joe blow M 1996, Hello my name is joe blow and I am 30, jane doe, john smith, mary public, test_dir_person_class, test_dir_person_instance, dir(Person), uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, same three tests per person, another way to write tests, test_person_w_unittest
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with unittest — move the person project's tests onto unittest.TestCase, then move helper assert functions onto TestPerson as methods. Open person; uv run pytest-watcher . --now (6 passed). Add class TestPerson(object) with test_failure → AttributeError: 'TestPerson' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: False != True then green with assertEqual(True, True). For test_joe, test_jane, test_john, test_mary: move into TestPerson → TypeError takes 0 positional arguments but 1 was given; @staticmethod then later self. For test_dir_person_class and test_dir_person_instance: add self; assert_equal to self.assertNotEqual then self.assertEqual. Move assert_person_can_say_hello, assert_say_hello_works, assert_person_factory_works onto TestPerson → TypeError missing self / got multiple values for argument 'first_name'; add self; self.assertNotEqual → AssertionError e.g. 'Hello, my name is joe blow and I am XX.' == same / 'joe, blow, M, 1996' == same; switch to self.assertEqual; drop unused assert_equal; git commit. Ends with TestPerson + 3 helper methods + 6 tests + # Exceptions seen AssertionError NameError TypeError AttributeError SyntaxError. Review: unittest.TestCase methods or bare assert; tests still repeat the same three calls per person. What is next: test telephone with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test person with unittest, person unittest, TestPerson, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError False != True, TypeError takes 0 positional arguments but 1 was given, TypeError missing self, got multiple values for argument first_name, self first argument method, staticmethod, assertNotEqual, assertEqual, assert_person_factory_works, assert_say_hello_works, assert_person_can_say_hello, joe blow M 1996, Hello my name is joe blow and I am XX, jane doe, john smith, mary public, test_dir_person_class, test_dir_person_instance, dir(Person), uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, same three tests per person, another way to write tests, test_person_w_unittest
 
 .. include:: ../../links.rst
 
@@ -1205,8 +1205,8 @@ move assert_person_can_say_hello to TestPerson
 
   .. code-block:: python
 
-    AssertionError: 'Hello, my name is joe blow and I am 30.'
-                 == 'Hello, my name is joe blow and I am 30.'
+    AssertionError: 'Hello, my name is joe blow and I am XX.'
+                 == 'Hello, my name is joe blow and I am XX.'
 
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
 
@@ -1768,17 +1768,17 @@ move assert_say_hello_works to TestPerson
   .. code-block:: python
 
     FAILED ...test_jane - AssertionError:
-        'Hello, my name is jane doe and I am 35.'
-     == 'Hello, my name is jane doe and I am 35.'
+        'Hello, my name is jane doe and I am YY.'
+     == 'Hello, my name is jane doe and I am YY.'
     FAILED ...test_joe - AssertionError:
-        'Hello, my name is joe blow and I am 30.'
-     == 'Hello, my name is joe blow and I am 30.'
+        'Hello, my name is joe blow and I am XX.'
+     == 'Hello, my name is joe blow and I am XX.'
     FAILED ...test_john - AssertionError:
-        'Hello, my name is john smith and I am 446.'
-     == 'Hello, my name is john smith and I am 446.'
+        'Hello, my name is john smith and I am AAA.'
+     == 'Hello, my name is john smith and I am AAA.'
     FAILED ...test_mary - AssertionError:
-        'Hello, my name is mary public and I am 26.'
-     == 'Hello, my name is mary public and I am 26.'
+        'Hello, my name is mary public and I am ZZ.'
+     == 'Hello, my name is mary public and I am ZZ.'
 
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
 

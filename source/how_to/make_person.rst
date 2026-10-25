@@ -4071,7 +4071,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
 
     AssertionError:
-        None != 'Hello, my name is joe blow and I am 30'
+        None != 'Hello, my name is joe blow and I am XX'
 
 * I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in :ref:`the return statement` in ``src/person/__init__.py``
 
@@ -4082,7 +4082,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     # def say_hello():
     def say_hello(person):
         # return None
-        return 'Hello, my name is joe blow and I am 30'
+        return 'Hello, my name is joe blow and I am XX'
 
   the test passes.
 
@@ -4122,8 +4122,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :emphasize-text: jane doe
 
     AssertionError:
-          'Hello, my name is joe blow and I am 30'
-       != 'Hello, my name is jane doe and I am 35'
+          'Hello, my name is joe blow and I am XX'
+       != 'Hello, my name is jane doe and I am YY'
 
   I have to make sure the ``say_hello`` :ref:`function<what is a function?>` uses the :ref:`values<test_values_of_a_dictionary>` of the ``person`` :ref:`dictionary<what is a dictionary?>` to make the message. I can do that with the :ref:`get method of dictionaries<test_get_value_of_a_key_in_a_dictionary>`.
 
@@ -4137,20 +4137,20 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     def say_hello(person):
         first_name = person.get('first_name')
         # return None
-        # return 'Hello, my name is joe blow and I am 30'
+        # return 'Hello, my name is joe blow and I am XX'
         return (
             f'Hello, my name is {first_name}'
-            ' blow and I am 30'
+            ' blow and I am XX'
         )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-text: doe blow 30 35
+    :emphasize-text: doe blow XX YY
 
     AssertionError:
-        'Hello, my name is jane blow and I am 30'
-     != 'Hello, my name is jane doe and I am 35'
+        'Hello, my name is jane blow and I am XX'
+     != 'Hello, my name is jane doe and I am YY'
 
   the values for ``first_name`` are the same because
 
@@ -4191,14 +4191,14 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
       return (
           f'Hello, my name is {first_name}'
-          ' blow and I am 30'
+          ' blow and I am XX'
       )
 
   .. code-block:: python
 
     src.person.say_hello(jane)
     # the say_hello function returns
-    'Hello, my name is jane blow and I am 30'
+    'Hello, my name is jane blow and I am XX'
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``last_name`` and ``age`` are different.
 
@@ -4213,12 +4213,12 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         first_name = person.get('first_name')
         last_name = person.get('last_name')
         # return None
-        # return 'Hello, my name is joe blow and I am 30'
+        # return 'Hello, my name is joe blow and I am XX'
         return (
             # f'Hello, my name is {first_name}'
-            # ' blow and I am 30'
+            # ' blow and I am XX'
             f'Hello, my name is {first_name} {last_name}'
-            ' and I am 30'
+            ' and I am XX'
         )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -4227,8 +4227,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :emphasize-text: 30 35
 
     AssertionError:
-        'Hello, my name is jane doe and I am 30'
-     != 'Hello, my name is jane doe and I am 35'
+        'Hello, my name is jane doe and I am XX'
+     != 'Hello, my name is jane doe and I am YY'
 
   the values for ``last_name`` are the same because
 
@@ -4275,14 +4275,14 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
       return (
           f'Hello, my name is {first_name} {last_name}'
-          ' and I am 30'
+          ' and I am XX'
       )
 
   .. code-block:: python
 
     src.person.say_hello(jane)
     # the say_hello function returns
-    'Hello, my name is jane doe and I am 30'
+    'Hello, my name is jane doe and I am XX'
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``age`` are different.
 
@@ -4298,12 +4298,12 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         last_name = person.get('last_name')
         age = person.get('age')
         # return None
-        # return 'Hello, my name is joe blow and I am 30'
+        # return 'Hello, my name is joe blow and I am XX'
         return (
             # f'Hello, my name is {first_name}'
-            # ' blow and I am 30'
+            # ' blow and I am XX'
             f'Hello, my name is {first_name} {last_name}'
-            # ' and I am 30'
+            # ' and I am XX'
             f' and I am {age}'
         )
 
@@ -4362,7 +4362,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
     src.person.say_hello(jane)
     # the say_hello function returns
-    'Hello, my name is jane doe and I am 35'
+    'Hello, my name is jane doe and I am YY'
 
 * I remove the commented lines
 
@@ -4420,8 +4420,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is john smith and I am 446'
-     != 'Hello, my name is jane doe and I am 35'
+        'Hello, my name is john smith and I am AAA'
+     != 'Hello, my name is jane doe and I am YY'
 
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
@@ -4486,8 +4486,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is mary public and I am 26'
-     != 'Hello, my name is john smith and I am 446'
+        'Hello, my name is mary public and I am ZZ'
+     != 'Hello, my name is john smith and I am AAA'
 
 * I change ``my_expectation`` to match ``reality`` for ``mary``
 

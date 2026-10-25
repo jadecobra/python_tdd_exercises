@@ -1218,9 +1218,9 @@ because
 
   .. code-block:: python
 
-    AssertionError: 'Hello, my name is jane doe and I am 35.' != None
+    AssertionError: 'Hello, my name is jane doe and I am YY.' != None
 
-* I change the expectation to ``'Hello, my name is jane doe and I am 35.'``
+* I change the expectation to ``'Hello, my name is jane doe and I am YY.'``
 
   .. code-block:: python
     :lineno-start: 93
@@ -1229,7 +1229,7 @@ because
                 else:
                     self.assertEqual(
                         reality,
-                        'Hello, my name is jane doe and I am 35.'
+                        'Hello, my name is jane doe and I am YY.'
                     )
 
         def test_person_factory(self):
@@ -1238,8 +1238,8 @@ because
 
   .. code-block:: python
 
-    AssertionError: 'Hello, my name is joe blow and I am 30.'
-                 != 'Hello, my name is jane doe and I am 35.'
+    AssertionError: 'Hello, my name is joe blow and I am XX.'
+                 != 'Hello, my name is jane doe and I am YY.'
 
   because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``'joe'``)
 
@@ -1989,15 +1989,15 @@ the subTest method
   .. code-block:: python
 
     SUBFAILED(first_name='jane', year_of_birth=1991) ... -
-        AssertionError: 'Hello, my name is jane doe and I am 35.' != None
+        AssertionError: 'Hello, my name is jane doe and I am YY.' != None
     SUBFAILED(first_name='joe', year_of_birth=1996) ... -
-        AssertionError: 'Hello, my name is joe blow and I am 30.' != None
+        AssertionError: 'Hello, my name is joe blow and I am XX.' != None
     SUBFAILED(first_name='mary', year_of_birth=2000) ... -
-        AssertionError: 'Hello, my name is mary public and I am 26.' != None
+        AssertionError: 'Hello, my name is mary public and I am ZZ.' != None
     SUBFAILED(first_name='john', year_of_birth=1980) ... -
-        AssertionError: 'Hello, my name is john smith and I am 46.' != None
+        AssertionError: 'Hello, my name is john smith and I am AA.' != None
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` to ``'Hello, my name is jane doe and I am 35.'``
+* I change the expectation of the :ref:`assertion<what is an assertion?>` to ``'Hello, my name is jane doe and I am YY.'``
 
   .. code-block:: python
     :lineno-start: 82
@@ -2006,7 +2006,7 @@ the subTest method
                     else:
                         self.assertEqual(
                             reality,
-                            'Hello, my name is jane doe and I am 35.'
+                            'Hello, my name is jane doe and I am YY.'
                         )
 
         def test_say_hello_function(self):
@@ -2016,14 +2016,14 @@ the subTest method
   .. code-block:: python
 
     SUBFAILED(first_name='joe', year_of_birth=1996) ...test_say_hello_method -
-        AssertionError: 'Hello, my name is joe blow and I am 30.'
-                     != 'Hello, my name is jane doe and I am 35.'
+        AssertionError: 'Hello, my name is joe blow and I am XX.'
+                     != 'Hello, my name is jane doe and I am YY.'
     SUBFAILED(first_name='mary', year_of_birth=2000) ...test_say_hello_method -
-        AssertionError: 'Hello, my name is mary public and I am 26.'
-                     != 'Hello, my name is jane doe and I am 35.'
+        AssertionError: 'Hello, my name is mary public and I am ZZ.'
+                     != 'Hello, my name is jane doe and I am YY.'
     SUBFAILED(first_name='john', year_of_birth=1980) ...test_say_hello_method -
-        AssertionError: 'Hello, my name is john smith and I am 46.'
-                     != 'Hello, my name is jane doe and I am 35.'.
+        AssertionError: 'Hello, my name is john smith and I am AA.'
+                     != 'Hello, my name is jane doe and I am YY.'.
 
   the :ref:`assertion<what is an assertion?>` now fails for the other people in the ``people`` tuple_.
 
@@ -3027,7 +3027,7 @@ the test passes.
 extract truth_table object attribute
 *********************************************************************************
 
-The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`.
+The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`. I can make an :ref:`object attribute<what is an object attribute?>` to remove the repetition.
 
 * I add an :ref:`object attribute<what is an object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
 
@@ -3509,6 +3509,193 @@ the test passes.
 
     git commit -am \
     'use assertRaises with test_when_year_of_birth_is_the_future'
+
+----
+
+*********************************************************************************
+extract test_if_person_is_not_alive
+*********************************************************************************
+
+:ref:`test_when_person_is_older_than_120` and :ref:`test_when_year_of_birth_is_the_future` both check if ValueError_ is :ref:`raised<how to raise an Exception>` if ``year_of_birth`` makes the person older than ``120`` or younger than ``0``
+
+.. code-block:: python
+
+  age = self.calculate_age(year_of_birth)
+
+  with self.assertRaisesRegex(
+      ValueError,
+      f'a {age} year old person is not alive.'
+  ):
+      src.person.Person(
+          first_name='first_name',
+          last_name='last_name',
+          sex='M',
+          year_of_birth=year_of_birth,
+      )
+
+I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test with an :ref:`assertion<what is an assertion?>` for if a person is born in the future or is older than ``120``
+
+.. code-block:: python
+  :lineno-start: 132
+  :emphasize-lines: 5-21
+
+                  self.assertEqual(
+                      a_person.can_get_license(), row[-1]
+                  )
+
+      def test_if_person_is_not_alive(self):
+          years = (
+              self.this_year+1,
+              self.this_year-121,
+          )
+          for year_of_birth in years:
+              with self.subTest(year_of_birth=year_of_birth):
+                  with self.assertRaisesRegex(
+                      ValueError,
+                      'BOOM!!!'
+                  ):
+                      src.person.Person(
+                          first_name='first_name',
+                          last_name='last_name',
+                          sex='M',
+                          year_of_birth=year_of_birth,
+                      )
+
+      def test_when_person_is_older_than_120(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  SUBFAILED(year_of_birth=XXXX) ...AssertionError:
+      "BOOM!!!" does not match "a -1 year old person is not alive."
+  SUBFAILED(year_of_birth=YYYY) ...AssertionError:
+      "BOOM!!!" does not match "a 121 year old person is not alive."
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the error message in :ref:`test_if_person_is_not_alive` to match
+
+.. code-block:: python
+  :lineno-start: 136
+  :emphasize-lines:
+
+      def test_if_person_is_not_alive(self):
+          years = (
+              self.this_year+1,
+              self.this_year-121,
+          )
+          for year_of_birth in years:
+              with self.subTest(year_of_birth=year_of_birth):
+                  with self.assertRaisesRegex(
+                      ValueError,
+                      f'a {age} year old person is not alive.'
+                  ):
+                      src.person.Person(
+                          first_name='first_name',
+                          last_name='last_name',
+                          sex='M',
+                          year_of_birth=year_of_birth,
+                      )
+
+      def test_when_person_is_older_than_120(self):
+
+the test passses.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I can put the two `with statements`_ together
+
+  .. code-block:: python
+    :lineno-start: 136
+
+* I remove :ref:`test_when_person_is_older_than_120` because it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 136
+
+        def test_if_person_is_not_alive(self):
+            years = (
+                self.this_year+1,
+                self.this_year-121,
+            )
+            for year_of_birth in years:
+                with self.subTest(year_of_birth=year_of_birth):
+                    with self.assertRaisesRegex(
+                        ValueError,
+                        f'a {age} year old person is not alive.'
+                    ):
+                        src.person.Person(
+                            first_name='first_name',
+                            last_name='last_name',
+                            sex='M',
+                            year_of_birth=year_of_birth,
+                        )
+
+        def test_when_year_of_birth_is_the_future(self):
+
+* I remove :ref:`test_when_year_of_birth_is_the_future` because it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 136
+
+        def test_if_person_is_not_alive(self):
+        years = (
+            self.this_year+1,
+            self.this_year-121,
+        )
+        for year_of_birth in years:
+            with self.subTest(year_of_birth=year_of_birth):
+                with self.assertRaisesRegex(
+                    ValueError,
+                    f'a {age} year old person is not alive.'
+                ):
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=year_of_birth,
+                    )
+
+    def test_when_year_of_birth_is_not_an_integer(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract test_if_person_is_not_alive'
+
+
+
+
+
+
+
+
 
 ----
 

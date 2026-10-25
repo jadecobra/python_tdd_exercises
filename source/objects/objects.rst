@@ -499,7 +499,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   .. code-block:: python
 
-    AssertionError: None != 'Hello, my name is joe blow and I am 30'
+    AssertionError: None != 'Hello, my name is joe blow and I am XX'
 
 * I copy the value from the terminal_ and paste it in :ref:`the return statement` for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`object<everything is an object>` in ``src/person/__init__.py``
 
@@ -511,7 +511,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         @staticmethod
         def say_hello(person):
             # return None
-            return 'Hello, my name is joe blow and I am 30'
+            return 'Hello, my name is joe blow and I am XX'
 
   the test passes.
 
@@ -657,8 +657,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-          'Hello, my name is joe blow and I am 30'
-       != 'Hello, my name is jane doe and I am 35'
+          'Hello, my name is joe blow and I am XX'
+       != 'Hello, my name is jane doe and I am YY'
 
   Progress. I can make the ``say_hello`` :ref:`function<what is a function?>` use :ref:`attributes<what is an object attribute?>` of the person it receives as input to make the message.
 
@@ -672,10 +672,10 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         @staticmethod
         def say_hello(person):
             # return None
-            # return 'Hello, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am XX'
             return (
                 f'Hello, my name is {person.first_name} blow'
-                ' and I am 30'
+                ' and I am XX'
             )
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -704,8 +704,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is jane blow and I am 30'
-     != 'Hello, my name is joe blow and I am 30'
+        'Hello, my name is jane blow and I am XX'
+     != 'Hello, my name is joe blow and I am XX'
 
   because I used a fixed value (``jane``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``joe``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
@@ -740,8 +740,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is jane blow and I am 30'
-     != 'Hello, my name is joe blow and I am 30'
+        'Hello, my name is jane blow and I am XX'
+     != 'Hello, my name is joe blow and I am XX'
 
 * I change the :ref:`variable<what is a variable?>` to an :ref:`object attribute<what is an object attribute?>` by adding ``self.`` before it
 
@@ -764,11 +764,11 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-text: doe blow 30 35
+    :emphasize-text: doe blow XX YY
 
     AssertionError:
-        'Hello, my name is jane blow and I am 30'
-     != 'Hello, my name is jane doe and I am 35'
+        'Hello, my name is jane blow and I am XX'
+     != 'Hello, my name is jane doe and I am YY'
 
   the first names are the same, the last names and ages are different
 
@@ -784,12 +784,12 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         @staticmethod
         def say_hello(person):
             # return None
-            # return 'Hello, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am XX'
             return (
                 # f'Hello, my name is {person.first_name} blow'
                 f'Hello, my name is {person.first_name}'
                 f' {person.last_name}'
-                ' and I am 30'
+                ' and I am XX'
             )
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -820,8 +820,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is joe doe and I am 30'
-     != 'Hello, my name is joe blow and I am 30'
+        'Hello, my name is joe doe and I am XX'
+     != 'Hello, my name is joe blow and I am XX'
 
   because I used a fixed value (``doe``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``blow``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
@@ -854,8 +854,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is joe doe and I am 30'
-     != 'Hello, my name is joe blow and I am 30'
+        'Hello, my name is joe doe and I am XX'
+     != 'Hello, my name is joe blow and I am XX'
 
 * I change ``last_name`` to an :ref:`object attribute<what is an object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
@@ -880,11 +880,11 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-text: doe blow 30 35
+    :emphasize-text: doe blow XX YY
 
     AssertionError:
-        'Hello, my name is jane None and I am 30'
-     != 'Hello, my name is jane doe and I am 35'
+        'Hello, my name is jane None and I am XX'
+     != 'Hello, my name is jane doe and I am YY'
 
   - the first names are the same and last names and ages are different
   - the :ref:`__init__ method<the constructor method>` used :ref:`None<what is None?>` for the value of ``self.last_name`` because the :ref:`default value<test_optional_arguments>` for the ``last_name`` parameter of the :ref:`method<what is a method?>` is :ref:`None<what is None?>`. This means that
@@ -932,8 +932,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     :emphasize-text: 30 35
 
     AssertionError:
-        'Hello, my name is jane doe and I am 30'
-     != 'Hello, my name is jane doe and I am 35'
+        'Hello, my name is jane doe and I am XX'
+     != 'Hello, my name is jane doe and I am YY'
 
   the age is the only thing that is different
 
@@ -953,12 +953,12 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
               - person.year_of_birth
             )
             # return None
-            # return 'Hello, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am XX'
             return (
                 # f'Hello, my name is {person.first_name} blow'
                 f'Hello, my name is {person.first_name}'
                 f' {person.last_name}'
-                # f' and I am 30'
+                # f' and I am XX'
                 f' and I am {age}'
             )
 
@@ -990,8 +990,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is joe blow and I am 35'
-     != 'Hello, my name is joe blow and I am 30'
+        'Hello, my name is joe blow and I am YY'
+     != 'Hello, my name is joe blow and I am XX'
 
   because I used a fixed value (``1991``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``datetime.datetime.now().year-1996``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
@@ -1022,8 +1022,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is joe blow and I am 35'
-     != 'Hello, my name is joe blow and I am 30'
+        'Hello, my name is joe blow and I am YY'
+     != 'Hello, my name is joe blow and I am XX'
 
 * I change ``year_of_birth`` to an :ref:`object attribute<what is an object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
@@ -1125,12 +1125,12 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             # )
             age = calculate_age(person.year_of_birth)
             # return None
-            # return 'Hello, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am XX'
             return (
                 # f'Hello, my name is {person.first_name} blow'
                 f'Hello, my name is {person.first_name}'
                 f' {person.last_name}'
-                # f' and I am 30'
+                # f' and I am XX'
                 f' and I am {age}'
             )
 
@@ -1152,12 +1152,12 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             # age = calculate_age(person.year_of_birth)
             age = calculate_age(self.year_of_birth)
             # return None
-            # return 'Hello, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am XX'
             return (
                 # f'Hello, my name is {person.first_name} blow'
                 # f'Hello, my name is {person.first_name}'
                 # f' {person.last_name}'
-                # f' and I am 30'
+                # f' and I am XX'
                 f'Hello, my name is {self.first_name}'
                 f' {self.last_name}'
                 f' and I am {age}'
@@ -1280,8 +1280,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is john smith and I am 446'
-     != 'Hello, my name is jane doe and I am 35'
+        'Hello, my name is john smith and I am AAA'
+     != 'Hello, my name is jane doe and I am YY'
 
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
@@ -1338,8 +1338,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hello, my name is mary public and I am 26'
-     != 'Hello, my name is john smith and I am 446'
+        'Hello, my name is mary public and I am ZZ'
+     != 'Hello, my name is john smith and I am AAA'
 
 * I change ``my_expectation`` to match ``reality`` for ``mary``
 
