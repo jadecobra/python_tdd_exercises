@@ -2396,7 +2396,7 @@ The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mar
 
 .. code-block:: python
 
-    a_person = src.person.Person(
+    an_instance = src.person.Person(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -2404,7 +2404,7 @@ The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mar
         is_citizen=False | True,
         passed_test=False | True,
     )
-    self.assertEqual(a_person.can_vote(), False | True)
+    self.assertEqual(an_instance.can_vote(), False | True)
 
 I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
@@ -2473,14 +2473,14 @@ age < 18        is citizen     can vote
             )
             for row in truth_table:
                 with self.subTest(row=row):
-                    a_person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='F',
                         year_of_birth=row[0],
                         is_citizen=row[1],
                     )
-                    self.assertEqual(a_person.can_vote(), True)
+                    self.assertEqual(an_instance.can_vote(), True)
 
         def test_joe(self):
 
@@ -2488,8 +2488,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  SUBFAILED(row=(2009, True)) ...test_if_person_can_vote -
-      AssertionError: False != True
+  SUBFAILED(row=(2009, True)) ...AssertionError: False != True
 
 ----
 
@@ -2511,14 +2510,14 @@ I change :green:`True` to :red:`False` in the :ref:`assertion<what is an asserti
           )
           for row in truth_table:
               with self.subTest(row=row):
-                  a_person = src.person.Person(
+                  an_instance = src.person.Person(
                       first_name='first_name',
                       last_name='last_name',
                       sex='F',
                       year_of_birth=row[0],
                       is_citizen=row[1],
                   )
-                  self.assertEqual(a_person.can_vote(), False)
+                  self.assertEqual(an_instance.can_vote(), False)
 
       def test_joe(self):
 
@@ -2602,14 +2601,14 @@ the test passes.
 
             for row in truth_table:
                 with self.subTest(row=row):
-                    a_person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='F',
                         year_of_birth=row[0],
                         is_citizen=row[1],
                     )
-                    self.assertEqual(a_person.can_vote(), row[3])
+                    self.assertEqual(an_instance.can_vote(), row[3])
 
     def test_joe(self):
 
@@ -2631,7 +2630,7 @@ the test passes.
     :lineno-start: 119
     :emphasize-lines: 1
 
-                    self.assertEqual(a_person.can_vote(), row[2])
+                    self.assertEqual(an_instance.can_vote(), row[2])
 
   the test passes.
 
@@ -2656,7 +2655,7 @@ the test passes.
             )
             for row in truth_table:
                 with self.subTest(row=row):
-                    a_person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='F',
@@ -2664,7 +2663,7 @@ the test passes.
                         is_citizen=row[1],
                     )
                     self.assertEqual(
-                        a_person.can_vote(), row[2]
+                        an_instance.can_vote(), row[2]
                     )
 
         def test_joe(self):
@@ -2795,7 +2794,7 @@ The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mar
 
 .. code-block:: python
 
-    a_person = src.person.Person(
+    an_instance = src.person.Person(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -2803,7 +2802,9 @@ The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mar
         is_citizen=False | True,
         passed_test=False | True,
     )
-    self.assertEqual(a_person.can_get_license(), False | True)
+    self.assertEqual(
+        an_instance.can_get_license(), False | True
+    )
 
 I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
@@ -2831,7 +2832,7 @@ age < 18        passed test    can get license
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :red:`NOT younger` than ``18`` AND has :red:`NOT passed` the test.
+I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :red:`NOT younger` than ``18`` AND has :red:`NOT passed` the test
 
 ==============  ============== ================
 age < 18        passed test    can get license
@@ -2843,7 +2844,7 @@ age < 18        passed test    can get license
   :lineno-start: 120
   :emphasize-lines: 3-18
 
-                    self.assertEqual(a_person.can_vote(), row[2])
+                    self.assertEqual(an_instance.can_vote(), row[2])
 
         def test_if_person_can_get_license(self):
             truth_table = (
@@ -2851,7 +2852,7 @@ age < 18        passed test    can get license
             )
             for row in truth_table:
                 with self.subTest(row=row):
-                    a_person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
@@ -2859,7 +2860,7 @@ age < 18        passed test    can get license
                         passed_test=row[1],
                     )
                     self.assertEqual(
-                        a_person.can_get_license(), True
+                        an_instance.can_get_license(), True
                     )
 
         def test_joe(self):
@@ -2887,7 +2888,7 @@ I change the expectation of the :ref:`assertion<what is an assertion?>`
   :emphasize-lines: 2
 
                   self.assertEqual(
-                      a_person.can_get_license(), False
+                      an_instance.can_get_license(), False
                   )
 
 the test passes.
@@ -2934,14 +2935,14 @@ the test passes.
     :emphasize-lines: 2
 
                     self.assertEqual(
-                        a_person.can_get_license(), row[-1]
+                        an_instance.can_get_license(), row[-1]
                     )
 
         def test_joe(self):
 
   the test passes.
 
-* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger than` ``18`` AND has :red:`NOT passed` the test
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger` than ``18`` AND has :red:`NOT passed` the test
 
   ==============  ============== ================
   age < 18        passed test    can get license
@@ -2963,7 +2964,7 @@ the test passes.
 
   the test is still green.
 
-* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger than` ``18`` AND has :green:`passed` the test
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger` than ``18`` AND has :green:`passed` the test
 
   ==============  ============== ================
   age < 18        passed test    can get license
@@ -3000,7 +3001,7 @@ the test passes.
             )
             for row in truth_table:
                 with self.subTest(row=row):
-                    a_person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
@@ -3008,7 +3009,7 @@ the test passes.
                         passed_test=row[1],
                     )
                     self.assertEqual(
-                        a_person.can_get_license(), row[-1]
+                        an_instance.can_get_license(), row[-1]
                     )
 
         def test_when_person_is_older_than_120(self):
@@ -3081,14 +3082,14 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
         def test_if_person_can_vote(self):
             for row in self.truth_table:
                 with self.subTest(row=row):
-                    a_person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='F',
                         year_of_birth=row[0],
                         is_citizen=row[1],
                     )
-                    self.assertEqual(a_person.can_vote(), row[2])
+                    self.assertEqual(an_instance.can_vote(), row[2])
 
         def test_if_person_can_get_license(self):
 
@@ -3119,7 +3120,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
         def test_if_person_can_get_license(self):
             for row in self.truth_table:
                 with self.subTest(row=row):
-                    a_person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
@@ -3127,7 +3128,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
                         passed_test=row[1],
                     )
                     self.assertEqual(
-                        a_person.can_get_license(), row[-1]
+                        an_instance.can_get_license(), row[-1]
                     )
 
         def test_when_person_is_older_than_120(self):
@@ -3139,6 +3140,1541 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 
     git commit -am \
     'extract truth_table object attribute'
+
+----
+
+*********************************************************************************
+extract test_person_class
+*********************************************************************************
+
+:ref:`test_say_hello_method<extract test_say_hello_method>`, :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call methods<how to call a function with input>` and compare the results in :ref:`assertions<what is an assertion?>`
+
+.. code-block:: python
+
+  reality = src.person.Person(
+      first_name=first_name,
+      last_name=last_name,
+      sex=sex,
+      year_of_birth=year_of_birth,
+  ).say_hello()
+
+  self.assertEqual(
+      reality,
+      (
+          f'Hello, my name is {first_name}'
+          f' {last_name} and I am'
+          f' {self.calculate_age(year_of_birth)}.'
+      )
+  )
+
+.. code-block:: python
+
+  an_instance = src.person.Person(
+      first_name='first_name',
+      last_name='last_name',
+      sex='M',
+      year_of_birth=row[0],
+      passed_test=row[1],
+  )
+  self.assertEqual(an_instance.can_vote(), row[2])
+  self.assertEqual(an_instance.can_get_license(), row[-1])
+
+I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test with the code from :ref:`test_say_hello_method<extract test_say_hello method>` for the :ref:`Person class<add Person class>`
+
+.. code-block:: python
+  :lineno-start: 23
+  :emphasize-lines: 4-9
+
+    def calculate_age(self, year_of_birth):
+        return self.this_year - year_of_birth
+
+    def test_person_class(self):
+        for a_person in self.people:
+            first_name = a_person[0]
+            last_name = a_person[1]
+            sex = a_person[2]
+            year_of_birth = a_person[3]
+
+.. code-block:: python
+  :lineno-start: 33
+  :emphasize-lines: 1-25
+
+            with self.subTest(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            ):
+                try:
+                    an_instance = src.person.Person(
+                        first_name=first_name,
+                        last_name=last_name,
+                        sex=sex,
+                        year_of_birth=year_of_birth,
+                    )
+                except TypeError as error:
+                    self.assertEqual(
+                        error.args[0],
+                        f"'{year_of_birth}' is not an integer"
+                    )
+                else:
+                    self.assertEqual(
+                        an_instance.boom(),
+                        (
+                            f'Hello, my name is {first_name}'
+                            f' {last_name} and I am'
+                            f' {self.calculate_age(year_of_birth)}.'
+                        )
+                    )
+
+    def test_say_hello_method(self):
+
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  SUBFAILED(first_name='jane', year_of_birth=1991)
+      AttributeError: 'Person' object has no attribute 'boom'
+  SUBFAILED(first_name='joe', year_of_birth=1996)
+      AttributeError: 'Person' object has no attribute 'boom'
+  SUBFAILED(first_name='mary', year_of_birth=2000)
+      AttributeError: 'Person' object has no attribute 'boom'
+  SUBFAILED(first_name='john', year_of_birth=1980)
+      AttributeError: 'Person' object has no attribute 'boom'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change ``boom`` to ``say_hello`` in the :ref:`assertion<what is an assertion?>`
+
+.. code-block:: python
+  :lineno-start: 49
+  :emphasize-lines: 3
+
+                  else:
+                      self.assertEqual(
+                          an_instance.say_hello(),
+                          (
+                              f'Hello, my name is {first_name}'
+                              f' {last_name} and I am'
+                              f' {self.calculate_age(year_of_birth)}.'
+                          )
+                      )
+
+      def test_say_hello_method(self):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove :ref:`test_say_hello_method<extract test_say_hello method>` because it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 49
+
+                    else:
+                        self.assertEqual(
+                            an_instance.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+
+        def test_say_hello_function(self):
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` to :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 10
+
+                    else:
+                        self.assertEqual(
+                            an_instance.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        self.assertEqual(person.can_vote(), False)
+
+        def test_say_hello_function(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(first_name='jane', year_of_birth=1991)
+        AssertionError: True != False
+    SUBFAILED(first_name='joe', year_of_birth=1996)
+        AssertionError: True != False
+    SUBFAILED(first_name='mary', year_of_birth=2000)
+        AssertionError: True != False
+    SUBFAILED(first_name='john', year_of_birth=1980)
+        AssertionError: True != False
+
+* I add values for ``is_citizen`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5-24
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+        people = (
+            (
+                'jane', 'doe', 'F', 1991,
+                True,
+            ),
+            (
+                'joe', 'blow', 'M', 1996,
+                True,
+            ),
+            (
+                'mary', 'public', 'F', 2000,
+                False,
+            ),
+            (
+                'john', 'smith', 'M', 1980,
+                False,
+            ),
+            (
+                'first_name', 'last_name', 'F', 'a_string',
+                False,
+            )
+        )
+
+* I use the values for the ``is_citizen`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person class>` in :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 7
+
+        def test_person_class(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+                is_citizen = a_person[4]
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 11
+
+                with self.subTest(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ):
+                    try:
+                        an_instance = src.person.Person(
+                            first_name=first_name,
+                            last_name=last_name,
+                            sex=sex,
+                            year_of_birth=year_of_birth,
+                            is_citizen=is_citizen,
+                        )
+                    except TypeError as error:
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` to use the value of the ``is_citizen`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 10
+
+                    else:
+                        self.assertEqual(
+                            an_instance.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        self.assertEqual(an_instance.can_vote(), is_citizen)
+
+        def test_say_hello_function(self):
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` to :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 11
+
+                else:
+                        self.assertEqual(
+                            an_instance.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        self.assertEqual(an_instance.can_vote(), is_citizen)
+                        self.assertEqual(an_instance.can_get_license(), True)
+
+        def test_say_hello_function(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(first_name='jane', year_of_birth=1991)
+        AssertionError: False != True
+    SUBFAILED(first_name='joe', year_of_birth=1996)
+        AssertionError: False != True
+    SUBFAILED(first_name='mary', year_of_birth=2000)
+        AssertionError: False != True
+    SUBFAILED(first_name='john', year_of_birth=1980)
+        AssertionError: False != True
+
+* I add values for ``passed_test`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 4, 8, 12, 16, 20
+
+        people = (
+            (
+                'jane', 'doe', 'F', 1991,
+                True, True,
+            ),
+            (
+                'joe', 'blow', 'M', 1996,
+                True, False,
+            ),
+            (
+                'mary', 'public', 'F', 2000,
+                False, True,
+            ),
+            (
+                'john', 'smith', 'M', 1980,
+                False, False,
+            ),
+            (
+                'first_name', 'last_name', 'F', 'a_string',
+                False, False,
+            )
+        )
+
+* I use the values for the ``passed_test`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person class>` in :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 8
+
+        def test_person_class(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+                is_citizen = a_person[4]
+                passed_test = a_person[5]
+
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 12
+
+                with self.subTest(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ):
+                    try:
+                        an_instance = src.person.Person(
+                            first_name=first_name,
+                            last_name=last_name,
+                            sex=sex,
+                            year_of_birth=year_of_birth,
+                            is_citizen=is_citizen,
+                            passed_test=passed_test,
+                        )
+                    except TypeError as error:
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` to use the value of the ``passed_test`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 68
+    :emphasize-lines: 11-13
+
+                    else:
+                        self.assertEqual(
+                            an_instance.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        self.assertEqual(an_instance.can_vote(), is_citizen)
+                        self.assertEqual(
+                            an_instance.can_get_license(), passed_test
+                        )
+
+        def test_say_hello_function(self):
+
+  the test passes.
+
+* :ref:`test_person_class<extract test_person_class>` is missing the cases for if a person :green:`younger` than ``18``
+
+  ==============  ============== ==============
+  age < 18        is citizen     can vote
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :red:`False`
+  ==============  ============== ==============
+
+  ==============  ============== ================
+  age < 18        passed test    can get license
+  ==============  ============== ================
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :red:`False`
+  ==============  ============== ================
+
+  which gives this :ref:`truth table` when put together
+
+  ==============  ============== ============== ==============  ================
+  age < 18        is citizen     passed_test    can vote        can_get_license
+  ==============  ============== ============== ==============  ================
+  :green:`True`   :green:`True`  :green:`True`  :red:`False`    :red:`False`
+  :green:`True`   :red:`False`   :green:`True`  :red:`False`    :red:`False`
+  :green:`True`   :green:`True`  :red:`False`   :red:`False`    :red:`False`
+  :green:`True`   :red:`False`   :red:`False`   :red:`False`    :red:`False`
+  ==============  ============== ============== ==============  ================
+
+  I add tuples_ for these cases to the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+
+    people = (
+        (
+            'jane', 'doe', 'F', 1991,
+            True, True,
+        ),
+        (
+            'joe', 'blow', 'M', 1996,
+            True, False,
+        ),
+        (
+            'mary', 'public', 'F', 2000,
+            False, True,
+        ),
+        (
+            'john', 'smith', 'M', 1980,
+            False, False,
+        ),
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 1-24
+
+        (
+            # underage, is_citizen, passed_test
+            'first_name', 'last_name', 'M',
+            datetime.date.today().year-17,
+            True, True,
+        ),
+        (
+            # underage, not is_citizen, passed_test
+            'first_name', 'last_name', 'M',
+            datetime.date.today().year-17,
+            False, True,
+        ),
+        (
+            # underage, is_citizen, not passed_test
+            'first_name', 'last_name', 'M',
+            datetime.date.today().year-17,
+            True, False,
+        ),
+        (
+            # underage, not is_citizen, not passed_test
+            'first_name', 'last_name', 'M',
+            datetime.date.today().year-17,
+            False, False,
+        ),
+        (
+            'first_name', 'last_name', 'F', 'a_string',
+            False, False,
+        )
+    )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(first_name='first_name', year_of_birth=YYYY) ...
+        AssertionError: False != True
+    SUBFAILED(first_name='first_name', year_of_birth=YYYY) ...
+        AssertionError: False != True
+    SUBFAILED(first_name='first_name', year_of_birth=YYYY) ...
+        AssertionError: False != True
+
+  I need a better error message, so I know which tuples_ caused the failures.
+
+* I change the names in :ref:`the subTest method` to show the entire tuple_ in :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 10
+
+        def test_person_class(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+                is_citizen = a_person[4]
+                passed_test = a_person[5]
+
+                with self.subTest(a_person):
+                    try:
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    SUBFAILED[('first_name', 'last_name', 'M', YYYY, True, True)] ...
+        AssertionError: False != True
+    SUBFAILED[('first_name', 'last_name', 'M', YYYY, False, True)] ...
+        AssertionError: False != True
+    SUBFAILED[('first_name', 'last_name', 'M', YYYY, True, False)] ...
+        AssertionError: False != True
+
+  because I used the value for the ``is_citizen`` :ref:`variable<what is a variable?>` as the expectation of the :ref:`assertion<what is an assertion>` for the :ref:`can_vote method<add can_vote method>` which is wrong when the person is :green:`younger` than ``18``, the expectation should always be :red:`False`.
+
+* I add the expectation for all the cases of the :ref:`can_vote method<add can_vote method>` to the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 4, 8, 12
+
+        people = (
+            (
+                'jane', 'doe', 'F', 1991,
+                True, True, True,
+            ),
+            (
+                'joe', 'blow', 'M', 1996,
+                True, False, True,
+            ),
+            (
+                'mary', 'public', 'F', 2000,
+                False, True, False,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3, 9, 15
+
+            (
+                'john', 'smith', 'M', 1980,
+                False, False, False,
+            ),
+            (
+                # underage, is_citizen, passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                True, True, False,
+            ),
+            (
+                # underage, not is_citizen, passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                False, True, False,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5, 11, 15
+
+            (
+                # underage, is_citizen, not passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                True, False, False,
+            ),
+            (
+                # underage, not is_citizen, not passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                False, False, False,
+            ),
+            (
+                'first_name', 'last_name', 'F', 'a_string',
+                False, False, False,
+            )
+        )
+
+* I remove the ``is_citizen`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` in :ref:`test_person_class<extract test_person_class>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 7
+
+        def test_person_class(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+                # is_citizen = a_person[4]
+                passed_test = a_person[5]
+
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 8-9
+
+                with self.subTest(a_person):
+                    try:
+                        person = src.person.Person(
+                            first_name=first_name,
+                            last_name=last_name,
+                            sex=sex,
+                            year_of_birth=year_of_birth,
+                            # is_citizen=is_citizen,
+                            is_citizen=a_person[4],
+                            passed_test=passed_test,
+                        )
+                    except TypeError as error:
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 10-11
+
+                    else:
+                        self.assertEqual(
+                            person.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        # self.assertEqual(person.can_vote(), is_citizen)
+                        self.assertEqual(person.can_vote(), a_person[6])
+                        self.assertEqual(
+                            person.can_get_license(), passed_test
+                        )
+
+        def test_say_hello_function(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED[('first_name', 'last_name', 'M', YYYY, True, True, False)] ...
+        AssertionError: False != True
+    SUBFAILED[('first_name', 'last_name', 'M', YYYY, False, True, False)] ...
+        AssertionError: False != True
+
+  because I used the value for the ``passed_test`` :ref:`variable<what is a variable?>` as the expectation of the :ref:`assertion<what is an assertion>` for the :ref:`can_get_license method<add can_get_license method>` which is wrong when the person is :green:`younger` than ``18``, the expectation should always be :red:`False`.
+
+* I add the expectation for all the cases of the :ref:`can_get_license method<add can_get_license method>` to the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 4, 8, 12
+
+        people = (
+            (
+                'jane', 'doe', 'F', 1991,
+                True, True, True, True,
+            ),
+            (
+                'joe', 'blow', 'M', 1996,
+                True, False, True, False,
+            ),
+            (
+                'mary', 'public', 'F', 2000,
+                False, True, False, True,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3, 9, 15
+
+            (
+                'john', 'smith', 'M', 1980,
+                False, False, False, False,
+            ),
+            (
+                # underage, passed_test, passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                True, True, False, False,
+            ),
+            (
+                # underage, not passed_test, passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                False, True, False, False,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5, 11, 15
+
+            (
+                # underage, passed_test, not passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                True, False, False, False,
+            ),
+            (
+                # underage, not passed_test, not passed_test
+                'first_name', 'last_name', 'M',
+                datetime.date.today().year-17,
+                False, False, False, False,
+            ),
+            (
+                'first_name', 'last_name', 'F', 'a_string',
+                False, False, False, False,
+            )
+        )
+        truth_table = (
+            (datetime.date.today().year-17, True, False),
+            (datetime.date.today().year-17, False, False),
+            (datetime.date.today().year-18, True, True),
+            (datetime.date.today().year-18, False, False),
+        )
+
+        def calculate_age(self, year_of_birth):
+
+* I remove the ``passed_test`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` in :ref:`test_person_class<extract test_person_class>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 8
+
+        def test_person_class(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+                # is_citizen = a_person[4]
+                # passed_test = a_person[5]
+
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 10-11
+
+                with self.subTest(a_person):
+                    try:
+                        person = src.person.Person(
+                            first_name=first_name,
+                            last_name=last_name,
+                            sex=sex,
+                            year_of_birth=year_of_birth,
+                            # is_citizen=is_citizen,
+                            is_citizen=a_person[4],
+                            # passed_test=passed_test,
+                            passed_test=a_person[5],
+                        )
+                    except TypeError as error:
+
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 13-14
+
+                    else:
+                        self.assertEqual(
+                            person.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        # self.assertEqual(person.can_vote(), is_citizen)
+                        self.assertEqual(person.can_vote(), a_person[6])
+                        self.assertEqual(
+                            # person.can_get_license(), passed_test
+                            person.can_get_license(), a_person[7]
+                        )
+
+        def test_say_hello_function(self):
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 65
+
+        def test_person_class(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+  .. code-block:: python
+    :lineno-start: 72
+
+                with self.subTest(a_person):
+                    try:
+                        person = src.person.Person(
+                            first_name=first_name,
+                            last_name=last_name,
+                            sex=sex,
+                            year_of_birth=year_of_birth,
+                            is_citizen=a_person[4],
+                            passed_test=a_person[5],
+                        )
+                    except TypeError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+
+  .. code-block:: python
+    :lineno-start: 87
+
+                    else:
+                        self.assertEqual(
+                            person.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        self.assertEqual(person.can_vote(), a_person[6])
+                        self.assertEqual(
+                            person.can_get_license(), a_person[7]
+                        )
+
+        def test_say_hello_function(self):
+
+* I remove :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` because it is now a repetition
+* I remove :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>` because it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 132
+
+        def test_person_factory(self):
+            for a_person in self.people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+                self.assertEqual(
+                    src.person.person(
+                        first_name=first_name,
+                        last_name=last_name,
+                        sex=sex,
+                        year_of_birth=year_of_birth,
+                    ),
+                    (
+                        f'{first_name}, {last_name},'
+                        f' {sex}, {year_of_birth}'
+                    )
+                )
+
+        def test_when_person_is_older_than_120(self):
+
+* I remove the ``truth_table`` :ref:`object_attribute<what is an object attribute?>` because it is no longer used
+
+  .. code-block:: python
+    :lineno-start: 50
+
+            (
+                'first_name', 'last_name', 'F', 'a_string',
+                False, False, False, False,
+            )
+        )
+
+        def calculate_age(self, year_of_birth):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines:
+
+    git commit -am 'extract test_person_class'
+
+----
+
+*********************************************************************************
+extract object attributes
+*********************************************************************************
+
+The ``people`` :ref:`object attribute<what is an object attribute?>` can be described with the following :ref:`truth table`
+
+- If a person is :green:`younger` than ``18``
+
+  ==============  ============== ============== ==============  ================
+  age < 18        is citizen     passed_test    can vote        can_get_license
+  ==============  ============== ============== ==============  ================
+  :green:`True`   :green:`True`  :green:`True`  :red:`False`    :red:`False`
+  :green:`True`   :red:`False`   :green:`True`  :red:`False`    :red:`False`
+  :green:`True`   :green:`True`  :red:`False`   :red:`False`    :red:`False`
+  :green:`True`   :red:`False`   :red:`False`   :red:`False`    :red:`False`
+  ==============  ============== ============== ==============  ================
+
+- If a person is :red:`NOT younger` than ``18``
+
+  ==============  ============== ============== ==============  ================  ======
+  age < 18        is citizen     passed_test    can vote        can_get_license   person
+  ==============  ============== ============== ==============  ================  ======
+  :red:`False`    :green:`True`  :green:`True`  :green:`True`   :green:`True`     jane
+  :red:`False`    :red:`False`   :green:`True`  :red:`False`    :green:`True`     mary
+  :red:`False`    :green:`True`  :red:`False`   :green:`True`   :red:`False`      joe
+  :red:`False`    :red:`False`   :red:`False`   :red:`False`    :red:`False`      john
+  ==============  ============== ============== ==============  ================  ======
+
+
+* I make an :ref:`object attribute<what is an object attribute?>` for ``datetime.date.today().year-17``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+        younger_than_18 = this_year - 17
+        people = (
+
+* I change the comments then use the new :ref:`object attribute<what is an object attribute?>` for ``datetime.date.today().year-17`` from the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 2, 4, 8, 10, 14, 16, 20, 22
+
+            (
+                # is_citizen, passed_test
+                'first_name', 'last_name', 'M',
+                younger_than_18,
+                True, True, False, False,
+            ),
+            (
+                # not is_citizen, passed_test
+                'first_name', 'last_name', 'M',
+                younger_than_18,
+                False, True, False, False,
+            ),
+            (
+                # is_citizen, not passed_test
+                'first_name', 'last_name', 'M',
+                younger_than_18,
+                True, False, False, False,
+            ),
+            (
+                # not is_citizen, not passed_test
+                'first_name', 'last_name', 'M',
+                younger_than_18,
+                False, False, False, False,
+            ),
+            (
+                'first_name', 'last_name', 'F', 'a_string',
+                False, False, False, False,
+            )
+        )
+
+  the tests are still green.
+
+* I add a new :ref:`object attribute<what is an object attribute?>` for if a person is :red:`NOT younger` than ``18``
+
+  .. code-block:: python
+    :lineno-start: 6
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+        younger_than_18 = this_year - 17
+        not_younger_than_18 = this_year - 18
+        people = (
+
+* I add comments then use the new :ref:`object attribute<what is an object attribute?>` for the ``year_of_birth`` values of ``jane``, ``joe``, ``mary`` and ``john`` in the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3-5, 9-11, 15-17, 21-23
+
+        people = (
+            (
+                # is_citizen, passed_test
+                'jane', 'doe', 'F',
+                not_younger_than_18,
+                True, True, True, True,
+            ),
+            (
+                # not is_citizen, not passed_test
+                'joe', 'blow', 'M',
+                not_younger_than_18,
+                True, False, True, False,
+            ),
+            (
+                # not is_citizen, passed_test
+                'mary', 'public', 'F',
+                not_younger_than_18,
+                False, True, False, True,
+            ),
+            (
+                # not is_citizen, not passed_test
+                'john', 'smith', 'M',
+                not_younger_than_18,
+                False, False, False, False,
+            ),
+
+  still green.
+
+* I change the values for ``first_name``, ``last_name`` and ``sex`` to ``'first_name', 'last_name', 'M',`` for all the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 4, 10, 16, 22
+
+        people = (
+            (
+                # is_citizen, passed_test
+                'first_name', 'last_name', 'M',
+                not_younger_than_18,
+                True, True, True, True,
+            ),
+            (
+                # not is_citizen, not passed_test
+                'first_name', 'last_name', 'M',
+                not_younger_than_18,
+                True, False, True, False,
+            ),
+            (
+                # not is_citizen, passed_test
+                'first_name', 'last_name', 'M',
+                not_younger_than_18,
+                False, True, False, True,
+            ),
+            (
+                # not is_citizen, not passed_test
+                'first_name', 'last_name', 'M',
+                not_younger_than_18,
+                False, False, False, False,
+            ),
+
+  green.
+
+* I add :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 7-9
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+        younger_than_18 = this_year - 17
+        not_younger_than_18 = this_year - 18
+
+        first_name = 'first_name'
+        last_name = 'last_name'
+        sex = 'M'
+
+        people = (
+
+* I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``, move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 2-4, 7
+
+        def test_person_class(self):
+            first_name = self.first_name
+            last_name = self.last_name
+            sex = self.sex
+
+            for a_person in self.people:
+                year_of_birth = a_person[3]
+
+                with self.subTest(a_person):
+
+  still green.
+
+* I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name`` and ``last_name``, then move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 2-3, 6, 8
+
+        def test_say_hello_function(self):
+            first_name = self.first_name
+            last_name = self.last_name
+
+            for a_person in self.people:
+                year_of_birth = a_person[3]
+
+                with self.subTest(a_person):
+                    try:
+
+  the test is still green.
+
+* I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``, then move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 2-4, 7
+
+        def test_person_factory(self):
+            first_name = self.first_name
+            last_name = self.last_name
+            sex = self.sex
+
+            for a_person in self.people:
+                year_of_birth = a_person[3]
+
+  .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 1-14
+
+                with self.subTest(a_person):
+                    self.assertEqual(
+                        src.person.person(
+                            first_name=first_name,
+                            last_name=last_name,
+                            sex=sex,
+                            year_of_birth=year_of_birth,
+                        ),
+                        (
+                            f'{first_name}, {last_name},'
+                            f' {sex}, {year_of_birth}'
+                        )
+                    )
+
+        def test_when_person_is_older_than_120(self):
+
+  still green.
+
+* I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_person_factory<extract test_person_factory>` (I do not need the :ref:`variables<what is a variable?>`)
+
+  .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 2, 8-11, 14-15
+
+        def test_person_factory(self):
+            for a_person in self.people:
+                year_of_birth = a_person[3]
+
+                with self.subTest(a_person):
+                    self.assertEqual(
+                        src.person.person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                        ),
+                        (
+                            f'{self.first_name}, {self.last_name},'
+                            f' {self.sex}, {year_of_birth}'
+                        )
+                    )
+
+        def test_when_person_is_older_than_120(self):
+
+  green.
+
+* I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 2, 8-10
+
+        def test_say_hello_function(self):
+            for a_person in self.people:
+                year_of_birth = a_person[3]
+
+                with self.subTest(a_person):
+                    try:
+                        reality = src.person.say_hello(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            year_of_birth=year_of_birth,
+                        )
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 10-11
+
+                    except TypeError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+                    else:
+                        self.assertEqual(
+                            reality,
+                            (
+                                f'Hello, my name is {self.first_name}'
+                                f' {self.last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+
+        def test_person_factory(self):
+
+* I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 2, 8-10
+
+        def test_person_class(self):
+            for a_person in self.people:
+                year_of_birth = a_person[3]
+
+                with self.subTest(a_person):
+                    try:
+                        person = src.person.Person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                            is_citizen=a_person[4],
+                            passed_test=a_person[5],
+                        )
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 10-11
+
+                    except TypeError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+                    else:
+                        self.assertEqual(
+                            person.say_hello(),
+                            (
+                                f'Hello, my name is {self.first_name}'
+                                f' {self.last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        self.assertEqual(person.can_vote(), a_person[6])
+                        self.assertEqual(
+                            person.can_get_license(), a_person[7]
+                        )
+
+        def test_say_hello_function(self)
+
+* I remove the values of ``first_name``, ``last_name`` amd ``sex`` from the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 4
+
+        people = (
+            (
+                # is_citizen, passed_test
+                # 'first_name', 'last_name', 'M',
+                not_younger_than_18,
+                True, True, True, True,
+            ),
+
+  the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>` and ValueError_
+
+  .. code-block:: python
+
+    SUBFAILED[(2008, True, True, True, True)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2008, True, True, True, True)] ...test_say_hello_function -
+        ValueError: a YYYY year old person is not alive.
+
+  because the positions changed when I changed the tuple_. I would have to change all the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` if I change the tuple_, there has to be :ref:`a better way<how to make a person with dictionaries>`
+
+* I undo the change
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 4
+
+        people = (
+            (
+                # is_citizen, passed_test
+                'first_name', 'last_name', 'M',
+                not_younger_than_18,
+                True, True, True, True,
+            ),
+
+  the tests are green again.
+
+* I change the values for the first three items of the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>` to the ``year_of_birth`` value and the :ref:`boolean<what are booleans?>` for ``is_citizen`` and ``passed_test``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 4, 10, 16
+
+        people = (
+            (
+                # is_citizen, passed_test
+                not_younger_than_18, True, True,
+                not_younger_than_18,
+                True, True, True, True,
+            ),
+            (
+                # not is_citizen, not passed_test
+                not_younger_than_18, True, False,
+                not_younger_than_18,
+                True, False, True, False,
+            ),
+            (
+                # not is_citizen, passed_test
+                not_younger_than_18, False, True,
+                not_younger_than_18,
+                False, True, False, True,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 3, 9, 15
+
+            (
+                # not is_citizen, not passed_test
+                not_younger_than_18, False, False,
+                not_younger_than_18,
+                False, False, False, False,
+            ),
+            (
+                # underage, is_citizen, passed_test
+                younger_than_18, True, True,
+                younger_than_18,
+                True, True, False, False,
+            ),
+            (
+                # underage, not is_citizen, passed_test
+                younger_than_18, False, True,
+                younger_than_18,
+                False, True, False, False,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 3, 9, 14-15
+
+            (
+                # underage, is_citizen, not passed_test
+                younger_than_18, True, False,
+                younger_than_18,
+                True, False, False, False,
+            ),
+            (
+                # underage, not is_citizen, not passed_test
+                younger_than_18, False, False,
+                younger_than_18,
+                False, False, False, False,
+            ),
+            (
+                'a_string', False, False,
+                'a_string',
+                False, False, False, False,
+            )
+        )
+
+        def calculate_age(self, year_of_birth):
+
+  the tests are still green.
+
+* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 3, 12-13
+
+        def test_person_class(self):
+            for a_person in self.people:
+                year_of_birth = a_person[0]
+
+                with self.subTest(a_person):
+                    try:
+                        person = src.person.Person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                            is_citizen=a_person[1],
+                            passed_test=a_person[2],
+                        )
+                    except TypeError as error:
+
+  still green.
+
+* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 3
+
+        def test_say_hello_function(self):
+            for a_person in self.people:
+                year_of_birth = a_person[0]
+
+                with self.subTest(a_person):
+
+  green.
+
+* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 3
+
+        def test_person_factory(self):
+            for a_person in self.people:
+                year_of_birth = a_person[0]
+
+                with self.subTest(a_person):
+
+  still green.
+
+* I remove the repeated values from the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5, 10, 15
+
+        people = (
+            (
+                # is_citizen, passed_test
+                not_younger_than_18, True, True,
+                True, True,
+            ),
+            (
+                # not is_citizen, not passed_test
+                not_younger_than_18, True, False,
+                True, False,
+            ),
+            (
+                # not is_citizen, passed_test
+                not_younger_than_18, False, True,
+                False, True,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 4, 9, 14
+
+            (
+                # not is_citizen, not passed_test
+                not_younger_than_18, False, False,
+                False, False,
+            ),
+            (
+                # underage, is_citizen, passed_test
+                younger_than_18, True, True,
+                False, False,
+            ),
+            (
+                # underage, not is_citizen, passed_test
+                younger_than_18, False, True,
+                False, False,
+            ),
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 4, 9, 13
+
+            (
+                # underage, is_citizen, not passed_test
+                younger_than_18, True, False,
+                False, False,
+            ),
+            (
+                # underage, not is_citizen, not passed_test
+                younger_than_18, False, False,
+                False, False,
+            ),
+            (
+                'a_string', False, False,
+                False, False,
+            )
+        )
+
+        def calculate_age(self, year_of_birth):
+
+  the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
+
+  .. code-block:: python
+
+    SUBFAILED[(2008, True, True, True, True)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2008, True, False, True, False)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2008, False, True, False, True)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2008, False, False, False, False)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2009, True, True, False, False)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2009, False, True, False, False)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2009, True, False, False, False)] ...test_person_class -
+        IndexError: tuple index out of range
+    SUBFAILED[(2009, False, False, False, False)] ...test_person_class -
+        IndexError: tuple index out of range
+
+* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 10, 12
+
+                    else:
+                        self.assertEqual(
+                            person.say_hello(),
+                            (
+                                f'Hello, my name is {self.first_name}'
+                                f' {self.last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+                        self.assertEqual(person.can_vote(), a_person[3])
+                        self.assertEqual(
+                            person.can_get_license(), a_person[4]
+                        )
+
+        def test_say_hello_function(self):
+
+  the test is green again.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract object attributes'
 
 ----
 
@@ -3155,7 +4691,7 @@ use assertRaises with test_when_person_is_older_than_120
 I use the :ref:`assertRaises method<another way to test if an Exception is raised>` to replace the :ref:`try statement<how to handle Exceptions>` in :ref:`test_when_person_is_older_than_120`
 
 .. code-block:: python
-  :lineno-start: 136
+  :lineno-start: 143
   :emphasize-lines: 2-3, 10-11
 
       def test_when_person_is_older_than_120(self):
@@ -3189,7 +4725,7 @@ the terminal_ is my friend, and shows ValueError_
 I change the :ref:`Exception<how to test that an Exception is raised>` to match
 
 .. code-block:: python
-  :lineno-start: 136
+  :lineno-start: 143
   :emphasize-lines: 3
 
       def test_when_person_is_older_than_120(self):
@@ -3209,7 +4745,7 @@ the test passes.
 * I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertRaisesRegex<how to test the message of an Exception>` to test the message of the :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 143
     :emphasize-lines: 3-4, 6-9, 14-15
 
         def test_when_person_is_older_than_120(self):
@@ -3267,7 +4803,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 143
 
         def test_when_person_is_older_than_120(self):
             year_of_birth = self.this_year - 121
@@ -3309,7 +4845,7 @@ use assertRaises with test_when_year_of_birth_is_the_future
 I use the :ref:`assertRaisesRegex method<how to test the message of an Exception>` to replace the :ref:`try statement<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_the_future`
 
 .. code-block:: python
-  :lineno-start: 151
+  :lineno-start: 158
   :emphasize-lines: 2-5, 12-13
 
       def test_when_year_of_birth_is_the_future(self):
@@ -3345,7 +4881,7 @@ the terminal_ is my friend, and shows ValueError_
 I change the :ref:`Exception<how to test that an Exception is raised>` to match
 
 .. code-block:: python
-  :lineno-start: 136
+  :lineno-start: 158
   :emphasize-lines: 3
 
       def test_when_year_of_birth_is_the_future(self):
@@ -3431,7 +4967,7 @@ the test passes.
 * I change the error message in :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 143
     :emphasize-lines: 7
 
         def test_when_person_is_older_than_120(self):
@@ -3456,7 +4992,7 @@ the test passes.
 * I change the error message in :ref:`test_when_year_of_birth_is_the_future`
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 158
     :emphasize-lines: 3-4, 7-8, 14-15
 
         def test_when_year_of_birth_is_the_future(self):
@@ -3483,7 +5019,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_when_year_of_birth_is_the_future`
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 158
 
         def test_when_year_of_birth_is_the_future(self):
             year_of_birth = self.this_year + 1
@@ -3546,32 +5082,50 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 I add a test with an :ref:`assertion<what is an assertion?>` for if a person is born in the future or is older than ``120``
 
 .. code-block:: python
-  :lineno-start: 132
-  :emphasize-lines: 5-21
+  :lineno-start: 125
 
-                  self.assertEqual(
-                      a_person.can_get_license(), row[-1]
-                  )
+        def test_person_factory(self):
+            for a_person in self.people:
+                year_of_birth = a_person[0]
 
-      def test_if_person_is_not_alive(self):
-          years = (
-              self.this_year+1,
-              self.this_year-121,
-          )
-          for year_of_birth in years:
-              with self.subTest(year_of_birth=year_of_birth):
-                  with self.assertRaisesRegex(
-                      ValueError,
-                      'BOOM!!!'
-                  ):
-                      src.person.Person(
-                          first_name='first_name',
-                          last_name='last_name',
-                          sex='M',
-                          year_of_birth=year_of_birth,
-                      )
+                with self.subTest(a_person):
+                    self.assertEqual(
+                        src.person.person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                        ),
+                        (
+                            f'{self.first_name}, {self.last_name},'
+                            f' {self.sex}, {year_of_birth}'
+                        )
+                    )
 
-      def test_when_person_is_older_than_120(self):
+.. code-block:: python
+  :lineno-start: 143
+  :emphasize-lines: 1-6, 8-18
+
+        def test_if_person_is_not_alive(self):
+            for year_of_birth in (
+                self.this_year+1,
+                self.this_year-121,
+            ):
+                age = self.calculate_age(year_of_birth)
+
+                with self.subTest(year_of_birth):
+                    with self.assertRaisesRegex(
+                        ValueError,
+                        'BOOM!!!'
+                    ):
+                        src.person.Person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                        )
+
+        def test_when_person_is_older_than_120(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3590,33 +5144,32 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the error message in :ref:`test_if_person_is_not_alive` to match
+I change the error message in :ref:`<extract test_if_person_is_not_alive>` to match
 
 .. code-block:: python
-  :lineno-start: 136
-  :emphasize-lines:
+  :lineno-start: 143
+  :emphasize-lines: 11
 
-      def test_if_person_is_not_alive(self):
-          years = (
-              self.this_year+1,
-              self.this_year-121,
-          )
-          for year_of_birth in years:
-              with self.subTest(year_of_birth=year_of_birth):
-                  with self.assertRaisesRegex(
-                      ValueError,
-                      f'a {age} year old person is not alive.'
-                  ):
-                      src.person.Person(
-                          first_name='first_name',
-                          last_name='last_name',
-                          sex='M',
-                          year_of_birth=year_of_birth,
-                      )
+        def test_if_person_is_not_alive(self):
+            for year_of_birth in (
+                self.this_year+1,
+                self.this_year-121,
+            ):
+                age = self.calculate_age(year_of_birth)
 
-      def test_when_person_is_older_than_120(self):
+                with self.subTest(year_of_birth):
+                    with self.assertRaisesRegex(
+                        ValueError,
+                        f'a {age} year old person is not alive.'
+                    ):
+                        src.person.Person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                        )
 
-the test passses.
+the test passes.
 
 ----
 
@@ -3626,52 +5179,44 @@ the test passses.
 
 ----
 
-* I can put the two `with statements`_ together
+* I put the two `with statements`_ together
 
   .. code-block:: python
-    :lineno-start: 136
-
-* I remove :ref:`test_when_person_is_older_than_120` because it is now a repetition
-
-  .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 143
+    :emphasize-lines: 8-20
 
         def test_if_person_is_not_alive(self):
-            years = (
+            for year_of_birth in (
                 self.this_year+1,
                 self.this_year-121,
-            )
-            for year_of_birth in years:
-                with self.subTest(year_of_birth=year_of_birth):
-                    with self.assertRaisesRegex(
+            ):
+                age = self.calculate_age(year_of_birth)
+
+                with (
+                    self.subTest(year_of_birth),
+                    self.assertRaisesRegex(
                         ValueError,
                         f'a {age} year old person is not alive.'
-                    ):
-                        src.person.Person(
-                            first_name='first_name',
-                            last_name='last_name',
-                            sex='M',
-                            year_of_birth=year_of_birth,
-                        )
+                    ),
+                ):
+                    src.person.Person(
+                        first_name=self.first_name,
+                        last_name=self.last_name,
+                        sex=self.sex,
+                        year_of_birth=year_of_birth,
+                    )
 
-        def test_when_year_of_birth_is_the_future(self):
+        def test_when_person_is_older_than_120(self):
+
+  the test is still green.
+
+* I remove :ref:`test_when_person_is_older_than_120` because it is now a repetition
 
 * I remove :ref:`test_when_year_of_birth_is_the_future` because it is now a repetition
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 157
 
-        def test_if_person_is_not_alive(self):
-        years = (
-            self.this_year+1,
-            self.this_year-121,
-        )
-        for year_of_birth in years:
-            with self.subTest(year_of_birth=year_of_birth):
-                with self.assertRaisesRegex(
-                    ValueError,
-                    f'a {age} year old person is not alive.'
-                ):
                     src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
@@ -3679,7 +5224,7 @@ the test passses.
                         year_of_birth=year_of_birth,
                     )
 
-    def test_when_year_of_birth_is_not_an_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
 
 * I add a git_ commit message
 
@@ -3690,23 +5235,137 @@ the test passses.
     'extract test_if_person_is_not_alive'
 
 
-
-
-
-
-
-
-
 ----
 
 *********************************************************************************
-use loops in test_when_year_of_birth_is_not_an_integer
+move test_when_year_of_birth_is_not_an_integer to test_person_class
 *********************************************************************************
 
-:ref:`test_when_perso`
+:ref:`test_when_year_of_birth_is_not_an_integer` has multiple :ref:`try statements<how to handle Exceptions>` for if ``year_of_birth`` is not an integer_. It is also the last tuple_ in the ``people`` :ref:`object attribute<what is an object attribute?>` - its ``year_of_birth`` values are not integers_. I can use the :ref:`object attributes<what is an object attribute?>`  to remove the repetition
 
+* I add tuples_ for the cases in :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>`
 
-* I change the :ref:`Exception raised<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` if the value of the ``year_of_birth`` parameter is not an integer_
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 6-10
+
+            (
+                # underage, not is_citizen, not passed_test
+                younger_than_18, False, False,
+                False, False,
+            ),
+            # year_of_birth is not an integer
+            (None, False, False,),
+            (2026.0, False, False,),
+            ('2026', False, False,),
+            ((2026,), False, False,),
+            (
+                'a_string', False, False,
+                False, False,
+            ),
+        )
+
+        def calculate_age(self, year_of_birth):
+
+  the tests are still green.
+
+* I change the expected :ref:`Exception<how to test that an Exception is raised>` in :ref:`test_person_class<extract test_person_class>` to test my change
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 10
+
+                    try:
+                        person = src.person.Person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                            is_citizen=a_person[1],
+                            passed_test=a_person[2],
+                        )
+                    except IndexError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+                    else:
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    SUBFAILED[(None, False, False)] ...test_person_class -
+        TypeError: 'None' is not an integer
+    SUBFAILED[(2026.0, False, False)] ...test_person_class -
+        TypeError: '2026.0' is not an integer
+    SUBFAILED[('2026', False, False)] ...test_person_class -
+        TypeError: '2026' is not an integer
+    SUBFAILED[((2026,), False, False)] ...test_person_class -
+        TypeError: '(2026,)' is not an integer
+    SUBFAILED[('a_string', False, False, False, False)] ...test_person_class -
+        TypeError: 'a_string' is not an integer
+
+  good, the test works.
+
+* I undo the change
+
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 1
+
+                    except TypeError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+                    else:
+
+  the test is green again.
+
+* I remove the last tuple_ from the ``people`` :ref:`object attribute<what is an object attribute?>` because it is a repetition of when ``year_of_birth`` is a string_ (``((2026,), False, False,),``)
+
+  .. code-block:: python
+    :lineno-start: 57
+
+            # year_of_birth is not an integer
+            (None, False, False,),
+            (2026.0, False, False,),
+            ('2026', False, False,),
+            ((2026,), False, False,),
+        )
+
+        def calculate_age(self, year_of_birth):
+
+* I remove :ref:`test_when_year_of_birth_is_not_an_integer` because it is now covered by :ref:`test_person_class<extract test_person_class>`
+
+  .. code-block:: python
+    :lineno-start: 180
+
+        def test_when_year_of_birth_is_the_future(self):
+            year_of_birth = self.this_year + 1
+            age = self.calculate_age(year_of_birth)
+
+            with self.assertRaisesRegex(
+                ValueError,
+                f'a {age} year old person is not alive.'
+            ):
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    year_of_birth=year_of_birth,
+                )
+
+        def test_dir_person_class(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_when_year_of_birth_is_not_an_integer to test_person_class'
 
 ----
 
@@ -3781,8 +5440,8 @@ what is next?
   :titlesonly:
   :maxdepth: 1
 
-  ../../basic_objects/lists
-  ../../basic_objects/list_comprehensions
+  ../../basic_objects/lists/lists
+  ../../basic_objects/lists/list_comprehensions
 
 :ref:`Would you like to test handling Exceptions in tests?<how to test that an Exception is raised>`
 
