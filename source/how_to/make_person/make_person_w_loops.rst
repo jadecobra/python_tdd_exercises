@@ -5442,9 +5442,10 @@ what is next?
 
 
   ../../AssertionError/AssertionError_w_loops
-  ../../basic_objects/booleans/
   ../../truth_table/projects/atm/atm_w_loops
+  ../../basic_objects/booleans/booleans_w_loops
   ../../truth_table/projects/car/car_w_loops
+  ../../objects/objects_w_loops
   ../../truth_table/projects/elevator/elevator_w_loops
   ../../truth_table/projects/microwave/microwave_w_loops
   ../../truth_table/projects/traffic_light/traffic_light_w_loops
