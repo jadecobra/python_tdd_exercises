@@ -5388,15 +5388,12 @@ close the project
 review
 *************************************************************************************
 
-* I can use the :ref:`try statement<how to handle Exceptions>` to make sure a program can make a decision when it runs into an :ref:`Exception<how to test that an Exception is raised>`.
-* I can use the :ref:`try statement<how to handle Exceptions>` in a test to confirm that a program :ref:`raises an Exception<how to raise an Exception>` when certain conditions are met.
-* I can use the :ref:`raise statement<how to raise an Exception>` to make an :ref:`Exception<how to test that an Exception is raised>` happen to stop a program from running past a certain point.
+I can use :ref:`for loops<what is a for loop?>` for things that repeat.
 
 My tests still have problems:
 
-* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. There has to be a better way.
-* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` all still have the same three tests. There has to be a better way.
-* :ref:`test_when_year_of_birth_is_not_an_integer` has four tests that are basically the same, the only thing that changes are the values for the ``year_of_birth`` parameter. There has to be a better way.
+* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
+* The ``people`` :ref:`object attribute<what is an object attribute>` is confusing, anyone who reads it without going through the process of making it would not know what the :ref:`booleans<what is a boolean?>` stands for and the last few tuples_ I added are a different length than the others. :ref:`There has to be a better way<how to make a person with dictionaries>`.
 
 ----
 
@@ -5435,11 +5432,20 @@ what is next?
 * :ref:`I know how to write programs that make decisions<truth table>`.
 * :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
 * :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
-
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
+* :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
+* :ref:`I know how to make a person with loops<how to make a person with loops>`.
+*
 .. toctree::
   :titlesonly:
   :maxdepth: 1
 
+  ../../AssertionError/AssertionError_w_loops
+  ../../truth_table/projects/atm/atm_w_loops
+  ../../truth_table/projects/car/car_w_loops
+  ../../truth_table/projects/elevator/elevator_w_loops
+  ../../truth_table/projects/microwave/microwave_w_loops
+  ../../truth_table/projects/traffic_light/traffic_light_w_loops
   ../../basic_objects/lists/lists
   ../../basic_objects/lists/list_comprehensions
 
