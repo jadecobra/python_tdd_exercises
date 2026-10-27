@@ -165,8 +165,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I add a test for the :ref:`person function<extract person function>` to ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 19-29
+    :lineno-start: 47
 
           def assert_person_can_say_hello(
                   self,first_name, last_name,
@@ -185,6 +184,10 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                       f' {self.calculate_age(year_of_birth)}.'
                   )
               )
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 1-11
 
           def test_person_factory(self):
               people = (

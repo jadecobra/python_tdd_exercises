@@ -287,18 +287,37 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
 
-    SUBFAILED(object=False) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: False
-    SUBFAILED(object=True) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: True
-    SUBFAILED(object=0) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: 0
-    SUBFAILED(object=0.0) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: 0.0
-    SUBFAILED(object='') ::test_assertion_error_w_none - AssertionError: unexpectedly identical: ''
-    SUBFAILED(object=()) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: ()
-    SUBFAILED(object=[]) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: []
-    SUBFAILED(object=set()) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: set()
-    SUBFAILED(object={}) ::test_assertion_error_w_none - AssertionError: unexpectedly identical: {}
+    SUBFAILED(object=False) ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: False
+    SUBFAILED(object=True) ::test_assertion_error_w_none -
+         AssertionError: unexpectedly identical: True
+    SUBFAILED(object=0) ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: 0
+    SUBFAILED(object=0.0) ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: 0.0
+    SUBFAILED(object='') ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: ''
+    SUBFAILED(object=()) ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: ()
+    SUBFAILED(object=[]) ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: []
+    SUBFAILED(object=set()) ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: set()
+    SUBFAILED(object={}) ::test_assertion_error_w_none -
+        AssertionError: unexpectedly identical: {}
 
+* I change the second ``an_object`` to :ref:`None<what is None?>` in ``self.assertIsNot(an_object, an_object)``
 
-* I change :ref:`None<what >`
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3
+
+                with self.subTest(object=an_object):
+                    assert_is_not_none(an_object)
+                    self.assertIsNot(an_object, None)
+                    self.assertIsNotNone(None)
+
+  the terminal_ is my friend, and shows 
 
 I add ``self`` to the parentheses of :ref:`test_assertion_error_w_none`
 
