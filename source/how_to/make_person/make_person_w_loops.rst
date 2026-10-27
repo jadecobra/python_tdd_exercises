@@ -279,7 +279,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
             )
-            for person in people:
+            for a_person in people:
 
   still green, because the result when the :ref:`person function<extract person function>` is :ref:`called<how to call a function with input>` with ``'jane'``, ``'doe'``, ``'F'`` and ``'1991'`` is ``'jane, doe, F, 1991'``.
 
@@ -339,7 +339,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                 ('joe', 'blow', 'M', 1996),
                 ('mary', 'public', 'F', 2000),
             )
-            for person in people:
+            for a_person in people:
 
   still green.
 
@@ -401,7 +401,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                 ('mary', 'public', 'F', 2000),
                 ('john', 'smith', 'M', 1980),
             )
-            for person in people:
+            for a_person in people:
 
   green, showing that for each tuple_ in the ``people`` tuple_, the :ref:`assertion<what is an assertion?>` is :ref:`True<test_what_is_true>`.
 
@@ -464,7 +464,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                 ('john', 'smith', 'M', 1980),
                 ('first_name', 'last_name', 'F', 'a string'),
             )
-            for person in people:
+            for a_person in people:
 
   the test is still green, because the :ref:`person function<extract person function>` returns a string with the inputs it gets.
 
