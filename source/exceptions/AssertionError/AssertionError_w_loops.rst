@@ -317,7 +317,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     self.assertIsNot(an_object, None)
                     self.assertIsNotNone(None)
 
-  the terminal_ is my friend, and shows 
+  the terminal_ is my friend, and shows
 
 I add ``self`` to the parentheses of :ref:`test_assertion_error_w_none`
 

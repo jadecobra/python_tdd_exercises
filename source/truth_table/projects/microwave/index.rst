@@ -5,7 +5,7 @@
   :description: Build a microwave heater with Python TDD (Red-Green-Refactor): translate a four-input truth table (closed door, set timer, pressed start, too hot failsafe) into ``src.microwave.microwave`` that returns True only when every condition is met. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords), SyntaxError (parameter without a default; invalid syntax while factoring not/and/or), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Disjunction (OR) / Logical Conjunction (AND), and assertTrue/assertFalse until only closed AND set AND NOT too hot AND pressed heats food.
   :keywords: Jacob Itegboje, Python microwave project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, closed door, set timer, pressed start, too hot failsafe, default parameters, keyword arguments, SyntaxError parameter without a default, SyntaxError invalid syntax, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Disjunction OR, Logical Conjunction AND, if statements, De Morgan factoring, pumping python
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 .. _microwave:
 

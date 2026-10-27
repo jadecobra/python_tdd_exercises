@@ -2,7 +2,7 @@
   :description: Build a two-direction **Traffic Light** controller with Python TDD (Red-Green-Refactor). Start from a single light and timer truth table (GREEN/YELLOW/RED stay-or-advance), then grow to parallel and cross lights with a ``red_phase`` of ``'cross'`` or ``'parallel'``, hold-on-timer-not-done behavior, and an all-RED failsafe for invalid or unsafe color pairs (for example GREEN+GREEN or junk like ``'BAP'``/``'POW'``). Debug NameError, AttributeError, TypeError (unexpected keyword argument), and AssertionError while extracting helpers ``is_not_safe``, ``is_not_light``, ``triggers_failsafe``, and ``next_light``, plus module-level color constants and optional ``red_phase`` defaults. Jacob Itegboje, Pumping Python — uv project setup, pytest-watcher, unittest ``assertEqual``.
   :keywords: Jacob Itegboje, Pumping Python, Traffic Light TDD, red_phase cross parallel, timer_done, next_light, triggers_failsafe, is_not_safe, is_not_light, failsafe RED RED, truth table project, Red Green Refactor, function default arguments, TypeError unexpected keyword argument, AttributeError module has no attribute control, NameError src not defined, AssertionError tuples differ, unittest assertEqual, uv makePythonTdd, pytest-watcher, sequential state machine Python
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 .. _traffic_light:
 

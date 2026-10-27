@@ -4,7 +4,7 @@
   :description: Build an elevator controller with Python TDD (Red-Green-Refactor): translate a four-input truth table (floor button pushed, doors closed, above weight limit, emergency) into ``src.elevator.controller`` that returns True only when the button is pushed AND doors are closed AND not above weight AND emergency is not pushed. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Conjunction (AND), and assertTrue/assertFalse until only that one row of the 16-row table moves the elevator.
   :keywords: Jacob Itegboje, Python elevator controller project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, number_pushed, doors_closed, above_weight, emergency, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Conjunction AND, if statements, failsafe logic, pumping python
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 .. _elevator:
 

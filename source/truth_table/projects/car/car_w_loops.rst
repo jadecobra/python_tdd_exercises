@@ -7,7 +7,7 @@
 .. _car:
 
 #################################################################################
-Car
+test car with loops
 #################################################################################
 
 I want to make a **Car** that comes :green:`ON` or stays :red:`OFF` when I push the start button.

@@ -2,7 +2,7 @@
   :description: Build an Automated Teller Machine with Python TDD (Red-Green-Refactor): translate a truth table for PIN, cash, daily withdrawal limit, and card expiration into src.atm.withdraw. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, if/not short-circuit denies, a DENIED constant, and assertEqual until only right PIN + enough cash + not above limit + not expired returns CASH.
   :keywords: Jacob Itegboje, Python ATM project tutorial, TDD Red Green Refactor, truth table to code, unittest assertEqual, uv package manager, pytest-watcher, PIN verification, daily withdrawal limit, card expired, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, if statements, DENIED CASH, pumping python
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 .. _atm:
 

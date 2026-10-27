@@ -17,11 +17,11 @@ the projects
 .. toctree::
   :titlesonly:
 
-  Automated Teller Machine<atm>
-  Car Starter<car>
-  Elevator<elevator>
-  Microwave<microwave>
-  Traffic Light<traffic_light>
+  Automated Teller Machine<atm/index>
+  Car Starter<car/index>
+  Elevator<elevator/index>
+  Microwave<microwave/index>
+  Traffic Light<traffic_light/index>
 
 ----
 

@@ -10,7 +10,7 @@
 .. _microwave:
 
 #################################################################################
-Microwave
+test microwave with loops
 #################################################################################
 
 I want to make a **Microwave** that heats up food when I push a button.
