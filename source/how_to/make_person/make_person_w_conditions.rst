@@ -180,7 +180,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 ----
 
 * I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
-* I add a :ref:`method definition<how to make a function>` to the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
+* I add a :ref:`method definition<how to make a function>` to the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -241,7 +241,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
         AssertionError: assert
             ['__class__',...'__eq__', ...] ==...
 
-  the tests for the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
+  the tests for the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person object>` are failing because I added a :ref:`method<what is a method?>` to it.
 
 * I add ``can_vote`` to :ref:`test_dir_person_class` in ``tests/test_person.py``
 
@@ -388,7 +388,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 
 ----
 
-* I add ``is_citizen`` to the :ref:`instance of the Person class<add Person class>` for ``mary``
+* I add ``is_citizen`` to the :ref:`instance of the Person class<add Person object>` for ``mary``
 
   .. code-block:: python
     :lineno-start: 177
@@ -411,7 +411,7 @@ I want :ref:`can_vote<add can_vote method>` to return
                an unexpected keyword argument
                'is_citizen'
 
-  because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person class>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and it got :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
+  because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person object>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and it got :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
 
 * I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``src/person/__init__.py``
 
@@ -609,7 +609,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 
     AssertionError: True != False
 
-* I add ``is_citizen`` to the :ref:`instance of the Person class<add Person class>` for ``john``
+* I add ``is_citizen`` to the :ref:`instance of the Person class<add Person object>` for ``john``
 
   .. code-block:: python
     :lineno-start: 151
@@ -894,7 +894,7 @@ add can_get_license method
 
 ----
 
-* I add a :ref:`method definition<how to make a function that takes input>` for :ref:`can_get_license<add can_get_license method>` to the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
+* I add a :ref:`method definition<how to make a function that takes input>` for :ref:`can_get_license<add can_get_license method>` to the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 6
@@ -1057,7 +1057,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
 ----
 
-* I add ``passed_test`` to the :ref:`instance of the Person class<add Person class>` for ``john``
+* I add ``passed_test`` to the :ref:`instance of the Person class<add Person object>` for ``john``
 
   .. code-block:: python
     :lineno-start: 159
@@ -1185,7 +1185,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
     AssertionError: False != True
 
-* I add ``passed_test`` to the :ref:`instance of the Person class<add Person class>` for ``mary``
+* I add ``passed_test`` to the :ref:`instance of the Person class<add Person object>` for ``mary``
 
   .. code-block:: python
     :lineno-start: 196
@@ -1285,7 +1285,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
   because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add ``passed_test`` to the :ref:`instance of the Person class<add Person class>` for ``jane``
+* I add ``passed_test`` to the :ref:`instance of the Person class<add Person object>` for ``jane``
 
   .. code-block:: python
     :lineno-start: 125
@@ -1510,7 +1510,7 @@ the test passes because Python_ checks if ``age`` (the result of ``calculate_age
 extract age instance attribute
 *********************************************************************************
 
-The :ref:`can_get_license<add can_get_license method>`, :ref:`can_vote<add can_vote method>` and :ref:`say_hello methods<test_classy_person_says_hello>` of the :ref:`Person class<add Person class>` all :ref:`call the calculate_age function<add calculate_age function>`.
+The :ref:`can_get_license<add can_get_license method>`, :ref:`can_vote<add can_vote method>` and :ref:`say_hello methods<test_classy_person_says_hello>` of the :ref:`Person class<add Person object>` all :ref:`call the calculate_age function<add calculate_age function>`.
 
 I can make an :ref:`attribute<what is an object attribute?>` to remove the repetition of the :ref:`calls to the calculate_age function<add calculate_age function>`.
 
@@ -1557,7 +1557,7 @@ I can make an :ref:`attribute<what is an object attribute?>` to remove the repet
       FAILED ...test_when_year_of_birth_is_the_future - AssertionError
 
   - :ref:`test_when_year_of_birth_is_the_future` fails because the age is smaller than ``0``.
-  - :ref:`test_when_year_of_birth_is_not_an_integer` fails because an :ref:`instance of the Person class<add Person class>` is made with a ``year_of_birth`` (:ref:`None<what is None?>`) that is not an integer_.
+  - :ref:`test_when_year_of_birth_is_not_an_integer` fails because an :ref:`instance of the Person class<add Person object>` is made with a ``year_of_birth`` (:ref:`None<what is None?>`) that is not an integer_.
   - :ref:`test_when_person_is_older_than_120` fails because the age is bigger than ``120``.
   - :ref:`test_dir_person_instance` fails because I just added a new :ref:`object attribute<what is an object attribute?>`.
 
@@ -1851,7 +1851,7 @@ I can make a :ref:`method<what is a method?>` that removes the repetition.
 
 ----
 
-I add a :ref:`method<what is a method?>` to the :ref:`Person class<add Person class>` that checks if the age is less than ``18`` and returns something else if it is not
+I add a :ref:`method<what is a method?>` to the :ref:`Person class<add Person object>` that checks if the age is less than ``18`` and returns something else if it is not
 
 .. code-block:: python
   :lineno-start: 16

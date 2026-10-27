@@ -132,7 +132,7 @@ open the project
 ----
 
 *********************************************************************************
-add Person class
+add Person object
 *********************************************************************************
 
 I made a :ref:`function<what is a function?>` that makes a string_ for a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with an :ref:`object<everything is an object>` because it is :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` that belong together.
@@ -234,7 +234,7 @@ the constructor method
 
 A `constructor method`_ is used to define what happens when :ref:`an instance (a copy) of a class<how to test if something is an instance>` is made.
 
-* I add the `constructor method`_ to the :ref:`Person class<add Person class>` so it can take arguments
+* I add the `constructor method`_ to the :ref:`Person class<add Person object>` so it can take arguments
 
   .. code-block:: python
     :lineno-start: 4
@@ -488,7 +488,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
 ----
 
-* I remove the commented lines from the :ref:`Person class<add Person class>`
+* I remove the commented lines from the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -520,7 +520,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add Person class'
+    git commit -am 'add Person object'
 
 ----
 
@@ -591,7 +591,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     AttributeError: 'Person' object has no attribute 'first_name'
 
-  because there is nothing named ``first_name`` in the :ref:`Person class<add Person class>`, so Python_ cannot reach the ``first_name`` :ref:`attribute<what is an object attribute?>` of ``joe``.
+  because there is nothing named ``first_name`` in the :ref:`Person class<add Person object>`, so Python_ cannot reach the ``first_name`` :ref:`attribute<what is an object attribute?>` of ``joe``.
 
 ----
 
@@ -601,7 +601,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
 ----
 
-* I add ``self.first_name`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person class>`
+* I add ``self.first_name`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -642,7 +642,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                     has no attribute 'last_name'.
                     Did you mean: 'first_name'?
 
-  because there is nothing named ``last_name`` in the :ref:`Person class<add Person class>`, so Python_ cannot reach the ``last_name`` :ref:`attribute<what is an object attribute?>` of ``joe``.
+  because there is nothing named ``last_name`` in the :ref:`Person class<add Person object>`, so Python_ cannot reach the ``last_name`` :ref:`attribute<what is an object attribute?>` of ``joe``.
 
 * I add ``self.last_name`` and point it to the value for ``last_name`` when the :ref:`__init__ method<the constructor method>` is called
 
@@ -668,7 +668,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     AttributeError: 'Person' object
                     has no attribute 'year_of_birth'
 
-  because there is nothing named ``year_of_birth`` in the :ref:`Person class<add Person class>`, so Python_ cannot reach the ``year_of_birth`` :ref:`attribute<what is an object attribute?>` of ``joe``.
+  because there is nothing named ``year_of_birth`` in the :ref:`Person class<add Person object>`, so Python_ cannot reach the ``year_of_birth`` :ref:`attribute<what is an object attribute?>` of ``joe``.
 
 * I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the :ref:`__init__ constructor method<the constructor method>` is called
 
@@ -751,7 +751,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
 ----
 
-* I remove the commented line from the :ref:`Person class<add Person class>`
+* I remove the commented line from the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -773,7 +773,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             year_of_birth,
         ):
 
-* I change the :ref:`call<how to call a function with input>` to ``src.person.say_hello`` in :ref:`test_joe` to a call to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`
+* I change the :ref:`call<how to call a function with input>` to ``src.person.say_hello`` in :ref:`test_joe` to a call to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -810,9 +810,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     AttributeError: type object 'Person'
                     has no attribute 'say_hello'
 
-  because the test :ref:`calls<how to call a function with input>` the :ref:`say_hello method<add say_hello method>` which does not yet exist in the :ref:`Person class<add Person class>`.
+  because the test :ref:`calls<how to call a function with input>` the :ref:`say_hello method<add say_hello method>` which does not yet exist in the :ref:`Person class<add Person object>`.
 
-* I add a :ref:`method definition<how to make a function>` for ``say_hello`` to the :ref:`Person class<add Person class>`
+* I add a :ref:`method definition<how to make a function>` for ``say_hello`` to the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -942,7 +942,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             ├── year_of_birth = 1996
             └── return 'Hello, my name is joe blow and I am XX.'
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>` in :ref:`test_jane`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person object>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 97
@@ -1068,7 +1068,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             )
             return 'Hello, my name is jane doe and I am YY.'
 
-* I add an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add Person class>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` because the :ref:`instance<how to test if something is an instance>` has the :ref:`attributes<what is an object attribute?>` I use in the :ref:`method<what is a method?>`
+* I add an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add Person object>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` because the :ref:`instance<how to test if something is an instance>` has the :ref:`attributes<what is an object attribute?>` I use in the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 88
@@ -1329,9 +1329,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     def test_john():
 
-  the test passes. This is still a repetition, I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add Person class>` as input to the :ref:`say_hello method<add Person class>` of the same :ref:`object<everything is an object>`.
+  the test passes. This is still a repetition, I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add Person object>` as input to the :ref:`say_hello method<add Person object>` of the same :ref:`object<everything is an object>`.
 
-* I change the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person class>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<add say_hello method>`
+* I change the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person object>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 136
@@ -1387,7 +1387,7 @@ what is the staticmethod decorator?
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``Person.say_hello`` from :ref:`test_joe` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person class>`, there is no need for it to take a copy of the :ref:`Person class<add Person class>` as input since it should be able to use its own :ref:`attributes<what is an object attribute?>`
+* I change the :ref:`call<how to call a function with input>` to ``Person.say_hello`` from :ref:`test_joe` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person object>`, there is no need for it to take a copy of the :ref:`Person class<add Person object>` as input since it should be able to use its own :ref:`attributes<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 96
@@ -1578,7 +1578,7 @@ what is the staticmethod decorator?
 
   I do not need to pass ``joe`` as input to the :ref:`say_hello method<add say_hello method>` since it is ``self``.
 
-* I remove ``person=jane`` from the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person class>`
+* I remove ``person=jane`` from the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 143
@@ -1777,7 +1777,7 @@ separate and equal Person class
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``mary`` in :ref:`test_mary` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the :ref:`Person class<add Person class>` in ``tests/test_person.py``
+* I change ``mary`` in :ref:`test_mary` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the :ref:`Person class<add Person object>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 213
@@ -2146,7 +2146,7 @@ separate and equal Person class
 
   better, I can add an :ref:`attribute<what is an object attribute?>` to an :ref:`object<everything is an object>`.
 
-* I add the name to the :ref:`Person class<add Person class>`
+* I add the name to the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -2317,7 +2317,7 @@ separate and equal Person class
 
     # Exceptions seen
 
-* I change ``john`` in :ref:`test_john` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``john`` in :ref:`test_john` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 171
@@ -2381,7 +2381,7 @@ separate and equal Person class
         assert <src.person.Person object at 0xffffb012cd34>
             == 'Hello, my name is mary public and I am ZZ.'
 
-  because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`Person class<add Person class>`.
+  because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`Person class<add Person object>`.
 
 * I change :ref:`the return statement` to use :ref:`object attributes<what is an object attribute?>` in an :ref:`f-string<what is string interpolation?>`
 
@@ -2574,7 +2574,7 @@ separate and equal Person class
 
     def test_mary():
 
-* I change ``jane`` in :ref:`test_jane` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``jane`` in :ref:`test_jane` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 130
@@ -2655,7 +2655,7 @@ separate and equal Person class
 
     def test_john():
 
-* I change ``joe`` in :ref:`test_joe` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``joe`` in :ref:`test_joe` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 88
@@ -2737,7 +2737,7 @@ separate and equal Person class
 
     def test_jane():
 
-* I remove the :ref:`Person class<add Person class>` from ``tests/test_person.py``
+* I remove the :ref:`Person class<add Person object>` from ``tests/test_person.py``
 
   .. code-block:: python
 
@@ -2749,7 +2749,7 @@ separate and equal Person class
             year_of_birth,
         ):
 
-  all the tests are still green because the :ref:`instances<how to test if something is an instance>` of the :ref:`Person class<add Person class>` that were in ``tests/test_person.py`` are now of the :ref:`Person class<add Person class>` in ``src/person/__init__.py``.
+  all the tests are still green because the :ref:`instances<how to test if something is an instance>` of the :ref:`Person class<add Person object>` that were in ``tests/test_person.py`` are now of the :ref:`Person class<add Person object>` in ``src/person/__init__.py``.
 
   .. code-block:: shell
 
@@ -2786,7 +2786,7 @@ extract assert_person_can_say_hello function
 
 :ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` use the same process to test the :ref:`say_hello method<add say_hello method>`, they
 
-- make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` with values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``
+- make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` with values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``
 - :ref:`call<how to call a function with input>` the :ref:`say_hello method of the Person class<add say_hello method>` with the values of ``first_name``, ``last_name`` and ``year_of_birth``
 - make a string_ with the values of ``first_name``, ``last_name`` and ``year_of_birth``
 - :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` is equal to the string_
@@ -3524,7 +3524,7 @@ the test passes.
 
   still green.
 
-* I use the :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` directly without a :ref:`variable<what is a variable?>` since it is only used once
+* I use the :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` directly without a :ref:`variable<what is a variable?>` since it is only used once
 
   .. code-block:: python
     :lineno-start: 8
@@ -4088,9 +4088,9 @@ the test passes.
               'sex', 'year_of_birth'
           ]
 
-  the ``sex`` :ref:`attribute<what is an object attribute?>` is not defined anywhere in the :ref:`Person class<add Person class>`.
+  the ``sex`` :ref:`attribute<what is an object attribute?>` is not defined anywhere in the :ref:`Person class<add Person object>`.
 
-* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
+* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 12

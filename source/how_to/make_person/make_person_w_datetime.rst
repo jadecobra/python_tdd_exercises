@@ -820,7 +820,7 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`object attribute<what is an object attribute?>` to :ref:`TestPerson<add TestPerson class>` for the current year
+* I add an :ref:`object attribute<what is an object attribute?>` to :ref:`TestPerson<add TestPerson object>` for the current year
 
   .. code-block:: python
     :lineno-start: 6
@@ -923,7 +923,7 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`method<what is a method?>` to :ref:`TestPerson<add TestPerson class>` to calculate the age
+* I add a :ref:`method<what is a method?>` to :ref:`TestPerson<add TestPerson object>` to calculate the age
 
   .. code-block:: python
     :lineno-start: 10
@@ -1145,7 +1145,7 @@ the test passes.
                 year_of_birth,
             ):
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age method>` no longer uses anything that belongs to the :ref:`TestPerson class<add TestPerson class>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age method>` no longer uses anything that belongs to the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1197,7 +1197,7 @@ the test passes.
                 year_of_birth,
             ):
 
-* I remove the :ref:`this_year attribute<extract this_year attribute>` from the :ref:`TestPerson class<add TestPerson class>` since it is no longer used
+* I remove the :ref:`this_year attribute<extract this_year attribute>` from the :ref:`TestPerson class<add TestPerson object>` since it is no longer used
 
   .. code-block:: python
     :lineno-start: 6
@@ -1300,7 +1300,7 @@ The tests use the right calculation for the age, and the solution still uses a f
             first_name, last_name, year_of_birth,
         ):
 
-* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`
+* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person object>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1803,7 +1803,7 @@ I made an :ref:`object attribute for this_year earlier<extract this_year attribu
 
 * I go back to the terminal_ where the tests are running
 
-* I add back the :ref:`object attribute<what is an object attribute?>` for the current year to the :ref:`TestPerson class<add TestPerson class>`
+* I add back the :ref:`object attribute<what is an object attribute?>` for the current year to the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2018,7 +2018,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
 ----
 
-* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`constructor method<the constructor method>` of the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
+* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`constructor method<the constructor method>` of the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2174,7 +2174,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
   the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
 
-* I remove the commented line from the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
+* I remove the commented line from the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4

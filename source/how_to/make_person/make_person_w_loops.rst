@@ -676,7 +676,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
   the tests are still green.
 
-* I remove the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from the :ref:`TestPerson class<add TestPerson class>`
+* I remove the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1340,7 +1340,7 @@ because
 
         def test_person_factory(self):
 
-* I remove the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from the :ref:`TestPerson class<add TestPerson class>`
+* I remove the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1475,7 +1475,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 extract test_say_hello_method
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello method<add say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello method<add say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`
 
 .. code-block:: python
 
@@ -1503,7 +1503,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
 ----
 
-I add a test for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`
+I add a test for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person object>`
 
 .. code-block:: python
   :lineno-start: 13
@@ -2130,7 +2130,7 @@ the subTest method
 
         def test_say_hello_function(self):
 
-* I remove the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` from the :ref:`TestPerson class<add TestPerson class>`
+* I remove the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` from the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2151,7 +2151,7 @@ the subTest method
 
     git commit -am 'extract test_say_hello_method'
 
-For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` which makes an ``age`` :ref:`attribute<what is an object attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>` with the given ``year_of_birth`` parameter.
+For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` which makes an ``age`` :ref:`attribute<what is an object attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>` with the given ``year_of_birth`` parameter.
 
 * If the :ref:`call raises TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the error message is correct
 
@@ -2216,7 +2216,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
                   else:
                       ...
 
-* If the :ref:`call to the calculate_age function<extract calculate_age function>` from the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person class>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<add say_hello method>` matches the expectation
+* If the :ref:`call to the calculate_age function<extract calculate_age function>` from the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person object>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<add say_hello method>` matches the expectation
 
   .. code-block:: shell
 
@@ -2295,7 +2295,7 @@ extract people object attribute
 
 :ref:`test_person_factory<extract test_person_factory>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
 
-* I add an :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
+* I add an :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2425,7 +2425,7 @@ extract people object attribute
 extract test_if_person_can_vote
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 .. code-block:: python
 
@@ -2823,7 +2823,7 @@ the test passes.
 extract test_if_person_can_get_license
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 .. code-block:: python
 
@@ -3063,7 +3063,7 @@ extract truth_table object attribute
 
 The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`. I can make an :ref:`object attribute<what is an object attribute?>` to remove the repetition.
 
-* I add an :ref:`object attribute<what is an object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
+* I add an :ref:`object attribute<what is an object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -3180,7 +3180,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 extract test_person_class
 *********************************************************************************
 
-:ref:`test_say_hello_method<extract test_say_hello_method>`, :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call methods<how to call a function with input>` and compare the results in :ref:`assertions<what is an assertion?>`
+:ref:`test_say_hello_method<extract test_say_hello_method>`, :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call methods<how to call a function with input>` and compare the results in :ref:`assertions<what is an assertion?>`
 
 .. code-block:: python
 
@@ -3222,7 +3222,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
 ----
 
-I add a test with the code from :ref:`test_say_hello_method<extract test_say_hello method>` for the :ref:`Person class<add Person class>`
+I add a test with the code from :ref:`test_say_hello_method<extract test_say_hello method>` for the :ref:`Person class<add Person object>`
 
 .. code-block:: python
   :lineno-start: 23
@@ -3368,7 +3368,7 @@ the test passes.
     SUBFAILED(first_name='john', year_of_birth=1980)
         AssertionError: True != False
 
-* I add values for ``is_citizen`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I add values for ``is_citizen`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -3400,7 +3400,7 @@ the test passes.
             )
         )
 
-* I use the values for the ``is_citizen`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person class>` in :ref:`test_person_class<extract test_person_class>`
+* I use the values for the ``is_citizen`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person object>` in :ref:`test_person_class<extract test_person_class>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -3488,7 +3488,7 @@ the test passes.
     SUBFAILED(first_name='john', year_of_birth=1980)
         AssertionError: False != True
 
-* I add values for ``passed_test`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I add values for ``passed_test`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -3517,7 +3517,7 @@ the test passes.
             )
         )
 
-* I use the values for the ``passed_test`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person class>` in :ref:`test_person_class<extract test_person_class>`
+* I use the values for the ``passed_test`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person object>` in :ref:`test_person_class<extract test_person_class>`
 
   .. code-block:: python
     :lineno-start: 41

@@ -108,7 +108,7 @@ open the project
 ----
 
 *********************************************************************************
-add TestPerson class
+add TestPerson object
 *********************************************************************************
 
 =================================================================================
@@ -272,7 +272,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add TestPerson class'
+    'add TestPerson object'
 
 ----
 
@@ -287,9 +287,9 @@ move test_joe to TestPerson
 ----
 
 * I go back to the terminal_ where the tests are running
-* I remove :ref:`test_failure` from the :ref:`TestPerson class<add TestPerson class>`
+* I remove :ref:`test_failure` from the :ref:`TestPerson class<add TestPerson object>`
 
-* I move :ref:`test_joe` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_joe` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -378,7 +378,7 @@ move test_jane to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_jane` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_jane` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 86
@@ -437,7 +437,7 @@ move test_jane to TestPerson
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_jane` since it also does not use anything in the :ref:`TestPerson class<add TestPerson class>`, yet
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_jane` since it also does not use anything in the :ref:`TestPerson class<add TestPerson object>`, yet
 
   .. code-block:: python
     :lineno-start: 86
@@ -476,7 +476,7 @@ move test_john to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_john` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_john` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 113
@@ -574,7 +574,7 @@ move test_mary to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_mary` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_mary` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 140
@@ -672,7 +672,7 @@ test_dir_person_class with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_dir_person_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_dir_person_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 167
@@ -834,7 +834,7 @@ test_dir_person_instance with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_dir_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_dir_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 187
@@ -1028,7 +1028,7 @@ move assert_person_can_say_hello to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I add a copy of the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I add a copy of the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -1057,7 +1057,7 @@ move assert_person_can_say_hello to TestPerson
         @staticmethod
         def test_joe():
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 84
@@ -1266,7 +1266,7 @@ move assert_person_can_say_hello to TestPerson
         # def test_joe():
         def test_joe(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 113
@@ -1343,7 +1343,7 @@ move assert_person_can_say_hello to TestPerson
 
   the test is green again.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 142
@@ -1420,7 +1420,7 @@ move assert_person_can_say_hello to TestPerson
 
   the test is green again.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 171
@@ -1538,7 +1538,7 @@ move assert_say_hello_works to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I add a copy of the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I add a copy of the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1568,7 +1568,7 @@ move assert_say_hello_works to TestPerson
                 sex, year_of_birth,
             ):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 82
@@ -1649,7 +1649,7 @@ move assert_say_hello_works to TestPerson
                 year_of_birth,
             ):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1679,7 +1679,7 @@ move assert_say_hello_works to TestPerson
 
   the test is still green.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 142
@@ -1709,7 +1709,7 @@ move assert_say_hello_works to TestPerson
 
   still green.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 172
@@ -1873,7 +1873,7 @@ move assert_person_factory_works to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I add a copy of the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I add a copy of the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1903,7 +1903,7 @@ move assert_person_factory_works to TestPerson
                 year_of_birth,
             ):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 81
@@ -2035,7 +2035,7 @@ move assert_person_factory_works to TestPerson
         # def test_jane():
         def test_jane(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 107
@@ -2104,7 +2104,7 @@ move assert_person_factory_works to TestPerson
         # def test_john():
         def test_john(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 133
@@ -2173,7 +2173,7 @@ move assert_person_factory_works to TestPerson
         # def test_mary():
         def test_mary(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 159

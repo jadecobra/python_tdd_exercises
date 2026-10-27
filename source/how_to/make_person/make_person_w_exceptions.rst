@@ -178,7 +178,7 @@ add exception handler to test_when_person_is_older_than_120
         @unittest.skip('fails because age < 0')
         def test_when_year_of_birth_is_the_future(self):
 
-  the terminal_ still shows :ref:`Exception<how to test that an Exception is raised>`, because an :ref:`Exception<how to test that an Exception is raised>` breaks execution of a program_, nothing past the line that caused it will run. In this case, the :ref:`Exception<how to test that an Exception is raised>` happens when the :ref:`instance of the Person class<add Person class>` is made so the :ref:`condition<if statements>` never gets checked.
+  the terminal_ still shows :ref:`Exception<how to test that an Exception is raised>`, because an :ref:`Exception<how to test that an Exception is raised>` breaks execution of a program_, nothing past the line that caused it will run. In this case, the :ref:`Exception<how to test that an Exception is raised>` happens when the :ref:`instance of the Person class<add Person object>` is made so the :ref:`condition<if statements>` never gets checked.
 
 * I change the :ref:`if statement<if statements>` to a :ref:`try statement<how to handle Exceptions>`
 
