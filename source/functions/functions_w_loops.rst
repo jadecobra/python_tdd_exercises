@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-test functions with unittest
+test functions with loops
 #################################################################################
 
 I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions<what is a function?>` project. I also want to use :ref:`object attributes<what is an object attribute?>` to remove repetition of some values from the tests.

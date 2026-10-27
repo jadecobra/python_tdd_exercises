@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Pumping Python, how to make a person with loops, by Johnny Blase. Repeated person checks become one for loop over a people tuple of tuples on TestPerson. Each row is year_of_birth, is_citizen, passed_test, then the expected can_vote and can_get_license results. test_person_class, test_say_hello_function, and test_person_factory share self.first_name, self.last_name, self.sex, self.this_year, younger_than_18, and not_younger_than_18. subTest(a_person) names the failing row. Non-integer rows None, 2026.0, '2026', and (2026,) hit except TypeError and assert "'{year_of_birth}' is not an integer". test_if_person_is_not_alive uses one with for subTest and assertRaisesRegex(ValueError, f'a {age} year old person is not alive.') on this_year+1 and this_year-121. test_when_person_is_older_than_120 and test_when_year_of_birth_is_the_future stay, with the same ValueError message. A wrong regex such as BOOM!!! fails as AssertionError: "BOOM!!!" does not match "a -1 year old person is too old to be alive." before the message becomes "is not alive." dir(Person) tests remain.
+  :keywords: for loop, people tuple, subTest, test_person_class, test_person_factory, test_say_hello_function, test_if_person_is_not_alive, assertRaisesRegex, ValueError, TypeError, year_of_birth, can_vote, can_get_license, this_year, Pumping Python, Johnny Blase
 .. include:: ../../links.rst
 
 .. _how to make a person with loops:
@@ -36,52 +36,82 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
+  :lines: 1-14
+
+.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
-  :lines: 1-32
+  :language: python
+  :lineno-start: 16
+  :lines: 16-31
+
+.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 32
+  :lines: 32-46
+
+.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 47
+  :lines: 47-65
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 34
   :caption: person/tests/test_person.py
-  :lines: 34-53
+  :lineno-start: 67
+  :lines: 67-99
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 55
   :caption: person/tests/test_person.py
-  :lines: 55-73
+  :lineno-start: 100
+  :lines: 100-124
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 75
   :caption: person/tests/test_person.py
-  :lines: 75-92
+  :language: python
+  :lineno-start: 126
+  :lines: 126-143
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 94
   :caption: person/tests/test_person.py
-  :lines: 94-105
+  :language: python
+  :lineno-start: 144
+  :lines: 144-163
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 107
   :caption: person/tests/test_person.py
-  :lines: 107-119
+  :language: python
+  :lineno-start: 165
+  :lines: 165-178
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 121
   :caption: person/tests/test_person.py
-  :lines: 121-128
+  :language: python
+  :lineno-start: 180
+  :lines: 180-193
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 130
   :caption: person/tests/test_person.py
-  :lines: 130-147
+  :language: python
+  :lineno-start: 195
+  :lines: 195-212
+
+.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 214
+  :lines: 214-240
+
+.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 242
+  :lines: 242-247
 
 -----
 
@@ -4133,7 +4163,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                 True, True, True, True,
             ),
             (
-                # not is_citizen, not passed_test
+                # is_citizen, not passed_test
                 'joe', 'blow', 'M',
                 not_younger_than_18,
                 True, False, True, False,
@@ -4445,7 +4475,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                 True, True, True, True,
             ),
             (
-                # not is_citizen, not passed_test
+                # is_citizen, not passed_test
                 not_younger_than_18, True, False,
                 not_younger_than_18,
                 True, False, True, False,
@@ -4572,7 +4602,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                 True, True,
             ),
             (
-                # not is_citizen, not passed_test
+                # is_citizen, not passed_test
                 not_younger_than_18, True, False,
                 True, False,
             ),
@@ -4864,11 +4894,13 @@ I use the :ref:`assertRaisesRegex method<how to test the message of an Exception
 
       def test_when_year_of_birth_is_not_an_integer(self):
 
-the terminal_ is my friend, and shows ValueError_
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  E           ValueError
+  AssertionError:
+      "BOOM!!!" does not match
+      "a -1 year old person is too old to be alive."
 
 ----
 
@@ -5144,7 +5176,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the error message in :ref:`<extract test_if_person_is_not_alive>` to match
+I change the error message in :ref:`extract test_if_person_is_not_alive` to match
 
 .. code-block:: python
   :lineno-start: 143
@@ -5210,9 +5242,7 @@ the test passes.
 
   the test is still green.
 
-* I remove :ref:`test_when_person_is_older_than_120` because it is now a repetition
-
-* I remove :ref:`test_when_year_of_birth_is_the_future` because it is now a repetition
+* :ref:`test_when_person_is_older_than_120` and :ref:`test_when_year_of_birth_is_the_future` stay in the file
 
   .. code-block:: python
     :lineno-start: 157
@@ -5323,7 +5353,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_class
 
   the test is green again.
 
-* I remove the last tuple_ from the ``people`` :ref:`object attribute<what is an object attribute?>` because it is a repetition of when ``year_of_birth`` is a string_ (``((2026,), False, False,),``)
+* I remove the last tuple_ from the ``people`` :ref:`object attribute<what is an object attribute?>` because it is a repetition of when ``year_of_birth`` is a string_ (``('2026', False, False,),``)
 
   .. code-block:: python
     :lineno-start: 57
@@ -5401,7 +5431,7 @@ My tests still have problems:
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with Exceptions: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with loops: tests and solutions>`
 
 ----
 
@@ -5435,22 +5465,26 @@ what is next?
 * :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
-*
+
 .. toctree::
   :titlesonly:
   :maxdepth: 1
 
 
-  ../../AssertionError/AssertionError_w_loops
+  ../../exceptions/AssertionError/AssertionError_w_loops
   ../../truth_table/projects/atm/atm_w_loops
   ../../basic_objects/booleans/booleans_w_loops
   ../../truth_table/projects/car/car_w_loops
-  ../../objects/objects_w_loops
   ../../truth_table/projects/elevator/elevator_w_loops
+  ../../functions/functions_w_loops
   ../../truth_table/projects/microwave/microwave_w_loops
+  ../../basic_objects/none_w_loops
+  ../../objects/objects_w_loops
+  ../../how_to/telephone/telephone_w_loops
   ../../truth_table/projects/traffic_light/traffic_light_w_loops
+  ../../truth_table/binary_operations/binary_operations_w_loops
 
-:ref:`Would you like to test handling Exceptions in tests?<how to test that an Exception is raised>`
+:ref:`Would you like to test AssertionError with loops?<test AssertionError with loops>`
 
 ----
 

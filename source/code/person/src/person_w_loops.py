@@ -4,11 +4,10 @@ import datetime
 class Person:
 
     def __init__(
-        self, first_name, last_name,
-        sex, year_of_birth=None,
-        is_citizen=True,
-        passed_test=False,
-    ):
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            is_citizen=True, passed_test=False,
+        ):
         self.first_name = first_name
         self.last_name = last_name
         self.year_of_birth = year_of_birth
@@ -17,47 +16,45 @@ class Person:
         self.passed_test = passed_test
         self.age = calculate_age(year_of_birth)
 
+    def check_age(self, status):
+        if self.age < 18:
+            return False
+        return status
+
     def can_get_license(self):
-        return self.check_age(
-            self.age, self.passed_test
-        )
+        return self.check_age(self.passed_test)
 
     def can_vote(self):
-        return self.check_age(
-            self.age, self.is_citizen
-        )
-
-    @staticmethod
-    def check_age(age, response):
-        if age < 18:
-            return False
-        return response
+        return self.check_age(self.is_citizen)
 
     def say_hello(self):
         return (
             f'Hello, my name is {self.first_name}'
-            f' {self.last_name} and I am'
-            f' {self.age}.'
+            f' {self.last_name} and I am {self.age}.'
         )
 
 
 def calculate_age(year_of_birth):
     if not isinstance(year_of_birth, int):
-        raise TypeError
+        raise TypeError(
+            f"'{year_of_birth}' is not an integer"
+        )
 
     age = (
         datetime.date.today().year
       - year_of_birth
     )
 
-    if age > 120:
-        raise ValueError
+    if age < 0 or age > 120:
+        raise ValueError(
+            f'a {age} year old person is not alive.'
+        )
     return age
 
 
 def say_hello(
-    first_name, last_name, year_of_birth,
-):
+        first_name, last_name, year_of_birth
+    ):
     return (
         f'Hello, my name is {first_name}'
         f' {last_name} and I am'

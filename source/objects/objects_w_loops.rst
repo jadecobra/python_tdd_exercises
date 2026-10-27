@@ -10,7 +10,7 @@
 .. _staticmethod decorator: staticmethod_
 
 #################################################################################
-objects with loops
+test objects with loops
 #################################################################################
 
 I made :ref:`functions<what is a function?>` that make :ref:`dictionaries (test_factory_w_keyword_arguments)<test_factory_w_keyword_arguments>` and :ref:`strings (test_factory_person_says_hello)<test_factory_person_says_hello>` in :ref:`how to make a person`.

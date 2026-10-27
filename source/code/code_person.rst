@@ -562,3 +562,142 @@ The code in ``person/src/person/__init__.py`` after :ref:`how to make a person w
   :language: python
   :lineno-start: 61
   :lines: 61-
+
+
+----
+
+*********************************************************************************
+how to make a person with loops: tests and solutions
+*********************************************************************************
+
+=================================================================================
+how to make a person with loops: tests
+=================================================================================
+
+----
+
+The tests I changed in ``person/tests/test_person.py`` after :ref:`how to make a person with loops`
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :linenos:
+  :lines: 1-14
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 16
+  :lines: 16-31
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 32
+  :lines: 32-46
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 47
+  :lines: 47-65
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :language: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 67
+  :lines: 67-99
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :language: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 100
+  :lines: 100-124
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 126
+  :lines: 126-143
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 144
+  :lines: 144-163
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 165
+  :lines: 165-178
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 180
+  :lines: 180-193
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 195
+  :lines: 195-212
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 214
+  :lines: 214-240
+
+.. literalinclude:: person/tests/test_person_w_loops.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 242
+  :lines: 242-247
+
+----
+
+=================================================================================
+how to make a person with loops: solutions
+=================================================================================
+
+----
+
+The code in ``person/src/person/__init__.py`` after :ref:`how to make a person with loops`
+
+.. literalinclude:: person/src/person_w_loops.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :linenos:
+  :lines: 1-17
+
+.. literalinclude:: person/src/person_w_loops.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 19
+  :lines: 19-25
+
+.. literalinclude:: person/src/person_w_loops.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 27
+  :lines: 27-34
+
+.. literalinclude:: person/src/person_w_loops.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 37
+  :lines: 37-52
+
+.. literalinclude:: person/src/person_w_loops.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 55
+  :lines: 55-62
+
+.. literalinclude:: person/src/person_w_loops.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 65
+  :lines: 65-73
