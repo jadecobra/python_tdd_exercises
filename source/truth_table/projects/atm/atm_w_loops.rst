@@ -128,7 +128,7 @@ I can write one :ref:`function<what is a function>` with :ref:`for loops<what is
 I add a test for when the card has :green:`expired`
 
 .. code-block:: python
-  :lineno-start: 8
+  :lineno-start: 3
   :emphasize-lines: 2-16
 
   class TestATM(unittest.TestCase):

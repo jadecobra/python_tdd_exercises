@@ -3862,13 +3862,13 @@ the test passes.
                 False, False, False, False,
             ),
             (
-                # underage, passed_test, passed_test
+                # underage, is_citizen, passed_test
                 'first_name', 'last_name', 'M',
                 datetime.date.today().year-17,
                 True, True, False, False,
             ),
             (
-                # underage, not passed_test, passed_test
+                # underage, not is_citizen, passed_test
                 'first_name', 'last_name', 'M',
                 datetime.date.today().year-17,
                 False, True, False, False,
@@ -3879,13 +3879,13 @@ the test passes.
     :emphasize-lines: 5, 11, 15
 
             (
-                # underage, passed_test, not passed_test
+                # underage, is_citizen, not passed_test
                 'first_name', 'last_name', 'M',
                 datetime.date.today().year-17,
                 True, False, False, False,
             ),
             (
-                # underage, not passed_test, not passed_test
+                # underage, not is_citizen, not passed_test
                 'first_name', 'last_name', 'M',
                 datetime.date.today().year-17,
                 False, False, False, False,
