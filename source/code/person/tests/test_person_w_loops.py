@@ -70,7 +70,7 @@ class TestPerson(unittest.TestCase):
 
             with self.subTest(a_person):
                 try:
-                    person = src.person.Person(
+                    an_instance = src.person.Person(
                         first_name=self.first_name,
                         last_name=self.last_name,
                         sex=self.sex,
@@ -85,16 +85,16 @@ class TestPerson(unittest.TestCase):
                     )
                 else:
                     self.assertEqual(
-                        person.say_hello(),
+                        an_instance.say_hello(),
                         (
                             f'Hello, my name is {self.first_name}'
                             f' {self.last_name} and I am'
                             f' {self.calculate_age(year_of_birth)}.'
                         )
                     )
-                    self.assertEqual(person.can_vote(), a_person[3])
+                    self.assertEqual(an_instance.can_vote(), a_person[3])
                     self.assertEqual(
-                        person.can_get_license(), a_person[4]
+                        an_instance.can_get_license(), a_person[4]
                     )
 
     def test_say_hello_function(self):

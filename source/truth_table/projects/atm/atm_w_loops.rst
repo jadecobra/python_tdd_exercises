@@ -11,7 +11,52 @@ test atm with loops
 #################################################################################
 
 
-I want to make an **Automated Teller Machine** that gives me :green:`CASH` or :red:`DENIED` when I try to make a withdrawal.
+I want to use :ref:`for loops<what is a for loop?>` in the :ref:`atm project<Automated Teller Machine>` to give a different message with each denial based on the following inputs
+
+* has the card expired?
+* is the PIN correct?
+* is there enough cash in the account for the withdrawal?
+* will the withdrawal put the account above or below the daily limit for withdrawals?
+
+the :ref:`truth table` could be
+
+==================  ===================== ======================  ==================  =============
+PIN                 cash                  daily limit             card expired        withdrawal
+==================  ===================== ======================  ==================  =============
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
+==================  ===================== ======================  ==================  =============
+
+==================  ======================= ======================  ==================  =============
+PIN                 cash                    daily limit             card expired        withdrawal
+==================  ======================= ======================  ==================  =============
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: There is not enough Cash in the Account`
+==================  ======================= ======================  ==================  =============
+
+==================  ======================= ======================  ==================  =============
+PIN                 cash                    daily limit             card expired        withdrawal
+==================  ======================= ======================  ==================  =============
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+==================  ======================= ======================  ==================  =============
+
+==================  ======================= ======================  ==================  =============
+PIN                 cash                    daily limit             card expired        withdrawal
+==================  ======================= ======================  ==================  =============
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+==================  ======================= ======================  ==================  =============
+
+The :ref:`ATM<Automated Teller Machine>` only gives me :green:`'CASH'` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
 
 ----
 
@@ -19,184 +64,60 @@ I want to make an **Automated Teller Machine** that gives me :green:`CASH` or :r
 preview
 *********************************************************************************
 
-These are the tests I have at the end of the chapter
+This is the test I have at the end of the chapter
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm_w_loops.py
   :caption: atm/tests/test_atm.py
   :language: python
   :linenos:
-  :lines: 1-28
-
-.. literalinclude:: ../../code/atm/tests/test_atm.py
-  :caption: atm/tests/test_atm.py
-  :language: python
-  :lineno-start: 30
-  :lines: 30-48
-
-.. literalinclude:: ../../code/atm/tests/test_atm.py
-  :caption: atm/tests/test_atm.py
-  :language: python
-  :lineno-start: 50
-  :lines: 50-68
-
-.. literalinclude:: ../../code/atm/tests/test_atm.py
-  :caption: atm/tests/test_atm.py
-  :language: python
-  :lineno-start: 70
-  :lines: 70-88
-
-.. literalinclude:: ../../code/atm/tests/test_atm.py
-  :caption: atm/tests/test_atm.py
-  :language: python
-  :lineno-start: 90
-  :lines: 90-108
-
-.. literalinclude:: ../../code/atm/tests/test_atm.py
-  :caption: atm/tests/test_atm.py
-  :language: python
-  :lineno-start: 110
-  :lines: 110-128
-
-.. literalinclude:: ../../code/atm/tests/test_atm.py
-  :caption: atm/tests/test_atm.py
-  :language: python
-  :lineno-start: 130
-  :lines: 130-148
-
-.. literalinclude:: ../../code/atm/tests/test_atm.py
-  :caption: atm/tests/test_atm.py
-  :language: python
-  :lineno-start: 150
-  :lines: 150-
+  :lines: 1-35
 
 ----
 
 *********************************************************************************
-start the project
+open the project
 *********************************************************************************
 
 * I open a terminal_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      * I open ``makePythonTdd.sh``
-      * I change the name of the project to ``atm`` in ``makePythonTdd.sh``
-
-        .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.sh
-          :language: python
-          :linenos:
-          :emphasize-lines: 2-3, 10, 18
-
-      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``atm`` project
-
-        .. code-block:: python
-          :emphasize-lines: 1
-
-          ./makePythonTdd.sh
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      * I open ``makePythonTdd.ps1``
-      * I change the name of the project to ``atm`` in ``makePythonTdd.ps1``
-
-        .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.ps1
-          :language: Powershell
-          :linenos:
-          :emphasize-lines: 1-2, 9, 17
-
-      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``atm`` project
-
-        .. code-block:: python
-          :emphasize-lines: 1
-
-          .\makePythonTdd.ps1
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :emphasize-lines: 10
-
-    ======================== FAILURES =========================
-    _________________ TestATM.test_failure ____________________
-
-    self = <tests.test_atm.TestATM testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_atm.py:7: AssertionError
-    ================ short test summary info ==================
-    FAILED tests/test_atm.py::TestATM::test_failure - AssertionError: True is not false
-    ==================== 1 failed in X.YZs ====================
-
-* I open ``test_atm.py`` from the ``tests`` folder_
-* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_atm.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 4-5
-
-    class TestATM(unittest.TestCase):
-
-        def test_failure(self):
-            # self.assertFalse(True)
-            self.assertTrue(True)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I open a new terminal_ then `change directory`_ to ``atm``
+* I `change directory`_ to the :ref:`atm folder<Automated Teller Machine>` in the ``pumping_python`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     cd atm
 
-* I add the new files_ and folder_ to git_ for tracking
+* I open ``test_atm.py`` from the ``tests`` folder_
+* I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git add .
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit -am 'setup project'
-
-----
-
-If the inputs to the **Automated Teller Machine** are
-
-* is the PIN correct?
-* is there enough cash in the account for the withdrawal?
-
-then I get this :ref:`truth table`
-
-==================  ======================= =================
-PIN                 cash                    withdrawal
-==================  ======================= =================
-:green:`right PIN`  :green:`enough cash`    :green:`CASH`
-:green:`right PIN`  :red:`NOT enough cash`  :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`DENIED`
-==================  ======================= =================
+    uv run pytest-watcher . --now
 
 ----
 
 *********************************************************************************
-test_right_pin_enough_cash
+test_card_expired
 *********************************************************************************
+
+The :ref:`truth table` for when the card has :green:`expired` is
+
+==================  ======================= ======================  ==================  =============
+PIN                 cash                    daily limit             card expired        withdrawal
+==================  ======================= ======================  ==================  =============
+:green:`right PIN`  :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+==================  ======================= ======================  ==================  =============
+
+I can write one :ref:`function<what is a function>` with :ref:`for loops<what is a for loop?>` for these cases
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -204,7 +125,10 @@ test_right_pin_enough_cash
 
 ----
 
-I change :ref:`test_failure` to :ref:`test_right_pin_enough_cash`, then add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered AND there is :green:`enough cash` in the account
+I add a test for when the card has :green:`expired`
+
+.. code-block:: python
+  :lineno-start: 
 
 ==================  ======================= =================
 PIN                 cash                    withdrawal

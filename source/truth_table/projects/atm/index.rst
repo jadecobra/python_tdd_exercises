@@ -21,49 +21,49 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :linenos:
   :lines: 1-28
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 30
   :lines: 30-48
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 50
   :lines: 50-68
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 70
   :lines: 70-88
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 90
   :lines: 90-108
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 110
   :lines: 110-128
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 130
   :lines: 130-148
 
-.. literalinclude:: ../../code/atm/tests/test_atm.py
+.. literalinclude:: ../../../code/atm/tests/test_atm.py
   :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 150
@@ -4491,7 +4491,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for an Automated Teller Machine with these inputs:
+I ran tests for an **Automated Teller Machine** with these inputs:
 
 * has the card expired?
 * is the PIN correct?
@@ -4536,9 +4536,9 @@ PIN                 cash                    daily limit             card expired
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
-The ATM only gives me :green:`'CASH'` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
+The :ref:`ATM<Automated Teller Machine>` only gives me :green:`'CASH'` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
 
-What if I want the ATM to give a different message with each denial, so that the user knows why the withdrawal failed? The :ref:`truth table` could then be
+What if I want the :ref:`ATM<Automated Teller Machine>` to give a different message with each denial, so that the user knows why the withdrawal failed? The :ref:`truth table` could then be
 
 ==================  ===================== ======================  ==================  =============
 PIN                 cash                  daily limit             card expired        withdrawal

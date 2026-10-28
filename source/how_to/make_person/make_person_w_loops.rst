@@ -3351,7 +3351,7 @@ the test passes.
                                 f' {self.calculate_age(year_of_birth)}.'
                             )
                         )
-                        self.assertEqual(person.can_vote(), False)
+                        self.assertEqual(an_instance.can_vote(), False)
 
         def test_say_hello_function(self):
 
@@ -3790,7 +3790,7 @@ the test passes.
 
                 with self.subTest(a_person):
                     try:
-                        person = src.person.Person(
+                        an_instance = src.person.Person(
                             first_name=first_name,
                             last_name=last_name,
                             sex=sex,
@@ -3807,17 +3807,17 @@ the test passes.
 
                     else:
                         self.assertEqual(
-                            person.say_hello(),
+                            an_instance.say_hello(),
                             (
                                 f'Hello, my name is {first_name}'
                                 f' {last_name} and I am'
                                 f' {self.calculate_age(year_of_birth)}.'
                             )
                         )
-                        # self.assertEqual(person.can_vote(), is_citizen)
-                        self.assertEqual(person.can_vote(), a_person[6])
+                        # self.assertEqual(an_instance.can_vote(), is_citizen)
+                        self.assertEqual(an_instance.can_vote(), a_person[6])
                         self.assertEqual(
-                            person.can_get_license(), passed_test
+                            an_instance.can_get_license(), passed_test
                         )
 
         def test_say_hello_function(self):
@@ -3925,7 +3925,7 @@ the test passes.
 
                 with self.subTest(a_person):
                     try:
-                        person = src.person.Person(
+                        an_instance = src.person.Person(
                             first_name=first_name,
                             last_name=last_name,
                             sex=sex,
@@ -3943,18 +3943,18 @@ the test passes.
 
                     else:
                         self.assertEqual(
-                            person.say_hello(),
+                            an_instance.say_hello(),
                             (
                                 f'Hello, my name is {first_name}'
                                 f' {last_name} and I am'
                                 f' {self.calculate_age(year_of_birth)}.'
                             )
                         )
-                        # self.assertEqual(person.can_vote(), is_citizen)
-                        self.assertEqual(person.can_vote(), a_person[6])
+                        # self.assertEqual(an_instance.can_vote(), is_citizen)
+                        self.assertEqual(an_instance.can_vote(), a_person[6])
                         self.assertEqual(
-                            # person.can_get_license(), passed_test
-                            person.can_get_license(), a_person[7]
+                            # an_instance.can_get_license(), passed_test
+                            an_instance.can_get_license(), a_person[7]
                         )
 
         def test_say_hello_function(self):
@@ -3978,7 +3978,7 @@ the test passes.
 
                 with self.subTest(a_person):
                     try:
-                        person = src.person.Person(
+                        an_instance = src.person.Person(
                             first_name=first_name,
                             last_name=last_name,
                             sex=sex,
@@ -3997,16 +3997,16 @@ the test passes.
 
                     else:
                         self.assertEqual(
-                            person.say_hello(),
+                            an_instance.say_hello(),
                             (
                                 f'Hello, my name is {first_name}'
                                 f' {last_name} and I am'
                                 f' {self.calculate_age(year_of_birth)}.'
                             )
                         )
-                        self.assertEqual(person.can_vote(), a_person[6])
+                        self.assertEqual(an_instance.can_vote(), a_person[6])
                         self.assertEqual(
-                            person.can_get_license(), a_person[7]
+                            an_instance.can_get_license(), a_person[7]
                         )
 
         def test_say_hello_function(self):
@@ -4389,7 +4389,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
                 with self.subTest(a_person):
                     try:
-                        person = src.person.Person(
+                        an_instance = src.person.Person(
                             first_name=self.first_name,
                             last_name=self.last_name,
                             sex=self.sex,
@@ -4409,16 +4409,16 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                         )
                     else:
                         self.assertEqual(
-                            person.say_hello(),
+                            an_instance.say_hello(),
                             (
                                 f'Hello, my name is {self.first_name}'
                                 f' {self.last_name} and I am'
                                 f' {self.calculate_age(year_of_birth)}.'
                             )
                         )
-                        self.assertEqual(person.can_vote(), a_person[6])
+                        self.assertEqual(an_instance.can_vote(), a_person[6])
                         self.assertEqual(
-                            person.can_get_license(), a_person[7]
+                            an_instance.can_get_license(), a_person[7]
                         )
 
         def test_say_hello_function(self)
@@ -4686,16 +4686,16 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
                     else:
                         self.assertEqual(
-                            person.say_hello(),
+                            an_instance.say_hello(),
                             (
                                 f'Hello, my name is {self.first_name}'
                                 f' {self.last_name} and I am'
                                 f' {self.calculate_age(year_of_birth)}.'
                             )
                         )
-                        self.assertEqual(person.can_vote(), a_person[3])
+                        self.assertEqual(an_instance.can_vote(), a_person[3])
                         self.assertEqual(
-                            person.can_get_license(), a_person[4]
+                            an_instance.can_get_license(), a_person[4]
                         )
 
         def test_say_hello_function(self):
