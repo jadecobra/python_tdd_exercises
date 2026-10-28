@@ -149,7 +149,7 @@ I add a test for when the card has :green:`expired`
 
 .. code-block:: python
   :lineno-start: 23
-  :emphasize-lines: 1-10
+  :emphasize-lines: 1-8
 
                       self.assertEqual(
                           src.atm.withdraw(
@@ -166,9 +166,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  NameError: name 'src' is not defined
-
-because I do not have a definition for ``src`` in this file_.
+    SUBFAILED(conditions=(True, True, True)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+    SUBFAILED(conditions=(True, True, False)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+    SUBFAILED(conditions=(True, False, True)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+    SUBFAILED(conditions=(True, False, False)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+    SUBFAILED(conditions=(False, True, True)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+    SUBFAILED(conditions=(False, True, False)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+    SUBFAILED(conditions=(False, False, True)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+    SUBFAILED(conditions=(False, False, False)) ... -
+        AssertionError: 'DENIED' != 'DENIED: Card Expired'
 
 ----
 
@@ -177,6 +190,10 @@ because I do not have a definition for ``src`` in this file_.
 =================================================================================
 
 ----
+
+* I open ``__init__.py`` from the ``atm`` folder_ in the ``src`` folder_
+
+* I change the error message for when ``card_expired`` is :green:`True` in the ``withdraw`` :ref:`function<what is a function?>`
 
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
