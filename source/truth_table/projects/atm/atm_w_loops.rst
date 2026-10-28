@@ -128,33 +128,41 @@ I can write one :ref:`function<what is a function>` with :ref:`for loops<what is
 I add a test for when the card has :green:`expired`
 
 .. code-block:: python
-  :lineno-start: 
-
-==================  ======================= =================
-PIN                 cash                    withdrawal
-==================  ======================= =================
-:green:`right PIN`  :green:`enough cash`    :green:`CASH`
-==================  ======================= =================
-
-.. code-block:: python
-  :lineno-start: 4
-  :emphasize-lines: 3-9
+  :lineno-start: 8
+  :emphasize-lines: 2-16
 
   class TestATM(unittest.TestCase):
 
-      def test_right_pin_enough_cash(self):
-          my_expectation = 'CASH'
-          reality = src.atm.withdraw(
-              right_pin=True,
-              enough_cash=True,
-          )
-          self.assertEqual(reality, my_expectation)
+      def test_card_expired(self):
+          for right_pin in (True, False):
+              for enough_cash, above_daily_limit in (
+                  (True, True),
+                  (True, False),
+                  (False, True),
+                  (False, False),
+              ):
+                  with self.subTest(
+                      conditions=(
+                          right_pin, enough_cash, above_daily_limit
+                      )
+                  ):
 
+.. code-block:: python
+  :lineno-start: 23
+  :emphasize-lines: 1-10
 
-  # Exceptions seen
-  # AssertionError
+                      self.assertEqual(
+                          src.atm.withdraw(
+                              right_pin=right_pin,
+                              enough_cash=enough_cash,
+                              above_daily_limit=above_daily_limit,
+                              card_expired=True,
+                          )
+                      )
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+      def test_card_w_below_limit_right_pin_enough_cash(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 

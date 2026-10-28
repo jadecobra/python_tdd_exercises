@@ -3727,7 +3727,7 @@ the test passes.
             ),
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 22
     :emphasize-lines: 3, 9, 15
 
             (
@@ -3748,7 +3748,7 @@ the test passes.
             ),
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 38
     :emphasize-lines: 5, 11, 15
 
             (
