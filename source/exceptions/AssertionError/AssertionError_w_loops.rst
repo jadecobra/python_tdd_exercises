@@ -1735,9 +1735,9 @@ review
 
 I can use :ref:`for loops<what is a for loop?>`, :ref:`object attributes<what is an object attributes?>` and :ref:`functions<what is a function?>` to remove repetition. In this case I used them to make a test that has one hundred sub tests which would not have been fun to write one at a time, yet there is a problem. Can you tell just by looking at the code, that all :ref:`test_assertion_error` is doing is :ref:`asserting<what is an assertion?>` that
 
-  - an item is the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT the same :ref:`objects<everything is an object>`
-  - an item is NOT the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are the same :ref:`objects<everything is an object>`
-  - an item is equal to another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT equal
+* an item is the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT the same :ref:`objects<everything is an object>`
+* an item is NOT the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are the same :ref:`objects<everything is an object>`
+* an item is equal to another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT equal
 
 ----
 
@@ -1745,7 +1745,7 @@ I can use :ref:`for loops<what is a for loop?>`, :ref:`object attributes<what is
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test AssertionError with a for loop: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test AssertionError with loops: tests>`
 
 ----
 
