@@ -859,7 +859,7 @@ test_assertion_error_w_equality with a for loop
 
 ----
 
-I add a :ref:`try statement<how to handle exceptions>` to handle the cases where the pairings are not equal
+I move ``self.assertEqual(first, second)`` into a :ref:`try statement<how to handle exceptions>` to handle the cases where the pairings are not equal
 
 .. code-block:: python
   :lineno-start: 77
@@ -910,9 +910,228 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_assertion_error_w_equality to TestAssertionError'
+    'test_assertion_error_w_equality with a for loop'
 
 ----
+
+*********************************************************************************
+add to basic_objects object attribute
+*********************************************************************************
+
+:ref:`test_assertion_error_w_true`, :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_true` look the same, the only difference is
+
+.. code-block:: python
+
+  False, True, *self.basic_objects  # test_assertion_error_w_none
+  None, True, *self.basic_objects   # test_assertion_error_w_false
+  None, False, *self.basic_objects  # test_assertion_error_w_true
+
+which looks like some of the pairs from :ref:`test_assertion_error_w_equality`
+
+.. code-block:: python
+  :emphasize-lines: 1-2, 4
+
+    SUBFAILED(pair=(None, False))
+    SUBFAILED(pair=(None, True))
+    SUBFAILED(pair=(False, None))
+    SUBFAILED(pair=(False, True))
+    SUBFAILED(pair=(True, None))
+    SUBFAILED(pair=(True, False))
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add :ref:`True<test_what_is_true>` to the tuple_ in :ref:`test_assertion_error_w_true`
+
+.. code-block:: python
+  :lineno-start: 66
+  :emphasize-lines: 6
+
+        def test_assertion_error_w_true(self):
+            assert True is True
+            self.assertIs(True, True)
+
+            for an_object in (
+                None, False, True, *self.basic_objects,
+            ):
+                with self.subTest(object=an_object):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  SUBFAILED(object=True) ...
+      AssertionError: assert True is not True
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I move ``assert_is_not_true(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 2-5
+
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_true(an_object)
+                    except AssertionError:
+                        assert an_object is True
+
+                    self.assertIsNot(an_object, True)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: unexpectedly identical: True
+
+* I move ``self.assertIsNot(an_object, True)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 7-10
+
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_true(an_object)
+                    except AssertionError:
+                        assert an_object is True
+
+                    try:
+                        self.assertIsNot(an_object, True)
+                    except AssertionError:
+                        self.assertIs(an_object, True)
+
+        def test_assertion_error_w_equality(self):
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the first :ref:`assertions<what is an assertion?>` from :ref:`test_assertion_error_w_true` because they are now covered by the :ref:`for loop<what is a for loop?>` and :ref:`try statements<how to handle Exceptions>`
+
+  .. code-block:: python
+    :lineno-start: 66
+
+        def test_assertion_error_w_true(self):
+            for an_object in (
+                None, False, True, *self.basic_objects,
+            ):
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_true(an_object)
+                    except AssertionError:
+                        assert an_object is True
+
+                    try:
+                        self.assertIsNot(an_object, True)
+                    except AssertionError:
+                        self.assertIs(an_object, True)
+
+        def test_assertion_error_w_equality(self):
+
+* I add :ref:`False<test_what_is_false>` to the tuple_ in :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_false(self):
+            assert False is False
+            self.assertIs(False, False)
+
+            for an_object in (
+                None, False, True, *self.basic_objects,
+            ):
+                with self.subTest(object=an_object):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(object=False) ...
+        AssertionError: assert False is not False
+
+* I move ``assert_is_not_false(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 2-5
+
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_false(an_object)
+                    except AssertionError:
+                        assert an_object is False
+
+                    self.assertIsNot(an_object, False)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: unexpectedly identical: False
+
+* I move ``self.assertIsNot(an_object, False)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 7-10
+
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_false(an_object)
+                    except AssertionError:
+                        assert an_object is False
+
+                    try:
+                        self.assertIsNot(an_object, False)
+                    except AssertionError:
+                        self.assertIs(an_object, False)
+
+        def test_assertion_error_w_true(self):
+
+  the test passes.
+
+* I remove the first :ref:`assertions<what is an assertion?>` from :ref:`test_assertion_error_w_false` because they are now covered by the :ref:`for loop<what is a for loop?>` and :ref:`try statements<how to handle Exceptions>`
+
+  .. code-block:: python
+    :lineno-start: 55
+
+        def test_assertion_error_w_false(self):
+            for an_object in (
+                None, False, True, *self.basic_objects,
+            ):
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_false(an_object)
+                    except AssertionError:
+                        assert an_object is False
+
+                    try:
+                        self.assertIsNot(an_object, False)
+                    except AssertionError:
+                        self.assertIs(an_object, False)
+
+        def test_assertion_error_w_true(self):
+
 
 *********************************************************************************
 test_assertion_error_w_is_vs_equal with a for loop
@@ -924,12 +1143,10 @@ test_assertion_error_w_is_vs_equal with a for loop
 
 ----
 
-
-
-* I move :ref:`test_assertion_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+* I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_is_vs_equal`
 
   .. code-block:: python
-    :lineno-start: 176
+    :lineno-start: 87
     :emphasize-lines: 4-6
 
             assert_not_equal(True, None)
@@ -1009,7 +1226,7 @@ the test is green again.
 
   .. code-block:: python
     :lineno-start: 179
-    :emphasize-lines: 4-5
+    :emphasize-lines:3 4-5
 
         # def test_assertion_error_w_is_vs_equal():
         def test_assertion_error_w_is_vs_equal(self):
