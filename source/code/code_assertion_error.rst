@@ -133,82 +133,6 @@ The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test As
 .. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 28
-  :lines: 28-36
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 38
-  :lines: 38-52
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 54
-  :lines: 54-83
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 85
-  :lines: 85-114
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 116
-  :lines: 116-145
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 147
-  :lines: 147-164
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 166
-  :lines: 166-171
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 173
-  :lines: 173-184
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 220
-  :lines: 220-
-
-----
-
-*********************************************************************************
-test AssertionError with None: tests
-*********************************************************************************
-
-:ref:`test_assertion_error_w_none` looks like this by the end of :ref:`test AssertionError with None`
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_none.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
-  :lineno-start: 54
-  :lines: 54-93
-
-----
-
-*********************************************************************************
-test AssertionError with loops: tests
-*********************************************************************************
-
-The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test AssertionError with loops`
-
-.. literalinclude:: assertion_error/tests/test_assertion_error_w_loops.py
-  :caption: assertion_error/tests/test_assertion_error.py
-  :language: python
   :linenos:
   :lines: 1-9
 
@@ -228,6 +152,18 @@ The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test As
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 38
-  :lines: 38-48
+  :lines: 38-65
 
 ----
+
+*********************************************************************************
+test AssertionError with None: tests
+*********************************************************************************
+
+:ref:`test_assertion_error_w_none` looks like this by the end of :ref:`test AssertionError with None`
+
+.. literalinclude:: assertion_error/tests/test_assertion_error_w_none.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 54
+  :lines: 54-93

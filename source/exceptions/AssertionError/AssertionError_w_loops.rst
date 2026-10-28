@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test AssertionError with loops in the assertion_error project so one test can cover many objects. pytest-watcher shows AssertionError. The first loop in test_assert_keyword fails with assert 2 == 'BOOM!!!', then '11' and 'I am alive', until each expectation is the loop variable. Later loops walk None, False, True, 0, 0.0, an empty string, an empty tuple, list, set, and dict. Unittest cores include unexpectedly identical, unexpectedly None, and None != False. A basic_objects class attribute and a single starred expression replace the repeated tuples. Nested loops make test_assertion_error: ten objects by ten objects is one hundred subtests. self.assertEqual on the unequal pairs fails eighty four of them. assert first is second fails ninety. try and except AssertionError run the opposite check, so the grid stays green. The file still has assert_equal, assert_not_equal, test_assert_keyword, and test_assertion_error_w_none.
+  :keywords: AssertionError, for loop, subTest, pytest-watcher, basic_objects, starred expression, assertIsNot, assertEqual, assertNotEqual, try, except, test_assertion_error, pumping python, Jacob Itegboje
 
 .. include:: ../../links.rst
 
@@ -42,7 +42,19 @@ I have these tests by the end of the chapter
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 38
-  :lines: 38-48
+  :lines: 38-46
+
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 48
+  :lines: 48-54
+
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 56
+  :lines: 56-67
 
 ----
 
@@ -554,7 +566,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I remove the other statements from :ref:`test_assertion_error_w_false` because they are now covered by the :ref:`for loop<what is a for loop?>`
+* I remove the other statements from :ref:`test_assertion_error_w_true` because they are now covered by the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 78
@@ -1261,7 +1273,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   green.
 
-* I do the same thing to :ref:`test_assertion_error_w_none`
+* I do the same thing to :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 76
@@ -1338,7 +1350,7 @@ I add a :ref:`function<what is a function?>` with two :ref:`for loops<what is a 
 
       def test_assert_keyword(self):
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what is AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1521,7 +1533,7 @@ the test passes.
 
   assert_is_not(x, y)             -> assert x is not y
 
-* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_true<extract assert_is_not_true function>` back to :ref:`the return statement` of the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_true`
+* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_true<extract assert_is_not_true function>` back to the :ref:`assert statement<what is an assertion?>` in the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 80
@@ -1539,9 +1551,9 @@ the test passes.
 
   the test is still green.
 
-* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_false<extract assert_is_not_false function>` back to :ref:`the return statement` of the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_false`
+* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_false<extract assert_is_not_false function>` back to the :ref:`assert statement<what is an assertion?>` in the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_false`
 
-  .. code-blok:: python
+  .. code-block:: python
     :lineno-start: 72
     :emphasize-lines: 5
 
@@ -1557,9 +1569,9 @@ the test passes.
 
   still green.
 
-* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_none<extract assert_is_not_none function>` back to :ref:`the return statement` of the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_none`
+* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_none<extract assert_is_not_none function>` back to the :ref:`assert statement<what is an assertion?>` in the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_none`
 
-  .. code-blok:: python
+  .. code-block:: python
     :lineno-start: 59
     :emphasize-lines: 5
 
@@ -1643,7 +1655,6 @@ the test passes.
         def test_assertion_error_w_false(self):
 
 * I remove :ref:`test_assertion_error_w_false` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
-* I remove :ref:`test_assertion_error_w_none` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -1703,7 +1714,7 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`for loops<what is a for loop?>`, :ref:`object attributes<what is an object attributes?>` and :ref:`functions<what is a function?>` to remove repetition. In this case I used them to make a test that has one hundred sub tests which would not have been fun to write one at a time, yet there is a problem. Can you tell just by looking at the code, that all :ref:`test_assertion_error` is doing is :ref:`asserting<what is an assertion?>` that
+I can use :ref:`for loops<what is a for loop?>`, :ref:`object attributes<what is an object attribute?>` and :ref:`functions<what is a function?>` to remove repetition. In this case I used them to make a test that has one hundred sub tests which would not have been fun to write one at a time, yet there is a problem. Can you tell just by looking at the code, that all :ref:`test_assertion_error` is doing is :ref:`asserting<what is an assertion?>` that
 
 * an item is the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT the same :ref:`objects<everything is an object>`
 * an item is NOT the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are the same :ref:`objects<everything is an object>`
