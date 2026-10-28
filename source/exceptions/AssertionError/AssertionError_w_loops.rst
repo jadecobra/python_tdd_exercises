@@ -918,7 +918,7 @@ the test passes.
 add to basic_objects object attribute
 *********************************************************************************
 
-:ref:`test_assertion_error_w_true`, :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_true` look the same, the only difference is
+:ref:`test_assertion_error_w_true`, :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_none` look the same, the only difference is
 
 .. code-block:: python
 
@@ -1132,1143 +1132,583 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_assertion_error_w_true(self):
 
-
-*********************************************************************************
-test_assertion_error_w_is_vs_equal with a for loop
-*********************************************************************************
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_is_vs_equal`
+* I add :ref:`None<what is None?>` to the tuple_ in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 87
-    :emphasize-lines: 4-6
-
-            assert_not_equal(True, None)
-            self.assertNotEqual(True, None)
-
-        def test_assertion_error_w_is_vs_equal():
-            assert_is_not(0, 0.0)
-            assert_equal(0, 0.0)
-
-
-    def will_not_run():
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError:
-        TestAssertionError.test_assertion_error_w_is_vs_equal()
-        takes 0 positional arguments but 1 was given
-
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I add ``self`` to the :ref:`definition<how to make a function that takes input>` of :ref:`test_assertion_error_w_is_vs_equal`
-
-.. code-block:: python
-  :lineno-start: 176
-  :emphasize-lines: 4-5
-
-          assert_not_equal(True, None)
-          self.assertNotEqual(True, None)
-
-      # def test_assertion_error_w_is_vs_equal():
-      def test_assertion_error_w_is_vs_equal(self):
-          assert_is_not(0, 0.0)
-          assert_equal(0, 0.0)
-
-the test is green again.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertIs<test_assertIs>` for ``assert 0 is not 0.0``
-
-  .. code-block:: python
-    :lineno-start: 179
-    :emphasize-lines: 4
-
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
-            assert_is_not(0, 0.0)
-            self.assertIs(0, 0.0)
-
-            assert_equal(0, 0.0)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
-
-  .. code-block:: python
-
-    AssertionError: 0 is not 0.0
-
-  compare the :ref:`assertions<what is an assertion?>`: ``assertIs(0, 0.0)`` vs ``assert 0 is 0.0``.
-
-* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>`
-
-  .. code-block:: python
-    :lineno-start: 179
-    :emphasize-lines:3 4-5
-
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
-            assert_is_not(0, 0.0)
-            # self.assertIs(0, 0.0)
-            self.assertIsNot(0, 0.0)
-
-            assert_equal(0, 0.0)
-
-  the test passes. Compare the :ref:`assertions<what is an assertion?>`: ``assertIsNot(0, 0.0)`` vs ``assert 0 is not 0.0``.
-
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``assert 0 == 0.0``
-
-  .. code-block:: python
-    :lineno-start: 185
-    :emphasize-lines: 2
-
-            assert_equal(0, 0.0)
-            self.assertNotEqual(0, 0.0)
-
-
-    def will_not_run():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
-
-  .. code-block:: python
-
-    AssertionError: 0 == 0.0
-
-  compare the :ref:`assertions<what is an assertion?>`: ``assertNotEqual(0, 0.0)`` vs ``assert 0 != 0.0``.
-
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
-
-  .. code-block:: python
-    :lineno-start: 185
-    :emphasize-lines: 2-3
-
-            assert_equal(0, 0.0)
-            # self.assertNotEqual(0, 0.0)
-            self.assertEqual(0, 0.0)
-
-
-    def will_not_run():
-
-  the test passes. Compare the :ref:`assertions<what is an assertion?>`: ``assertIsNot(0, 0.0)`` vs ``assert 0 is not 0.0``.
-
-* I remove the commented lines from :ref:`test_assertion_error_w_is_vs_equal`
-
-  .. code-block:: python
-    :lineno-start: 176
-
-            assert_not_equal(True, None)
-            self.assertNotEqual(True, None)
-
-        def test_assertion_error_w_is_vs_equal(self):
-            assert_is_not(0, 0.0)
-            self.assertIsNot(0, 0.0)
-
-            assert_equal(0, 0.0)
-            self.assertEqual(0, 0.0)
-
-
-    def will_not_run():
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'move test_assertion_error_w_is_vs_equal to TestAssertionError'
-
-----
-
-*********************************************************************************
-will_not_run with a for loop
-*********************************************************************************
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-
-
-* I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestAssertionError class<add TestAssertionError class>`
-
-  .. code-block:: python
-    :lineno-start: 183
-    :emphasize-lines: 4-7
-
-            assert_equal(0, 0.0)
-            self.assertEqual(0, 0.0)
-
-        def will_not_run():
-            # will not run because
-            # the name does not start with test
-            assert False == True
-
-
-    def test_failure():
-
-  the tests are still green.
-
-* I add a :ref:`call<how to call a function with input>` to :ref:`test_assertEqual`
-
-  .. code-block:: python
-    :lineno-start: 186
-    :emphasize-lines: 5
-
-        def will_not_run():
-            # will not run because
-            # the name does not start with test
-            assert False == True
-            self.assertEqual(False, True)
-
-
-    def test_failure():
-
-  still green, it does not raise :ref:`NameError<test_catching_name_error>` because this :ref:`method<what is a method?>` never gets :ref:`called<how to call a function with input>` by pytest_.
-
-* I add ``self`` to the parentheses of :ref:`will not run<pytest only calls the function if the name starts with test>`
-
-  .. code-block:: python
-    :lineno-start: 183
-    :emphasize-lines: 4-5
-
-            assert_equal(0, 0.0)
-            self.assertEqual(0, 0.0)
-
-        # def will_not_run():
-        def will_not_run(self):
-            # will not run because
-            # the name does not start with test
-            assert False == True
-            self.assertEqual(False, True)
-
-  green, it does not raise :ref:`AssertionError<what causes AssertionError?>`.
-
-* I change the name from :ref:`will not run<pytest only calls the function if the name starts with test>` to ``test_will_not_run``
-
-  .. code-block:: python
-    :lineno-start: 186
-    :emphasize-lines: 2-3
-
-        # def will_not_run():
-        # def will_not_run(self):
-        def test_will_not_run(self):
-            # will not run because
-            # the name does not start with test
-            assert False == True
-            self.assertEqual(False, True)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       assert False == True
-
-  a reminder that the test only runs if :ref:`the method/function name starts with test<pytest only calls the function if the name starts with test>`.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I undo the change
-
-.. code-block:: python
-  :lineno-start: 183
-  :emphasize-lines: 4, 6
-
-          assert_equal(0, 0.0)
-          self.assertEqual(0, 0.0)
-
-      def will_not_run():
-      # def will_not_run(self):
-      # def test_will_not_run(self):
-          # will not run because
-          # the name does not start with test
-          assert False == True
-          self.assertEqual(False, True)
-
-
-  def test_failure():
-
-the test is green again.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the new commented lines from :ref:`will not run<pytest only calls the function if the name starts with test>`
-
-  .. code-block:: python
-    :lineno-start: 186
-
-        def will_not_run():
-            # will not run because
-            # the name does not start with test
-            assert False == True
-            self.assertEqual(False, True)
-
-
-    def test_failure():
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'move will_not_run to TestAssertionError'
-
-----
-
-*********************************************************************************
-test_failure with a for loop
-*********************************************************************************
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-
-
-* I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
-
-  .. code-block:: python
-    :lineno-start: 186
-    :emphasize-lines: 7-9
-
-        def will_not_run():
-            # will not run because
-            # the name does not start with test
-            assert False == True
-            self.assertEqual(False, True)
-
-        def test_failure():
-            # assert False == True
-            assert_not_equal(False, True)
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError:
-        TestAssertionError.test_failure()
-        takes 0 positional arguments but 1 was given
-
-  because ...
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` in :ref:`TestAssertionError<add TestAssertionError class>`
-
-.. code-block:: python
-  :lineno-start: 186
-  :emphasize-lines: 7-8
-
-      def will_not_run():
-          # will not run because
-          # the name does not start with test
-          assert False == True
-          self.assertEqual(False, True)
-
-      # def test_failure():
-      def test_failure(self):
-          # assert False == True
-          assert_not_equal(False, True)
-
-the test is green again.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>`
-
-  .. code-block:: python
-    :lineno-start: 192
-    :emphasize-lines: 5
-
-        # def test_failure():
-        def test_failure(self):
-            # assert False == True
-            assert_not_equal(False, True)
-            self.assertNotEqual(False, False)
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: False == False
-
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
-
-  .. code-block:: python
-    :lineno-start: 192
-    :emphasize-lines: 5-6
-
-        # def test_failure():
-        def test_failure(self):
-            # assert False == True
-            assert_not_equal(False, True)
-            # self.assertNotEqual(False, False)
-            self.assertEqual(False, False)
-
-
-    # NOTES
-
-  the test passes.
-
-* I remove the commented lines from :ref:`test_failure<pytest only calls the function if the name starts with test>`
-
-  .. code-block:: python
-    :lineno-start: 186
-
-        def will_not_run():
-            # will not run because
-            # the name does not start with test
-            assert False == True
-            self.assertEqual(False, True)
-
-        def test_failure(self):
-            assert_not_equal(False, True)
-            self.assertEqual(False, False)
-
-
-    # NOTES
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'move test_failure to TestAssertionError'
-
-----
-
-*********************************************************************************
-remove repetition with object attributes
-*********************************************************************************
-
-Three of the tests have the exact same :ref:`variables<what is a variable?>`. I can make them :ref:`object attributes<what is an object attribute?>` to remove repetition of making the same :ref:`variables<what is a variable?>` in the tests.
-
-* I add an :ref:`object attribute<what is an object attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 3
-
-    class TestAssertionError(unittest.TestCase):
-
-        an_integer = 0
-
-        def test_assert_keyword(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
-
-  .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 11-15
+    :lineno-start: 42
+    :emphasize-lines: 7
 
         def test_assertion_error_w_none(self):
             assert None is None
             self.assertIs(None, None)
+            self.assertIsNone(None)
 
-            assert_is_not_none(False)
-            self.assertIsNot(False, None)
+            for an_object in (
+                None, False, True, *self.basic_objects
+            ):
+                with self.subTest(object=an_object):
 
-            assert_is_not_none(True)
-            self.assertIsNot(True, None)
-
-            # an_integer = 0
-            # assert_is_not_none(an_integer)
-            # self.assertIsNot(an_integer, None)
-            assert_is_not_none(self.an_integer)
-            self.assertIsNot(self.an_integer, None)
-
-            a_float = 0.0
-
-  the test is still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_false`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 84
-    :emphasize-lines: 15-19
 
-            a_dictionary = {}
-            assert_is_not_none(a_dictionary)
-            self.assertIsNot(a_dictionary, None)
+    SUBFAILED(object=None) ...
+        AssertionError: assert None is not None
 
-        def test_assertion_error_w_false(self):
-            assert False is False
-            self.assertIs(False, False)
-
-            assert_is_not_false(None)
-            self.assertIsNot(None, False)
-
-            assert_is_not_false(True)
-            self.assertIsNot(True, False)
-
-            # an_integer = 0
-            # assert_is_not_false(an_integer)
-            # self.assertIsNot(an_integer, False)
-            assert_is_not_false(self.an_integer)
-            self.assertIsNot(self.an_integer, False)
-
-            a_float = 0.0
-
-  still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_true`
+* I move ``assert_is_not_none(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 15-19
+    :lineno-start: 50
+    :emphasize-lines: 2-5
 
-            a_dictionary = {}
-            assert_is_not_false(a_dictionary)
-            self.assertIsNot(a_dictionary, False)
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_none(an_object)
+                    except AssertionError:
+                        assert an_object is None
 
-        def test_assertion_error_w_true(self):
-            assert True is True
-            self.assertIs(True, True)
+                    self.assertIsNot(an_object, None)
+                    self.assertIsNotNone(an_object)
 
-            assert_is_not_true(None)
-            self.assertIsNot(None, True)
-
-            assert_is_not_true(False)
-            self.assertIsNot(False, True)
-
-            # an_integer = 0
-            # assert_is_not_true(an_integer)
-            # self.assertIsNot(an_integer, True)
-            assert_is_not_true(self.an_integer)
-            self.assertIsNot(self.an_integer, True)
-
-            a_float = 0.0
-
-  green.
-
-----
-
-* I add an :ref:`object attribute<what is an object attribute?>` for ``a_float = 0.0``
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 4
 
-    class TestAssertionError(unittest.TestCase):
+    SUBFAILED(object=None)...
+        AssertionError: unexpectedly identical: None
 
-        an_integer = 0
-        a_float = 0.0
-
-        def test_assert_keyword(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
+* I move ``self.assertIsNot(an_object, None)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 3-7
+    :lineno-start: 50
+    :emphasize-lines: 7-10
 
-            self.assertIsNot(self.an_integer, None)
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_none(an_object)
+                    except AssertionError:
+                        assert an_object is None
 
-            # a_float = 0.0
-            # assert_is_not_none(a_float)
-            # self.assertIsNot(a_float, None)
-            assert_is_not_none(self.a_float)
-            self.assertIsNot(self.a_float, None)
+                    try:
+                        self.assertIsNot(an_object, None)
+                    except AssertionError:
+                        self.assertIs(an_object, None)
 
-            a_string = ''
+                    self.assertIsNotNone(an_object)
 
-  still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
-
-  .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.an_integer, False)
-
-            # a_float = 0.0
-            # assert_is_not_false(a_float)
-            # self.assertIsNot(a_float, False)
-            assert_is_not_false(self.a_float)
-            self.assertIsNot(self.a_float, False)
-
-            a_string = ''
-
-  the test is still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 147
-    :emphasize-lines: 3-7
 
-            self.assertIsNot(self.an_integer, True)
+    SUBFAILED(object=None) ...
+        AssertionError: unexpectedly None
 
-            # a_float = 0.0
-            # assert_is_not_true(a_float)
-            # self.assertIsNot(a_float, True)
-            assert_is_not_true(self.a_float)
-            self.assertIsNot(self.a_float, True)
-
-            a_string = ''
-
-  still green.
-
-----
-
-* I add an :ref:`object attribute<what is an object attribute?>` for ``a_string = ''``
+* I move ``self.assertIsNotNone(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 5
-
-    class TestAssertionError(unittest.TestCase):
-
-        an_integer = 0
-        a_float = 0.0
-        a_string = ''
-
-        def test_assert_keyword(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_none`
-
-  .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_float, None)
-
-            # a_string = ''
-            # assert_is_not_none(a_string)
-            # self.assertIsNot(a_string, None)
-            assert_is_not_none(self.a_string)
-            self.assertIsNot(self.a_string, None)
-
-            a_tuple = ()
-
-  green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_false`
-
-  .. code-block:: python
-    :lineno-start: 114
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_float, False)
-
-            # a_string = ''
-            # assert_is_not_false(a_string)
-            # self.assertIsNot(a_string, False)
-            assert_is_not_false(self.a_string)
-            self.assertIsNot(self.a_string, False)
-
-            a_tuple = ()
-
-  still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_true`
-
-  .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_float, True)
-
-            # a_string = ''
-            # assert_is_not_true(a_string)
-            # self.assertIsNot(a_string, True)
-            assert_is_not_true(self.a_string)
-            self.assertIsNot(self.a_string, True)
-
-            a_tuple = ()
-
-  the test is still green.
-
-----
-
-* I add an :ref:`object attribute<what is an object attribute?>` for ``a_tuple = ()``
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 6
-
-    class TestAssertionError(unittest.TestCase):
-
-        an_integer = 0
-        a_float = 0.0
-        a_string = ''
-        a_tuple = ()
-
-        def test_assert_keyword(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_none`
-
-  .. code-block:: python
-    :lineno-start: 77
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_string, None)
-
-            # a_tuple = ()
-            # assert_is_not_none(a_tuple)
-            # self.assertIsNot(a_tuple, None)
-            assert_is_not_none(self.a_tuple)
-            self.assertIsNot(self.a_tuple, None)
-
-            a_list = []
-
-  still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_false`
-
-  .. code-block:: python
-    :lineno-start: 123
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_string, False)
-
-            # a_tuple = ()
-            # assert_is_not_false(a_tuple)
-            # self.assertIsNot(a_tuple, False)
-            assert_is_not_false(self.a_tuple)
-            self.assertIsNot(self.a_tuple, False)
-
-            a_list = []
-
-  green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_true`
-
-  .. code-block:: python
-    :lineno-start: 169
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_string, True)
-
-            # a_tuple = ()
-            # assert_is_not_true(a_tuple)
-            # self.assertIsNot(a_tuple, True)
-            assert_is_not_true(self.a_tuple)
-            self.assertIsNot(self.a_tuple, True)
-
-            a_list = []
-
-  still green.
-
-----
-
-* I add an :ref:`object attribute<what is an object attribute?>` for ``a_list = []``
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 7
-
-    class TestAssertionError(unittest.TestCase):
-
-        an_integer = 0
-        a_float = 0.0
-        a_string = ''
-        a_tuple = ()
-        a_list = []
-
-        def test_assert_keyword(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_none`
-
-  .. code-block:: python
-    :lineno-start: 84
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_tuple, None)
-
-            # a_list = []
-            # assert_is_not_none(a_list)
-            # self.assertIsNot(a_list, None)
-            assert_is_not_none(self.a_list)
-            self.assertIsNot(self.a_list, None)
-
-            a_set = set()
-
-  the test is still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_false`
-
-  .. code-block:: python
-    :lineno-start: 132
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_tuple, False)
-
-            # a_list = []
-            # assert_is_not_false(a_list)
-            # self.assertIsNot(a_list, False)
-            assert_is_not_false(self.a_list)
-            self.assertIsNot(self.a_list, False)
-
-            a_set = set()
-
-  still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_true`
-
-  .. code-block:: python
-    :lineno-start: 180
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_tuple, True)
-
-            # a_list = []
-            # assert_is_not_true(a_list)
-            # self.assertIsNot(a_list, True)
-            assert_is_not_true(self.a_list)
-            self.assertIsNot(self.a_list, True)
-
-            a_set = set()
-
-  green.
-
-----
-
-* I add an :ref:`object attribute<what is an object attribute?>` for ``a_set = set()``
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 8
-
-    class TestAssertionError(unittest.TestCase):
-
-        an_integer = 0
-        a_float = 0.0
-        a_string = ''
-        a_tuple = ()
-        a_list = []
-        a_set = set()
-
-        def test_assert_keyword(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_none`
-
-  .. code-block:: python
-    :lineno-start: 91
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_list, None)
-
-            # a_set = set()
-            # assert_is_not_none(a_set)
-            # self.assertIsNot(a_set, None)
-            assert_is_not_none(self.a_set)
-            self.assertIsNot(self.a_set, None)
-
-            a_dictionary = {}
-
-  still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_false`
-
-  .. code-block:: python
-    :lineno-start: 141
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_list, False)
-
-            # a_set = set()
-            # assert_is_not_false(a_set)
-            # self.assertIsNot(a_set, False)
-            assert_is_not_false(self.a_set)
-            self.assertIsNot(self.a_set, False)
-
-            a_dictionary = {}
-
-  the test is still green.
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_true`
-
-  .. code-block:: python
-    :lineno-start: 191
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_list, True)
-
-            # a_set = set()
-            # assert_is_not_true(a_set)
-            # self.assertIsNot(a_set, True)
-            assert_is_not_true(self.a_set)
-            self.assertIsNot(self.a_set, True)
-
-            a_dictionary = {}
-
-  still green.
-
-----
-
-* I add an :ref:`object attribute<what is an object attribute?>` for ``a_dictionary = {}``
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 9
-
-    class TestAssertionError(unittest.TestCase):
-
-        an_integer = 0
-        a_float = 0.0
-        a_string = ''
-        a_tuple = ()
-        a_list = []
-        a_set = set()
-        a_dictionary = {}
-
-        def test_assert_keyword(self):
-
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_none`
-
-  .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 3-7
-
-            self.assertIsNot(self.a_set, None)
-
-            # a_dictionary = {}
-            # assert_is_not_none(a_dictionary)
-            # self.assertIsNot(a_dictionary, None)
-            assert_is_not_none(self.a_dictionary)
-            self.assertIsNot(self.a_dictionary, None)
+    :lineno-start: 56
+    :emphasize-lines: 6-9
+
+                    try:
+                        self.assertIsNot(an_object, None)
+                    except AssertionError:
+                        self.assertIs(an_object, None)
+
+                    try:
+                        self.assertIsNotNone(an_object)
+                    except AssertionError:
+                        self.assertIsNone(an_object)
 
         def test_assertion_error_w_false(self):
 
-  the test is still green.
+  the test passes.
 
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_false`
+* I remove the first :ref:`assertions<what is an assertion?>` from :ref:`test_assertion_error_w_none` because they are now covered by the :ref:`for loop<what is a for loop?>` and :ref:`try statements<how to handle Exceptions>`
 
   .. code-block:: python
-    :lineno-start: 150
-    :emphasize-lines: 3-7
+    :lineno-start: 42
 
-            self.assertIsNot(self.a_set, False)
+        def test_assertion_error_w_none(self):
+            for an_object in (
+                None, False, True, *self.basic_objects
+            ):
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_none(an_object)
+                    except AssertionError:
+                        assert an_object is None
 
-            # a_dictionary = {}
-            # assert_is_not_false(a_dictionary)
-            # self.assertIsNot(a_dictionary, False)
-            assert_is_not_false(self.a_dictionary)
-            self.assertIsNot(self.a_dictionary, False)
+                    try:
+                        self.assertIsNot(an_object, None)
+                    except AssertionError:
+                        self.assertIs(an_object, None)
 
-        def test_assertion_error_w_true(self):
+                    try:
+                        self.assertIsNotNone(an_object)
+                    except AssertionError:
+                        self.assertIsNone(an_object)
+
+        def test_assertion_error_w_false(self):
+
+* I add :ref:`None<what is None?>`, :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` to the ``basic_objects`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 3-6
+
+    class TestAssertionError(unittest.TestCase):
+
+        basic_objects = (
+            None, False, True,
+            0, 0.0, '', (), [], set(), {},
+        )
+
+        def test_assert_keyword(self):
+
+  the tests are still green.
+
+* I remove :ref:`None<what is None?>`, :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` from :ref:`test_assertion_error_w_none` because they are now part of the ``basic_objects`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2
+
+        def test_assertion_error_w_none(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
 
   still green.
 
-* I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_true`
+* I make the same change to :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 202
-    :emphasize-lines: 3-7
+    :lineno-start: 63
+    :emphasize-lines: 2
 
-            self.assertIsNot(self.a_set, True)
+        def test_assertion_error_w_false(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
 
-            # a_dictionary = {}
-            # assert_is_not_true(a_dictionary)
-            # self.assertIsNot(a_dictionary, True)
-            assert_is_not_true(self.a_dictionary)
-            self.assertIsNot(self.a_dictionary, True)
+  green.
+
+* I do the same thing to :ref:`test_assertion_error_w_none`
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 2
+
+        def test_assertion_error_w_true(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+
+  still green.
+
+* I do the same thing to :ref:`test_assertion_error_w_equality`
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 2-3
 
         def test_assertion_error_w_equality(self):
+            for first in self.basic_objects:
+                for second in self.basic_objects:
+                    with self.subTest(pair=(first, second)):
 
-  green.
+  the tests are still green.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add to basic_objects object attribute'
+
+*********************************************************************************
+extract test_assertion_error
+*********************************************************************************
+
+:ref:`test_assertion_error_w_none`, :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_true` still look similar, they all have this :ref:`assertion<what is an assertion?>`
+
+.. code-block:: python
+
+  try:
+      self.assertIsNot(an_object, something)
+  except AssertionError:
+      self.assertIs(an_object, something)
+
+I can make a :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
 ----
 
-* I remove the commented lines from :ref:`test_assertion_error_w_true`
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
-  .. code-block:: python
-    :lineno-start: 158
+----
 
-        def test_assertion_error_w_true(self):
-            assert True is True
-            self.assertIs(True, True)
+I add a :ref:`function<what is a function?>` with two :ref:`for loops<what is a for loop?>` like I did in :ref:`test_assertion_error_w_equality`
 
-            assert_is_not_true(None)
-            self.assertIsNot(None, True)
+.. code-block:: python
+  :lineno-start: 28
+  :emphasize-lines: 8-12
 
-            assert_is_not_true(False)
-            self.assertIsNot(False, True)
+  class TestAssertionError(unittest.TestCase):
 
-  .. code-block:: python
-    :lineno-start: 168
+      basic_objects = (
+          None, False, True,
+          0, 0.0, '', (), [], set(), {},
+      )
 
-            assert_is_not_true(self.an_integer)
-            self.assertIsNot(self.an_integer, True)
+      def test_assertion_error(self):
+          for first in self.basic_objects:
+              for second in self.basic_objects:
+                  with self.subTest(pair=(first, second)):
+                      self.assertIsNot(first, second)
 
-            assert_is_not_true(self.a_float)
-            self.assertIsNot(self.a_float, True)
+      def test_assert_keyword(self):
 
-            assert_is_not_true(self.a_string)
-            self.assertIsNot(self.a_string, True)
+the terminal_ is my friend, and shows :ref:`AssertionError<what is AssertionError?>`
 
-  .. code-block:: python
-    :lineno-start: 177
+.. code-block:: python
 
-            assert_is_not_true(self.a_tuple)
-            self.assertIsNot(self.a_tuple, True)
+  SUBFAILED(pair=(None, None)) ...test_assertion_error -
+      AssertionError: unexpectedly identical: None
+  SUBFAILED(pair=(False, False)) ...test_assertion_error -
+      AssertionError: unexpectedly identical: False
+  SUBFAILED(pair=(True, True)) ...test_assertion_error -
+      AssertionError: unexpectedly identical: True
+  SUBFAILED(pair=(0, 0)) ...test_assertion_error -
+      AssertionError: unexpectedly identical: 0
+  SUBFAILED(pair=(0.0, 0.0)) ...test_assertion_error -
+      AssertionError: unexpectedly identical: 0.0
+  SUBFAILED(pair=('', '')) ...test_assertion_error -
+      AssertionError: unexpectedly identical: ''
+  SUBFAILED(pair=((), ())) ...test_assertion_error -
+      AssertionError: unexpectedly identical: ()
+  SUBFAILED(pair=([], [])) ...test_assertion_error -
+      AssertionError: unexpectedly identical: []
+  SUBFAILED(pair=(set(), set())) ...test_assertion_error -
+      AssertionError: unexpectedly identical: set()
+  SUBFAILED(pair=({}, {})) ...test_assertion_error -
+      AssertionError: unexpectedly identical: {}
 
-            assert_is_not_true(self.a_list)
-            self.assertIsNot(self.a_list, True)
+----
 
-            assert_is_not_true(self.a_set)
-            self.assertIsNot(self.a_set, True)
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-            assert_is_not_true(self.a_dictionary)
-            self.assertIsNot(self.a_dictionary, True)
+----
 
-        def test_assertion_error_w_equality(self):
+I move ``self.assertIsNot(first, second)`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is the same :ref:`object<everything is an object>` as the second one
 
-* I remove the commented lines from :ref:`test_assertion_error_w_false`
+.. code-block:: python
+  :lineno-start: 35
+  :emphasize-lines: 2-5
 
-  .. code-block:: python
-    :lineno-start: 106
+                  with self.subTest(pair=(first, second)):
+                      try:
+                          self.assertIsNot(first, second)
+                      except AssertionError:
+                          self.assertIs(first, second)
 
-        def test_assertion_error_w_false(self):
-            assert False is False
-            self.assertIs(False, False)
+      def test_assert_keyword(self):
 
-            assert_is_not_false(None)
-            self.assertIsNot(None, False)
+the test passes.
 
-            assert_is_not_false(True)
-            self.assertIsNot(True, False)
+----
 
-  .. code-block:: python
-    :lineno-start: 116
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
-            assert_is_not_false(self.an_integer)
-            self.assertIsNot(self.an_integer, False)
+----
 
-            assert_is_not_false(self.a_float)
-            self.assertIsNot(self.a_float, False)
-
-            assert_is_not_false(self.a_string)
-            self.assertIsNot(self.a_string, False)
-
-  .. code-block:: python
-    :lineno-start: 125
-
-            assert_is_not_false(self.a_tuple)
-            self.assertIsNot(self.a_tuple, False)
-
-            assert_is_not_false(self.a_list)
-            self.assertIsNot(self.a_list, False)
-
-            assert_is_not_false(self.a_set)
-            self.assertIsNot(self.a_set, False)
-
-            assert_is_not_false(self.a_dictionary)
-            self.assertIsNot(self.a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
-
-* I remove the commented lines from :ref:`test_assertion_error_w_none`
+* I remove the :ref:`try statement<how to handle Exceptions>` for the :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` in :ref:`test_assertion_error_w_none` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
     :lineno-start: 54
 
         def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIs(None, None)
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_none(an_object)
+                    except AssertionError:
+                        assert an_object is None
 
-            assert_is_not_none(False)
-            self.assertIsNot(False, None)
+                    try:
+                        self.assertIsNotNone(an_object)
+                    except AssertionError:
+                        self.assertIsNone(an_object)
 
-            assert_is_not_none(True)
-            self.assertIsNot(True, None)
+        def test_assertion_error_w_false(self):
+
+* I remove the :ref:`try statement<how to handle Exceptions>` for the :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` in :ref:`test_assertion_error_w_false` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
+
+  .. code-block:: python
+    :lineno-start: 67
+
+        def test_assertion_error_w_false(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_false(an_object)
+                    except AssertionError:
+                        assert an_object is False
+
+        def test_assertion_error_w_true(self):
+
+* I remove the :ref:`try statement<how to handle Exceptions>` for the :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` in :ref:`test_assertion_error_w_true` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
+
+  .. code-block:: python
+    :lineno-start: 75
+
+        def test_assertion_error_w_true(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_true(an_object)
+                    except AssertionError:
+                        assert an_object is True
+
+        def test_assertion_error_w_equality(self):
+
+* I add an :ref:`assertion<what is an assertion?>` for equality to :ref:`test_assertion_error<extract test_assertion_error>`
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 10
+
+        def test_assertion_error(self):
+            for first in self.basic_objects:
+                for second in self.basic_objects:
+                    with self.subTest(pair=(first, second)):
+                        try:
+                            self.assertIsNot(first, second)
+                        except AssertionError:
+                            self.assertIs(first, second)
+
+                        self.assertEqual(first, second)
+
+        def test_assert_keyword(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for eighty four sub tests
+
+  .. code-block:: python
+
+    ============ 84 failed, 8 passed in A.BCs ==============
+
+  yikes!
+
+* I move ``self.assertEqual(first, second)`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is equal to the second one
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 7-10
+
+                    with self.subTest(pair=(first, second)):
+                        try:
+                            self.assertIsNot(first, second)
+                        except AssertionError:
+                            self.assertIs(first, second)
+
+                        try:
+                            self.assertEqual(first, second)
+                        except AssertionError:
+                            self.assertNotEqual(first, second)
+
+        def test_assert_keyword(self):
+
+  the test passes.
+
+* I remove :ref:`test_assertion_error_w_equality` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
+* I remove :ref:`test_assertion_error_w_is_vs_equal` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
+
+  .. code-block:: python
+    :lineno-start: 80
+
+        def test_assertion_error_w_true(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        assert_is_not_true(an_object)
+                    except AssertionError:
+                        assert an_object is True
+
+        def will_not_run():
+
+----
+
+:ref:`test_assertion_error_w_true`, :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_none` use helper :ref:`functions<what is a function?>` which hides their similarities
+
+.. code-block:: python
+
+  assert_is_not_true(an_object)   -> assert_is_not(x, True)
+  assert_is_not_false(an_object)  -> assert_is_not(x, False)
+  assert_is_not_none(an_object)   -> assert_is_not(x, None)
+
+  assert_is_not(x, y)             -> assert x is not y
+
+* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_true<extract assert_is_not_true function>` back to :ref:`the return statement` of the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_true`
+
+  .. code-block:: python
+    :lineno-start: 80
+    :emphasize-lines: 5
+
+        def test_assertion_error_w_true(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        assert an_object is not True
+                    except AssertionError:
+                        assert an_object is True
+
+        def will_not_run():
+
+  the test is still green.
+
+* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_false<extract assert_is_not_false function>` back to :ref:`the return statement` of the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_false`
+
+  .. code-blok:: python
+    :lineno-start: 72
+    :emphasize-lines: 5
+
+        def test_assertion_error_w_false(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        assert an_object is not False
+                    except AssertionError:
+                        assert an_object is False
+
+        def test_assertion_error_w_true(self):
+
+  still green.
+
+* I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_none<extract assert_is_not_none function>` back to :ref:`the return statement` of the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_none`
+
+  .. code-blok:: python
+    :lineno-start: 59
+    :emphasize-lines: 5
+
+        def test_assertion_error_w_none(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        assert an_object is not None
+                    except AssertionError:
+                        assert an_object is None
+
+  green.
+
+* I add a simple :ref:`assert statement<what is an assertion?>` for when the first :ref:`object<everything is an object>` for the cases where the first item is the same :ref:`object<everything is an object>` as the second one
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 5
+
+        def test_assertion_error(self):
+            for first in self.basic_objects:
+                for second in self.basic_objects:
+                    with self.subTest(pair=(first, second)):
+                        assert first is second
+
+                        try:
+                            self.assertIsNot(first, second)
+                        except AssertionError:
+                            self.assertIs(first, second)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for ninety sub tests
+
+  .. code-block:: python
+
+    ============ 90 failed, 6 passed in A.BCs ==============
+
+  I do not think I would have written one hundred individual tests for :ref:`AssertionError<what causes AssertionError?>`
+
+* I move ``assert first is second`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is NOT the same :ref:`object<everything is an object>` as the second one
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 5-8
+
+        def test_assertion_error(self):
+            for first in self.basic_objects:
+                for second in self.basic_objects:
+                    with self.subTest(pair=(first, second)):
+                        try:
+                            assert first is second
+                        except AssertionError:
+                            assert first is not second
+
+                        try:
+                            self.assertIsNot(first, second)
+                        except AssertionError:
+                            self.assertIs(first, second)
+
+                        try:
+                            self.assertEqual(first, second)
+                        except AssertionError:
+                            self.assertNotEqual(first, second)
+
+        def test_assert_keyword(self):
+
+  the test passes.
+
+* I remove the :ref:`try statement<how to handle Exceptions>` for the simple :ref:`assert statements<what is an assertion?>` in :ref:`test_assertion_error_w_none` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
     :lineno-start: 64
 
-            assert_is_not_none(self.an_integer)
-            self.assertIsNot(self.an_integer, None)
-
-            assert_is_not_none(self.a_float)
-            self.assertIsNot(self.a_float, None)
-
-            assert_is_not_none(self.a_string)
-            self.assertIsNot(self.a_string, None)
-
-  .. code-block:: python
-    :lineno-start: 73
-
-            assert_is_not_none(self.a_tuple)
-            self.assertIsNot(self.a_tuple, None)
-
-            assert_is_not_none(self.a_list)
-            self.assertIsNot(self.a_list, None)
-
-            assert_is_not_none(self.a_set)
-            self.assertIsNot(self.a_set, None)
-
-            assert_is_not_none(self.a_dictionary)
-            self.assertIsNot(self.a_dictionary, None)
+        def test_assertion_error_w_none(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        self.assertIsNotNone(an_object)
+                    except AssertionError:
+                        self.assertIsNone(an_object)
 
         def test_assertion_error_w_false(self):
+
+* I remove :ref:`test_assertion_error_w_false` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
+* I remove :ref:`test_assertion_error_w_none` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
+
+  .. code-block:: python
+    :lineno-start: 64
+
+        def test_assertion_error_w_none(self):
+            for an_object in self.basic_objects:
+                with self.subTest(object=an_object):
+                    try:
+                        self.assertIsNotNone(an_object)
+                    except AssertionError:
+                        self.assertIsNone(an_object)
+
+        def will_not_run():
+
+* I remove the :ref:`assert_is_not function<extract assert_is_not function>` because it is no longer used
+* I remove the :ref:`assert_is_not_none<extract assert_is_not_none function>`, :ref:`assert_is_not_false<extract assert_is_not_false function>` and :ref:`assert_is_not_true functions<extract assert_is_not_true function>` because they are no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    import unittest
+
+
+    def assert_not_equal(x, y):
+        assert x != y
+
+  the tests are still green.
 
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'extract object attributes'
-
-:ref:`I can use object attributes to remove repetition<remove repetition with object attributes>`. I make them once and other things in the :ref:`object<everything is an object>` can reference them.
+    git commit -am \
+    'extract test_assertion_error'
 
 ----
 
@@ -2287,22 +1727,17 @@ close the project
 
     cd ..
 
-  the terminal_ is my friend, and shows
-
-  .. code-block:: python
-
-    .../pumping_python
-
-  I am back in the ``pumping_python`` directory_.
-
 ----
 
 *********************************************************************************
 review
 *********************************************************************************
 
-* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`object attributes<what is an object attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`object<everything is an object>` to use them.
+I can use :ref:`for loops<what is a for loop?>`, :ref:`object attributes<what is an object attributes?>` and :ref:`functions<what is a function?>` to remove repetition. In this case I used them to make a test that has one hundred sub tests which would not have been fun to write one at a time, yet there is a problem. Can you tell just by looking at the code, that all :ref:`test_assertion_error` is doing is :ref:`asserting<what is an assertion?>` that
+
+  - an item is the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT the same :ref:`objects<everything is an object>`
+  - an item is NOT the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are the same :ref:`objects<everything is an object>`
+  - an item is equal to another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT equal
 
 ----
 
