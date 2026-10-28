@@ -4055,7 +4055,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     git commit -am 'extract test_person_class'
 

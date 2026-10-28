@@ -128,8 +128,8 @@ I can write one :ref:`function<what is a function>` with :ref:`for loops<what is
 I add a test for when the card has :green:`expired`
 
 .. code-block:: python
-  :lineno-start: 3
-  :emphasize-lines: 2-16
+  :lineno-start: 8
+  :emphasize-lines: 3-11
 
   class TestATM(unittest.TestCase):
 
@@ -142,13 +142,12 @@ I add a test for when the card has :green:`expired`
                   (False, False),
               ):
                   with self.subTest(
-                      conditions=(
-                          right_pin, enough_cash, above_daily_limit
-                      )
+                      right_pin=right_pin, enough_cash=enough_cash,
+                      above_daily_limit=above_daily_limit,
                   ):
 
 .. code-block:: python
-  :lineno-start: 23
+  :lineno-start: 22
   :emphasize-lines: 1-8
 
                       self.assertEqual(
@@ -166,21 +165,21 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-    SUBFAILED(conditions=(True, True, True)) ... -
+    SUBFAILED(right_pin=True, enough_cash=True, above_daily_limit=True) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(conditions=(True, True, False)) ... -
+    SUBFAILED(right_pin=True, enough_cash=True, above_daily_limit=False) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(conditions=(True, False, True)) ... -
+    SUBFAILED(right_pin=True, enough_cash=False, above_daily_limit=True) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(conditions=(True, False, False)) ... -
+    SUBFAILED(right_pin=True, enough_cash=False, above_daily_limit=False) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(conditions=(False, True, True)) ... -
+    SUBFAILED(right_pin=False, enough_cash=True, above_daily_limit=True) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(conditions=(False, True, False)) ... -
+    SUBFAILED(right_pin=False, enough_cash=True, above_daily_limit=False) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(conditions=(False, False, True)) ... -
+    SUBFAILED(right_pin=False, enough_cash=False, above_daily_limit=True) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(conditions=(False, False, False)) ... -
+    SUBFAILED(right_pin=False, enough_cash=False, above_daily_limit=False) ...
         AssertionError: 'DENIED' != 'DENIED: Card Expired'
 
 ----
@@ -193,7 +192,35 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I open ``__init__.py`` from the ``atm`` folder_ in the ``src`` folder_
 
-* I change the error message for when ``card_expired`` is :green:`True` in the ``withdraw`` :ref:`function<what is a function?>`
+* I change the error message for when ``card_expired`` is :green:`True` in the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7
+
+    def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        denied = 'DENIED'
+        if card_expired:
+            return 'DENIED: Card Expired'
+        if above_daily_limit:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_right_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_right_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_wrong_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_wrong_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_right_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_right_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_wrong_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_wrong_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+
+  I broke the other tests for when the card has :green:`expired` with my change.
 
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
