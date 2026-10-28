@@ -20,7 +20,7 @@ preview
 
 :ref:`test_assertion_error_w_none` looks like this by the end of the chapter
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_none.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_none.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 54

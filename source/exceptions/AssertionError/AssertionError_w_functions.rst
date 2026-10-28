@@ -20,49 +20,49 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :linenos:
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 1-10
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :lineno-start: 13
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 13-22
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :lineno-start: 25
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 25-28
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :lineno-start: 31
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 31-42
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :lineno-start: 45
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 45-56
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :lineno-start: 59
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 59-70
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :lineno-start: 73
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 73-80
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_functions.py
   :language: python
   :lineno-start: 83
   :caption: assertion_error/tests/test_assertion_error.py
