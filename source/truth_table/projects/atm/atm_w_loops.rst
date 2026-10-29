@@ -24,7 +24,7 @@ the :ref:`truth table` could be
 PIN                 cash                  daily limit             card expired        withdrawal
 ==================  ===================== ======================  ==================  =============
 :green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
 ==================  ===================== ======================  ==================  =============
@@ -33,7 +33,7 @@ PIN                 cash                  daily limit             card expired  
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
 :green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: There is not enough Cash in the Account`
 ==================  ======================= ======================  ==================  =============
@@ -42,7 +42,7 @@ PIN                 cash                    daily limit             card expired
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
 :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
@@ -51,7 +51,7 @@ PIN                 cash                    daily limit             card expired
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
 :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
@@ -527,12 +527,11 @@ The :ref:`truth table` for if the account is :green:`above limit` for daily with
 ==================  ======================= ======================  ==================  =============
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:green:`right PIN`  :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
-:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
-:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
-:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 ==================  ======================= ======================  ==================  =============
-
 
 I can write one :ref:`function<what is a function>` with :ref:`for loops<what is a for loop?>` for these cases.
 
@@ -549,21 +548,21 @@ I add a test for if the account is :green:`above limit` for daily withdrawals
 .. code-block:: python
   :caption: atm/tests/test_atm.py
   :lineno-start: 8
-  :emphasize-lines: 3-9
+  :emphasize-lines: 3-11
 
   class TestATM(unittest.TestCase):
 
       def test_if_above_daily_limit(self):
-          booleans = (True, False)
+          booleans = (False, True)
           for right_pin in booleans:
               for enough_cash in booleans:
                   with self.subTest(
-                      right_pin=right_pin, enough_cash=enough_cash,
+                      right_pin=right_pin,
+                      enough_cash=enough_cash,
                   ):
 
-
 .. code-block:: python
-  :lineno-start: 22
+  :lineno-start: 18
   :emphasize-lines: 1-9
 
                       self.assertEqual(
@@ -573,7 +572,7 @@ I add a test for if the account is :green:`above limit` for daily withdrawals
                               above_daily_limit_a=True,
                               card_expired=False,
                           ),
-                          'DENIED: You have exceeded the daily withdrawal limit'
+                          'DENIED: exceeded daily withdrawal limit'
                       )
 
       def test_if_card_expired(self):
@@ -583,17 +582,17 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: shell
   :emphasize-text: True False
 
-    SUBFAILED(right_pin=True, enough_cash=True) ...
-        TypeError: withdraw() got an unexpected keyword argument 'above_daily_limit_a'.
-                   Did you mean 'above_daily_limit'?
-    SUBFAILED(right_pin=True, enough_cash=False) ...
-        TypeError: withdraw() got an unexpected keyword argument 'above_daily_limit_a'.
+    SUBFAILED(right_pin=False, enough_cash=False) ...
+        TypeError: withdraw() got an unexpected keyword argument 'enough_Cash'.
                    Did you mean 'above_daily_limit'?
     SUBFAILED(right_pin=False, enough_cash=True) ...
-        TypeError: withdraw() got an unexpected keyword argument 'above_daily_limit_a'.
+        TypeError: withdraw() got an unexpected keyword argument 'enough_Cash'.
                    Did you mean 'above_daily_limit'?
-    SUBFAILED(right_pin=False, enough_cash=False) ...
-        TypeError: withdraw() got an unexpected keyword argument 'above_daily_limit_a'.
+    SUBFAILED(right_pin=True, enough_cash=False) ...
+        TypeError: withdraw() got an unexpected keyword argument 'enough_Cash'.
+                   Did you mean 'above_daily_limit'?
+    SUBFAILED(right_pin=True, enough_cash=True) ...
+        TypeError: withdraw() got an unexpected keyword argument 'enough_Cash'.
                    Did you mean 'above_daily_limit'?
 
 ----
@@ -620,7 +619,7 @@ I add ``above_daily_limit_a`` to the ``withdraw`` :ref:`function<what is a funct
       if card_expired:
           return 'DENIED: Card Expired'
       if above_daily_limit_a:
-          return 'DENIED: You have exceeded the daily withdrawal limit'
+          return 'DENIED: Exceeded the daily withdrawal limit'
       if above_daily_limit:
 
 the test passes.
@@ -638,7 +637,7 @@ the test passes.
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 49
+    :lineno-start: 48
 
         def test_card_w_below_limit_right_pin_enough_cash(self):
             self.assertEqual(
@@ -657,7 +656,7 @@ the test passes.
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 60
+    :lineno-start: 59
 
         def test_card_w_below_limit_right_pin_not_enough_cash(self):
             self.assertEqual(
@@ -676,7 +675,7 @@ the test passes.
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 71
+    :lineno-start: 70
 
         def test_card_w_below_limit_wrong_pin_enough_cash(self):
             self.assertEqual(
@@ -690,6 +689,42 @@ the test passes.
             )
 
         def test_card_w_below_limit_wrong_pin_not_enough_cash(self):
+
+* I change ``above_daily_limit_a`` to ``above_daily_limit`` in the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` from :ref:`test_if_above_daily_limit` in ``tests/test_atm.py``
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 18
+    :emphasize-lines: 5
+
+                        self.assertEqual(
+                            src.atm.withdraw(
+                                right_pin=right_pin,
+                                enough_cash=enough_cash,
+                                above_daily_limit=True,
+                                card_expired=False,
+                            ),
+                            'DENIED: Exceeded the daily withdrawal limit'
+                        )
+
+        def test_if_card_expired(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(right_pin=False, enough_cash=False) ...
+        AssertionError: 'DENIED'
+                     != 'DENIED: Exceeded daily withdrawal limit'
+    SUBFAILED(right_pin=False, enough_cash=True) ...
+        AssertionError: 'DENIED'
+                     != 'DENIED: Exceeded daily withdrawal limit'
+    SUBFAILED(right_pin=True, enough_cash=False) ...
+        AssertionError: 'DENIED'
+                     != 'DENIED: Exceeded daily withdrawal limit'
+    SUBFAILED(right_pin=True, enough_cash=True) ...
+        AssertionError: 'DENIED'
+                     != 'DENIED: Exceeded daily withdrawal limit'
 
 * I change the error message of the :ref:`if statement<if statements>` for when ``above_daily_limit`` is :green:`True` in the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
 
@@ -707,31 +742,13 @@ the test passes.
         if card_expired:
             return 'DENIED: Card Expired'
         if above_daily_limit_a:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
+            return 'DENIED: Exceeded the daily withdrawal limit'
         if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
+            return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin:
 
   the tests are still green.
 
-* I change ``above_daily_limit_a`` to ``above_daily_limit`` in the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` from :ref:`test_if_above_daily_limit` in ``tests/test_atm.py``
-
-  .. code-block:: python
-    :caption: atm/tests/test_atm.py
-    :lineno-start: 17
-    :emphasize-lines: 5
-
-                        self.assertEqual(
-                            src.atm.withdraw(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=True,
-                                card_expired=False,
-                            ),
-                            'DENIED: You have exceeded the daily withdrawal limit'
-                        )
-
-        def test_if_card_expired(self):
 
   still green.
 
@@ -749,7 +766,7 @@ the test passes.
         if card_expired:
             return 'DENIED: Card Expired'
         if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
+            return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin:
 
   green.
@@ -873,7 +890,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         if card_expired:
             return 'DENIED: Card Expired'
         if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
+            return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin_a:
             return 'DENIED: You entered the wrong PIN. Try again...'
         if not right_pin:
@@ -925,7 +942,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         if card_expired:
             return 'DENIED: Card Expired'
         if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
+            return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin_a:
             return 'DENIED: You entered the wrong PIN. Try again...'
         if not right_pin:
@@ -971,7 +988,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         if card_expired:
             return 'DENIED: Card Expired'
         if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
+            return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin:
             return 'DENIED: You entered the wrong PIN. Try again...'
         if not enough_cash:
@@ -1060,7 +1077,7 @@ I change the error message for if there is :red:`NOT enough cash` in the account
       if card_expired:
           return 'DENIED: Card Expired'
       if above_daily_limit:
-          return 'DENIED: You have exceeded the daily withdrawal limit'
+          return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
           return 'DENIED: You entered the wrong PIN. Try again...'
       if not enough_cash:
@@ -1090,7 +1107,7 @@ the test passes.
       if card_expired:
           return 'DENIED: Card Expired'
       if above_daily_limit:
-          return 'DENIED: You have exceeded the daily withdrawal limit'
+          return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
           return 'DENIED: You entered the wrong PIN. Try again...'
       if not enough_cash:
@@ -1209,7 +1226,7 @@ I change the error message for if there is :red:`NOT enough cash` in the account
       if card_expired:
           return 'DENIED: Card Expired'
       if above_daily_limit:
-          return 'DENIED: You have exceeded the daily withdrawal limit'
+          return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
           return 'DENIED: You entered the wrong PIN. Try again...'
       if not enough_cash:
@@ -1239,7 +1256,7 @@ the test passes.
       if card_expired:
           return 'DENIED: Card Expired'
       if above_daily_limit:
-          return 'DENIED: You have exceeded the daily withdrawal limit'
+          return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
           return 'DENIED: You entered the wrong PIN. Try again...'
       if not enough_cash:
@@ -1318,7 +1335,7 @@ the inputs gave me this :ref:`truth table` with a message for each type of denia
 PIN                 cash                  daily limit             card expired        withdrawal
 ==================  ===================== ======================  ==================  =============
 :green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
 ==================  ===================== ======================  ==================  =============
@@ -1327,7 +1344,7 @@ PIN                 cash                  daily limit             card expired  
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
 :green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: There is not enough Cash in the Account`
 ==================  ======================= ======================  ==================  =============
@@ -1336,7 +1353,7 @@ PIN                 cash                    daily limit             card expired
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
 :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
@@ -1345,7 +1362,7 @@ PIN                 cash                    daily limit             card expired
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
 :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============

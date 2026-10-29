@@ -4278,7 +4278,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   .. code-block:: python
     :lineno-start: 140
-    :emphasize-lines: 1-14
+    :emphasize-lines: 1-13
 
                 with self.subTest(a_person):
                     self.assertEqual(
