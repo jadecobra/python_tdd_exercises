@@ -162,36 +162,6 @@ class TestPerson(unittest.TestCase):
                     year_of_birth=year_of_birth,
                 )
 
-    def test_when_person_is_older_than_120(self):
-        year_of_birth = self.this_year - 121
-        age = self.calculate_age(year_of_birth)
-
-        with self.assertRaisesRegex(
-            ValueError,
-            f'a {age} year old person is not alive.'
-        ):
-            src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                year_of_birth=self.this_year-121
-            )
-
-    def test_when_year_of_birth_is_the_future(self):
-        year_of_birth = self.this_year + 1
-        age = self.calculate_age(year_of_birth)
-
-        with self.assertRaisesRegex(
-            ValueError,
-            f'a {age} year old person is not alive.'
-        ):
-            src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='F',
-                year_of_birth=year_of_birth,
-            )
-
     def test_dir_person_class(self):
         self.assertEqual(
             dir(src.person.Person),

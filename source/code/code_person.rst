@@ -630,31 +630,19 @@ The tests I changed in ``person/tests/test_person.py`` after :ref:`how to make a
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 165
-  :lines: 165-178
+  :lines: 165-182
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 180
-  :lines: 180-193
+  :lineno-start: 184
+  :lines: 184-210
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 195
-  :lines: 195-212
-
-.. literalinclude:: person/tests/test_person_w_loops.py
-  :caption: person/tests/test_person.py
-  :language: python
-  :lineno-start: 214
-  :lines: 214-240
-
-.. literalinclude:: person/tests/test_person_w_loops.py
-  :caption: person/tests/test_person.py
-  :language: python
-  :lineno-start: 242
-  :lines: 242-247
+  :lineno-start: 213
+  :lines: 213-218
 
 ----
 
@@ -700,4 +688,4 @@ The code in ``person/src/person/__init__.py`` after :ref:`how to make a person w
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 65
-  :lines: 65-73
+  :lines: 65-72

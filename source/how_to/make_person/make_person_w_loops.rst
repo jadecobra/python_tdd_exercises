@@ -87,31 +87,19 @@ I have these tests by the end of the chapter
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 165
-  :lines: 165-178
+  :lines: 165-182
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 180
-  :lines: 180-193
+  :lineno-start: 184
+  :lines: 184-210
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 195
-  :lines: 195-212
-
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :caption: person/tests/test_person.py
-  :language: python
-  :lineno-start: 214
-  :lines: 214-240
-
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :caption: person/tests/test_person.py
-  :language: python
-  :lineno-start: 242
-  :lines: 242-247
+  :lineno-start: 213
+  :lines: 213-218
 
 -----
 
@@ -1257,7 +1245,7 @@ because
 
   .. code-block:: python
     :lineno-start: 93
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
                 else:
                     self.assertEqual(
@@ -5245,15 +5233,16 @@ the test passes.
 
   the test is still green.
 
-* :ref:`test_when_person_is_older_than_120` and :ref:`test_when_year_of_birth_is_the_future` stay in the file
+* I remove :ref:`test_when_person_is_older_than_120` because it is now covered by :ref:`test_if_person_is_not_alive<extract test_if_person_is_not_alive>`
+* I remove :ref:`test_when_year_of_birth_is_the_future` because it is now covered by :ref:`test_if_person_is_not_alive<extract test_if_person_is_not_alive>`
 
   .. code-block:: python
     :lineno-start: 157
 
                     src.person.Person(
-                        first_name='first_name',
-                        last_name='last_name',
-                        sex='M',
+                        first_name=self.first_name,
+                        last_name=self.last_name,
+                        sex=self.sex,
                         year_of_birth=year_of_birth,
                     )
 
@@ -5373,22 +5362,28 @@ move test_when_year_of_birth_is_not_an_integer to test_person_class
 * I remove :ref:`test_when_year_of_birth_is_not_an_integer` because it is now covered by :ref:`test_person_class<extract test_person_class>`
 
   .. code-block:: python
-    :lineno-start: 180
+    :lineno-start: 144
 
-        def test_when_year_of_birth_is_the_future(self):
-            year_of_birth = self.this_year + 1
-            age = self.calculate_age(year_of_birth)
-
-            with self.assertRaisesRegex(
-                ValueError,
-                f'a {age} year old person is not alive.'
+        def test_if_person_is_not_alive(self):
+            for year_of_birth in (
+                self.this_year+1,
+                self.this_year-121,
             ):
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='F',
-                    year_of_birth=year_of_birth,
-                )
+                age = self.calculate_age(year_of_birth)
+
+                with (
+                    self.subTest(year_of_birth),
+                    self.assertRaisesRegex(
+                        ValueError,
+                        f'a {age} year old person is not alive.'
+                    ),
+                ):
+                    src.person.Person(
+                        first_name=self.first_name,
+                        last_name=self.last_name,
+                        sex=self.sex,
+                        year_of_birth=year_of_birth,
+                    )
 
         def test_dir_person_class(self):
 

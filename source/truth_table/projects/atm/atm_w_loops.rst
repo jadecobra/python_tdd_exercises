@@ -211,14 +211,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
 
-    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_right_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
-    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_right_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
-    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_wrong_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
-    FAILED tests/test_atm.py::TestATM::test_card_w_above_limit_wrong_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
-    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_right_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
-    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_right_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
-    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_wrong_pin_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
-    FAILED tests/test_atm.py::TestATM::test_card_w_below_limit_wrong_pin_not_enough_cash - AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_above_limit_right_pin_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_above_limit_right_pin_not_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_above_limit_wrong_pin_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_above_limit_wrong_pin_not_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_below_limit_right_pin_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_below_limit_right_pin_not_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_below_limit_wrong_pin_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
+    FAILED ...test_card_w_below_limit_wrong_pin_not_enough_cash -
+        AssertionError: 'DENIED: Card Expired' != 'DENIED'
 
   I broke the other tests for when the card has :green:`expired` with my change.
 
