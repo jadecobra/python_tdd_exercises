@@ -44,7 +44,7 @@ PIN                 cash                    daily limit             card expired
 :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
@@ -53,7 +53,7 @@ PIN                 cash                    daily limit             card expired
 :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 The :ref:`ATM<Automated Teller Machine>` only gives me :green:`'CASH'` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
@@ -747,12 +747,9 @@ the test passes.
             return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin:
 
-  the tests are still green.
+  the tests passes.
 
-
-  still green.
-
-* I remove ``above_daily_limit_a`` and its :ref:`if statement<if statements>` from the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
+* I remove ``above_daily_limit_a`` and its :ref:`if statement<if statements>` from the ``withdraw`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :caption: atm/src/atm/__init__.py
@@ -769,7 +766,7 @@ the test passes.
             return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin:
 
-  green.
+  the test is still green.
 
 * I add a git_ commit message
 
@@ -789,8 +786,8 @@ The :ref:`truth table` for if the :red:`wrong PIN` is entered is
 ==================  ======================= ======================  ==================  =============
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 I can write one :ref:`function<what is a function>` with :ref:`for loops<what is a for loop?>` for the two cases.
@@ -813,7 +810,7 @@ I add a test for if the :red:`wrong PIN` is entered
   class TestATM(unittest.TestCase):
 
       def test_if_wrong_pin(self):
-          for enough_cash in (True, False):
+          for enough_cash in (False, True):
               with self.subTest(enough_cash=enough_cash):
                   self.assertEqual(
                       src.atm.withdraw(
@@ -822,19 +819,19 @@ I add a test for if the :red:`wrong PIN` is entered
                           above_daily_limit=False,
                           card_expired=False,
                       ),
-                      'DENIED: You entered the wrong PIN. Try again...'
+                      'DENIED: Wrong PIN. Try again...'
                   )
 
       def test_if_above_daily_limit(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
-    SUBFAILED(enough_cash=True) ...AssertionError:
-        'DENIED' != 'DENIED: You entered the wrong PIN. Try again...'
-    SUBFAILED(enough_cash=False) ...AssertionError:
-        'DENIED' != 'DENIED: You entered the wrong PIN. Try again...'
+    SUBFAILED(enough_cash=False) AssertionError:
+        'DENIED' != 'DENIED: Wrong PIN. Try again...'
+    SUBFAILED(enough_cash=True) AssertionError:
+        'DENIED' != 'DENIED: Wrong PIN. Try again...'
 
 ----
 
@@ -859,7 +856,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                             above_daily_limit=False,
                             card_expired=False,
                         ),
-                        'DENIED: You entered the wrong PIN. Try again...'
+                        'DENIED: Wrong PIN. Try again...'
                     )
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -867,11 +864,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :emphasize-text: True, False
 
-    SUBFAILED(enough_cash=True) ...TypeError:
-        withdraw() got an unexpected keyword argument 'right_pin_a'.
-                   Did you mean 'right_pin'?
-    SUBFAILED(enough_cash=False) ...TypeError:
-        withdraw() got an unexpected keyword argument 'right_pin_a'.
+    SUBFAILED(enough_cash=False) tests/test_atm.py::TestATM::test_if_wrong_pin - TypeError: withdraw() got an unexpected keyword argument 'right_pin_a'. Did y...
+    SUBFAILED(enough_cash=True) tests/test_atm.py::TestATM::test_if_wrong_pin - TypeError: withdraw() got an unexpected keyword argument 'right_pin_a'.
                    Did you mean 'right_pin'?
 
 * I add ``right_pin_a`` with an :ref:`if statement<if statements>` for it, to the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
@@ -892,7 +886,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         if above_daily_limit:
             return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin_a:
-            return 'DENIED: You entered the wrong PIN. Try again...'
+            return 'DENIED: Wrong PIN. Try again...'
         if not right_pin:
 
   the test passes.
@@ -944,9 +938,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         if above_daily_limit:
             return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin_a:
-            return 'DENIED: You entered the wrong PIN. Try again...'
+            return 'DENIED: Wrong PIN. Try again...'
         if not right_pin:
-            return 'DENIED: You entered the wrong PIN. Try again...'
+            return 'DENIED: Wrong PIN. Try again...'
         if not enough_cash:
 
   the test is still green.
@@ -967,7 +961,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                             above_daily_limit=False,
                             card_expired=False,
                         ),
-                        'DENIED: You entered the wrong PIN. Try again...'
+                        'DENIED: Wrong PIN. Try again...'
                     )
 
         def test_if_above_daily_limit(self):
@@ -990,7 +984,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         if above_daily_limit:
             return 'DENIED: Exceeded the daily withdrawal limit'
         if not right_pin:
-            return 'DENIED: You entered the wrong PIN. Try again...'
+            return 'DENIED: Wrong PIN. Try again...'
         if not enough_cash:
             return denied
         return 'CASH'
@@ -1079,7 +1073,7 @@ I change the error message for if there is :red:`NOT enough cash` in the account
       if above_daily_limit:
           return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
-          return 'DENIED: You entered the wrong PIN. Try again...'
+          return 'DENIED: Wrong PIN. Try again...'
       if not enough_cash:
           return 'DENIED: There is not enough Cash in the Account'
       return 'CASH'
@@ -1109,7 +1103,7 @@ the test passes.
       if above_daily_limit:
           return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
-          return 'DENIED: You entered the wrong PIN. Try again...'
+          return 'DENIED: Wrong PIN. Try again...'
       if not enough_cash:
           return 'DENIED: There is not enough Cash in the Account'
       return 'CASH'
@@ -1228,7 +1222,7 @@ I change the error message for if there is :red:`NOT enough cash` in the account
       if above_daily_limit:
           return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
-          return 'DENIED: You entered the wrong PIN. Try again...'
+          return 'DENIED: Wrong PIN. Try again...'
       if not enough_cash:
           return 'DENIED: There is not enough Cash in the Account'
       return 'CASH'
@@ -1258,7 +1252,7 @@ the test passes.
       if above_daily_limit:
           return 'DENIED: Exceeded the daily withdrawal limit'
       if not right_pin:
-          return 'DENIED: You entered the wrong PIN. Try again...'
+          return 'DENIED: Wrong PIN. Try again...'
       if not enough_cash:
           return 'DENIED: There is not enough Cash in the Account'
       return 'CASH'
@@ -1355,7 +1349,7 @@ PIN                 cash                    daily limit             card expired
 :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
@@ -1364,7 +1358,7 @@ PIN                 cash                    daily limit             card expired
 :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 ----

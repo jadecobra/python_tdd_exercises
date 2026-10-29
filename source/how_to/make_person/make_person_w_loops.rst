@@ -4432,7 +4432,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
     SUBFAILED[(2008, True, True, True, True)] ...test_person_class -
         IndexError: tuple index out of range
     SUBFAILED[(2008, True, True, True, True)] ...test_say_hello_function -
-        ValueError: a YYYY year old person is not alive.
+        ValueError
 
   because the positions changed when I changed the tuple_. I would have to change all the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` if I change the tuple_, there has to be :ref:`a better way<how to make a person with dictionaries>`
 
