@@ -130,36 +130,34 @@ I add a test for if the card has :green:`expired`
 .. code-block:: python
   :caption: atm/tests/test_atm.py
   :lineno-start: 8
-  :emphasize-lines: 3-14
+  :emphasize-lines: 3-12
 
   class TestATM(unittest.TestCase):
 
       def test_if_card_expired(self):
-          for right_pin in (True, False):
-              for enough_cash, above_daily_limit in (
-                  (True, True),
-                  (True, False),
-                  (False, True),
-                  (False, False),
-              ):
-                  with self.subTest(
-                      right_pin=right_pin, enough_cash=enough_cash,
-                      above_daily_limit=above_daily_limit,
-                  ):
+          booleans = (True, False)
+          for right_pin in booleans:
+              for enough_cash in booleans:
+                  for above_daily_limit in booleans:
+                      with self.subTest(
+                          right_pin=right_pin,
+                          enough_cash=enough_cash,
+                          above_daily_limit=above_daily_limit,
+                      ):
 
 .. code-block:: python
-  :lineno-start: 22
+  :lineno-start: 20
   :emphasize-lines: 1-9
 
-                      self.assertEqual(
-                          src.atm.withdraw(
-                              right_pin=right_pin,
-                              enough_cash=enough_cash,
-                              above_daily_limit=above_daily_limit,
-                              card_expired=True,
-                          ),
-                          'DENIED: Card Expired'
-                      )
+                          self.assertEqual(
+                              src.atm.withdraw(
+                                  right_pin=right_pin,
+                                  enough_cash=enough_cash,
+                                  above_daily_limit=above_daily_limit,
+                                  card_expired=True,
+                              ),
+                              'DENIED: Card Expired'
+                          )
 
       def test_card_w_below_limit_right_pin_enough_cash(self):
 
@@ -167,22 +165,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-    SUBFAILED(right_pin=True, enough_cash=True, above_daily_limit=True) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(right_pin=True, enough_cash=True, above_daily_limit=False) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(right_pin=True, enough_cash=False, above_daily_limit=True) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(right_pin=True, enough_cash=False, above_daily_limit=False) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(right_pin=False, enough_cash=True, above_daily_limit=True) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(right_pin=False, enough_cash=True, above_daily_limit=False) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(right_pin=False, enough_cash=False, above_daily_limit=True) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
-    SUBFAILED(right_pin=False, enough_cash=False, above_daily_limit=False) ...
-        AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=False, enough_cash=False, above_daily_limit=False) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=False, enough_cash=False, above_daily_limit=True) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=False, enough_cash=True, above_daily_limit=False) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=False, enough_cash=True, above_daily_limit=True) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=True, enough_cash=False, above_daily_limit=False) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=True, enough_cash=False, above_daily_limit=True) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=True, enough_cash=True, above_daily_limit=False) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
+  SUBFAILED(right_pin=True, enough_cash=True, above_daily_limit=True) ...
+      AssertionError: 'DENIED' != 'DENIED: Card Expired'
 
 ----
 
@@ -241,9 +239,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :emphasize-lines: 7
 
     def withdraw(
-        right_pin, enough_cash,
-        above_daily_limit=False, card_expired=False,
-    ):
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
         denied = 'DENIED'
         if card_expired:
             return denied
@@ -256,7 +254,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: python
     :caption: atm/src/atm/__init__.py
     :linenos:
-    :emphasize-lines: 4, 8
+    :emphasize-lines: 4, 7-8
 
     def withdraw(
             right_pin, enough_cash,
@@ -274,7 +272,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 22
+    :lineno-start: 20
     :emphasize-lines: 7
 
                         self.assertEqual(
@@ -304,7 +302,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 33
+    :lineno-start: 31
 
         def test_card_w_below_limit_right_pin_enough_cash(self):
             self.assertEqual(
@@ -323,7 +321,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 44
+    :lineno-start: 42
 
         def test_card_w_above_limit_right_pin_enough_cash(self):
             self.assertEqual(
@@ -342,7 +340,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 55
+    :lineno-start: 53
 
         def test_card_w_above_limit_right_pin_not_enough_cash(self):
             self.assertEqual(
@@ -361,7 +359,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 66
+    :lineno-start: 64
 
         def test_card_w_below_limit_right_pin_not_enough_cash(self):
             self.assertEqual(
@@ -380,7 +378,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 77
+    :lineno-start: 75
 
         def test_card_w_above_limit_wrong_pin_enough_cash(self):
             self.assertEqual(
@@ -399,7 +397,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 88
+    :lineno-start: 86
 
         def test_card_w_below_limit_wrong_pin_enough_cash(self):
             self.assertEqual(
@@ -418,7 +416,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 99
+    :lineno-start: 97
 
         def test_card_w_above_limit_wrong_pin_not_enough_cash(self):
             self.assertEqual(
@@ -437,7 +435,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 99
+    :lineno-start: 108
 
         def test_card_w_below_limit_wrong_pin_not_enough_cash(self):
             self.assertEqual(
@@ -452,6 +450,26 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 
     # Exceptions seen
+
+* I remove ``card_expired_a`` from the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` from :ref:`test_if_card_expired` in ``tests/test_atm.py``
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 20
+
+                        self.assertEqual(
+                            src.atm.withdraw(
+                                right_pin=right_pin,
+                                enough_cash=enough_cash,
+                                above_daily_limit=above_daily_limit,
+                                card_expired=True,
+                            ),
+                            'DENIED: Card Expired'
+                        )
+
+        def test_card_w_below_limit_right_pin_enough_cash(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 * I change the error message of the :ref:`if statement<if statements>` for when ``card_expired`` is :green:`True` in the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
 
@@ -472,29 +490,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             return 'DENIED: Card Expired'
         if above_daily_limit:
 
-  the tests are still green.
+  the test is green again.
 
-* I remove ``card_expired_a`` from the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` from :ref:`test_if_card_expired` in ``tests/test_atm.py``
-
-  .. code-block:: python
-    :caption: atm/tests/test_atm.py
-    :lineno-start: 22
-
-                        self.assertEqual(
-                            src.atm.withdraw(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=above_daily_limit,
-                                card_expired=True,
-                            ),
-                            'DENIED: Card Expired'
-                        )
-
-        def test_card_w_below_limit_right_pin_enough_cash(self):
-
-  still green.
-
-* I remove ``card_expired_a`` and its :ref:`if statement<if statements>` from the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
+* I remove ``card_expired_a`` and its :ref:`if statement<if statements>` from the ``withdraw`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :caption: atm/src/atm/__init__.py
@@ -992,19 +990,16 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 ----
 
 *********************************************************************************
-test_if_wrong_pin
+test_if_not_enough_cash
 *********************************************************************************
 
-The :ref:`truth table` for if the :red:`wrong PIN` is entered is
+There is only one message for if there is :red:`NOT enough cash` in the account, which is if the :green:`right PIN` is entered, the card has :red:`NOT expired` and the account is :red:`NOT above limit` for daily withdrawals
 
 ==================  ======================= ======================  ==================  =============
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: There is not enough Cash in the Account`
 ==================  ======================= ======================  ==================  =============
-
-I can write one :ref:`function<what is a function>` with :ref:`for loops<what is a for loop?>` for the two cases.
 
 ----
 
@@ -1014,38 +1009,33 @@ I can write one :ref:`function<what is a function>` with :ref:`for loops<what is
 
 ----
 
-I add a test for if the :red:`wrong PIN` is entered
+I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_card_w_below_limit_right_pin_not_enough_cash`
 
 .. code-block:: python
   :caption: atm/tests/test_atm.py
-  :lineno-start: 8
-  :emphasize-lines: 3-14
+  :lineno-start: 73
+  :emphasize-lines: 9
 
-  class TestATM(unittest.TestCase):
+      def test_card_w_below_limit_right_pin_not_enough_cash(self):
+          self.assertEqual(
+              src.atm.withdraw(
+                  right_pin=True,
+                  enough_cash=False,
+                  above_daily_limit=False,
+                  card_expired=False,
+              ),
+              'DENIED: There is not enough Cash in the Account'
+          )
 
-      def test_if_wrong_pin(self):
-          for enough_cash in (True, False):
-              with self.subTest(enough_cash=enough_cash):
-                  self.assertEqual(
-                      src.atm.withdraw(
-                          right_pin=False,
-                          enough_cash=enough_cash,
-                          above_daily_limit=False,
-                          card_expired=False,
-                      ),
-                      'DENIED: You entered the wrong PIN. Try again...'
-                  )
 
-      def test_if_above_daily_limit(self):
+  # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
-    SUBFAILED(enough_cash=True) ...AssertionError:
-        'DENIED' != 'DENIED: You entered the wrong PIN. Try again...'
-    SUBFAILED(enough_cash=False) ...AssertionError:
-        'DENIED' != 'DENIED: You entered the wrong PIN. Try again...'
+    AssertionError:
+        'DENIED' != 'DENIED: There is not enough Cash in the Account
 
 ----
 
@@ -1055,58 +1045,29 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I add ``right_pin_a`` to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` in the :ref:`assertion<what is an assertion?>`
+I change the error message for if there is :red:`NOT enough cash` in the account, in the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
 
-  .. code-block:: python
-    :caption: atm/tests/test_atm.py
-    :lineno-start: 13
-    :emphasize-lines: 4
+.. code-block:: python
+  :caption: atm/src/atm/__init__.py
+  :linenos:
+  :emphasize-lines: 13
 
-                    self.assertEqual(
-                        src.atm.withdraw(
-                            right_pin=False,
-                            right_pin_a=False,
-                            enough_cash=enough_cash,
-                            above_daily_limit=False,
-                            card_expired=False,
-                        ),
-                        'DENIED: You entered the wrong PIN. Try again...'
-                    )
+  def withdraw(
+          right_pin, enough_cash,
+          above_daily_limit=False, card_expired=False,
+      ):
+      denied = 'DENIED'
+      if card_expired:
+          return 'DENIED: Card Expired'
+      if above_daily_limit:
+          return 'DENIED: You have exceeded the daily withdrawal limit'
+      if not right_pin:
+          return 'DENIED: You entered the wrong PIN. Try again...'
+      if not enough_cash:
+          return 'DENIED: There is not enough Cash in the Account'
+      return 'CASH'
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-    :emphasize-text: True, False
-
-    SUBFAILED(enough_cash=True) ...TypeError:
-        withdraw() got an unexpected keyword argument 'right_pin_a'.
-                   Did you mean 'right_pin'?
-    SUBFAILED(enough_cash=False) ...TypeError:
-        withdraw() got an unexpected keyword argument 'right_pin_a'.
-                   Did you mean 'right_pin'?
-
-* I add ``right_pin_a`` with an :ref:`if statement<if statements>` for it, to the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
-
-  .. code-block:: python
-    :caption: atm/src/atm/__init__.py
-    :linenos:
-    :emphasize-lines: 4, 11-12
-
-    def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-            right_pin_a=True,
-        ):
-        denied = 'DENIED'
-        if card_expired:
-            return 'DENIED: Card Expired'
-        if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
-        if not right_pin_a:
-            return 'DENIED: You entered the wrong PIN. Try again...'
-        if not right_pin:
-
-  the test passes.
+the test passes.
 
 ----
 
@@ -1116,14 +1077,45 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I remove :ref:`test_card_w_below_limit_wrong_pin_enough_cash` because it is now covered by :ref:`test_if_wrong_pin`, in ``tests/test_atm.py``
-* I remove :ref:`test_card_w_below_limit_wrong_pin_not_enough_cash` because it is now covered by :ref:`test_if_wrong_pin`
+* I remove the ``denied`` :ref:`variable<what is a variable?>` because it is no longer used
+
+.. code-block:: python
+  :caption: atm/src/atm/__init__.py
+  :linenos:
+
+  def withdraw(
+          right_pin, enough_cash,
+          above_daily_limit=False, card_expired=False,
+      ):
+      if card_expired:
+          return 'DENIED: Card Expired'
+      if above_daily_limit:
+          return 'DENIED: You have exceeded the daily withdrawal limit'
+      if not right_pin:
+          return 'DENIED: You entered the wrong PIN. Try again...'
+      if not enough_cash:
+          return 'DENIED: There is not enough Cash in the Account'
+      return 'CASH'
+
+* I change the name of the test from :ref:`test_card_w_below_limit_right_pin_not_enough_cash` to :ref:`test_if_not_enough_cash`
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 74
+    :lineno-start: 62
+    :emphasize-lines: 12
 
-        def test_card_w_below_limit_right_pin_not_enough_cash(self):
+        def test_card_w_below_limit_right_pin_enough_cash(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_cash=True,
+                    above_daily_limit=False,
+                    card_expired=False,
+                ),
+                'CASH'
+            )
+
+        def test_if_not_enough_cash(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -1131,90 +1123,167 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     above_daily_limit=False,
                     card_expired=False,
                 ),
-                DENIED
+                'DENIED: There is not enough Cash in the Account'
             )
 
 
     # Exceptions seen
-
-* I change the error message of the :ref:`if statement<if statements>` for when ``right_pin`` is :red:`False` in the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
-
-  .. code-block:: python
-    :caption: atm/src/atm/__init__.py
-    :linenos:
-    :emphasize-lines: 14
-
-    def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-            right_pin_a=True,
-        ):
-        denied = 'DENIED'
-        if card_expired:
-            return 'DENIED: Card Expired'
-        if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
-        if not right_pin_a:
-            return 'DENIED: You entered the wrong PIN. Try again...'
-        if not right_pin:
-            return 'DENIED: You entered the wrong PIN. Try again...'
-        if not enough_cash:
-
-  the test is still green.
-
-* I remove ``right_pin_a`` from the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` from :ref:`test_if_wrong_pin` in ``tests/test_atm.py``
-
-  .. code-block:: python
-    :caption: atm/tests/test_atm.py
-    :lineno-start: 10
-
-        def test_if_wrong_pin(self):
-            for enough_cash in (True, False):
-                with self.subTest(enough_cash=enough_cash):
-                    self.assertEqual(
-                        src.atm.withdraw(
-                            right_pin=False,
-                            enough_cash=enough_cash,
-                            above_daily_limit=False,
-                            card_expired=False,
-                        ),
-                        'DENIED: You entered the wrong PIN. Try again...'
-                    )
-
-        def test_if_above_daily_limit(self):
-
-  still green.
-
-* I remove ``right_pin_a`` and its :ref:`if statement<if statements>` from the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
-
-  .. code-block:: python
-    :caption: atm/src/atm/__init__.py
-    :linenos:
-
-    def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        denied = 'DENIED'
-        if card_expired:
-            return 'DENIED: Card Expired'
-        if above_daily_limit:
-            return 'DENIED: You have exceeded the daily withdrawal limit'
-        if not right_pin:
-            return 'DENIED: You entered the wrong PIN. Try again...'
-        if not enough_cash:
-            return denied
-        return 'CASH'
-
-  green.
 
 * I add a git_ commit message
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_if_wrong_pin'
+    git commit -am 'add test_if_not_enough_cash'
 
+----
+
+*********************************************************************************
+extract test_atm
+*********************************************************************************
+
+There is only one message for if there is :red:`NOT enough cash` in the account, which is if the :green:`right PIN` is entered, the card has :red:`NOT expired` and the account is :red:`NOT above limit` for daily withdrawals
+
+==================  ======================= ======================  ==================  =============
+PIN                 cash                    daily limit             card expired        withdrawal
+==================  ======================= ======================  ==================  =============
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: There is not enough Cash in the Account`
+==================  ======================= ======================  ==================  =============
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_card_w_below_limit_right_pin_not_enough_cash`
+
+.. code-block:: python
+  :caption: atm/tests/test_atm.py
+  :lineno-start: 73
+  :emphasize-lines: 9
+
+      def test_card_w_below_limit_right_pin_not_enough_cash(self):
+          self.assertEqual(
+              src.atm.withdraw(
+                  right_pin=True,
+                  enough_cash=False,
+                  above_daily_limit=False,
+                  card_expired=False,
+              ),
+              'DENIED: There is not enough Cash in the Account'
+          )
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+    AssertionError:
+        'DENIED' != 'DENIED: There is not enough Cash in the Account
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the error message for if there is :red:`NOT enough cash` in the account, in the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
+
+.. code-block:: python
+  :caption: atm/src/atm/__init__.py
+  :linenos:
+  :emphasize-lines: 13
+
+  def withdraw(
+          right_pin, enough_cash,
+          above_daily_limit=False, card_expired=False,
+      ):
+      denied = 'DENIED'
+      if card_expired:
+          return 'DENIED: Card Expired'
+      if above_daily_limit:
+          return 'DENIED: You have exceeded the daily withdrawal limit'
+      if not right_pin:
+          return 'DENIED: You entered the wrong PIN. Try again...'
+      if not enough_cash:
+          return 'DENIED: There is not enough Cash in the Account'
+      return 'CASH'
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the ``denied`` :ref:`variable<what is a variable?>` because it is no longer used
+
+.. code-block:: python
+  :caption: atm/src/atm/__init__.py
+  :linenos:
+
+  def withdraw(
+          right_pin, enough_cash,
+          above_daily_limit=False, card_expired=False,
+      ):
+      if card_expired:
+          return 'DENIED: Card Expired'
+      if above_daily_limit:
+          return 'DENIED: You have exceeded the daily withdrawal limit'
+      if not right_pin:
+          return 'DENIED: You entered the wrong PIN. Try again...'
+      if not enough_cash:
+          return 'DENIED: There is not enough Cash in the Account'
+      return 'CASH'
+
+* I change the name of the test from :ref:`test_card_w_below_limit_right_pin_not_enough_cash` to :ref:`test_if_not_enough_cash`
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 62
+    :emphasize-lines: 12
+
+        def test_card_w_below_limit_right_pin_enough_cash(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_cash=True,
+                    above_daily_limit=False,
+                    card_expired=False,
+                ),
+                'CASH'
+            )
+
+        def test_if_not_enough_cash(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_cash=False,
+                    above_daily_limit=False,
+                    card_expired=False,
+                ),
+                'DENIED: There is not enough Cash in the Account'
+            )
+
+
+    # Exceptions seen
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_if_not_enough_cash'
 
 *********************************************************************************
 close the project
