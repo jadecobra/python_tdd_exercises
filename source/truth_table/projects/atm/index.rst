@@ -4555,7 +4555,7 @@ PIN                 cash                    daily limit             card expired
 :green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
 :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: There is not enough Cash in the Account`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Not enough CASH in Account`
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============

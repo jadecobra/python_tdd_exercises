@@ -100,3 +100,29 @@ The code in ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
   :caption: atm/src/__init__.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+test atm with loops: tests
+*********************************************************************************
+
+The code in ``atm/tests/test_atm.py`` from :ref:`test atm with loops`
+
+.. literalinclude:: atm/tests/test_atm_w_loops.py
+  :caption: atm/tests/test_atm.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+test atm with loops: solution
+*********************************************************************************
+
+The code in ``atm/src/atm.py`` from :ref:`test atm with loops`
+
+.. literalinclude:: atm/src/atm.py
+  :caption: atm/src/__init__.py
+  :language: python
+  :linenos:

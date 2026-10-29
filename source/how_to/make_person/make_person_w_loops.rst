@@ -4277,7 +4277,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :lineno-start: 140
+    :lineno-start: 148
     :emphasize-lines: 1-13
 
                 with self.subTest(a_person):
