@@ -1652,7 +1652,7 @@ PIN                 cash                    daily limit             card expired
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test atm with loops: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test atm with loops: tests and solution>`
 
 ----
 
