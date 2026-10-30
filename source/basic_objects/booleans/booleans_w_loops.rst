@@ -982,6 +982,7 @@ close the project
 * I `change directory`_ to the parent of ``booleans``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

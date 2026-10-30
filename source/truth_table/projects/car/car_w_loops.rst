@@ -2,7 +2,7 @@
   :description: Build a car ignition controller with Python TDD (Red-Green-Refactor): translate a four-input truth table (start button, key close, brake pressed, gear in park) into ``src.car.ignition`` that returns True only when every condition is met. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Conjunction (AND), and assertTrue/assertFalse until only start pressed AND key close AND brake pressed AND in park starts the car.
   :keywords: Jacob Itegboje, Python car ignition project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, start button, key close, brake pressed, in park, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Conjunction AND, if statements, pumping python
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 .. _car:
 
@@ -10,7 +10,52 @@
 test car with loops
 #################################################################################
 
-I want to make a **Car** that comes :green:`ON` or stays :red:`OFF` when I push the start button.
+I want to use :ref:`for loops<what is a for loop?>` in the :ref:`Car` project. It has tests for a :ref:`Car` ignition with these inputs:
+
+* was the start button pressed?
+* is the key close to the ignition?
+* is the brake being pressed?
+* is the car in park?
+
+the inputs gave me this :ref:`truth table`
+
+==============  ==================  ==================  ==================  =============
+key             brake               start               gear                output
+==============  ==================  ==================  ==================  =============
+:green:`close`  :green:`pressed`    :green:`pressed`    :green:`in park`    :green:`True`
+:green:`close`  :green:`pressed`    :green:`pressed`    :red:`NOT in park`  :red:`False`
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
+==============  ==================  ==================  ==================  =============
+
+================  ==================  ==================  ==================  ============
+key               brake               start               gear                output
+================  ==================  ==================  ==================  ============
+:red:`NOT close`  :green:`pressed`    :green:`pressed`    :green:`in park`    :red:`False`
+:red:`NOT close`  :green:`pressed`    :green:`pressed`    :red:`NOT in park`  :red:`False`
+:red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
+:red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
+================  ==================  ==================  ==================  ============
+
+==============  ==================  ==================  ==================  ============
+key             brake               start               gear                output
+==============  ==================  ==================  ==================  ============
+:green:`close`  :green:`pressed`    :red:`NOT pressed`  :green:`in park`    :red:`False`
+:green:`close`  :green:`pressed`    :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+==============  ==================  ==================  ==================  ============
+
+================  ==================  ==================  ==================  ============
+key               brake               start               gear                output
+================  ==================  ==================  ==================  ============
+:red:`NOT close`  :green:`pressed`    :red:`NOT pressed`  :green:`in park`    :red:`False`
+:red:`NOT close`  :green:`pressed`    :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+:red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
+:red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+================  ==================  ==================  ==================  ============
+
+the only time the :ref:`Car` starts is if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :green:`in park`.
 
 ----
 
@@ -20,53 +65,11 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
+.. literalinclude:: ../../../code/car/tests/test_car_w_loops.py
+  :caption: car/tests/test_car_w_loops.py
   :language: python
   :linenos:
-  :lines: 1-23
-
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
-  :language: python
-  :lineno-start: 25
-  :lines: 25-41
-
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
-  :language: python
-  :lineno-start: 43
-  :lines: 43-59
-
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
-  :language: python
-  :lineno-start: 61
-  :lines: 61-77
-
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
-  :language: python
-  :lineno-start: 79
-  :lines: 79-95
-
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
-  :language: python
-  :lineno-start: 97
-  :lines: 97-113
-
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
-  :language: python
-  :lineno-start: 115
-  :lines: 115-131
-
-.. literalinclude:: ../../code/car/tests/test_car.py
-  :caption: car/tests/test_car.py
-  :language: python
-  :lineno-start: 133
-  :lines: 133-
+  :lines: 1-36
 
 ----
 
@@ -75,103 +78,13 @@ start the project
 *********************************************************************************
 
 * I open a terminal_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      * I open ``makePythonTdd.sh``
-      * I change the name of the project to ``car`` in ``makePythonTdd.sh``
-
-        .. literalinclude:: ../../code/car/make_tdd/makePythonTddCar.sh
-          :language: python
-          :linenos:
-          :emphasize-lines: 2-3, 10, 18
-
-      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``car`` project
-
-        .. code-block:: python
-          :emphasize-lines: 1
-
-          ./makePythonTdd.sh
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      * I open ``makePythonTdd.ps1``
-      * I change the name of the project to ``car`` in ``makePythonTdd.ps1``
-
-        .. literalinclude:: ../../code/car/make_tdd/makePythonTddCar.ps1
-          :language: Powershell
-          :linenos:
-          :emphasize-lines: 1-2, 9, 17
-
-      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``car`` project
-
-        .. code-block:: python
-          :emphasize-lines: 1
-
-          .\makePythonTdd.ps1
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+* I `change directory`_ to the :ref:`car folder<Car>` in the ``pumping_python`` folder_
 
   .. code-block:: python
-    :emphasize-lines: 10
-
-    ======================== FAILURES =========================
-    _________________ TestCar.test_failure ____________________
-
-    self = <tests.test_car.TestCar testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_car.py:7: AssertionError
-    ================ short test summary info ==================
-    FAILED tests/test_car.py::TestCar::test_failure - AssertionError: True is not false
-    ==================== 1 failed in X.YZs ====================
-
-* I open ``test_car.py`` from the ``tests`` folder_
-* I change :green:`True` to :red:`False` in ``tests/test_car.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 4-5
-
-    class TestCar(unittest.TestCase):
-
-        def test_failure(self):
-            # self.assertFalse(True)
-            self.assertFalse(False)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I open a new terminal_ then `change directory`_ to ``car``
-
-  .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd car
-
-* I add the new files_ and folder_ to git_ for tracking
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git add .
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit -am 'setup project'
 
 ----
 
@@ -184,7 +97,7 @@ start button        output
 :red:`NOT pressed`  :red:`False`
 ==================  =============
 
-where :green:`True` is the **Car** comes :green:`ON` and :red:`False` is it stays :red:`OFF`.
+where :green:`True` is the :ref:`Car` comes :green:`ON` and :red:`False` is it stays :red:`OFF`.
 
 ----
 

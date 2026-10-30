@@ -82,6 +82,7 @@ open the project
 * I `change directory`_ to the :ref:`atm folder<Automated Teller Machine>` in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd atm
@@ -90,6 +91,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now
@@ -169,6 +171,7 @@ I add a test for if the card has :green:`expired`
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   SUBFAILED(right_pin=False, enough_cash=False, above_daily_limit=False) ...
       AssertionError: 'DENIED' != 'DENIED: Card Expired'
@@ -216,6 +219,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ...test_card_w_above_limit_right_pin_enough_cash -
         AssertionError: 'DENIED: Card Expired' != 'DENIED'
@@ -517,6 +521,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_if_card_expired'
@@ -585,6 +590,7 @@ I add a test for if the account is :green:`above limit` for daily withdrawals
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
+  :caption: terminal
   :emphasize-text: above_daily_limit_a
 
     SUBFAILED(right_pin=False, enough_cash=False) ...
@@ -717,6 +723,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(right_pin=False, enough_cash=False) ...
         AssertionError: 'DENIED'
@@ -776,6 +783,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_if_above_daily_limit'
@@ -832,6 +840,7 @@ I add a test for if the :red:`wrong PIN` is entered
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
     SUBFAILED(enough_cash=False) AssertionError:
         'DENIED' != 'DENIED: Wrong PIN. Try again...'
@@ -867,6 +876,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+    :caption: terminal
     :emphasize-text: right_pin_a
 
     SUBFAILED(enough_cash=False) ...
@@ -1002,6 +1012,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_if_wrong_pin'
@@ -1052,6 +1063,7 @@ I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
     AssertionError:
         'DENIED' != 'DENIED: Not enough CASH in Account'
@@ -1151,6 +1163,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'rename to test_if_not_enough_cash'
@@ -1213,6 +1226,7 @@ I add a test for all the cases with :ref:`for loops<what is a for loop?>`
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
     SUBFAILED(
         right_pin=False, enough_cash=False,
@@ -1232,6 +1246,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     ) ... AssertionError: 'DENIED: Card Expired' != 'BOOM!!!'
 
 .. code-block:: python
+  :caption: terminal
 
     SUBFAILED(
         right_pin=False, enough_cash=True,
@@ -1251,6 +1266,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     ) ... AssertionError: 'DENIED: Card Expired' != 'BOOM!!!'
 
 .. code-block:: python
+  :caption: terminal
 
     SUBFAILED(
         right_pin=True, enough_cash=False,
@@ -1270,6 +1286,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     ) ... AssertionError: 'DENIED: Card Expired' != 'BOOM!!!'
 
 .. code-block:: python
+  :caption: terminal
 
     SUBFAILED(
         right_pin=True, enough_cash=True,
@@ -1419,6 +1436,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the only cash where I get :green:`'CASH'`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(
         right_pin=True, enough_cash=True,
@@ -1566,6 +1584,7 @@ becomes
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_atm'
@@ -1581,6 +1600,7 @@ close the project
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
   .. code-block:: python
+    :caption: terminal
 
     .../pumping_python
 
