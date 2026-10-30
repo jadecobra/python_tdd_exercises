@@ -18,41 +18,41 @@ preview
 
 This is the test I have at the end of the chapter
 
-.. literalinclude:: ../../code/booleans/test_what_are_booleans_w_loops.py
-  :caption: booleans/tests/test_what_are_booleans.py
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
   :language: python
   :linenos:
-  :lines: 1-19
+  :lines: 1-18
 
-.. literalinclude:: ../../code/booleans/test_what_are_booleans_w_loops.py
-  :caption: booleans/tests/test_what_are_booleans.py
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
   :language: python
-  :lineno-start: 21
-  :lines: 21-32
+  :lineno-start: 20
+  :lines: 20-31
 
-.. literalinclude:: ../../code/booleans/test_what_are_booleans_w_loops.py
-  :caption: booleans/tests/test_what_are_booleans.py
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
   :language: python
-  :lineno-start: 34
-  :lines: 34-41
+  :lineno-start: 33
+  :lines: 33-48
 
-.. literalinclude:: ../../code/booleans/test_what_are_booleans_w_loops.py
-  :caption: booleans/tests/test_what_are_booleans.py
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
   :language: python
-  :lineno-start: 43
-  :lines: 43-54
+  :lineno-start: 50
+  :lines: 50-56
 
-.. literalinclude:: ../../code/booleans/test_what_are_booleans_w_loops.py
-  :caption: booleans/tests/test_what_are_booleans.py
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
   :language: python
-  :lineno-start: 56
-  :lines: 56-63
+  :lineno-start: 58
+  :lines: 58-66
 
-.. literalinclude:: ../../code/booleans/test_what_are_booleans_w_loops.py
-  :caption: booleans/tests/test_what_are_booleans.py
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
   :language: python
-  :lineno-start: 65
-  :lines: 65-75
+  :lineno-start: 68
+  :lines: 65-78
 
 ----
 
@@ -136,6 +136,7 @@ I add a test with a :ref:`for loop<what is a for loop?>` for what is a :ref:`boo
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   SUBFAILED[None] ...AssertionError:
       None is not an instance of any of (<class 'bool'>, <class 'int'>)
@@ -329,7 +330,7 @@ I can make a :ref:`function<what is a function?>` with a :ref:`for loop<what is 
 
 ----
 
-I add a :ref:`for loop<what is a for loop?>` with the code from :ref:`assert_is_truthy<extract assert_is_truthy method>` to :ref:`test_what_is_false`
+I add a :ref:`for loop<what is a for loop?>` with the :ref:`assertions<what is an assertion?>` from :ref:`assert_is_truthy<extract assert_is_truthy method>` to :ref:`test_what_is_false`
 
 .. code-block:: python
   :caption: booleans/tests/test_booleans.py
@@ -386,6 +387,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED[None] ...AssertionError: None is not true
     SUBFAILED[] ...AssertionError: '' is not true
@@ -512,13 +514,49 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # NOTES
 
+* I remove the :ref:`assert_is_falsy method<extract assert_is_falsy method>` because it is no longer used
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 37
+
+        def assert_is_not_the_same_as_false_or_true(self, an_object):
+            for boolean in (False, True):
+                with self.subTest(
+                    an_object=an_object, boolean=boolean
+                ):
+                    self.assertNotEqual(an_object, boolean)
+                    self.assertIsNot(an_object, boolean)
+
+        def assert_is_truthy(self, an_object):
+
+  the tests are still green.
+
 * I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'extract test_what_is_falsy'
 
 ----
 
 *********************************************************************************
-test_the_value_of_true
+extract test_what_is_truthy
 *********************************************************************************
+
+:ref:`test_is_an_integer_falsy_or_truthy`, :ref:`test_is_a_float_falsy_or_truthy`, :ref:`test_is_a_string_falsy_or_truthy`, :ref:`test_is_a_tuple_falsy_or_truthy`, :ref:`test_is_a_list_falsy_or_truthy`, :ref:`test_is_a_set_falsy_or_truthy` and :ref:`test_is_a_dictionary_falsy_or_truthy` all :ref:`call<how to call a function with input>` the :ref:`assert_is_truthy method<extract assert_is_truthy method>` to :ref:`assert<what is an assertion?>` if something is grouped as :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+
+  self.assert_is_not_the_same_as_false_or_true(an_object)
+  self.assertTrue(bool(an_object))
+  self.assertTrue(an_object)
+
+I can make a :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -526,32 +564,45 @@ test_the_value_of_true
 
 ----
 
-I add a new test to find out the value of :ref:`True<test_what_is_true>`
+I add a :ref:`for loop<what is a for loop?>` with the :ref:`assertions<what is an assertion?>` from :ref:`test_what_is_falsy<extract test_what_is_falsy>` to :ref:`test_what_is_true`
 
 .. code-block:: python
-  :lineno-start: 39
-  :emphasize-lines: 8-9
+  :caption: booleans/tests/test_booleans.py
+  :lineno-start: 33
+  :emphasize-lines: 5-16
 
-      def test_the_value_of_false(self):
-          self.assertEqual(False+1, 1)
-          self.assertEqual(False-1, -1)
-          self.assertEqual(False*1, 0)
-          with self.assertRaises(ZeroDivisionError):
-              1 / False
+      def test_what_is_true(self):
+          self.assertTrue(bool(True))
+          self.assertTrue(True)
 
-      def test_the_value_of_true(self):
-          self.assertEqual(True+1, 1)
+          for an_object in (
+              -1, -0.1, 0.1,
+              'string with things',
+              (0, 1, 2, 'n'),
+              [0, 1, 2, 'n'],
+              {0, 1, 2, 'n'},
+              {'key': 'value'},
+          ):
+              with self.subTest(an_object):
+                  self.assert_is_not_the_same_as_false_or_true(an_object)
+                  self.assertFalse(bool(an_object))
+                  self.assertFalse(an_object)
 
-
-  # NOTES
+      def assert_is_not_the_same_as_false_or_true(self, an_object):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 2 != 1
-
-:ref:`True<test_what_is_true>` is ``1``
+    SUBFAILED[-1] ... AssertionError: True is not false
+    SUBFAILED[-0.1] ... AssertionError: True is not false
+    SUBFAILED[0.1] ... AssertionError: True is not false
+    SUBFAILED[string with things] ... AssertionError: True is not false
+    SUBFAILED[(0, 1, 2, 'n')] ... AssertionError: True is not false
+    SUBFAILED[[0, 1, 2, 'n']] ... AssertionError: True is not false
+    SUBFAILED[{0, 1, 2, 'n'}] ... AssertionError: True is not false
+    SUBFAILED[{'key': 'value'}] ... AssertionError: True is not false
 
 ----
 
@@ -561,15 +612,47 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the expectation
+* I change ``self.assertFalse(bool(an_object))``
 
-.. code-block:: python
-  :lineno-start: 47
-  :emphasize-lines: 1
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 45
+    :emphasize-lines: 3
 
-          self.assertEqual(True+1, 2)
+                with self.subTest(an_object):
+                    self.assert_is_not_the_same_as_false_or_true(an_object)
+                    self.assertTrue(bool(an_object))
+                    self.assertFalse(an_object)
 
-the test passes.
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED[-1] ... AssertionError: -1 is not false
+    SUBFAILED[-0.1] ... AssertionError: -0.1 is not false
+    SUBFAILED[0.1] ... AssertionError: 0.1 is not false
+    SUBFAILED[string with things] ... AssertionError: 'string with things' is not false
+    SUBFAILED[(0, 1, 2, 'n')] ... AssertionError: (0, 1, 2, 'n') is not false
+    SUBFAILED[[0, 1, 2, 'n']] ... AssertionError: [0, 1, 2, 'n'] is not false
+    SUBFAILED[{0, 1, 2, 'n'}] ... AssertionError: {0, 1, 2, 'n'} is not false
+    SUBFAILED[{'key': 'value'}] ... AssertionError: {'key': 'value'} is not false
+
+* I change ``self.assertFalse(an_object)``
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 45
+    :emphasize-lines: 4
+
+                with self.subTest(an_object):
+                    self.assert_is_not_the_same_as_false_or_true(an_object)
+                    self.assertTrue(bool(an_object))
+                    self.assertTrue(an_object)
+
+        def assert_is_not_the_same_as_false_or_true(self, an_object):
+
+  the test passes.
 
 ----
 
@@ -579,136 +662,336 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I change the name of the test from :ref:`test_what_is_true` to :ref:`test_what_is_truthy<extract test_what_is_truthy>`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 3
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 28
+    :emphasize-lines: 6
 
-        def test_the_value_of_true(self):
-            self.assertEqual(True+1, 2)
-            self.assertEqual(True-1, 2)
+                with self.subTest(an_object):
+                    self.assert_is_not_the_same_as_false_or_true(an_object)
+                    self.assertFalse(bool(an_object))
+                    self.assertFalse(an_object)
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+        def test_what_is_truthy(self):
+            self.assertTrue(bool(True))
+            self.assertTrue(True)
+
+            for an_object in (
+                -1, -0.1, 0.1,
+                'string with things',
+                (0, 1, 2, 'n'),
+                [0, 1, 2, 'n'],
+                {0, 1, 2, 'n'},
+                {'key': 'value'},
+            ):
+                with self.subTest(an_object):
+                    self.assert_is_not_the_same_as_false_or_true(an_object)
+                    self.assertTrue(bool(an_object))
+                    self.assertTrue(an_object)
+
+        def assert_is_not_the_same_as_false_or_true(self, an_object):
+
+* I remove ``self.assert_is_truthy(-1)`` from :ref:`test_is_an_integer_falsy_or_truthy` because it is now covered by :ref:`test_what_is_truthy<extract test_what_is_truthy>`
 
   .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 63
 
-    AssertionError: 0 != 2
+        def test_is_an_integer_falsy_or_truthy(self):
+            self.assertEqual(0, False)
 
-  :ref:`True<test_what_is_true>` is ``1``
-
-* I change the expectation
+* I remove ``self.assert_is_truthy(-0.1)`` and ``self.assert_is_truthy(0.1)`` from :ref:`test_is_a_float_falsy_or_truthy` because they are now covered by :ref:`test_what_is_truthy<extract test_what_is_truthy>`
 
   .. code-block:: python
-    :lineno-start: 48
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 79
+
+        def test_is_a_float_falsy_or_truthy(self):
+            self.assertEqual(0.0, False)
+            self.assertIsNot(0.0, False)
+            self.assertNotEqual(0.0, True)
+            self.assertIsNot(0.0, True)
+            self.assertFalse(bool(0.0))
+            self.assertFalse(0.0)
+
+        def test_is_a_string_falsy_or_truthy(self):
+
+* I remove :ref:`test_is_a_string_falsy_or_truthy` because it is now covered by :ref:`test_what_is_truthy<extract test_what_is_truthy>`
+* I remove :ref:`test_is_a_tuple_falsy_or_truthy` because it is now covered by :ref:`test_what_is_truthy<extract test_what_is_truthy>`
+* I remove :ref:`test_is_a_list_falsy_or_truthy` because it is now covered by :ref:`test_what_is_truthy<extract test_what_is_truthy>`
+* I remove :ref:`test_is_a_set_falsy_or_truthy` because it is now covered by :ref:`test_what_is_truthy<extract test_what_is_truthy>`
+* I remove :ref:`test_is_a_dictionary_falsy_or_truthy` because it is now covered by :ref:`test_what_is_truthy<extract test_what_is_truthy>`
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 74
+
+        def test_is_a_float_falsy_or_truthy(self):
+            self.assertEqual(0.0, False)
+            self.assertIsNot(0.0, False)
+            self.assertNotEqual(0.0, True)
+            self.assertIsNot(0.0, True)
+            self.assertFalse(bool(0.0))
+            self.assertFalse(0.0)
+
+
+    # NOTES
+
+* I remove the :ref:`assert_is_truthy method<extract assert_is_truthy method>` because it is no longer used
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 50
+
+        def assert_is_not_the_same_as_false_or_true(self, an_object):
+            for boolean in (False, True):
+                with self.subTest(
+                    an_object=an_object, boolean=boolean
+                ):
+                    self.assertNotEqual(an_object, boolean)
+                    self.assertIsNot(an_object, boolean)
+
+        def test_is_an_integer_falsy_or_truthy(self):
+
+  the tests are still green.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
-            self.assertEqual(True-1, 0)
+    git commit -am 'extract test_what_is_truthy'
 
-  the test passes.
+----
 
-* I add an :ref:`assertion<what is an assertion?>`
+*********************************************************************************
+the values of False and True
+*********************************************************************************
+
+:ref:`test_is_an_integer_falsy_or_truthy` and :ref:`test_is_a_float_falsy_or_truthy` both have :ref:`assertions<what is an assertion?>` that show that the value of :ref:`False<test_what_is_false>` is zero.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test with a :ref:`for loop<what is a for loop?>` for the value of :ref:`False<test_what_is_false>`
+
+.. code-block:: python
+  :caption: booleans/tests/test_booleans.py
+  :lineno-start: 55
+  :emphasize-lines: 4-12
+
+                    self.assertNotEqual(an_object, boolean)
+                    self.assertIsNot(an_object, boolean)
+
+        def test_the_value_of_false(self):
+            for zero in (0, 0.0):
+                with self.subTest(zero):
+                    self.assertEqual(zero, True)
+                    self.assertIsNot(zero, True)
+                    self.assertNotEqual(zero, False)
+                    self.assertIsNot(zero, False)
+                    self.assertTrue(bool(zero))
+                    self.assertTrue(zero)
+
+        def test_is_an_integer_falsy_or_truthy(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+    SUBFAILED[0] ... AssertionError: 0 != True
+    SUBFAILED[0.0] ... AssertionError: 0.0 != True
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change ``self.assertEqual(zero, True)``
 
   .. code-block:: python
-    :lineno-start: 46
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 58
     :emphasize-lines: 4
 
-        def test_the_value_of_true(self):
-            self.assertEqual(True+1, 2)
-            self.assertEqual(True-1, 0)
-            self.assertEqual(True*1, 0)
+        def test_the_value_of_false(self):
+            for zero in (0, 0.0):
+                with self.subTest(zero):
+                    self.assertEqual(zero, False)
+                    self.assertIsNot(zero, True)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
-    AssertionError: 1 != 0
+    SUBFAILED[0] ... AssertionError: 0 == False
+    SUBFAILED[0.0] ... AssertionError: 0.0 == False
 
-  :ref:`True<test_what_is_true>` is ``1``
-
-* I change the expectation
+* I change ``self.assertIsNot(zero, True)``
 
   .. code-block:: python
-    :lineno-start: 49
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 58
+    :emphasize-lines: 5
+
+        def test_the_value_of_false(self):
+            for zero in (0, 0.0):
+                with self.subTest(zero):
+                    self.assertEqual(zero, False)
+                    self.assertIsNot(zero, False)
+                    self.assertNotEqual(zero, False)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED[0] ... - AssertionError: 0 == False
+    SUBFAILED[0.0] ... - AssertionError: 0.0 == False
+
+* I change ``self.assertNotEqual(zero, False)``
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 58
+    :emphasize-lines: 6
+
+        def test_the_value_of_false(self):
+            for zero in (0, 0.0):
+                with self.subTest(zero):
+                    self.assertEqual(zero, False)
+                    self.assertIsNot(zero, False)
+                    self.assertNotEqual(zero, True)
+                    self.assertIsNot(zero, False)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED[0] ... AssertionError: False is not true
+    SUBFAILED[0.0] ... AssertionError: False is not true
+
+* I change ``self.assertTrue(bool(zero))``
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 58
+    :emphasize-lines: 8
+
+        def test_the_value_of_false(self):
+            for zero in (0, 0.0):
+                with self.subTest(zero):
+                    self.assertEqual(zero, False)
+                    self.assertIsNot(zero, False)
+                    self.assertNotEqual(zero, True)
+                    self.assertIsNot(zero, False)
+                    self.assertFalse(bool(zero))
+                    self.assertTrue(zero)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED[0] ... AssertionError: 0 is not true
+    SUBFAILED[0.0] ... AssertionError: 0.0 is not true
+
+* I change ``self.assertTrue(zero)``
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 58
+    :emphasize-lines: 9
+
+        def test_the_value_of_false(self):
+            for zero in (0, 0.0):
+                with self.subTest(zero):
+                    self.assertEqual(zero, False)
+                    self.assertIsNot(zero, False)
+                    self.assertNotEqual(zero, True)
+                    self.assertIsNot(zero, False)
+                    self.assertFalse(bool(zero))
+                    self.assertFalse(zero)
+
+        def test_is_an_integer_falsy_or_truthy(self):
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the :ref:`assertions<what is an assertion?>` for ``0`` from :ref:`test_is_an_integer_falsy_or_truthy`
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 68
+
+        def test_is_an_integer_falsy_or_truthy(self):
+            a_positive_integer = 1
+            self.assertNotEqual(a_positive_integer, False)
+            self.assertIsNot(a_positive_integer, False)
+            self.assertEqual(1, True)
+            self.assertIsNot(a_positive_integer, True)
+            self.assertTrue(bool(a_positive_integer))
+            self.assertTrue(a_positive_integer)
+
+        def test_is_a_float_falsy_or_truthy(self):
+
+* I remove :ref:`test_is_a_float_falsy_or_truthy` because it is now covered by :ref:`test_the_value_of_false<the values of False and True>`
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 73
+
+            self.assertIsNot(a_positive_integer, True)
+            self.assertTrue(bool(a_positive_integer))
+            self.assertTrue(a_positive_integer)
+
+
+    # NOTES
+
+* I change the name of :ref:`test_is_an_integer_falsy_or_truthy` to :ref:`test_the_value_of_true<the values of False and True>`
+
+  .. code-block:: python
+    :caption: booleans/tests/test_booleans.py
+    :lineno-start: 64
+    :emphasize-lines: 5
+
+                    self.assertIsNot(zero, False)
+                    self.assertFalse(bool(zero))
+                    self.assertFalse(zero)
+
+        def test_the_value_of_true(self):
+            a_positive_integer = 1
+            self.assertNotEqual(a_positive_integer, False)
+            self.assertIsNot(a_positive_integer, False)
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
-            self.assertEqual(True*1, 1)
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
-
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 5
-
-        def test_the_value_of_true(self):
-            self.assertEqual(True+1, 2)
-            self.assertEqual(True-1, 0)
-            self.assertEqual(True*1, 1)
-            self.assertEqual(True/2, 1)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 0.5 != 1
-
-  :ref:`True<test_what_is_true>` is ``1``
-
-* I change the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 5
-
-        def test_the_value_of_true(self):
-            self.assertEqual(True+1, 2)
-            self.assertEqual(True-1, 0)
-            self.assertEqual(True*1, 1)
-            self.assertEqual(True/1, 1)
-
-
-    # NOTES
-
-  the test passes.
-
-* I add a comment
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 13
-
-    # NOTES
-    # a dictionary with things is True
-    # a set with things is True
-    # a list with things is True
-    # a tuple with things is True
-    # a string with things is True
-    # positive and negative numbers are True
-    # True is True
-    # True is not false
-    # True is a boolean
-    # True is an integer
-    # True is not a float
-    # True is 1
-    # the empty dictionary is False
-    # the empty set is False
-    # the empty list is False
-    # the empty tuple is False
-    # the empty string is False
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
-    # False is an integer
-    # False is not a float
-    # False is 0
-
-
-    # Exceptions seen
-    # AssertionError
+    git commit -am 'test the values of False and True'
 
 ----
 
@@ -719,7 +1002,6 @@ close the project
 * I close ``test_what_are_booleans.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
-
 * I `change directory`_ to the parent of ``booleans``
 
   .. code-block:: python
@@ -727,24 +1009,13 @@ close the project
 
     cd ..
 
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../pumping_python
-
-  I am back in the ``pumping_python`` directory_.
-
 ----
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I added :ref:`assertions<what is an assertion?>` that show :ref:`booleans<what are booleans?>` are also integers_ and NOT floats_, then I added these tests
-
-* :ref:`test_the_value_of_false` which showed that :ref:`False<test_what_is_false>` is ``0``
-* :ref:`test_the_value_of_true` which showed that :ref:`True<test_what_is_true>` is ``1``
+I can use :ref:`for loops<what is a for loop?>` to remove repetition.
 
 ----
 
@@ -761,20 +1032,33 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`I know how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
-* :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`what you can do with Lists<what is a list?>`
-* :ref:`how to use list comprehensions<list comprehensions>`
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
+* :ref:`I know what causes AttributeError<what causes AttributeError?>`.
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
+* :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
+* :ref:`I know how to make a person with loops<how to make a person with loops>`.
 
-:ref:`Would you like to test dictionaries?<dictionaries>`
+:ref:`Would you like to test the car project with loops?<test car with loops>`
 
 -----
 
