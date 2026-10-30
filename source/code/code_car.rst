@@ -114,4 +114,4 @@ The code in ``car/tests/test_car.py`` from :ref:`test car with loops`
   :caption: car/tests/test_car_w_loops.py
   :language: python
   :linenos:
-  :lines: 1-31
+  :lines: 1-36

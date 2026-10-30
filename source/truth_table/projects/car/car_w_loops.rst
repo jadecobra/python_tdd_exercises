@@ -1,10 +1,10 @@
 .. meta::
-  :description: Build a car ignition controller with Python TDD (Red-Green-Refactor): translate a four-input truth table (start button, key close, brake pressed, gear in park) into ``src.car.ignition`` that returns True only when every condition is met. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Conjunction (AND), and assertTrue/assertFalse until only start pressed AND key close AND brake pressed AND in park starts the car.
-  :keywords: Jacob Itegboje, Python car ignition project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, start button, key close, brake pressed, in park, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Conjunction AND, if statements, pumping python
+  :description: Pumping Python chapter "test car with loops" by Jacob Itegboje. Continues the Car project: one ``test_car_ignition`` nests four ``for`` loops over ``(False, True)`` for ``start_is_pressed``, ``key_is_close``, ``brake_is_pressed``, and ``in_park``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the all-true case is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, when start, key, brake, and park are all true. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other ignition tests are removed because this loop covers them. The review calls the four nested loops ugly and points ahead to fewer loops. Also ``cd car`` and ``git commit -am 'extract test_car_ignition'``.
+  :keywords: Jacob Itegboje, Pumping Python, test car with loops, test_car_ignition, nested for loops, unittest subTest, SUBFAILED, assertEqual, BOOM, AssertionError False != 'BOOM!!!', AssertionError True != 'BOOM!!!', True is not false, assertFalse, assertTrue, try except AssertionError, src.car.ignition, start_is_pressed, key_is_close, brake_is_pressed, in_park, pytest-watcher, git commit extract test_car_ignition
 
 .. include:: ../../../links.rst
 
-.. _car:
+.. _test car with loops:
 
 #################################################################################
 test car with loops
@@ -69,7 +69,7 @@ This is the test I have at the end of the chapter
   :caption: car/tests/test_car_w_loops.py
   :language: python
   :linenos:
-  :lines: 1-31
+  :lines: 1-36
 
 ----
 
@@ -373,11 +373,16 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 * :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
-* :ref:`I know how Python groups objects into False or True<what are booleans?>`
-* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
-* :ref:`I know how to write programs that make decisions<truth table>`
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
+* :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
+* :ref:`I know how to make a person with loops<how to make a person with loops>`.
 
-:ref:`Would you like to test making an Elevator?<elevator>`
+:ref:`Would you like to test the elevator project with loops?<test elevator with loops>`
 
 ----
 
