@@ -16,7 +16,7 @@ I want to use :ref:`for loops<what is a for loop?>` in the :ref:`booleans<what a
 preview
 *********************************************************************************
 
-This is the test I have at the end of the chapter
+These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
   :caption: booleans/tests/test_booleans.py
@@ -52,7 +52,7 @@ This is the test I have at the end of the chapter
   :caption: booleans/tests/test_booleans.py
   :language: python
   :lineno-start: 68
-  :lines: 65-78
+  :lines: 68-78
 
 ----
 
@@ -1023,7 +1023,7 @@ I can use :ref:`for loops<what is a for loop?>` to remove repetition.
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test booleans with loops: tests>`
 
 ----
 

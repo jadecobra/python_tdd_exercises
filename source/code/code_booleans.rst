@@ -70,3 +70,47 @@ The code in ``booleans/tests/test_booleans.py`` from :ref:`booleans<what are boo
   :language: python
   :lineno-start: 117
   :lines: 117-
+
+----
+
+*********************************************************************************
+test booleans with loops: tests
+*********************************************************************************
+
+The code in ``booleans/tests/test_booleans.py`` from :ref:`test booleans with loops`
+
+.. literalinclude:: booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :linenos:
+  :lines: 1-18
+
+.. literalinclude:: booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 20
+  :lines: 20-31
+
+.. literalinclude:: booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 33
+  :lines: 33-48
+
+.. literalinclude:: booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 50
+  :lines: 50-56
+
+.. literalinclude:: booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 58
+  :lines: 58-66
+
+.. literalinclude:: booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 68
+  :lines: 68-78
