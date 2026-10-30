@@ -13,6 +13,50 @@ I want to use :ref:`for loops<what is a for loop?>` in the :ref:`booleans<what a
 ----
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+This is the test I have at the end of the chapter
+
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :linenos:
+  :lines: 1-19
+
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 21
+  :lines: 21-32
+
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 34
+  :lines: 34-41
+
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 43
+  :lines: 43-54
+
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 56
+  :lines: 56-63
+
+.. literalinclude:: ../../code/booleans/test_booleans_w_loops.py
+  :caption: booleans/tests/test_booleans.py
+  :language: python
+  :lineno-start: 65
+  :lines: 65-75
+
+----
+
+*********************************************************************************
 open the project
 *********************************************************************************
 
@@ -24,33 +68,12 @@ open the project
 
     cd booleans
 
-  the terminal_ shows I am in the ``booleans`` folder_
-
-  .. code-block:: python
-
-    .../pumping_python/booleans
-
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: shell
-    :emphasize-lines: 5
-
-    rootdir: .../pumping_python/booleans
-    configfile: pyproject.toml
-    collected 2 items
-
-    tests/test_booleans.py ..                                     [100%]
-
-    ======================== 2 passed in X.YZs =========================
-
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_booleans.py`` to open it
 
 ----
 
