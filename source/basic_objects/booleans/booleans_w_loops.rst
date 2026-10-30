@@ -978,7 +978,7 @@ close the project
 
 * I close ``test_booleans.py``
 * I click in the terminal_ where the tests are running
-* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
+* I use :kbd:`q` on the keyboard to leave the tests
 * I `change directory`_ to the parent of ``booleans``
 
   .. code-block:: python

@@ -100,3 +100,18 @@ The code in ``car/src/__init__.py`` from :ref:`Car`
   :language: python
   :linenos:
   :caption: car/src/__init__.py
+
+
+----
+
+*********************************************************************************
+test car with loops: tests
+*********************************************************************************
+
+The code in ``car/tests/test_car.py`` from :ref:`test car with loops`
+
+.. literalinclude:: car/tests/test_car_w_loops.py
+  :caption: car/tests/test_car_w_loops.py
+  :language: python
+  :linenos:
+  :lines: 1-31
