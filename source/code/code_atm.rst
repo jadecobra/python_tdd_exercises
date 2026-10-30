@@ -128,9 +128,9 @@ test atm with loops: solution
 
 ----
 
-The code in ``atm/src/atm.py`` from :ref:`test atm with loops`
+The code in ``atm/src/__init__.py`` from :ref:`test atm with loops`
 
-.. literalinclude:: atm/src/atm.py
+.. literalinclude:: atm/src/atm_w_loops.py
   :caption: atm/src/__init__.py
   :language: python
   :linenos:

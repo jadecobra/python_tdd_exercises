@@ -1,6 +1,6 @@
 .. meta::
-  :description: Part 3 of the booleans TDD series: advanced truthiness, falsiness, and boolean logic in Python. Continue testing edge cases with unittest.assertTrue/assertFalse for complex expressions, None, numbers, and collections. Builds on booleans_1 and _2 with more red-green-refactor examples.
-  :keywords: Jacob Itegboje, Pumping Python, python booleans advanced, truthiness falsiness part 3, unittest assertTrue assertFalse advanced, TDD booleans continued, python boolean logic tutorial, testing complex booleans, Python basic objects booleans advanced
+  :description:
+  :keywords:
 
 .. include:: ../../links.rst
 
@@ -8,9 +8,7 @@
 test booleans with loops
 #################################################################################
 
-I added a new :ref:`if statement<if statements>` to the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>` because when I tested it with different :ref:`data types<basic objects>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail.
-
-This means that they are also integers_ or floats_ even though they are :ref:`booleans<what are booleans?>`. I want to find out if :ref:`booleans<what are booleans?>` are integers_ or floats_
+I want to use :ref:`for loops<what is a for loop?>` in the :ref:`booleans<what are booleans?>` project.
 
 ----
 
@@ -18,6 +16,7 @@ This means that they are also integers_ or floats_ even though they are :ref:`bo
 open the project
 *********************************************************************************
 
+* I open a terminal_
 * I `change directory`_ to the ``booleans`` folder_
 
   .. code-block:: python
