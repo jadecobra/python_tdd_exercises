@@ -7350,7 +7350,7 @@ I can add a :ref:`method<what is a method?>` to remove this repetition.
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`method<what is a method?>` named :ref:`assert_is_not_the_same_as_false_or_true<extract assert_is_not_the_same_as_false_or_true>`
+* I add a :ref:`method<what is a method?>` named :ref:`assert_is_not_the_same_as_false_or_true<extract assert_is_not_the_same_as_false_or_true method>`
 
   .. code-block:: python
     :lineno-start: 20
