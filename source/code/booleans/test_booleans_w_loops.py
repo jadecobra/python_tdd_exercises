@@ -59,7 +59,7 @@ class TestBooleans(unittest.TestCase):
         for zero in (0, 0.0):
             with self.subTest(zero):
                 self.assertEqual(zero, False)
-                self.assertIsNot(zero, False)
+                self.assertIsNot(zero, True)
                 self.assertNotEqual(zero, True)
                 self.assertIsNot(zero, False)
                 self.assertFalse(bool(zero))

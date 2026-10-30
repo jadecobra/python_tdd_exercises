@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial — test booleans with loops. Continues the booleans project (pytest-watcher, git) and uses for loops plus subTest to remove repeated unittest checks. Extracts test_what_are_booleans over (False, True) with assertIsInstance of (bool, int), assertNotIsInstance of float/tuple/str/list/set/dict, and assertIs identity. Loops assert_is_not_the_same_as_false_or_true over False and True (assertNotEqual and assertIsNot; 28 subtests). Extracts test_what_is_falsy for None, '', (), [], set(), and {} (assertFalse on bool(x) and on x) and test_what_is_truthy for -1, -0.1, 0.1, a non-empty string, tuple, list, set, and dict. Then test_the_value_of_false loops 0 and 0.0: equal to False, not the False object, not equal to True, not the True object, and falsy. Real AssertionError strings: "None is not an instance of any of (<class 'bool'>, <class 'int'>)", "False is not true", "None is not true", "True is not false", "-1 is not false", "0 != True", "0 == False", "0 is not true". Part of Jacob Itegboje's Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, test booleans with loops, python for loop, unittest subTest, SUBFAILED, test_what_are_booleans, test_what_is_falsy, test_what_is_truthy, test_the_value_of_false, test_the_value_of_true, assertIsInstance, assertNotIsInstance, assertIs, assertIsNot, assertNotEqual, assertFalse, assertTrue, False is 0, True is 1, 0 is not False, 0.0 == False, None is not true, False is not true, True is not false, falsy empty containers, truthy non-empty containers, uv run pytest-watcher, red green refactor, booleans/tests/test_booleans.py, Python basic objects TDD
 
 .. include:: ../../links.rst
 
@@ -465,7 +465,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :lineno-start: 85
 
         def test_is_a_string_falsy_or_truthy(self):
-            self.assert_is_truthy('a string with things')
+            self.assert_is_truthy('string with things')
 
         def test_is_a_tuple_falsy_or_truthy(self):
 
@@ -840,28 +840,6 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED[0] ... AssertionError: 0 == False
     SUBFAILED[0.0] ... AssertionError: 0.0 == False
 
-* I change ``self.assertIsNot(zero, True)``
-
-  .. code-block:: python
-    :caption: booleans/tests/test_booleans.py
-    :lineno-start: 58
-    :emphasize-lines: 5
-
-        def test_the_value_of_false(self):
-            for zero in (0, 0.0):
-                with self.subTest(zero):
-                    self.assertEqual(zero, False)
-                    self.assertIsNot(zero, False)
-                    self.assertNotEqual(zero, False)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :caption: terminal
-
-    SUBFAILED[0] ... - AssertionError: 0 == False
-    SUBFAILED[0.0] ... - AssertionError: 0.0 == False
-
 * I change ``self.assertNotEqual(zero, False)``
 
   .. code-block:: python
@@ -873,9 +851,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             for zero in (0, 0.0):
                 with self.subTest(zero):
                     self.assertEqual(zero, False)
-                    self.assertIsNot(zero, False)
+                    self.assertIsNot(zero, True)
                     self.assertNotEqual(zero, True)
-                    self.assertIsNot(zero, False)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -896,7 +873,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             for zero in (0, 0.0):
                 with self.subTest(zero):
                     self.assertEqual(zero, False)
-                    self.assertIsNot(zero, False)
+                    self.assertIsNot(zero, True)
                     self.assertNotEqual(zero, True)
                     self.assertIsNot(zero, False)
                     self.assertFalse(bool(zero))
@@ -921,7 +898,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             for zero in (0, 0.0):
                 with self.subTest(zero):
                     self.assertEqual(zero, False)
-                    self.assertIsNot(zero, False)
+                    self.assertIsNot(zero, True)
                     self.assertNotEqual(zero, True)
                     self.assertIsNot(zero, False)
                     self.assertFalse(bool(zero))
@@ -999,7 +976,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 close the project
 *********************************************************************************
 
-* I close ``test_what_are_booleans.py``
+* I close ``test_booleans.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 * I `change directory`_ to the parent of ``booleans``
