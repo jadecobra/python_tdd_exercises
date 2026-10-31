@@ -55,7 +55,7 @@ key               brake               start               gear                ou
 :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
 ================  ==================  ==================  ==================  ============
 
-the only time the :ref:`Car` starts is if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :green:`in park`.
+The only time the :ref:`Car` starts is if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :green:`in park`.
 
 ----
 
@@ -107,124 +107,124 @@ extract test_car_ignition
 
 ----
 
-* I add a test with a :ref:`for loop<what is a for loop?>` for all the cases
+I add a test with a :ref:`for loop<what is a for loop?>` for all the cases
 
-  .. code-block:: python
-    :caption: car/tests/test_car.py
-    :lineno-start: 5
-    :emphasize-lines: 3-14
+.. code-block:: python
+  :caption: car/tests/test_car.py
+  :lineno-start: 5
+  :emphasize-lines: 3-14
 
-    class TestCar(unittest.TestCase):
+  class TestCar(unittest.TestCase):
 
-        def test_car_ignition(self):
-            booleans = (False, True)
-            for start_is_pressed in booleans:
-                for key_is_close in booleans:
-                  for brake_is_pressed in booleans:
-                      for in_park in booleans:
-                          with self.subTest(
-                              start_is_pressed=start_is_pressed,
-                              key_is_close=key_is_close,
-                              brake_is_pressed=brake_is_pressed,
-                              in_park=in_park,
-                          ):
+      def test_car_ignition(self):
+          booleans = (False, True)
+          for start_is_pressed in booleans:
+              for key_is_close in booleans:
+                for brake_is_pressed in booleans:
+                    for in_park in booleans:
+                        with self.subTest(
+                            start_is_pressed=start_is_pressed,
+                            key_is_close=key_is_close,
+                            brake_is_pressed=brake_is_pressed,
+                            in_park=in_park,
+                        ):
 
-  .. code-block:: python
-    :caption: car/tests/test_car.py
-    :lineno-start: 19
-    :emphasize-lines: 1-7
+.. code-block:: python
+  :caption: car/tests/test_car.py
+  :lineno-start: 19
+  :emphasize-lines: 1-7
 
-                              result = src.car.ignition(
-                                  start_is_pressed=start_is_pressed,
-                                  key_is_close=key_is_close,
-                                  brake_is_pressed=brake_is_pressed,
-                                  in_park=in_park,
-                              )
-                              self.assertEqual(result, 'BOOM!!!')
+                            result = src.car.ignition(
+                                start_is_pressed=start_is_pressed,
+                                key_is_close=key_is_close,
+                                brake_is_pressed=brake_is_pressed,
+                                in_park=in_park,
+                            )
+                            self.assertEqual(result, 'BOOM!!!')
 
-        def test_park_w_brake_pressed_key_close_start_pressed(self):
+      def test_park_w_brake_pressed_key_close_start_pressed(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
-    :caption: terminal
+.. code-block:: python
+  :caption: terminal
 
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=False,
-        brake_is_pressed=False, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=False,
-        brake_is_pressed=False, in_park=True
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=False,
-        brake_is_pressed=True, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=False,
-        brake_is_pressed=True, in_park=True
-    ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=False,
+      brake_is_pressed=False, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=False,
+      brake_is_pressed=False, in_park=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=False,
+      brake_is_pressed=True, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=False,
+      brake_is_pressed=True, in_park=True
+  ) ... AssertionError: False != 'BOOM!!!'
 
-  .. code-block:: python
-    :caption: terminal
+.. code-block:: python
+  :caption: terminal
 
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=True,
-        brake_is_pressed=False, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=True,
-        brake_is_pressed=False, in_park=True
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=True,
-        brake_is_pressed=True, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=False, key_is_close=True,
-        brake_is_pressed=True, in_park=True
-    ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=True,
+      brake_is_pressed=False, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=True,
+      brake_is_pressed=False, in_park=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=True,
+      brake_is_pressed=True, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=False, key_is_close=True,
+      brake_is_pressed=True, in_park=True
+  ) ... AssertionError: False != 'BOOM!!!'
 
-  .. code-block:: python
-    :caption: terminal
+.. code-block:: python
+  :caption: terminal
 
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=False,
-        brake_is_pressed=False, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=False,
-        brake_is_pressed=False, in_park=True
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=False,
-        brake_is_pressed=True, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=False,
-        brake_is_pressed=True, in_park=True
-    ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=False,
+      brake_is_pressed=False, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=False,
+      brake_is_pressed=False, in_park=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=False,
+      brake_is_pressed=True, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=False,
+      brake_is_pressed=True, in_park=True
+  ) ... AssertionError: False != 'BOOM!!!'
 
-  .. code-block:: python
-    :caption: terminal
+.. code-block:: python
+  :caption: terminal
 
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=True,
-        brake_is_pressed=False, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=True,
-        brake_is_pressed=False, in_park=True
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=True,
-        brake_is_pressed=True, in_park=False
-    ) ... AssertionError: False != 'BOOM!!!'
-    SUBFAILED(
-        start_is_pressed=True, key_is_close=True,
-        brake_is_pressed=True, in_park=True
-    ) ... AssertionError: True != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=True,
+      brake_is_pressed=False, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=True,
+      brake_is_pressed=False, in_park=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=True,
+      brake_is_pressed=True, in_park=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      start_is_pressed=True, key_is_close=True,
+      brake_is_pressed=True, in_park=True
+  ) ... AssertionError: True != 'BOOM!!!'
 
 ----
 
@@ -347,7 +347,7 @@ Once again, I used four nested :ref:`for loops<what is a for loop?>` (ugly) to p
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test car with loops: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test car with loops: test>`
 
 ----
 

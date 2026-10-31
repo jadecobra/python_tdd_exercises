@@ -105,7 +105,7 @@ The code in ``car/src/__init__.py`` from :ref:`Car`
 ----
 
 *********************************************************************************
-test car with loops: tests
+test car with loops: test
 *********************************************************************************
 
 The code in ``car/tests/test_car.py`` from :ref:`test car with loops`
