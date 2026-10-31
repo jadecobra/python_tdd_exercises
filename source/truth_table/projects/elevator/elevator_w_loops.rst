@@ -111,7 +111,7 @@ I add a test with a :ref:`for loop<what is a for loop?>` for all the cases
 .. code-block:: python
   :caption: elevator/tests/test_elevator.py
   :lineno-start: 5
-  :emphasize-lines: 3-12
+  :emphasize-lines: 3-14
 
   class TestElevator(unittest.TestCase):
 
