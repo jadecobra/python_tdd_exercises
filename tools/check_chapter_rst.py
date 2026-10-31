@@ -1,7 +1,8 @@
 """Mechanical checks for a chapter RST before it is saved.
 
-Fails when a literalinclude path is missing, or when :emphasize-lines: points
-outside the shown block. Prints each :lineno-start: and does not judge jumps.
+Fails when a literalinclude path is missing, when :emphasize-lines: points
+outside the shown block, or when an option line before the body is missing
+its leading colon. Prints each :lineno-start: and does not judge jumps.
 """
 
 from __future__ import annotations
@@ -45,14 +46,21 @@ def _shown_line_count(path: Path, lines_opt: str | None) -> int:
     return count
 
 
-def _directive_body(lines: list[str], start: int, base: int) -> tuple[list[str], int]:
+def _directive_body(
+    lines: list[str], start: int, base: int
+) -> tuple[list[str], int, list[int]]:
     i = start
+    bad_options: list[int] = []
     while i < len(lines):
         line = lines[i]
         if line.strip() == "":
             break
-        if _indent(line) <= base or not line.lstrip(" ").startswith(":"):
+        if _indent(line) <= base:
             break
+        if not line.lstrip(" ").startswith(":"):
+            bad_options.append(i)
+            i += 1
+            continue
         i += 1
     while i < len(lines) and lines[i].strip() == "":
         i += 1
@@ -69,7 +77,7 @@ def _directive_body(lines: list[str], start: int, base: int) -> tuple[list[str],
         i += 1
     while body and body[-1].strip() == "":
         body.pop()
-    return body, i
+    return body, i, bad_options
 
 
 def check_rst(path: Path) -> tuple[list[str], list[str]]:
@@ -92,7 +100,12 @@ def check_rst(path: Path) -> tuple[list[str], list[str]]:
             continue
         base = _indent(line)
         argument = stripped.split("::", 1)[1].strip()
-        body, nxt = _directive_body(lines, i + 1, base)
+        body, nxt, bad_options = _directive_body(lines, i + 1, base)
+        for bad in bad_options:
+            errors.append(
+                f"{path}:{bad + 1}: option line must start with ':' "
+                f"({lines[bad].strip()})"
+            )
         options: dict[str, str] = {}
         j = i + 1
         while j < nxt and j < len(lines) and lines[j].strip() == "":

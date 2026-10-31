@@ -81,6 +81,28 @@ class CheckChapterRstTest(unittest.TestCase):
             errors, _notes = check_rst(rst)
             self.assertTrue(any("reversed" in item for item in errors))
 
+    def test_option_line_missing_colon_fails(self):
+        with tempfile.TemporaryDirectory() as raw:
+            rst = _write(
+                Path(raw),
+                "colon.rst",
+                "\n".join(
+                    [
+                        ".. code-block:: python",
+                        "  :caption: terminal",
+                        "  emphasize-lines: 1",
+                        "",
+                        "  cd elevator",
+                        "",
+                    ]
+                ),
+            )
+            errors, _notes = check_rst(rst)
+            self.assertTrue(
+                any("option line must start with ':'" in item for item in errors)
+            )
+            self.assertFalse(any("outside" in item for item in errors))
+
     def test_lines_option_limits_include(self):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
