@@ -107,9 +107,10 @@ The code in ``elevator/src/elevator/__init__.py`` from :ref:`Elevator`
 test elevator with loops: test
 *********************************************************************************
 
-The code in ``elevator/src/elevator/__init__.py`` from :ref:`Elevator`
+The code in ``elevator/tests/test_elevator.py`` from :ref:`test elevator with loops`
 
 .. literalinclude:: elevator/tests/test_elevator_w_loops.py
-  :caption: elevator/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator_w_loops.py
   :language: python
   :linenos:
+  :lines: 1-36

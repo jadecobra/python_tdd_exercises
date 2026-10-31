@@ -1,12 +1,12 @@
 :orphan:
 
 .. meta::
-  :description: Build an elevator controller with Python TDD (Red-Green-Refactor): translate a four-input truth table (floor button pushed, doors closed, above weight limit, emergency) into ``src.elevator.controller`` that returns True only when the button is pushed AND doors are closed AND not above weight AND emergency is not pushed. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Conjunction (AND), and assertTrue/assertFalse until only that one row of the 16-row table moves the elevator.
-  :keywords: Jacob Itegboje, Python elevator controller project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, number_pushed, doors_closed, above_weight, emergency, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Conjunction AND, if statements, failsafe logic, pumping python
+  :description: Pumping Python chapter "test elevator with loops" by Jacob Itegboje. Continues the Elevator project: one ``test_elevator_controller`` nests four ``for`` loops over ``(False, True)`` for ``number_pushed``, ``doors_closed``, ``above_weight``, and ``emergency``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the move case (button pushed, doors closed, not above weight, emergency not pushed) is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, on that same case. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other controller tests are removed because this loop covers them. The review says four nested loops made one test for all sixteen cases and points ahead to a better way. Also ``cd elevator`` and ``git commit -am 'extract test_elevator_controller'``.
+  :keywords: Jacob Itegboje, Pumping Python, test elevator with loops, test_elevator_controller, nested for loops, unittest subTest, SUBFAILED, assertEqual, BOOM, AssertionError False != 'BOOM!!!', AssertionError True != 'BOOM!!!', True is not false, assertFalse, assertTrue, try except AssertionError, src.elevator.controller, number_pushed, doors_closed, above_weight, emergency, pytest-watcher, git commit extract test_elevator_controller
 
 .. include:: ../../../links.rst
 
-.. _elevator:
+.. _test elevator with loops:
 
 #################################################################################
 test elevator with loops
@@ -63,12 +63,13 @@ The only time this elevator :green:`moves` up or down is when the button for a f
 preview
 *********************************************************************************
 
-These is the test I have at the end of the chapter
+This is the test I have at the end of the chapter
 
 .. literalinclude:: ../../../code/elevator/tests/test_elevator_w_loops.py
-  :caption: elevator/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator_w_loops.py
   :language: python
   :linenos:
+  :lines: 1-36
 
 ----
 
@@ -81,7 +82,7 @@ open the project
 
   .. code-block:: python
     :caption: terminal
-    emphasize-lines: 1
+    :emphasize-lines: 1
 
     cd elevator
 
@@ -130,7 +131,7 @@ I add a test with a :ref:`for loop<what is a for loop?>` for all the cases
 
 .. code-block:: python
   :caption: elevator/tests/test_elevator.py
-  :lineno-start: 5
+  :lineno-start: 19
   :emphasize-lines: 1-7
 
                               result = src.elevator.controller(
@@ -233,7 +234,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change ``self.assertEqual(result, 'BOOM!!!')`` to handle the fifteen cases where the ``controller`` :ref:`functions<what is a function?>` returns :red:`False`
+* I change ``self.assertEqual(result, 'BOOM!!!')`` to handle the fifteen cases where the ``controller`` :ref:`function<what is a function?>` returns :red:`False`
 
   .. code-block:: python
     :caption: elevator/tests/test_elevator.py
