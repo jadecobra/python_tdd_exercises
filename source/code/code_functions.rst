@@ -302,7 +302,7 @@ The code in ``functions/tests/test_functions.py`` from :ref:`test functions with
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 51
-  :lines: 51-92
+  :lines: 51-90
 
 ----
 
@@ -317,15 +317,3 @@ The change I made to ``functions/src/functions/__init__.py`` in :ref:`test funct
   :language: python
   :lineno-start: 7
   :lines: 7-17
-
-      def optional_arguments(
-              first_input, last_input='doe',
-          ):
-          return first_input, last_input
-
-
-      def args_and_kwargs(first_input, last_input):
-          return first_input, last_input
-
-
-      def keyword_arguments(first_input, last_input):

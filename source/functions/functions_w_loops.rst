@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Pumping Python, by Johnny Blase. In the functions project, pytest-watcher reruns tests/test_functions.py while for loops and subTest replace repeated assertions. Four tests that assertIsNone on w_pass, w_return, w_return_none, and return_leaves_the_function become test_functions_return_none_by_default. The red step calls assertIsNotNone and the terminal shows AssertionError: unexpectedly None, then assertIsNone. test_identity_function loops None, object, the strings first and last, a tuple, a list, a set, and a dictionary. assertNotEqual on equal values shows AssertionError: None == None (and the same shape for the other objects) before assertEqual. test_why_use_a_for_loop loops add_x. A red expectation of 'BOOM!!!' shows AssertionError: 3 != 'BOOM!!!'. range(0, 10) and range(10) are the same numbers; range(1000) runs one thousand subtests and is slower. test_positional_arguments, test_keyword_arguments, and test_args_and_kwargs collapse into one loop over input pairs and four functions. A swapped tuple shows AssertionError: Tuples differ: ('first', 'last') != ('last', 'first'). args_and_kwargs still takes argument and last_input, so last_input= and first_input= raise TypeError: args_and_kwargs() got an unexpected keyword argument 'first_input'. Did you mean 'last_input'? The green step renames argument to first_input in the definition and the return, in src/functions/__init__.py. The review asks whether the loop still says what the test is checking.
+  :keywords: for loop, subTest, range, assertIsNone, assertIsNotNone, assertEqual, assertNotEqual, unexpectedly None, Tuples differ, TypeError, first_input, args_and_kwargs, pytest-watcher, test_functions.py, Pumping Python, Johnny Blase
 
 .. include:: ../links.rst
 
@@ -21,35 +21,35 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
   :caption: functions/tests/test_functions.py
   :language: python
   :linenos:
   :lines: 1-12
 
-.. literalinclude:: ../../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 14
   :lines: 14-27
 
-.. literalinclude:: ../../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 29
   :lines: 29-39
 
-.. literalinclude:: ../../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 41
   :lines: 41-49
 
-.. literalinclude:: ../../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 51
-  :lines: 51-92
+  :lines: 51-90
 
 ----
 
@@ -142,7 +142,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another to test if something is None>`
+I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another to test if something is None>`
 
 .. code-block:: python
   :caption: functions/tests/test_functions.py
@@ -343,8 +343,8 @@ I add a :ref:`for loop<what is a for loop?>` to :ref:`test_why_use_a_function`
                   self.assertEqual(add_x(a_number), 'BOOM!!!')
 
           self.assertEqual(add_x(0), 3)
-            self.assertEqual(add_x(1), 4)
-            self.assertEqual(add_x(2), 5)
+          self.assertEqual(add_x(1), 4)
+          self.assertEqual(add_x(2), 5)
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -428,7 +428,7 @@ Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequenc
 
   .. code-block:: python
     :caption: functions/tests/test_functions.py
-    :lineno-start:
+    :lineno-start: 41
     :emphasize-lines: 5, 7
 
         def test_why_use_a_function(self):
@@ -446,7 +446,7 @@ Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequenc
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :caption:
+    :caption: terminal
 
     SUBFAILED[0] ...AssertionError: 3 == 3
     SUBFAILED[1] ...AssertionError: 4 == 4
@@ -473,7 +473,7 @@ Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequenc
 * I can use any number I want
 
   .. code-block:: python
-    :caption: functions/test/test_functions.py
+    :caption: functions/tests/test_functions.py
     :lineno-start: 45
     :emphasize-lines: 1
 
@@ -507,7 +507,7 @@ Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequenc
   .. code-block:: python
     :caption: functions/tests/test_functions.py
     :lineno-start: 35
-    :emphasize-lines: 5
+    :emphasize-lines: 7
 
                 with self.subTest(an_object):
                     self.assertEqual(
@@ -534,7 +534,7 @@ Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequenc
 test_positional_arguments with for loops
 *********************************************************************************
 
-:ref:`test_positional_arguments` has :ref:`assertions<what is an assertion?>` that checks what happens when a :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` with :ref:`positional arguments<test_positional_arguments>`
+:ref:`test_positional_arguments` has :ref:`assertions<what is an assertion?>` that check what happens when a :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` with :ref:`positional arguments<test_positional_arguments>`
 
 .. code-block:: python
 
@@ -723,7 +723,7 @@ I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:
 test_keyword_arguments with for loops
 *********************************************************************************
 
-:ref:`test_keyword_arguments` has :ref:`assertions<what is an assertion?>` that checks what happens when a :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` with :ref:`keyword arguments<test_keyword_arguments>`
+:ref:`test_keyword_arguments` has :ref:`assertions<what is an assertion?>` that check what happens when a :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` with :ref:`keyword arguments<test_keyword_arguments>`
 
 .. code-block:: python
 
@@ -883,7 +883,7 @@ the test passes.
                     Did you mean 'last_input'?
 
 * I open ``__init__.py`` from the :ref:`functions folder<what is a function?>` in the ``src`` folder_
-* I change the first argument in the :ref:`definition<how to make a function that can take input>` of the :ref:`args_and_kwargs function<test_args_and_kwargs>`, in ``src/functions/__init__.py``
+* I change ``argument`` to ``first_input`` in the :ref:`definition<how to make a function that can take input>` and the return of the :ref:`args_and_kwargs function<test_args_and_kwargs>`, in ``src/functions/__init__.py``
 
   .. code-block:: python
     :caption: functions/src/functions/__init__.py
@@ -1164,7 +1164,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_args_and_kwargs(self):
 
-* add a git_ commit message
+* I add a git_ commit message
 
   .. code-block:: python
     :caption: terminal
