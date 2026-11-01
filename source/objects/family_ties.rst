@@ -3783,7 +3783,7 @@ what happens when a child has more than one parent?
 
     AssertionError: 'blue' != 'green'
 
-* I change the expectation of the :ref:`assertion<what causes AssertionError?>`
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 90

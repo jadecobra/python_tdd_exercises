@@ -265,3 +265,67 @@ The code in ``functions/tests/test_functions.py`` from :ref:`test functions with
   :language: python
   :lineno-start: 28
   :lines: 28-39
+
+----
+
+*********************************************************************************
+test functions with loops: tests
+*********************************************************************************
+
+The code in ``functions/tests/test_functions.py`` from :ref:`test functions with loops`
+
+.. literalinclude:: functions/tests/test_functions_w_loops.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :linenos:
+  :lines: 1-12
+
+.. literalinclude:: functions/tests/test_functions_w_loops.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 14
+  :lines: 14-27
+
+.. literalinclude:: functions/tests/test_functions_w_loops.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 29
+  :lines: 29-39
+
+.. literalinclude:: functions/tests/test_functions_w_loops.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 41
+  :lines: 41-49
+
+.. literalinclude:: functions/tests/test_functions_w_loops.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 51
+  :lines: 51-92
+
+----
+
+*********************************************************************************
+test functions with loops: solution
+*********************************************************************************
+
+The change I made to ``functions/src/functions/__init__.py`` in :ref:`test functions with loops`
+
+.. literalinclude:: functions/src/functions_w_loops.py
+  :caption: functions/src/functions/__init__.py
+  :language: python
+  :lineno-start: 7
+  :lines: 7-17
+
+      def optional_arguments(
+              first_input, last_input='doe',
+          ):
+          return first_input, last_input
+
+
+      def args_and_kwargs(first_input, last_input):
+          return first_input, last_input
+
+
+      def keyword_arguments(first_input, last_input):

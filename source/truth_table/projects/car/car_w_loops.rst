@@ -66,7 +66,7 @@ preview
 This is the test I have at the end of the chapter
 
 .. literalinclude:: ../../../code/car/tests/test_car_w_loops.py
-  :caption: car/tests/test_car_w_loops.py
+  :caption: car/tests/test_car.py
   :language: python
   :linenos:
   :lines: 1-36

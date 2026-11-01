@@ -66,7 +66,7 @@ preview
 This is the test I have at the end of the chapter
 
 .. literalinclude:: ../../../code/elevator/tests/test_elevator_w_loops.py
-  :caption: elevator/tests/test_elevator_w_loops.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :linenos:
   :lines: 1-36

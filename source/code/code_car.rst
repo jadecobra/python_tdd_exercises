@@ -111,7 +111,7 @@ test car with loops: test
 The code in ``car/tests/test_car.py`` from :ref:`test car with loops`
 
 .. literalinclude:: car/tests/test_car_w_loops.py
-  :caption: car/tests/test_car_w_loops.py
+  :caption: car/tests/test_car.py
   :language: python
   :linenos:
   :lines: 1-36

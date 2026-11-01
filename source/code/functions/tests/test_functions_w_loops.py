@@ -2,10 +2,6 @@ import src.functions
 import unittest
 
 
-def assert_is_none(something):
-    assert something is None
-
-
 class TestFunctions(unittest.TestCase):
 
     first = 'first'
@@ -23,9 +19,7 @@ class TestFunctions(unittest.TestCase):
             src.functions.return_leaves_the_function,
         ):
             with self.subTest(a_function):
-                result = a_function()
-                assert_is_none(result)
-                self.assertIsNone(result)
+                self.assertIsNone(a_function())
 
     def test_constant_function(self):
         self.assertEqual(
@@ -34,23 +28,27 @@ class TestFunctions(unittest.TestCase):
 
     def test_identity_function(self):
         for an_object in (
-            None, self.first, self.last,
+            None, object, self.first, self.last,
             self.a_tuple, self.a_list,
             self.a_set, self.a_dictionary,
         ):
             with self.subTest(an_object):
                 self.assertEqual(
-                    src.functions.identity(an_object), an_object
+                    src.functions.identity(an_object),
+                    an_object
                 )
 
-    def test_why_use_a_loop(self):
+    def test_why_use_a_for_loop(self):
         def add_x(number):
             return 3 + number
 
-        for number in range(9):
-            self.assertEqual(add_x(number), 3+number)
+        for a_number in range(1000):
+            with self.subTest(a_number):
+                self.assertEqual(
+                    add_x(a_number), a_number+3
+                )
 
-    def test_positional_arguments(self):
+    def test_args_and_kwargs(self):
         for first, second in (
             (self.first, self.last),
             (self.last, self.first),
@@ -58,69 +56,38 @@ class TestFunctions(unittest.TestCase):
             (self.a_tuple, self.a_list),
             (self.a_set, self.a_dictionary),
         ):
-            self.assertEqual(
-                src.functions.positional_arguments(
-                    first, second
-                ),
-                (first, second)
-            )
-            self.assertEqual(
-                src.functions.keyword_arguments(
-                    first, second
-                ),
-                (first, second)
-            )
-
-    def test_keyword_arguments(self):
-        keyword_arguments = (
-            src.functions.keyword_arguments
-        )
-
-        self.assertEqual(
-            keyword_arguments(
-                first_input=self.first,
-                last_input=self.last,
-            ),
-            (self.first, self.last)
-        )
-        self.assertEqual(
-            keyword_arguments(
-                last_input=self.last,
-                first_input=self.first,
-            ),
-            (self.first, self.last)
-        )
-
-        self.assertEqual(
-            keyword_arguments(
-                last_input=0, first_input=1,
-            ),
-            (1, 0)
-        )
-
-        self.assertEqual(
-            keyword_arguments(
-                first_input=self.a_tuple,
-                last_input=self.a_list,
-            ),
-            (self.a_tuple, self.a_list)
-        )
-
-        self.assertEqual(
-            src.functions.positional_arguments(
-                last_input=self.a_dictionary,
-                first_input=self.a_set,
-            ),
-            (self.a_set, self.a_dictionary)
-        )
-
-    def test_args_and_kwargs(self):
-        self.assertEqual(
-            src.functions.args_and_kwargs(
-                self.first, last_input=self.last
-            ),
-            (self.first, self.last)
-        )
+            for a_function in (
+                src.functions.positional_arguments,
+                src.functions.keyword_arguments,
+                src.functions.args_and_kwargs,
+                src.functions.optional_arguments,
+            ):
+                with self.subTest(
+                    a_function=a_function, inputs=(first, second)
+                ):
+                    self.assertEqual(
+                        a_function(first, second),
+                        (first, second)
+                    )
+                    self.assertEqual(
+                        a_function(
+                            last_input=first,
+                            first_input=second
+                        ),
+                        (second, first)
+                    )
+                    self.assertEqual(
+                        a_function(
+                            first, last_input=second,
+                        ),
+                        (first, second)
+                    )
+                    self.assertEqual(
+                        a_function(
+                            second, last_input=first,
+                        ),
+                        (second, first)
+                    )
 
     def test_optional_arguments(self):
         optional_arguments = (
