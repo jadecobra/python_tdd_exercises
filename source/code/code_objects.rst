@@ -58,4 +58,79 @@ The code in ``objects/tests/test_objects.py`` from :ref:`test objects with unitt
   :caption: objects/tests/test_objects.py
   :language: python
   :linenos:
-  :lines: 1-
+  :lines: 1-10
+
+.. literalinclude:: objects/test_objects_w_unittest.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 13
+  :lines: 13-27
+
+.. literalinclude:: objects/test_objects_w_unittest.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 29
+  :lines: 29-42
+
+.. literalinclude:: objects/test_objects_w_unittest.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 44
+  :lines: 44-56
+
+.. literalinclude:: objects/test_objects_w_unittest.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 58
+  :lines: 58-70
+
+.. literalinclude:: objects/test_objects_w_unittest.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 72
+  :lines: 72-84
+
+.. literalinclude:: objects/test_objects_w_unittest.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 86
+  :lines: 86-98
+
+.. literalinclude:: objects/test_objects_w_unittest.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 100
+  :lines: 100-
+
+----
+
+*********************************************************************************
+test objects with loops: tests
+*********************************************************************************
+
+
+The code in ``objects/tests/test_objects.py`` from :ref:`test objects with loops`
+
+.. literalinclude:: objects/test_objects_w_loops.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :linenos:
+  :lines: 1-10
+
+.. literalinclude:: objects/test_objects_w_loops.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 13
+  :lines: 13-25
+
+.. literalinclude:: objects/test_objects_w_loops.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 27
+  :lines: 27-33
+
+.. literalinclude:: objects/test_objects_w_loops.py
+  :caption: objects/tests/test_objects.py
+  :language: python
+  :lineno-start: 35
+  :lines: 35-55
