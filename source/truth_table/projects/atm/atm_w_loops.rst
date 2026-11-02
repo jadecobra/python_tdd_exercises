@@ -1174,7 +1174,7 @@ the test passes.
 extract test_atm
 *********************************************************************************
 
-:ref:`test_if_card_expired`, :ref:`test_if_above_daily_limit` and :ref:`test_if_wrong_pin` all use :ref:`for loops<what is a for loop?>` over a tuple_ of :ref:`booleans<what are booleans?>`. I can use a :ref:`function<what is a function?>` with :ref:`for loops<what is a for loop?>` to put them together with :ref:`test_card_w_below_limit_right_pin_enough_cash` and :ref:`test_if_not_enough_cash`
+:ref:`test_if_card_expired`, :ref:`test_if_above_daily_limit` and :ref:`test_if_wrong_pin` all use :ref:`for loops<what is a for loop?>` over a tuple_ of :ref:`booleans<what are booleans?>`. I can use :ref:`for loops<what is a for loop?>` to put them together with :ref:`test_card_w_below_limit_right_pin_enough_cash` and :ref:`test_if_not_enough_cash`
 
 ----
 

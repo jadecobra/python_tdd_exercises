@@ -98,7 +98,7 @@ extract test_what_are_booleans
     self.assertIs(boolean, boolean)
     self.assertIs(bool(boolean), boolean)
 
-I can use a :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition
+I can use a :ref:`for loop<what is a for loop?>` in a test :ref:`method<what is a method?>` to remove the repetition
 
 ----
 
