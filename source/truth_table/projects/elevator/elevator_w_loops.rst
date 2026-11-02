@@ -107,7 +107,7 @@ extract test_elevator_controller
 
 ----
 
-I add a test with a :ref:`for loop<what is a for loop?>` for all the cases
+I add a test with :ref:`for loops<what is a for loop?>` for all the cases
 
 .. code-block:: python
   :caption: elevator/tests/test_elevator.py

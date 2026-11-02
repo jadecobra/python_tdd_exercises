@@ -94,8 +94,23 @@ The code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
 Microwave: solution
 *********************************************************************************
 
-The code in ``microwave/src/__init__.py`` from :ref:`Microwave`
+The code in ``microwave/src/microwave/__init__.py`` from :ref:`Microwave`
 
 .. literalinclude:: microwave/src/microwave.py
+  :caption: microwave/src/microwave/__init__.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+Microwave: tests
+*********************************************************************************
+
+The code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
+
+.. literalinclude:: microwave/tests/test_microwave_w_loops.py
+  :caption: microwave/tests/test_microwave.py
+  :language: python
+  :linenos:
+  :lines: 1-36

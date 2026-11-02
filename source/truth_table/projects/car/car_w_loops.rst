@@ -107,7 +107,7 @@ extract test_car_ignition
 
 ----
 
-I add a test with a :ref:`for loop<what is a for loop?>` for all the cases
+I add a test with :ref:`for loops<what is a for loop?>` for all the cases
 
 .. code-block:: python
   :caption: car/tests/test_car.py
