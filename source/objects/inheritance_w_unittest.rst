@@ -8,7 +8,7 @@
 test objects with unittest
 #################################################################################
 
-I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`object<everything is an object>` project.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`objects<everything is an object>` project.
 
 ----
 
