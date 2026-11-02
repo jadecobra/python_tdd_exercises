@@ -154,13 +154,13 @@ The code in ``telephone/tests/test_telephone.py`` from :ref:`test telephone with
   :linenos:
   :lines: 1-5
 
-.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+.. literalinclude:: telephone/tests/test_telephone_w_loops.py
   :caption: telephone/tests/test_telephone.py
   :language: python
   :lineno-start: 8
   :lines: 8-25
 
-.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+.. literalinclude:: telephone/tests/test_telephone_w_loops.py
   :caption: telephone/tests/test_telephone.py
   :language: python
   :lineno-start: 27
