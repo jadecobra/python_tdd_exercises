@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test objects with loops — one for loop and subTest replace the repeated isinstance and issubclass tests in the objects project. Open objects; uv run pytest-watcher . --now. test_what_is_an_object loops WPass, WParentheses, WObject, bool, int, float, str, tuple, list, set, and dict. Red uses assert not isinstance(an_object(), object) and the terminal shows AssertionError: assert not True (pytest), then assertNotIsInstance shows AssertionError such as False is an instance of <class 'object'>, 0 is an instance of <class 'object'>, and {} is an instance of <class 'object'>. assert not issubclass then assertNotIsSubclass shows AssertionError: <class 'bool'> is a subclass of <class 'object'> (same shape for the other classes). Green switches each line to isinstance, assertIsInstance, issubclass, and assertIsSubclass. Refactor removes the repeated tests and keeps test_is_none_an_object (None is not a class, so issubclass stays commented) and test_dir_object. git commit -am 'extract test_what_is_an_object'. Review: a for loop removes repetition from the tests. What is next: test telephone with loops.
+  :keywords: Jacob Itegboje, Pumping Python, test objects with loops, for loop, subTest, test_what_is_an_object, TestObjects, isinstance, issubclass, assertIsInstance, assertNotIsInstance, assertIsSubclass, assertNotIsSubclass, AssertionError assert not True, is an instance of object, is a subclass of object, WPass WParentheses WObject, bool int float str tuple list set dict, False 0 0.0 empty string, test_is_none_an_object, None is not a class, test_dir_object, uv run pytest-watcher . --now, red green refactor, git commit extract test_what_is_an_object, test_objects_w_loops, everything is an object
 
 .. include:: ../links.rst
 
@@ -72,7 +72,7 @@ open the project
 test_what_is_an_object
 *********************************************************************************
 
-All the tests except :ref:`test_is_none_an_object` :ref:`assert<what is an assertion?>` that an :ref:`object<everything is an object>` is an :ref:`instance<how to test if something is an instance>` and a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
+The tests other than :ref:`test_is_none_an_object` and :ref:`test_dir_object` :ref:`assert<what is an assertion?>` that an :ref:`object<everything is an object>` is an :ref:`instance<how to test if something is an instance>` and a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 .. code-block:: python
 
@@ -85,7 +85,7 @@ All the tests except :ref:`test_is_none_an_object` :ref:`assert<what is an asser
   assert issubclass(an_object, object)
   self.assertIsSubclass(an_object, object)
 
-I can write a :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
+I can use a :ref:`for loop<what is a for loop?>` in one test to remove the repetition.
 
 ----
 
@@ -102,7 +102,7 @@ I add a test with :ref:`instance<how to test if something is an instance>` and :
   :lineno-start: 13
   :emphasize-lines: 3-13
 
-  class TestClasses(unittest.TestCase):
+  class TestObjects(unittest.TestCase):
 
       def test_what_is_an_object(self):
           for an_object in (
@@ -116,7 +116,7 @@ I add a test with :ref:`instance<how to test if something is an instance>` and :
                   assert not issubclass(an_object, object)
                   self.assertNotIsSubclass(an_object, object)
 
-      def test_making_a_class_w_pass(self):
+      def test_making_an_object_w_pass(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -271,7 +271,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I remove all the other tests except :ref:`test_is_none_an_object` because they are now covered by :ref:`test_what_is_an_object`
+* I remove the other :ref:`isinstance<how to test if something is an instance>` and :ref:`issubclass<how to test if something is a subclass>` tests. I keep :ref:`test_is_none_an_object` and :ref:`test_dir_object`
 
   .. code-block:: python
     :caption: objects/tests/test_objects.py
