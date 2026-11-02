@@ -1,13 +1,12 @@
-.. REDO::
-
+:orphan:
 
 .. meta::
-  :description:
-  :keywords:
+  :description: Pumping Python chapter "test microwave with loops" by Jacob Itegboje. Continues the Microwave project: one ``test_microwave`` nests four ``for`` loops over ``(False, True)`` for ``closed_door``, ``timer_set``, ``pressed_start``, and ``too_hot``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the heat case (door closed, timer set, start pressed, not too hot) is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, on that same case. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other microwave tests are removed because this loop covers them. The review says four nested loops made one test for all sixteen cases and points ahead to a better way. Also ``cd microwave`` and ``git commit -am 'extract test_microwave'``.
+  :keywords: Jacob Itegboje, Pumping Python, test microwave with loops, test_microwave, nested for loops, unittest subTest, SUBFAILED, assertEqual, BOOM, AssertionError False != 'BOOM!!!', AssertionError True != 'BOOM!!!', True is not false, assertFalse, assertTrue, try except AssertionError, src.microwave.microwave, closed_door, timer_set, pressed_start, too_hot, pytest-watcher, git commit extract test_microwave
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
-.. _microwave with loops:
+.. _test microwave with loops:
 
 #################################################################################
 test microwave with loops
@@ -64,7 +63,7 @@ The only time this **Microwave** :green:`heats` up food is when the **Microwave*
 preview
 *********************************************************************************
 
-These is the test I have at the end of the chapter
+This is the test I have at the end of the chapter
 
 .. literalinclude:: ../../../code/microwave/tests/test_microwave_w_loops.py
   :caption: microwave/tests/test_microwave.py
@@ -79,7 +78,7 @@ open the project
 *********************************************************************************
 
 * I open a terminal_
-* I change directory_ to the project
+* I `change directory`_ to the :ref:`microwave folder<microwave>` in the ``pumping_python`` folder_
 
   .. code-block:: python
     :caption: terminal
@@ -108,7 +107,7 @@ extract test_microwave
 
 ----
 
-I add a test with :ref:`for loops<what is a for loop?>` for the sixteen cases
+I add a test with :ref:`for loops<what is a for loop?>` for all the cases
 
 .. code-block:: python
   :caption: microwave/tests/test_microwave.py
@@ -145,7 +144,87 @@ I add a test with :ref:`for loops<what is a for loop?>` for the sixteen cases
 
       def test_too_hot_w_timer_set_closed_door_pressed_start(self):
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all sixteen cases.
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+  SUBFAILED(
+      closed_door=False, timer_set=False,
+      pressed_start=False, too_hot=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=False, timer_set=False,
+      pressed_start=False, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=False, timer_set=False,
+      pressed_start=True, too_hot=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=False, timer_set=False,
+      pressed_start=True, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
+
+.. code-block:: python
+  :caption: terminal
+
+  SUBFAILED(
+      closed_door=False, timer_set=True,
+      pressed_start=False, too_hot=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=False, timer_set=True,
+      pressed_start=False, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=False, timer_set=True,
+      pressed_start=True, too_hot=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=False, timer_set=True,
+      pressed_start=True, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
+
+.. code-block:: python
+  :caption: terminal
+
+  SUBFAILED(
+      closed_door=True, timer_set=False,
+      pressed_start=False, too_hot=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=True, timer_set=False,
+      pressed_start=False, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=True, timer_set=False,
+      pressed_start=True, too_hot=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=True, timer_set=False,
+      pressed_start=True, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
+
+.. code-block:: python
+  :caption: terminal
+
+  SUBFAILED(
+      closed_door=True, timer_set=True,
+      pressed_start=False, too_hot=False
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=True, timer_set=True,
+      pressed_start=False, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=True, timer_set=True,
+      pressed_start=True, too_hot=False
+  ) ... AssertionError: True != 'BOOM!!!'
+  SUBFAILED(
+      closed_door=True, timer_set=True,
+      pressed_start=True, too_hot=True
+  ) ... AssertionError: False != 'BOOM!!!'
 
 ----
 
@@ -155,7 +234,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all s
 
 ----
 
-* I change ``self.assertEqual(result, 'BOOM!!!')`` to handle all the fifteen cases where the :ref:`microwave` does :red:`NOT heat` up food
+* I change ``self.assertEqual(result, 'BOOM!!!')`` to handle the fifteen cases where the ``microwave`` :ref:`function<what is a function?>` returns :red:`False`
 
   .. code-block:: python
     :caption: microwave/tests/test_microwave.py
@@ -172,7 +251,15 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all s
 
         def test_too_hot_w_timer_set_closed_door_pressed_start(self):
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for the one case where the :ref:`microwave` will :green:`heat` up food
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(
+        closed_door=True, timer_set=True,
+        pressed_start=True, too_hot=False
+    ) ... AssertionError: True is not false
 
 * I move the :ref:`assertion<what is an assertion?>` into a :ref:`try statement<how to handle Exceptions>` for it
 
@@ -193,6 +280,8 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all s
                                     self.assertTrue(result)
 
         def test_too_hot_w_timer_set_closed_door_pressed_start(self):
+
+  the test passes.
 
 ----
 
@@ -233,7 +322,7 @@ close the project
 * I close ``tests/test_microwave.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests
-* I `change directory`_ back to the parent of :ref:`microwave`
+* I `change directory`_ to the parent of :ref:`microwave`
 
   .. code-block:: python
     :caption: terminal
@@ -247,7 +336,7 @@ close the project
 review
 *************************************************************************************
 
-Another test with nested :ref:`for loops<what is for loop?>`, :ref:`there has to be a better way<test microwave with list comprehensions>`
+I also used four nested :ref:`for loops<what is a for loop?>` to make one test for all sixteen cases. :ref:`There has to be a better way<test microwave with list comprehensions>` that looks better.
 
 ----
 
@@ -255,7 +344,7 @@ Another test with nested :ref:`for loops<what is for loop?>`, :ref:`there has to
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test mircowave with loops: test>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test microwave with loops: test>`
 
 ----
 

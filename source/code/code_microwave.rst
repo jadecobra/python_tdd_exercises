@@ -104,10 +104,10 @@ The code in ``microwave/src/microwave/__init__.py`` from :ref:`Microwave`
 ----
 
 *********************************************************************************
-Microwave: tests
+test microwave with loops: test
 *********************************************************************************
 
-The code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
+The code in ``microwave/tests/test_microwave.py`` from :ref:`test microwave with loops`
 
 .. literalinclude:: microwave/tests/test_microwave_w_loops.py
   :caption: microwave/tests/test_microwave.py
