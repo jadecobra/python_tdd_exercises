@@ -2096,7 +2096,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 ----
 
 *********************************************************************************
-test_passing_a_class
+test_passing_an_object
 *********************************************************************************
 
 Can I pass any :ref:`object<everything is an object>` as input to a :ref:`function<what is a function?>`?
@@ -2127,7 +2127,7 @@ Can I pass any :ref:`object<everything is an object>` as input to a :ref:`functi
         assert_equal(reality, my_expectation)
 
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         assert_equal(text(object), 'I got: object')
 
 
@@ -2157,7 +2157,7 @@ I change my expectation to match reality
   :emphasize-lines: 2-5
   :emphasize-text: " '
 
-  def test_passing_a_class():
+  def test_passing_an_object():
       # assert_equal(text(object), 'I got: object')
       assert_equal(
           text(object), "I got: <class 'object'>"
@@ -2190,7 +2190,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 4
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2213,7 +2213,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 6-7
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2232,7 +2232,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 8
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2257,7 +2257,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 8-9
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2278,7 +2278,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 10
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2305,7 +2305,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 10-11
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2328,7 +2328,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 12
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2357,7 +2357,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 12-13
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2382,7 +2382,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 14
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2413,7 +2413,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 14-15
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2440,7 +2440,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 16
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2473,7 +2473,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 16-17
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2502,7 +2502,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 18
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2537,7 +2537,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 18-19
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2568,7 +2568,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 20
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2605,7 +2605,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 58
     :emphasize-lines: 20-21
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
             text(object), "I got: <class 'object'>"
@@ -2640,12 +2640,12 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
         └── return f'I got: {     the_input      }'
             return  "I got:  <class 'any object'> "
 
-* I remove the commented lines from :ref:`test_passing_a_class`
+* I remove the commented lines from :ref:`test_passing_an_object`
 
   .. code-block:: python
     :lineno-start: 58
 
-    def test_passing_a_class():
+    def test_passing_an_object():
         assert_equal(
             text(object), "I got: <class 'object'>"
         )
@@ -2670,11 +2670,11 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_passing_a_class'
+    'add test_passing_an_object'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass any object as input to a function<test_passing_a_class>`.
+:ref:`I can pass any object as input to a function<test_passing_an_object>`.
 
 ----
 

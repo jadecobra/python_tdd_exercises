@@ -10,8 +10,8 @@ class TestObjects(unittest.TestCase):
         self.assertIsInstance(an_instance, object)
 
         an_object = src.objects.WPass
-        assert issubclass(a_class, object)
-        self.assertIsSubclass(a_class, object)
+        assert issubclass(an_object, object)
+        self.assertIsSubclass(an_object, object)
 
     def test_making_an_object_w_parentheses(self):
         an_instance = src.objects.WParentheses()
@@ -19,8 +19,8 @@ class TestObjects(unittest.TestCase):
         self.assertIsInstance(an_instance, object)
 
         an_object = src.objects.WParentheses
-        assert issubclass(a_class, object)
-        self.assertIsSubclass(a_class, object)
+        assert issubclass(an_object, object)
+        self.assertIsSubclass(an_object, object)
 
     def test_making_an_object_w_object(self):
         an_instance = src.objects.WObject()
@@ -28,8 +28,8 @@ class TestObjects(unittest.TestCase):
         self.assertIsInstance(an_instance, object)
 
         an_object = src.objects.WObject
-        assert issubclass(a_class, object)
-        self.assertIsSubclass(a_class, object)
+        assert issubclass(an_object, object)
+        self.assertIsSubclass(an_object, object)
 
     def test_is_none_an_object(self):
         assert isinstance(None, object)

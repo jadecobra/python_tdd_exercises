@@ -1441,7 +1441,7 @@ test_passing_a_dictionary with unittest
             assert_equal(reality, my_expectation)
 
 
-    def test_passing_a_class():
+    def test_passing_an_object():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1504,7 +1504,7 @@ the test is green again.
             self.assertNotEqual(reality, my_expectation)
 
 
-    def test_passing_a_class():
+    def test_passing_an_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1533,7 +1533,7 @@ the test is green again.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_passing_a_class():
+    def test_passing_an_object():
 
   the test passes.
 
@@ -1556,7 +1556,7 @@ the test is green again.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_passing_a_class():
+    def test_passing_an_object():
 
 * I add a git_ commit message in the other terminal_
 
@@ -1569,7 +1569,7 @@ the test is green again.
 ----
 
 *********************************************************************************
-test_passing_a_class with unittest
+test_passing_an_object with unittest
 *********************************************************************************
 
 =================================================================================
@@ -1580,7 +1580,7 @@ test_passing_a_class with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_passing_a_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
+* I move :ref:`test_passing_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -1588,7 +1588,7 @@ test_passing_a_class with unittest
 
             self.assertEqual(reality, my_expectation)
 
-        def test_passing_a_class():
+        def test_passing_an_object():
             assert_equal(
                 text(object), "I got: <class 'object'>"
             )
@@ -1609,7 +1609,7 @@ test_passing_a_class with unittest
   .. code-block:: python
 
     TypeError:
-        TestTelephone.test_passing_a_class()
+        TestTelephone.test_passing_an_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -1622,7 +1622,7 @@ test_passing_a_class with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_passing_a_class`
+I add ``self`` to the parentheses of :ref:`test_passing_an_object`
 
 .. code-block:: python
   :lineno-start: 62
@@ -1630,8 +1630,8 @@ I add ``self`` to the parentheses of :ref:`test_passing_a_class`
 
           self.assertEqual(reality, my_expectation)
 
-      # def test_passing_a_class():
-      def test_passing_a_class(self):
+      # def test_passing_an_object():
+      def test_passing_an_object(self):
           assert_equal(
               text(object), "I got: <class 'object'>"
           )
@@ -1646,14 +1646,14 @@ green again.
 
 ----
 
-* I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_a_class`
+* I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_an_object`
 
   .. code-block:: python
     :lineno-start: 64
     :emphasize-lines: 3-10
 
-        # def test_passing_a_class():
-        def test_passing_a_class(self):
+        # def test_passing_an_object():
+        def test_passing_an_object(self):
             # assert_equal(
             self.assertNotEqual(
                 text(object), "I got: <class 'object'>"
@@ -1705,14 +1705,14 @@ green again.
      AssertionError: "I got: <class 'object'>"
                   == "I got: <class 'object'>"
 
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_class`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_an_object`
 
   .. code-block:: python
     :lineno-start: 64
     :emphasize-lines: 4-5, 9-10
 
-        # def test_passing_a_class():
-        def test_passing_a_class(self):
+        # def test_passing_an_object():
+        def test_passing_an_object(self):
             # assert_equal(
             # self.assertNotEqual(
             self.assertEqual(
@@ -1773,14 +1773,14 @@ green again.
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_passing_a_class`
+* I remove the commented lines from :ref:`test_passing_an_object`
 
   .. code-block:: python
     :lineno-start: 62
 
             self.assertEqual(reality, my_expectation)
 
-        def test_passing_a_class(self):
+        def test_passing_an_object(self):
             self.assertEqual(
                 text(object), "I got: <class 'object'>"
             )
@@ -1836,7 +1836,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_passing_a_class to TestTelephone'
+    'move test_passing_an_object to TestTelephone'
 
 ----
 

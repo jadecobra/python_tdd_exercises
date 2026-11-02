@@ -57,7 +57,7 @@ class TestTelephone(unittest.TestCase):
         my_expectation = f'I got: {a_dictionary}'
         self.assertEqual(reality, my_expectation)
 
-    def test_passing_a_class(self):
+    def test_passing_an_object(self):
         self.assertEqual(
             text(object), "I got: <class 'object'>"
         )

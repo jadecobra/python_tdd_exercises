@@ -386,7 +386,7 @@ All the tests are passing because Python_ follows this path when the ``text`` :r
                         return ("I got: {'key0': 'value0',"
                                          'keyN': [0, 1, 2, 'n']}")
 
-* In :ref:`test_passing_a_class`
+* In :ref:`test_passing_an_object`
 
   .. code-block:: shell
 
@@ -562,7 +562,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
     FAILED ...::test_passing_a_dictionary -
         assert {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
     == "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
-    FAILED ...::test_passing_a_class -
+    FAILED ...::test_passing_an_object -
         assert <class 'object'> == "I got: <class 'object'>"
 
   they all expect the input (``value``) as part of the message
@@ -604,7 +604,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
         assert 'I got: value' == "I got: {0, 1, 2, 'n'}"
     FAILED ...test_passing_a_dictionary -
         assert 'I got: value' == "I got: {'key..., 1, 2, 'n']}"
-    FAILED ...test_passing_a_class -
+    FAILED ...test_passing_an_object -
         assert 'I got: value' == "I got: <class 'object'>"
 
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`

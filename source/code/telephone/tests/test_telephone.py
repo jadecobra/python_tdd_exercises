@@ -55,7 +55,7 @@ def test_passing_a_dictionary():
     assert_equal(reality, my_expectation)
 
 
-def test_passing_a_class():
+def test_passing_an_object():
     assert_equal(
         text(object), "I got: <class 'object'>"
     )

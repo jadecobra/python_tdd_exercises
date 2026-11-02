@@ -1891,7 +1891,7 @@ test_assertIs_instance
 
     def test_assertIs_instance():
         an_object = unittest.TestCase
-        an_instance = a_class()
+        an_instance = an_object()
         # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         assert isinstance(
@@ -1915,18 +1915,18 @@ test_assertIs_instance
 
     def test_assertIs_instance():
         an_object = unittest.TestCase
-        an_instance = a_class()
+        an_instance = an_object()
         # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         assert isinstance(
             # unittest.TestCase, unittest.TestCase
             # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
+            an_instance, an_object
         )
         unittest.TestCase().assertIsInstance(
             # unittest.TestCase, unittest.TestCase
             # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
+            an_instance, an_object
         )
 
 
@@ -1942,7 +1942,7 @@ test_assertIs_instance
         unittest.TestCase().assertIsInstance(
             # unittest.TestCase, unittest.TestCase
             # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
+            an_instance, an_object
         )
 
 
@@ -2006,7 +2006,7 @@ test_assertNotIsSubclass
         unittest.TestCase().assertIsInstance(
             # unittest.TestCase, unittest.TestCase
             # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
+            an_instance, an_object
         )
 
 
@@ -2658,19 +2658,19 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 
     def test_assertIs_instance():
         an_object = unittest.TestCase
-        an_instance = a_class()
+        an_instance = an_object()
         # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         assert isinstance(
             # unittest.TestCase, unittest.TestCase
             # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
+            an_instance, an_object
         )
         # unittest.TestCase().assertIsInstance(
         TOOLBOX.assertIsInstance(
             # unittest.TestCase, unittest.TestCase
             # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
+            an_instance, an_object
         )
 
 
@@ -2685,11 +2685,11 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 
     def test_assertIs_instance():
         an_object = unittest.TestCase
-        an_instance = a_class()
+        an_instance = an_object()
 
-        assert isinstance(an_instance, a_class)
+        assert isinstance(an_instance, an_object)
         TOOLBOX.assertIsInstance(
-            an_instance, a_class
+            an_instance, an_object
         )
 
 
@@ -3241,11 +3241,11 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
         def test_assertIs_instance():
             an_object = unittest.TestCase
-            an_instance = a_class()
+            an_instance = an_object()
 
-            assert isinstance(an_instance, a_class)
+            assert isinstance(an_instance, an_object)
             TOOLBOX.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
 
 
@@ -3283,7 +3283,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
     :emphasize-lines: 5-11
 
             TOOLBOX.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
 
         def test_assertNotIsSubclass():
@@ -3312,7 +3312,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
     :emphasize-lines: 5
 
             TOOLBOX.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
 
         @staticmethod
@@ -3652,12 +3652,12 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
         @staticmethod
         def test_assertIs_instance():
             an_object = unittest.TestCase
-            an_instance = a_class()
+            an_instance = an_object()
 
-            assert isinstance(an_instance, a_class)
+            assert isinstance(an_instance, an_object)
             # TOOLBOX.assertIsInstance(
             self.TOOLBOX.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
 
         @staticmethod
@@ -4085,7 +4085,7 @@ the test passes because
     :lineno-start: 133
 
             self.TOOLBOX.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
 
         def test_assertNotIsSubclass(self):
@@ -4108,12 +4108,12 @@ the test passes because
         # def test_assertIs_instance():
         def test_assertIs_instance(self):
             an_object = unittest.TestCase
-            an_instance = a_class()
+            an_instance = an_object()
 
-            assert isinstance(an_instance, a_class)
+            assert isinstance(an_instance, an_object)
             # TOOLBOX.assertIsInstance(
             self.TOOLBOX.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
             self.assertNotIsInstance(
                 self, unittest.TestCase
@@ -4142,13 +4142,13 @@ the test passes because
         # def test_assertIs_instance():
         def test_assertIs_instance(self):
             an_object = unittest.TestCase
-            an_instance = a_class()
+            an_instance = an_object()
 
-            assert isinstance(an_instance, a_class)
+            assert isinstance(an_instance, an_object)
             # TOOLBOX.assertIsInstance(
             # self.TOOLBOX.assertIsInstance(
             self.TOOLBOX.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
             # self.assertNotIsInstance(
             self.assertIsInstance(
@@ -4190,14 +4190,14 @@ the test passes because
         # def test_assertIs_instance():
         def test_assertIs_instance(self):
             an_object = unittest.TestCase
-            an_instance = a_class()
+            an_instance = an_object()
 
-            assert isinstance(an_instance, a_class)
+            assert isinstance(an_instance, an_object)
             # TOOLBOX.assertIsInstance(
             # self.TOOLBOX.assertIsInstance(
             # self.TOOLBOX.assertIsInstance(
             self.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
             # self.assertNotIsInstance(
             self.assertIsInstance(
@@ -4217,11 +4217,11 @@ the test passes because
 
         def test_assertIs_instance(self):
             an_object = unittest.TestCase
-            an_instance = a_class()
+            an_instance = an_object()
 
-            assert isinstance(an_instance, a_class)
+            assert isinstance(an_instance, an_object)
             self.assertIsInstance(
-                an_instance, a_class
+                an_instance, an_object
             )
             self.assertIsInstance(
                 self, unittest.TestCase

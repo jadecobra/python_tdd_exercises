@@ -139,3 +139,29 @@ The code in ``telephone/tests/test_telephone.py`` from :ref:`test telephone with
   :language: python
   :lineno-start: 60
   :lines: 60-
+
+----
+
+*********************************************************************************
+test telephone with loops: tests
+*********************************************************************************
+
+The code in ``telephone/tests/test_telephone.py`` from :ref:`test telephone with loops`
+
+.. literalinclude:: telephone/tests/test_telephone_w_loops.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :linenos:
+  :lines: 1-5
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 8
+  :lines: 8-25
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 27
+  :lines: 27-

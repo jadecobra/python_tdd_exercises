@@ -103,11 +103,11 @@ class TestUnittest(unittest.TestCase):
 
     def test_assertIs_instance(self):
         an_object = unittest.TestCase
-        an_instance = a_class()
+        an_instance = an_object()
 
-        assert isinstance(an_instance, a_class)
+        assert isinstance(an_instance, an_object)
         self.assertIsInstance(
-            an_instance, a_class
+            an_instance, an_object
         )
         self.assertIsInstance(
             self, unittest.TestCase
