@@ -20,55 +20,55 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :linenos:
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 1-30
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 32
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 32-52
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 54
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 54-74
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 76
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 76-96
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 98
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 98-118
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 120
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 120-140
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 142
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 142-160
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 161
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 161-178
 
-.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
+.. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 179
   :caption: traffic_light/tests/test_traffic_light.py
@@ -4043,7 +4043,7 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 ----
 
 *********************************************************************************
-test_failsafe
+test_traffic_light_failsafe
 *********************************************************************************
 
 The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time. The following cases must never happen
@@ -4084,7 +4084,7 @@ It should be :red:`RED` for both ``'cross'`` and ``'parallel'`` traffic for any 
                 (GREEN, RED)
             )
 
-        def test_failsafe(self):
+        def test_traffic_light_failsafe(self):
             self.assertEqual(
                 src.traffic_light.control(
                     red_phase='cross',
@@ -4146,13 +4146,13 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if ``current_cross`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED` to :ref:`test_failsafe` in ``tests/test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` for if ``current_cross`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED` to :ref:`test_traffic_light_failsafe` in ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 142
     :emphasize-lines: 11-19
 
-        def test_failsafe(self):
+        def test_traffic_light_failsafe(self):
             self.assertEqual(
                 src.traffic_light.control(
                     red_phase='cross',
@@ -4181,7 +4181,7 @@ the test passes.
 
     AssertionError: Tuples differ: ('RED', 'RED') != ('RED', 'POW')
 
-* I add an :ref:`if statement<if statements>` for if ``current_cross`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED` to :ref:`test_failsafe` in ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for if ``current_cross`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED` to :ref:`test_traffic_light_failsafe` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -4216,7 +4216,7 @@ the test passes.
         timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if both lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if both lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 152
@@ -4286,7 +4286,7 @@ the test passes.
     ) -> 'RED', 'RED'
 
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if the parallel lights are :green:`GREEN` AND the cross lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if the parallel lights are :green:`GREEN` AND the cross lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 161
@@ -4354,7 +4354,7 @@ the test passes.
         timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if the parallel lights are :yellow:`YELLOW` AND the cross lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if the parallel lights are :yellow:`YELLOW` AND the cross lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 170
@@ -4428,7 +4428,7 @@ the test passes.
         timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if both lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if both lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 179
@@ -4604,7 +4604,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_failsafe'
+    git commit -am 'add test_traffic_light_failsafe'
 
 ----
 
@@ -5738,7 +5738,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for a **Traffic Light** that changes lights based on what :red:`RED` phase the traffic is in (``'cross'`` or ``'parallel'``) AND if a timer is :green:`done` or :red:`NOT done`
+I ran tests for a **Traffic Light** that changes color based on what :red:`RED` phase the traffic is in (``'cross'`` or ``'parallel'``) AND if a timer is :green:`done` or :red:`NOT done`
 
 The outputs are the next lights for Parallel and Cross Traffic which gave me this :ref:`truth table`
 

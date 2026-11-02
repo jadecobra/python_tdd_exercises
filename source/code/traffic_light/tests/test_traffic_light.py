@@ -139,7 +139,7 @@ class TestTrafficLight(unittest.TestCase):
             (GREEN, RED)
         )
 
-    def test_failsafe(self):
+    def test_traffic_light_failsafe(self):
         self.assertEqual(
             src.traffic_light.control(
                 red_phase='cross',

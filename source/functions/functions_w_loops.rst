@@ -636,7 +636,7 @@ I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`keyword_arguments<test_keyword_arguments>`, :ref:`args_and_kwargs<test_args_and_kwargs>` and :ref:`optional_arguments functions<test_optional_arguments>`
+* I add a :ref:`for loop<what is a for loop?>` with  :ref:`calls<how to call a function with input>` to the :ref:`positional_arguments<test_positional_arguments>`, :ref:`keyword_arguments<test_keyword_arguments>`, :ref:`args_and_kwargs<test_args_and_kwargs>` and :ref:`optional_arguments functions<test_optional_arguments>`
 
   .. code-block:: python
     :caption: functions/tests/test_functions.py

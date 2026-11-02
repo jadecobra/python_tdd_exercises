@@ -77,7 +77,7 @@ I add a test with a :ref:`for loop<what is a for loop?>` for each one of the val
 .. code-block:: python
   :caption: telephone/tests/test_telephone.py
   :lineno-start: 8
-  :emphasize-lines: 4-13
+  :emphasize-lines: 3-13
 
   class TestTelephone(unittest.TestCase):
 
