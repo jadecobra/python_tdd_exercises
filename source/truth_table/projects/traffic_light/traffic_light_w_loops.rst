@@ -53,13 +53,13 @@ These are the tests I have at the end of the chapter
   :caption: traffic_light/tests/test_traffic_light.py
   :language: python
   :linenos:
-  :lines: 1-5
+  :lines: 1-6
 
 .. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light_w_loops.py
   :caption: traffic_light/tests/test_traffic_light.py
   :language: python
-  :lineno-start: 8
-  :lines: 8-44
+  :lineno-start: 9
+  :lines: 9-45
 
 .. literalinclude:: ../../../code/traffic_light/tests/test_traffic_light_w_loops.py
   :caption: traffic_light/tests/test_traffic_light.py
@@ -828,7 +828,6 @@ review
 * I used :ref:`for loops<what is a for loop?>` to make less tests which is simpler and at the same time more complex
 * I used a tuple_ to represent all the states of the :ref:`Traffic Light` and its outputs in :ref:`test_traffic_light_control`, which is not as easy to read, :ref:`there has to be a better way<test traffic_light with list comprehensions>`
 * I used nested :ref:`for loops<what is a for loop?>` in :ref:`test_traffic_light_failsafe`, :ref:`there has to be a better way<test traffic_light with list comprehensions>`
-
 
 ----
 
