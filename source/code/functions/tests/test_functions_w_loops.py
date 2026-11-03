@@ -72,7 +72,7 @@ class TestFunctions(unittest.TestCase):
                     self.assertEqual(
                         a_function(
                             last_input=first,
-                            first_input=second
+                            first_input=second,
                         ),
                         (second, first)
                     )
