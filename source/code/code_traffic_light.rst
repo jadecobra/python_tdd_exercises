@@ -138,61 +138,25 @@ test traffic_light with loops: tests
 
 ----
 
-The code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Light`
+The code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`test traffic_light with loops`
 
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light_w_loops.py
+  :caption: traffic_light/tests/test_traffic_light.py
   :language: python
   :linenos:
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 1-30
+  :lines: 1-6
 
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
-  :language: python
-  :lineno-start: 32
+.. literalinclude:: traffic_light/tests/test_traffic_light_w_loops.py
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 32-52
+  :language: python
+  :lineno-start: 9
+  :lines: 9-45
 
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
-  :language: python
-  :lineno-start: 54
+.. literalinclude:: traffic_light/tests/test_traffic_light_w_loops.py
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 54-74
-
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
-  :lineno-start: 76
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 76-96
-
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
-  :language: python
-  :lineno-start: 98
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 98-118
-
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
-  :language: python
-  :lineno-start: 120
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 120-140
-
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
-  :language: python
-  :lineno-start: 142
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 142-160
-
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
-  :language: python
-  :lineno-start: 161
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 161-178
-
-.. literalinclude:: traffic_light/tests/test_traffic_light.py
-  :language: python
-  :lineno-start: 179
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 179-
+  :lineno-start: 47
+  :lines: 47-
 
 ----
 
