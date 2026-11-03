@@ -5718,6 +5718,8 @@ When the ``control`` :ref:`function is called<how to call a function with input>
             │        )
             └── return RED, RED
 
+----
+
 *********************************************************************************
 close the project
 *********************************************************************************

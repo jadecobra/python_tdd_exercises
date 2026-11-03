@@ -7,7 +7,7 @@
 .. _binary_operations_5:
 
 #################################################################################
-truth table: test_binary with loops
+truth table: test binary operations with loops
 #################################################################################
 
 ----
