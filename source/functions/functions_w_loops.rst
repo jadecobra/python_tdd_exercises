@@ -776,7 +776,7 @@ I add a :ref:`for loop<what is a for loop?>` for each one of the arguments and t
                       self.assertEqual(
                           a_function(
                               last_input=first,
-                              first_input=second
+                              first_input=second,
                           ),
                           (first, second)
                       )
@@ -805,7 +805,7 @@ I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:
                       self.assertEqual(
                           a_function(
                               last_input=first,
-                              first_input=second
+                              first_input=second,
                           ),
                           (second, first)
                       )
@@ -913,7 +913,7 @@ the test passes.
                         self.assertEqual(
                             a_function(
                                 last_input=first,
-                                first_input=second
+                                first_input=second,
                             ),
                             (second, first)
                         )
@@ -991,7 +991,7 @@ I add the :ref:`for loops<what is a for loop?>` for each one of the arguments an
                       self.assertEqual(
                           a_function(
                               last_input=first,
-                              first_input=second
+                              first_input=second,
                           ),
                           (first, second)
                       )
@@ -1048,7 +1048,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                         self.assertEqual(
                             a_function(
                                 last_input=first,
-                                first_input=second
+                                first_input=second,
                             ),
                             (first, second)
                         )
@@ -1065,7 +1065,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                         self.assertEqual(
                             a_function(
                                 last_input=first,
-                                first_input=second
+                                first_input=second,
                             ),
                             (second, first)
                         )
