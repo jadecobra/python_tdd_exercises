@@ -1,10 +1,10 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Pumping Python chapter "test traffic_light with loops" by Jacob Itegboje. Continues the Traffic Light project. ``test_traffic_light_control`` loops twelve rows of ``red_phase`` (``'cross'`` or ``'parallel'``), ``current_parallel``, ``current_cross``, ``timer_done``, and the next color pair, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now`` reports ``SUBFAILED``. ``assertEqual(..., 'BOOM!!!')`` fails all twelve, including ``AssertionError: ('GREEN', 'RED') != 'BOOM!!!'``, ``('YELLOW', 'RED') != 'BOOM!!!'``, ``('RED', 'RED') != 'BOOM!!!'``, ``('RED', 'GREEN') != 'BOOM!!!'``, and ``('RED', 'YELLOW') != 'BOOM!!!'``. Green expects ``row[4]``. The other control tests are removed. ``test_traffic_light_failsafe`` then nests four ``for`` loops: ``red_phase`` in ``('cross', 'parallel', 'bad input')``, both colors in ``(GREEN, YELLOW, 'bad input')``, and ``timer_done`` in ``(False, True)`` — fifty-four subtests. Red expects ``'BOOM!!!'``. Green expects ``(RED, RED)`` because every pair in that loop is unsafe. A walk signal adds ``WALK`` and ``NOT_WALK`` (``'DO NOT WALK'``). Expectations become three-tuples, and ``assertEqual`` shows ``AssertionError: Tuples differ: ('GREEN', 'RED') != ('GREEN', 'RED', 'WALK')`` (and the same shape for ``'DO NOT WALK'``). ``next_light`` returns the third value. Six subtests still fail while the timer is not done. ``if not timer_done`` returns ``NOT_WALK``, then ``'cross'`` and ``GREEN`` returns ``WALK``. Failsafe expectations become ``(RED, RED, NOT_WALK)`` and those fifty-four subtests fail until ``control`` and the ``next_light`` default return ``FAILSAFE``. The review says the loops make fewer tests, the row tuple is harder to read, and the nested loops point ahead to list comprehensions. Also ``cd traffic_light`` and ``git commit -am`` messages ``extract test_traffic_light_control``, ``test_traffic_light_failsafe with for loops``, and ``test traffic_light with walk signal``.
+  :keywords: Jacob Itegboje, Pumping Python, test traffic_light with loops, test_traffic_light_control, test_traffic_light_failsafe, for loop, nested for loops, unittest subTest, SUBFAILED, assertEqual, BOOM, AssertionError ('GREEN', 'RED') != 'BOOM!!!', Tuples differ ('GREEN', 'RED') != ('GREEN', 'RED', 'WALK'), DO NOT WALK, WALK, NOT_WALK, FAILSAFE, next_light, red_phase cross parallel, timer_done, pytest-watcher, git commit extract test_traffic_light_control
 
 .. include:: ../../../links.rst
 
-.. _traffic_light:
+.. _test traffic_light with loops:
 
 #################################################################################
 test traffic_light with loops
@@ -12,7 +12,7 @@ test traffic_light with loops
 
 ----
 
-I want to use :ref:`for loops<what is a for loop?>` in the :ref:`Traffic Light` project. It has for a **Traffic Light** that changes color based on what :red:`RED` phase the traffic is in (``'cross'`` or ``'parallel'``) AND if a timer is :green:`done` or :red:`NOT done`
+I want to use :ref:`for loops<what is a for loop?>` in the :ref:`Traffic Light` project. It has tests for a **Traffic Light** that changes color based on what :red:`RED` phase the traffic is in (``'cross'`` or ``'parallel'``) AND if a timer is :green:`done` or :red:`NOT done`
 
 The outputs are the next lights for Parallel and Cross Traffic which gave me this :ref:`truth table`
 
@@ -258,7 +258,7 @@ the test passes.
 
 ----
 
-* I leave :ref:`test_traffic_light_failsafe` and remove the other tests because they are now covered by :ref:`test_traffic_light_Control`
+* I leave :ref:`test_traffic_light_failsafe` and remove the other tests because they are now covered by :ref:`test_traffic_light_control`
 
   .. code-block:: python
     :caption: traffic_light/tests/test_traffic_light.py
@@ -274,7 +274,7 @@ the test passes.
                         row[4]
                     )
 
-        def test_traffic_ligfailsafe(self):
+        def test_traffic_light_failsafe(self):
 
 * I add a git_ commit message
 
@@ -302,7 +302,7 @@ I add :ref:`for loops<what is a for loop?>` to :ref:`test_traffic_light_failsafe
 .. code-block:: python
   :caption: traffic_light/tests/test_traffic_light.py
   :lineno-start: 46
-  :emphasize-lines: 2-13
+  :emphasize-lines: 2-12
 
       def test_traffic_light_failsafe(self):
           inputs = (GREEN, YELLOW, 'bad input')
@@ -771,7 +771,7 @@ The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'
 
   .. code-block:: python
     :caption: traffic_light/src/traffic_light/__init__.py
-    :lineno-start: 40
+    :lineno-start: 41
     :emphasize-lines: 6, 18
 
     def control(
@@ -835,7 +835,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<Traffic Light: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test traffic_light with loops: tests and solutions>`
 
 ----
 

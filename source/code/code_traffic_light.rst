@@ -180,13 +180,13 @@ The code in ``traffic_light/src/traffic_light/__init__.py`` from :ref:`test traf
   :lineno-start: 14
   :lines: 14-24
 
-.. literalinclude:: traffic_light/src/traffic_light.py
+.. literalinclude:: traffic_light/src/traffic_light_w_loops.py
   :caption: traffic_light/src/traffic_light/__init__.py
   :language: python
   :lineno-start: 27
   :lines: 27-38
 
-.. literalinclude:: traffic_light/src/traffic_light.py
+.. literalinclude:: traffic_light/src/traffic_light_w_loops.py
   :caption: traffic_light/src/traffic_light/__init__.py
   :language: python
   :lineno-start: 41
