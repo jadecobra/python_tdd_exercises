@@ -22,7 +22,7 @@ These is the test I have at the end of the chapter
   :caption: truth_table/tests/test_binary.py
   :language: python
   :linenos:
-  :lines: 1-39
+  :lines: 1-74
 
 ----
 
@@ -378,9 +378,6 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     class TestBinaryOperations(unittest.TestCase):
 
-
-
-
 * I add a git_ commit message
 
   .. code-block:: python
@@ -388,12 +385,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract test_traffic_light_control'
+    'extract test_binary_operations'
+
 
 ----
 
 *********************************************************************************
-test_traffic_light_failsafe with for loops
+refactor test_binary_operations
 *********************************************************************************
 
 =================================================================================
@@ -402,52 +400,57 @@ test_traffic_light_failsafe with for loops
 
 ----
 
-I add :ref:`for loops<what is a for loop?>` to :ref:`test_traffic_light_failsafe`
+I rewrite the test a different way without listing four :ref:`booleans<what are booleans?>` for each operation
 
 .. code-block:: python
   :caption: traffic_light/tests/test_traffic_light.py
-  :lineno-start: 46
-  :emphasize-lines: 2-12
+  :lineno-start: 5
+  :emphasize-lines: 3-24
 
-      def test_traffic_light_failsafe(self):
-          inputs = (GREEN, YELLOW, 'bad input')
-          for red_phase in ('cross', 'parallel', 'bad input'):
-              for current_parallel in inputs:
-                  for current_cross in inputs:
-                      for timer_done in (False, True):
-                          with self.subTest(
-                              red_phase=red_phase,
-                              current_parallel=current_parallel,
-                              current_cross=current_cross,
-                              timer_done=timer_done,
-                          ):
+  class TestBinaryOperations(unittest.TestCase):
+
+      def test_binary_operations(self):
+          booleans = (False, True)
+          for first in booleans:
+              for second in booleans:
+                  for operation, expectation in (
+                      (src.truth_table.contradiction, 'BOOM!!!'),
+                      (src.truth_table.logical_conjunction, 'BAP!!!'),
+                      (src.truth_table.project_second, 'POW!!!'),
+                      (src.truth_table.converse_non_implication, 'BOOM!!!'),
+                      (src.truth_table.negate_first, 'BAP!!!'),
+                      (src.truth_table.logical_nand, 'POW!!!'),
+                      (src.truth_table.tautology, 'BOOM!!!'),
+                      (src.truth_table.logical_disjunction, 'BAP!!!'),
+                      (src.truth_table.exclusive_disjunction, 'POW!!!'),
+                      (src.truth_table.material_non_implication, 'BOOM!!!'),
+                      (src.truth_table.project_first, 'BAP!!!'),
+                      (src.truth_table.converse_implication, 'POW!!'),
+                      (src.truth_table.negate_second, 'BOOM!!!'),
+                      (src.truth_table.logical_nor, 'BOOM!!!'),
+                      (src.truth_table.logical_equality, 'BAP!!!'),
+                      (src.truth_table.material_implication, 'BOOM!!!'),
+                  ):
 
 .. code-block:: python
   :caption: traffic_light/tests/test_traffic_light.py
-  :lineno-start: 58
+  :lineno-start: 29
   :emphasize-lines: 1-9
 
-                              self.assertEqual(
-                                  src.traffic_light.control(
-                                      red_phase=red_phase,
-                                      current_parallel=current_parallel,
-                                      current_cross=current_cross,
-                                      timer_done=timer_done,
-                                  ),
-                                  'BOOM!!!'
-                              )
+                      with self.subTest(
+                          operation.__name__,
+                          first=first,
+                          second=second
+                      ):
+                          self.assertEqual(
+                              operation(first, second),
+                              expectation
+                          )
 
-          self.assertEqual(
-              src.traffic_light.control(
-                  red_phase='cross',
-                  current_parallel='BAP',
-                  current_cross=RED,
-                  timer_done=False,
-              ),
-              (RED, RED)
-          )
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for fifty four sub tests.
+  # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty four sub tests. Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
 ----
 
@@ -457,448 +460,276 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the expectation of the new :ref:`assertion<what is an assertion?>` in :ref:`test_traffic_light_failsafe`
-
-.. code-block:: python
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lineno-start: 58
-  :emphasize-lines: 8
-
-                              self.assertEqual(
-                                  src.traffic_light.control(
-                                      red_phase=red_phase,
-                                      current_parallel=current_parallel,
-                                      current_cross=current_cross,
-                                      timer_done=timer_done,
-                                  ),
-                                  (RED, RED)
-                              )
-
-          self.assertEqual(
-              src.traffic_light.control(
-                  red_phase='cross',
-                  current_parallel='BAP',
-                  current_cross=RED,
-                  timer_done=False,
-              ),
-              (RED, RED)
-          )
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the other :ref:`assertions<what is an assertion?>` from :ref:`test_traffic_light_failsafe` because they are now covered by the :ref:`for loops<what is a for loop?>`
-
-  .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
-    :lineno-start: 58
-
-                                self.assertEqual(
-                                    src.traffic_light.control(
-                                        red_phase=red_phase,
-                                        current_parallel=current_parallel,
-                                        current_cross=current_cross,
-                                        timer_done=timer_done,
-                                    ),
-                                    (RED, RED)
-                                )
-
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'test_traffic_light_failsafe with for loops'
-
-----
-
-*********************************************************************************
-test traffic light with walk signal
-*********************************************************************************
-
-What if the :ref:`Traffic Light` has a walk signal to let people know that it is safe to cross the street, the :ref:`truth table` would then be
-
-==========  ==================  ==================  ===============  ==================  ==================  ==================
-red         current             current                              next                next                walk
-phase       parallel            cross               timer            parallel            cross
-==========  ==================  ==================  ===============  ==================  ==================  ==================
-'cross'     :green:`GREEN`      :red:`RED`          :red:`NOT done`  :green:`GREEN`      :red:`RED`          :green:`WALK`
-'cross'     :green:`GREEN`      :red:`RED`          :green:`done`    :yellow:`YELLOW`    :red:`RED`          :red:`DO NOT WALK`
-'cross'     :yellow:`YELLOW`    :red:`RED`          :red:`NOT done`  :yellow:`YELLOW`    :red:`RED`          :red:`DO NOT WALK`
-'cross'     :yellow:`YELLOW`    :red:`RED`          :green:`done`    safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
-'cross'     :red:`RED`          :red:`RED`          :red:`NOT done`  safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
-'cross'     :red:`RED`          :red:`RED`          :green:`done`    :red:`RED`          :green:`GREEN`      :red:`DO NOT WALK`
-==========  ==================  ==================  ===============  ==================  ==================  ==================
-
-
-==========  ==================  ==================  ===============  ==================  ==================  ==================
-red         current             current                              next                next                walk
-phase       parallel            cross               timer            parallel            cross
-==========  ==================  ==================  ===============  ==================  ==================  ==================
-'parallel'  :red:`RED`          :green:`GREEN`      :red:`NOT done`  :red:`RED`          :green:`GREEN`      :red:`DO NOT WALK`
-'parallel'  :red:`RED`          :green:`GREEN`      :green:`done`    :red:`RED`          :yellow:`YELLOW`    :red:`DO NOT WALK`
-'parallel'  :red:`RED`          :yellow:`YELLOW`    :red:`NOT done`  :red:`RED`          :yellow:`YELLOW`    :red:`DO NOT WALK`
-'parallel'  :red:`RED`          :yellow:`YELLOW`    :green:`done`    safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
-'parallel'  :red:`RED`          :red:`RED`          :red:`NOT done`  safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
-'parallel'  :red:`RED`          :red:`RED`          :green:`done`    :green:`GREEN`      :red:`RED`          :green:`WALK`
-==========  ==================  ==================  ===============  ==================  ==================  ==================
-
-The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'parallel'`` AND the current cross is :red:`RED` AND the timer is :green:`done` AND the next cross will stay :red:`RED` OR if the :red:`RED` phase is ``'cross'`` AND the current parallel is :green:`GREEN` AND the timer is :red:`NOT done` AND the next cross will stay :red:`RED`, which means there will be no car moving across the road the person is crossing.
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I add :ref:`global variables<what is a variable?>` for ``'WALK'`` and ``'DO NOT WALK'``
-
-  .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
-    :linenos:
-    :emphasize-lines: 6
-
-    import src.traffic_light
-    import unittest
-
-
-    GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
-    WALK, NOT_WALK = 'WALK', 'DO NOT WALK'
-
-
-    class TestTrafficLight(unittest.TestCase):
-
-* I add :green:`WALK` and :red:`NOT_WALK` to the expectations of :ref:`test_traffic_light_control`
+* I change the value of ``expectation`` for :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :caption: traffic_light/tests/test_traffic_light.py
     :lineno-start: 11
-    :emphasize-lines: 3-14
-    :emphasize-text: WALK NOT_WALK
-
-        def test_traffic_light_control(self):
-            for row in (
-                ('cross', GREEN, RED, False, (GREEN, RED, WALK)),
-                ('cross', GREEN, RED, True, (YELLOW, RED, NOT_WALK)),
-                ('cross', YELLOW, RED, False, (YELLOW, RED, NOT_WALK)),
-                ('cross', YELLOW, RED, True, (RED, RED, NOT_WALK)),
-                ('cross', RED, RED, False, (RED, RED, NOT_WALK)),
-                ('cross', RED, RED, True, (RED, GREEN, NOT_WALK)),
-                ('parallel', RED, GREEN, False, (RED, GREEN, NOT_WALK)),
-                ('parallel', RED, GREEN, True, (RED, YELLOW, NOT_WALK)),
-                ('parallel', RED, YELLOW, False, (RED, YELLOW, NOT_WALK)),
-                ('parallel', RED, YELLOW, True, (RED, RED, NOT_WALK)),
-                ('parallel', RED, RED, False, (RED, RED, NOT_WALK)),
-                ('parallel', RED, RED, True, (GREEN, RED, WALK)),
-            ):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :caption: terminal
-
-    SUBFAILED(
-        red_phase='cross', current_parallel='GREEN',
-        current_cross='RED', timer_done=False
-    ) ...AssertionError: Tuples differ: ('GREEN', 'RED')
-                                     != ('GREEN', 'RED', 'WALK')
-    SUBFAILED(
-        red_phase='cross', current_parallel='GREEN',
-        current_cross='RED', timer_done=True
-    ) ...AssertionError: Tuples differ: ('YELLOW', 'RED')
-                                     != ('YELLOW', 'RED', 'DO NOT WALK')
-    SUBFAILED(
-        red_phase='cross', current_parallel='YELLOW',
-        current_cross='RED', timer_done=False
-    ) ...AssertionError: Tuples differ: ('YELLOW', 'RED')
-                                     != ('YELLOW', 'RED', 'DO NOT WALK')
-
-  .. code-block:: python
-    :caption: terminal
-
-    SUBFAILED(
-        red_phase='cross', current_parallel='YELLOW',
-        current_cross='RED', timer_done=True
-    ) ...AssertionError: Tuples differ: ('RED', 'RED')
-                                     != ('RED', 'RED', 'DO NOT WALK')
-    SUBFAILED(
-        red_phase='cross', current_parallel='RED',
-        current_cross='RED', timer_done=False
-    ) ...AssertionError: Tuples differ: ('RED', 'RED')
-                                     != ('RED', 'RED', 'DO NOT WALK')
-    SUBFAILED(
-        red_phase='cross', current_parallel='RED',
-        current_cross='RED', timer_done=True
-    ) ...AssertionError: Tuples differ: ('RED', 'GREEN')
-                                     != ('RED', 'GREEN', 'DO NOT WALK')
-
-  .. code-block:: python
-    :caption: terminal
-
-    SUBFAILED(
-        red_phase='parallel', current_parallel='RED',
-        current_cross='GREEN', timer_done=False
-    ) ...AssertionError: Tuples differ: ('RED', 'GREEN')
-                                     != ('RED', 'GREEN', 'DO NOT WALK')
-    SUBFAILED(
-        red_phase='parallel', current_parallel='RED',
-        current_cross='GREEN', timer_done=True
-    ) ...AssertionError: Tuples differ: ('RED', 'YELLOW')
-                                     != ('RED', 'YELLOW', 'DO NOT WALK')
-    SUBFAILED(
-        red_phase='parallel', current_parallel='RED',
-        current_cross='YELLOW', timer_done=False
-    ) ...AssertionError: Tuples differ: ('RED', 'YELLOW')
-                                     != ('RED', 'YELLOW', 'DO NOT WALK')
-
-  .. code-block:: python
-    :caption: terminal
-
-    SUBFAILED(
-        red_phase='parallel', current_parallel='RED',
-        current_cross='YELLOW', timer_done=True
-    ) ...AssertionError: Tuples differ: ('RED', 'RED')
-                                     != ('RED', 'RED', 'DO NOT WALK')
-    SUBFAILED(
-        red_phase='parallel', current_parallel='RED',
-        current_cross='RED', timer_done=False
-    ) ...AssertionError: Tuples differ: ('RED', 'RED')
-                                     != ('RED', 'RED', 'DO NOT WALK')
-    SUBFAILED(
-        red_phase='parallel', current_parallel='RED',
-        current_cross='RED', timer_done=True
-    ) ...AssertionError: Tuples differ: ('GREEN', 'RED')
-                                     != ('GREEN', 'RED', 'WALK')
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I open ``__init__.py`` from the :ref:`traffic_light folder<Traffic Light>` in the ``src`` folder_
-* I add :ref:`global variables<what is a variable?>` for ``'WALK'`` and ``'DO NOT WALK'`` in ``src/traffic_light/__init__.py``
-
-  .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
-    :linenos:
     :emphasize-lines: 2
 
-    GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
-    WALK, NOT_WALK = 'WALK', 'DO NOT WALK'
+                    for operation, expectation in (
+                        (src.truth_table.contradiction, False),
+                        (src.truth_table.logical_conjunction, 'BAP!!!'),
 
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty sub tests.
 
-    def is_not_safe(parallel, cross):
-
-* I add :green:`WALK` and :red:`NOT_WALK` to the :ref:`next_light function<extract next_light function>`
-
-  .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
-    :lineno-start: 26
-    :emphasize-lines: 4, 6, 9, 11-12
-
-    def next_light(red_phase, parallel, cross):
-        if red_phase == 'cross':
-            if parallel == GREEN:
-                return YELLOW, RED, NOT_WALK
-            if parallel == RED:
-                return RED, GREEN, NOT_WALK
-        if red_phase == 'parallel':
-            if cross == GREEN:
-                return RED, YELLOW, NOT_WALK
-            if cross == RED:
-                return GREEN, RED, WALK
-        return RED, RED, NOT_WALK
-
-
-    def control(
-            timer_done, red_phase='parallel',
-            current_parallel=RED, current_cross=RED,
-        ):
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for six sub tests.
-
-* I add :red:`NOT_WALK` to the :ref:`if statement<if statements>` for if the timer is :red:`NOT done`, in the ``control`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
-    :lineno-start: 40
-    :emphasize-lines: 9
-
-    def control(
-            timer_done, red_phase='parallel',
-            current_parallel=RED, current_cross=RED,
-        ):
-        if triggers_failsafe(current_parallel, current_cross):
-            return RED, RED
-
-        if not timer_done:
-            return current_parallel, current_cross, NOT_WALK
-
-        if timer_done:
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    SUBFAILED(
-        red_phase='cross', current_parallel='GREEN',
-        current_cross='RED', timer_done=False
-    ) ... AssertionError: Tuples differ: ('GREEN', 'RED', 'DO NOT WALK')
-                                      != ('GREEN', 'RED', 'WALK')
-
-* I add an :ref:`if statement<if statements>` for if the :red:`RED` phase is ``'cross'`` AND ``current_parallel`` is :green:`GREEN` to ``if not timer_done:``
-
-  .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
-    :lineno-start: 47
-    :emphasize-lines: 2-3
-
-        if not timer_done:
-            if red_phase == 'cross' and current_parallel == GREEN:
-                return current_parallel, current_cross, WALK
-            return current_parallel, current_cross, NOT_WALK
-
-        if timer_done:
-
-  the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add :red:`NOT_WALK` to :ref:`test_traffic_light_failsafe` in ``tests/test_traffic_light.py`` because I cannot predict what light will be next when such events happen, for example a power failure
+* I change the value of ``expectation`` for :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :caption: traffic_light/tests/test_traffic_light.py
-    :lineno-start: 59
-    :emphasize-lines: 8
+    :lineno-start: 11
+    :emphasize-lines: 3-6
 
-                                self.assertEqual(
-                                    src.traffic_light.control(
-                                        red_phase=red_phase,
-                                        current_parallel=current_parallel,
-                                        current_cross=current_cross,
-                                        timer_done=timer_done,
-                                    ),
-                                    (RED, RED, NOT_WALK)
-                                )
+                    for operation, expectation in (
+                        (src.truth_table.contradiction, False),
+                        (
+                            src.truth_table.logical_conjunction,
+                            (first, second) == (True, True)
+                        ),
+                        (src.truth_table.project_second, 'POW!!!'),
 
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for fifty six sub tests.
 
-    # Exceptions seen
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for fifty four sub tests.
-
-* I add :red:`NOT_WALK` to ``if triggers_failsafe(current_parallel, current_cross):`` in the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
+* I change the value of ``expectation`` for :ref:`project_second<test_project_second>`
 
   .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 13
+    :emphasize-lines: 5
+
+                        (
+                            src.truth_table.logical_conjunction,
+                            (first, second) == (True, True)
+                        ),
+                        (src.truth_table.project_second, second),
+                        (src.truth_table.converse_non_implication, 'BOOM!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for fifty two sub tests.
+
+* I change the value of ``expectation`` for :ref:`converse_non_implication<test_converse_non_implication>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 17
+    :emphasize-lines: 2-5
+
+                        (src.truth_table.project_second, second),
+                        (
+                            src.truth_table.converse_non_implication,
+                            (first, second) == (False, True)
+                        ),
+                        (src.truth_table.negate_first, 'BAP!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for forty eight tests.
+
+* I change the value of ``expectation`` for :ref:`negate_first<test_negate_first>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 18
+    :emphasize-lines: 5
+
+                        (
+                            src.truth_table.converse_non_implication,
+                            (first, second) == (False, True)
+                        ),
+                        (src.truth_table.negate_first, not first),
+                        (src.truth_table.logical_nand, 'POW!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for forty four sub tests.
+
+* I change the value of ``expectation`` for :ref:`logical_nand<test_logical_nand>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 22
+    :emphasize-lines: 2-5
+
+                        (src.truth_table.negate_first, not first),
+                        (
+                            src.truth_table.logical_nand,
+                            (first, second) != (True, True)
+                        ),
+                        (src.truth_table.tautology, 'BOOM!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for forty sub tests.
+
+* I change the value of ``expectation`` for :ref:`tautology<test_tautology>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 23
+    :emphasize-lines: 5
+
+                        (
+                            src.truth_table.logical_nand,
+                            (first, second) != (True, True)
+                        ),
+                        (src.truth_table.tautology, True),
+                        (src.truth_table.logical_disjunction, 'BAP!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for thirty six sub tests.
+
+* I change the value of ``expectation`` for :ref:`logical_disjunction<test_logical_disjunction>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 27
+    :emphasize-lines: 2+5
+
+                        (src.truth_table.tautology, True),
+                        (
+                            src.truth_table.logical_disjunction,
+                            (first, second) != (False, False)
+                        ),
+                        (src.truth_table.exclusive_disjunction, 'POW!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for thirty two sub tests.
+
+* I change the value of ``expectation`` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 28
+    :emphasize-lines: 5-8
+
+                        (
+                            src.truth_table.logical_disjunction,
+                            (first, second) != (False, False)
+                        ),
+                        (
+                            src.truth_table.exclusive_disjunction,
+                            first != second
+                        ),
+                        (src.truth_table.material_non_implication, 'BOOM!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for twenty eight sub tests.
+
+* I change the value of ``expectation`` for :ref:`material_non_implication<test_material_non_implication>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+    :emphasize-lines: 5-8
+
+                        (
+                            src.truth_table.exclusive_disjunction,
+                            first != second
+                        ),
+                        (
+                            src.truth_table.material_non_implication,
+                            (first, second) == (True, False)
+                        ),
+                        (src.truth_table.project_first, 'BAP!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for twenty four sub tests.
+
+* I change the value of ``expectation`` for :ref:`project_first<test_project_first>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 36
+    :emphasize-lines: 5
+
+                        (
+                            src.truth_table.material_non_implication,
+                            (first, second) == (True, False)
+                        ),
+                        (src.truth_table.project_first, first),
+                        (src.truth_table.converse_implication, 'POW!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for twenty sub tests.
+
+* I change the value of ``expectation`` for :ref:`converse_implication<test_converse_implication>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
     :lineno-start: 40
-    :emphasize-lines: 6
+    :emphasize-lines: 2-5
 
-    def control(
-            timer_done, red_phase='parallel',
-            current_parallel=RED, current_cross=RED,
-        ):
-        if triggers_failsafe(current_parallel, current_cross):
-            return RED, RED, NOT_WALK
+                        (src.truth_table.project_first, first),
+                        (
+                            src.truth_table.converse_implication,
+                            (first, second) != (False, True)
+                        ),
+                        (src.truth_table.negate_second, 'BOOM!!!'),
 
-        if not timer_done:
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixteen sub tests.
+
+* I change the value of ``expectation`` for :ref:`negate_second<test_negate_second>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 41
+    :emphasize-lines: 5
+
+                        (
+                            src.truth_table.converse_implication,
+                            (first, second) != (False, True)
+                        ),
+                        (src.truth_table.negate_second, not second),
+                        (src.truth_table.logical_nor, 'BOOM!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for twelve sub tests.
+
+* I change the value of ``expectation`` for :ref:`logical_nor<test_logical_nor>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 45
+    :emphasize-lines: 2-5
+
+                        (src.truth_table.negate_second, not second),
+                        (
+                            src.truth_table.logical_nor,
+                            (first, second) == (False, False)
+                        ),
+                        (src.truth_table.logical_equality, 'BAP!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for eight sub tests.
+
+* I change the value of ``expectation`` for :ref:`logical_equality<test_logical_equality>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 46
+    :emphasize-lines: 5-8
+
+                        (
+                            src.truth_table.logical_nor,
+                            (first, second) == (False, False)
+                        ),
+                        (
+                            src.truth_table.logical_equality,
+                            first == second
+                        ),
+                        (src.truth_table.material_implication, 'BOOM!!!'),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for four sub tests.
+
+* I change the value of ``expectation`` for :ref:`material_implication<test_material_implication>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 50
+    :emphasize-lines: 5-8
+
+                        (
+                            src.truth_table.logical_equality,
+                            first == second
+                        ),
+                        (
+                            src.truth_table.material_implication,
+                            (first, second) != (True, False)
+                        ),
+                    ):
+                        with self.subTest(
+                            operation.__name__,
+                            first_input=first,
+                            second_input=second
+                        ):
 
   the test passes.
-
-* I add a :ref:`global variable<what is a variable?>` for ``RED, RED, NOT_WALK``
-
-  .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
-    :linenos:
-    :emphasize-lines: 3
-
-    GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
-    WALK, NOT_WALK = 'WALK', 'DO NOT WALK'
-    FAILSAFE = RED, RED, NOT_WALK
-
-
-    def is_not_safe(parallel, cross):
-
-* I use the :ref:`variable<what is a variable?>` in the default :ref:`return statement<the return statement>` of the :ref:`next_light function<extract next_light function>`
-
-  .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
-    :lineno-start: 27
-    :emphasize-lines: 12
-
-    def next_light(red_phase, parallel, cross):
-        if red_phase == 'cross':
-            if parallel == GREEN:
-                return YELLOW, RED, NOT_WALK
-            if parallel == RED:
-                return RED, GREEN, NOT_WALK
-        if red_phase == 'parallel':
-            if cross == GREEN:
-                return RED, YELLOW, NOT_WALK
-            if cross == RED:
-                return GREEN, RED, WALK
-        return FAILSAFE
-
-
-    def control(
-            timer_done, red_phase='parallel',
-            current_parallel=RED, current_cross=RED,
-        ):
-
-  the tests are still green.
-
-* I use the :ref:`variable<what is a variable?>` in the ``control`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :caption: traffic_light/src/traffic_light/__init__.py
-    :lineno-start: 41
-    :emphasize-lines: 6, 18
-
-    def control(
-            timer_done, red_phase='parallel',
-            current_parallel=RED, current_cross=RED,
-        ):
-        if triggers_failsafe(current_parallel, current_cross):
-            return FAILSAFE
-
-        if not timer_done:
-            if red_phase == 'cross' and current_parallel == GREEN:
-                return current_parallel, current_cross, WALK
-            return current_parallel, current_cross, NOT_WALK
-
-        if timer_done:
-            return next_light(
-                red_phase, current_parallel, current_cross
-            )
-
-        return FAILSAFE
-
-  still green.
 
 * I add a git_ commit message
 
@@ -906,7 +737,7 @@ The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'
     :emphasize-lines: 1-2
 
     git commit -am \
-    'test traffic_light with walk signal'
+    'refactor test_binary_operations'
 
 ----
 
@@ -930,9 +761,7 @@ close the project
 review
 *************************************************************************************
 
-* I used :ref:`for loops<what is a for loop?>` to make less tests which is simpler and at the same time more complex
-* I used a tuple_ to represent all the states of the :ref:`Traffic Light` and its outputs in :ref:`test_traffic_light_control`, which is not as easy to read, :ref:`there has to be a better way<test traffic_light with list comprehensions>`
-* I used nested :ref:`for loops<what is a for loop?>` in :ref:`test_traffic_light_failsafe`, :ref:`there has to be a better way<test traffic_light with list comprehensions>`
+I used :ref:`for loops<what is a for loop?>` to make less tests which is simpler and at the same time more complex
 
 ----
 
@@ -975,7 +804,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 
-:ref:`Would you like to test binary operations from the truth_table project with loops?<truth table: test binary operations with loops>`
+:ref:`Would you like to test making a person with lists?<how to make a person with lists>`
 
 ----
 
