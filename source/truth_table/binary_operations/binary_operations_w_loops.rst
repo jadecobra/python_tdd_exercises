@@ -769,7 +769,7 @@ I used :ref:`for loops<what is a for loop?>` to make less tests which is simpler
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test traffic_light with loops: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<Binary Operations with loops: test>`
 
 ----
 
