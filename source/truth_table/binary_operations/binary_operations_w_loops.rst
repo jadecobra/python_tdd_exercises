@@ -804,7 +804,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 
-:ref:`Would you like to test making a person with lists?<how to make a person with lists>`
+:ref:`Would you like to test lists?<what is a list?>`
 
 ----
 
