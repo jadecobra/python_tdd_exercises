@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Pumping Python chapter "truth table: test binary operations with loops" by Jacob Itegboje. Continues the truth_table project in tests/test_binary.py using unittest and pytest-watcher. Consolidates sixteen individual binary operation tests (contradiction, logical_conjunction, project_second, converse_non_implication, negate_first, logical_nand, tautology, logical_disjunction, exclusive_disjunction, material_non_implication, project_first, converse_implication, negate_second, logical_nor, logical_equality, material_implication) into a single test_binary_operations method. First refactors with a loop over operations and four asserts (*FF, *FT, *TF, *TT) using unittest subTest, failing with AssertionError on 'BOOM!!!', 'BAP!!!', 'POW!!!', and 'TING!!!'. Replaces globals TT, TF, FT, FF with nested loops over booleans (False, True). A second refactor loops over first and second booleans with sixty-four subtests, replacing literal outputs with boolean expressions: False, (first, second) == (True, True), second, (first, second) == (False, True), not first, (first, second) != (True, True), True, (first, second) != (False, False), first != second, (first, second) == (True, False), first, (first, second) != (False, True), not second, (first, second) == (False, False), first == second, and (first, second) != (True, False). Demonstrates test simplification, subtest counts decrementing by 4 from 64 to 0, uv run pytest-watcher . --now, and git commit. Preview test_binary_w_loops.py. Requires Binary Operations 1-4.
+  :keywords: Jacob Itegboje, Pumping Python, truth table test binary operations with loops, test_binary_operations, unittest subTest, for loop, nested for loops, truth_table, test_binary.py, test_binary_w_loops.py, contradiction, logical_conjunction, project_second, converse_non_implication, negate_first, logical_nand, tautology, logical_disjunction, exclusive_disjunction, material_non_implication, project_first, converse_implication, negate_second, logical_nor, logical_equality, material_implication, AssertionError, sixty four sub tests, pytest-watcher, uv, git commit extract test_binary_operations, refactor test_binary_operations
 
 .. include:: ../../links.rst
 
@@ -16,7 +16,7 @@ I want to use :ref:`for loops<what is a for loop?>` in the :ref:`truth table` pr
 preview
 *********************************************************************************
 
-These is the test I have at the end of the chapter
+This is the test I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_w_loops.py
   :caption: truth_table/tests/test_binary.py
@@ -90,7 +90,7 @@ I add a test with a :ref:`for loop<what is a for loop?>` for all the :ref:`binar
           ):
 
 .. code-block:: python
-  :caption: traffic_light/tests/test_traffic_light.py
+  :caption: truth_table/tests/test_binary.py
   :lineno-start: 32
   :emphasize-lines: 1-5
 
@@ -135,7 +135,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the expectation of ``self.assertEqual(operation(*FF), 'BOOM!!!')``
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
     :emphasize-lines: 2
 
@@ -165,10 +165,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED(operation='logical_equality') ...AssertionError: False != 'BAP!!!'
     SUBFAILED(operation='material_implication') ...AssertionError: True != 'BAP!!!'
 
-* I change the expectation of ``self.assertEqual(operation(*FT), 'BOOM!!!')``
+* I change the expectation of ``self.assertEqual(operation(*FT), 'BAP!!!')``
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
     :emphasize-lines: 3
 
@@ -186,23 +186,23 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED(operation='logical_conjunction') ...AssertionError: False != 'POW!!!'
     SUBFAILED(operation='project_second') ...AssertionError: False != 'POW!!!'
     SUBFAILED(operation='converse_non_implication') ...AssertionError: False != 'POW!!!'
-    SUBFAILED(operation='negate_first') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='negate_first') ...AssertionError: False != 'POW!!!'
     SUBFAILED(operation='logical_nand') ...AssertionError: True != 'POW!!!'
     SUBFAILED(operation='tautology') ...AssertionError: True != 'POW!!!'
-    SUBFAILED(operation='logical_disjunction') ...AssertionError: False != 'POW!!!'
-    SUBFAILED(operation='exclusive_disjunction') ...AssertionError: False != 'POW!!!'
-    SUBFAILED(operation='material_non_implication') ...AssertionError: False != 'POW!!!'
-    SUBFAILED(operation='project_first') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='logical_disjunction') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='exclusive_disjunction') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='material_non_implication') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='project_first') ...AssertionError: True != 'POW!!!'
     SUBFAILED(operation='converse_implication') ...AssertionError: True != 'POW!!!'
     SUBFAILED(operation='negate_second') ...AssertionError: True != 'POW!!!'
-    SUBFAILED(operation='logical_nor') ...AssertionError: True != 'POW!!!'
-    SUBFAILED(operation='logical_equality') ...AssertionError: True != 'POW!!!'
-    SUBFAILED(operation='material_implication') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='logical_nor') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='logical_equality') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='material_implication') ...AssertionError: False != 'POW!!!'
 
-* I change the expectation of ``self.assertEqual(operation(*TF), 'BOOM!!!')``
+* I change the expectation of ``self.assertEqual(operation(*TF), 'POW!!!')``
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
     :emphasize-lines: 4
 
@@ -218,26 +218,26 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :caption: terminal
 
     SUBFAILED(operation='contradiction') ...AssertionError: False != 'TING!!!'
-    SUBFAILED(operation='logical_conjunction') ...AssertionError: False != 'TING!!!'
-    SUBFAILED(operation='project_second') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='logical_conjunction') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='project_second') ...AssertionError: True != 'TING!!!'
     SUBFAILED(operation='converse_non_implication') ...AssertionError: False != 'TING!!!'
-    SUBFAILED(operation='negate_first') ...AssertionError: True != 'TING!!!'
-    SUBFAILED(operation='logical_nand') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='negate_first') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='logical_nand') ...AssertionError: False != 'TING!!!'
     SUBFAILED(operation='tautology') ...AssertionError: True != 'TING!!!'
-    SUBFAILED(operation='logical_disjunction') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='logical_disjunction') ...AssertionError: True != 'TING!!!'
     SUBFAILED(operation='exclusive_disjunction') ...AssertionError: False != 'TING!!!'
     SUBFAILED(operation='material_non_implication') ...AssertionError: False != 'TING!!!'
-    SUBFAILED(operation='project_first') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='project_first') ...AssertionError: True != 'TING!!!'
     SUBFAILED(operation='converse_implication') ...AssertionError: True != 'TING!!!'
-    SUBFAILED(operation='negate_second') ...AssertionError: True != 'TING!!!'
-    SUBFAILED(operation='logical_nor') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='negate_second') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='logical_nor') ...AssertionError: False != 'TING!!!'
     SUBFAILED(operation='logical_equality') ...AssertionError: True != 'TING!!!'
     SUBFAILED(operation='material_implication') ...AssertionError: True != 'TING!!!'
 
-* I change the expectation of ``self.assertEqual(operation(*T), 'BOOM!!!')``
+* I change the expectation of ``self.assertEqual(operation(*TT), 'TING!!!')``
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
     :emphasize-lines: 5
 
@@ -262,7 +262,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the other tests because they are now covered by :ref:`test_binary_operations`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
 
                 with self.subTest(operation=operation.__name__):
@@ -281,7 +281,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the :ref:`assertions<what is an assertion?>` in :ref:`test_binary_operations` with another :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 13
 
         def test_binary_operations(self):
@@ -305,7 +305,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             ):
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
     :emphasize-lines: 1-11
 
@@ -329,7 +329,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the expectation of ``self.assertEqual(operation(*inputs), 'BOOM!!!')``
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 38
     :emphasize-lines: 5
 
@@ -347,7 +347,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I no longer need the :ref:`TT, TF, FT and FF global variables<extract global variables for truth table cases>` because they are only used in one place. I write out their values
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
     :emphasize-lines: 2-5
 
@@ -369,7 +369,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the :ref:`TT, TF, FT and FF global variables<extract global variables for truth table cases>` because they are no longer used
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :linenos:
 
     import src.truth_table
@@ -403,7 +403,7 @@ refactor test_binary_operations
 I rewrite the test a different way without listing four :ref:`booleans<what are booleans?>` for each operation
 
 .. code-block:: python
-  :caption: traffic_light/tests/test_traffic_light.py
+  :caption: truth_table/tests/test_binary.py
   :lineno-start: 5
   :emphasize-lines: 3-24
 
@@ -425,7 +425,7 @@ I rewrite the test a different way without listing four :ref:`booleans<what are 
                       (src.truth_table.exclusive_disjunction, 'POW!!!'),
                       (src.truth_table.material_non_implication, 'BOOM!!!'),
                       (src.truth_table.project_first, 'BAP!!!'),
-                      (src.truth_table.converse_implication, 'POW!!'),
+                      (src.truth_table.converse_implication, 'POW!!!'),
                       (src.truth_table.negate_second, 'BOOM!!!'),
                       (src.truth_table.logical_nor, 'BOOM!!!'),
                       (src.truth_table.logical_equality, 'BAP!!!'),
@@ -433,7 +433,7 @@ I rewrite the test a different way without listing four :ref:`booleans<what are 
                   ):
 
 .. code-block:: python
-  :caption: traffic_light/tests/test_traffic_light.py
+  :caption: truth_table/tests/test_binary.py
   :lineno-start: 29
   :emphasize-lines: 1-9
 
@@ -463,7 +463,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 11
     :emphasize-lines: 2
 
@@ -476,7 +476,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 11
     :emphasize-lines: 3-6
 
@@ -493,7 +493,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`project_second<test_project_second>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 13
     :emphasize-lines: 5
 
@@ -509,7 +509,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 17
     :emphasize-lines: 2-5
 
@@ -520,12 +520,12 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
                         ),
                         (src.truth_table.negate_first, 'BAP!!!'),
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for forty eight tests.
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for forty eight sub tests.
 
 * I change the value of ``expectation`` for :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 18
     :emphasize-lines: 5
 
@@ -541,7 +541,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 22
     :emphasize-lines: 2-5
 
@@ -557,7 +557,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`tautology<test_tautology>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 23
     :emphasize-lines: 5
 
@@ -573,9 +573,9 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 27
-    :emphasize-lines: 2+5
+    :emphasize-lines: 2-5
 
                         (src.truth_table.tautology, True),
                         (
@@ -589,7 +589,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 28
     :emphasize-lines: 5-8
 
@@ -608,7 +608,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 32
     :emphasize-lines: 5-8
 
@@ -627,7 +627,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`project_first<test_project_first>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 36
     :emphasize-lines: 5
 
@@ -643,7 +643,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 40
     :emphasize-lines: 2-5
 
@@ -659,7 +659,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 41
     :emphasize-lines: 5
 
@@ -675,7 +675,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 45
     :emphasize-lines: 2-5
 
@@ -691,7 +691,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 46
     :emphasize-lines: 5-8
 
@@ -710,7 +710,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 * I change the value of ``expectation`` for :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
-    :caption: traffic_light/tests/test_traffic_light.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 50
     :emphasize-lines: 5-8
 
@@ -725,8 +725,8 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
                     ):
                         with self.subTest(
                             operation.__name__,
-                            first_input=first,
-                            second_input=second
+                            first=first,
+                            second=second
                         ):
 
   the test passes.
@@ -745,7 +745,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty
 close the project
 *********************************************************************************
 
-* I close ``tests/test_traffic_light.py`` and ``src/traffic_light/__init__.py``
+* I close ``tests/test_binary.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
@@ -761,7 +761,7 @@ close the project
 review
 *************************************************************************************
 
-I used :ref:`for loops<what is a for loop?>` to make less tests which is simpler and at the same time more complex
+I used :ref:`for loops<what is a for loop?>` to turn all the tests into one which is simpler and at the same time more complex.
 
 ----
 
