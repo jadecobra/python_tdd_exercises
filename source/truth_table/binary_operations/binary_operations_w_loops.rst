@@ -405,7 +405,7 @@ I rewrite the test a different way without listing four :ref:`booleans<what are 
 .. code-block:: python
   :caption: truth_table/tests/test_binary.py
   :lineno-start: 5
-  :emphasize-lines: 3-24
+  :emphasize-lines: 4-24
 
   class TestBinaryOperations(unittest.TestCase):
 

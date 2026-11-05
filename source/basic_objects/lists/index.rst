@@ -187,6 +187,7 @@ test_making_a_list
 I change :ref:`test_failure` to :ref:`test_making_a_list`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 4
   :emphasize-lines: 3-4
 
@@ -213,6 +214,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change the expectation
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 7
   :emphasize-lines: 1
 
@@ -228,24 +230,31 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`, this time with input to ``list()``, I want to make a list_ that has things in it
+* I add another :ref:`assertion<what is an assertion?>` with input to ``list()``  to make a list_ that has things in it
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 6
+    :emphasize-lines: 3
 
+        def test_making_a_list(self):
             self.assertEqual(list(), [])
             self.assertEqual(list(0), [])
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+    :caption: terminal
 
     TypeError: 'int' object is not iterable
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 11
     :emphasize-lines: 3
 
@@ -253,30 +262,39 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
     # AssertionError
     # TypeError
 
----------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 what is an iterable?
----------------------------------------------------------------------------------
+*********************************************************************************
 
-An :ref:`iterable<what is an iterable?>` is an :ref:`object<everything is an object>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries<what is a dictionary?>` are :ref:`iterable<what is an iterable?>`
+An :ref:`iterable<what is an iterable?>` is an :ref:`object<everything is an object>` that can return what it has, one at a time. In order words, I can :ref:`loop<what is a for loop?>` over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries<what is a dictionary?>` are :ref:`iterable<what is an iterable?>`.
 
-* I change the input to a tuple_ (anything in parentheses (``()``) separated by commas, separated by a comma)
+* I change the input to a tuple_
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 6
+    :emphasize-lines: 3
 
+        def test_making_a_list(self):
             self.assertEqual(list(), [])
             self.assertEqual(list((0, 1, 2, 'n')), [])
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 'n'] != []
 
 * I change the expectation to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 8
     :emphasize-lines: 1
 
@@ -284,7 +302,15 @@ An :ref:`iterable<what is an iterable?>` is an :ref:`object<everything is an obj
 
   the test passes.
 
-I can make a list_ with ``list()``, or with square brackets(``[]``) which uses less characters
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_making_a_list'
+
+:ref:`I can make a list with 'list()', or with square brackets('[]') which uses less characters<test_making_a_list>`.
 
 ----
 
@@ -292,13 +318,7 @@ I can make a list_ with ``list()``, or with square brackets(``[]``) which uses l
 test_dir_lists
 *********************************************************************************
 
-=================================================================================
-how to see the attributes and methods of an object
-=================================================================================
-
-----
-
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`objects<everything is an object>`, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I use the `dir built-in function`_ to see the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`lists<what is a list?>`
 
 ----
 
@@ -308,9 +328,10 @@ I want to test the things I can do with lists_. I can use the dir_ :ref:`functio
 
 ----
 
-I add a failing test
+I add a failing test for the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`lists<what is a list?>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 8
   :emphasize-lines: 3-7
 
@@ -322,11 +343,16 @@ I add a failing test
               []
           )
 
+
+  # Exceptions seen
+
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
+  AssertionError: Lists differ: [
+      '__add__', '__class__', '__class_getitem_[552 chars]ort'
+  ] != []
 
 there is also a note on how to see the full difference between ``dir(list)`` and my empty list_
 
@@ -334,7 +360,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   Diff is 748 characters long. Set self.maxDiff to None to see it
 
-`maxDiff`_ is an :ref:`attribute<what causes AttributeError?>` of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference
+`maxDiff`_ is an :ref:`attribute<what causes AttributeError?>` of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference.
 
 ----
 
@@ -357,7 +383,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
                 []
             )
 
-  the terminal_ is my friend, and shows a long list_ of items. I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) them from the terminal_ then use `find and replace`_ to remove the extra characters ``E`` and  ``-``
+  the terminal_ is my friend, and shows a long list_ of items. I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) them then use `find and replace`_ to remove the extra characters ``E`` and  ``-``
 
   .. note:: results can be different because of the Python_ version
 
@@ -421,7 +447,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
                     ]
                 )
 
-  the test passes and I move the terminal_ back to the bottom
+  the test passes.
 
 * I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) the names that do NOT have double underscores (__) to use as a TODO list
 
@@ -446,6 +472,15 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     # AssertionError
     # TypeError
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_dir_lists'
+
+:ref:`The dir built-in function returns a list of attributes and methods<test_dir_lists>`.
 
 ----
 
