@@ -174,7 +174,7 @@ truth table operations
 
   Nullary and Unary<nullary_unary_operations>
   Binary Operations<binary_operations/index>
-  Truth Table Test<test truth table tests>
+  Test Truth Table Tests<test_truth_table_tests>
   Truth Table Projects<projects/index>
 
 :ref:`Do you want to see all the CODE for the Truth Table?<truth table: tests and solutions>`

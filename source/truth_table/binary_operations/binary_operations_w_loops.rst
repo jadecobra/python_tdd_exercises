@@ -1,1230 +1,946 @@
 .. meta::
-  :description: Truth table Binary Operations Examples (chapter 5)—no new code; map all sixteen binary operations onto four real-world decisions with full comparison tables and plain-English rules. Security alarm (motion, right code → ON/OFF): prefer logical_conjunction for authorized entry (ON only motion AND right code) and material_non_implication for burglar motion AND wrong code. Hiring (strong option, strong fit → HIRE/REJECT): prefer AND for A-players, optional material_non_implication (strong option AND weak fit) or OR (REJECT only weak+weak). Store discount (coupon, member → DISCOUNT/REGULAR): prefer AND loyalty, project_second members-only, OR coupon-or-member, or material_non_implication coupon for non-members. Plant watering (soil dry, rained → WATER/DO NOT WATER): prefer material_non_implication (WATER dry AND no rain), optional project_first (water when dry) or converse_implication (skip wet AND rained). Review grids restate every op with NOT/AND/OR English. Requires Binary Operations 4. Next: test truth table tests. Jacob Itegboje Pumping Python.
-  :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations Examples, binary operations 5, choose the right logic gate, security alarm motion right code authorized entry burglar, hiring strong option strong fit A players, store discount coupon member loyalty, plant watering soil dry not rain, all 16 binary operations real world, contradiction tautology NAND NOR XOR, logical_conjunction AND logical_disjunction OR, material_non_implication material_implication, project_first project_second converse_implication, logical_equality exclusive_disjunction, translate business rules to boolean code, truth table English rules comparison tables, NOT AND OR combinations, test truth table tests, boolean logic beginners
+  :description:
+  :keywords:
 
 .. include:: ../../links.rst
 
-.. _binary_operations_5:
+.. _binary_operations_w_loops:
 
 #################################################################################
 truth table: test binary operations with loops
 #################################################################################
 
+I want to use :ref:`for loops<what is a for loop?>` in the :ref:`truth table` project for :ref:`binary operations<truth table: Binary Operations>`
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+These is the test I have at the end of the chapter
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary_w_loops.py
+  :caption: truth_table/tests/test_binary.py
+  :language: python
+  :linenos:
+  :lines: 1-39
+
 ----
 
 *********************************************************************************
-requirements
+open the project
 *********************************************************************************
 
-* :ref:`Binary Operations 4<truth table: Binary Operations 4>`
+* I open a terminal_
+* I `change directory`_ to the :ref:`truth_table folder<truth table>` in the ``pumping_python`` folder_
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    cd truth_table
+
+* I open ``test_binary.py`` from the ``tests`` folder_
+* I use `pytest-watcher`_ to run the tests automatically
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    uv run pytest-watcher . --now
+
+----
+
+*********************************************************************************
+test_binary_operations
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test with a :ref:`for loop<what is a for loop?>` for all the :ref:`binary operations<truth table: Binary Operations>` in ``tests/test_binary.py``
+
+.. code-block:: python
+  :caption: truth_table/tests/test_binary.py
+  :lineno-start: 11
+  :emphasize-lines: 3-21
+
+  class TestBinaryOperations(unittest.TestCase):
+
+      def test_binary_operations(self):
+          for operation, tt_out, tf_out, ft_out, ff_out in (
+              (src.truth_table.contradiction, False, False, False, False),
+              (src.truth_table.logical_conjunction, True, False, False, False),
+              (src.truth_table.project_second, True, False, True, False),
+              (src.truth_table.converse_non_implication, False, False, True, False),
+              (src.truth_table.negate_first, False, False, True, True),
+              (src.truth_table.logical_nand, False, True, True, True),
+              (src.truth_table.tautology, True, True, True, True),
+              (src.truth_table.logical_disjunction, True, True, True, False),
+              (src.truth_table.exclusive_disjunction, False, True, True, False),
+              (src.truth_table.material_non_implication, False, True, False, False),
+              (src.truth_table.project_first, True, True, False, False),
+              (src.truth_table.converse_implication, True, True, False, True),
+              (src.truth_table.negate_second, False, True, False, True),
+              (src.truth_table.logical_nor, False, False, False, True),
+              (src.truth_table.logical_equality, True, False, False, True),
+              (src.truth_table.material_implication, True, False, True, True),
+          ):
+
+.. code-block:: python
+  :caption: traffic_light/tests/test_traffic_light.py
+  :lineno-start: 32
+  :emphasize-lines: 1-5
+
+              with self.subTest(operation=operation.__name__):
+                  self.assertEqual(operation(*FF), 'BOOM!!!')
+                  self.assertEqual(operation(*FT), 'BAP!!!')
+                  self.assertEqual(operation(*TF), 'POW!!!')
+                  self.assertEqual(operation(*TT), 'TING!!!')
+
+      def test_contradiction(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+  SUBFAILED(operation='contradiction') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='logical_conjunction') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='project_second') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='converse_non_implication') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='negate_first') ...AssertionError: True != 'BOOM!!!'
+  SUBFAILED(operation='logical_nand') ...AssertionError: True != 'BOOM!!!'
+  SUBFAILED(operation='tautology') ...AssertionError: True != 'BOOM!!!'
+  SUBFAILED(operation='logical_disjunction') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='exclusive_disjunction') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='material_non_implication') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='project_first') ...AssertionError: False != 'BOOM!!!'
+  SUBFAILED(operation='converse_implication') ...AssertionError: True != 'BOOM!!!'
+  SUBFAILED(operation='negate_second') ...AssertionError: True != 'BOOM!!!'
+  SUBFAILED(operation='logical_nor') ...AssertionError: True != 'BOOM!!!'
+  SUBFAILED(operation='logical_equality') ...AssertionError: True != 'BOOM!!!'
+  SUBFAILED(operation='material_implication') ...AssertionError: True != 'BOOM!!!'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change the expectation of ``self.assertEqual(operation(*FF), 'BOOM!!!')``
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+    :emphasize-lines: 2
+
+                with self.subTest(operation=operation.__name__):
+                    self.assertEqual(operation(*FF), ff_out)
+                    self.assertEqual(operation(*FT), 'BAP!!!')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(operation='contradiction') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='logical_conjunction') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='project_second') ...AssertionError: True != 'BAP!!!'
+    SUBFAILED(operation='converse_non_implication') ...AssertionError: True != 'BAP!!!'
+    SUBFAILED(operation='negate_first') ...AssertionError: True != 'BAP!!!'
+    SUBFAILED(operation='logical_nand') ...AssertionError: True != 'BAP!!!'
+    SUBFAILED(operation='tautology') ...AssertionError: True != 'BAP!!!'
+    SUBFAILED(operation='logical_disjunction') ...AssertionError: True != 'BAP!!!'
+    SUBFAILED(operation='exclusive_disjunction') ...AssertionError: True != 'BAP!!!'
+    SUBFAILED(operation='material_non_implication') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='project_first') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='converse_implication') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='negate_second') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='logical_nor') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='logical_equality') ...AssertionError: False != 'BAP!!!'
+    SUBFAILED(operation='material_implication') ...AssertionError: True != 'BAP!!!'
+
+* I change the expectation of ``self.assertEqual(operation(*FT), 'BOOM!!!')``
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+    :emphasize-lines: 3
+
+                with self.subTest(operation=operation.__name__):
+                    self.assertEqual(operation(*FF), ff_out)
+                    self.assertEqual(operation(*FT), ft_out)
+                    self.assertEqual(operation(*TF), 'POW!!!')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(operation='contradiction') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='logical_conjunction') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='project_second') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='converse_non_implication') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='negate_first') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='logical_nand') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='tautology') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='logical_disjunction') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='exclusive_disjunction') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='material_non_implication') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='project_first') ...AssertionError: False != 'POW!!!'
+    SUBFAILED(operation='converse_implication') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='negate_second') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='logical_nor') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='logical_equality') ...AssertionError: True != 'POW!!!'
+    SUBFAILED(operation='material_implication') ...AssertionError: True != 'POW!!!'
+
+* I change the expectation of ``self.assertEqual(operation(*TF), 'BOOM!!!')``
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+    :emphasize-lines: 4
+
+                with self.subTest(operation=operation.__name__):
+                    self.assertEqual(operation(*FF), ff_out)
+                    self.assertEqual(operation(*FT), ft_out)
+                    self.assertEqual(operation(*TF), tf_out)
+                    self.assertEqual(operation(*TT), 'TING!!!')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(operation='contradiction') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='logical_conjunction') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='project_second') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='converse_non_implication') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='negate_first') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='logical_nand') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='tautology') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='logical_disjunction') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='exclusive_disjunction') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='material_non_implication') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='project_first') ...AssertionError: False != 'TING!!!'
+    SUBFAILED(operation='converse_implication') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='negate_second') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='logical_nor') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='logical_equality') ...AssertionError: True != 'TING!!!'
+    SUBFAILED(operation='material_implication') ...AssertionError: True != 'TING!!!'
+
+* I change the expectation of ``self.assertEqual(operation(*T), 'BOOM!!!')``
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+    :emphasize-lines: 5
+
+                with self.subTest(operation=operation.__name__):
+                    self.assertEqual(operation(*FF), ff_out)
+                    self.assertEqual(operation(*FT), ft_out)
+                    self.assertEqual(operation(*TF), tf_out)
+                    self.assertEqual(operation(*TT), tt_out)
+
+        def test_contradiction(self):
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the other tests because they are now covered by :ref:`test_binary_operations`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+
+                with self.subTest(operation=operation.__name__):
+                    self.assertEqual(operation(*FF), ff_out)
+                    self.assertEqual(operation(*FT), ft_out)
+                    self.assertEqual(operation(*TF), tf_out)
+                    self.assertEqual(operation(*TT), tt_out)
+
+
+    # Exceptions seen
+    # AttributeError
+    # TypeError
+    # AssertionError
+    # Syntaxerror
+
+* I change the :ref:`assertions<what is an assertion?>` in :ref:`test_binary_operations` with another :ref:`for loop<what is a for loop?>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 13
+
+        def test_binary_operations(self):
+            for operation, tt_out, tf_out, ft_out, ff_out in (
+                (src.truth_table.contradiction, False, False, False, False),
+                (src.truth_table.logical_conjunction, True, False, False, False),
+                (src.truth_table.project_second, True, False, True, False),
+                (src.truth_table.converse_non_implication, False, False, True, False),
+                (src.truth_table.negate_first, False, False, True, True),
+                (src.truth_table.logical_nand, False, True, True, True),
+                (src.truth_table.tautology, True, True, True, True),
+                (src.truth_table.logical_disjunction, True, True, True, False),
+                (src.truth_table.exclusive_disjunction, False, True, True, False),
+                (src.truth_table.material_non_implication, False, True, False, False),
+                (src.truth_table.project_first, True, True, False, False),
+                (src.truth_table.converse_implication, True, True, False, True),
+                (src.truth_table.negate_second, False, True, False, True),
+                (src.truth_table.logical_nor, False, False, False, True),
+                (src.truth_table.logical_equality, True, False, False, True),
+                (src.truth_table.material_implication, True, False, True, True),
+            ):
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+    :emphasize-lines: 1-11
+
+                for inputs, result in (
+                    (FF, ff_out),
+                    (FT, ft_out),
+                    (TF, tf_out),
+                    (TT, tt_out)
+                ):
+                    with self.subTest(
+                        operation=operation.__name__,
+                        inputs=inputs, result=result
+                    ):
+                        self.assertEqual(operation(*inputs), 'BOOM!!!')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixty four sub tests.
+
+* I change the expectation of ``self.assertEqual(operation(*inputs), 'BOOM!!!')``
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 38
+    :emphasize-lines: 5
+
+                    with self.subTest(
+                        operation=operation.__name__,
+                        inputs=inputs, result=result
+                    ):
+                        self.assertEqual(operation(*inputs), result)
+
+
+    # Exceptions seen
+
+  the test is green again.
+
+* I no longer need the :ref:`TT, TF, FT and FF global variables<extract global variables for truth table cases>` because they are only used in one place. I write out their values
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 32
+    :emphasize-lines: 2-5
+
+                for inputs, result in (
+                    ((False, False), ff_out),
+                    ((False, True), ft_out),
+                    ((True, False), tf_out),
+                    ((True, True), tt_out)
+                ):
+                    with self.subTest(
+                        operation=operation.__name__,
+                        inputs=inputs, result=result
+                    ):
+                        self.assertEqual(operation(*inputs), result)
+
+
+    # Exceptions seen
+
+* I remove the :ref:`TT, TF, FT and FF global variables<extract global variables for truth table cases>` because they are no longer used
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :linenos:
+
+    import src.truth_table
+    import unittest
+
+
+    class TestBinaryOperations(unittest.TestCase):
+
+
+
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract test_traffic_light_control'
+
+----
+
+*********************************************************************************
+test_traffic_light_failsafe with for loops
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add :ref:`for loops<what is a for loop?>` to :ref:`test_traffic_light_failsafe`
+
+.. code-block:: python
+  :caption: traffic_light/tests/test_traffic_light.py
+  :lineno-start: 46
+  :emphasize-lines: 2-12
+
+      def test_traffic_light_failsafe(self):
+          inputs = (GREEN, YELLOW, 'bad input')
+          for red_phase in ('cross', 'parallel', 'bad input'):
+              for current_parallel in inputs:
+                  for current_cross in inputs:
+                      for timer_done in (False, True):
+                          with self.subTest(
+                              red_phase=red_phase,
+                              current_parallel=current_parallel,
+                              current_cross=current_cross,
+                              timer_done=timer_done,
+                          ):
+
+.. code-block:: python
+  :caption: traffic_light/tests/test_traffic_light.py
+  :lineno-start: 58
+  :emphasize-lines: 1-9
+
+                              self.assertEqual(
+                                  src.traffic_light.control(
+                                      red_phase=red_phase,
+                                      current_parallel=current_parallel,
+                                      current_cross=current_cross,
+                                      timer_done=timer_done,
+                                  ),
+                                  'BOOM!!!'
+                              )
+
+          self.assertEqual(
+              src.traffic_light.control(
+                  red_phase='cross',
+                  current_parallel='BAP',
+                  current_cross=RED,
+                  timer_done=False,
+              ),
+              (RED, RED)
+          )
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for fifty four sub tests.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation of the new :ref:`assertion<what is an assertion?>` in :ref:`test_traffic_light_failsafe`
+
+.. code-block:: python
+  :caption: traffic_light/tests/test_traffic_light.py
+  :lineno-start: 58
+  :emphasize-lines: 8
+
+                              self.assertEqual(
+                                  src.traffic_light.control(
+                                      red_phase=red_phase,
+                                      current_parallel=current_parallel,
+                                      current_cross=current_cross,
+                                      timer_done=timer_done,
+                                  ),
+                                  (RED, RED)
+                              )
+
+          self.assertEqual(
+              src.traffic_light.control(
+                  red_phase='cross',
+                  current_parallel='BAP',
+                  current_cross=RED,
+                  timer_done=False,
+              ),
+              (RED, RED)
+          )
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the other :ref:`assertions<what is an assertion?>` from :ref:`test_traffic_light_failsafe` because they are now covered by the :ref:`for loops<what is a for loop?>`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 58
+
+                                self.assertEqual(
+                                    src.traffic_light.control(
+                                        red_phase=red_phase,
+                                        current_parallel=current_parallel,
+                                        current_cross=current_cross,
+                                        timer_done=timer_done,
+                                    ),
+                                    (RED, RED)
+                                )
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_traffic_light_failsafe with for loops'
+
+----
+
+*********************************************************************************
+test traffic light with walk signal
+*********************************************************************************
+
+What if the :ref:`Traffic Light` has a walk signal to let people know that it is safe to cross the street, the :ref:`truth table` would then be
+
+==========  ==================  ==================  ===============  ==================  ==================  ==================
+red         current             current                              next                next                walk
+phase       parallel            cross               timer            parallel            cross
+==========  ==================  ==================  ===============  ==================  ==================  ==================
+'cross'     :green:`GREEN`      :red:`RED`          :red:`NOT done`  :green:`GREEN`      :red:`RED`          :green:`WALK`
+'cross'     :green:`GREEN`      :red:`RED`          :green:`done`    :yellow:`YELLOW`    :red:`RED`          :red:`DO NOT WALK`
+'cross'     :yellow:`YELLOW`    :red:`RED`          :red:`NOT done`  :yellow:`YELLOW`    :red:`RED`          :red:`DO NOT WALK`
+'cross'     :yellow:`YELLOW`    :red:`RED`          :green:`done`    safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
+'cross'     :red:`RED`          :red:`RED`          :red:`NOT done`  safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
+'cross'     :red:`RED`          :red:`RED`          :green:`done`    :red:`RED`          :green:`GREEN`      :red:`DO NOT WALK`
+==========  ==================  ==================  ===============  ==================  ==================  ==================
+
+
+==========  ==================  ==================  ===============  ==================  ==================  ==================
+red         current             current                              next                next                walk
+phase       parallel            cross               timer            parallel            cross
+==========  ==================  ==================  ===============  ==================  ==================  ==================
+'parallel'  :red:`RED`          :green:`GREEN`      :red:`NOT done`  :red:`RED`          :green:`GREEN`      :red:`DO NOT WALK`
+'parallel'  :red:`RED`          :green:`GREEN`      :green:`done`    :red:`RED`          :yellow:`YELLOW`    :red:`DO NOT WALK`
+'parallel'  :red:`RED`          :yellow:`YELLOW`    :red:`NOT done`  :red:`RED`          :yellow:`YELLOW`    :red:`DO NOT WALK`
+'parallel'  :red:`RED`          :yellow:`YELLOW`    :green:`done`    safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
+'parallel'  :red:`RED`          :red:`RED`          :red:`NOT done`  safety :red:`RED`   safety :red:`RED`   :red:`DO NOT WALK`
+'parallel'  :red:`RED`          :red:`RED`          :green:`done`    :green:`GREEN`      :red:`RED`          :green:`WALK`
+==========  ==================  ==================  ===============  ==================  ==================  ==================
+
+The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'parallel'`` AND the current cross is :red:`RED` AND the timer is :green:`done` AND the next cross will stay :red:`RED` OR if the :red:`RED` phase is ``'cross'`` AND the current parallel is :green:`GREEN` AND the timer is :red:`NOT done` AND the next cross will stay :red:`RED`, which means there will be no car moving across the road the person is crossing.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add :ref:`global variables<what is a variable?>` for ``'WALK'`` and ``'DO NOT WALK'``
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :linenos:
+    :emphasize-lines: 6
+
+    import src.traffic_light
+    import unittest
+
+
+    GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
+    WALK, NOT_WALK = 'WALK', 'DO NOT WALK'
+
+
+    class TestTrafficLight(unittest.TestCase):
+
+* I add :green:`WALK` and :red:`NOT_WALK` to the expectations of :ref:`test_traffic_light_control`
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 11
+    :emphasize-lines: 3-14
+    :emphasize-text: WALK NOT_WALK
+
+        def test_traffic_light_control(self):
+            for row in (
+                ('cross', GREEN, RED, False, (GREEN, RED, WALK)),
+                ('cross', GREEN, RED, True, (YELLOW, RED, NOT_WALK)),
+                ('cross', YELLOW, RED, False, (YELLOW, RED, NOT_WALK)),
+                ('cross', YELLOW, RED, True, (RED, RED, NOT_WALK)),
+                ('cross', RED, RED, False, (RED, RED, NOT_WALK)),
+                ('cross', RED, RED, True, (RED, GREEN, NOT_WALK)),
+                ('parallel', RED, GREEN, False, (RED, GREEN, NOT_WALK)),
+                ('parallel', RED, GREEN, True, (RED, YELLOW, NOT_WALK)),
+                ('parallel', RED, YELLOW, False, (RED, YELLOW, NOT_WALK)),
+                ('parallel', RED, YELLOW, True, (RED, RED, NOT_WALK)),
+                ('parallel', RED, RED, False, (RED, RED, NOT_WALK)),
+                ('parallel', RED, RED, True, (GREEN, RED, WALK)),
+            ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(
+        red_phase='cross', current_parallel='GREEN',
+        current_cross='RED', timer_done=False
+    ) ...AssertionError: Tuples differ: ('GREEN', 'RED')
+                                     != ('GREEN', 'RED', 'WALK')
+    SUBFAILED(
+        red_phase='cross', current_parallel='GREEN',
+        current_cross='RED', timer_done=True
+    ) ...AssertionError: Tuples differ: ('YELLOW', 'RED')
+                                     != ('YELLOW', 'RED', 'DO NOT WALK')
+    SUBFAILED(
+        red_phase='cross', current_parallel='YELLOW',
+        current_cross='RED', timer_done=False
+    ) ...AssertionError: Tuples differ: ('YELLOW', 'RED')
+                                     != ('YELLOW', 'RED', 'DO NOT WALK')
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(
+        red_phase='cross', current_parallel='YELLOW',
+        current_cross='RED', timer_done=True
+    ) ...AssertionError: Tuples differ: ('RED', 'RED')
+                                     != ('RED', 'RED', 'DO NOT WALK')
+    SUBFAILED(
+        red_phase='cross', current_parallel='RED',
+        current_cross='RED', timer_done=False
+    ) ...AssertionError: Tuples differ: ('RED', 'RED')
+                                     != ('RED', 'RED', 'DO NOT WALK')
+    SUBFAILED(
+        red_phase='cross', current_parallel='RED',
+        current_cross='RED', timer_done=True
+    ) ...AssertionError: Tuples differ: ('RED', 'GREEN')
+                                     != ('RED', 'GREEN', 'DO NOT WALK')
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(
+        red_phase='parallel', current_parallel='RED',
+        current_cross='GREEN', timer_done=False
+    ) ...AssertionError: Tuples differ: ('RED', 'GREEN')
+                                     != ('RED', 'GREEN', 'DO NOT WALK')
+    SUBFAILED(
+        red_phase='parallel', current_parallel='RED',
+        current_cross='GREEN', timer_done=True
+    ) ...AssertionError: Tuples differ: ('RED', 'YELLOW')
+                                     != ('RED', 'YELLOW', 'DO NOT WALK')
+    SUBFAILED(
+        red_phase='parallel', current_parallel='RED',
+        current_cross='YELLOW', timer_done=False
+    ) ...AssertionError: Tuples differ: ('RED', 'YELLOW')
+                                     != ('RED', 'YELLOW', 'DO NOT WALK')
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED(
+        red_phase='parallel', current_parallel='RED',
+        current_cross='YELLOW', timer_done=True
+    ) ...AssertionError: Tuples differ: ('RED', 'RED')
+                                     != ('RED', 'RED', 'DO NOT WALK')
+    SUBFAILED(
+        red_phase='parallel', current_parallel='RED',
+        current_cross='RED', timer_done=False
+    ) ...AssertionError: Tuples differ: ('RED', 'RED')
+                                     != ('RED', 'RED', 'DO NOT WALK')
+    SUBFAILED(
+        red_phase='parallel', current_parallel='RED',
+        current_cross='RED', timer_done=True
+    ) ...AssertionError: Tuples differ: ('GREEN', 'RED')
+                                     != ('GREEN', 'RED', 'WALK')
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I open ``__init__.py`` from the :ref:`traffic_light folder<Traffic Light>` in the ``src`` folder_
+* I add :ref:`global variables<what is a variable?>` for ``'WALK'`` and ``'DO NOT WALK'`` in ``src/traffic_light/__init__.py``
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :linenos:
+    :emphasize-lines: 2
+
+    GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
+    WALK, NOT_WALK = 'WALK', 'DO NOT WALK'
+
+
+    def is_not_safe(parallel, cross):
+
+* I add :green:`WALK` and :red:`NOT_WALK` to the :ref:`next_light function<extract next_light function>`
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :lineno-start: 26
+    :emphasize-lines: 4, 6, 9, 11-12
+
+    def next_light(red_phase, parallel, cross):
+        if red_phase == 'cross':
+            if parallel == GREEN:
+                return YELLOW, RED, NOT_WALK
+            if parallel == RED:
+                return RED, GREEN, NOT_WALK
+        if red_phase == 'parallel':
+            if cross == GREEN:
+                return RED, YELLOW, NOT_WALK
+            if cross == RED:
+                return GREEN, RED, WALK
+        return RED, RED, NOT_WALK
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for six sub tests.
+
+* I add :red:`NOT_WALK` to the :ref:`if statement<if statements>` for if the timer is :red:`NOT done`, in the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :lineno-start: 40
+    :emphasize-lines: 9
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+        if triggers_failsafe(current_parallel, current_cross):
+            return RED, RED
+
+        if not timer_done:
+            return current_parallel, current_cross, NOT_WALK
+
+        if timer_done:
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(
+        red_phase='cross', current_parallel='GREEN',
+        current_cross='RED', timer_done=False
+    ) ... AssertionError: Tuples differ: ('GREEN', 'RED', 'DO NOT WALK')
+                                      != ('GREEN', 'RED', 'WALK')
+
+* I add an :ref:`if statement<if statements>` for if the :red:`RED` phase is ``'cross'`` AND ``current_parallel`` is :green:`GREEN` to ``if not timer_done:``
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :lineno-start: 47
+    :emphasize-lines: 2-3
+
+        if not timer_done:
+            if red_phase == 'cross' and current_parallel == GREEN:
+                return current_parallel, current_cross, WALK
+            return current_parallel, current_cross, NOT_WALK
+
+        if timer_done:
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add :red:`NOT_WALK` to :ref:`test_traffic_light_failsafe` in ``tests/test_traffic_light.py`` because I cannot predict what light will be next when such events happen, for example a power failure
+
+  .. code-block:: python
+    :caption: traffic_light/tests/test_traffic_light.py
+    :lineno-start: 59
+    :emphasize-lines: 8
+
+                                self.assertEqual(
+                                    src.traffic_light.control(
+                                        red_phase=red_phase,
+                                        current_parallel=current_parallel,
+                                        current_cross=current_cross,
+                                        timer_done=timer_done,
+                                    ),
+                                    (RED, RED, NOT_WALK)
+                                )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for fifty four sub tests.
+
+* I add :red:`NOT_WALK` to ``if triggers_failsafe(current_parallel, current_cross):`` in the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :lineno-start: 40
+    :emphasize-lines: 6
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+        if triggers_failsafe(current_parallel, current_cross):
+            return RED, RED, NOT_WALK
+
+        if not timer_done:
+
+  the test passes.
+
+* I add a :ref:`global variable<what is a variable?>` for ``RED, RED, NOT_WALK``
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :linenos:
+    :emphasize-lines: 3
+
+    GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
+    WALK, NOT_WALK = 'WALK', 'DO NOT WALK'
+    FAILSAFE = RED, RED, NOT_WALK
+
+
+    def is_not_safe(parallel, cross):
+
+* I use the :ref:`variable<what is a variable?>` in the default :ref:`return statement<the return statement>` of the :ref:`next_light function<extract next_light function>`
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :lineno-start: 27
+    :emphasize-lines: 12
+
+    def next_light(red_phase, parallel, cross):
+        if red_phase == 'cross':
+            if parallel == GREEN:
+                return YELLOW, RED, NOT_WALK
+            if parallel == RED:
+                return RED, GREEN, NOT_WALK
+        if red_phase == 'parallel':
+            if cross == GREEN:
+                return RED, YELLOW, NOT_WALK
+            if cross == RED:
+                return GREEN, RED, WALK
+        return FAILSAFE
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+
+  the tests are still green.
+
+* I use the :ref:`variable<what is a variable?>` in the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :caption: traffic_light/src/traffic_light/__init__.py
+    :lineno-start: 41
+    :emphasize-lines: 6, 18
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+        if triggers_failsafe(current_parallel, current_cross):
+            return FAILSAFE
+
+        if not timer_done:
+            if red_phase == 'cross' and current_parallel == GREEN:
+                return current_parallel, current_cross, WALK
+            return current_parallel, current_cross, NOT_WALK
+
+        if timer_done:
+            return next_light(
+                red_phase, current_parallel, current_cross
+            )
+
+        return FAILSAFE
+
+  still green.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test traffic_light with walk signal'
+
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close ``tests/test_traffic_light.py`` and ``src/traffic_light/__init__.py``
+* I click in the terminal_ where the tests are running
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_.
 
 ----
 
 *************************************************************************************
-more examples
-*************************************************************************************
-
-
-----
-
-=================================================================================
-security alarm
-=================================================================================
-
-----
-
-if the inputs are
-
-- is there motion?
-- is the code right?
-
-then the possible states for the inputs are
-
-=====================  =====================
-motion (first)          code (second)
-=====================  =====================
-:green:`motion`        :green:`right code`
-:green:`motion`        :red:`wrong code`
-:red:`no motion`       :green:`right code`
-:red:`no motion`       :red:`wrong code`
-=====================  =====================
-
-and the possible outputs are
-
-* :green:`ON`
-* :red:`OFF`
-
-the :ref:`truth table` shows all the logically possible states of the alarm
-
-* :ref:`contradiction<test_contradiction>`: ``return False``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  outputs :red:`OFF` always, it does not care about the inputs.
-
-* :ref:`logical_conjunction<test_logical_conjunction>`: ``return first and second``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered. Authorized entry.
-
-* :ref:`project_second<test_project_second>`: ``return second``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if the :green:`right code` is entered, it does not care if there is :green:`motion` or :red:`no motion`. How is the :green:`right code` entered without motion?
-
-* :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if there is :red:`no motion` AND the :green:`right code` is entered. How is the :green:`right code` entered without motion?
-
-* :ref:`negate_first<test_negate_first>`: ``return not first``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if there is :red:`no motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered.
-
-* :ref:`logical_nand<test_logical_nand>`: ``return not (first and second)``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  outputs :red:`OFF` only if there is :green:`motion` AND the :green:`right code` is entered.
-
-* :ref:`tautology<test_tautology>`: ``return True``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` always, it does not care about the inputs.
-
-* :ref:`logical_disjunction<test_logical_disjunction>`: ``return first or second``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  outputs :red:`OFF` only if there is :red:`no motion` AND the :red:`wrong code` is entered. How is the code entered without motion?
-
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>`: ``return (not (first and second) and (first or second))``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  - outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered
-  - outputs :red:`OFF` if there is :red:`no motion` AND the :red:`wrong code` is entered
-
-  Wait a minute! Why is "motion AND the :green:`right code`" the same as "NOT motion AND :red:`NOT the right code`"?
-
-* :ref:`material_non_implication<test_material_non_implication>`: ``return first and (not second)``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if there is :green:`motion` AND :red:`NOT the right code` is entered. Is there a burglar?
-
-* :ref:`project_first<test_project_first>`: ``return first``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :red:`OFF`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if there is :green:`motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered.
-
-* :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  outputs :red:`OFF` only if there is :red:`no motion` AND the :green:`right code` is entered. How is the code entered if there is no motion?
-
-* :ref:`negate_second<test_negate_second>`: ``return not second``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :green:`ON`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if the :red:`wrong code` is entered, it does not care if there is :green:`motion` or :red:`no motion`.
-
-* :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :red:`OFF`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  outputs :green:`ON` only if there is :red:`no motion` AND the :red:`wrong code` is entered.
-
-* :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :red:`OFF`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  - outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered
-  - outputs :green:`ON` if there is :red:`no motion` AND the :red:`wrong code` is entered
-
-* :ref:`material_implication<test_material_implication>`: ``return (not first) or second``
-
-  =====================  =====================  =====================
-  motion (first)          code (second)         output
-  =====================  =====================  =====================
-  :green:`motion`        :green:`right code`    :green:`ON`
-  :green:`motion`        :red:`wrong code`      :red:`OFF`
-  :red:`no motion`       :green:`right code`    :green:`ON`
-  :red:`no motion`       :red:`wrong code`      :green:`ON`
-  =====================  =====================  =====================
-
-  outputs :red:`OFF` only if there is :green:`motion` AND :red:`NOT the right code` is entered.
-
-I do not need to know or memorize every operation, the only operations that I want in this case are:
-
-* :ref:`logical_conjunction<test_logical_conjunction>`, where it outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered. I assume this is an authorized entry.
-* :ref:`material_non_implication<test_material_non_implication>`, where it outputs :green:`ON` only if there is :green:`motion` AND the :red:`wrong code` is entered. I assume this is NOT an authorized entry.
-
-Because I want to first check if there is motion, then check if the code entered is correct.
-
-----
-
-=================================================================================
-hiring
-=================================================================================
-
-----
-
-if the inputs are
-
-- is the person a strong option?
-- is the person a strong fit?
-
-then the possible states for the inputs are
-
-======================  =====================
-option (first)          fit (second)
-======================  =====================
-:green:`strong option`  :green:`strong fit`
-:green:`strong option`  :red:`weak fit`
-:red:`weak option`      :green:`strong fit`
-:red:`weak option`      :red:`weak fit`
-======================  =====================
-
-and the possible outputs are
-
-* :green:`HIRE`
-* :red:`REJECT`
-
-the :ref:`truth table` shows all the logically possible states of
-
-* :ref:`contradiction<test_contradiction>`: ``return False``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  always :red:`REJECT`. The inputs do not matter.
-
-* :ref:`logical_conjunction<test_logical_conjunction>`: ``return first and second``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit`. I only hire A players.
-
-* :ref:`project_second<test_project_second>`: ``return second``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or :red:`weak option`. I like this person and do not care about whether it is a strong or weak option. How does the team feel about this?
-
-* :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :red:`weak option` AND it is a :green:`strong fit`. What is the benefit of a weak option that is a strong fit?
-
-* :ref:`negate_first<test_negate_first>`: ``return not first``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :red:`weak option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`. Why would I hire a weak option?
-
-* :ref:`logical_nand<test_logical_nand>`: ``return not (first and second)``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  :red:`REJECT` only if it is a :green:`strong option` AND it is a :green:`strong fit`. Why do I not want a strong option that is a strong fit?
-
-* :ref:`tautology<test_tautology>`: ``return True``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  :green:`HIRE` always, I do not care about the inputs. Anybody can get a job here.
-
-* :ref:`logical_disjunction<test_logical_disjunction>`: ``return first or second``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  :red:`REJECT` only if it is a :red:`weak option` and :red:`NOT a strong fit`. I hire just about anybody but have to draw the line somewhere.
-
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>`: ``return (not (first and second) and (first or second))``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  - :red:`REJECT` if it is a :green:`strong option` AND it is a :green:`strong fit`
-  - :red:`REJECT` if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
-
-  Wait a minute! Why is "strong option AND strong fit" the same as "weak option AND weak fit"? Do I just not like extremes?
-
-* :ref:`material_non_implication<test_material_non_implication>`: ``return first and (not second)``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :green:`strong option` AND :red:`NOT a strong fit`. How does the team feel about this?
-
-* :ref:`project_first<test_project_first>`: ``return first``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :red:`REJECT`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :green:`strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`.
-
-* :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  :red:`REJECT` only if it is a :red:`weak option` AND it is a :green:`strong fit`. Did I just hire a weak option that is also a weak fit?
-
-* :ref:`negate_second<test_negate_second>`: ``return not second``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :green:`HIRE`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :red:`weak fit`, I do not care if it is a :green:`strong option` or :red:`weak option`.
-
-* :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :red:`REJECT`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  :green:`HIRE` only if it is a :red:`weak option` AND :red:`NOT a strong fit`. Trouble.
-
-* :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :red:`REJECT`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  - :green:`HIRE` if it is a :green:`strong option` AND it is a :green:`strong fit`
-  - :green:`HIRE` if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
-
-  maybe I need someone else making these decisions
-
-* :ref:`material_implication<test_material_implication>`: ``return (not first) or second``
-
-  ======================  =====================  =====================
-  option (first)          fit (second)           output
-  ======================  =====================  =====================
-  :green:`strong option`  :green:`strong fit`    :green:`HIRE`
-  :green:`strong option`  :red:`weak fit`        :red:`REJECT`
-  :red:`weak option`      :green:`strong fit`    :green:`HIRE`
-  :red:`weak option`      :red:`weak fit`        :green:`HIRE`
-  ======================  =====================  =====================
-
-  :red:`REJECT` only if it is a :green:`strong option` AND :red:`NOT a strong fit`.
-
-I do not need to know or memorize every operation, the only operations that I want in this case are:
-
-* :ref:`logical_conjunction<test_logical_conjunction>`, :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit` if I only want A players that can work with the team.
-* :ref:`material_non_implication<test_material_non_implication>`, if I am okay with hiring someone who is a :green:`strong option` AND :red:`NOT a strong fit`.
-* maybe :ref:`logical_disjunction<test_logical_disjunction>`, if I will :green:`HIRE` pretty much anyone and only :red:`REJECT` a :red:`weak option` that is also a :red:`weak fit`.
-
-----
-
-=================================================================================
-store discount policy
-=================================================================================
-
-----
-
-if the inputs are
-
-- does the person have a coupon?
-- is the person a member?
-
-then the possible states for the inputs are
-
-======================  =====================
-coupon (first)          member (second)
-======================  =====================
-:green:`coupon`         :green:`member`
-:green:`coupon`         :red:`NOT a member`
-:red:`no coupon`        :green:`member`
-:red:`no coupon`        :red:`NOT a member`
-======================  =====================
-
-and the possible outputs are
-
-* :green:`DISCOUNT PRICE`
-* :red:`REGULAR PRICE`
-
-the :ref:`truth table` shows all the logically possible states of
-
-* :ref:`contradiction<test_contradiction>`: ``return False``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  :red:`REGULAR PRICE` always. I never give a discount, everyone pays full price.
-
-* :ref:`logical_conjunction<test_logical_conjunction>`: ``return first and second``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is a :green:`member`. A loyalty/rewards program.
-
-* :ref:`project_second<test_project_second>`: ``return second``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or :red:`no coupon`. I give the discount only to members. A loyalty program. Sorry you brought a coupon.
-
-* :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon` AND is a :green:`member`. What happens to the members who have coupons?
-
-* :ref:`negate_first<test_negate_first>`: ``return not first``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon`, I do not care if it is a member or not. Do I want all the people with coupons to be upset?
-
-* :ref:`logical_nand<test_logical_nand>`: ``return not (first and second)``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  :red:`REGULAR PRICE` only if the person has a :green:`coupon` AND is a :green:`member`. I might already have a benefit I give to members and do not want to give discounts with that.
-
-* :ref:`tautology<test_tautology>`: ``return True``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` always. I am always giving a discount, everybody loves me.
-
-* :ref:`logical_disjunction<test_logical_disjunction>`: ``return first or second``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  :red:`REGULAR PRICE` only if the person does :red:`NOT have a coupon` AND is :red:`NOT a member`. The person has to be a member, have a coupon, or both to get the discount.
-
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>`: ``return (not (first and second) and (first or second))``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  - :red:`REGULAR PRICE` if the person has a :green:`coupon` AND is a :green:`member`
-  - :red:`REGULAR PRICE` if the person does :red:`NOT have a coupon` AND is :red:`NOT a member`
-
-  Why is "coupon AND member" the same as "no coupon AND not member"? I do not want a member to have a coupon and I do not want someone who is not a member and does not have a coupon.
-
-* :ref:`material_non_implication<test_material_non_implication>`: ``return first and (not second)``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is :red:`NOT a member`. A coupon for people that are not members.
-
-* :ref:`project_first<test_project_first>`: ``return first``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person has a :green:`coupon`, I do not care about if they are a :green:`member` or :red:`NOT a member`.
-
-* :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  :red:`REGULAR PRICE` only if the person :red:`does NOT have a coupon` AND is a :green:`member`.
-
-* :ref:`negate_second<test_negate_second>`: ``return not second``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person is :red:`NOT a member`, I do not care if they have a coupon or not. Why do I have coupons?
-
-* :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :red:`REGULAR PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  :green:`DISCOUNT PRICE` only if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`. Is it opposite day?
-
-* :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :red:`REGULAR PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  - :green:`DISCOUNT PRICE` if the person has a :green:`coupon` AND is a :green:`member`
-  - :green:`DISCOUNT PRICE` if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
-
-  this is just confusing, which meets both conditions?
-
-* :ref:`material_implication<test_material_implication>`: ``return (not first) or second``
-
-  ======================  =====================  =====================
-  coupon (first)          member (second)        output
-  ======================  =====================  =====================
-  :green:`coupon`         :green:`member`        :green:`DISCOUNT PRICE`
-  :green:`coupon`         :red:`NOT a member`    :red:`REGULAR PRICE`
-  :red:`no coupon`        :green:`member`        :green:`DISCOUNT PRICE`
-  :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT PRICE`
-  ======================  =====================  =====================
-
-  :red:`REGULAR PRICE` if the person has a :green:`coupon` AND :red:`NOT a member`.
-
-I do not need to know or memorize every operation, the only operations that I want in this case are:
-
-* :ref:`logical_conjunction<test_logical_conjunction>`, if I give a :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is a :green:`member` because I want to reward my most loyal customers.
-* :ref:`material_non_implication<test_material_non_implication>`, if I give a :green:`DISCOUNT PRICE` to someone who has a :green:`coupon` and is :red:`NOT a member` (a way to pull people in, though it is not as good as rewarding members).
-* :ref:`project_second<test_project_second>` if I give a :green:`DISCOUNT PRICE` only if the person is a :green:`member`, or
-* :ref:`logical_disjunction<test_logical_disjunction>`, if I only charge a :red:`REGULAR PRICE` to the person who :red:`does NOT have a coupon` AND is :red:`not a member`.
-
-----
-
-=================================================================================
-watering plants
-=================================================================================
-
-----
-
-if the inputs are
-
-- is the soil dry?
-- did it rain?
-
-then the possible states for the inputs are
-
-======================  =====================
-soil (first)            rain (second)
-======================  =====================
-:green:`soil is dry`    :green:`it rained`
-:green:`soil is dry`    :red:`NOT rain`
-:red:`soil is wet`      :green:`it rained`
-:red:`soil is wet`      :red:`NOT rain`
-======================  =====================
-
-and the possible outputs are
-
-* :green:`WATER`
-* :red:`DO NOT WATER`
-
-the :ref:`truth table` shows all the logically possible states of
-
-* :ref:`contradiction<test_contradiction>`: ``return False``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  :red:`DO NOT WATER` always. I never water, survival of the fittest.
-
-* :ref:`logical_conjunction<test_logical_conjunction>`: ``return first and second``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if the :green:`soil is dry` AND :green:`it rained`. Why is the soil still dry after it rained?
-
-* :ref:`project_second<test_project_second>`: ``return second``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`. Am I trying to make a swamp?
-
-* :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if the :red:`soil is wet` AND :green:`it rained`. Maybe this is why all my plants die, I keep over watering them.
-
-* :ref:`negate_first<test_negate_first>`: ``return not first``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if the :red:`soil is wet`, I do not care if it :green:`rained` or did :red:`NOT rain`. I must really want a swamp.
-
-* :ref:`logical_nand<test_logical_nand>`: ``return not (first and second)``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  :red:`DO NOT WATER` only if the :green:`soil is dry` AND :green:`it rained`. Why do I water when the soil is wet and it rained?
-
-* :ref:`tautology<test_tautology>`: ``return True``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` always.
-
-* :ref:`logical_disjunction<test_logical_disjunction>`: ``return first or second``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  :red:`DO NOT WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. I pretty much always water unless the soil is wet and it did not rain.
-
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>`: ``return (not (first and second) and (first or second))``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  - :red:`DO NOT WATER` if the :green:`soil is dry` AND :green:`it rained`
-  - :red:`DO NOT WATER` if the :red:`soil is wet` AND :red:`it did NOT rain`
-
-* :ref:`material_non_implication<test_material_non_implication>`: ``return first and (not second)``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if the :green:`soil is dry` AND it did :red:`NOT rain`. I think the plants might like this.
-
-* :ref:`project_first<test_project_first>`: ``return first``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if the :green:`soil is dry`, I do not care if it :green:`rained` or did :red:`NOT rain`. Maybe there was not enough rain.
-
-* :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  :red:`DO NOT WATER` only if the :red:`soil is wet` AND :green:`it rained`. Too much water.
-
-* :ref:`negate_second<test_negate_second>`: ``return not second``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if it did :red:`NOT rain`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`.
-
-* :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. How did the soil get wet? Did I water it already and forget?
-
-* :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  - :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`
-  - :green:`WATER` if the :red:`soil is wet` AND it did :red:`NOT rain`
-
-  this could be ideal if I treat it as one or the other, but both things cannot be :ref:`True<test_what_is_true>` at the same time
-
-* :ref:`material_implication<test_material_implication>`: ``return (not first) or second``
-
-  ======================  =====================  =====================
-  soil (first)            rain (second)          output
-  ======================  =====================  =====================
-  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
-  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
-  ======================  =====================  =====================
-
-  :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`. I want to kill the plants.
-
-I do not need to know or memorize every operation, the only operations that I want in this case are:
-
-* :ref:`material_non_implication<test_material_non_implication>`, if I :green:`WATER` the plants only if the :green:`soil is dry` AND it did :red:`NOT rain` or
-* :ref:`project_first<test_project_first>` if I :green:`WATER` only if the :green:`soil is dry` (I ignore rain and water whenever the soil reads dry)
-* :ref:`converse_implication<test_converse_implication>` to stop me from watering if the :red:`soil is wet` AND :green:`it rained`.
-
-----
-
-*********************************************************************************
 review
-*********************************************************************************
+*************************************************************************************
 
-The :ref:`truth table` shows the possible states inputs can take and how they interact to give possible outputs. In most cases, I do not need to know all the operations. I only need to know the conditions for the problem I am solving, and remember that they can be made with some combination of :ref:`NOT<test_logical_negation>`, :ref:`AND<test_logical_conjunction>` and :ref:`OR<test_logical_disjunction>`
+* I used :ref:`for loops<what is a for loop?>` to make less tests which is simpler and at the same time more complex
+* I used a tuple_ to represent all the states of the :ref:`Traffic Light` and its outputs in :ref:`test_traffic_light_control`, which is not as easy to read, :ref:`there has to be a better way<test traffic_light with list comprehensions>`
+* I used nested :ref:`for loops<what is a for loop?>` in :ref:`test_traffic_light_failsafe`, :ref:`there has to be a better way<test traffic_light with list comprehensions>`
 
+----
 
-The examples above show
+*************************************************************************************
+code from the chapter
+*************************************************************************************
 
-* :ref:`security alarm`
-
-  ============================================================================================  ==================== ================= ===================  ================= ==============================================================
-  output                                                                                        :green:`motion`,     :green:`motion`,  :red:`no motion`,    :red:`no motion`, operation
-                                                                                                :green:`right code`  :red:`wrong code` :green:`right code`  :red:`wrong code`
-  ============================================================================================  ==================== ================= ===================  ================= ==============================================================
-  :red:`OFF`                                                                                    :red:`OFF`           :red:`OFF`        :red:`OFF`           :red:`OFF`        :ref:`contradiction<test_contradiction>`
-  :green:`motion` AND :green:`right code`                                                       :green:`ON`          :red:`OFF`        :red:`OFF`           :red:`OFF`        :ref:`logical_conjunction<test_logical_conjunction>`
-  :green:`right code`                                                                           :green:`ON`          :red:`OFF`        :green:`ON`          :red:`OFF`        :ref:`project_second<test_project_second>`
-  :red:`no motion` AND :green:`right code`                                                      :red:`OFF`           :red:`OFF`        :green:`ON`          :red:`OFF`        :ref:`converse_non_implication<test_converse_non_implication>`
-  :red:`no motion`                                                                              :red:`OFF`           :red:`OFF`        :green:`ON`          :green:`ON`       :ref:`negate_first<test_negate_first>`
-  NOT (:green:`motion` AND :green:`right code`)                                                 :red:`OFF`           :green:`ON`       :green:`ON`          :green:`ON`       :ref:`logical_nand<test_logical_nand>`
-  :green:`ON`                                                                                   :green:`ON`          :green:`ON`       :green:`ON`          :green:`ON`       :ref:`tautology<test_tautology>`
-  :green:`motion` OR :green:`right code`                                                        :green:`ON`          :green:`ON`       :green:`ON`          :red:`OFF`        :ref:`logical_disjunction<test_logical_disjunction>`
-  (NOT (:green:`motion` AND :green:`right code`)) AND (:green:`motion` OR :green:`right code`)  :red:`OFF`           :green:`ON`       :green:`ON`          :red:`OFF`        :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-  :green:`motion` AND :red:`wrong code`                                                         :red:`OFF`           :green:`ON`       :red:`OFF`           :red:`OFF`        :ref:`material_non_implication<test_material_non_implication>`
-  :green:`motion`                                                                               :green:`ON`          :green:`ON`       :red:`OFF`           :red:`OFF`        :ref:`project_first<test_project_first>`
-  :green:`motion` OR :red:`wrong code`                                                          :green:`ON`          :green:`ON`       :red:`OFF`           :green:`ON`       :ref:`converse_implication<test_converse_implication>`
-  :red:`wrong code`                                                                             :red:`OFF`           :green:`ON`       :red:`OFF`           :green:`ON`       :ref:`negate_second<test_negate_second>`
-  NOT (:green:`motion` OR :green:`right code`)                                                  :red:`OFF`           :red:`OFF`        :red:`OFF`           :green:`ON`       :ref:`logical_nor<test_logical_nor>`
-  (:red:`no motion` OR :green:`right code`) AND (:green:`motion` OR :red:`wrong code`)          :green:`ON`          :red:`OFF`        :red:`OFF`           :green:`ON`       :ref:`logical_equality<test_logical_equality>`
-  :red:`no motion` OR :green:`right code`                                                       :green:`ON`          :red:`OFF`        :green:`ON`          :green:`ON`       :ref:`material_implication<test_material_implication>`
-  ============================================================================================  ==================== ================= ===================  ================= ==============================================================
-
-  I can say this in English as
-
-  ==============================================================  ===================================================================================================================================================================
-  operation                                                       rule
-  ==============================================================  ===================================================================================================================================================================
-  :ref:`contradiction<test_contradiction>`                        outputs :red:`OFF` always, it does not care about the inputs
-  :ref:`logical_conjunction<test_logical_conjunction>`            outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered
-  :ref:`project_second<test_project_second>`                      outputs :green:`ON` only if the :green:`right code` is entered
-  :ref:`converse_non_implication<test_converse_non_implication>`  outputs :green:`ON` only if there is :red:`no motion` AND the :green:`right code` is entered
-  :ref:`negate_first<test_negate_first>`                          outputs :green:`ON` only if there is :red:`no motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered
-  :ref:`logical_nand<test_logical_nand>`                          outputs :red:`OFF` only if there is :green:`motion` AND the :green:`right code` is entered.
-  :ref:`tautology<test_tautology>`                                outputs :green:`ON` always, it does not care about the inputs
-  :ref:`logical_disjunction<test_logical_disjunction>`            outputs :red:`OFF` only if there is :red:`no motion` AND the :red:`wrong code` is entered
-  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered, OR if there is :red:`no motion` AND the :red:`wrong code` is entered
-  :ref:`material_non_implication<test_material_non_implication>`  outputs :green:`ON` only if there is :green:`motion` AND :red:`NOT the right code` is entered
-  :ref:`project_first<test_project_first>`                        outputs :green:`ON` only if there is :green:`motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered
-  :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` only if there is :red:`no motion` AND the :green:`right code` is entered
-  :ref:`negate_second<test_negate_second>`                        outputs :green:`ON` only if the :red:`wrong code` is entered
-  :ref:`logical_nor<test_logical_nor>`                            outputs :green:`ON` only if there is :red:`no motion` AND the :red:`wrong code` is entered
-  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered, OR if there is :red:`no motion` AND the :red:`wrong code` is entered
-  :ref:`material_implication<test_material_implication>`          outputs :red:`OFF` only if there is :green:`motion` AND :red:`NOT the right code` is entered.
-  ==============================================================  ===================================================================================================================================================================
-
-* :ref:`hiring`
-
-  ==========================================================================================================  ======================= ======================= ====================  =================== ==============================================================
-  output                                                                                                      :green:`strong option`, :green:`strong option`, :red:`weak option`,   :red:`weak option`, operation
-                                                                                                              :green:`strong fit`     :red:`weak fit`         :green:`strong fit`   :red:`weak fit`
-  ==========================================================================================================  ======================= ======================= ====================  =================== ==============================================================
-  :red:`REJECT`                                                                                               :red:`REJECT`           :red:`REJECT`           :red:`REJECT`         :red:`REJECT`       :ref:`contradiction<test_contradiction>`
-  :green:`strong option` AND :green:`strong fit`                                                              :green:`HIRE`           :red:`REJECT`           :red:`REJECT`         :red:`REJECT`       :ref:`logical_conjunction<test_logical_conjunction>`
-  :green:`strong fit`                                                                                         :green:`HIRE`           :red:`REJECT`           :green:`HIRE`         :red:`REJECT`       :ref:`project_second<test_project_second>`
-  :red:`weak option` AND :green:`strong fit`                                                                  :red:`REJECT`           :red:`REJECT`           :green:`HIRE`         :red:`REJECT`       :ref:`converse_non_implication<test_converse_non_implication>`
-  :red:`weak option`                                                                                          :red:`REJECT`           :red:`REJECT`           :green:`HIRE`         :green:`HIRE`       :ref:`negate_first<test_negate_first>`
-  NOT (:green:`strong option` AND :green:`strong fit`)                                                        :red:`REJECT`           :green:`HIRE`           :green:`HIRE`         :green:`HIRE`       :ref:`logical_nand<test_logical_nand>`
-  :green:`HIRE`                                                                                               :green:`HIRE`           :green:`HIRE`           :green:`HIRE`         :green:`HIRE`       :ref:`tautology<test_tautology>`
-  :green:`strong option` OR :green:`strong fit`                                                               :green:`HIRE`           :green:`HIRE`           :green:`HIRE`         :red:`REJECT`       :ref:`logical_disjunction<test_logical_disjunction>`
-  (NOT (:green:`strong option` AND :green:`strong fit`)) AND (:green:`strong option` OR :green:`strong fit`)  :red:`REJECT`           :green:`HIRE`           :green:`HIRE`         :red:`REJECT`       :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-  :green:`strong option` AND :red:`weak fit`                                                                  :red:`REJECT`           :green:`HIRE`           :red:`REJECT`         :red:`REJECT`       :ref:`material_non_implication<test_material_non_implication>`
-  :green:`strong option`                                                                                      :green:`HIRE`           :green:`HIRE`           :red:`REJECT`         :red:`REJECT`       :ref:`project_first<test_project_first>`
-  :green:`strong option` OR :red:`weak fit`                                                                   :green:`HIRE`           :green:`HIRE`           :red:`REJECT`         :green:`HIRE`       :ref:`converse_implication<test_converse_implication>`
-  :red:`weak fit`                                                                                             :red:`REJECT`           :green:`HIRE`           :red:`REJECT`         :green:`HIRE`       :ref:`negate_second<test_negate_second>`
-  NOT (:green:`strong option` OR :green:`strong fit`)                                                         :red:`REJECT`           :red:`REJECT`           :red:`REJECT`         :green:`HIRE`       :ref:`logical_nor<test_logical_nor>`
-  (:red:`weak option` OR :green:`strong fit`) AND (:green:`strong option` OR :red:`weak fit`)                 :green:`HIRE`           :red:`REJECT`           :red:`REJECT`         :green:`HIRE`       :ref:`logical_equality<test_logical_equality>`
-  :red:`weak option` OR :green:`strong fit`                                                                   :green:`HIRE`           :red:`REJECT`           :green:`HIRE`         :green:`HIRE`       :ref:`material_implication<test_material_implication>`
-  ==========================================================================================================  ======================= ======================= ====================  =================== ==============================================================
-
-  I can say this in English as
-
-  ==============================================================  =====================================================================================================================================================
-  operation                                                       rule
-  ==============================================================  =====================================================================================================================================================
-  :ref:`contradiction<test_contradiction>`                        always :red:`REJECT`
-  :ref:`logical_conjunction<test_logical_conjunction>`            :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit`
-  :ref:`project_second<test_project_second>`                      :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or :red:`weak option`
-  :ref:`converse_non_implication<test_converse_non_implication>`  :green:`HIRE` only if it is a :red:`weak option` AND it is a :green:`strong fit`
-  :ref:`negate_first<test_negate_first>`                          :green:`HIRE` only if it is a :red:`weak option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`
-  :ref:`logical_nand<test_logical_nand>`                          :red:`REJECT` only if it is a :green:`strong option` AND it is a :green:`strong fit`
-  :ref:`tautology<test_tautology>`                                :green:`HIRE` always, I do not care about the inputs
-  :ref:`logical_disjunction<test_logical_disjunction>`            :red:`REJECT` only if it is a :red:`weak option` and :red:`NOT a strong fit`
-  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        :red:`REJECT` if it is a :green:`strong option` AND it is a :green:`strong fit`, OR if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
-  :ref:`material_non_implication<test_material_non_implication>`  :green:`HIRE` only if it is a :green:`strong option` AND :red:`NOT a strong fit`
-  :ref:`project_first<test_project_first>`                        :green:`HIRE` only if it is a :green:`strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`
-  :ref:`converse_implication<test_converse_implication>`          :red:`REJECT` only if it is a :red:`weak option` AND it is a :green:`strong fit`
-  :ref:`negate_second<test_negate_second>`                        :green:`HIRE` only if it is a :red:`weak fit`, I do not care if it is a :green:`strong option` or :red:`weak option`
-  :ref:`logical_nor<test_logical_nor>`                            :green:`HIRE` only if it is a :red:`weak option` AND :red:`NOT a strong fit`
-  :ref:`logical_equality<test_logical_equality>`                  :green:`HIRE` if it is a :green:`strong option` AND it is a :green:`strong fit`, OR if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
-  :ref:`material_implication<test_material_implication>`          :red:`REJECT` only if it is a :green:`strong option` AND :red:`NOT a strong fit`
-  ==============================================================  =====================================================================================================================================================
-
-* :ref:`store discount policy`
-
-  ====================================================================================  =======================  =======================  =======================  =======================  ==============================================================
-  output                                                                                :green:`coupon`,         :green:`coupon`,         :red:`no coupon`,        :red:`no coupon`,        operation
-                                                                                        :green:`member`          :red:`NOT a member`      :green:`member`          :red:`NOT a member`
-  ====================================================================================  =======================  =======================  =======================  =======================  ==============================================================
-  :red:`REGULAR PRICE`                                                                  :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :ref:`contradiction<test_contradiction>`
-  :green:`coupon` AND :green:`member`                                                   :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :ref:`logical_conjunction<test_logical_conjunction>`
-  :green:`member`                                                                       :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :ref:`project_second<test_project_second>`
-  :red:`no coupon` AND :green:`member`                                                  :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :ref:`converse_non_implication<test_converse_non_implication>`
-  :red:`no coupon`                                                                      :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :ref:`negate_first<test_negate_first>`
-  NOT (:green:`coupon` AND :green:`member`)                                             :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :ref:`logical_nand<test_logical_nand>`
-  :green:`DISCOUNT PRICE`                                                               :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :ref:`tautology<test_tautology>`
-  :green:`coupon` OR :green:`member`                                                    :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :ref:`logical_disjunction<test_logical_disjunction>`
-  (NOT (:green:`coupon` AND :green:`member`)) AND (:green:`coupon` OR :green:`member`)  :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-  :green:`coupon` AND :red:`NOT a member`                                               :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :ref:`material_non_implication<test_material_non_implication>`
-  :green:`coupon`                                                                       :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :ref:`project_first<test_project_first>`
-  :green:`coupon` OR :red:`NOT a member`                                                :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :ref:`converse_implication<test_converse_implication>`
-  :red:`NOT a member`                                                                   :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :ref:`negate_second<test_negate_second>`
-  NOT (:green:`coupon` OR :green:`member`)                                              :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :ref:`logical_nor<test_logical_nor>`
-  (:red:`no coupon` OR :green:`member`) AND (:green:`coupon` OR :red:`NOT a member`)    :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :ref:`logical_equality<test_logical_equality>`
-  :red:`no coupon` OR :green:`member`                                                   :green:`DISCOUNT PRICE`  :red:`REGULAR PRICE`     :green:`DISCOUNT PRICE`  :green:`DISCOUNT PRICE`  :ref:`material_implication<test_material_implication>`
-  ====================================================================================  =======================  =======================  =======================  =======================  ==============================================================
-
-  I can say this in English as
-
-  ==============================================================  ================================================================================================================================================================
-  operation                                                       rule
-  ==============================================================  ================================================================================================================================================================
-  :ref:`contradiction<test_contradiction>`                        :red:`REGULAR PRICE` always
-  :ref:`logical_conjunction<test_logical_conjunction>`            :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is a :green:`member`
-  :ref:`project_second<test_project_second>`                      :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or :red:`no coupon`
-  :ref:`converse_non_implication<test_converse_non_implication>`  :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon` AND is a :green:`member`
-  :ref:`negate_first<test_negate_first>`                          :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon`, I do not care if it is a member or not
-  :ref:`logical_nand<test_logical_nand>`                          :red:`REGULAR PRICE` only if the person has a :green:`coupon` AND is a :green:`member`
-  :ref:`tautology<test_tautology>`                                :green:`DISCOUNT PRICE` always
-  :ref:`logical_disjunction<test_logical_disjunction>`            :red:`REGULAR PRICE` only if the person does :red:`NOT have a coupon` AND is :red:`NOT a member`
-  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        :red:`REGULAR PRICE` if the person has a :green:`coupon` AND is a :green:`member`, OR if the person does :red:`NOT have a coupon` AND is :red:`NOT a member`
-  :ref:`material_non_implication<test_material_non_implication>`  :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is :red:`NOT a member`
-  :ref:`project_first<test_project_first>`                        :green:`DISCOUNT PRICE` only if the person has a :green:`coupon`
-  :ref:`converse_implication<test_converse_implication>`          :red:`REGULAR PRICE` only if the person :red:`does NOT have a coupon` AND is a :green:`member`
-  :ref:`negate_second<test_negate_second>`                        :green:`DISCOUNT PRICE` only if the person is :red:`NOT a member`, I do not care if they have a coupon or not
-  :ref:`logical_nor<test_logical_nor>`                            :green:`DISCOUNT PRICE` only if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
-  :ref:`logical_equality<test_logical_equality>`                  :green:`DISCOUNT PRICE` if the person has a :green:`coupon` AND is a :green:`member`, OR if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
-  :ref:`material_implication<test_material_implication>`          :red:`REGULAR PRICE` if the person has a :green:`coupon` AND :red:`NOT a member`
-  ==============================================================  ================================================================================================================================================================
-
-* :ref:`watering plants`
-
-  ====================================================================================================  ======================= ======================= ======================= ======================= ==============================================================
-  output                                                                                                :green:`soil is dry`,   :green:`soil is dry`,   :red:`soil is wet`,     :red:`soil is wet`,     operation
-                                                                                                        :green:`it rained`      :red:`NOT rain`         :green:`it rained`      :red:`NOT rain`
-  ====================================================================================================  ======================= ======================= ======================= ======================= ==============================================================
-  :red:`DO NOT WATER`                                                                                   :red:`DO NOT WATER`     :red:`DO NOT WATER`     :red:`DO NOT WATER`     :red:`DO NOT WATER`     :ref:`contradiction<test_contradiction>`
-  :green:`soil is dry` AND :green:`it rained`                                                           :green:`WATER`          :red:`DO NOT WATER`     :red:`DO NOT WATER`     :red:`DO NOT WATER`     :ref:`logical_conjunction<test_logical_conjunction>`
-  :green:`it rained`                                                                                    :green:`WATER`          :red:`DO NOT WATER`     :green:`WATER`          :red:`DO NOT WATER`     :ref:`project_second<test_project_second>`
-  :red:`soil is wet` AND :green:`it rained`                                                             :red:`DO NOT WATER`     :red:`DO NOT WATER`     :green:`WATER`          :red:`DO NOT WATER`     :ref:`converse_non_implication<test_converse_non_implication>`
-  :red:`soil is wet`                                                                                    :red:`DO NOT WATER`     :red:`DO NOT WATER`     :green:`WATER`          :green:`WATER`          :ref:`negate_first<test_negate_first>`
-  NOT (:green:`soil is dry` AND :green:`it rained`)                                                     :red:`DO NOT WATER`     :green:`WATER`          :green:`WATER`          :green:`WATER`          :ref:`logical_nand<test_logical_nand>`
-  :green:`WATER`                                                                                        :green:`WATER`          :green:`WATER`          :green:`WATER`          :green:`WATER`          :ref:`tautology<test_tautology>`
-  :green:`soil is dry` OR :green:`it rained`                                                            :green:`WATER`          :green:`WATER`          :green:`WATER`          :red:`DO NOT WATER`     :ref:`logical_disjunction<test_logical_disjunction>`
-  (NOT (:green:`soil is dry` AND :green:`it rained`)) AND (:green:`soil is dry` OR :green:`it rained`)  :red:`DO NOT WATER`     :green:`WATER`          :green:`WATER`          :red:`DO NOT WATER`     :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-  :green:`soil is dry` AND :red:`NOT rain`                                                              :red:`DO NOT WATER`     :green:`WATER`          :red:`DO NOT WATER`     :red:`DO NOT WATER`     :ref:`material_non_implication<test_material_non_implication>`
-  :green:`soil is dry`                                                                                  :green:`WATER`          :green:`WATER`          :red:`DO NOT WATER`     :red:`DO NOT WATER`     :ref:`project_first<test_project_first>`
-  :green:`soil is dry` OR :red:`NOT rain`                                                               :green:`WATER`          :green:`WATER`          :red:`DO NOT WATER`     :green:`WATER`          :ref:`converse_implication<test_converse_implication>`
-  :red:`NOT rain`                                                                                       :red:`DO NOT WATER`     :green:`WATER`          :red:`DO NOT WATER`     :green:`WATER`          :ref:`negate_second<test_negate_second>`
-  NOT (:green:`soil is dry` OR :green:`it rained`)                                                      :red:`DO NOT WATER`     :red:`DO NOT WATER`     :red:`DO NOT WATER`     :green:`WATER`          :ref:`logical_nor<test_logical_nor>`
-  (:red:`soil is wet` OR :green:`it rained`) AND (:green:`soil is dry` OR :red:`NOT rain`)              :green:`WATER`          :red:`DO NOT WATER`     :red:`DO NOT WATER`     :green:`WATER`          :ref:`logical_equality<test_logical_equality>`
-  :red:`soil is wet` OR :green:`it rained`                                                              :green:`WATER`          :red:`DO NOT WATER`     :green:`WATER`          :green:`WATER`          :ref:`material_implication<test_material_implication>`
-  ====================================================================================================  ======================= ======================= ======================= ======================= ==============================================================
-
-  I can say this in English as
-
-  ==============================================================  =====================================================================================================================================================
-  operation                                                       rule
-  ==============================================================  =====================================================================================================================================================
-  :ref:`contradiction<test_contradiction>`                        :red:`DO NOT WATER` always
-  :ref:`logical_conjunction<test_logical_conjunction>`            :green:`WATER` only if the :green:`soil is dry` AND :green:`it rained`
-  :ref:`project_second<test_project_second>`                      :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`
-  :ref:`converse_non_implication<test_converse_non_implication>`  :green:`WATER` only if the :red:`soil is wet` AND :green:`it rained`
-  :ref:`negate_first<test_negate_first>`                          :green:`WATER` only if the :red:`soil is wet`, I do not care if it :green:`rained` or did :red:`NOT rain`
-  :ref:`logical_nand<test_logical_nand>`                          :red:`DO NOT WATER` only if the :green:`soil is dry` AND :green:`it rained`
-  :ref:`tautology<test_tautology>`                                :green:`WATER` always
-  :ref:`logical_disjunction<test_logical_disjunction>`            :red:`DO NOT WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`
-  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        :red:`DO NOT WATER` if the :green:`soil is dry` AND :green:`it rained`, OR if the :red:`soil is wet` AND :red:`it did NOT rain`
-  :ref:`material_non_implication<test_material_non_implication>`  :green:`WATER` only if the :green:`soil is dry` AND it did :red:`NOT rain`
-  :ref:`project_first<test_project_first>`                        :green:`WATER` only if the :green:`soil is dry`, I do not care if it :green:`rained` or did :red:`NOT rain`
-  :ref:`converse_implication<test_converse_implication>`          :red:`DO NOT WATER` only if the :red:`soil is wet` AND :green:`it rained`
-  :ref:`negate_second<test_negate_second>`                        :green:`WATER` only if it did :red:`NOT rain`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`
-  :ref:`logical_nor<test_logical_nor>`                            :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`
-  :ref:`logical_equality<test_logical_equality>`                  :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`, OR if the :red:`soil is wet` AND it did :red:`NOT rain`
-  :ref:`material_implication<test_material_implication>`          :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`
-  ==============================================================  =====================================================================================================================================================
+:ref:`Do you want to see all the CODE I typed in this chapter?<test traffic_light with loops: tests and solutions>`
 
 ----
 
@@ -1232,7 +948,34 @@ The examples above show
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test the truth table tests?<test truth table tests>`
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
+* :ref:`I know what an assertion is<what is an assertion?>`.
+* :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
+* :ref:`I know what causes AttributeError<what causes AttributeError?>`.
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
+* :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
+* :ref:`I know how to make a person with loops<how to make a person with loops>`.
+
+:ref:`Would you like to test binary operations from the truth_table project with loops?<truth table: test binary operations with loops>`
 
 ----
 

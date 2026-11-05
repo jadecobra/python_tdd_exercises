@@ -453,7 +453,7 @@ phase       parallel            cross               timer            parallel   
 'parallel'  :red:`RED`          :red:`RED`          :green:`done`    :green:`GREEN`      :red:`RED`          :green:`WALK`
 ==========  ==================  ==================  ===============  ==================  ==================  ==================
 
-The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'parallel'`` AND the current cross is :red:`RED` AND the timer is :green:`done` AND the next cross will stay :red:`RED` OR if the :red:`RED` phase is ``'cross'`` AND the current parallel is :green:`GREEN` AND the timer is :red:`NOT done` AND the next cross will stay :red:`RED` which means there will be no car moving across the road the person is crossing.
+The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'parallel'`` AND the current cross is :red:`RED` AND the timer is :green:`done` AND the next cross will stay :red:`RED` OR if the :red:`RED` phase is ``'cross'`` AND the current parallel is :green:`GREEN` AND the timer is :red:`NOT done` AND the next cross will stay :red:`RED`, which means there will be no car moving across the road the person is crossing.
 
 ----
 
