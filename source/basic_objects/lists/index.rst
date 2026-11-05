@@ -199,7 +199,8 @@ I change :ref:`test_failure` to :ref:`test_making_a_list`
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: [] != None
 
@@ -348,7 +349,8 @@ I add a failing test for the :ref:`attributes<what is an object attribute?>` and
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: Lists differ: [
       '__add__', '__class__', '__class_getitem_[552 chars]ort'
@@ -373,6 +375,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 * I add ``self.maxDiff`` to the test then move the terminal_ to the right
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 10
     :emphasize-lines: 2
 
@@ -388,6 +391,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
   .. note:: results can be different because of the Python_ version
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 10
     :emphasize-lines: 5-54
 
@@ -447,11 +451,12 @@ there is also a note on how to see the full difference between ``dir(list)`` and
                     ]
                 )
 
-  the test passes.
+  the test passes. This looks like the :ref:`attributes and methods of objects<test_dir_object>` with more stuff.
 
 * I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) the names that do NOT have double underscores (__) to use as a TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 67
     :emphasize-lines: 1-11
 
@@ -497,6 +502,7 @@ test_append_adds_item_to_end_of_a_list
 I add a test for the `append method`_
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 62
   :emphasize-lines: 5-7
 
@@ -513,9 +519,11 @@ I add a test for the `append method`_
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
-  TypeError: list.append() takes exactly one argument (0 given)
+  TypeError: list.append() takes exactly
+             one argument (0 given)
 
 ----
 
@@ -528,12 +536,13 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I add ``0`` as input
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 68
   :emphasize-lines: 1
 
           self.assertIsNone(a_list.append(0))
 
-the test is green again, the `append method`_ returns :ref:`None<what is None?>` when called
+the test is green again, the `append method`_ returns :ref:`None<what is None?>` when :ref:`called<how to call a function with input>`.
 
 ----
 
@@ -546,23 +555,32 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
 * I add another :ref:`assertion<what is an assertion?>` to see what append_ did to the list_
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 2
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 66
+    :emphasize-lines: 4
 
+        def test_append(self):
+            a_list = [0, 1, 2, 'n']
             self.assertIsNone(a_list.append(0))
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
+
+    'append',
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+    :caption: terminal
 
-    AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
+      AssertionError: Lists differ: [0, 1, 2, 'n', 0]
+                                 != [0, 1, 2, 'n']
 
-  the `append method`_ added a value at the end of the list_
+  the `append method`_ added a value at the end of the list_.
 
 * I change the expectation to match the values in the terminal_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 69
     :emphasize-lines: 1
 
@@ -573,32 +591,52 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
 * I change the value given to append_
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 1
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 66
+    :emphasize-lines: 3
 
+        def test_append(self):
+            a_list = [0, 1, 2, 'n']
             self.assertIsNone(a_list.append('n+1'))
+            self.assertEqual(a_list, [0, 1, 2, 'n', 0])
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+    :caption: terminal
 
-    AssertionError: Lists differ: [0, 1, 2, 'n', 'n+1'] != [0, 1, 2, 'n', 0]
+    AssertionError: Lists differ: [0, 1, 2, 'n', 'n+1']
+                               != [0, 1, 2, 'n', 0]
 
-* I change the expectation to match
+* I change the expectation of the :ref:`assertion<what is an assertion?>` to match
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 1
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 66
+    :emphasize-lines: 4
 
+        def test_append(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.append('n+1'))
             self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
+
+
+    'append',
 
   the test passes.
 
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 66
-    :emphasize-lines: 1
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 60
+    :emphasize-lines: 7
+
+                    'remove',
+                    'reverse',
+                    'sort'
+                ]
+            )
 
         def test_append_adds_item_to_end_of_a_list(self):
             a_list = [0, 1, 2, 'n']
@@ -608,6 +646,7 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
 * I remove append_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 69
 
           self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
@@ -624,6 +663,15 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
     'reverse',
     'sort'
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_append_adds_item_to_end_of_a_list'
+
 :ref:`I know how to add things to the end of a list<test_append_adds_item_to_end_of_a_list>`
 
 ----
@@ -635,6 +683,7 @@ test_clear_empties_a_list
 I add a test for the `clear method`_
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 69
   :emphasize-lines: 3-5
 
@@ -647,7 +696,7 @@ I add a test for the `clear method`_
 
   'clear',
 
-the test is green again. The `clear method`_ returns :ref:`None<what is None?>` when called
+the test is green again. The `clear method`_ returns :ref:`None<what is None?>` when :ref:`called<how to call a function with input>`
 
 ----
 
@@ -660,6 +709,7 @@ the test is green again. The `clear method`_ returns :ref:`None<what is None?>` 
 I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the list_
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 73
   :emphasize-lines: 2
 
@@ -668,7 +718,8 @@ I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the l
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: Lists differ: [] != [0, 1, 2, 'n']
 
@@ -685,6 +736,7 @@ the list_ is now empty
 I change the values to match
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 74
   :emphasize-lines: 1
 
@@ -703,6 +755,7 @@ the test passes.
 * I change the name of the test to make it "clearer"
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 71
     :emphasize-lines: 1
 
@@ -714,6 +767,7 @@ the test passes.
 * I remove clear_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 74
 
             self.assertEqual(a_list, [])
@@ -728,6 +782,14 @@ the test passes.
     'remove',
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_clear_empties_a_list'
 
 :ref:`I know how to empty a list<test_clear_empties_a_list>`
 
@@ -746,6 +808,7 @@ test_copy_a_list
 I add another test
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 74
   :emphasize-lines: 3-5
 
@@ -760,7 +823,8 @@ I add another test
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
@@ -777,6 +841,7 @@ the :ref:`method<what is a method?>` returns a copy of the list_
 * I add the list_ to the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 77
     :emphasize-lines: 2
 
@@ -785,7 +850,8 @@ the :ref:`method<what is a method?>` returns a copy of the list_
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
 
@@ -794,6 +860,7 @@ the :ref:`method<what is a method?>` returns a copy of the list_
 * I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 77
     :emphasize-lines: 2
 
@@ -813,6 +880,7 @@ the :ref:`method<what is a method?>` returns a copy of the list_
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 76
     :emphasize-lines: 1
 
@@ -823,6 +891,7 @@ the :ref:`method<what is a method?>` returns a copy of the list_
 * I remove copy_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 78
 
             self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
@@ -836,6 +905,14 @@ the :ref:`method<what is a method?>` returns a copy of the list_
     'remove',
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_copy_a_list'
 
 :ref:`I know how to copy a list<test_copy_a_list>`
 
@@ -854,6 +931,7 @@ test_count_number_of_times_item_is_in_a_list
 I add a test for the next :ref:`method<what is a method?>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 78
   :emphasize-lines: 3-5
 
@@ -868,13 +946,15 @@ I add a test for the next :ref:`method<what is a method?>`
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   TypeError: list.count() takes exactly one argument (0 given)
 
 I add a value to the call
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 80
   :emphasize-lines: 3
 
@@ -884,7 +964,8 @@ I add a value to the call
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: 1 is not None
 
@@ -899,6 +980,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I add the value
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 82
   :emphasize-lines: 1
 
@@ -906,13 +988,15 @@ I add the value
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: 1 is not None : 1
 
 I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 82
   :emphasize-lines: 1
 
@@ -931,6 +1015,7 @@ the test passes.
 * ``0`` is in this list_ 1 time, I add ``1`` to the list_ 2 more times then add an :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 80
     :emphasize-lines: 2, 4
 
@@ -941,7 +1026,8 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 3 != 1
 
@@ -958,6 +1044,7 @@ the test passes.
 * I want to see what happens when I try to count something that is not in the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 83
     :emphasize-lines: 2
 
@@ -966,7 +1053,8 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 0 != 3
 
@@ -975,6 +1063,7 @@ the test passes.
 * I change the value to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 84
     :emphasize-lines: 1
 
@@ -985,6 +1074,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 80
     :emphasize-lines: 1
 
@@ -997,6 +1087,7 @@ the test passes.
 * I remove count_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 84
     :emphasize-lines: 4
 
@@ -1010,6 +1101,15 @@ the test passes.
     'remove',
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_count_number_of_times_item_is_in_a_list'
 
 :ref:`I know how to count how many times something is in a list<test_count_number_of_times_item_is_in_a_list>`
 
@@ -1028,6 +1128,7 @@ test_extend_adds_items_from_an_iterable_to_end_of_a_list
 time for another test
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 84
   :emphasize-lines: 3-5
 
@@ -1042,7 +1143,8 @@ time for another test
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   TypeError: list.extend() takes exactly one argument (0 given)
 
@@ -1057,6 +1159,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I pass a value to the call
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 88
   :emphasize-lines: 1
 
@@ -1064,19 +1167,21 @@ I pass a value to the call
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   TypeError: 'int' object is not iterable
 
 I change the value to an :ref:`iterable<what is an iterable?>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 88
   :emphasize-lines: 1
 
           self.assertIsNone(a_list.extend((0, 1)))
 
-the test passes. The `extend method`_ returns :ref:`None<what is None?>` when called
+the test passes. The `extend method`_ returns :ref:`None<what is None?>` when :ref:`called<how to call a function with input>`
 
 ----
 
@@ -1089,6 +1194,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 * I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 88
     :emphasize-lines: 2
 
@@ -1097,13 +1203,15 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0, 1] != [0, 1, 2, 'n']
 
 * I change the expectation to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 89
     :emphasize-lines: 1
 
@@ -1114,6 +1222,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 * I change the values given to the `extend method`_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 86
     :emphasize-lines: 3
 
@@ -1124,13 +1233,15 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 2, 1, 0] != [0, 1, 2, 'n', 0, 1]
 
 * I change the values to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 89
     :emphasize-lines: 1
 
@@ -1141,6 +1252,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 86
     :emphasize-lines: 1
 
@@ -1152,6 +1264,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 * I remove extend_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 89
 
             self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
@@ -1163,6 +1276,15 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
     'remove',
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_extend_adds_items_from_an_iterable_to_end_of_a_list'
 
 :ref:`I know how to add items from an iterable to a list<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
 
@@ -1181,6 +1303,7 @@ test_index_returns_first_position_of_item_in_a_list
 I add a test for the `index method`_
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 89
   :emphasize-lines: 3-5
 
@@ -1195,7 +1318,8 @@ I add a test for the `index method`_
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   TypeError: index expected at least 1 argument, got 0
 
@@ -1210,6 +1334,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I add a value to the call
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 91
   :emphasize-lines: 3
 
@@ -1219,13 +1344,15 @@ I add a value to the call
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: 0 is not None
 
 I add the expectation
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 93
   :emphasize-lines: 1
 
@@ -1233,13 +1360,15 @@ I add the expectation
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: 0 is not None : 0
 
 I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 91
   :emphasize-lines: 3
 
@@ -1260,6 +1389,7 @@ the test passes.
 * maybe the :ref:`method<what is a method?>` returned the same value I gave, I change the list_ to find out
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 2
 
@@ -1269,7 +1399,8 @@ the test passes.
 
   the terminal_ is my friend, and shows ValueError_
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     ValueError: 0 is not in list
 
@@ -1278,6 +1409,7 @@ the test passes.
 * I add ValueError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 104
     :emphasize-lines: 4
 
@@ -1289,6 +1421,7 @@ the test passes.
 * I remove the things around the call and change the value to make it clearer
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 3
 
@@ -1298,13 +1431,15 @@ the test passes.
 
   the terminal_ is my friend, and shows ValueError_
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     ValueError: 'not in list' is not in list
 
 * I add :ref:`assertRaises<another way to test if an Exception is raised>` to handle the :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 4,5
 
@@ -1319,6 +1454,7 @@ the test passes.
 * I add a new :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 3
 
@@ -1331,13 +1467,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 0 != '1st'
 
 * I change the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 93
     :emphasize-lines: 1
 
@@ -1348,6 +1486,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 4
 
@@ -1358,13 +1497,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 2 != 0
 
 * I change the value in the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 94
     :emphasize-lines: 1
 
@@ -1375,6 +1516,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 94
     :emphasize-lines: 2
 
@@ -1386,13 +1528,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 1 != 2
 
 * I change the value to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 95
     :emphasize-lines: 1
 
@@ -1403,6 +1547,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 95
     :emphasize-lines: 2
 
@@ -1411,13 +1556,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 3 != 1
 
 * I change the value to match the terminal_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 96
     :emphasize-lines: 1
 
@@ -1428,6 +1575,7 @@ the test passes.
 * I want to know what happens when I have the same item in the list_ more than once, so I add something in the list_ again
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 2
 
@@ -1439,6 +1587,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 96
     :emphasize-lines: 2
 
@@ -1447,13 +1596,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 0 != 4
 
   when I first called the `index method`_, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     TypeError: index expected at least 1 argument, got 0
 
@@ -1462,6 +1613,7 @@ the test passes.
 * I add a second argument
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 97
     :emphasize-lines: 1
 
@@ -1469,13 +1621,15 @@ the test passes.
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 0 != 4
 
 * I change the argument
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 97
     :emphasize-lines: 1
 
@@ -1486,6 +1640,7 @@ the test passes.
 * I try the same thing with the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 3-6
 
@@ -1505,6 +1660,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 91
     :emphasize-lines: 1
 
@@ -1514,6 +1670,7 @@ the test passes.
 * I also remove index_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 99
 
             with self.assertRaises(ValueError):
@@ -1525,6 +1682,15 @@ the test passes.
     'remove',
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_index_returns_first_position_of_item_in_a_list'
 
 :ref:`I know how to find the position of something in a list<test_index_returns_first_position_of_item_in_a_list>`
 
@@ -1543,6 +1709,7 @@ test_insert_item_at_position_in_a_list
 I add a test for the next :ref:`method<what is a method?>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 99
   :emphasize-lines: 4-6
 
@@ -1558,7 +1725,8 @@ I add a test for the next :ref:`method<what is a method?>`
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   TypeError: insert expected 2 arguments, got 0
 
@@ -1573,6 +1741,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I add two values to the call
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 102
   :emphasize-lines: 3
 
@@ -1593,6 +1762,7 @@ the test passes. What did the `insert method`_ do to the list_?
 * I add an :ref:`assertion<what is an assertion?>` to find out
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 104
     :emphasize-lines: 2
 
@@ -1601,7 +1771,8 @@ the test passes. What did the `insert method`_ do to the list_?
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
@@ -1610,6 +1781,7 @@ the test passes. What did the `insert method`_ do to the list_?
 * I add the new value to the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 105
     :emphasize-lines: 1
 
@@ -1625,6 +1797,7 @@ the test passes. What did the `insert method`_ do to the list_?
 * I change the second input in the call
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 102
     :emphasize-lines: 3
 
@@ -1635,13 +1808,15 @@ the test passes. What did the `insert method`_ do to the list_?
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [-1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
 * I change the expectation to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 105
     :emphasize-lines: 1
 
@@ -1652,6 +1827,7 @@ the test passes. What did the `insert method`_ do to the list_?
 * I add another :ref:`assertion<what is an assertion?>` to see what happens when I insert_ an item in the middle of the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 105
     :emphasize-lines: 2
 
@@ -1663,6 +1839,7 @@ the test passes. What did the `insert method`_ do to the list_?
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 106
     :emphasize-lines: 2
 
@@ -1671,13 +1848,15 @@ the test passes. What did the `insert method`_ do to the list_?
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [-1, 0, 1, 1.5, 2, 'n'] != [-1, 0, 1, 2, 'n']
 
 * I add the value to the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 107
     :emphasize-lines: 1
 
@@ -1688,6 +1867,7 @@ the test passes. What did the `insert method`_ do to the list_?
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 102
     :emphasize-lines: 1
 
@@ -1704,6 +1884,7 @@ the test passes. What did the `insert method`_ do to the list_?
 * I remove insert_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 107
 
             self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
@@ -1713,6 +1894,15 @@ the test passes. What did the `insert method`_ do to the list_?
     'remove',
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_insert_item_at_position_in_a_list'
 
 :ref:`I know how to put an item at a position in a list<test_insert_item_at_position_in_a_list>`
 
@@ -1731,6 +1921,7 @@ test_pop_removes_and_returns_last_item_from_a_list
 I add a new test
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 107
   :emphasize-lines: 3-5
 
@@ -1745,7 +1936,8 @@ I add a new test
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: 'n' is not None
 
@@ -1762,6 +1954,7 @@ The `pop method`_ returns the last item in the list_
 I add the expectation
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 111
   :emphasize-lines: 1
 
@@ -1769,13 +1962,15 @@ I add the expectation
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: 'n' is not None : n
 
 I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 109
   :emphasize-lines: 3
 
@@ -1796,6 +1991,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` to see what happened to the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 111
     :emphasize-lines: 2
 
@@ -1804,13 +2000,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 'n']
 
 * I change the values in the test to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 112
     :emphasize-lines: 1
 
@@ -1821,6 +2019,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` with the `pop method`_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 112
     :emphasize-lines: 2
 
@@ -1829,13 +2028,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: 2 != 'n'
 
 * I change the value in the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 113
     :emphasize-lines: 1
 
@@ -1846,6 +2047,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` to see what changed in the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 113
     :emphasize-lines: 2
 
@@ -1854,13 +2056,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [0, 1] != [0, 1, 2]
 
 * I change the values in the test to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 114
     :emphasize-lines: 1
 
@@ -1886,6 +2090,7 @@ the test passes.
 * I take out pop_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 114
 
             self.assertEqual(a_list, [0, 1])
@@ -1894,6 +2099,15 @@ the test passes.
     'remove',
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_pop_removes_and_returns_last_item_from_a_list'
 
 :ref:`I know how to get and remove the last item from a list<test_pop_removes_and_returns_last_item_from_a_list>`
 
@@ -1912,6 +2126,7 @@ test_remove_first_time_item_is_in_a_list
 time for the next :ref:`method<what is a method?>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 114
   :emphasize-lines: 3-5
 
@@ -1926,7 +2141,8 @@ time for the next :ref:`method<what is a method?>`
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   TypeError: list.remove() takes exactly one argument (0 given)
 
@@ -1941,6 +2157,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I add a value to the call
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 118
   :emphasize-lines: 1
 
@@ -1959,6 +2176,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 118
     :emphasize-lines: 2
 
@@ -1967,7 +2185,8 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
@@ -1976,6 +2195,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 * I change the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 119
     :emphasize-lines: 1
 
@@ -1986,6 +2206,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 * I change the values in the list_ to see what happens when an item is in there more than one time
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 116
     :emphasize-lines: 2
 
@@ -1996,13 +2217,15 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [1, 0, 2, 0, 'n'] != [1, 2, 'n']
 
 * I change the values to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 119
     :emphasize-lines: 1
 
@@ -2013,6 +2236,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 * I want to see what happens when I try to remove_ something that is not in the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 119
     :emphasize-lines: 2
 
@@ -2021,13 +2245,15 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
   the terminal_ is my friend, and shows ValueError_
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     ValueError: list.remove(x): x not in list
 
 * I remove the things around the call then add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 119
     :emphasize-lines: 3-4
 
@@ -2044,6 +2270,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 116
     :emphasize-lines: 1
 
@@ -2061,6 +2288,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 * I take out remove_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 121
 
             with self.assertRaises(ValueError):
@@ -2069,6 +2297,15 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
     'reverse',
     'sort'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am \-2
+    'add test_remove_first_time_item_is_in_a_list'
 
 :ref:`I know how to remove the first time something is in a list<test_remove_first_time_item_is_in_a_list>`
 
@@ -2087,6 +2324,7 @@ test_reverse_a_list
 * I add the next test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 121
     :emphasize-lines: 4-6
 
@@ -2105,6 +2343,7 @@ test_reverse_a_list
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start:  126
     :emphasize-lines: 2
 
@@ -2113,7 +2352,8 @@ test_reverse_a_list
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
 
@@ -2130,6 +2370,7 @@ test_reverse_a_list
 I change the expectation
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 127
   :emphasize-lines: 1
 
@@ -2148,6 +2389,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 124
     :emphasize-lines: 1
 
@@ -2162,6 +2404,7 @@ the test passes.
 * I remove the name from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 127
 
             self.assertEqual(a_list, ['n', 2, 1, 0])
@@ -2171,6 +2414,14 @@ the test passes.
 
 
     # Exceptions seen
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_reverse_a_list'
 
 :ref:`I know how to reverse a list<test_reverse_a_list>`
 
@@ -2189,6 +2440,7 @@ test_sort_a_list
 I add a test for the last :ref:`method<what is a method?>` in the TODO list
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 127
   :emphasize-lines: 3-5
 
@@ -2203,7 +2455,8 @@ I add a test for the last :ref:`method<what is a method?>` in the TODO list
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   TypeError: '<' not supported between instances of 'str' and 'int'
 
@@ -2220,6 +2473,7 @@ I have to change ``'n'`` to a number or change the other numbers to strings_
 I remove the things around the call then add :ref:`assertRaises<another way to test if an Exception is raised>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 129
   :emphasize-lines: 3-4
 
@@ -2241,6 +2495,7 @@ the test passes.
 * I can use the list_ directly in the call
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 129
     :emphasize-lines: 4
 
@@ -2254,6 +2509,7 @@ the test passes.
 * I remove the :ref:`variable<what is a variable?>` because it is no longer used
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 129
     :emphasize-lines: 2-3
 
@@ -2266,6 +2522,7 @@ the test passes.
 * I add a new list_ where all the items are numbers and another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 129
     :emphasize-lines: 5,6
 
@@ -2276,11 +2533,12 @@ the test passes.
             a_list = [0, 1, 2, 3]
             self.assertIsNone(a_list.sort())
 
-  the test is still green, sort_ returns :ref:`None<what is None?>` when called
+  the test is still green, sort_ returns :ref:`None<what is None?>` when :ref:`called<how to call a function with input>`
 
 * I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 133
     :emphasize-lines: 3
 
@@ -2290,7 +2548,8 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
@@ -2299,6 +2558,7 @@ the test passes.
 * I change the expectation to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 135
     :emphasize-lines: 1
 
@@ -2309,6 +2569,7 @@ the test passes.
 * I change the list_ to see what happens when it is NOT sorted
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 133
     :emphasize-lines: 1
 
@@ -2318,7 +2579,8 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
@@ -2327,6 +2589,7 @@ the test passes.
 * I change the values to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 135
     :emphasize-lines: 1
 
@@ -2337,6 +2600,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 129
     :emphasize-lines: 1
 
@@ -2354,6 +2618,7 @@ the test passes.
 * I remove sort_ from the TODO list
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 135
 
             self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
@@ -2363,6 +2628,14 @@ the test passes.
     # AssertionError
     # TypeError
     # ValueError
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_sort_a_list'
 
 :ref:`I know how to sort a list<test_sort_a_list>`
 
@@ -2385,6 +2658,7 @@ When I want an item that is in a list_, I can give its :ref:`index<test_index_re
 I add a failing test
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 135
   :emphasize-lines: 3-5
 
@@ -2399,7 +2673,8 @@ I add a failing test
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: '1st' != ''
 
@@ -2416,6 +2691,7 @@ the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a
 I change the value in the test
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 139
   :emphasize-lines: 1
 
@@ -2434,6 +2710,7 @@ the test passes.
 * this is the opposite of the `index method`_ which takes in the item and returns its position, in this case I provide the :ref:`index (position)<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 139
     :emphasize-lines: 2
 
@@ -2442,13 +2719,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '1st' != ''
 
 * I change the value to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 140
     :emphasize-lines: 1
 
@@ -2462,6 +2741,7 @@ the test passes.
 * I can also use negative numbers. The last item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``-1`` and the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of negative the length of the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 140
     :emphasize-lines: 2
 
@@ -2470,13 +2750,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '1st' != ''
 
 * I change the value to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 141
     :emphasize-lines: 1
 
@@ -2487,6 +2769,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 141
     :emphasize-lines: 2
 
@@ -2495,13 +2778,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '3rd' != ''
 
 * I change the expectation to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 142
     :emphasize-lines: 1
 
@@ -2512,6 +2797,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 142
     :emphasize-lines: 2
 
@@ -2520,13 +2806,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '3rd' != ''
 
 * I change the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 143
     :emphasize-lines: 1
 
@@ -2537,6 +2825,7 @@ the test passes.
 * I add another line
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 143
     :emphasize-lines: 2
 
@@ -2545,13 +2834,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '2nd' != ''
 
 * I change the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 144
     :emphasize-lines: 1
 
@@ -2560,6 +2851,7 @@ the test passes.
 * I add another
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 144
     :emphasize-lines: 2
 
@@ -2568,13 +2860,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '2nd' != ''
 
 * I change the value
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 145
     :emphasize-lines: 1
 
@@ -2585,6 +2879,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 145
     :emphasize-lines: 2
 
@@ -2593,13 +2888,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '...last' != ''
 
 * I change the value
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 146
     :emphasize-lines: 1
 
@@ -2610,6 +2907,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 146
     :emphasize-lines: 2
 
@@ -2618,13 +2916,15 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: '...last' != ''
 
   I make the values match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 137
     :emphasize-lines: 11
 
@@ -2644,6 +2944,15 @@ the test passes.
     # Exceptions seen
 
   the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_getting_items_of_a_list'
 
 :ref:`I know how to get things that are in a list<test_getting_items_of_a_list>`
 
@@ -2666,6 +2975,7 @@ I can also use the :ref:`index<test_index_returns_first_position_of_item_in_a_li
 I add an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 147
   :emphasize-lines: 3-6
 
@@ -2681,7 +2991,8 @@ I add an :ref:`assertion<what is an assertion?>`
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
@@ -2695,15 +3006,27 @@ I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` 
 
 ----
 
-I change the expectation to match the values in the terminal_
+* I change the expectation to match the values in the terminal_
 
-.. code-block:: python
-  :lineno-start: 152
-  :emphasize-lines: 1
+  .. code-block:: python
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 152
+    :emphasize-lines: 1
 
-          self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
+            self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
-the test passes. :ref:`I know how to change the value of an item in a list<test_setting_items_in_a_list>`
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_setting_items_in_a_list'
+
+:ref:`I know how to change the value of an item in a list<test_setting_items_in_a_list>`
 
 ----
 
@@ -2724,6 +3047,7 @@ I can use :ref:`indices<test_index_returns_first_position_of_item_in_a_list>` to
 I add another test
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 152
   :emphasize-lines: 3-5
 
@@ -2738,7 +3062,8 @@ I add another test
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
@@ -2753,6 +3078,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change the values to match
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 156
   :emphasize-lines: 1
 
@@ -2773,6 +3099,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 * I can skip the first number when the starting :ref:`index<test_index_returns_first_position_of_item_in_a_list>` is ``0``
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 155
     :emphasize-lines: 2
 
@@ -2781,13 +3108,15 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: ['a', 'b'] != []
 
 * I change the values to match
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 157
     :emphasize-lines: 1
 
@@ -2798,6 +3127,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 157
     :emphasize-lines: 2
 
@@ -2806,13 +3136,15 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: ['b', 'c', 'd'] != []
 
   I add the missing values
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 158
     :emphasize-lines: 1
 
@@ -2823,6 +3155,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 * I can skip the second number when it is bigger than or the same as the number of things in the list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 158
     :emphasize-lines: 2
 
@@ -2831,13 +3164,15 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: ['b', 'c', 'd'] != []
 
   I add the missing values
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 159
     :emphasize-lines: 1
 
@@ -2848,6 +3183,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 * I add another line
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 159
     :emphasize-lines: 2
 
@@ -2856,13 +3192,15 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: ['a', 'b', 'c'] != []
 
 * I change the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 160
     :emphasize-lines: 1
 
@@ -2873,6 +3211,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 * I add another
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 160
     :emphasize-lines: 2
 
@@ -2881,13 +3220,15 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: ['b', 'c'] != []
 
 * I change the expectation
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 161
     :emphasize-lines: 1
 
@@ -2898,6 +3239,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 * I can also skip both numbers
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 161
     :emphasize-lines: 2
 
@@ -2906,13 +3248,15 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
+  :caption: terminal
 
     AssertionError: Lists differ: ['a', 'b', 'c', 'd'] != []
 
   I get the entire list_ back or a :ref:`copy<test_copy_a_list>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 162
     :emphasize-lines: 1
 
@@ -2923,6 +3267,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 * This is also called slicing_, I change the name of the test
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 154
     :emphasize-lines: 1
 
@@ -2938,6 +3283,15 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
 
     # Exceptions seen
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_looking_at_parts_of_a_list_aka_slicing'
 
 :ref:`I know how to look at parts of a list<test_looking_at_parts_of_a_list_aka_slicing>`
 
@@ -2960,6 +3314,7 @@ IndexError_ is raised when I try to get an item from a list_ and use a number th
 I add a failing test
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 162
   :emphasize-lines: 3-5
 
@@ -2974,7 +3329,8 @@ I add a failing test
 
 the terminal_ is my friend, and shows IndexError_
 
-.. code-block:: shell
+.. code-block:: python
+  :caption: terminal
 
   IndexError: list index out of range
 
@@ -2991,6 +3347,7 @@ when I use an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` 
 I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
 .. code-block:: python
+  :caption: lists/tests/test_lists.py
   :lineno-start: 164
   :emphasize-lines: 4-5
 
@@ -3013,6 +3370,7 @@ the test passes.
 * I add IndexError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 171
     :emphasize-lines: 5
 
@@ -3025,6 +3383,7 @@ the test passes.
 * I get IndexError_ when I use a number that is smaller than the number of things in the list_ as a negative number
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 167
     :emphasize-lines: 3
 
@@ -3041,6 +3400,7 @@ the test passes.
 * I add the `assertRaises method`_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 167
     :emphasize-lines: 3
 
@@ -3057,6 +3417,7 @@ the test passes.
 * IndexError_ is also raised when I call the `pop method`_ with an empty list_
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 167
     :emphasize-lines: 5
 
@@ -3075,6 +3436,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 169
     :emphasize-lines: 3-4
 
@@ -3088,6 +3450,7 @@ the test passes.
 * I cannot remove the last item from a list_ that has no items, this is the same as trying to get an item from a list_ that has no items
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 171
     :emphasize-lines: 3
 
@@ -3104,6 +3467,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 171
     :emphasize-lines: 3-4
 
@@ -3113,6 +3477,14 @@ the test passes.
                 [][-1]
 
   the test passes. Any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ raises IndexError_
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_index_error'
 
 :ref:`I know what causes IndexError<test_index_error>`
 
