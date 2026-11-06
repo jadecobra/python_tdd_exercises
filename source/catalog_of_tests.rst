@@ -148,7 +148,7 @@ test_lists
 *********************************************************************************
 
 #. :ref:`test_making_a_list`
-#. :ref:`test_dir_lists`
+#. :ref:`test_dir_list`
 #. :ref:`test_append_adds_item_to_end_of_a_list`
 #. :ref:`test_clear_empties_a_list`
 #. :ref:`test_copy_a_list`

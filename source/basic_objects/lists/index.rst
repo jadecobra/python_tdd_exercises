@@ -316,7 +316,7 @@ An :ref:`iterable<what is an iterable?>` is an :ref:`object<everything is an obj
 ----
 
 *********************************************************************************
-test_dir_lists
+test_dir_list
 *********************************************************************************
 
 I want to test the things I can do with lists_. I use the `dir built-in function`_ to see the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`lists<what is a list?>`
@@ -338,7 +338,7 @@ I add a failing test for the :ref:`attributes<what is an object attribute?>` and
 
           self.assertEqual(list(0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
-      def test_dir_lists(self):
+      def test_dir_list(self):
           self.assertEqual(
               dir(list),
               []
@@ -379,7 +379,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     :lineno-start: 10
     :emphasize-lines: 2
 
-        def test_dir_lists(self):
+        def test_dir_list(self):
             self.maxDiff = None
             self.assertEqual(
                 dir(list),
@@ -395,7 +395,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     :lineno-start: 10
     :emphasize-lines: 5-54
 
-        def test_dir_lists(self):
+        def test_dir_list(self):
                 self.maxDiff = None
                 self.assertEqual(
                     dir(list),
@@ -483,9 +483,9 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     :caption: terminal
     :emphasize-lines: 1
 
-    git commit -am 'add test_dir_lists'
+    git commit -am 'add test_dir_list'
 
-:ref:`The dir built-in function returns a list of attributes and methods<test_dir_lists>`.
+:ref:`The dir built-in function returns a list of attributes and methods<test_dir_list>`.
 
 ----
 
@@ -648,7 +648,6 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 69
-    :emphasize-lines: 4
 
           self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
@@ -777,7 +776,6 @@ the test passes.
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 74
-    :emphasize-lines: 4
 
             self.assertEqual(a_list, [])
 
@@ -907,7 +905,6 @@ the :ref:`method<what is a method?>` returns a copy of the list_.
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 78
-    :emphasize-lines: 4
 
             self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
 
@@ -1113,7 +1110,6 @@ the test passes.
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 84
-    :emphasize-lines: 4
 
             self.assertEqual(a_list.count('not in list'), 0)
 
@@ -1342,7 +1338,6 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when :r
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 94
-    :emphasize-lines: 4
 
             self.assertEqual(another_list, a_list)
 
@@ -1977,7 +1972,6 @@ the test passes.
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 112
-    :emphasize-lines: 4
 
             self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
@@ -2203,7 +2197,6 @@ the test passes.
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 119
-    :emphasize-lines: 4
 
             self.assertEqual(a_list, [0, 1])
 
@@ -2412,7 +2405,6 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 126
-    :emphasize-lines: 5
 
             with self.assertRaises(ValueError):
                 a_list.remove('not in list')
@@ -2444,11 +2436,11 @@ test_reverse_a_list
 
 ----
 
-* I add the next test
+* I add a test for the `reverse method`_
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 121
+    :lineno-start: 126
     :emphasize-lines: 4-6
 
             with self.assertRaises(ValueError):
@@ -2461,26 +2453,32 @@ test_reverse_a_list
 
     'reverse',
 
-  the test is green again. The `reverse method`_ returns :ref:`None<what is None?>`.
+  the `reverse method`_ returns :ref:`None<what is None?>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start:  126
+    :lineno-start:  129
     :emphasize-lines: 2
 
+        def test_reverse(self):
+            a_list = [0, 1, 2, 'n']
             self.assertIsNone(a_list.reverse())
             self.assertEqual(a_list, [0, 1, 2, 'n'])
+
+
+    'reverse',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
+    AssertionError: Lists differ: ['n', 2, 1, 0]
+                               != [0, 1, 2, 'n']
 
-  it reversed the order of the items in the list_
+  the `reverse method`_ reversed the order of the items in the list_.
 
 ----
 
@@ -2490,11 +2488,11 @@ test_reverse_a_list
 
 ----
 
-I change the expectation
+I change the expectation of the :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
-  :lineno-start: 127
+  :lineno-start: 132
   :emphasize-lines: 1
 
           self.assertEqual(a_list, ['n', 2, 1, 0])
@@ -2513,22 +2511,20 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 124
-    :emphasize-lines: 1
+    :lineno-start: 126
+    :emphasize-lines: 4
+
+            with self.assertRaises(ValueError):
+                a_list.remove('not in list')
 
         def test_reverse_a_list(self):
             a_list = [0, 1, 2, 'n']
-            self.assertIsNone(a_list.reverse())
-            self.assertEqual(a_list, ['n', 2, 1, 0])
 
-
-    'reverse',
-
-* I remove the name from the TODO list
+* I remove reverse_ from the TODO list
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 127
+    :lineno-start: 132
 
             self.assertEqual(a_list, ['n', 2, 1, 0])
 
@@ -2560,11 +2556,11 @@ test_sort_a_list
 
 ----
 
-I add a test for the last :ref:`method<what is a method?>` in the TODO list
+I add a test for the `sort method`_
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
-  :lineno-start: 127
+  :lineno-start: 132
   :emphasize-lines: 3-5
 
           self.assertEqual(a_list, ['n', 2, 1, 0])
@@ -2581,9 +2577,10 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  TypeError: '<' not supported between instances of 'str' and 'int'
+  TypeError: '<' not supported between instances
+             of 'str' and 'int'
 
-I have to change ``'n'`` to a number or change the other numbers to strings_
+I have to change ``'n'`` to a number or change the other numbers to strings_.
 
 ----
 
@@ -2597,13 +2594,16 @@ I remove the things around the call then add :ref:`assertRaises<another way to t
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
-  :lineno-start: 129
+  :lineno-start: 134
   :emphasize-lines: 3-4
 
       def test_sort(self):
           a_list = [0, 1, 2, 'n']
           with self.assertRaises(TypeError):
               a_list.sort()
+
+
+  'sort'
 
 the test passes.
 
@@ -2615,11 +2615,11 @@ the test passes.
 
 ----
 
-* I can use the list_ directly in the call
+* I can use the list_ directly in the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 129
+    :lineno-start: 134
     :emphasize-lines: 4
 
       def test_sort(self):
@@ -2633,8 +2633,8 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 129
-    :emphasize-lines: 2-3
+    :lineno-start: 134
+    :emphasize-lines: 2
 
         def test_sort(self):
             with self.assertRaises(TypeError):
@@ -2642,12 +2642,12 @@ the test passes.
 
   still green.
 
-* I add a new list_ where all the items are numbers and another :ref:`assertion<what is an assertion?>`
+* I add a new list_ that has only numbers, then add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 129
-    :emphasize-lines: 5,6
+    :lineno-start: 134
+    :emphasize-lines: 5-6
 
         def test_sort(self):
             with self.assertRaises(TypeError):
@@ -2656,18 +2656,24 @@ the test passes.
             a_list = [0, 1, 2, 3]
             self.assertIsNone(a_list.sort())
 
-  the test is still green, sort_ returns :ref:`None<what is None?>` when :ref:`called<how to call a function with input>`
 
-* I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
+    'sort'
+
+  the test is still green. The `sort method`_ returns :ref:`None<what is None?>` when :ref:`called<how to call a function with input>`.
+
+* I add an :ref:`assertion<what is an assertion?>` to see what the `sort method`_ did to the list_
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 133
+    :lineno-start: 138
     :emphasize-lines: 3
 
             a_list = [0, 1, 2, 3]
             self.assertIsNone(a_list.sort())
             self.assertEqual(a_list, [])
+
+
+    'sort'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2676,25 +2682,29 @@ the test passes.
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-  the list_ stayed the same
+  the list_ stayed the same.
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 135
+    :lineno-start: 140
     :emphasize-lines: 1
 
             self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<what is a method?>` is sort_ and I gave it a list_ that is sorted
+  the test passes. The name of the :ref:`method<what is a method?>` is sort_ and I gave it a list_ that is sorted.
 
 * I change the list_ to see what happens when it is NOT sorted
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 133
-    :emphasize-lines: 1
+    :lineno-start: 134
+    :emphasize-lines: 5
+
+        def test_sort(self):
+            with self.assertRaises(TypeError):
+                [0, 1, 2, 'n'].sort()
 
             a_list = [0, 1, -1, 2, -2, 3, -3]
             self.assertIsNone(a_list.sort())
@@ -2705,15 +2715,16 @@ the test passes.
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3]
+                               != [0, 1, 2, 3]
 
-  the `sort method`_ changed the order of the list_ from smallest to biggest number
+  the `sort method`_ changed the order of the list_ from smallest to biggest number.
 
-* I change the values to match
+* I change the expectation of the :ref:`assertion<what is an assertion?>` to match
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 135
+    :lineno-start: 140
     :emphasize-lines: 1
 
             self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
@@ -2724,25 +2735,20 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 129
-    :emphasize-lines: 1
+    :lineno-start: 132
+    :emphasize-lines: 3
+
+            self.assertEqual(a_list, ['n', 2, 1, 0])
 
         def test_sort_a_list(self):
             with self.assertRaises(TypeError):
                 [0, 1, 2, 'n'].sort()
 
-            a_list = [0, 1, -1, 2, -2, 3, -3]
-            self.assertIsNone(a_list.sort())
-            self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
-
-
-    'sort'
-
 * I remove sort_ from the TODO list
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 135
+    :lineno-start: 140
 
             self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
@@ -2760,7 +2766,7 @@ the test passes.
 
     git commit -am 'add test_sort_a_list'
 
-:ref:`I know how to sort a list<test_sort_a_list>`
+:ref:`I know how to sort a list<test_sort_a_list>`.
 
 ----
 
@@ -2768,7 +2774,7 @@ the test passes.
 test_getting_items_of_a_list
 *********************************************************************************
 
-When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``) to get it
+When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``) to get it.
 
 ----
 
@@ -2778,11 +2784,11 @@ When I want an item that is in a list_, I can give its :ref:`index<test_index_re
 
 ----
 
-I add a failing test
+I add a test for getting items of a list_
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
-  :lineno-start: 135
+  :lineno-start: 140
   :emphasize-lines: 3-5
 
           self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
@@ -2801,7 +2807,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: '1st' != ''
 
-the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``0``
+the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``0``.
 
 ----
 
@@ -2811,11 +2817,11 @@ the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a
 
 ----
 
-I change the value in the test
+I change the value of the expectation
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
-  :lineno-start: 139
+  :lineno-start: 144
   :emphasize-lines: 1
 
           self.assertEqual(a_list[0], '1st')
@@ -2834,11 +2840,16 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 139
-    :emphasize-lines: 2
+    :lineno-start: 142
+    :emphasize-lines: 4
 
+        def test_getting_items_of_a_list(self):
+            a_list = ['1st', '2nd', '3rd', '...last']
             self.assertEqual(a_list[0], '1st')
             self.assertEqual(a_list[a_list.index('1st')], '')
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2847,11 +2858,11 @@ the test passes.
 
     AssertionError: '1st' != ''
 
-* I change the value to match
+* I change the expectation to match
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 140
+    :lineno-start: 145
     :emphasize-lines: 1
 
             self.assertEqual(a_list[a_list.index('1st')], '1st')
@@ -2865,7 +2876,7 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 140
+    :lineno-start: 145
     :emphasize-lines: 2
 
             self.assertEqual(a_list[a_list.index('1st')], '1st')
@@ -2878,11 +2889,11 @@ the test passes.
 
     AssertionError: '1st' != ''
 
-* I change the value to match
+* I change the expectation to match
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 141
+    :lineno-start: 146
     :emphasize-lines: 1
 
             self.assertEqual(a_list[-4], '1st')
@@ -2893,7 +2904,7 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 141
+    :lineno-start: 146
     :emphasize-lines: 2
 
             self.assertEqual(a_list[-4], '1st')
@@ -2910,7 +2921,7 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 142
+    :lineno-start: 147
     :emphasize-lines: 1
 
             self.assertEqual(a_list[2], '3rd')
@@ -2921,7 +2932,7 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 142
+    :lineno-start: 147
     :emphasize-lines: 2
 
             self.assertEqual(a_list[2], '3rd')
@@ -2938,18 +2949,18 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 143
+    :lineno-start: 148
     :emphasize-lines: 1
 
             self.assertEqual(a_list[-2], '3rd')
 
   the test passes.
 
-* I add another line
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 143
+    :lineno-start: 148
     :emphasize-lines: 2
 
             self.assertEqual(a_list[-2], '3rd')
@@ -2966,16 +2977,18 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 144
+    :lineno-start: 149
     :emphasize-lines: 1
 
             self.assertEqual(a_list[1], '2nd')
 
-* I add another
+  the test passes.
+
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 144
+    :lineno-start: 149
     :emphasize-lines: 2
 
             self.assertEqual(a_list[1], '2nd')
@@ -2988,11 +3001,11 @@ the test passes.
 
     AssertionError: '2nd' != ''
 
-* I change the value
+* I change the expectation
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 145
+    :lineno-start: 150
     :emphasize-lines: 1
 
             self.assertEqual(a_list[-3], '2nd')
@@ -3003,7 +3016,7 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 145
+    :lineno-start: 150
     :emphasize-lines: 2
 
             self.assertEqual(a_list[-3], '2nd')
@@ -3016,11 +3029,11 @@ the test passes.
 
     AssertionError: '...last' != ''
 
-* I change the value
+* I change the expectation
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 146
+    :lineno-start: 151
     :emphasize-lines: 1
 
             self.assertEqual(a_list[3], '...last')
@@ -3031,7 +3044,7 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 146
+    :lineno-start: 151
     :emphasize-lines: 2
 
             self.assertEqual(a_list[3], '...last')
@@ -3044,11 +3057,11 @@ the test passes.
 
     AssertionError: '...last' != ''
 
-  I make the values match
+* I make the expectation match
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 137
+    :lineno-start: 142
     :emphasize-lines: 11
 
         def test_getting_items_of_a_list(self):
@@ -3614,6 +3627,156 @@ the test passes.
 ----
 
 *********************************************************************************
+test_dir_list with extend and sort
+*********************************************************************************
+
+The :ref:`attributes and methods of a list<test_dir_list>` look like the :ref:`attributes and methods of an object<test_dir_object>` with extra things and since they are both lists_, I should be able to make the :ref:`attributes and methods of a list<test_dir_list>` by adding the "extra" to the :ref:`attributes and methods of an object<test_dir_object>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of a list<test_dir_list>`, then add an :ref:`assertion<what is an assertion?>` for it, in :ref:`test_dir_list`
+
+.. code-block:: python
+  :caption: lists/tests/test_list.py
+  :lineno-start: 10
+  :emphasize-lines: 3-9
+
+  def test_dir_list(self):
+      self.maxDiff = None
+      dir_list = dir(object)
+      dir_list.extend((
+          'append', 'clear', 'copy',
+          'count', 'extend', 'index',
+          'insert', 'pop', 'remove',
+          'reverse', 'sort'
+      ))
+      self.assertEqual(dir(list), dir_list)
+      self.assertEqual(
+          dir(list),
+          [
+                '__add__',
+                '__class__',
+                '__class_getitem__',
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+   AssertionError: Lists differ: [
+      '__add__', '__class__', '__class_getitem__',[549 chars]ort'
+  ] != [
+      '__class__', '__delattr__', '__dir__', '__do[370 chars]ort'
+  ]
+
+with a note
+
+.. code-block:: python
+  :caption: terminal
+
+  First list contains 13 additional elements.
+
+I am close, but not quite.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add the thirteen additional elements
+
+  .. code-block:: python
+    :caption: lists/tests/test_list.py
+    :lineno-start: 13
+    :emphasize-lines: 2-7
+
+            dir_list.extend((
+                '__add__', '__class_getitem__',
+                '__contains__', '__delitem__',
+                '__getitem__', '__iadd__',
+                '__imul__', '__iter__', '__len__',
+                '__mul__', '__reversed__',
+                '__rmul__', '__setitem__',
+                'append', 'clear', 'copy',
+                'count', 'extend', 'index',
+                'insert', 'pop', 'remove',
+                'reverse', 'sort'
+            ))
+
+  the terminal_ does not feel like my friend, it shows :ref:`AssertionError<what causes AssertionError?>`. The details show what I added as missing and as extra. How can it be both? It looks like the problem is the position of the extra items.
+
+* I add a :ref:`call to the sort method<test_sort_a_list>`
+
+  .. code-block:: python
+    :caption: lists/tests/test_list.py
+    :lineno-start: 13
+    :emphasize-lines: 13
+
+            dir_list.extend((
+                '__add__', '__class_getitem__',
+                '__contains__', '__delitem__',
+                '__getitem__', '__iadd__',
+                '__imul__', '__iter__', '__len__',
+                '__mul__', '__reversed__',
+                '__rmul__', '__setitem__',
+                'append', 'clear', 'copy',
+                'count', 'extend', 'index',
+                'insert', 'pop', 'remove',
+                'reverse', 'sort'
+            ))
+            dir_list.sort()
+            self.assertEqual(dir(list), dir_list)
+            self.assertEqual(
+                dir(list),
+                [
+                    '__add__',
+                    '__class__',
+
+
+  the test passes, a reminder that :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_list`
+
+  .. code-block:: python
+    :caption: lists/tests/test_list.py
+    :lineno-start: 25
+
+            dir_list.sort()
+            self.assertEqual(dir(list), dir_list)
+
+        def test_append_adds_item_to_end_of_a_list(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_dir_list with extend and sort'
+
+:ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
@@ -3642,7 +3805,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran these tests for the :ref:`methods of lists<test_dir_lists>` from append_ to sort_
+I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran these tests for the :ref:`methods of lists<test_dir_list>` from append_ to sort_
 
 * :ref:`test_append_adds_item_to_end_of_a_list`
 * :ref:`test_clear_empties_a_list`
