@@ -2235,11 +2235,11 @@ test_remove_first_time_item_is_in_a_list
 
 ----
 
-time for the next :ref:`method<what is a method?>`
+time for the `remove method`_
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
-  :lineno-start: 114
+  :lineno-start: 119
   :emphasize-lines: 3-5
 
           self.assertEqual(a_list, [0, 1])
@@ -2271,12 +2271,12 @@ I add a value to the :ref:`call<how to call a function with input>`
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
-  :lineno-start: 118
+  :lineno-start: 123
   :emphasize-lines: 1
 
           self.assertIsNone(a_list.remove(0))
 
-the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
+the test is green again. The `remove method`_ returns :ref:`None<what is None?>`.
 
 ----
 
@@ -2290,11 +2290,16 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 118
-    :emphasize-lines: 2
+    :lineno-start: 121
+    :emphasize-lines: 4
 
+        def test_remove(self):
+            a_list = [0, 1, 2, 'n']
             self.assertIsNone(a_list.remove(0))
             self.assertEqual(a_list, [0, 1, 2, 'n'])
+
+
+    'remove',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2303,13 +2308,13 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
-  the :ref:`method<what is a method?>` removes the item given as input from the list_
+  the `remove method`_ removes the item given as input, from the list_.
 
 * I change the expectation
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 119
+    :lineno-start: 124
     :emphasize-lines: 1
 
             self.assertEqual(a_list, [1, 2, 'n'])
@@ -2320,7 +2325,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 116
+    :lineno-start: 121
     :emphasize-lines: 2
 
         def test_remove(self):
@@ -2344,17 +2349,23 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
             self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
-  the test passes. The `remove method`_ only removes the first time something shows up in the list
+  the test passes. The `remove method`_ only removes the first time something shows up in the list_.
 
 * I want to see what happens when I try to remove_ something that is not in the list_
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
     :lineno-start: 119
-    :emphasize-lines: 2
+    :emphasize-lines: 5
 
+        def test_remove(self):
+            a_list = [0, 1, 0, 2, 0, 'n']
+            self.assertIsNone(a_list.remove(0))
             self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
             self.assertIsNone(a_list.remove('not in list'))
+
+
+    'remove',
 
   the terminal_ is my friend, and shows ValueError_
 
@@ -2363,13 +2374,16 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
     ValueError: list.remove(x): x not in list
 
-* I remove the things around the call then add :ref:`assertRaises<another way to test if an Exception is raised>`
+* I remove the things around the :ref:`call<how to call a function with input>` then add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 119
-    :emphasize-lines: 3-4
+    :lineno-start: 121
+    :emphasize-lines: 6-7
 
+        def test_remove(self):
+            a_list = [0, 1, 0, 2, 0, 'n']
+            self.assertIsNone(a_list.remove(0))
             self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
             with self.assertRaises(ValueError):
@@ -2384,25 +2398,21 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 116
-    :emphasize-lines: 1
+    :lineno-start: 119
+    :emphasize-lines: 3
+
+            self.assertEqual(a_list, [0, 1])
 
         def test_remove_first_time_item_is_in_a_list(self):
             a_list = [0, 1, 0, 2, 0, 'n']
             self.assertIsNone(a_list.remove(0))
-            self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
-
-            with self.assertRaises(ValueError):
-                a_list.remove('not in list')
-
-
-    'remove'
 
 * I take out remove_ from the TODO list
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 121
+    :lineno-start: 126
+    :emphasize-lines: 5
 
             with self.assertRaises(ValueError):
                 a_list.remove('not in list')
@@ -2415,9 +2425,9 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am \-2
+    git commit -am \
     'add test_remove_first_time_item_is_in_a_list'
 
 :ref:`I know how to remove the first time something is in a list<test_remove_first_time_item_is_in_a_list>`
