@@ -1,7 +1,7 @@
 import unittest
 
 
-class TestLists(unittest.TestCase):
+class Testlists(unittest.TestCase):
 
     def test_making_a_list(self):
         self.assertEqual(list(), [])
@@ -9,59 +9,22 @@ class TestLists(unittest.TestCase):
 
     def test_dir_list(self):
         self.maxDiff = None
-        self.assertEqual(
-            dir(list),
-            [
-                '__add__',
-                '__class__',
-                '__class_getitem__',
-                '__contains__',
-                '__delattr__',
-                '__delitem__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getitem__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__iadd__',
-                '__imul__',
-                '__init__',
-                '__init_subclass__',
-                '__iter__',
-                '__le__',
-                '__len__',
-                '__lt__',
-                '__mul__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__reversed__',
-                '__rmul__',
-                '__setattr__',
-                '__setitem__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__',
-                'append',
-                'clear',
-                'copy',
-                'count',
-                'extend',
-                'index',
-                'insert',
-                'pop',
-                'remove',
-                'reverse',
-                'sort',
-            ]
-        )
+
+        dir_list = dir(object)
+        dir_list.extend((
+            '__add__', '__class_getitem__',
+            '__contains__', '__delitem__',
+            '__getitem__', '__iadd__',
+            '__imul__', '__iter__', '__len__',
+            '__mul__', '__reversed__',
+            '__rmul__', '__setitem__',
+            'append', 'clear', 'copy',
+            'count', 'extend', 'index',
+            'insert', 'pop', 'remove',
+            'reverse', 'sort',
+        ))
+        dir_list.sort()
+        self.assertEqual(dir(list), dir_list)
 
     def test_append_adds_item_to_end_of_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -87,6 +50,11 @@ class TestLists(unittest.TestCase):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.extend((2, 1, 0)))
         self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
+
+        another_list = [0, 1, 2, 'n']
+        for number in (2, 1, 0):
+            another_list.append(number)
+        self.assertEqual(another_list, a_list)
 
     def test_index_returns_first_position_of_item_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
@@ -149,9 +117,11 @@ class TestLists(unittest.TestCase):
     def test_setting_items_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         a_list[-1] = '4th'
-        self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
+        self.assertEqual(
+            a_list, ['1st', '2nd', '3rd', '4th']
+        )
 
-    def test_looking_at_parts_of_a_list_aka_slicing(self):
+    def test_getting_parts_of_a_list_aka_slicing(self):
         a_list = ['a', 'b', 'c', 'd']
         self.assertEqual(a_list[0:2], ['a', 'b'])
         self.assertEqual(a_list[:2], ['a', 'b'])

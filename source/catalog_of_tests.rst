@@ -162,7 +162,7 @@ test_lists
 #. :ref:`test_sort_a_list`
 #. :ref:`test_getting_items_of_a_list`
 #. :ref:`test_setting_items_in_a_list`
-#. :ref:`test_looking_at_parts_of_a_list_aka_slicing`
+#. :ref:`test_getting_parts_of_a_list_aka_slicing`
 #. :ref:`test_index_error`
 
 *********************************************************************************

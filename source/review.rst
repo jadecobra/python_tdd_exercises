@@ -281,7 +281,7 @@ lists review
 * :ref:`how can I sort a list?<test_sort_a_list>`
 * :ref:`how can I get items of a list?<test_getting_items_of_a_list>`
 * :ref:`how can I change an item in a list?<test_setting_items_in_a_list>`
-* :ref:`how can I see only parts of a list?<test_looking_at_parts_of_a_list_aka_slicing>`
+* :ref:`how can I see only parts of a list?<test_getting_parts_of_a_list_aka_slicing>`
 * :ref:`what causes IndexError?<test_index_error>`
 
 ----
