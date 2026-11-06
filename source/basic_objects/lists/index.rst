@@ -2033,7 +2033,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'n' is not None
 
-The `pop method`_ returns the last item in the list_
+The `pop method`_ returns the last item in the list_.
 
 ----
 
@@ -2103,11 +2103,11 @@ the test passes.
     AssertionError: Lists differ: [0, 1, 2]
                                != [0, 1, 2, 'n']
 
-* I change the values in the test to match
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 112
+    :lineno-start: 117
     :emphasize-lines: 1
 
             self.assertEqual(a_list, [0, 1, 2])
@@ -2118,11 +2118,17 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 112
-    :emphasize-lines: 2
+    :lineno-start: 114
+    :emphasize-lines: 5
 
+        def test_pop(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertEqual(a_list.pop(), 'n')
             self.assertEqual(a_list, [0, 1, 2])
             self.assertEqual(a_list.pop(), 'n')
+
+
+    'pop',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2131,11 +2137,13 @@ the test passes.
 
     AssertionError: 2 != 'n'
 
-* I change the value in the expectation
+  The `pop method`_ returns the last item in the list_.
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 113
+    :lineno-start: 118
     :emphasize-lines: 1
 
             self.assertEqual(a_list.pop(), 2)
@@ -2146,11 +2154,18 @@ the test passes.
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 113
+    :lineno-start: 114
     :emphasize-lines: 2
 
+        def test_pop(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertEqual(a_list.pop(), 'n')
+            self.assertEqual(a_list, [0, 1, 2])
             self.assertEqual(a_list.pop(), 2)
             self.assertEqual(a_list, [0, 1, 2])
+
+
+    'pop',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2159,11 +2174,11 @@ the test passes.
 
     AssertionError: Lists differ: [0, 1] != [0, 1, 2]
 
-* I change the values in the test to match
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 114
+    :lineno-start: 119
     :emphasize-lines: 1
 
             self.assertEqual(a_list, [0, 1])
@@ -2173,23 +2188,22 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 112
+    :emphasize-lines: 3
+
+            self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
         def test_pop_removes_and_returns_last_item_from_a_list(self):
             a_list = [0, 1, 2, 'n']
             self.assertEqual(a_list.pop(), 'n')
-            self.assertEqual(a_list, [0, 1, 2])
-            self.assertEqual(a_list.pop(), 2)
-            self.assertEqual(a_list, [0, 1])
-
-
-    'pop',
 
 * I take out pop_ from the TODO list
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
-    :lineno-start: 114
+    :lineno-start: 119
+    :emphasize-lines: 4
 
             self.assertEqual(a_list, [0, 1])
 
@@ -2207,7 +2221,7 @@ the test passes.
     git commit -am \
     'add test_pop_removes_and_returns_last_item_from_a_list'
 
-:ref:`I know how to get and remove the last item from a list<test_pop_removes_and_returns_last_item_from_a_list>`
+:ref:`I know how to get and remove the last item from a list<test_pop_removes_and_returns_last_item_from_a_list>`.
 
 ----
 
