@@ -493,7 +493,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     AssertionError: {0: Title(tag='h1')} is not None : {}
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 19

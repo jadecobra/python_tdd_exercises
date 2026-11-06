@@ -1111,7 +1111,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
-I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
   :lineno-start: 103
@@ -1269,7 +1269,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1539,7 +1539,7 @@ the test passes.
 
     AssertionError: 'default' is not None : default
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 118
@@ -1767,7 +1767,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the values are the same
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 129
@@ -1984,7 +1984,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: ['key'] is not None : ['key']
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 142
@@ -2240,7 +2240,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     AssertionError: 'default' is not None : default
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 155
@@ -2419,7 +2419,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: ('key', 'value') is not None : ('key', 'value')
 
-I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block::
   :lineno-start: 167
@@ -2657,7 +2657,7 @@ the test passes.
 
     AssertionError: 'default' is not None : default
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 178
@@ -3213,7 +3213,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     AssertionError: ['value'] is not None : ['value']
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 212

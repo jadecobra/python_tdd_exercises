@@ -220,7 +220,7 @@ I want to add buttons for the numbers and operations.
 
     AssertionError: '<-' is not None : <-
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -729,7 +729,7 @@ the test passes.
 
             self.assertIsNone(self.tester.columns[0].children, {})
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 37
