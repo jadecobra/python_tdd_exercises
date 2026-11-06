@@ -2430,7 +2430,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
     git commit -am \
     'add test_remove_first_time_item_is_in_a_list'
 
-:ref:`I know how to remove the first time something is in a list<test_remove_first_time_item_is_in_a_list>`
+:ref:`I know how to remove the first time something is in a list<test_remove_first_time_item_is_in_a_list>`.
 
 ----
 
