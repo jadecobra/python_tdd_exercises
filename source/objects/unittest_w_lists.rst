@@ -1,46 +1,11 @@
 .. meta::
-  :description: Another way to write tests in Python TDD: the unittest.TestCase class from the standard library and its assert methods as alternatives to bare assert. RED/GREEN/REFACTOR on the unittest project (uv init, tests package, pytest-watcher): dir(unittest) and dir(unittest.TestCase); two ways each for assertIsNot (X is not Y), assertIs, assertNotEqual, assertEqual, assertNotIsInstance / isinstance, assertIsInstance, assertNotIsSubclass / issubclass, assertIsSubclass (Python 3.14+). Path from class call (TypeError missing self) to instance call, then TOOLBOX, TestUnittest with @staticmethod, then subclass unittest.TestCase and self.assert*. Errors shown: unexpectedly identical: None, False is not True, True == True, 0.0 != '0.0', is an instance of TestCase, is not a class, TypeError missing arguments, AttributeError after dropping TOOLBOX. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, another way to write tests, unittest.TestCase, unittest assert methods, assertIsNot, assertIs, assertNotEqual, assertEqual, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, two ways to test, bare assert vs self.assert, dir(unittest), TestCase dir, unexpectedly identical None, uv init unittest pytest-watcher, TestUnittest subclass, TOOLBOX refactor, staticmethod, self.assertEqual, python TDD unittest, is vs == vs assertIs, isinstance issubclass unittest, Python 3.14 assertIsSubclass, AttributeError TOOLBOX, python beginner unittest tutorial
+  :description: 
+  :keywords:
 
 .. include:: ../links.rst
 
-.. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
-.. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
-.. _unittest: https://docs.python.org/3/library/unittest.html
-.. _unittest library: unittest_
-.. _unittest module: unittest_
-.. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
-.. _unittest.TestCase.assertNotIsInstance: assertNotIsInstance_
-.. _assertNotIsInstance method: assertNotIsInstance_
-.. _assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
-.. _unittest.TestCase.assertIsInstance: assertIsInstance_
-.. _assertIsInstance method: assertIsInstance_
-.. _assertNotIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotIsSubclass
-.. _assertNotIsSubobject method: assertNotIsSubclass_
-.. _unittest.TestCase.assertNotIsSubclass: assertNotIsSubclass_
-.. _assertIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIsSubclass
-.. _assertIsSubobject method: assertIsSubclass_
-.. _unittest.TestCase.assertIsSubclass: assertIsSubclass_
-.. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
-.. _assert methods: `assert method`_
-.. _unittest.TestCase.assertEqual: assertEqual_
-.. _unittest.TestCase.assertNotEqual: assertNotEqual_
-.. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
-.. _assertEqual method: assertEqual_
-.. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
-.. _assertIs: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIs
-.. _assertIs method: assertIs_
-.. _unittest.TestCase.assertIs: assertIs_
-.. _assertIsNot: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIsNot
-.. _assertIsNot method: assertIsNot_
-.. _unittest.TestCase.assertIsNot: assertIsNot_
-.. _assertNotEqual method: assertNotEqual_
-.. _unittest.TestCase class: `unittest.TestCase`_
-.. _TestCase class: `unittest.TestCase`_
-.. _click here to see the source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
-
 #################################################################################
-another way to write tests
+test unittest with lists
 #################################################################################
 
 I used unittest_ in :ref:`how to make a Python Test Driven Development environment manually` to run tests manually before I learned to :ref:`run them automatically<how to run tests automatically>` with `pytest-watcher`_.
