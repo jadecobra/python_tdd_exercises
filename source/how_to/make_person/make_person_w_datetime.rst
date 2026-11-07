@@ -1145,7 +1145,7 @@ the test passes.
                 year_of_birth,
             ):
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age method>` no longer uses anything that belongs to the :ref:`TestPerson class<add TestPerson object>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age method>` no longer uses anything that belongs to the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1197,7 +1197,7 @@ the test passes.
                 year_of_birth,
             ):
 
-* I remove the :ref:`this_year attribute<extract this_year attribute>` from the :ref:`TestPerson class<add TestPerson object>` since it is no longer used
+* I remove the :ref:`this_year attribute<extract this_year attribute>` from the :ref:`TestPerson object<add TestPerson object>` since it is no longer used
 
   .. code-block:: python
     :lineno-start: 6
@@ -1300,7 +1300,7 @@ The tests use the right calculation for the age, and the solution still uses a f
             first_name, last_name, year_of_birth,
         ):
 
-* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person object>`
+* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1585,7 +1585,7 @@ the test passes.
             year_of_birth=datetime.date.today().year-121
         ).say_hello()
 
-    def test_dir_person_class(self):
+    def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1616,7 +1616,7 @@ the test passes.
             # ).say_hello() fails
             # because age > 120
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
 
@@ -1683,7 +1683,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
                 AssertionError
             )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1753,7 +1753,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
                 # AssertionError
             # )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
 
@@ -1773,7 +1773,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
             # ).say_hello() fails
             # because age < 0
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -1803,7 +1803,7 @@ I made an :ref:`object attribute for this_year earlier<extract this_year attribu
 
 * I go back to the terminal_ where the tests are running
 
-* I add back the :ref:`object attribute<what is an object attribute?>` for the current year to the :ref:`TestPerson class<add TestPerson object>`
+* I add back the :ref:`object attribute<what is an object attribute?>` for the current year to the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1938,7 +1938,7 @@ the tests are green again.
             # ).say_hello() fails
             # because age < 0
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   still green.
 
@@ -1957,7 +1957,7 @@ the tests are green again.
             # ).say_hello() fails
             # because age < 0
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -2000,7 +2000,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
                 sex='M',
             ).say_hello()
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2018,7 +2018,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
 ----
 
-* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`constructor method<the constructor method>` of the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
+* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`constructor method<the constructor method>` of the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2089,7 +2089,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
                 year_of_birth=False,
             ).say_hello()
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>` for the age being greater than ``120``. Wait a minute! I was expecting that to fail at ``assert isinstance(year_of_birth, int)``. This means :ref:`a boolean is also an integer<test_what_is_false>`.
 
@@ -2108,7 +2108,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
                 year_of_birth=2026.0,
             ).say_hello()
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2128,7 +2128,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
                 year_of_birth='2026',
             ).say_hello()
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2149,7 +2149,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
                 year_of_birth=(2026,),
             ).say_hello()
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
 * I comment out the :ref:`call to the say_hello method<test_classy_person_says_hello>` then add a comment about the test
 
@@ -2170,11 +2170,11 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
             # ).say_hello() fails
             # because year_of_birth is not an integer
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
 
-* I remove the commented line from the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
+* I remove the commented line from the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4

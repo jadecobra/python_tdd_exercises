@@ -199,7 +199,7 @@ class TestPerson(unittest.TestCase):
         # ).say_hello() fails
         # because year_of_birth is not an integer
 
-    def test_dir_person_class(self):
+    def test_dir_person_object(self):
         self.assertEqual(
             dir(src.person.Person),
             [

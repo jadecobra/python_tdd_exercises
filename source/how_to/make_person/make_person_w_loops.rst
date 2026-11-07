@@ -1,6 +1,6 @@
 .. meta::
-  :description: Pumping Python, how to make a person with loops, by Johnny Blase. Repeated person checks become one for loop over a people tuple of tuples on TestPerson. Each row is year_of_birth, is_citizen, passed_test, then the expected can_vote and can_get_license results. test_person_class, test_say_hello_function, and test_person_factory share self.first_name, self.last_name, self.sex, self.this_year, younger_than_18, and not_younger_than_18. subTest(a_person) names the failing row. Non-integer rows None, 2026.0, '2026', and (2026,) hit except TypeError and assert "'{year_of_birth}' is not an integer". test_if_person_is_not_alive uses one with for subTest and assertRaisesRegex(ValueError, f'a {age} year old person is not alive.') on this_year+1 and this_year-121. test_when_person_is_older_than_120 and test_when_year_of_birth_is_the_future are removed because that test covers both. A wrong regex such as BOOM!!! fails as AssertionError: "BOOM!!!" does not match "a -1 year old person is too old to be alive." before the message becomes "is not alive." dir(Person) tests remain.
-  :keywords: for loop, people tuple, subTest, test_person_class, test_person_factory, test_say_hello_function, test_if_person_is_not_alive, assertRaisesRegex, ValueError, TypeError, year_of_birth, can_vote, can_get_license, this_year, Pumping Python, Johnny Blase
+  :description: Pumping Python, how to make a person with loops, by Johnny Blase. Repeated person checks become one for loop over a people tuple of tuples on TestPerson. Each row is year_of_birth, is_citizen, passed_test, then the expected can_vote and can_get_license results. test_person_object, test_say_hello_function, and test_person_factory share self.first_name, self.last_name, self.sex, self.this_year, younger_than_18, and not_younger_than_18. subTest(a_person) names the failing row. Non-integer rows None, 2026.0, '2026', and (2026,) hit except TypeError and assert "'{year_of_birth}' is not an integer". test_if_person_is_not_alive uses one with for subTest and assertRaisesRegex(ValueError, f'a {age} year old person is not alive.') on this_year+1 and this_year-121. test_when_person_is_older_than_120 and test_when_year_of_birth_is_the_future are removed because that test covers both. A wrong regex such as BOOM!!! fails as AssertionError: "BOOM!!!" does not match "a -1 year old person is too old to be alive." before the message becomes "is not alive." dir(Person) tests remain.
+  :keywords: for loop, people tuple, subTest, test_person_object, test_person_factory, test_say_hello_function, test_if_person_is_not_alive, assertRaisesRegex, ValueError, TypeError, year_of_birth, can_vote, can_get_license, this_year, Pumping Python, Johnny Blase
 .. include:: ../../links.rst
 
 .. _how to make a person with loops:
@@ -664,7 +664,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
   the tests are still green.
 
-* I remove the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from the :ref:`TestPerson class<add TestPerson object>`
+* I remove the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1328,7 +1328,7 @@ because
 
         def test_person_factory(self):
 
-* I remove the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from the :ref:`TestPerson class<add TestPerson object>`
+* I remove the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1463,7 +1463,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 extract test_say_hello_method
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello method<add say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello method<add say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`
 
 .. code-block:: python
 
@@ -1491,7 +1491,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
 ----
 
-I add a test for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person object>`
+I add a test for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>`
 
 .. code-block:: python
   :lineno-start: 13
@@ -2118,7 +2118,7 @@ the subTest method
 
         def test_say_hello_function(self):
 
-* I remove the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` from the :ref:`TestPerson class<add TestPerson object>`
+* I remove the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` from the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2139,7 +2139,7 @@ the subTest method
 
     git commit -am 'extract test_say_hello_method'
 
-For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>` which makes an ``age`` :ref:`attribute<what is an object attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>` with the given ``year_of_birth`` parameter.
+For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` which makes an ``age`` :ref:`attribute<what is an object attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>` with the given ``year_of_birth`` parameter.
 
 * If the :ref:`call raises TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the error message is correct
 
@@ -2204,7 +2204,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
                   else:
                       ...
 
-* If the :ref:`call to the calculate_age function<extract calculate_age function>` from the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person object>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<add say_hello method>` matches the expectation
+* If the :ref:`call to the calculate_age function<extract calculate_age function>` from the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<add say_hello method>` matches the expectation
 
   .. code-block:: shell
 
@@ -2283,7 +2283,7 @@ extract people object attribute
 
 :ref:`test_person_factory<extract test_person_factory>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
 
-* I add an :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson object>`
+* I add an :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2413,7 +2413,7 @@ extract people object attribute
 extract test_if_person_can_vote
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 .. code-block:: python
 
@@ -2429,7 +2429,7 @@ The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mar
 
 I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
-The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot vote` or :green:`can vote` based on the following inputs
+The :ref:`can_vote method of the Person object<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot vote` or :green:`can vote` based on the following inputs
 
 * is the person younger than 18?
 * is the person a citizen?
@@ -2811,7 +2811,7 @@ the test passes.
 extract test_if_person_can_get_license
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 .. code-block:: python
 
@@ -2829,7 +2829,7 @@ The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mar
 
 I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
-The :ref:`can_get_license method of the Person class<add can_get_license method>` also sends two parameters when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot get a license` or :green:`can get a license` based on the following inputs
+The :ref:`can_get_license method of the Person object<add can_get_license method>` also sends two parameters when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot get a license` or :green:`can get a license` based on the following inputs
 
 * is the person younger than 18?
 * did the person pass the test?
@@ -3051,7 +3051,7 @@ extract truth_table object attribute
 
 The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`. I can make an :ref:`object attribute<what is an object attribute?>` to remove the repetition.
 
-* I add an :ref:`object attribute<what is an object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson object>`
+* I add an :ref:`object attribute<what is an object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -3165,10 +3165,10 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 ----
 
 *********************************************************************************
-extract test_person_class
+extract test_person_object
 *********************************************************************************
 
-:ref:`test_say_hello_method<extract test_say_hello_method>`, :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person object>`, then :ref:`call methods<how to call a function with input>` and compare the results in :ref:`assertions<what is an assertion?>`
+:ref:`test_say_hello_method<extract test_say_hello_method>`, :ref:`test_if_person_can_vote<extract test_if_person_can_vote>` and :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>`, then :ref:`call methods<how to call a function with input>` and compare the results in :ref:`assertions<what is an assertion?>`
 
 .. code-block:: python
 
@@ -3210,7 +3210,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
 ----
 
-I add a test with the code from :ref:`test_say_hello_method<extract test_say_hello method>` for the :ref:`Person class<add Person object>`
+I add a test with the code from :ref:`test_say_hello_method<extract test_say_hello method>` for the :ref:`Person object<add Person object>`
 
 .. code-block:: python
   :lineno-start: 23
@@ -3219,7 +3219,7 @@ I add a test with the code from :ref:`test_say_hello_method<extract test_say_hel
     def calculate_age(self, year_of_birth):
         return self.this_year - year_of_birth
 
-    def test_person_class(self):
+    def test_person_object(self):
         for a_person in self.people:
             first_name = a_person[0]
             last_name = a_person[1]
@@ -3324,7 +3324,7 @@ the test passes.
 
         def test_say_hello_function(self):
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` to :ref:`test_person_class<extract test_person_class>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` to :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -3356,7 +3356,7 @@ the test passes.
     SUBFAILED(first_name='john', year_of_birth=1980)
         AssertionError: True != False
 
-* I add values for ``is_citizen`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I add values for ``is_citizen`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -3388,13 +3388,13 @@ the test passes.
             )
         )
 
-* I use the values for the ``is_citizen`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person object>` in :ref:`test_person_class<extract test_person_class>`
+* I use the values for the ``is_citizen`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person object<add Person object>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 7
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 first_name = a_person[0]
                 last_name = a_person[1]
@@ -3443,7 +3443,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` to :ref:`test_person_class<extract test_person_class>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` to :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -3476,7 +3476,7 @@ the test passes.
     SUBFAILED(first_name='john', year_of_birth=1980)
         AssertionError: False != True
 
-* I add values for ``passed_test`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I add values for ``passed_test`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -3505,13 +3505,13 @@ the test passes.
             )
         )
 
-* I use the values for the ``passed_test`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person class<add Person object>` in :ref:`test_person_class<extract test_person_class>`
+* I use the values for the ``passed_test`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person object<add Person object>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 8
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 first_name = a_person[0]
                 last_name = a_person[1]
@@ -3566,7 +3566,7 @@ the test passes.
 
   the test passes.
 
-* :ref:`test_person_class<extract test_person_class>` is missing the cases for if a person :green:`younger` than ``18``
+* :ref:`test_person_object<extract test_person_object>` is missing the cases for if a person :green:`younger` than ``18``
 
   ==============  ============== ==============
   age < 18        is citizen     can vote
@@ -3663,13 +3663,13 @@ the test passes.
 
   I need a better error message, so I know which tuples_ caused the failures.
 
-* I change the names in :ref:`the subTest method` to show the entire tuple_ in :ref:`test_person_class<extract test_person_class>`
+* I change the names in :ref:`the subTest method` to show the entire tuple_ in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 65
     :emphasize-lines: 10
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 first_name = a_person[0]
                 last_name = a_person[1]
@@ -3757,13 +3757,13 @@ the test passes.
             )
         )
 
-* I remove the ``is_citizen`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` in :ref:`test_person_class<extract test_person_class>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
+* I remove the ``is_citizen`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` in :ref:`test_person_object<extract test_person_object>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 65
     :emphasize-lines: 7
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 first_name = a_person[0]
                 last_name = a_person[1]
@@ -3892,13 +3892,13 @@ the test passes.
 
         def calculate_age(self, year_of_birth):
 
-* I remove the ``passed_test`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` in :ref:`test_person_class<extract test_person_class>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
+* I remove the ``passed_test`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 65
     :emphasize-lines: 8
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 first_name = a_person[0]
                 last_name = a_person[1]
@@ -3949,12 +3949,12 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_person_class<extract test_person_class>`
+* I remove the commented lines from :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 65
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 first_name = a_person[0]
                 last_name = a_person[1]
@@ -4045,7 +4045,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract test_person_class'
+    git commit -am 'extract test_person_object'
 
 ----
 
@@ -4226,13 +4226,13 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
         people = (
 
-* I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``, move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_person_class<extract test_person_class>`
+* I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``, move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 74
     :emphasize-lines: 2-4, 7
 
-        def test_person_class(self):
+        def test_person_object(self):
             first_name = self.first_name
             last_name = self.last_name
             sex = self.sex
@@ -4365,13 +4365,13 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
         def test_person_factory(self):
 
-* I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_person_class<extract test_person_class>`
+* I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 74
     :emphasize-lines: 2, 8-10
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 year_of_birth = a_person[3]
 
@@ -4429,7 +4429,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   .. code-block:: python
 
-    SUBFAILED[(2008, True, True, True, True)] ...test_person_class -
+    SUBFAILED[(2008, True, True, True, True)] ...test_person_object -
         IndexError: tuple index out of range
     SUBFAILED[(2008, True, True, True, True)] ...test_say_hello_function -
         ValueError
@@ -4528,13 +4528,13 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   the tests are still green.
 
-* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_class<extract test_person_class>`
+* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 75
     :emphasize-lines: 3, 12-13
 
-        def test_person_class(self):
+        def test_person_object(self):
             for a_person in self.people:
                 year_of_birth = a_person[0]
 
@@ -4649,24 +4649,24 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   .. code-block:: python
 
-    SUBFAILED[(2008, True, True, True, True)] ...test_person_class -
+    SUBFAILED[(2008, True, True, True, True)] ...test_person_object -
         IndexError: tuple index out of range
-    SUBFAILED[(2008, True, False, True, False)] ...test_person_class -
+    SUBFAILED[(2008, True, False, True, False)] ...test_person_object -
         IndexError: tuple index out of range
-    SUBFAILED[(2008, False, True, False, True)] ...test_person_class -
+    SUBFAILED[(2008, False, True, False, True)] ...test_person_object -
         IndexError: tuple index out of range
-    SUBFAILED[(2008, False, False, False, False)] ...test_person_class -
+    SUBFAILED[(2008, False, False, False, False)] ...test_person_object -
         IndexError: tuple index out of range
-    SUBFAILED[(2009, True, True, False, False)] ...test_person_class -
+    SUBFAILED[(2009, True, True, False, False)] ...test_person_object -
         IndexError: tuple index out of range
-    SUBFAILED[(2009, False, True, False, False)] ...test_person_class -
+    SUBFAILED[(2009, False, True, False, False)] ...test_person_object -
         IndexError: tuple index out of range
-    SUBFAILED[(2009, True, False, False, False)] ...test_person_class -
+    SUBFAILED[(2009, True, False, False, False)] ...test_person_object -
         IndexError: tuple index out of range
-    SUBFAILED[(2009, False, False, False, False)] ...test_person_class -
+    SUBFAILED[(2009, False, False, False, False)] ...test_person_object -
         IndexError: tuple index out of range
 
-* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_class<extract test_person_class>`
+* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -5260,7 +5260,7 @@ the test passes.
 ----
 
 *********************************************************************************
-move test_when_year_of_birth_is_not_an_integer to test_person_class
+move test_when_year_of_birth_is_not_an_integer to test_person_object
 *********************************************************************************
 
 :ref:`test_when_year_of_birth_is_not_an_integer` has multiple :ref:`try statements<how to handle Exceptions>` for if ``year_of_birth`` is not an integer_. It is also the last tuple_ in the ``people`` :ref:`object attribute<what is an object attribute?>` - its ``year_of_birth`` values are not integers_. I can use the :ref:`object attributes<what is an object attribute?>`  to remove the repetition
@@ -5291,7 +5291,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_class
 
   the tests are still green.
 
-* I change the expected :ref:`Exception<how to test that an Exception is raised>` in :ref:`test_person_class<extract test_person_class>` to test my change
+* I change the expected :ref:`Exception<how to test that an Exception is raised>` in :ref:`test_person_object<extract test_person_object>` to test my change
 
   .. code-block:: python
     :lineno-start: 76
@@ -5317,15 +5317,15 @@ move test_when_year_of_birth_is_not_an_integer to test_person_class
 
   .. code-block:: python
 
-    SUBFAILED[(None, False, False)] ...test_person_class -
+    SUBFAILED[(None, False, False)] ...test_person_object -
         TypeError: 'None' is not an integer
-    SUBFAILED[(2026.0, False, False)] ...test_person_class -
+    SUBFAILED[(2026.0, False, False)] ...test_person_object -
         TypeError: '2026.0' is not an integer
-    SUBFAILED[('2026', False, False)] ...test_person_class -
+    SUBFAILED[('2026', False, False)] ...test_person_object -
         TypeError: '2026' is not an integer
-    SUBFAILED[((2026,), False, False)] ...test_person_class -
+    SUBFAILED[((2026,), False, False)] ...test_person_object -
         TypeError: '(2026,)' is not an integer
-    SUBFAILED[('a_string', False, False, False, False)] ...test_person_class -
+    SUBFAILED[('a_string', False, False, False, False)] ...test_person_object -
         TypeError: 'a_string' is not an integer
 
   good, the test works.
@@ -5359,7 +5359,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_class
 
         def calculate_age(self, year_of_birth):
 
-* I remove :ref:`test_when_year_of_birth_is_not_an_integer` because it is now covered by :ref:`test_person_class<extract test_person_class>`
+* I remove :ref:`test_when_year_of_birth_is_not_an_integer` because it is now covered by :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :lineno-start: 144
@@ -5385,7 +5385,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_class
                         year_of_birth=year_of_birth,
                     )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
 * I add a git_ commit message
 
@@ -5393,7 +5393,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_when_year_of_birth_is_not_an_integer to test_person_class'
+    'move test_when_year_of_birth_is_not_an_integer to test_person_object'
 
 ----
 
@@ -5420,7 +5420,7 @@ I can use :ref:`for loops<what is a for loop?>` for things that repeat.
 
 My tests still have problems:
 
-* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
+* The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
 * The ``people`` :ref:`object attribute<what is an object attribute>` is confusing, anyone who reads it without going through the process of making it would not know what the :ref:`booleans<what is a boolean?>` stands for and the last few tuples_ I added are a different length than the others. :ref:`There has to be a better way<how to make a person with dictionaries>`.
 
 ----
@@ -5467,7 +5467,6 @@ what is next?
 .. toctree::
   :titlesonly:
   :maxdepth: 1
-
 
   ../../exceptions/AssertionError/AssertionError_w_loops
   ../../truth_table/projects/atm/atm_w_loops

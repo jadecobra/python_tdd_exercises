@@ -1,6 +1,6 @@
 .. meta::
   :description: Step-by-step TDD tutorial on Python cooperative multiple inheritance (family ties chapter), Method Resolution Order (MRO), super() for parent __init__ calls, and inheriting from a Person base class built in prior chapters. Follow red-green-refactor to create Doe, Blow, Smith (class attr eye_color), Jane, Joe, Mary (Joe + Jane), John, Lil (Mary + John) with custom last_name and eye_color. Diagnose and fix real beginner errors shown: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module 'src.family_ties' has no attribute 'Blow', AssertionError: 'brown' != '', "is not an instance of", initial AssertionError: True is not false. Uses only local variables in TestFamilyTies methods (no setUp), assertIsInstance/assertNotIsInstance/assertIsSubclass on objects vs instances, dir() comparisons. Builds directly on how_to/make_person (Person + factory), objects, and inheritance ("everything is an object").
-  :keywords: Jacob Itegboje, Pumping Python, python cooperative multiple inheritance tutorial, python MRO method resolution order for beginners, super __init__ cooperative inheritance python, family ties python tdd Doe Blow Smith Jane Joe Mary John Lil, python multiple inheritance order of parents matters, TypeError takes 1 positional argument but 2 were given, TypeError got an unexpected keyword argument last_name, AttributeError module src.family_ties has no attribute, AssertionError is not an instance of, python inherit from Person class TDD, no setUp needed local variables each test, assertIsSubclass assertIsInstance unittest inheritance, C3 linearization python, diamond problem python super, red green refactor multiple inheritance, python class with parent tutorial for beginners
+  :keywords: Jacob Itegboje, Pumping Python, python cooperative multiple inheritance tutorial, python MRO method resolution order for beginners, super __init__ cooperative inheritance python, family ties python tdd Doe Blow Smith Jane Joe Mary John Lil, python multiple inheritance order of parents matters, TypeError takes 1 positional argument but 2 were given, TypeError got an unexpected keyword argument last_name, AttributeError module src.family_ties has no attribute, AssertionError is not an instance of, python inherit from Person object TDD, no setUp needed local variables each test, assertIsSubclass assertIsInstance unittest inheritance, C3 linearization python, diamond problem python super, red green refactor multiple inheritance, python class with parent tutorial for beginners
 
 .. include:: ../links.rst
 
@@ -827,7 +827,7 @@ how to call the parent from the child
     :emphasize-lines: 2
 
         def test_making_an_object_w_inheritance(self):
-            person_class = src.person.Person
+            person_object = src.person.Person
             doe_class = src.family_ties.Doe
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.person.Person`` from the test
@@ -837,7 +837,7 @@ how to call the parent from the child
     :emphasize-lines: 9-10, 23-24, 30-31, 37-38
 
         def test_making_an_object_w_inheritance(self):
-            person_class = src.person.Person
+            person_object = src.person.Person
             doe_class = src.family_ties.Doe
 
             # self.assertIsInstance(
@@ -845,7 +845,7 @@ how to call the parent from the child
                 # src.family_ties.Doe,
                 doe_class,
                 # src.person.Person
-                person_class
+                person_object
             )
 
             # self.assertIsInstance(
@@ -859,21 +859,21 @@ how to call the parent from the child
                 # src.family_ties.Doe,
                 doe_class,
                 # src.person.Person
-                person_class
+                person_object
             )
 
             self.assertIsInstance(
                 # src.family_ties.Doe(),
                 src.family_ties.Doe('the_first'),
                 # src.person.Person
-                person_class
+                person_object
             )
 
             self.assertEqual(
                 dir(doe_class),
                 # []
                 # dir(src.person.Person)
-                dir(person_class)
+                dir(person_object)
             )
 
 
@@ -888,7 +888,7 @@ how to call the parent from the child
     :emphasize-lines: 4
 
         def test_making_an_object_w_inheritance(self):
-            person_class = src.person.Person
+            person_object = src.person.Person
             doe_class = src.family_ties.Doe
             doe_instance = doe_class('the_first')
 
@@ -897,7 +897,7 @@ how to call the parent from the child
                 # src.family_ties.Doe,
                 doe_class,
                 # src.person.Person
-                person_class
+                person_object
             )
 
 * I use the new :ref:`variable<what is a variable?>`
@@ -911,7 +911,7 @@ how to call the parent from the child
                 # src.family_ties.Doe('the_first'),
                 doe_instance,
                 # src.person.Person
-                person_class
+                person_object
             )
 
   green, because ``doe_class()`` and ``src.objects.Doe()`` are the same since ``doe_class = src.objects.Doe``.
@@ -923,12 +923,12 @@ how to call the parent from the child
     :emphasize-lines: 7, 11, 15, 19, 23
 
         def test_making_an_object_w_inheritance(self):
-            person_class = src.person.Person
+            person_object = src.person.Person
             doe_class = src.family_ties.Doe
             doe_instance = doe_class('the_first')
 
             self.assertNotIsInstance(
-                doe_class, person_class
+                doe_class, person_object
             )
 
             self.assertNotIsInstance(
@@ -936,15 +936,15 @@ how to call the parent from the child
             )
 
             self.assertIsSubclass(
-                doe_class, person_class
+                doe_class, person_object
             )
 
             self.assertIsInstance(
-                doe_instance, person_class
+                doe_instance, person_object
             )
 
             self.assertEqual(
-                dir(doe_class), dir(person_class)
+                dir(doe_class), dir(person_object)
             )
 
 
@@ -997,7 +997,7 @@ I want to test how the :ref:`attributes<what is an object attribute?>` of :ref:`
     :emphasize-lines: 5-7
 
             self.assertEqual(
-                dir(doe_class), dir(person_class)
+                dir(doe_class), dir(person_object)
             )
 
         def test_objects_w_one_parent(self):

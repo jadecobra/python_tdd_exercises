@@ -282,7 +282,7 @@ class TestPerson(unittest.TestCase):
         except TypeError:
             pass
 
-    def test_dir_person_class(self):
+    def test_dir_person_object(self):
         self.assertEqual(
             dir(src.person.Person),
             [

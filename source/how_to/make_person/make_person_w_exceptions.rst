@@ -178,7 +178,7 @@ add exception handler to test_when_person_is_older_than_120
         @unittest.skip('fails because age < 0')
         def test_when_year_of_birth_is_the_future(self):
 
-  the terminal_ still shows :ref:`Exception<how to test that an Exception is raised>`, because an :ref:`Exception<how to test that an Exception is raised>` breaks execution of a program_, nothing past the line that caused it will run. In this case, the :ref:`Exception<how to test that an Exception is raised>` happens when the :ref:`instance of the Person class<add Person object>` is made so the :ref:`condition<if statements>` never gets checked.
+  the terminal_ still shows :ref:`Exception<how to test that an Exception is raised>`, because an :ref:`Exception<how to test that an Exception is raised>` breaks execution of a program_, nothing past the line that caused it will run. In this case, the :ref:`Exception<how to test that an Exception is raised>` happens when the :ref:`instance of the Person object<add Person object>` is made so the :ref:`condition<if statements>` never gets checked.
 
 * I change the :ref:`if statement<if statements>` to a :ref:`try statement<how to handle Exceptions>`
 
@@ -482,7 +482,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                 # year_of_birth=(2026,),  # fails
             )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -547,7 +547,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
             # year_of_birth='2026',   # fails
             # year_of_birth=(2026,),  # fails
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the test passes.
 
@@ -662,7 +662,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                 year_of_birth=(2026,),
             )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
@@ -685,7 +685,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
             except:
                 pass
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the test passes.
 
@@ -766,7 +766,7 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want
           except Exception:
               pass
 
-      def test_dir_person_class(self):
+      def test_dir_person_object(self):
 
   the test is still green.
 
@@ -786,7 +786,7 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want
             except TypeError:
                 pass
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
@@ -1249,8 +1249,8 @@ review
 
 My tests still have problems:
 
-* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. There has to be a better way.
-* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` all still have the same three tests. :ref:`There has to be a better way<how to make a person with lists>`.
+* The attribute tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. There has to be a better way.
+* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` all still have the same three tests. :ref:`There has to be a better way<how to make a person with loops>`.
 * :ref:`test_when_year_of_birth_is_not_an_integer` has four tests that are basically the same, the only thing that changes are the values for the ``year_of_birth`` parameter. :ref:`There has to be a better way<how to make a person with loops>`.
 * The :ref:`exception handlers<how to handle Exceptions>` also have a problem
 

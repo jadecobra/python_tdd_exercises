@@ -168,7 +168,7 @@ def test_mary():
     )
 
 
-def test_dir_person_class():
+def test_dir_person_object():
     assert_equal(
         dir(src.person.Person),
         [

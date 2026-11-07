@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with conditions — add can_vote and can_get_license so the person project decides with if statements. Open person; uv run pytest-watcher . --now --patterns "**/*.py" (9 passed; the datetime chapter snapshot). RED: joe.can_vote() → AttributeError: 'Person' object has no attribute 'can_vote'. GREEN: add can_vote; TypeError takes 0 positional arguments but 1 was given → @staticmethod then self; update test_dir_person_class / test_dir_person_instance (dir lists are version-fragile). Add is_citizen (default True): unexpected keyword argument, then SyntaxError parameter without a default follows parameter with a default; optional is_citizen=True; return self.is_citizen. john/mary is_citizen=False. Age gate: test_underage_citizen with year_of_birth=self.this_year-17 → AssertionError: True != False until if self.age < 18: return False (under 18 blocked; 18+ returns self.is_citizen). Mirror for can_get_license + passed_test (default False); jane/mary pass the test. Extract self.age in __init__ (calculate_age once). unittest.skip on three tests: 'fails because age > 120', 'fails because age < 0', 'fails because year_of_birth is not an integer' (after the third skip the watcher shows 1 failed, 6 passed, 3 skipped until age is added to test_dir_person_instance). Extract check_age(self, status) as an instance method (not @staticmethod): if self.age < 18 return False else return status; can_vote calls check_age(self.is_citizen); can_get_license calls check_age(self.passed_test). Review: if for decisions; dir tests hard to maintain; skip hides the three exception tests; joe/jane/john/mary still repeat. Leads to lists and exception testing. Catalog: test_person_w_conditions.py + person_w_conditions.py.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with conditions, if statements, can_vote, can_get_license, is_citizen, passed_test, age < 18, 18 or older, check_age(self, status), @staticmethod then self, self.age, calculate_age, AttributeError can_vote, TypeError positional arguments, SyntaxError parameter without a default, AssertionError True != False, unittest.skip age > 120, fails because age < 0, year_of_birth is not an integer, 1 failed 6 passed 3 skipped, test_underage_citizen, test_dir_person_class, test_dir_person_instance, this_year-17, red green refactor, remove the commented lines, git commit -am, uv run pytest-watcher . --now --patterns "**/*.py", 9 passed, person project voting license, test_person_w_conditions, person_w_conditions
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with conditions — add can_vote and can_get_license so the person project decides with if statements. Open person; uv run pytest-watcher . --now --patterns "**/*.py" (9 passed; the datetime chapter snapshot). RED: joe.can_vote() → AttributeError: 'Person' object has no attribute 'can_vote'. GREEN: add can_vote; TypeError takes 0 positional arguments but 1 was given → @staticmethod then self; update test_dir_person_object / test_dir_person_instance (dir lists are version-fragile). Add is_citizen (default True): unexpected keyword argument, then SyntaxError parameter without a default follows parameter with a default; optional is_citizen=True; return self.is_citizen. john/mary is_citizen=False. Age gate: test_underage_citizen with year_of_birth=self.this_year-17 → AssertionError: True != False until if self.age < 18: return False (under 18 blocked; 18+ returns self.is_citizen). Mirror for can_get_license + passed_test (default False); jane/mary pass the test. Extract self.age in __init__ (calculate_age once). unittest.skip on three tests: 'fails because age > 120', 'fails because age < 0', 'fails because year_of_birth is not an integer' (after the third skip the watcher shows 1 failed, 6 passed, 3 skipped until age is added to test_dir_person_instance). Extract check_age(self, status) as an instance method (not @staticmethod): if self.age < 18 return False else return status; can_vote calls check_age(self.is_citizen); can_get_license calls check_age(self.passed_test). Review: if for decisions; dir tests hard to maintain; skip hides the three exception tests; joe/jane/john/mary still repeat. Leads to lists and exception testing. Catalog: test_person_w_conditions.py + person_w_conditions.py.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with conditions, if statements, can_vote, can_get_license, is_citizen, passed_test, age < 18, 18 or older, check_age(self, status), @staticmethod then self, self.age, calculate_age, AttributeError can_vote, TypeError positional arguments, SyntaxError parameter without a default, AssertionError True != False, unittest.skip age > 120, fails because age < 0, year_of_birth is not an integer, 1 failed 6 passed 3 skipped, test_underage_citizen, test_dir_person_object, test_dir_person_instance, this_year-17, red green refactor, remove the commented lines, git commit -am, uv run pytest-watcher . --now --patterns "**/*.py", 9 passed, person project voting license, test_person_w_conditions, person_w_conditions
 
 .. include:: ../../links.rst
 
@@ -180,7 +180,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 ----
 
 * I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
-* I add a :ref:`method definition<how to make a function>` to the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
+* I add a :ref:`method definition<how to make a function>` to the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -234,21 +234,21 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    FAILED ...::TestPerson::test_dir_person_class -
+    FAILED ...::TestPerson::test_dir_person_object -
         AssertionError: assert
             ['__class__',...'__eq__', ...] ==...
     FAILED ...::TestPerson::test_dir_person_instance -
         AssertionError: assert
             ['__class__',...'__eq__', ...] ==...
 
-  the tests for the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person object>` are failing because I added a :ref:`method<what is a method?>` to it.
+  the tests for the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person object and an instance of it<add Person object>` are failing because I added a :ref:`method<what is a method?>` to it.
 
-* I add ``can_vote`` to :ref:`test_dir_person_class` in ``tests/test_person.py``
+* I add ``can_vote`` to :ref:`test_dir_person_object` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 210
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             self.assertEqual(
                 dir(src.person.Person),
                 [
@@ -303,9 +303,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`object<everything is an object>` and catch its changes immediately.
+  :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`object<everything is an object>` and catch its changes immediately.
 
-  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are a problem because :ref:`object attributes<what is an object attribute?>` can change from one Python_ version to another, I have to remember the correct order of names and I am keeping two :ref:`lists<what is a list?>`. :ref:`There has to be a better way<how to make a person with a list>`.
+  :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` are a problem because :ref:`object attributes<what is an object attribute?>` can change from one Python_ version to another, I have to remember the correct order of names and I am keeping two :ref:`lists<what is a list?>`. :ref:`There has to be a better way<how to make a person with a list>`.
 
 * I open a new terminal_ then make sure I am in the ``person`` folder_
 
@@ -388,7 +388,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 
 ----
 
-* I add ``is_citizen`` to the :ref:`instance of the Person class<add Person object>` for ``mary``
+* I add ``is_citizen`` to the :ref:`instance of the Person object<add Person object>` for ``mary``
 
   .. code-block:: python
     :lineno-start: 177
@@ -411,7 +411,7 @@ I want :ref:`can_vote<add can_vote method>` to return
                an unexpected keyword argument
                'is_citizen'
 
-  because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person object>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and it got :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
+  because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and it got :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
 
 * I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``src/person/__init__.py``
 
@@ -609,7 +609,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 
     AssertionError: True != False
 
-* I add ``is_citizen`` to the :ref:`instance of the Person class<add Person object>` for ``john``
+* I add ``is_citizen`` to the :ref:`instance of the Person object<add Person object>` for ``john``
 
   .. code-block:: python
     :lineno-start: 151
@@ -894,7 +894,7 @@ add can_get_license method
 
 ----
 
-* I add a :ref:`method definition<how to make a function that takes input>` for :ref:`can_get_license<add can_get_license method>` to the :ref:`Person class<add Person object>` in ``src/person/__init__.py``
+* I add a :ref:`method definition<how to make a function that takes input>` for :ref:`can_get_license<add can_get_license method>` to the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 6
@@ -935,14 +935,14 @@ add can_get_license method
         def can_get_license():
             return True
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_class` and :ref:`test_dir_person_instance`.
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_object` and :ref:`test_dir_person_instance`.
 
-* I add ``can_get_license`` to :ref:`test_dir_person_class` in ``tests/test_person.py``
+* I add ``can_get_license`` to :ref:`test_dir_person_object` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 247
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             self.assertEqual(
                 dir(src.person.Person),
                 [
@@ -1057,7 +1057,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
 ----
 
-* I add ``passed_test`` to the :ref:`instance of the Person class<add Person object>` for ``john``
+* I add ``passed_test`` to the :ref:`instance of the Person object<add Person object>` for ``john``
 
   .. code-block:: python
     :lineno-start: 159
@@ -1185,7 +1185,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
     AssertionError: False != True
 
-* I add ``passed_test`` to the :ref:`instance of the Person class<add Person object>` for ``mary``
+* I add ``passed_test`` to the :ref:`instance of the Person object<add Person object>` for ``mary``
 
   .. code-block:: python
     :lineno-start: 196
@@ -1285,7 +1285,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
   because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add ``passed_test`` to the :ref:`instance of the Person class<add Person object>` for ``jane``
+* I add ``passed_test`` to the :ref:`instance of the Person object<add Person object>` for ``jane``
 
   .. code-block:: python
     :lineno-start: 125
@@ -1510,7 +1510,7 @@ the test passes because Python_ checks if ``age`` (the result of ``calculate_age
 extract age instance attribute
 *********************************************************************************
 
-The :ref:`can_get_license<add can_get_license method>`, :ref:`can_vote<add can_vote method>` and :ref:`say_hello methods<test_classy_person_says_hello>` of the :ref:`Person class<add Person object>` all :ref:`call the calculate_age function<add calculate_age function>`.
+The :ref:`can_get_license<add can_get_license method>`, :ref:`can_vote<add can_vote method>` and :ref:`say_hello methods<test_classy_person_says_hello>` of the :ref:`Person object<add Person object>` all :ref:`call the calculate_age function<add calculate_age function>`.
 
 I can make an :ref:`attribute<what is an object attribute?>` to remove the repetition of the :ref:`calls to the calculate_age function<add calculate_age function>`.
 
@@ -1557,7 +1557,7 @@ I can make an :ref:`attribute<what is an object attribute?>` to remove the repet
       FAILED ...test_when_year_of_birth_is_the_future - AssertionError
 
   - :ref:`test_when_year_of_birth_is_the_future` fails because the age is smaller than ``0``.
-  - :ref:`test_when_year_of_birth_is_not_an_integer` fails because an :ref:`instance of the Person class<add Person object>` is made with a ``year_of_birth`` (:ref:`None<what is None?>`) that is not an integer_.
+  - :ref:`test_when_year_of_birth_is_not_an_integer` fails because an :ref:`instance of the Person object<add Person object>` is made with a ``year_of_birth`` (:ref:`None<what is None?>`) that is not an integer_.
   - :ref:`test_when_person_is_older_than_120` fails because the age is bigger than ``120``.
   - :ref:`test_dir_person_instance` fails because I just added a new :ref:`object attribute<what is an object attribute?>`.
 
@@ -1670,7 +1670,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
             # ).say_hello() fails
             # because year_of_birth is not an integer
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
 * I remove the repeated message from :ref:`test_when_year_of_birth_is_not_an_integer`
 
@@ -1691,7 +1691,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
                 # year_of_birth=(2026,),  # fails
             )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1851,7 +1851,7 @@ I can make a :ref:`method<what is a method?>` that removes the repetition.
 
 ----
 
-I add a :ref:`method<what is a method?>` to the :ref:`Person class<add Person object>` that checks if the age is less than ``18`` and returns something else if it is not
+I add a :ref:`method<what is a method?>` to the :ref:`Person object<add Person object>` that checks if the age is less than ``18`` and returns something else if it is not
 
 .. code-block:: python
   :lineno-start: 16
@@ -1871,7 +1871,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  FAILED ...test_dir_person_class - AssertionError:
+  FAILED ...test_dir_person_object - AssertionError:
       Lists differ: ['__c[393 chars]ef__', 'can_get_li...
   FAILED ...test_dir_person_instance - AssertionError:
       Lists differ: ['__c[434 chars]e', 'check_age', '...
@@ -1926,12 +1926,12 @@ because I added a new :ref:`method<what is a method?>`.
     # AttributeError
     # SyntaxError
 
-* I add ``check_age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_class` in ``tests/test_person.py``
+* I add ``check_age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_object` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 254
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             self.assertEqual(
                 dir(src.person.Person),
                 [
@@ -2085,7 +2085,7 @@ I can use :ref:`if statements<if statements>` to write a program_ that makes dec
 
 My tests have problems:
 
-* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
+* The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
 * I skipped :ref:`test_when_person_is_older_than_120`, :ref:`test_when_year_of_birth_is_the_future` and :ref:`test_when_year_of_birth_is_not_an_integer` because they are always in a :red:`RED` state since they cause an :ref:`Exception<how to test that an Exception is raised>`. The only way to know that the code causes the :ref:`Exception<how to test that an Exception is raised>` is to remove the `unittest.skip decorator`_. :ref:`There has to be a better way<how to make a person with exceptions>`
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. :ref:`There has to be a better way<how to make a person with loops>`.
 

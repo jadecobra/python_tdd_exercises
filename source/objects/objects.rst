@@ -2759,7 +2759,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             reality = dir(src.person.Person)
             my_expectation = None
             self.assertEqual(reality, my_expectation)
@@ -2792,7 +2792,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :lineno-start: 89
     :emphasize-lines: 3-7
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             reality = dir(src.person.Person)
             # my_expectation = None
             my_expectation = [
@@ -2821,7 +2821,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :lineno-start: 89
     :emphasize-lines: 6
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             reality = dir(src.person.Person)
             # my_expectation = None
             my_expectation = [
@@ -2851,7 +2851,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :emphasize-lines: 4-37
     :emphasize-text: __init__ say_hello
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             reality = dir(src.person.Person)
             # my_expectation = None
             # my_expectation = [
@@ -2906,7 +2906,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :emphasize-lines: 3-34
     :emphasize-text: __init__ say_hello
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             reality = dir(src.person.Person)
             my_expectation = [
                 '__class__',
@@ -2956,13 +2956,13 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_dir_person_class'
+    'add test_dir_person_object'
 
 
 ----
 
 *********************************************************************************
-test_dir_person_class
+test_dir_person_object
 *********************************************************************************
 
 =================================================================================
@@ -3375,7 +3375,7 @@ You have gone through a lot of things and know:
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to use objects<objects>`
 
-:ref:`Would you like to test what causes AttributeError<what causes AttributeError?>` or :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<family ties>`
+:ref:`Would you like to test what causes AttributeError<what causes AttributeError?>` or :ref:`Would you like to know where the extra attributes and methods of the Person object came from?<family ties>`
 
 You know enough to go into the world and use Python_. If you stopped going through the book at this point, you would be fine because you know how to make :ref:`objects<everything is an object>`, :ref:`functions<what is a function?>` and can make :ref:`dictionaries<what is a dictionary?>` which is what is behind a lot of the things you will encounter.
 

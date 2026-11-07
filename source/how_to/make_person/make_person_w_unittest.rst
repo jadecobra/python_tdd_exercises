@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with unittest — move the person project's tests onto unittest.TestCase, then move helper assert functions onto TestPerson as methods. Open person; uv run pytest-watcher . --now --patterns "**/*.py" (6 passed). Add class TestPerson(object) with test_failure → AttributeError: 'TestPerson' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: False != True then green with assertEqual(True, True). For test_joe, test_jane, test_john, test_mary: move into TestPerson → TypeError takes 0 positional arguments but 1 was given; @staticmethod then later self. For test_dir_person_class and test_dir_person_instance: add self; assert_equal to self.assertNotEqual then self.assertEqual. Move assert_person_can_say_hello, assert_say_hello_works, assert_person_factory_works onto TestPerson → TypeError missing self / got multiple values for argument 'first_name'; add self; self.assertNotEqual → AssertionError e.g. 'Hello, my name is joe blow and I am XX.' == same / 'joe, blow, M, 1996' == same; switch to self.assertEqual; drop unused assert_equal; git commit. Ends with TestPerson + 3 helper methods + 6 tests + # Exceptions seen AssertionError NameError TypeError AttributeError SyntaxError. Review: unittest.TestCase methods or bare assert; tests still repeat the same three calls per person. What is next: test telephone with unittest.
-  :keywords: Jacob Itegboje, Pumping Python, test person with unittest, person unittest, TestPerson, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError False != True, TypeError takes 0 positional arguments but 1 was given, TypeError missing self, got multiple values for argument first_name, self first argument method, staticmethod, assertNotEqual, assertEqual, assert_person_factory_works, assert_say_hello_works, assert_person_can_say_hello, joe blow M 1996, Hello my name is joe blow and I am XX, jane doe, john smith, mary public, test_dir_person_class, test_dir_person_instance, dir(Person), uv run pytest-watcher . --now --patterns "**/*.py", red green refactor, remove the commented lines, git commit -am, same three tests per person, another way to write tests, test_person_w_unittest
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with unittest — move the person project's tests onto unittest.TestCase, then move helper assert functions onto TestPerson as methods. Open person; uv run pytest-watcher . --now --patterns "**/*.py" (6 passed). Add class TestPerson(object) with test_failure → AttributeError: 'TestPerson' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: False != True then green with assertEqual(True, True). For test_joe, test_jane, test_john, test_mary: move into TestPerson → TypeError takes 0 positional arguments but 1 was given; @staticmethod then later self. For test_dir_person_object and test_dir_person_instance: add self; assert_equal to self.assertNotEqual then self.assertEqual. Move assert_person_can_say_hello, assert_say_hello_works, assert_person_factory_works onto TestPerson → TypeError missing self / got multiple values for argument 'first_name'; add self; self.assertNotEqual → AssertionError e.g. 'Hello, my name is joe blow and I am XX.' == same / 'joe, blow, M, 1996' == same; switch to self.assertEqual; drop unused assert_equal; git commit. Ends with TestPerson + 3 helper methods + 6 tests + # Exceptions seen AssertionError NameError TypeError AttributeError SyntaxError. Review: unittest.TestCase methods or bare assert; tests still repeat the same three calls per person. What is next: test telephone with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test person with unittest, person unittest, TestPerson, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError False != True, TypeError takes 0 positional arguments but 1 was given, TypeError missing self, got multiple values for argument first_name, self first argument method, staticmethod, assertNotEqual, assertEqual, assert_person_factory_works, assert_say_hello_works, assert_person_can_say_hello, joe blow M 1996, Hello my name is joe blow and I am XX, jane doe, john smith, mary public, test_dir_person_object, test_dir_person_instance, dir(Person), uv run pytest-watcher . --now --patterns "**/*.py", red green refactor, remove the commented lines, git commit -am, same three tests per person, another way to write tests, test_person_w_unittest
 
 .. include:: ../../links.rst
 
@@ -287,9 +287,9 @@ move test_joe to TestPerson
 ----
 
 * I go back to the terminal_ where the tests are running
-* I remove :ref:`test_failure` from the :ref:`TestPerson class<add TestPerson object>`
+* I remove :ref:`test_failure` from the :ref:`TestPerson object<add TestPerson object>`
 
-* I move :ref:`test_joe` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I move :ref:`test_joe` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -378,7 +378,7 @@ move test_jane to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_jane` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I move :ref:`test_jane` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 86
@@ -437,7 +437,7 @@ move test_jane to TestPerson
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_jane` since it also does not use anything in the :ref:`TestPerson class<add TestPerson object>`, yet
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_jane` since it also does not use anything in the :ref:`TestPerson object<add TestPerson object>`, yet
 
   .. code-block:: python
     :lineno-start: 86
@@ -476,7 +476,7 @@ move test_john to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_john` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I move :ref:`test_john` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 113
@@ -574,7 +574,7 @@ move test_mary to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_mary` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I move :ref:`test_mary` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 140
@@ -614,7 +614,7 @@ move test_mary to TestPerson
             )
 
 
-    def test_dir_person_class():
+    def test_dir_person_object():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -661,7 +661,7 @@ move test_mary to TestPerson
 ----
 
 *********************************************************************************
-test_dir_person_class with unittest
+test_dir_person_object with unittest
 *********************************************************************************
 
 =================================================================================
@@ -672,7 +672,7 @@ test_dir_person_class with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_dir_person_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I move :ref:`test_dir_person_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 167
@@ -685,7 +685,7 @@ test_dir_person_class with unittest
                 year_of_birth=year_of_birth,
             )
 
-        def test_dir_person_class():
+        def test_dir_person_object():
             assert_equal(
                 dir(src.person.Person),
                 [
@@ -708,7 +708,7 @@ test_dir_person_class with unittest
   .. code-block:: python
 
     TypeError:
-        TestPerson.test_dir_person_class()
+        TestPerson.test_dir_person_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -721,7 +721,7 @@ test_dir_person_class with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_dir_person_class`
+I add ``self`` to the parentheses of :ref:`test_dir_person_object`
 
 .. code-block:: python
   :lineno-start: 167
@@ -734,8 +734,8 @@ I add ``self`` to the parentheses of :ref:`test_dir_person_class`
               year_of_birth=year_of_birth,
           )
 
-      # def test_dir_person_class():
-      def test_dir_person_class(self):
+      # def test_dir_person_object():
+      def test_dir_person_object(self):
           assert_equal(
               dir(src.person.Person),
               [
@@ -751,14 +751,14 @@ green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in :ref:`test_dir_person_class`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in :ref:`test_dir_person_object`
 
   .. code-block:: python
     :lineno-start: 174
     :emphasize-lines: 3-4
 
-        # def test_dir_person_class():
-        def test_dir_person_class(self):
+        # def test_dir_person_object():
+        def test_dir_person_object(self):
             # assert_equal(
             self.assertNotEqual(
                 dir(src.person.Person),
@@ -767,14 +767,14 @@ green again.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_class`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_object`
 
   .. code-block:: python
     :lineno-start: 174
     :emphasize-lines: 4-5
 
-        # def test_dir_person_class():
-        def test_dir_person_class(self):
+        # def test_dir_person_object():
+        def test_dir_person_object(self):
             # assert_equal(
             # self.assertNotEqual(
             self.assertEqual(
@@ -784,7 +784,7 @@ green again.
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_dir_person_class`
+* I remove the commented lines from :ref:`test_dir_person_object`
 
   .. code-block:: python
     :lineno-start: 167
@@ -796,7 +796,7 @@ green again.
                 year_of_birth=year_of_birth,
             )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
             self.assertEqual(
                 dir(src.person.Person),
                 [
@@ -818,7 +818,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am
-    'move test_dir_person_class to TestPerson'
+    'move test_dir_person_object to TestPerson'
 
 ----
 
@@ -834,7 +834,7 @@ test_dir_person_instance with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_dir_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I move :ref:`test_dir_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 187
@@ -1028,7 +1028,7 @@ move assert_person_can_say_hello to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I add a copy of the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I add a copy of the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -1057,7 +1057,7 @@ move assert_person_can_say_hello to TestPerson
         @staticmethod
         def test_joe():
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_joe`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 84
@@ -1151,7 +1151,7 @@ move assert_person_can_say_hello to TestPerson
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
-* I add ``self`` to the parentheses of the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+* I add ``self`` to the parentheses of the :ref:`assert_person_can_say_hello method of the TestPerson object<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -1175,7 +1175,7 @@ move assert_person_can_say_hello to TestPerson
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_person_can_say_hello method of the TestPerson object<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -1208,7 +1208,7 @@ move assert_person_can_say_hello to TestPerson
     AssertionError: 'Hello, my name is joe blow and I am XX.'
                  == 'Hello, my name is joe blow and I am XX.'
 
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson object<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -1237,7 +1237,7 @@ move assert_person_can_say_hello to TestPerson
 
   the test is green again.
 
-* I remove the commented lines from the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+* I remove the commented lines from the :ref:`assert_person_can_say_hello method of the TestPerson object<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -1266,7 +1266,7 @@ move assert_person_can_say_hello to TestPerson
         # def test_joe():
         def test_joe(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 113
@@ -1343,7 +1343,7 @@ move assert_person_can_say_hello to TestPerson
 
   the test is green again.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_john`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 142
@@ -1420,7 +1420,7 @@ move assert_person_can_say_hello to TestPerson
 
   the test is green again.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_mary`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 171
@@ -1457,7 +1457,7 @@ move assert_person_can_say_hello to TestPerson
                 year_of_birth=year_of_birth,
             )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -1538,7 +1538,7 @@ move assert_say_hello_works to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I add a copy of the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I add a copy of the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1568,7 +1568,7 @@ move assert_say_hello_works to TestPerson
                 sex, year_of_birth,
             ):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_joe`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 82
@@ -1613,7 +1613,7 @@ move assert_say_hello_works to TestPerson
 
 ----
 
-* I add ``self`` to the parentheses of the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+* I add ``self`` to the parentheses of the :ref:`assert_say_hello_works method of the TestPerson object<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1637,7 +1637,7 @@ move assert_say_hello_works to TestPerson
 
 ----
 
-* I remove the commented line from the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+* I remove the commented line from the :ref:`assert_say_hello_works method of the TestPerson object<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1649,7 +1649,7 @@ move assert_say_hello_works to TestPerson
                 year_of_birth,
             ):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1679,7 +1679,7 @@ move assert_say_hello_works to TestPerson
 
   the test is still green.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_john`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 142
@@ -1709,7 +1709,7 @@ move assert_say_hello_works to TestPerson
 
   still green.
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_mary`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 172
@@ -1739,7 +1739,7 @@ move assert_say_hello_works to TestPerson
 
   green.
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_say_hello_works method of the TestPerson object<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1780,7 +1780,7 @@ move assert_say_hello_works to TestPerson
         'Hello, my name is mary public and I am ZZ.'
      == 'Hello, my name is mary public and I am ZZ.'
 
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_say_hello_works method of the TestPerson object<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1807,7 +1807,7 @@ move assert_say_hello_works to TestPerson
 
   the test is green again.
 
-* I remove the commented lines from the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+* I remove the commented lines from the :ref:`assert_say_hello_works method of the TestPerson object<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1873,7 +1873,7 @@ move assert_person_factory_works to TestPerson
 
 * I go back to the terminal_ where the tests are running
 
-* I add a copy of the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson object>`
+* I add a copy of the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1903,7 +1903,7 @@ move assert_person_factory_works to TestPerson
                 year_of_birth,
             ):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_joe`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 81
@@ -1940,7 +1940,7 @@ move assert_person_factory_works to TestPerson
 
 ----
 
-* I add ``self`` to the parentheses of the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+* I add ``self`` to the parentheses of the :ref:`assert_person_factory_works method of the TestPerson object<move assert_person_factory_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1964,7 +1964,7 @@ move assert_person_factory_works to TestPerson
 
 ----
 
-* I remove the commented line from the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+* I remove the commented line from the :ref:`assert_person_factory_works method of the TestPerson object<move assert_person_factory_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -2035,7 +2035,7 @@ move assert_person_factory_works to TestPerson
         # def test_jane():
         def test_jane(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 107
@@ -2104,7 +2104,7 @@ move assert_person_factory_works to TestPerson
         # def test_john():
         def test_john(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_john`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 133
@@ -2173,7 +2173,7 @@ move assert_person_factory_works to TestPerson
         # def test_mary():
         def test_mary(self):
 
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson object>` in :ref:`test_mary`
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson object<add TestPerson object>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 159
@@ -2238,9 +2238,9 @@ move assert_person_factory_works to TestPerson
                 year_of_birth=year_of_birth,
             )
 
-        def test_dir_person_class(self):
+        def test_dir_person_object(self):
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_person_factory_works method of the TestPerson object<move assert_person_factory_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2277,7 +2277,7 @@ move assert_person_factory_works to TestPerson
     FAILED ...test_mary - AssertionError:
         'mary, public, F, 2000' == 'mary, public, F, 2000'
 
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_factory_works method of the TestPerson object<move assert_person_factory_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2304,7 +2304,7 @@ move assert_person_factory_works to TestPerson
 
   the test is green again.
 
-* I remove the commented lines from the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+* I remove the commented lines from the :ref:`assert_person_factory_works method of the TestPerson object<move assert_person_factory_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 27

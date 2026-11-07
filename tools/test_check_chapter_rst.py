@@ -139,6 +139,80 @@ class CheckChapterRstTest(unittest.TestCase):
             errors, _notes = check_rst(bad)
             self.assertTrue(any("outside 1..2" in item for item in errors))
 
+    def test_missing_code_block_language_fails(self):
+        with tempfile.TemporaryDirectory() as raw:
+            rst = _write(
+                Path(raw),
+                "no_lang.rst",
+                "\n".join(
+                    [
+                        ".. code-block::",
+                        "  :lineno-start: 1",
+                        "",
+                        "  x = 1",
+                        "",
+                    ]
+                ),
+            )
+            errors, _notes = check_rst(rst)
+            self.assertTrue(any("missing language argument" in item for item in errors))
+
+    def test_empty_hyperlink_target_fails(self):
+        with tempfile.TemporaryDirectory() as raw:
+            rst = _write(
+                Path(raw),
+                "empty_target.rst",
+                "\n".join(
+                    [
+                        ".. _pop method:",
+                        ".. _insert: more_on_lists_",
+                        "",
+                    ]
+                ),
+            )
+            errors, _notes = check_rst(rst)
+            self.assertTrue(any("empty hyperlink target" in item for item in errors))
+
+    def test_unclosed_role_backtick_fails(self):
+        with tempfile.TemporaryDirectory() as raw:
+            rst = _write(
+                Path(raw),
+                "unclosed_ref.rst",
+                "* I change the expectation of the :ref:`assertion<what is an assertion?>\n",
+            )
+            errors, _notes = check_rst(rst)
+            self.assertTrue(any("unclosed role backtick" in item for item in errors))
+
+    def test_double_backtick_role_fails(self):
+        with tempfile.TemporaryDirectory() as raw:
+            rst = _write(
+                Path(raw),
+                "double_backtick.rst",
+                "* I change the expectation of the :ref:`assertion<what is an assertion?>``\n",
+            )
+            errors, _notes = check_rst(rst)
+            self.assertTrue(any("double backtick on role" in item for item in errors))
+
+    def test_single_emphasize_blank_line_fails(self):
+        with tempfile.TemporaryDirectory() as raw:
+            rst = _write(
+                Path(raw),
+                "emp_blank.rst",
+                "\n".join(
+                    [
+                        ".. code-block:: python",
+                        "  :emphasize-lines: 2",
+                        "",
+                        "  line1",
+                        "",
+                        "  line3",
+                        "",
+                    ]
+                ),
+            )
+            errors, _notes = check_rst(rst)
+            self.assertTrue(any("highlights an empty/blank line" in item for item in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

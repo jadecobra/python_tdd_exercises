@@ -7,6 +7,7 @@ its leading colon. Prints each :lineno-start: and does not judge jumps.
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -80,12 +81,40 @@ def _directive_body(
     return body, i, bad_options
 
 
+def _check_line_syntax(path: Path, lines: list[str], errors: list[str]) -> None:
+    for idx, line in enumerate(lines):
+        if re.search(r":[a-zA-Z0-9_-]+:`[^`]+``", line):
+            errors.append(f"{path}:{idx + 1}: double backtick on role ({line.strip()})")
+        cleaned = re.sub(r":[a-zA-Z0-9_-]+:`[^`]+`", "", line)
+        if re.search(r":[a-zA-Z0-9_-]+:`[^`]*$", cleaned):
+            errors.append(f"{path}:{idx + 1}: unclosed role backtick ({line.strip()})")
+
+        s = line.strip()
+        if s.startswith(".. _") and s.endswith(":") and not s.startswith(".. _`"):
+            j = idx + 1
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            is_heading = False
+            if j + 1 < len(lines) and lines[j].strip():
+                underline = lines[j + 1].strip()
+                if (
+                    len(underline) >= len(lines[j].strip())
+                    and underline[0] in "=~-*#^"
+                    and len(set(underline)) == 1
+                ):
+                    is_heading = True
+            if not is_heading:
+                if j >= len(lines) or lines[j].strip().startswith(".. _") or lines[j].strip().startswith(".. include::"):
+                    errors.append(f"{path}:{idx + 1}: empty hyperlink target ({s})")
+
+
 def check_rst(path: Path) -> tuple[list[str], list[str]]:
     """Return (errors, lineno-start notes)."""
     text = path.read_text()
     lines = text.splitlines()
     errors: list[str] = []
     notes: list[str] = []
+    _check_line_syntax(path, lines, errors)
     i = 0
     while i < len(lines):
         line = lines[i]
@@ -100,6 +129,8 @@ def check_rst(path: Path) -> tuple[list[str], list[str]]:
             continue
         base = _indent(line)
         argument = stripped.split("::", 1)[1].strip()
+        if kind == "code-block" and not argument:
+            errors.append(f"{path}:{i + 1}: code-block directive missing language argument")
         body, nxt, bad_options = _directive_body(lines, i + 1, base)
         for bad in bad_options:
             errors.append(
@@ -147,6 +178,16 @@ def check_rst(path: Path) -> tuple[list[str], list[str]]:
                     errors.append(
                         f"{path}:{i + 1}: emphasize-lines {start}-{end} "
                         f"outside 1..{shown}"
+                    )
+                if (
+                    kind == "code-block"
+                    and start == end
+                    and 1 <= start <= len(body)
+                    and body[start - 1].strip() == ""
+                ):
+                    errors.append(
+                        f"{path}:{i + 1}: emphasize-lines line {start} "
+                        "highlights an empty/blank line"
                     )
         i = nxt
     return errors, notes

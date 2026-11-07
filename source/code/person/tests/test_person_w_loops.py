@@ -64,7 +64,7 @@ class TestPerson(unittest.TestCase):
     def calculate_age(self, year_of_birth):
         return self.this_year - year_of_birth
 
-    def test_person_class(self):
+    def test_person_object(self):
         for a_person in self.people:
             year_of_birth = a_person[0]
 
@@ -162,7 +162,7 @@ class TestPerson(unittest.TestCase):
                     year_of_birth=year_of_birth,
                 )
 
-    def test_dir_person_class(self):
+    def test_dir_person_object(self):
         self.assertEqual(
             dir(src.person.Person),
             [

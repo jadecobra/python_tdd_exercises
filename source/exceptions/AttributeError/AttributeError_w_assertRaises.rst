@@ -1479,7 +1479,7 @@ what is next?
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
 
-:ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
+:ref:`Would you like to know where the extra attributes and methods of the Person object came from?<everything is an object>`
 
 ----
 

@@ -5,12 +5,12 @@ import unittest
 class TestFamilyTies(unittest.TestCase):
 
     def test_making_an_object_w_inheritance(self):
-        person_class = src.person.Person
+        person_object = src.person.Person
         doe_class = src.family_ties.Doe
         doe_instance = doe_class('the_first')
 
         self.assertNotIsInstance(
-            doe_class, person_class
+            doe_class, person_object
         )
 
         self.assertNotIsInstance(
@@ -18,15 +18,15 @@ class TestFamilyTies(unittest.TestCase):
         )
 
         self.assertIsSubclass(
-            doe_class, person_class
+            doe_class, person_object
         )
 
         self.assertIsInstance(
-            doe_instance, person_class
+            doe_instance, person_object
         )
 
         self.assertEqual(
-            dir(doe_class), dir(person_class)
+            dir(doe_class), dir(person_object)
         )
 
     def test_objects_w_one_parent(self):

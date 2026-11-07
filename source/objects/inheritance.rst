@@ -2384,7 +2384,7 @@ points the ``a_name`` :ref:`variable<what is a variable?>` to the result of ``Cl
 test_dir_object
 *********************************************************************************
 
-In :ref:`test_dir_person_class` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`object<what is an object?>` and also names that I did not add, which led to the question of where they came from.
+In :ref:`test_dir_person_object` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`object<what is an object?>` and also names that I did not add, which led to the question of where they came from.
 
 I want to test the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object class<what is an object?>` because it is the mother of all :ref:`objects<what is an object?>`.
 
@@ -2514,9 +2514,9 @@ I want to test the :ref:`attributes<what is an object attribute?>` and :ref:`met
     # TypeError
 
   - The test passes.
-  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_person_class>`
+  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_person_object>`
   - All :ref:`objects<what is an object?>` automatically get these :ref:`attributes<what is an object attribute?>`, they inherit them because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
-  - The :ref:`__init__ method<the constructor method>` is also inherited which means when I defined the :ref:`__init__ method for the Person class<the constructor method>` I overwrote the one inherited from :ref:`object<everything is an object>`.
+  - The :ref:`__init__ method<the constructor method>` is also inherited which means when I defined the :ref:`__init__ method for the Person object<the constructor method>` I overwrote the one inherited from :ref:`object<everything is an object>`.
 
 * I add a git_ commit message in the other terminal_
 

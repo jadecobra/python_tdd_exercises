@@ -1,6 +1,6 @@
 ---
 name: verify-pumping-python
-description: "Drive the Pumping Python local Sphinx docs site the way a reader does — homepage, toctree, start-here, hatch signup cards, chapter pages, and search — and capture HTTP evidence. Use when proving reader-facing pages, nav, search, or hatch/setup entry points on a live sphinx-autobuild instance."
+description: "Drive and verify the Pumping Python local Sphinx docs site — homepage, toctree, chapter pages, nav, search, and live Sphinx builds. Use when proving reader-facing pages, diagnosing sphinx-build / sphinx-autobuild compilation errors, testing HTML build rendering with uv run sphinx-autobuild, or checking live documentation integrity."
 ---
 
 # Verify Pumping Python (local Sphinx docs)

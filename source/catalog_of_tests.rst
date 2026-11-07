@@ -225,7 +225,7 @@ test_objects
 #. :ref:`test_factory_person_says_hello`
 #. :ref:`test_update_factory_person_year_of_birth`
 #. :ref:`test_update_classy_person_year_of_birth`
-#. :ref:`test_dir_person_class`
+#. :ref:`test_dir_person_object`
 
 ----
 

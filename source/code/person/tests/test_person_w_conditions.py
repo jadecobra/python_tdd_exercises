@@ -251,7 +251,7 @@ class TestPerson(unittest.TestCase):
             # year_of_birth=(2026,),  # fails
         )
 
-    def test_dir_person_class(self):
+    def test_dir_person_object(self):
         self.assertEqual(
             dir(src.person.Person),
             [

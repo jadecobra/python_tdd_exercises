@@ -3743,7 +3743,7 @@ the test passes.
 test_dir_list with extend and sort
 *********************************************************************************
 
-The :ref:`attributes and methods of a list<test_dir_list>` look like the :ref:`attributes and methods of an object<test_dir_object>` with extra things, and since they are both lists_, I should be able to make the :ref:`attributes and methods of a list<test_dir_list>` by adding the "extra" to the :ref:`attributes and methods of an object<test_dir_object>`.
+The :ref:`attributes and methods of a list<test_dir_list>` look like the :ref:`attributes and methods of 'object'<test_dir_object>` with extra things, and since they are both lists_, I should be able to make the :ref:`attributes and methods of a list<test_dir_list>` by adding the "extra" to the :ref:`attributes and methods of 'object'<test_dir_object>`.
 
 ----
 
@@ -3782,7 +3782,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-   AssertionError: Lists differ: [
+  AssertionError: Lists differ: [
       '__add__', '__class__', '__class_getitem__',[549 chars]ort'
   ] != [
       '__class__', '__delattr__', '__dir__', '__do[370 chars]ort'
@@ -3805,7 +3805,7 @@ I am close, but not quite.
 
 ----
 
-* I add the thirteen additional elements
+* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the thirteen additional elements
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
@@ -3854,7 +3854,6 @@ I am close, but not quite.
                 [
                     '__add__',
                     '__class__',
-
 
   the test passes, a reminder that :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
 
@@ -3950,20 +3949,41 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
+* :ref:`I know what causes AttributeError<what causes AttributeError?>`.
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`I know how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
-* :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
-* :ref:`what you can do with Lists<what is a list?>`
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
+* :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
+* :ref:`I know how to make a person with loops<how to make a person with loops>`.
+* :ref:`I know how to use lists<what is a list?>`.
 
-:ref:`would you like to test the Calculator with what you know?<how to make a calculator 4>`
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../../how_to/make_person/make_person_w_lists
+  ../../objects/unittest_w_lists
+
+:ref:`Would you like to refactor the attributes of the person object and instance with lists?<how to make a person with lists>`
 
 -----
 
