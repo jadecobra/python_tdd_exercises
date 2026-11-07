@@ -149,6 +149,8 @@ def check_rst(path: Path) -> tuple[list[str], list[str]]:
             if j >= nxt:
                 break
         label = argument or kind
+        if "caption" in options and not options["caption"]:
+            errors.append(f"{path}:{i + 1}: {kind} directive missing :caption: argument")
         if "lineno-start" in options:
             notes.append(f"{kind} {label} lineno-start {options['lineno-start']}")
         if kind == "literalinclude":

@@ -213,6 +213,25 @@ class CheckChapterRstTest(unittest.TestCase):
             errors, _notes = check_rst(rst)
             self.assertTrue(any("highlights an empty/blank line" in item for item in errors))
 
+    def test_missing_caption_argument_fails(self):
+        with tempfile.TemporaryDirectory() as raw:
+            rst = _write(
+                Path(raw),
+                "empty_caption.rst",
+                "\n".join(
+                    [
+                        ".. code-block:: python",
+                        "  :caption:",
+                        "",
+                        "  line1",
+                        "",
+                    ]
+                ),
+            )
+            errors, _notes = check_rst(rst)
+            self.assertTrue(any("missing :caption: argument" in item for item in errors))
+
+
 
 if __name__ == "__main__":
     unittest.main()
