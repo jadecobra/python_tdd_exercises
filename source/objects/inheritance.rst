@@ -307,7 +307,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -333,7 +333,7 @@ start the project
     * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
-    and try ``uv run pytest-watcher . --now`` again
+    and try ``uv run pytest-watcher . --now --patterns "**/*.py"`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 

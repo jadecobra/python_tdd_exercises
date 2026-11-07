@@ -1,6 +1,6 @@
 .. meta::
-  :description: Pumping Python TDD continuation: "test AssertionError with functions" in the assertion_error project. Reuse `assert_equal(x, y)` from extract assert_equal, then extract `assert_not_equal`, `assert_is_not`, `assert_is_not_none`, `assert_is_not_false`, and `assert_is_not_true` so repeated bare asserts become helper calls. Walk red-green-refactor on test_assert_keyword, test_assertion_error_w_equality, test_assertion_error_w_is_vs_equal (0 is not 0.0 but 0 == 0.0), test_assertion_error_w_none/false/true, and test_failure. See pytest cores like `assert 2 == 3`, `assert '11' == '2'`, `assert None != None`, `assert None is not None`, `assert False is not False`. uv run pytest-watcher . --now, git commit after each extract. Helpers sit above the tests; pytest still only runs test_* names (will_not_run skipped).
-  :keywords: Jacob Itegboje, Pumping Python, test AssertionError with functions, assert_equal, assert_not_equal, assert_is_not, assert_is_not_none, assert_is_not_false, assert_is_not_true, extract assert_equal function, assertion_error project, pytest helper functions, assert x == y, assert x != y, assert x is not y, 0 is not 0.0, 0 == 0.0, test_assert_keyword, test_assertion_error_w_equality, test_assertion_error_w_is_vs_equal, test_failure, will_not_run, uv run pytest-watcher . --now, red green refactor, remove the commented lines, AssertionError assert 2 == 3, assert None is not None, python TDD assertion helpers, functions for assertions python beginner
+  :description: Pumping Python TDD continuation: "test AssertionError with functions" in the assertion_error project. Reuse `assert_equal(x, y)` from extract assert_equal, then extract `assert_not_equal`, `assert_is_not`, `assert_is_not_none`, `assert_is_not_false`, and `assert_is_not_true` so repeated bare asserts become helper calls. Walk red-green-refactor on test_assert_keyword, test_assertion_error_w_equality, test_assertion_error_w_is_vs_equal (0 is not 0.0 but 0 == 0.0), test_assertion_error_w_none/false/true, and test_failure. See pytest cores like `assert 2 == 3`, `assert '11' == '2'`, `assert None != None`, `assert None is not None`, `assert False is not False`. uv run pytest-watcher . --now --patterns "**/*.py", git commit after each extract. Helpers sit above the tests; pytest still only runs test_* names (will_not_run skipped).
+  :keywords: Jacob Itegboje, Pumping Python, test AssertionError with functions, assert_equal, assert_not_equal, assert_is_not, assert_is_not_none, assert_is_not_false, assert_is_not_true, extract assert_equal function, assertion_error project, pytest helper functions, assert x == y, assert x != y, assert x is not y, 0 is not 0.0, 0 == 0.0, test_assert_keyword, test_assertion_error_w_equality, test_assertion_error_w_is_vs_equal, test_failure, will_not_run, uv run pytest-watcher . --now --patterns "**/*.py", red green refactor, remove the commented lines, AssertionError assert 2 == 3, assert None is not None, python TDD assertion helpers, functions for assertions python beginner
 
 .. include:: ../../links.rst
 
@@ -89,7 +89,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ is my friend, and shows
 

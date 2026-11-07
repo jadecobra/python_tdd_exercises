@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test telephone with loops — one for loop and subTest replace the repeated telephone value tests. Open telephone; uv run pytest-watcher . --now. test_passing_values loops None, False, True, 1234, 5.678, 'hello', (0, 1, 2, 'n'), [0, 1, 2, 'n'], {0, 1, 2, 'n'}, and the key0/keyN dict. Red expects f'I got {value}' (no colon). text already returns f'I got: {value}', so each subTest shows AssertionError such as 'I got: None' != 'I got None', 'I got: False' != 'I got False', "I got: (0, 1, 2, 'n')" != "I got (0, 1, 2, 'n')", and the same missing colon for the list, set, and dict. Green changes the expectation to f'I got: {value}'. Refactor deletes the other tests except test_passing_an_object (object, bool, int, float, str, tuple, list, set, dict classes). git commit -am 'extract test_passing_values'. Review: for loops remove repetition. What is next: test traffic_light with loops.
-  :keywords: Jacob Itegboje, Pumping Python, test telephone with loops, for loop, subTest, SUBFAILED, test_passing_values, test_passing_an_object, AssertionError 'I got: None' != 'I got None', I got: False, I got: 1234, I got: 5.678, I got: hello, I got: (0, 1, 2, 'n'), I got: [0, 1, 2, 'n'], set, dictionary key0 keyN, f-string colon, uv run pytest-watcher . --now, red green refactor, git commit extract test_passing_values, telephone/tests/test_telephone.py, test_telephone_w_loops
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test telephone with loops — one for loop and subTest replace the repeated telephone value tests. Open telephone; uv run pytest-watcher . --now --patterns "**/*.py". test_passing_values loops None, False, True, 1234, 5.678, 'hello', (0, 1, 2, 'n'), [0, 1, 2, 'n'], {0, 1, 2, 'n'}, and the key0/keyN dict. Red expects f'I got {value}' (no colon). text already returns f'I got: {value}', so each subTest shows AssertionError such as 'I got: None' != 'I got None', 'I got: False' != 'I got False', "I got: (0, 1, 2, 'n')" != "I got (0, 1, 2, 'n')", and the same missing colon for the list, set, and dict. Green changes the expectation to f'I got: {value}'. Refactor deletes the other tests except test_passing_an_object (object, bool, int, float, str, tuple, list, set, dict classes). git commit -am 'extract test_passing_values'. Review: for loops remove repetition. What is next: test traffic_light with loops.
+  :keywords: Jacob Itegboje, Pumping Python, test telephone with loops, for loop, subTest, SUBFAILED, test_passing_values, test_passing_an_object, AssertionError 'I got: None' != 'I got None', I got: False, I got: 1234, I got: 5.678, I got: hello, I got: (0, 1, 2, 'n'), I got: [0, 1, 2, 'n'], set, dictionary key0 keyN, f-string colon, uv run pytest-watcher . --now --patterns "**/*.py", red green refactor, git commit extract test_passing_values, telephone/tests/test_telephone.py, test_telephone_w_loops
 
 .. include:: ../../links.rst
 
@@ -58,7 +58,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
 ----
 

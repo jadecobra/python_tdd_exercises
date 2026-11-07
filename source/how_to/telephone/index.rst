@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): telephone — pass objects into a function and place them in a string with f-strings (string interpolation). Project telephone; uv init, tests package, uv run pytest-watcher . --now. Starts with test_failure → AssertionError: assert False is True. test_passing_none: NameError name 'text' is not defined; nested text() takes 0 positional arguments but 1 was given (TypeError); then assert None == 'I got: None'. Hoist text to module level for booleans; hardcoded returns break earlier tests until return f'I got: {the_input}'. Walks None, True/False, int 1234, float 5.678, string 'hello', tuple/list/set/dict, and objects (object, bool, int, …) showing Python’s string representation (e.g. "I got: <class 'object'>", set order vs same-variable f-string). REFACTOR: variables + f-strings, remove the commented lines, git commit. Ends with module-level text + 10 tests + # Exceptions seen AssertionError, NameError, TypeError. What is next: how to make a person with f-strings.
-  :keywords: Jacob Itegboje, Pumping Python, telephone python tdd, f-string, string interpolation, pass objects to a function, return f'I got: {the_input}', test_passing_none, NameError name 'text' is not defined, TypeError takes 0 positional arguments but 1 was given, AssertionError assert None == 'I got: None', I got: False, I got: True, an_integer 1234, a_float 5.678, hello string, tuple list set dictionary class string representation, <class 'object'>, set order assertion, reality == my_expectation, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, how to place values in strings, how to make a person with f-strings
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): telephone — pass objects into a function and place them in a string with f-strings (string interpolation). Project telephone; uv init, tests package, uv run pytest-watcher . --now --patterns "**/*.py". Starts with test_failure → AssertionError: assert False is True. test_passing_none: NameError name 'text' is not defined; nested text() takes 0 positional arguments but 1 was given (TypeError); then assert None == 'I got: None'. Hoist text to module level for booleans; hardcoded returns break earlier tests until return f'I got: {the_input}'. Walks None, True/False, int 1234, float 5.678, string 'hello', tuple/list/set/dict, and objects (object, bool, int, …) showing Python’s string representation (e.g. "I got: <class 'object'>", set order vs same-variable f-string). REFACTOR: variables + f-strings, remove the commented lines, git commit. Ends with module-level text + 10 tests + # Exceptions seen AssertionError, NameError, TypeError. What is next: how to make a person with f-strings.
+  :keywords: Jacob Itegboje, Pumping Python, telephone python tdd, f-string, string interpolation, pass objects to a function, return f'I got: {the_input}', test_passing_none, NameError name 'text' is not defined, TypeError takes 0 positional arguments but 1 was given, AssertionError assert None == 'I got: None', I got: False, I got: True, an_integer 1234, a_float 5.678, hello string, tuple list set dictionary class string representation, <class 'object'>, set order assertion, reality == my_expectation, uv run pytest-watcher . --now --patterns "**/*.py", red green refactor, remove the commented lines, git commit -am, how to place values in strings, how to make a person with f-strings
 
 .. include:: ../../links.rst
 
@@ -252,7 +252,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -278,7 +278,7 @@ start the project
     * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
-    and try ``uv run pytest-watcher . --now`` again
+    and try ``uv run pytest-watcher . --now --patterns "**/*.py"`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, to ``test_telephone.py``
 

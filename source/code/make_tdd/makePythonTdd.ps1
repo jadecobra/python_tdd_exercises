@@ -20,4 +20,4 @@ class Test$($NAME_OF_THE_PROJECT)(unittest.TestCase):
 "pytest" | Out-File requirements.txt -Encoding UTF8
 "pytest-watcher" >> requirements.txt
 uv add --requirement requirements.txt
-uv run pytest-watcher . --now
+uv run pytest-watcher . --now --patterns "**/*.py"

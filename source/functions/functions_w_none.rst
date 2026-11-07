@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with None. Open the functions project (test_functions.py after test functions with unittest) and uv run pytest-watcher . --now — 12 passed. In test_making_a_function_w_pass, test_making_a_function_w_return, test_making_a_function_w_return_none, test_what_happens_after_functions_return, and test_identity_function: add assertIsNotNone → AssertionError: unexpectedly None; change it to assertIsNone; remove the commented line, the assert_is_none helper call, and self.assertIs(..., None). Then delete unused assert_is_none. git commit -am 'use assertIsNone'. Review: assertIsNone / assertIsNotNone stand in for assertIs(x, None) / assertIsNot(x, None). What is next: test the person project with conditions.
-  :keywords: Jacob Itegboje, Pumping Python, test functions with None, functions_w_none, assertIsNone, assertIsNotNone, assertIs, assertIsNot, unexpectedly None, AssertionError unexpectedly None, assert_is_none, test_making_a_function_w_pass, test_making_a_function_w_return, test_making_a_function_w_return_none, return_leaves_the_function, test_identity_function, identity None, w_pass w_return, unittest TestCase, uv run pytest-watcher . --now, 12 passed, red green refactor, remove the commented lines, git commit -am use assertIsNone, test_functions.py, another way to test if something is None
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with None. Open the functions project (test_functions.py after test functions with unittest) and uv run pytest-watcher . --now --patterns "**/*.py" — 12 passed. In test_making_a_function_w_pass, test_making_a_function_w_return, test_making_a_function_w_return_none, test_what_happens_after_functions_return, and test_identity_function: add assertIsNotNone → AssertionError: unexpectedly None; change it to assertIsNone; remove the commented line, the assert_is_none helper call, and self.assertIs(..., None). Then delete unused assert_is_none. git commit -am 'use assertIsNone'. Review: assertIsNone / assertIsNotNone stand in for assertIs(x, None) / assertIsNot(x, None). What is next: test the person project with conditions.
+  :keywords: Jacob Itegboje, Pumping Python, test functions with None, functions_w_none, assertIsNone, assertIsNotNone, assertIs, assertIsNot, unexpectedly None, AssertionError unexpectedly None, assert_is_none, test_making_a_function_w_pass, test_making_a_function_w_return, test_making_a_function_w_return_none, return_leaves_the_function, test_identity_function, identity None, w_pass w_return, unittest TestCase, uv run pytest-watcher . --now --patterns "**/*.py", 12 passed, red green refactor, remove the commented lines, git commit -am use assertIsNone, test_functions.py, another way to test if something is None
 
 .. include:: ../links.rst
 
@@ -63,7 +63,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ shows
 

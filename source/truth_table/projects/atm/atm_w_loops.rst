@@ -1,5 +1,5 @@
 .. meta::
-  :description: Pumping Python chapter "test atm with loops" by Johnny Blase. One test_atm loops the four withdrawal inputs right_pin, enough_cash, above_daily_limit, and card_expired. The withdraw function checks them in that denial order: "DENIED: Card Expired", then "DENIED: Exceeded daily withdrawal limit", then "DENIED: Wrong PIN. Try again...", then "DENIED: Not enough CASH in Account". Only a right PIN, enough cash, a withdrawal that is not above the daily limit, and a card that has not expired returns "CASH". The chapter shows pytest-watcher subTest AssertionError failures, TypeError for the unexpected keywords above_daily_limit_a (Did you mean above_daily_limit) and right_pin_a (Did you mean right_pin), then replaces nested if statements with elif. Commands include uv run pytest-watcher . --now and git commit -am.
+  :description: Pumping Python chapter "test atm with loops" by Johnny Blase. One test_atm loops the four withdrawal inputs right_pin, enough_cash, above_daily_limit, and card_expired. The withdraw function checks them in that denial order: "DENIED: Card Expired", then "DENIED: Exceeded daily withdrawal limit", then "DENIED: Wrong PIN. Try again...", then "DENIED: Not enough CASH in Account". Only a right PIN, enough cash, a withdrawal that is not above the daily limit, and a card that has not expired returns "CASH". The chapter shows pytest-watcher subTest AssertionError failures, TypeError for the unexpected keywords above_daily_limit_a (Did you mean above_daily_limit) and right_pin_a (Did you mean right_pin), then replaces nested if statements with elif. Commands include uv run pytest-watcher . --now --patterns "**/*.py" and git commit -am.
   :keywords: test atm with loops, Automated Teller Machine, withdraw, for loop, subTest, card_expired, above_daily_limit, right_pin, enough_cash, DENIED: Card Expired, DENIED: Exceeded daily withdrawal limit, DENIED: Wrong PIN. Try again..., DENIED: Not enough CASH in Account, CASH, TypeError, unexpected keyword argument, elif, pytest-watcher, git commit -am, Pumping Python, Johnny Blase
 
 .. include:: ../../../links.rst
@@ -94,7 +94,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
 ----
 

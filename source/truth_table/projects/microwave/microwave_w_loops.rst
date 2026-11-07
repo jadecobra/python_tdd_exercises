@@ -1,7 +1,7 @@
 :orphan:
 
 .. meta::
-  :description: Pumping Python chapter "test microwave with loops" by Jacob Itegboje. Continues the Microwave project: one ``test_microwave`` nests four ``for`` loops over ``(False, True)`` for ``closed_door``, ``timer_set``, ``pressed_start``, and ``too_hot``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the heat case (door closed, timer set, start pressed, not too hot) is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, on that same case. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other microwave tests are removed because this loop covers them. The review says four nested loops made one test for all sixteen cases and points ahead to a better way. Also ``cd microwave`` and ``git commit -am 'extract test_microwave'``.
+  :description: Pumping Python chapter "test microwave with loops" by Jacob Itegboje. Continues the Microwave project: one ``test_microwave`` nests four ``for`` loops over ``(False, True)`` for ``closed_door``, ``timer_set``, ``pressed_start``, and ``too_hot``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now --patterns "**/*.py"`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the heat case (door closed, timer set, start pressed, not too hot) is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, on that same case. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other microwave tests are removed because this loop covers them. The review says four nested loops made one test for all sixteen cases and points ahead to a better way. Also ``cd microwave`` and ``git commit -am 'extract test_microwave'``.
   :keywords: Jacob Itegboje, Pumping Python, test microwave with loops, test_microwave, nested for loops, unittest subTest, SUBFAILED, assertEqual, BOOM, AssertionError False != 'BOOM!!!', AssertionError True != 'BOOM!!!', True is not false, assertFalse, assertTrue, try except AssertionError, src.microwave.microwave, closed_door, timer_set, pressed_start, too_hot, pytest-watcher, git commit extract test_microwave
 
 .. include:: ../../../links.rst
@@ -93,7 +93,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
 ----
 

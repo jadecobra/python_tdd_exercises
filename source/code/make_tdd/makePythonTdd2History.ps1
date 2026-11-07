@@ -15,7 +15,7 @@ cat pyproject.toml
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 .venv/Scripts/activate.ps1
 deactivate
-uv run pytest-watcher . --now
+uv run pytest-watcher . --now --patterns "**/*.py"
 git add .
 git commit --all --message 'automate tests'
 cd ..

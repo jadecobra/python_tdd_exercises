@@ -38,7 +38,7 @@ I have used the following commands to make a :ref:`Python Test Driven Developmen
   echo "pytest" > requirements.txt
   echo "pytest-watcher" >> requirements.txt
   uv add --requirement requirements.txt
-  uv run pytest-watcher . --now
+  uv run pytest-watcher . --now --patterns "**/*.py"
 
 where ``NAME_OF_THE_PROJECT`` is the name I give the project.
 
@@ -141,7 +141,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         echo "pytest" > requirements.txt
         echo "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
       ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_.
 
@@ -160,7 +160,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         "pytest" | Out-File requirements.txt -Encoding UTF8
         "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
 * ``test_magic.py`` will be empty if I run these commands. I want the file_ to have the text for :ref:`the first failing test<test_failure>` so I do not have to add the text for it every time I start a project.
 
@@ -186,7 +186,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         echo "pytest" > requirements.txt
         echo "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -206,7 +206,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         "pytest" | Out-File requirements.txt -Encoding UTF8
         "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
 * I add the text of :ref:`the first failing test<test_failure>` inside the :ref:`quotes ("")<quotes>` I just added to the file_, the way I do when I add ``"pytest"`` as text to ``requirements.txt``
 
@@ -244,7 +244,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         echo "pytest" > requirements.txt
         echo "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -274,7 +274,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         "pytest" | Out-File requirements.txt -Encoding UTF8
         "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
 ----
 

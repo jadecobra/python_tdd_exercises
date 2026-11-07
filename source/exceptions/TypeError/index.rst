@@ -1,6 +1,6 @@
 .. meta::
-  :description: What causes TypeError when calling Python functions? TDD tutorial in the type_error project (uv init, tests/test_type_error.py, uv run pytest-watcher . --now): match the call to the function definition (signature). Deliberately raise TypeError with wrong positional count ("takes 0 positional arguments but 1 was given", "missing 1 required positional argument: 'the_input'", "takes 2 positional arguments but 3 were given"), wrong keyword names ("got an unexpected keyword argument 'argument_0'. Did you mean 'argument'?"), and double-binding ("got multiple values for argument 'argument'"). Three tests: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs. Nested defs are moved to module level so multiple tests can call the same functions; final snapshot only shows correct calls (the pedagogical problem that later separation/assertRaises work addresses). Side-effect NameError when a function name is not defined yet; initial collection failure from assert False is True (AssertionError). Jacob Itegboje Pumping Python TDD series.
-  :keywords: Jacob Itegboje, Pumping Python, what causes TypeError, python TypeError function call, TypeError missing required positional argument, TypeError takes positional arguments but were given, TypeError got an unexpected keyword argument, TypeError Did you mean, TypeError got multiple values for argument, match function signature definition call, positional vs keyword arguments, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, NameError name is not defined, AssertionError assert False is True, uv init type_error, uv run pytest-watcher . --now, red green refactor TypeError, remove the commented lines, nested function locals TypeError, module level functions for shared calls, how to call a function with input, python exceptions TDD tutorial
+  :description: What causes TypeError when calling Python functions? TDD tutorial in the type_error project (uv init, tests/test_type_error.py, uv run pytest-watcher . --now --patterns "**/*.py"): match the call to the function definition (signature). Deliberately raise TypeError with wrong positional count ("takes 0 positional arguments but 1 was given", "missing 1 required positional argument: 'the_input'", "takes 2 positional arguments but 3 were given"), wrong keyword names ("got an unexpected keyword argument 'argument_0'. Did you mean 'argument'?"), and double-binding ("got multiple values for argument 'argument'"). Three tests: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs. Nested defs are moved to module level so multiple tests can call the same functions; final snapshot only shows correct calls (the pedagogical problem that later separation/assertRaises work addresses). Side-effect NameError when a function name is not defined yet; initial collection failure from assert False is True (AssertionError). Jacob Itegboje Pumping Python TDD series.
+  :keywords: Jacob Itegboje, Pumping Python, what causes TypeError, python TypeError function call, TypeError missing required positional argument, TypeError takes positional arguments but were given, TypeError got an unexpected keyword argument, TypeError Did you mean, TypeError got multiple values for argument, match function signature definition call, positional vs keyword arguments, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, NameError name is not defined, AssertionError assert False is True, uv init type_error, uv run pytest-watcher . --now --patterns "**/*.py", red green refactor TypeError, remove the commented lines, nested function locals TypeError, module level functions for shared calls, how to call a function with input, python exceptions TDD tutorial
 
 .. include:: ../../links.rst
 
@@ -254,7 +254,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -278,7 +278,7 @@ start the project
     * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
-    and try ``uv run pytest-watcher . --now`` again
+    and try ``uv run pytest-watcher . --now --patterns "**/*.py"`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_type_error.py``
 

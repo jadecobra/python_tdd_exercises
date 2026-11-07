@@ -20,4 +20,4 @@ class TestATM(unittest.TestCase):
 echo "pytest" > requirements.txt
 echo "pytest-watcher" >> requirements.txt
 uv add --requirement requirements.txt
-uv run pytest-watcher . --now
+uv run pytest-watcher . --now --patterns "**/*.py"

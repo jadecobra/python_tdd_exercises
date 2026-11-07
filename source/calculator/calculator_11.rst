@@ -428,7 +428,7 @@ I have these tests by the end of the chapter
     :emphasize-lines: 1
     :emphasize-text: .
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ is my friend, and shows
 

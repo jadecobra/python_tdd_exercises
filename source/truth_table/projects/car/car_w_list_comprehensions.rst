@@ -1,5 +1,5 @@
 .. meta::
-  :description: Pumping Python chapter "test car with list comprehensions" by Jacob Itegboje. Continues the Car project: one ``test_car_ignition`` nests four ``for`` loops over ``(False, True)`` for ``start_is_pressed``, ``key_is_close``, ``brake_is_pressed``, and ``in_park``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the all-true case is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, when start, key, brake, and park are all true. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other ignition tests are removed because this loop covers them. The review calls the four nested loops ugly and points ahead to fewer loops. Also ``cd car`` and ``git commit -am 'extract test_car_ignition'``.
+  :description: Pumping Python chapter "test car with list comprehensions" by Jacob Itegboje. Continues the Car project: one ``test_car_ignition`` nests four ``for`` loops over ``(False, True)`` for ``start_is_pressed``, ``key_is_close``, ``brake_is_pressed``, and ``in_park``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now --patterns "**/*.py"`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the all-true case is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, when start, key, brake, and park are all true. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other ignition tests are removed because this loop covers them. The review calls the four nested loops ugly and points ahead to fewer loops. Also ``cd car`` and ``git commit -am 'extract test_car_ignition'``.
   :keywords: Jacob Itegboje, Pumping Python, test car with list comprehensions, test_car_ignition, nested for loops, unittest subTest, SUBFAILED, assertEqual, BOOM, AssertionError False != 'BOOM!!!', AssertionError True != 'BOOM!!!', True is not false, assertFalse, assertTrue, try except AssertionError, src.car.ignition, start_is_pressed, key_is_close, brake_is_pressed, in_park, pytest-watcher, git commit extract test_car_ignition
 
 .. include:: ../../../links.rst
@@ -93,7 +93,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
 ----
 

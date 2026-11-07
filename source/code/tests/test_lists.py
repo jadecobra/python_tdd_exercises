@@ -1,7 +1,7 @@
 import unittest
 
 
-class Testlists(unittest.TestCase):
+class TestLists(unittest.TestCase):
 
     def test_making_a_list(self):
         self.assertEqual(list(), [])

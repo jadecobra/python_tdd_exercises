@@ -1,5 +1,5 @@
 .. meta::
-  :description: Separate tests from solutions ("separate and equal") in the type_error project with TDD. Move function_00–function_08 from tests/test_type_error.py into src/type_error/__init__.py: import src.type_error, reroute calls to src.type_error.function_N, remove commented local calls, then delete the local defs. Real errors on the way: "NameError: name 'src' is not defined", "AttributeError: module 'src.type_error' has no attribute 'function_00'", plus TypeError while renaming signatures so keyword tests match (unexpected keyword, missing required positional, function_08 multiple values for 'argument' until def function_08(name, argument)). Three tests keep working: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (mixed call function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commit --all --message 'move functions to src'. Review: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD.
+  :description: Separate tests from solutions ("separate and equal") in the type_error project with TDD. Move function_00–function_08 from tests/test_type_error.py into src/type_error/__init__.py: import src.type_error, reroute calls to src.type_error.function_N, remove commented local calls, then delete the local defs. Real errors on the way: "NameError: name 'src' is not defined", "AttributeError: module 'src.type_error' has no attribute 'function_00'", plus TypeError while renaming signatures so keyword tests match (unexpected keyword, missing required positional, function_08 multiple values for 'argument' until def function_08(name, argument)). Three tests keep working: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (mixed call function_08('positional', argument='keyword')). uv run pytest-watcher . --now --patterns "**/*.py", git commit --all --message 'move functions to src'. Review: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD.
   :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error/__init__.py, import src.type_error, src.type_error.function_00, NameError name 'src' is not defined, AttributeError module 'src.type_error' has no attribute, TypeError unexpected keyword argument, TypeError missing required positional argument, TypeError multiple values for argument, function_08(name, argument), test_type_error_w_separation, remove the commented lines, uv pytest-watcher, git commit, I can write solutions in a different module from the tests, TypeError continuation, python src package
 
 .. include:: ../../links.rst
@@ -67,7 +67,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ shows
 

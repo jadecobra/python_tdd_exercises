@@ -1,7 +1,7 @@
 :orphan:
 
 .. meta::
-  :description: Pumping Python chapter "test elevator with loops" by Jacob Itegboje. Continues the Elevator project: one ``test_elevator_controller`` nests four ``for`` loops over ``(False, True)`` for ``number_pushed``, ``doors_closed``, ``above_weight``, and ``emergency``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the move case (button pushed, doors closed, not above weight, emergency not pushed) is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, on that same case. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other controller tests are removed because this loop covers them. The review says four nested loops made one test for all sixteen cases and points ahead to a better way. Also ``cd elevator`` and ``git commit -am 'extract test_elevator_controller'``.
+  :description: Pumping Python chapter "test elevator with loops" by Jacob Itegboje. Continues the Elevator project: one ``test_elevator_controller`` nests four ``for`` loops over ``(False, True)`` for ``number_pushed``, ``doors_closed``, ``above_weight``, and ``emergency``, and names each case with ``unittest`` ``subTest``. ``uv run pytest-watcher . --now --patterns "**/*.py"`` reports ``SUBFAILED``. ``assertEqual(result, 'BOOM!!!')`` fails all 16 cases: fifteen are ``AssertionError: False != 'BOOM!!!'`` and the move case (button pushed, doors closed, not above weight, emergency not pushed) is ``AssertionError: True != 'BOOM!!!'``. ``assertFalse(result)`` leaves one failure, ``AssertionError: True is not false``, on that same case. A ``try`` that catches ``AssertionError`` and then calls ``assertTrue`` makes the loop pass. The other controller tests are removed because this loop covers them. The review says four nested loops made one test for all sixteen cases and points ahead to a better way. Also ``cd elevator`` and ``git commit -am 'extract test_elevator_controller'``.
   :keywords: Jacob Itegboje, Pumping Python, test elevator with loops, test_elevator_controller, nested for loops, unittest subTest, SUBFAILED, assertEqual, BOOM, AssertionError False != 'BOOM!!!', AssertionError True != 'BOOM!!!', True is not false, assertFalse, assertTrue, try except AssertionError, src.elevator.controller, number_pushed, doors_closed, above_weight, emergency, pytest-watcher, git commit extract test_elevator_controller
 
 .. include:: ../../../links.rst
@@ -93,7 +93,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
 ----
 

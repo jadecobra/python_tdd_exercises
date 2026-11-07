@@ -1,5 +1,5 @@
 .. meta::
-  :description: Run Python tests automatically with pytest-watcher and uv on the person project from manual TDD setup. Jacob Itegboje writes requirements.txt with echo pytest then echo pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, source .venv/bin/activate and deactivate. Module-level assert False is True is ERROR collecting tests/test_person.py (E assert False is True); after assert False is False pytest shows collected 0 items and no tests ran. Press q to stop the watcher (Press w for the menu). Covers virtual environment .venv, pyproject.toml dependencies, uv.lock, and why repeating python3 -m unittest is replaced. Pumping Python make TDD project 1 part 2 after the manual person setup.
+  :description: Run Python tests automatically with pytest-watcher and uv on the person project from manual TDD setup. Jacob Itegboje writes requirements.txt with echo pytest then echo pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now --patterns "**/*.py", source .venv/bin/activate and deactivate. Module-level assert False is True is ERROR collecting tests/test_person.py (E assert False is True); after assert False is False pytest shows collected 0 items and no tests ran. Press q to stop the watcher (Press w for the menu). Covers virtual environment .venv, pyproject.toml dependencies, uv.lock, and why repeating python3 -m unittest is replaced. Pumping Python make TDD project 1 part 2 after the manual person setup.
   :keywords: Jacob Itegboje, Pumping Python, pytest-watcher automatic tests, uv add requirement requirements.txt, uv run pytest-watcher --now, python virtual environment activate deactivate, source .venv/bin/activate, echo pytest requirements.txt, no tests ran pytest, collected 0 items, ERROR collecting tests/test_person.py, assert False is True collection error, person project pumping_python, automate python3 -m unittest, pyproject.toml dependencies pytest-watcher, Press q stop pytest-watcher, ctrl click tests/test_person.py terminal
 
 .. include:: ../links.rst
@@ -480,7 +480,7 @@ how to run tests automatically with uv and pytest-watcher
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ is my friend, and shows an error without going back to the command line
 
@@ -678,7 +678,7 @@ how to view all the commands I typed to automate running tests
         echo "pytest" > requirements.txt
         echo "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -693,7 +693,7 @@ how to view all the commands I typed to automate running tests
         "pytest" | Out-File requirements.txt
         "pytest-watcher" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now
+        uv run pytest-watcher . --now --patterns "**/*.py"
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project.
 

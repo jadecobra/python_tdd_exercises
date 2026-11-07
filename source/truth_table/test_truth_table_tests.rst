@@ -1,5 +1,5 @@
 .. meta::
-  :description: Ultimate Python TDD challenge—wipe src/truth_table/__init__.py and rebuild all 20 operations (4 nullary/unary + 16 binary) so tests/test_binary.py and tests/test_nullary_unary.py pass without reading the tests. Follow AttributeError (module has no attribute …), NameError, TypeError (NoneType not callable / wrong arity), and AssertionError (None is not true, True is not false) through Red-Green-Refactor. Implement logical_true/false, identity, negation (not), then tautology, project_first/second, negate_first/second, AND/OR/NAND/NOR, XOR, equality, material and converse implication/non-implication, contradiction. Refactor case-by-case ifs into idiomatic and/or/not. uv run pytest-watcher . --now. Jacob Itegboje Pumping Python TDD.
+  :description: Ultimate Python TDD challenge—wipe src/truth_table/__init__.py and rebuild all 20 operations (4 nullary/unary + 16 binary) so tests/test_binary.py and tests/test_nullary_unary.py pass without reading the tests. Follow AttributeError (module has no attribute …), NameError, TypeError (NoneType not callable / wrong arity), and AssertionError (None is not true, True is not false) through Red-Green-Refactor. Implement logical_true/false, identity, negation (not), then tautology, project_first/second, negate_first/second, AND/OR/NAND/NOR, XOR, equality, material and converse implication/non-implication, contradiction. Refactor case-by-case ifs into idiomatic and/or/not. uv run pytest-watcher . --now --patterns "**/*.py". Jacob Itegboje Pumping Python TDD.
   :keywords: Jacob Itegboje, Pumping Python, test truth table tests, truth table blank file challenge, 20 failing tests pytest, AttributeError module has no attribute logical_negation, NameError name is not defined, TypeError NoneType not callable, TypeError takes 0 positional arguments but 1 was given, AssertionError None is not true, logical_true logical_false nullary, logical_identity logical_negation not, logical_conjunction AND, logical_disjunction OR, logical_nand logical_nor, exclusive_disjunction XOR, material_implication converse_implication, project_first project_second, TDD red green refactor truth table, pytest-watcher truth_table, uv run pytest-watcher, rebuild boolean logic library Python
 
 .. include:: ../links.rst
@@ -58,7 +58,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now
+    uv run pytest-watcher . --now --patterns "**/*.py"
 
   the terminal_ is my friend, and shows
 

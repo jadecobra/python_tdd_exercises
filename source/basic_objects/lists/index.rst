@@ -1,6 +1,7 @@
 .. meta::
-  :description: Comprehensive TDD tutorial for Python lists: indexing, slicing, methods, mutation, and testing. Master lists as a fundamental mutable sequence data structure through step-by-step red-green-refactor with unittest and assertions. Connects to earlier coverage of None/booleans/identity testing in the AssertionError chapters.
-  :keywords: Jacob Itegboje, Pumping Python, python lists tutorial, list methods python, python list indexing, python list slicing, TDD lists, unittest test list, Python basic objects lists, mutable list python, testing lists with assertions, red green refactor lists, python list best practices, python list for beginners, list TDD tutorial, python list operations
+  :description: Python lists for beginners: step-by-step TDD tutorial testing mutable sequence objects with unittest and pytest. Learn how to create lists with list() and [], explore dir(list) and dir(object) with maxDiff = None, and test all list methods: append, clear, copy, count, extend, index, insert, pop, remove, reverse, and sort. Master 0-based indexing, negative indexing, item assignment (mutation), slicing ([start:stop]), and the exceptions every beginner encounters: TypeError ('int' object is not iterable), ValueError ('not in list' is not in list), and IndexError (list index out of range, pop from empty list).
+  :keywords: Jacob Itegboje, Pumping Python, python lists tutorial, python list methods, list append clear copy, list count extend index, list insert pop remove, list reverse sort, python list indexing, negative indexing python, python list slicing, python list mutation, TDD python lists, unittest test list, TypeError int object is not iterable, IndexError list index out of range, IndexError pop from empty list, ValueError not in list, dir list maxDiff None, python basic objects lists, red green refactor lists, mutable sequence python
+
 
 .. include:: ../../links.rst
 
@@ -14,12 +15,12 @@
 .. _copy: more_on_lists_
 .. _copy method: more_on_lists_
 .. _pop: more_on_lists_
-.. _pop method:
+.. _pop method: more_on_lists_
 .. _insert: more_on_lists_
 .. _insert method: more_on_lists_
 .. _index: more_on_lists_
 .. _index method: more_on_lists_
-.. _remove:
+.. _remove: more_on_lists_
 .. _remove method: more_on_lists_
 .. _reverse: more_on_lists_
 .. _reverse method: more_on_lists_
@@ -215,6 +216,20 @@ start the project
 
   the test passes.
 
+* I change ``Testlists`` to ``TestLists`` to match :ref:`Python convention<conventions>`
+
+  .. code-block:: python
+    :caption: lists/tests/test_lists.py
+    :linenos:
+    :emphasize-lines: 4
+
+    import unittest
+
+
+    class TestLists(unittest.TestCase):
+
+        def test_failure(self):
+
 * I open a new terminal_ then `change directory`_ to ``lists``
 
   .. code-block:: python
@@ -251,13 +266,13 @@ test_making_a_list
 
 ----
 
+
 I change :ref:`test_failure` to :ref:`test_making_a_list`
 
 .. code-block:: python
   :caption: lists/tests/test_lists.py
   :lineno-start: 4
   :emphasize-lines: 3-4
-
 
   class TestLists(unittest.TestCase):
 
@@ -403,7 +418,7 @@ I add a failing test for the :ref:`attributes<what is an object attribute?>` and
   :lineno-start: 8
   :emphasize-lines: 3-7
 
-          self.assertEqual(list(0, 1, 2, 'n'), [0, 1, 2, 'n'])
+          self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
       def test_dir_list(self):
           self.assertEqual(
@@ -1114,9 +1129,10 @@ the test passes.
 
     AssertionError: 3 != 1
 
-* I change the value to match
+* I change the expectation to match
 
-  .. code-block::
+  .. code-block:: python
+    :caption: lists/tests/test_lists.py
     :lineno-start: 83
     :emphasize-lines: 1
 
@@ -1646,7 +1662,7 @@ the test passes.
 
     AssertionError: 2 != 0
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
@@ -3572,11 +3588,11 @@ I add :ref:`assertRaises<another way to test if an Exception is raised>`
   :lineno-start: 171
   :emphasize-lines: 4-5
 
-  def test_index_error(self):
-      a_list = ['a', 'b', 'c', 'd']
+      def test_index_error(self):
+          a_list = ['a', 'b', 'c', 'd']
 
-      with self.assertRaises(IndexError):
-          a_list[4]
+          with self.assertRaises(IndexError):
+              a_list[4]
 
 the test passes.
 
@@ -3740,7 +3756,7 @@ The :ref:`attributes and methods of a list<test_dir_list>` look like the :ref:`a
 I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of a list<test_dir_list>`, then add an :ref:`assertion<what is an assertion?>` for it, in :ref:`test_dir_list`
 
 .. code-block:: python
-  :caption: lists/tests/test_list.py
+  :caption: lists/tests/test_lists.py
   :lineno-start: 10
   :emphasize-lines: 4-11
 
@@ -3792,7 +3808,7 @@ I am close, but not quite.
 * I add the thirteen additional elements
 
   .. code-block:: python
-    :caption: lists/tests/test_list.py
+    :caption: lists/tests/test_lists.py
     :lineno-start: 14
     :emphasize-lines: 2-7
 
@@ -3806,7 +3822,7 @@ I am close, but not quite.
                 'append', 'clear', 'copy',
                 'count', 'extend', 'index',
                 'insert', 'pop', 'remove',
-                'reverse', 'sort'
+                'reverse', 'sort',
             ))
 
   the terminal_ does not feel like my friend, it shows :ref:`AssertionError<what causes AssertionError?>`. The details show what I added as missing and as extra. How can it be both? It looks like the problem is the position of the extra items.
@@ -3814,7 +3830,7 @@ I am close, but not quite.
 * I add a :ref:`call to the sort method<test_sort_a_list>`
 
   .. code-block:: python
-    :caption: lists/tests/test_list.py
+    :caption: lists/tests/test_lists.py
     :lineno-start: 14
     :emphasize-lines: 13
 
@@ -3828,7 +3844,7 @@ I am close, but not quite.
                 'append', 'clear', 'copy',
                 'count', 'extend', 'index',
                 'insert', 'pop', 'remove',
-                'reverse', 'sort'
+                'reverse', 'sort',
             ))
             dir_list.sort()
             self.assertEqual(dir(list), dir_list)
@@ -3853,8 +3869,8 @@ I am close, but not quite.
 * I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_list`
 
   .. code-block:: python
-    :caption: lists/tests/test_list.py
-    :lineno-start: 25
+    :caption: lists/tests/test_lists.py
+    :lineno-start: 26
 
             dir_list.sort()
             self.assertEqual(dir(list), dir_list)
