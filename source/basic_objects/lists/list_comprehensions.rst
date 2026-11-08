@@ -656,6 +656,15 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
 * I remove the second :ref:`return statement<the return statement>`
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_list_w_a_for_loop'
+
 :ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`. Why did I use a `for loop`_ when I can use ``list()`` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
 
 ----
@@ -868,7 +877,16 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
 
     # Exceptions seen
 
-  the test is green again
+  the test is green again.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_list_w_extend'
 
 ----
 
@@ -879,6 +897,14 @@ how to use the setUp method to reset object attributes for every test
 The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before.
 
 The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`object attributes<what are object attributes?>` are always reset at the beginning of the test, so that the values are new for each test.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
 
 * I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`object<everything is an object>` and move the :ref:`object attributes<what is an object attribute?>` into it
 
@@ -908,6 +934,14 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
                         has no attribute 'an_iterable'
 
   because the other :ref:`methods<what is a method?>` can not reach the ``an_iterable`` :ref:`variable<what is a variable?>` from outside the `setUp method`_. I have to make it an :ref:`object attribute<what is an object attribute?>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I add ``self.`` to ``an_iterable`` in the `setUp method`_ to make it an :ref:`object attribute<what is an object attribute?>`
 
@@ -949,6 +983,14 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
   - ``self.a_list`` to an :ref:`empty list<test_making_a_list>`
   - ``self.iterable`` to a :ref:`range object<the range object>` that goes from ``0`` to random number between ``1`` and ``999``
 
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
 * I try to use ``self.a_list`` again in :ref:`test_making_a_list_w_extend`
 
   .. code-block:: python
@@ -983,6 +1025,14 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
 
 
     # Exceptions seen
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add setUp method'
 
 :ref:`I know how to make a list with the extend method<test_making_a_list_w_extend>`
 
