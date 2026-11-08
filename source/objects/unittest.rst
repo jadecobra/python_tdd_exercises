@@ -2788,7 +2788,7 @@ The problem with this solution is that anyone reading it has to know what the ``
 ----
 
 *********************************************************************************
-extract TestUnittest class
+extract TestUnittest object
 *********************************************************************************
 
 I can put the test :ref:`functions<what is a function?>` together in an :ref:`object<everything is an object>` since they are related.
@@ -2904,7 +2904,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 ----
 
 * I remove ``test_failure``
-* I move :ref:`test_dir_unittest` to replace ``test_failure`` as a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_dir_unittest` to replace ``test_failure`` as a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2973,7 +2973,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I move :ref:`test_dir_unittest_testcase` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_dir_unittest_testcase` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -3037,7 +3037,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I indent (move with four spaces) :ref:`test_assertIsNot` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I indent (move with four spaces) :ref:`test_assertIsNot` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 86
@@ -3075,7 +3075,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I move :ref:`test_assertIs` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_assertIs` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -3113,7 +3113,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I indent :ref:`test_assertNotEqual` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I indent :ref:`test_assertNotEqual` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 96
@@ -3151,7 +3151,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I move :ref:`test_assertEqual` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_assertEqual` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 101
@@ -3189,7 +3189,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I move :ref:`test_assertNotIsInstance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_assertNotIsInstance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 106
@@ -3229,7 +3229,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I move :ref:`test_assertIs_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_assertIs_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 113
@@ -3276,7 +3276,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I move :ref:`test_assertNotIsSubclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_assertNotIsSubclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 123
@@ -3320,7 +3320,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test passes.
 
-* I move :ref:`test_assertIs_subclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_assertIs_subclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
     :lineno-start: 132
@@ -3366,7 +3366,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
 ----
 
-* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it an :ref:`object attribute<what is an object attribute?>`
+* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest object>` to make it an :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -3769,7 +3769,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract TestUnittest class'
+    git commit -am 'extract TestUnittest object'
 
 ----
 
@@ -3777,7 +3777,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 use unittest.TestCase
 *********************************************************************************
 
-I can use the `unittest.TestCase class`_ as a parent of the :ref:`TestUnittest class<extract TestUnittest class>` which will allow me to use ``self`` to access its :ref:`attributes and methods<test_dir_unittest_testcase>`.
+I can use the `unittest.TestCase class`_ as a parent of the :ref:`TestUnittest class<extract TestUnittest object>` which will allow me to use ``self`` to access its :ref:`attributes and methods<test_dir_unittest_testcase>`.
 
 It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is an object attribute?>` which points to an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_.
 
@@ -3835,7 +3835,7 @@ It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is an 
 
 ----
 
-I add `unittest.TestCase`_ as the parent of the :ref:`TestUnittest class<extract TestUnittest class>` so that it can :ref:`have all the attributes and methods<everything is an object>` of `unittest.TestCase`_
+I add `unittest.TestCase`_ as the parent of the :ref:`TestUnittest class<extract TestUnittest object>` so that it can :ref:`have all the attributes and methods<everything is an object>` of `unittest.TestCase`_
 
 .. code-block:: python
   :lineno-start: 4
@@ -3854,9 +3854,9 @@ I add `unittest.TestCase`_ as the parent of the :ref:`TestUnittest class<extract
 
 the test passes because
 
-* :ref:`TestUnittest<extract TestUnittest class>` is now a :ref:`subclass (child)<how to test if something is a subclass>` of the `unittest.TestCase class`_.
+* :ref:`TestUnittest<extract TestUnittest object>` is now a :ref:`subclass (child)<how to test if something is a subclass>` of the `unittest.TestCase class`_.
 * :ref:`children inherit the attributes and methods of their parents<everything is an object>`.
-* ``self`` is :ref:`TestUnittest()<extract TestUnittest class>` inside :ref:`TestUnittest<extract TestUnittest class>`.
+* ``self`` is :ref:`TestUnittest()<extract TestUnittest object>` inside :ref:`TestUnittest<extract TestUnittest object>`.
 * ``self`` has all the :ref:`attributes and methods of unittest.TestCase<test_dir_unittest_testcase>` because `unittest.TestCase`_ is the :ref:`parent class<everything is an object>`.
 
 .. code-block:: shell
@@ -3884,7 +3884,7 @@ the test passes because
 
 ----
 
-* I remove the commented lines from :ref:`test_dir_unittest` and :ref:`TestUnittest<extract TestUnittest class>`
+* I remove the commented lines from :ref:`test_dir_unittest` and :ref:`TestUnittest<extract TestUnittest object>`
 
   .. code-block:: python
     :linenos:
@@ -3911,7 +3911,7 @@ the test passes because
         # def test_dir_unittest_testcase():
         def test_dir_unittest_testcase(self):
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assertIs_subclass` to show that :ref:`TestUnittest<extract TestUnittest class>` is a :ref:`subclass<how to test if something is a subclass>` of the `unittest.TestCase class`_
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assertIs_subclass` to show that :ref:`TestUnittest<extract TestUnittest object>` is a :ref:`subclass<how to test if something is a subclass>` of the `unittest.TestCase class`_
 
   .. code-block:: python
     :lineno-start: 148
@@ -4098,7 +4098,7 @@ the test passes because
 
         def test_assertIs_subclass(self):
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assertIs_instance` to show that ``self`` in the :ref:`TestUnittest class<extract TestUnittest class>` is an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assertIs_instance` to show that ``self`` in the :ref:`TestUnittest class<extract TestUnittest object>` is an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_
 
   .. code-block:: python
     :lineno-start: 125

@@ -2085,7 +2085,7 @@ I can use :ref:`if statements<if statements>` to write a program_ that makes dec
 
 My tests have problems:
 
-* The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
+* The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<test person with lists>`.
 * I skipped :ref:`test_when_person_is_older_than_120`, :ref:`test_when_year_of_birth_is_the_future` and :ref:`test_when_year_of_birth_is_not_an_integer` because they are always in a :red:`RED` state since they cause an :ref:`Exception<how to test that an Exception is raised>`. The only way to know that the code causes the :ref:`Exception<how to test that an Exception is raised>` is to remove the `unittest.skip decorator`_. :ref:`There has to be a better way<how to make a person with exceptions>`
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. :ref:`There has to be a better way<how to make a person with loops>`.
 

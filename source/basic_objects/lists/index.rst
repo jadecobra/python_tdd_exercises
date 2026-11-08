@@ -3983,7 +3983,7 @@ what is next?
   ../../how_to/make_person/make_person_w_lists
   ../../objects/unittest_w_lists
 
-:ref:`Would you like to refactor the attributes of the person object and instance with lists?<how to make a person with lists>`
+:ref:`Would you like to refactor the attributes of the person object and instance with lists?<test person with lists>`
 
 -----
 

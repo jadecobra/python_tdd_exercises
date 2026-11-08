@@ -64,7 +64,7 @@ class TestPerson(unittest.TestCase):
     def calculate_age(self, year_of_birth):
         return self.this_year - year_of_birth
 
-    def test_person_object(self):
+    def test_person_class(self):
         for a_person in self.people:
             year_of_birth = a_person[0]
 
@@ -163,25 +163,29 @@ class TestPerson(unittest.TestCase):
                 )
 
     def test_dir_person_object(self):
+        dir_person = dir(object)
+        dir_person.extend((
+            '__dict__', '__firstlineno__',
+            '__module__', '__static_attributes__',
+            '__weakref__',
+            'can_get_license', 'can_vote',
+            'check_age', 'say_hello',
+        ))
+        dir_person.sort()
         self.assertEqual(
             dir(src.person.Person),
-            [
-                '__class__', '__delattr__', '__dict__',
-                '__dir__', '__doc__', '__eq__',
-                '__firstlineno__', '__format__', '__ge__',
-                '__getattribute__', '__getstate__', '__gt__',
-                '__hash__', '__init__', '__init_subclass__',
-                '__le__', '__lt__', '__module__', '__ne__',
-                '__new__', '__reduce__', '__reduce_ex__',
-                '__repr__', '__setattr__', '__sizeof__',
-                '__static_attributes__', '__str__',
-                '__subclasshook__', '__weakref__',
-                'can_get_license', 'can_vote', 'check_age',
-                'say_hello',
-            ]
+            dir_person
         )
 
     def test_dir_person_instance(self):
+        self.maxDiff = None
+        dir_person_instance = dir(src.person.Person)
+        dir_person_instance.extend((
+            'age', 'first_name', 'is_citizen',
+            'last_name', 'passed_test',
+            'sex', 'year_of_birth',
+        ))
+        dir_person_instance.sort()
         self.assertEqual(
             dir(
                 src.person.Person(
@@ -191,22 +195,7 @@ class TestPerson(unittest.TestCase):
                     year_of_birth=2026,
                 )
             ),
-            [
-                '__class__', '__delattr__', '__dict__',
-                '__dir__', '__doc__', '__eq__',
-                '__firstlineno__', '__format__', '__ge__',
-                '__getattribute__', '__getstate__', '__gt__',
-                '__hash__', '__init__', '__init_subclass__',
-                '__le__', '__lt__', '__module__', '__ne__',
-                '__new__', '__reduce__', '__reduce_ex__',
-                '__repr__', '__setattr__', '__sizeof__',
-                '__static_attributes__', '__str__',
-                '__subclasshook__', '__weakref__',
-                'age', 'can_get_license', 'can_vote',
-                'check_age', 'first_name', 'is_citizen',
-                'last_name', 'passed_test', 'say_hello',
-                'sex', 'year_of_birth',
-            ]
+            dir_person_instance
         )
 
 

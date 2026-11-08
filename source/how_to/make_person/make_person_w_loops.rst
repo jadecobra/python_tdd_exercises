@@ -5420,7 +5420,7 @@ I can use :ref:`for loops<what is a for loop?>` for things that repeat.
 
 My tests still have problems:
 
-* The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
+* The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<test person with lists>`.
 * The ``people`` :ref:`object attribute<what is an object attribute>` is confusing, anyone who reads it without going through the process of making it would not know what the :ref:`booleans<what is a boolean?>` stands for and the last few tuples_ I added are a different length than the others. :ref:`There has to be a better way<how to make a person with dictionaries>`.
 
 ----

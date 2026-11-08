@@ -1,17 +1,17 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with lists — simplify test_dir_person_object and test_dir_person_instance using list extend and sort methods. Open person project; run tests with uv run pytest-watcher . --now --patterns "**/*.py". RED: in test_dir_person_object, define dir_person = dir(object), extend with ('can_get_license', 'can_vote', 'check_age', 'say_hello'), assertEqual with dir(src.person.Person) -> AssertionError: Lists differ, 'First list contains 5 additional elements'. GREEN: extend with the 5 attributes ('__dict__', '__firstlineno__', '__module__', '__static_attributes__', '__weakref__') -> AssertionError diff until dir_person.sort() is called. REFACTOR: remove old assertion, git commit. RED: in test_dir_person_instance, define dir_person_instance = dir(src.person.Person), assertEqual with dir(instance) -> AssertionError: Lists differ, 'Diff is 718 characters long. Set self.maxDiff to None to see it.'. GREEN: set self.maxDiff = None to see the 7 missing attributes ('age', 'first_name', 'is_citizen', 'last_name', 'passed_test', 'sex', 'year_of_birth'), extend dir_person_instance, and call sort(). REFACTOR: remove old assertion, git commit. All objects inherit attributes and methods from 'object'. Next: test unittest with lists.
+  :keywords: Jacob Itegboje, Pumping Python, test person with lists, python list extend sort, dir(object), dir(src.person.Person), dir instance, test_dir_person_object, test_dir_person_instance, AssertionError Lists differ, self.maxDiff = None, First list contains 5 additional elements, __dict__ __firstlineno__ __module__ __static_attributes__ __weakref__, all objects inherit from object, red green refactor, uv run pytest-watcher, git commit, test person
 .. include:: ../../links.rst
 
-.. _how to make a person with lists:
+.. _test person with lists:
 
 #################################################################################
-how to make a person with lists
+test person with lists
 #################################################################################
 
 ----
 
-I want to use a :ref:`list<what is a list?>` like I did in :ref:`test_dir_person_object with extend and sort` to make :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` simpler.
+I want to use a :ref:`list<what is a list?>` like I did in :ref:`test_dir_list with extend and sort` to make :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` simpler.
 
 ----
 
@@ -19,49 +19,19 @@ I want to use a :ref:`list<what is a list?>` like I did in :ref:`test_dir_person
 preview
 *********************************************************************************
 
-I add these tests to the end of the chapter
+I change these tests in the chapter
 
-.. literalinclude:: ../../code/person/tests/test_person_w_person.py
-  :language: python
-  :linenos:
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
-  :lines: 1-32
+  :language: python
+  :lineno-start: 165
+  :lines: 165-178
 
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 34
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
-  :lines: 34-53
-
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 55
-  :caption: person/tests/test_person.py
-  :lines: 55-73
-
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 75
-  :caption: person/tests/test_person.py
-  :lines: 75-105
-
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 107
-  :caption: person/tests/test_person.py
-  :lines: 107-119
-
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 121
-  :caption: person/tests/test_person.py
-  :lines: 121-128
-
-.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
-  :language: python
-  :lineno-start: 130
-  :caption: person/tests/test_person.py
-  :lines: 130-147
+  :lineno-start: 180
+  :lines: 180-207
 
 -----
 
@@ -101,7 +71,7 @@ The :ref:`attributes and methods of the Person object<test_dir_person_object>` a
 
 ----
 
-I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of the Person object<test_dir_person_object>`, then add an :ref:`assertion<what is an assertion?>` for it, in  :ref:`test_dir_person_object`
+I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of the Person object<test_dir_person_object>`, then add an :ref:`assertion<what is an assertion?>` for it, in :ref:`test_dir_person_object`
 
 .. code-block:: python
   :caption: person/tests/test_person.py
@@ -240,7 +210,7 @@ with a note about the difference
 test_dir_person_instance with extend and sort
 *********************************************************************************
 
-The :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` are the :ref:`attributes and methods of the Person object<test_dir_person_object>` with extra. Since they are both :ref:`lists<what is a list?>` I can make the :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` by adding the "extra" to  the :ref:`attributes and methods of the Person object<test_dir_person_object>`.
+The :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` are the :ref:`attributes and methods of the Person object<test_dir_person_object>` with extra. Since they are both :ref:`lists<what is a list?>` I can make the :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` by adding the "extra" to the :ref:`attributes and methods of the Person object<test_dir_person_object>`.
 
 ----
 
@@ -427,7 +397,7 @@ close the project
 * I close ``test_person.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests
-* I `change directory`_ to the parent of ``lists``
+* I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -448,7 +418,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with lists: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test person with lists: tests>`
 
 ----
 

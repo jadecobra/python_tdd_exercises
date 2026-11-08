@@ -108,7 +108,7 @@ open the project
 ----
 
 *********************************************************************************
-add TestAssertionError class
+add TestAssertionError object
 *********************************************************************************
 
 =================================================================================
@@ -235,7 +235,7 @@ add TestAssertionError class
 
     AssertionError: True != False
 
-* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_failure` in the :ref:`TestAssertionError class<add TestAssertionError class>`
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_failure` in the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -262,7 +262,7 @@ add TestAssertionError class
 
 ----
 
-* I remove the commented lines from :ref:`TestAssertionError<add TestAssertionError class>`
+* I remove the commented lines from :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -292,7 +292,7 @@ add TestAssertionError class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add TestAssertionError class'
+    'add TestAssertionError object'
 
 ----
 
@@ -309,7 +309,7 @@ test_assert_keyword with unittest
 * I go back to the terminal_ where the tests are running
 * I remove :ref:`test_failure`
 
-* I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError class>`
+* I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -624,7 +624,7 @@ test_assertion_error_w_none with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_none` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_assertion_error_w_none` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`object<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
 
@@ -1260,7 +1260,7 @@ test_assertion_error_w_false with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_false` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_assertion_error_w_false` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -1871,7 +1871,7 @@ test_assertion_error_w_true with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_true` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError class>`
+* I move :ref:`test_assertion_error_w_true` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 118
@@ -2477,7 +2477,7 @@ test_assertion_error_w_equality with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_equality` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_assertion_error_w_equality` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 156
@@ -2751,7 +2751,7 @@ test_assertion_error_w_is_vs_equal with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_assertion_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 176
@@ -2921,7 +2921,7 @@ will_not_run with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestAssertionError class<add TestAssertionError class>`
+* I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 183
@@ -3071,7 +3071,7 @@ test_failure with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 186
@@ -3108,7 +3108,7 @@ test_failure with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` in :ref:`TestAssertionError<add TestAssertionError class>`
+I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` in :ref:`TestAssertionError<add TestAssertionError object>`
 
 .. code-block:: python
   :lineno-start: 186
@@ -3208,7 +3208,7 @@ remove repetition with object attributes
 
 Three of the tests have the exact same :ref:`variables<what is a variable?>`. I can make them :ref:`object attributes<what is an object attribute?>` to remove repetition of making the same :ref:`variables<what is a variable?>` in the tests.
 
-* I add an :ref:`object attribute<what is an object attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
+* I add an :ref:`object attribute<what is an object attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
     :lineno-start: 28

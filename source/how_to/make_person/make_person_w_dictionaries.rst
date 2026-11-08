@@ -3,10 +3,10 @@
   :keywords:
 .. include:: ../../links.rst
 
-.. _how to make a person with lists:
+.. _test person with lists:
 
 #################################################################################
-how to make a person with lists
+test person with lists
 #################################################################################
 
 ----

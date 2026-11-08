@@ -689,3 +689,23 @@ The code in ``person/src/person/__init__.py`` after :ref:`how to make a person w
   :language: python
   :lineno-start: 65
   :lines: 65-72
+
+----
+
+*********************************************************************************
+test person with lists: tests
+*********************************************************************************
+
+I change these tests in :ref:`test person with lists`
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 165
+  :lines: 165-178
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 180
+  :lines: 180-207

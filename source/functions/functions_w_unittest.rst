@@ -118,7 +118,7 @@ open the project
 ----
 
 *********************************************************************************
-add TestFunctions class
+add TestFunctions object
 *********************************************************************************
 
 =================================================================================
@@ -272,7 +272,7 @@ add TestFunctions class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add TestFunctions class'
+    'add TestFunctions object'
 
 ----
 
@@ -290,7 +290,7 @@ test_making_a_function_w_pass with unittest
 
 * I remove ``test_failure``
 
-* I move :ref:`test_making_a_function_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_making_a_function_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -420,7 +420,7 @@ test_making_a_function_w_return with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_making_a_function_w_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_making_a_function_w_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -550,7 +550,7 @@ test_making_a_function_w_return_none with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_making_a_function_w_return_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_making_a_function_w_return_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -689,7 +689,7 @@ test_what_happens_after_functions_return with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_what_happens_after_functions_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_what_happens_after_functions_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -839,7 +839,7 @@ test_constant_function with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_constant_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_constant_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -985,7 +985,7 @@ test_identity_function with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_identity_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_identity_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -1165,7 +1165,7 @@ test_why_use_a_function with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_why_use_a_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_why_use_a_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -1394,7 +1394,7 @@ test_positional_arguments with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_positional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_positional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 68
@@ -1721,7 +1721,7 @@ test_keyword_arguments with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_keyword_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_keyword_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 96
@@ -2143,7 +2143,7 @@ test_args_and_kwargs with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_args_and_kwargs` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_args_and_kwargs` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 141
@@ -2345,7 +2345,7 @@ test_optional_arguments with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_optional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_optional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 154
@@ -2706,7 +2706,7 @@ test_unknown_number_of_arguments with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_unknown_number_of_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+* I move :ref:`test_unknown_number_of_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
     :lineno-start: 190
