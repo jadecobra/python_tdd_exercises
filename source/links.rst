@@ -97,8 +97,6 @@
 .. _script: `computer program`_
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: set_
-.. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
-.. _setUp method: setUp_
 .. _shebang: https://grokipedia.com/page/Shebang_(Unix)
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
 .. _sys: https://docs.python.org/3/library/sys.html#module-sys

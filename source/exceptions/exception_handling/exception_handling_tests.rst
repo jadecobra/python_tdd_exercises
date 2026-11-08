@@ -96,7 +96,7 @@ start the project
 *********************************************************************************
 
 * I open a terminal_
-* I give ``exceptions`` as the first argument to the ``makePythonTdd`` program
+* I give ``exceptions`` as the first argument to the :ref:`makePythonTdd<makePythonTdd with variables>` program_
 
   .. tab-set::
     :sync-group: os

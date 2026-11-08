@@ -153,7 +153,7 @@ start the project
 *********************************************************************************
 
 * I open a terminal_
-* I give ``lists`` as the first argument to the ``makePythonTdd`` program
+* I give ``lists`` as the first argument to the :ref:`makePythonTdd<makePythonTdd with variables>` program_
 
   .. tab-set::
     :sync-group: os
@@ -3981,7 +3981,7 @@ what is next?
   :maxdepth: 1
 
   ../../how_to/make_person/make_person_w_lists
-  ../../objects/unittest_w_lists
+  list_comprehensions
 
 :ref:`Would you like to refactor the attributes of the person object and instance with lists?<test person with lists>`
 

@@ -454,7 +454,7 @@ what is next?
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
 
-:ref:`Would you like to refactor the attributes of the unittest library with lists?<test unittest with lists>`
+:ref:`Would you like to test list comprehensions?<list comprehensions>`
 
 ----
 

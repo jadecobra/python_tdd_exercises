@@ -14,12 +14,12 @@
 .. _map object: map_
 .. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
 .. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
+.. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
+.. _setUp method: setUp_
 
 #################################################################################
 list comprehensions
 #################################################################################
-
-
 
 ----
 
@@ -27,7 +27,7 @@ list comprehensions
 what is a list comprehension?
 *********************************************************************************
 
-A `List Comprehension`_ is a simple way to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with one line
+A `List Comprehension`_ is a simple way to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with one line.
 
 ----
 
@@ -48,11 +48,11 @@ questions about list comprehensions
 * :ref:`what is a list comprehension?`
 * :ref:`what is a for loop?`
 * :ref:`how can I make a list with the extend method?<test_making_a_list_w_extend>`
-* :ref:`how can I make a list with a list comprehension<test_making_a_list_w_a_list_comprehension>`
+* :ref:`how can I make a list with a list comprehension?<test_making_a_list_w_a_list_comprehension>`
 * :ref:`how can I make a list based on a condition?<test_making_a_list_w_conditions>`
 * :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
 * :ref:`how can I transform a list?<test_making_a_list_w_processes>`
-* :ref:`how can I transform and filter a list<test_making_a_list_w_processes_and_conditions>`
+* :ref:`how can I transform and filter a list?<test_making_a_list_w_processes_and_conditions>`
 * :ref:`how can I make sure object attributes are reset for every test?<how to use the setUp method to reset object attributes for every test>`
 
 ----
@@ -61,124 +61,106 @@ questions about list comprehensions
 start the project
 *********************************************************************************
 
-* I name this project ``list_comprehensions``
-* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1``
+* I open a terminal_
+* I give ``list_comprehensions`` as the first argument to the :ref:`makePythonTdd<makePythonTdd with variables>` program_
 
-  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tab-set::
+    :sync-group: os
 
-    .. code-block:: python
-      :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-      code makePythonTdd.sh
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
 
-    on `Windows`_ without `Windows Subsystem for Linux`_ use
+        ./makePythonTdd.sh list_comprehensions
 
-    .. code-block:: python
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      code makePythonTdd.ps1
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
 
-* I change everywhere I have ``lists`` to the name of this project
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2, 3, 5, 12, 20
-
-    #!/bin/bash
-    mkdir list_comprehensions
-    cd list_comprehensions
-    mkdir src
-    touch src/list_comprehensions.py
-    mkdir tests
-    touch tests/__init__.py
-
-    echo "import unittest
-
-
-    class TestListComprehensions(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions seen
-    # AssertionError
-    " > tests/test_list_comprehensions.py
-
-  .. note::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
-
-    .. code-block:: PowerShell
-      :linenos:
-      :emphasize-lines: 1-2, 4, 11, 18
-
-      mkdir list_comprehensions
-      cd list_comprehensions
-      mkdir src
-      New-Item src/list_comprehensions.py
-      mkdir tests
-      New-Item tests/__init__.py
-
-      "import unittest
-
-
-      class TestListComprehensions(unittest.TestCase):
-
-          def test_failure(self):
-              self.assertFalse(True)
-
-      # Exceptions seen
-      # AssertionError
-      " | Out-File tests/test_list_comprehensions.py
-
-* I run the program_ in the terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh
-
-  .. note::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      .\makePythonTdd.ps1
+        .\makePythonTdd.ps1 list_comprehensions
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 10
     :emphasize-text: tests/test_list_comprehensions.py:7
 
-    ========================= FAILURES =========================
-    _________________________ TestListComprehensions.test_failure __________________________
+    ======================== FAILURES ==========================
+    ______________ Testlist_comprehensions.test_failure _________________
 
-    self = <tests.test_list_comprehensions.TestListComprehensions testMethod=test_failure>
+    self = <tests.test_list_comprehensions.Testlist_comprehensions testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_list_comprehensions.py:7: AssertionError
-    ================== short test summary info ====================
-    FAILED tests/test_list_comprehensions.py::TestListComprehensions::test_failure - AssertionError: True is not false
-    ==================== 1 failed in X.YZs =====================
+    ================== short test summary info ==================
+    FAILED tests/test_list_comprehensions.py::Testlist_comprehensions::test_failure - AssertionError: True is not false
+    ===================== 1 failed in X.YZs =====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_list_comprehensions.py:7`` to put the cursor on line 7
-
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+* I open ``tests/test_list_comprehensions.py`` from the ``tests`` folder_
+* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 4
+    :emphasize-lines: 4
 
-            self.assertFalse(False)
+    class Testlist_comprehensions(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertTrue(True)
+
+
+    # Exceptions seen
 
   the test passes.
+
+* I change ``Testlist_comprehensions`` to ``TestListComprehensions`` to match :ref:`Python convention<conventions>`
+
+  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :linenos:
+    :emphasize-lines: 4
+
+    import unittest
+
+
+    class TestListComprehensions(unittest.TestCase):
+
+        def test_failure(self):
+
+* I open a new terminal_ then `change directory`_ to ``list_comprehensions``
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    cd list_comprehensions
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git add .
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
 
 ----
 
@@ -186,7 +168,7 @@ start the project
 test_making_a_list_w_a_for_loop
 *********************************************************************************
 
-I can make a :ref:`list<what is a list?>` with ``list()`` or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`
+I can make a :ref:`list<what is a list?>` with ``list()`` or with square brackets (``[]``). I can also add items to a :ref:`list<what is a list?>` one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`.
 
 ----
 
@@ -196,7 +178,7 @@ I can make a :ref:`list<what is a list?>` with ``list()`` or with square bracket
 
 ----
 
-I change :ref:`test_failure` to ``test_making_a_list_w_a_for_loop`` to show what happens when I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` with more than one item
+I change :ref:`test_failure` to :ref:`test_making_a_list_w_a_for_loop` to show what happens when I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` with more than one item
 
 .. code-block:: python
   :lineno-start: 4
@@ -218,11 +200,16 @@ I change :ref:`test_failure` to ``test_making_a_list_w_a_for_loop`` to show what
           a_list.append(9)
           self.assertEqual(a_list, [])
 
+
+  # Exceptions seen
+  # AssertionError
+
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                             != []
 
 ----
 
@@ -235,10 +222,20 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change the expectation to match
 
 .. code-block:: python
-  :lineno-start: 18
-  :emphasize-lines: 1
+  :lineno-start: 16
+  :emphasize-lines: 3-6
 
-          self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+          a_list.append(8)
+          a_list.append(9)
+          self.assertEqual(
+              a_list,
+              [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+          )
+
+
+  # Exceptions seen
+  # AssertionError
+
 
 the test passes.
 
@@ -263,13 +260,14 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
   for item in collection:
       do something
 
-**do something** will run as many times as there are items in the collection.
+``do something`` will run as many times as there are items in the collection.
 
 ----
 
-* I add a `for loop`_ to the test
+* I add a `for loop`_ to :ref:`test_making_a_list_w_a_for_loop`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
     :emphasize-lines: 3-12, 14-15
 
@@ -289,112 +287,152 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
             for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
                 a_list.append(number)
 
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            self.assertEqual(
+                a_list,
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
 
   the test is still green.
 
-* I remove the commented lines. This `for loop`_ removed 10 lines of code and I can use it for any number of items, the other way gets busy very quickly once I have to add more numbers
+* I remove the commented lines
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
 
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
-
             for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
                 a_list.append(number)
 
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            self.assertEqual(
+                a_list,
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
+
+
+    # Exceptions seen
 
   - ``for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):`` goes over every number in the tuple_
   - ``a_list.append(number)`` adds each number from the tuple_ to ``a_list``
 
-* Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequence of numbers, it is called the `range object`_. I add it to the `for loop`_
+  This `for loop`_ removed 10 lines of code and I can use it for any number of items, the other way gets busy very quickly once I have to add more numbers.
+
+* I add :ref:`the range object` for ``(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
-    :emphasize-lines: 4-5
+    :emphasize-lines: 3-4
 
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
-
             # for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
-            for number in range(0, 10):
+            for number in range(10):
                 a_list.append(number)
-
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
   the test is still green.
 
 * I remove the commented line
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
 
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
-
-            for number in range(0, 10):
+            for number in range(10):
                 a_list.append(number)
 
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  ``range(10)`` makes a :ref:`range object<the range object>` that goes from the ``0`` to the given number minus ``1``, in this case it goes from ``0`` to ``9``.
 
-  ``range(0, 10)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus ``1``, in this case it goes from ``0`` to ``9``
-
-* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<what is a list?>`, and there is an easier way. I can do the same thing with ``list()``
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<what is a list?>`, and there is an easier way. I can do the same thing with ``list()`` since it takes an :ref:`iterable<what is an iterable?>` as input
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 2
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 11
+    :emphasize-lines: 5
 
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            self.assertEqual(
+                a_list,
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
             self.assertEqual(list(), a_list)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    AssertionError: Lists differ: []
+                               != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* I add the `range object`_ to the :ref:`assertion<what is an assertion?>`
+* I add :ref:`the range object` as input to ``list()``
 
   .. code-block:: python
-    :lineno-start: 13
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 15
     :emphasize-lines: 1
 
             self.assertEqual(list(range(0, 10)), a_list)
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to remove the repetition of the `range object`_
+* I add a :ref:`variable<what is a variable?>` for ``range(10)``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
-    :emphasize-lines: 3, 5, 9
+    :emphasize-lines: 3
 
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
-            iterable = range(0, 10)
+            numbers = range(10)
 
-            for number in iterable:
+            for number in range(10):
+
+* I use the :ref:`variable<what is a variable>` for ``range(10)`` and ``range(0, 10)`` since they are the same
+
+  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 6
+    :emphasize-lines: 5, 9
+
+        def test_making_a_list_w_a_for_loop(self):
+            a_list = []
+            numbers = range(10)
+
+            for number in numbers:
                 a_list.append(number)
 
-            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-            self.assertEqual(list(iterable), a_list)
+            self.assertEqual(
+                a_list,
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
+            self.assertEqual(list(numbers), a_list)
+
+
+    # Exceptions seen
 
   the test is still green.
 
-* I add another :ref:`assertion<what is an assertion?>` to practice writing a `for loop`_
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 14
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 17
     :emphasize-lines: 2-5
 
-        self.assertEqual(a_list, list(iterable))
-        self.assertEqual(
-            src.list_comprehensions.a_for_loop(iterable),
-            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        )
+            self.assertEqual(list(numbers), a_list)
+            self.assertEqual(
+                src.list_comprehensions.a_for_loop(numbers),
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -405,7 +443,8 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :lineno-start: 21
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 24
     :emphasize-lines: 3
 
     # Exceptions seen
@@ -425,12 +464,13 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   .. code-block:: python
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
+    AttributeError: module 'src.list_comprehensions'
+                    has no attribute 'a_for_loop'
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block::
-    :lineno-start: 22
+    :lineno-start: 25
     :emphasize-lines: 4
 
     # Exceptions seen
@@ -438,11 +478,12 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     # NameError
     # AttributeError
 
-* I open ``list_comprehensions.py``
+* I open ``__init__.py`` from the ``list_comprehensions`` folder_ in the ``src`` folder_
 
-* then add a :ref:`function<what is a function?>` to ``list_comprehensions.py``
+* I change the text in ``src/list_comprehensions/__init__.py`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :linenos:
     :emphasize-lines: 1-2
 
@@ -456,10 +497,11 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     TypeError: a_for_loop() takes 0 positional arguments
                but 1 was given
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_list_comprehensions.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
-    :lineno-start: 22
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 25
     :emphasize-lines: 5
 
     # Exceptions seen
@@ -468,13 +510,13 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     # AttributeError
     # TypeError
 
-* I add a name for the argument in ``list_comprehensions.py``
+* I add a name for the argument in ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def a_for_loop(a_container):
+    def a_for_loop(an_iterable):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -489,14 +531,25 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     :linenos:
     :emphasize-lines: 2
 
-    def a_for_loop(a_container):
+    def a_for_loop(an_iterable):
         return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   the test passes. The problem with this solution is that it will fail when I have a range of numbers that is different. I want a solution that can take any :ref:`iterable<what is an iterable?>` and return the right :ref:`list<what is a list?>`
 
-* I import the `random module`_ to use random numbers in ``test_list_comprehensions.py``
+----
+
+*********************************************************************************
+how to use random numbers
+*********************************************************************************
+
+I want to add randomness to the test to make sure the :ref:`function<what is a function?>` can handle any :ref:`iterable<what is an iterable?>` I give as input.
+
+I can do that with the `random module`_ from `The Python Standard Library`_ which is used to make fake random numbers.
+
+* I import the `random module`_ to use random numbers in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :linenos:
     :emphasize-lines: 1
 
@@ -504,76 +557,97 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     import src.list_comprehensions
     import unittest
 
-* I change the second value in the parentheses for the `range object`_ to a random number
+* I change the second value in the parentheses for :ref:`the range object` to a random number
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 1
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 8
+    :emphasize-lines: 3
 
-            iterable = range(0, random.randint(2, 1000))
+        def test_making_a_list_w_a_for_loop(self):
+            a_list = []
+            numbers = range(random.randint(2, 1000))
+
+            for number in numbers:
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    AssertionError: Lists differ: [0, 1, 2, 3, ...]
+                               != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   - ``random.randint(2, 1000)`` gives me a random integer_ between the first number in parentheses and the second number minus ``1``, in this case the number can be anything from ``2`` to ``999``
-  - this `range object`_ now goes from ``0`` to anywhere between ``1`` and ``999`` because it also goes from the first number in parentheses to the second number minus ``1``, and the second number in this case is a random integer that can be anything from ``2`` to ``999``
-  - The values change every time the test runs
+  - this :ref:`range object<the range object>` now goes from ``0`` to anywhere between ``1`` and ``999`` because it goes from ``0`` to the given number minus ``1``, and the given number in this case is a random integer_ that can be anything from ``2`` to ``999``
+
+* I hit :kbd:`ctrl+s` a few times on the keyboard to run the tests and the values change every time the test runs
 
 * I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 1
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 12
+    :emphasize-lines: 4
 
-            self.assertEqual(a_list, list(iterable))
-            self.assertEqual(list(iterable), a_list)
+            for number in numbers:
+                a_list.append(number)
+
+            self.assertEqual(a_list, list(numbers))
+            self.assertEqual(list(numbers), a_list)
+            self.assertEqual(
+                src.list_comprehensions.a_for_loop(numbers),
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            )
 
   the test passes.
 
-* I remove the second line because it is now a duplicate
+* I remove the second :ref:`assertion<what is an assertion?>` because it is now a repetition
 
   .. code-block:: python
-    :lineno-start: 12
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 15
 
-            for number in iterable:
-                a_list.append(number)
-
-            self.assertEqual(a_list, list(iterable))
+            self.assertEqual(a_list, list(numbers))
             self.assertEqual(
-                src.list_comprehensions.a_for_loop(iterable),
+                src.list_comprehensions.a_for_loop(numbers),
                 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
             )
+
+
+    # Exceptions seen
 
 * I change the expectation of the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 15
-    :emphasize-lines: 2-5
+    :emphasize-lines: 4
 
-            self.assertEqual(a_list, list(iterable))
+            self.assertEqual(a_list, list(numbers))
             self.assertEqual(
-                src.list_comprehensions.a_for_loop(iterable),
+                src.list_comprehensions.a_for_loop(numbers),
                 a_list
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 1, 2, 3, ...]
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                               != [0, 1, 2, 3, ...]
 
-* I change the :ref:`function<what is a function?>` in ``list_comprehensions.py``
+* I change the :ref:`function<what is a function?>` in ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-5
 
-    def a_for_loop(a_container):
+    def a_for_loop(an_iterable):
         result = []
-        for stuff in a_container:
+        for stuff in an_iterable:
             result.append(stuff)
         return result
         return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -582,9 +656,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
 * I remove the second :ref:`return statement<the return statement>`
 
-:ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`
-
-Why did I use a `for loop`_ when I can use ``list()`` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
+:ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`. Why did I use a `for loop`_ when I can use ``list()`` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
 
 ----
 
@@ -602,28 +674,31 @@ I can also use the :ref:`extend method<test_extend_adds_items_from_an_iterable_t
 
 ----
 
-I add a new test
+I add a test for making a :ref:`list<what is a list?>` with the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
 
 .. code-block:: python
-  :lineno-start: 18
-  :emphasize-lines: 4-7
+  :lineno-start: 16
+  :emphasize-lines: 6-9
 
-                a_list
-            )
+          self.assertEqual(
+              src.list_comprehensions.a_for_loop(numbers),
+              a_list
+          )
 
-        def test_making_a_list_w_extend(self):
-            a_list = []
-            iterable = range(0, random.randint(2, 1000))
-            self.assertIsNone(a_list.extend())
+      def test_making_a_list_w_extend(self):
+          a_list = []
+          a_range = range(0, random.randint(2, 1000))
+          self.assertIsNone(a_list.extend())
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
-  TypeError: list.extend() takes exactly one argument (0 given)
+  TypeError: list.extend() takes exactly
+             one argument (0 given)
 
 ----
 
@@ -639,9 +714,9 @@ I add the :ref:`iterable<what is an iterable?>`
   :lineno-start: 24
   :emphasize-lines: 1
 
-          self.assertIsNone(a_list.extend(iterable))
+          self.assertIsNone(a_list.extend(a_range))
 
-the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None<what is None?>`
+the test is green again because the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None<what is None?>`.
 
 ----
 
@@ -654,11 +729,18 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 * I add another :ref:`assertion<what is an assertion?>` to see what changed in the :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 2
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 21
+    :emphasize-lines: 5
 
-            self.assertIsNone(a_list.extend(iterable))
+        def test_making_a_list_w_extend(self):
+            a_list = []
+            a_range = range(0, random.randint(2, 1000))
+            self.assertIsNone(a_list.extend(a_range))
             self.assertEqual(a_list, list())
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -669,16 +751,22 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 1
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 24
+    :emphasize-lines: 2
 
-            self.assertEqual(a_list, list(iterable))
+            self.assertIsNone(a_list.extend(a_range))
+            self.assertEqual(a_list, list(a_range))
 
-  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than ``list()``
 
-* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`object attributes (variables)<test_attribute_error_w_object_attributes>` to remove the repetition
+    # Exceptions seen
+
+  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than ``list()``.
+
+* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`object attributes<what are object attributes?>` to remove the repetition
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
     :emphasize-lines: 3-4
 
@@ -689,67 +777,70 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
         def test_making_a_list_w_a_for_loop(self):
 
-* then I use them in ``test_making_a_list_w_a_for_loop`` with ``self.a_list`` and ``self.iterable`` the way I can use the :ref:`assert methods<test_dir_unittest_testcase>` with ``self.``
+* I use the new :ref:`object attributes<what is an object attribute>` in :ref:`test_making_a_list_w_a_for_loop`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 11
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2-3, 5-8, 10-11, 13-16
 
         def test_making_a_list_w_a_for_loop(self):
             # a_list = []
-            # iterable = range(0, random.randint(2, 1000))
-            a_list = self.a_list
-            iterable = self.iterable
+            # numbers = range(random.randint(2, 1000))
+
+            # for number in numbers:
+            for number in self.an_iterable:
+                # a_list.append(number)
+                self.a_list.append(number)
+
+            # self.assertEqual(a_list, list(numbers))
+            self.assertEqual(self.a_list, list(self.an_iterable))
+            self.assertEqual(
+                # src.list_comprehensions.a_for_loop(numbers),
+                src.list_comprehensions.a_for_loop(self.an_iterable),
+                # a_list
+                self.a_list
+            )
+
+        def test_making_a_list_w_extend(self):
 
   the test is still green.
 
-* I remove the commented lines and use the :ref:`object attributes<test_attribute_error_w_object_attributes>` directly
+* I remove the commented lines from :ref:`test_making_a_list_w_a_for_loop`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 2-3, 5-6, 8, 10-11
-
-        def test_making_a_list_w_a_for_loop(self):
-            # a_list = self.a_list
-            # iterable = self.iterable
-
-            for number in self.iterable:
-                self.a_list.append(number)
-
-            self.assertEqual(self.a_list, list(self.iterable))
-            self.assertEqual(
-                src.list_comprehensions.a_for_loop(self.iterable),
-                self.a_list
-            )
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 11
 
         def test_making_a_list_w_a_for_loop(self):
-            for number in self.iterable:
+            for number in self.an_iterable:
                 self.a_list.append(number)
 
-            self.assertEqual(self.a_list, list(self.iterable))
+            self.assertEqual(self.a_list, list(self.an_iterable))
             self.assertEqual(
-                src.list_comprehensions.a_for_loop(self.iterable),
+                src.list_comprehensions.a_for_loop(self.an_iterable),
                 self.a_list
             )
 
-* I make the same change in ``test_making_a_list_w_extend``
+        def test_making_a_list_w_extend(self):
+
+* I use the :ref:`object attributes<what is an object attribute?>` in :ref:`test_making_a_list_w_extend`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 21
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2-7
 
         def test_making_a_list_w_extend(self):
             # a_list = []
-            # iterable = range(0, random.randint(2, 1000))
-            a_list = self.a_list
-            iterable = self.iterable
+            # a_range = range(0, random.randint(2, 1000))
+            # self.assertIsNone(a_list.extend(a_range))
+            self.assertIsNone(self.a_list.extend(self.an_iterable))
+            # self.assertEqual(a_list, list(a_range))
+            self.assertEqual(self.a_list, list(self.an_iterable))
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -757,87 +848,138 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
     AssertionError: Lists differ: [0, 1, 2, 3, ... XYZ, 0, 1, 2, 3, ...XYZ] != [0, 1, 2, 3, ...XYZ]
 
-  the values in ``a_list`` are double what the :ref:`assertion<what is an assertion?>` expects. I broke something by using the :ref:`object attributes<test_attribute_error_w_object_attributes>`
+  the values in ``a_list`` are double what the :ref:`assertion<what is an assertion?>` expects. I broke something by using the :ref:`object attributes<what are object attributes?>`
 
 * I change ``a_list`` back
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 21
-    :emphasize-lines: 2, 4
+    :emphasize-lines: 2, 5, 7
 
         def test_making_a_list_w_extend(self):
             a_list = []
-            # iterable = range(0, random.randint(2, 1000))
-            # a_list = self.a_list
-            iterable = self.iterable
+            # a_range = range(0, random.randint(2, 1000))
+            # self.assertIsNone(a_list.extend(a_range))
+            self.assertIsNone(a_list.extend(self.an_iterable))
+            # self.assertEqual(a_list, list(a_range))
+            self.assertEqual(a_list, list(self.an_iterable))
+
+
+    # Exceptions seen
 
   the test is green again
 
 ----
 
 ****************************************************************************************
-use the setUp method
+how to use the setUp method to reset object attributes for every test
 ****************************************************************************************
 
-The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before, I need a better way. The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`object attributes<test_attribute_error_w_object_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
+The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before.
 
-* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`object<everything is an object>`
+The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`object attributes<what are object attributes?>` are always reset at the beginning of the test, so that the values are new for each test.
+
+* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`object<everything is an object>` and move the :ref:`object attributes<what is an object attribute?>` into it
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
     :emphasize-lines: 3-5
 
     class TestListComprehensions(unittest.TestCase):
 
         def setUp(self):
-            self.a_list = []
-            self.iterable = range(0, random.randint(2, 1000))
+            a_list = []
+            an_iterable = range(0, random.randint(2, 1000))
 
         def test_making_a_list_w_a_for_loop(self):
 
-  the test is still green.
-
-  The `unittest.TestCase.setUp method`_ runs before every test, in this case it sets these :ref:`object attributes (variables)<test_attribute_error_w_object_attributes>`
-
-  - ``self.a_list`` to an :ref:`empty list<test_making_a_list>`
-  - ``self.iterable`` to a `range object`_ that goes from ``0`` to anywhere between ``1`` and ``999``
-
-* I try to use ``self.a_list`` again in ``test_making_a_list_w_extend``
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
+
+    FAILED ...test_making_a_list_w_a_for_loop -
+        AttributeError: 'TestListComprehensions' object
+                        has no attribute 'an_iterable'
+    FAILED ...test_making_a_list_w_extend -
+        AttributeError: 'TestListComprehensions' object
+                        has no attribute 'an_iterable'
+
+  because the other :ref:`methods<what is a method?>` can not reach the ``an_iterable`` :ref:`variable<what is a variable?>` from outside the `setUp method`_. I have to make it an :ref:`object attribute<what is an object attribute?>`.
+
+* I add ``self.`` to ``an_iterable`` in the `setUp method`_ to make it an :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 8
+    :emphasize-lines: 3
+
+        def setUp(self):
+            a_list = []
+            self.an_iterable = range(0, random.randint(2, 1000))
+
+        def test_making_a_list_w_a_for_loop(self):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'TestListComprehensions' object
+                    has no attribute 'a_list'
+
+  because the other :ref:`methods<what is a method?>` can not reach the ``a_list`` :ref:`variable<what is a variable?>` from outside the `setUp method`_. I have to make it an :ref:`object attribute<what is an object attribute?>`.
+
+* I add ``self.`` to ``a_list``  in the `setUp method`_ to make it an :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 6
+    :emphasize-lines: 3-5
+
+        def setUp(self):
+            self.a_list = []
+            self.an_iterable = range(0, random.randint(2, 1000))
+
+  the test is green again.
+
+  The `unittest.TestCase.setUp method`_ runs before every test, in this case it sets these :ref:`object attributes (variables)<what are object attributes?>`
+
+  - ``self.a_list`` to an :ref:`empty list<test_making_a_list>`
+  - ``self.iterable`` to a :ref:`range object<the range object>` that goes from ``0`` to random number between ``1`` and ``999``
+
+* I try to use ``self.a_list`` again in :ref:`test_making_a_list_w_extend`
+
+  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 22
-    :emphasize-lines: 2, 4
+    :emphasize-lines: 2, 5-6, 8-9
 
         def test_making_a_list_w_extend(self):
             # a_list = []
-            # iterable = range(0, random.randint(2, 1000))
-            a_list = self.a_list
-            iterable = self.iterable
+            # a_range = range(0, random.randint(2, 1000))
+            # self.assertIsNone(a_list.extend(a_range))
+            # self.assertIsNone(a_list.extend(self.an_iterable))
+            self.assertIsNone(self.a_list.extend(self.an_iterable))
+            # self.assertEqual(a_list, list(a_range))
+            # self.assertEqual(a_list, list(self.an_iterable))
+            self.assertEqual(self.a_list, list(self.an_iterable))
 
-  still green.
 
-* I remove the commented lines and use the :ref:`object attributes<test_attribute_error_w_object_attributes>` directly
+    # Exceptions seen
 
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 2-5
+  the test is still green.
 
-        def test_making_a_list_w_extend(self):
-            # a_list = self.a_list
-            # iterable = self.iterable
-            self.assertIsNone(self.a_list.extend(self.iterable))
-            self.assertEqual(self.a_list, list(self.iterable))
-
-  green.
-
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_making_a_list_w_extend`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 22
 
         def test_making_a_list_w_extend(self):
-            self.assertIsNone(self.a_list.extend(self.iterable))
-            self.assertEqual(self.a_list, list(self.iterable))
+            self.assertIsNone(self.a_list.extend(self.an_iterable))
+            self.assertEqual(self.a_list, list(self.an_iterable))
 
 
     # Exceptions seen
@@ -945,6 +1087,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` for practice
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 27
     :emphasize-lines: 5-8
 
@@ -963,7 +1106,7 @@ the test passes.
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_list_comprehension'
 
-* I add the :ref:`function<what is a function?>` to ``list_comprehensions.py``
+* I add the :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1021,7 +1164,7 @@ What if I had to make a :ref:`list<what is a list?>` from an :ref:`iterable<what
 
 ----
 
-I add a failing test to ``test_list_comprehensions.py``
+I add a failing test to ``tests/test_list_comprehensions.py``
 
 .. code-block:: python
   :lineno-start: 33
@@ -1104,6 +1247,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I add another :ref:`assertion<what is an assertion?>` for practice
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 44
     :emphasize-lines: 3-6
 
@@ -1120,9 +1264,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_even_numbers'
 
-* I add a :ref:`function<what is a function?>` to ``list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 8
     :emphasize-lines: 5-6
 
@@ -1135,9 +1280,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes.
 
-* I wrote the same :ref:`condition<if statements>` in the test 3 times. I have to make the same change everywhere I wrote it if I want to change it. Let us say the new :ref:`condition<if statements>` is that the number should be divisible by ``3``. I make the change in ``test_list_comprehensions.py``
+* I wrote the same :ref:`condition<if statements>` in the test 3 times. I have to make the same change everywhere I wrote it if I want to change it. Let us say the new :ref:`condition<if statements>` is that the number should be divisible by ``3``. I make the change in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 36
     :emphasize-lines: 4
 
@@ -1156,6 +1302,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I change the :ref:`condition<if statements>` in the `list comprehension`_ of the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 42
     :emphasize-lines: 3
 
@@ -1169,6 +1316,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I change the :ref:`condition<if statements>` in the `list comprehension`_ of the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 46
     :emphasize-lines: 3
 
@@ -1183,9 +1331,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [0, 2, 4, 6, ...] != [0, 3, 6, 9, ...]
 
-* I change the :ref:`condition<if statements>` in the ``get_even_numbers`` :ref:`function<what is a function?>` in ``list_comprehensions.py``
+* I change the :ref:`condition<if statements>` in the ``get_even_numbers`` :ref:`function<what is a function?>` in ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 2
 
     def get_even_numbers(numbers):
@@ -1193,7 +1342,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes.
 
-* I add a :ref:`function<what is a function?>` to remove the repetition in ``test_list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` to remove the repetition in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -1213,6 +1362,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I change the :ref:`if statement<if statements>` in the test to call the new :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 40
     :emphasize-lines: 4-5
 
@@ -1228,6 +1378,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I remove the commented line and use the new :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 40
     :emphasize-lines: 9-10
 
@@ -1248,6 +1399,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I remove the commented line and use the new :ref:`function<what is a function?>` in the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 46
     :emphasize-lines: 7-8
 
@@ -1266,6 +1418,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I remove the commented line
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 50
 
             self.assertEqual(
@@ -1281,6 +1434,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I change the :ref:`condition<if statements>` in the new :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 6
     :emphasize-lines: 2
 
@@ -1293,9 +1447,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
-* I change the :ref:`condition<if statements>` in ``get_even_numbers`` in ``list_comprehensions.py``
+* I change the :ref:`condition<if statements>` in ``get_even_numbers`` in ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 12
     :emphasize-lines: 2
 
@@ -1304,9 +1459,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes. Adding the :ref:`function<what is a function?>` adds extra lines, and makes managing the code easier because I now only have to make a change in one place in the test when I need
 
-* I add a new empty :ref:`list<what is a list?>` to test another :ref:`condition<if statements>` in ``test_list_comprehensions.py``
+* I add a new empty :ref:`list<what is a list?>` to test another :ref:`condition<if statements>` in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 40
     :emphasize-lines: 2
 
@@ -1319,6 +1475,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I add an `else clause`_ to the :ref:`if statement<if statements>` in the `for loop`_
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 41
     :emphasize-lines: 5-6
 
@@ -1332,6 +1489,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 54
     :emphasize-lines: 3-6
 
@@ -1353,6 +1511,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` with :ref:`logical negation(NOT)<test_logical_negation>` and the ``condition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 56
     :emphasize-lines: 3
 
@@ -1366,6 +1525,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 58
     :emphasize-lines: 3-6
 
@@ -1382,9 +1542,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
 
-* I add the :ref:`function<what is a function?>` to ``list_comprehensions.py``
+* I add the :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 12
     :emphasize-lines: 5-6
 
@@ -1409,6 +1570,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
   I add a :ref:`function<what is a function?>` to remove the repetition
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 8
     :emphasize-lines: 5-6
 
@@ -1425,6 +1587,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I call the :ref:`function<what is a function?>` in ``get_even_numbers``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 16
     :emphasize-lines: 2
 
@@ -1437,6 +1600,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I remove the second :ref:`return statement<the return statement>` and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in ``get_odd_numbers``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 16
     :emphasize-lines: 6
 
@@ -1455,6 +1619,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * There is a `Python Built-in Function`_ I can use to do the same thing as this `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 16
     :emphasize-lines: 2
 
@@ -1473,6 +1638,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I put it in ``list()``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 17
     :emphasize-lines: 1
 
@@ -1483,6 +1649,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * filter_ takes a :ref:`function<what is a function?>` as input, which means I would have to make one for odd numbers like ``is_even``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -1499,6 +1666,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I do not want to write a new :ref:`function<what is a function?>`. I can use a `lambda function`_ which is a :ref:`function<what is a function?>` with no name to make it work
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -1511,6 +1679,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of `The Python Standard Library`_ and needs an `import statement`_
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 21
 
     def get_odd_numbers(numbers):
@@ -1541,7 +1710,7 @@ I can also do other operations with a `list comprehension`_ that are not :ref:`a
 
 ----
 
-I add a failing test to ``test_list_comprehensions.py``
+I add a failing test to ``tests/test_list_comprehensions.py``
 
 .. code-block:: python
   :lineno-start: 62
@@ -1603,6 +1772,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 72
     :emphasize-lines: 3-6
 
@@ -1619,9 +1789,10 @@ the test passes.
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'square'
 
-* I add the :ref:`function<what is a function?>` to ``list_comprehensions.py``
+* I add the :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 25
     :emphasize-lines: 4-5
 
@@ -1643,6 +1814,7 @@ the test passes.
 * There is a `Python Built-in Function`_ that I can use to process a :ref:`list<what is a list?>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<what is a function?>` with a `lambda function`_
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 28
     :emphasize-lines: 2
 
@@ -1661,6 +1833,7 @@ the test passes.
 * I add ``list()``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 28
     :emphasize-lines: 2
 
@@ -1670,9 +1843,10 @@ the test passes.
 
   the test passes. map_ takes in a :ref:`function<what is a function?>` as input. I still like the `list comprehension`_ better, it is simpler and easier to read
 
-* I add a :ref:`function<what is a function?>` for the calculation I just did 3 times in ``test_list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` for the calculation I just did 3 times in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 3
     :emphasize-lines: 4-5
 
@@ -1688,6 +1862,7 @@ the test passes.
 * I call the new :ref:`function<what is a function?>` in the `for loop`_ in ``test_making_a_list_w_processes``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 69
     :emphasize-lines: 4-5
 
@@ -1702,6 +1877,7 @@ the test passes.
 * I remove the commented line and call the :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 71
     :emphasize-lines: 6-7
 
@@ -1719,6 +1895,7 @@ the test passes.
 * I remove the commented line and call the :ref:`function<what is a function?>` in the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 75
     :emphasize-lines: 6-7
 
@@ -1736,6 +1913,7 @@ the test passes.
 * I remove the commented line
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 78
 
             self.assertEqual(
@@ -1810,6 +1988,7 @@ the numbers on the left are the squares of the even numbers from the right
 * I add a :ref:`call<how to call a function with input>` to the ``condition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 91
     :emphasize-lines: 3
 
@@ -1829,6 +2008,7 @@ the numbers on the left are the squares of the even numbers from the right
 * I add a :ref:`call<how to call a function with input>` to the ``process`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 91
     :emphasize-lines: 3
 
@@ -1850,6 +2030,7 @@ the numbers on the left are the squares of the even numbers from the right
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 93
     :emphasize-lines: 3-6
 
@@ -1871,6 +2052,7 @@ the numbers on the left are the squares of the even numbers from the right
 * I add a :ref:`call<how to call a function with input>` to ``condition`` with :ref:`logical negation(NOT)<test_logical_negation>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 95
     :emphasize-lines: 3
 
@@ -1890,6 +2072,7 @@ the numbers on the left are the squares of the even numbers from the right
 * I add a :ref:`call<how to call a function with input>` to ``process``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 95
     :emphasize-lines: 3
 
@@ -1903,6 +2086,7 @@ the numbers on the left are the squares of the even numbers from the right
 * I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the repetition of the call to the ``process`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 85
     :emphasize-lines: 2, 4-5, 7-8
 
@@ -1920,6 +2104,7 @@ the numbers on the left are the squares of the even numbers from the right
 * I remove the commented lines
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 85
 
             for item in self.iterable:
@@ -1939,7 +2124,7 @@ the numbers on the left are the squares of the even numbers from the right
 close the project
 *********************************************************************************
 
-* I close ``test_list_comprehensions.py`` and ``list_comprehensions.py``
+* I close ``tests/test_list_comprehensions.py`` and ``src/list_comprehensions/__init__.py``
 I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
   * I `change directory`_ to the parent of ``list_comprehensions``
