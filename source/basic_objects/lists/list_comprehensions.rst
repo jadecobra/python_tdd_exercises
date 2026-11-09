@@ -1688,7 +1688,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   the numbers on the left are odd numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`.
 
-* I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` with :ref:`logical negation(NOT)<test_logical_negation>` and the ``condition`` :ref:`function<what is a function?>`
+* I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` and :ref:`negate<test_logical_negation>` the result of a :ref:`call<how to call a function with input>` to the ``condition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -1809,7 +1809,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   the test is still green.
 
-* I use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in the ``get_odd_numbers`` :ref:`function<what is a function?>`
+* I :ref:`negate<test_logical_negation>` the result of the :ref:`call<how to call a function with input>` to the new :ref:`function<what is a function?>` from the ``get_odd_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :caption: list_comprehensions/src/list_comprehensions/__init__.py
@@ -2262,9 +2262,11 @@ I can use both :ref:`processes<test_making_a_list_w_processes>` and :ref:`condit
 I add a failing test
 
 .. code-block:: python
-  :lineno-start: 80
-  :emphasize-lines: 4-10, 12-15
+  :lineno-start: 97
+  :emphasize-lines: 6-12, 14-17
 
+          self.assertEqual(
+              src.list_comprehensions.square(self.an_iterable),
               [process(item) for item in self.an_iterable]
           )
 
@@ -2287,10 +2289,12 @@ I add a failing test
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: Lists differ: [0, 4, 16, ...] != [0, 1, 2, 3, 4, ...]
+  AssertionError: Lists differ: [0, 4, 16, ...]
+                             != [0, 1, 2, 3, 4, ...]
 
-the numbers on the left are the squares of the even numbers from the right
+the numbers on the left are the squares of the even numbers on the right.
 
 ----
 
@@ -2316,21 +2320,29 @@ the numbers on the left are the squares of the even numbers from the right
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 2, 4, 6, ...]
+    AssertionError: Lists differ: [0, 4, 16, 36, ...]
+    != [0, 2, 4, 6, ...]
 
   the numbers on the left are squares of the numbers on the right
 
-* I add a :ref:`call<how to call a function with input>` to the ``process`` :ref:`function<what is a function?>`
+* I add a :ref:`call<how to call a function with input>` to the ``process`` :ref:`function<what is a function?>`, in :ref:`test_making_a_list_w_processes_and_conditions`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 91
-    :emphasize-lines: 3
+    :lineno-start: 110
+    :emphasize-lines: 3-7
 
             self.assertEqual(
                 even_squares,
-                [process(item) for item in self.an_iterable if condition(item)]
+                [
+                    process(item)
+                    for item in self.an_iterable
+                    if condition(item)
+                ]
             )
+
+
+    # Exceptions seen
 
   the test passes.
 
@@ -2346,92 +2358,94 @@ the numbers on the left are the squares of the even numbers from the right
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 93
-    :emphasize-lines: 3-6
+    :lineno-start: 110
+    :emphasize-lines: 9-14
 
-                [process(item) for item in self.an_iterable if condition(item)]
+            self.assertEqual(
+                even_squares,
+                [
+                    process(item)
+                    for item in self.an_iterable
+                    if condition(item)
+                ]
             )
             self.assertEqual(
                 odd_squares,
-                [item for item in self.an_iterable]
+                [
+                    item for item in self.an_iterable
+                ]
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [1, 9, 25, 49, ...] != [0, 1, 2, 3, 4, 5, 6, 7, ...]
+    AssertionError: Lists differ: [1, 9, 25, 49, ...]
+                               != [0, 1, 2, 3, 4, 5, 6, 7, ...]
 
-  the numbers on the left are the squares of the odd numbers from the right
+  the numbers on the left are the squares of the odd numbers from the right.
 
-* I add a :ref:`call<how to call a function with input>` to ``condition`` with :ref:`logical negation(NOT)<test_logical_negation>`
+* I add a :ref:`call<how to call a function with input>` to the ``condition`` :ref:`function<what is a function?>` and :ref:`negate<test_logical_negation>` the result
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 95
-    :emphasize-lines: 3
+    :lineno-start: 118
+    :emphasize-lines: 5
 
             self.assertEqual(
                 odd_squares,
-                [item for item in self.an_iterable if not condition(item)]
+                [
+                    item for item in self.an_iterable
+                          if not condition(item)
+                ]
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [1, 9, 25, 49, ...] != [1, 3, 5, 7, ...]
+    AssertionError: Lists differ: [1, 9, 25, 49, ...]
+                               != [1, 3, 5, 7, ...]
 
-  the numbers on the left are squares of the numbers on the right
+  the numbers on the left are squares of the numbers on the right.
 
-* I add a :ref:`call<how to call a function with input>` to ``process``
+* I add a :ref:`call<how to call a function with input>` to the ``process`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 95
-    :emphasize-lines: 3
+    :lineno-start: 118
+    :emphasize-lines: 4-6
 
             self.assertEqual(
                 odd_squares,
-                [process(item) for item in self.an_iterable if not condition(item)]
+                [
+                    process(item)
+                    for item in self.an_iterable
+                    if not condition(item)
+                ]
             )
+
+
+    # Exceptions seen
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the repetition of the call to the ``process`` :ref:`function<what is a function?>`
+* I add a git_ commit message
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 85
-    :emphasize-lines: 2, 4-5, 7-8
+    :caption: terminal
+    :emphasize-lines: 1-2
 
-            for item in self.an_iterable:
-                item = process(item)
-                if condition(item):
-                    # even_squares.append(process(item))
-                    even_squares.append(item)
-                else:
-                    # odd_squares.append(process(item))
-                    odd_squares.append(item)
+    git commit -am \
+    'add test_making_a_list_w_processes_and_conditions'
 
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 85
-
-            for item in self.an_iterable:
-                item = process(item)
-                if condition(item):
-                    even_squares.append(item)
-                else:
-                    odd_squares.append(item)
-
-  still green.
-
-:ref:`I know how to use list comprehensions to make a list based on conditions (filter) with processes (transform)<test_making_a_list_w_processes_and_conditions>`
+:ref:`I know how to use list comprehensions to make a list based on conditions (filter) with processes (transform)<test_making_a_list_w_processes_and_conditions>`.
 
 ----
 
@@ -2440,22 +2454,14 @@ close the project
 *********************************************************************************
 
 * I close ``tests/test_list_comprehensions.py`` and ``src/list_comprehensions/__init__.py``
-I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests
+* I `change directory`_ to the parent of ``list_comprehensions``
 
-  * I `change directory`_ to the parent of ``list_comprehensions``
+  .. code-block:: shell
+    :caption: terminal
+    :emphasize-lines: 1
 
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      cd ..
-
-    the terminal_ is my friend, and shows
-
-    .. code-block:: PowerShell
-
-      ...\pumping_python
-
-    I am back in the ``pumping_python`` directory_.
+    cd ..
 
 ----
 
@@ -2465,7 +2471,7 @@ review
 
 I ran tests to show I can make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with
 
-* :ref:`the list()<test_making_a_list>`
+* :ref:`the list constructor (list())<test_making_a_list>`
 * :ref:`a for loop<test_making_a_list_w_a_for_loop>`
 * :ref:`the extend method<test_making_a_list_w_extend>`
 * :ref:`list comprehensions<test_making_a_list_w_a_list_comprehension>` where I can
@@ -2484,7 +2490,7 @@ I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making
       if condition/not condition
   ]
 
-I can also do this with :ref:`dictionaries<what is a dictionary?>`, it is called a dict comprehension and the syntax is any mix of these
+I can also do this with :ref:`dictionaries<what is a dictionary?>`, it is called a dict comprehension and the syntax is
 
 .. code-block:: python
 
