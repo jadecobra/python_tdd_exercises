@@ -1936,6 +1936,15 @@ There is a `Python Built-in Function`_ I can use to do the same thing as this `l
 
   the test is still green. filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the :ref:`condition<if statements>` of the :ref:`function<what is a function?>`
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_list_w_conditions'
+
 Which of the options shown so far do you like? Which is simpler and easier to understand or remember?
 
 * :ref:`for loop<what is a for loop?>`
@@ -1943,6 +1952,8 @@ Which of the options shown so far do you like? Which is simpler and easier to un
 * filter_
 * `itertools.filterfalse`_
 * `lambda function`_
+
+:ref:`I know how to make a list with conditions (filter a list)<test_making_a_list_w_conditions>`.
 
 ----
 
@@ -2093,7 +2104,7 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
 * I add a :ref:`call<how to call a function with input>` to the `map built-in function`_ in the ``square`` :ref:`function<what is a function?>` with a `lambda function`_
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :lineno-start: 39
     :emphasize-lines: 2
 
@@ -2108,13 +2119,13 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
     AssertionError: <map object at 0xffffa1b234c5>
                  != [0, 1, 4, 9, ...]
 
-  I have to change the `map object`_ to a :ref:`list<what is a list?>`
+  I have to change the `map object`_ to a :ref:`list<what is a list?>`.
 
-* I add the :ref:`list constructor<test_making_a_list>`
+* I add the :ref:`list constructor<test_making_a_list>` to the ``square`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 28
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 39
     :emphasize-lines: 2
 
     def square(numbers):
@@ -2123,7 +2134,7 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
 
   the test passes. map_ takes in a :ref:`function<what is a function?>` as input. I still like the `list comprehension`_ better, it is simpler and easier to read
 
-* I add a :ref:`function<what is a function?>` for the calculation I just did 3 times in ``tests/test_list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` for the calculation I just did three times in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -2139,28 +2150,35 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
 
     def condition(number):
 
-* I call the new :ref:`function<what is a function?>` in the `for loop`_ in ``test_making_a_list_w_processes``
+* I call the new :ref:`function<what is a function?>` in the `for loop`_ in :ref:`test_making_a_list_w_processes`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 69
+    :lineno-start: 88
     :emphasize-lines: 4-5
 
-    def test_making_a_list_w_processes(self):
-        square_club = []
-        for item in self.an_iterable:
-            # square_club.append(item*item)
-            square_club.append(process(item))
+        def test_making_a_list_w_processes(self):
+            square_club = []
+            for item in self.an_iterable:
+                # square_club.append(item*item)
+                square_club.append(process(item))
+
+            self.assertEqual(
+                square_club,
+                [item*item for item in self.an_iterable]
+            )
 
   the test is still green.
 
-* I remove the commented line and call the :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
+* I remove the commented line then :ref:`call<how to call a function with input>` the new :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_list_w_processes`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 71
-    :emphasize-lines: 6-7
+    :lineno-start: 88
+    :emphasize-lines: 8-9
 
+        def test_making_a_list_w_processes(self):
+            square_club = []
             for item in self.an_iterable:
                 square_club.append(process(item))
 
@@ -2172,13 +2190,14 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
 
   still green.
 
-* I remove the commented line and call the :ref:`function<what is a function?>` in the second :ref:`assertion<what is an assertion?>`
+* I remove the commented line then :ref:`call<how to call a function with input>` the new :ref:`function<what is a function?>` in the second :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_list_w_processes`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 75
-    :emphasize-lines: 6-7
+    :lineno-start: 93
+    :emphasize-lines: 7-8
 
+            self.assertEqual(
                 square_club,
                 [process(item) for item in self.an_iterable]
             )
@@ -2188,13 +2207,16 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
                 [process(item) for item in self.an_iterable]
             )
 
-  the test is still green.
+
+    # Exceptions seen
+
+  green.
 
 * I remove the commented line
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 78
+    :lineno-start: 97
 
             self.assertEqual(
                 src.list_comprehensions.square(self.an_iterable),
@@ -2204,9 +2226,22 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
 
     # Exceptions seen
 
-  .. note:: ``process`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+* I add a git_ commit message
 
-:ref:`I know how to process(transform) a list with list comprehensions<test_making_a_list_w_processes>`
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_list_w_processes'
+
+  .. note:: ``process`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as
+
+    .. code-block:: python
+
+      [process(item) for item in iterable]
+
+:ref:`I know how to process (transform) a list with list comprehensions<test_making_a_list_w_processes>`.
 
 ----
 
