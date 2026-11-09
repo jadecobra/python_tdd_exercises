@@ -1178,6 +1178,15 @@ the test passes.
 
   the test passes.
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_list_w_conditions'
+
 I made 2 :ref:`functions<what is a function?>` that do the same thing - one uses a `for loop`_ and the other uses a `list comprehension`_
 
 .. code-block:: python
@@ -1355,7 +1364,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 * I add a :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :lineno-start: 8
     :emphasize-lines: 5-9
 
