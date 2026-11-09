@@ -1,6 +1,6 @@
-def a_for_loop(a_container):
+def a_for_loop(an_iterable):
     result = []
-    for stuff in a_container:
+    for stuff in an_iterable:
         result.append(stuff)
     return result
 
@@ -15,14 +15,25 @@ def is_even(number):
 
 def get_even_numbers(numbers):
     return list(filter(is_even, numbers))
-    return [number for number in numbers if is_even(number)]
+    return [
+        number for number in numbers
+                if is_even(number)
+    ]
 
 
 def get_odd_numbers(numbers):
     import itertools
     return list(itertools.filterfalse(is_even, numbers))
-    return list(filter(lambda number: not is_even(number), numbers))
-    return [number for number in numbers if not is_even(number)]
+    return list(
+        filter(
+            lambda number: not is_even(number),
+            numbers
+        )
+    )
+    return [
+        number for number in numbers
+                if not is_even(number)
+    ]
 
 
 def square(numbers):

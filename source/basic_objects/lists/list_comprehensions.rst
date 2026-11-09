@@ -41,8 +41,40 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_list_comprehensions.py
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
   :language: python
   :linenos:
+  :lines: 1-11
+
+.. literalinclude:: ../../code/tests/test_list_comprehensions.py
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :language: python
+  :lineno-start: 14
+  :lines: 14-28
+
+.. literalinclude:: ../../code/tests/test_list_comprehensions.py
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :language: python
+  :lineno-start: 30
+  :lines: 30-44
+
+.. literalinclude:: ../../code/tests/test_list_comprehensions.py
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :language: python
+  :lineno-start: 46
+  :lines: 46-86
+
+.. literalinclude:: ../../code/tests/test_list_comprehensions.py
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :language: python
+  :lineno-start: 88
+  :lines: 88-100
+
+.. literalinclude:: ../../code/tests/test_list_comprehensions.py
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :language: python
+  :lineno-start: 102
+  :lines: 102-132
 
 *********************************************************************************
 questions about list comprehensions
