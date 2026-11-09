@@ -168,7 +168,7 @@ start the project
 test_making_a_list_w_a_for_loop
 *********************************************************************************
 
-I can make a :ref:`list<what is a list?>` with ``list()`` or with square brackets (``[]``). I can also add items to a :ref:`list<what is a list?>` one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`.
+I can make a :ref:`list<what is a list?>` with the :ref:`list constructor<test_making_a_list>` or with square brackets (``[]``). I can also add items to a :ref:`list<what is a list?>` one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`.
 
 ----
 
@@ -346,7 +346,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   ``range(10)`` makes a :ref:`range object<the range object>` that goes from the ``0`` to the given number minus ``1``, in this case it goes from ``0`` to ``9``.
 
-* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<what is a list?>`, and there is an easier way. I can do the same thing with ``list()`` since it takes an :ref:`iterable<what is an iterable?>` as input
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<what is a list?>`, and there is an easier way. I can do the same thing with the :ref:`list constructor<test_making_a_list>` since it takes an :ref:`iterable<what is an iterable?>` as input
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -369,7 +369,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     AssertionError: Lists differ: []
                                != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* I add :ref:`the range object` as input to ``list()``
+* I add :ref:`the range object` as input to the :ref:`list constructor<test_making_a_list>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -665,7 +665,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
     git commit -am \
     'add test_making_a_list_w_a_for_loop'
 
-:ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`. Why did I use a `for loop`_ when I can use ``list()`` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
+:ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`. Why did I use a `for loop`_ when I can use the :ref:`list constructor<test_making_a_list>` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
 
 ----
 
@@ -770,7 +770,7 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
 
     # Exceptions seen
 
-  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than ``list()``.
+  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than the :ref:`list constructor<test_making_a_list>`.
 
 * I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`object attributes<what are object attributes?>` to remove the repetition
 
@@ -981,7 +981,7 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
   The `unittest.TestCase.setUp method`_ runs before every test, in this case it sets these :ref:`object attributes (variables)<what are object attributes?>`
 
   - ``self.a_list`` to an :ref:`empty list<test_making_a_list>`
-  - ``self.iterable`` to a :ref:`range object<the range object>` that goes from ``0`` to random number between ``1`` and ``999``
+  - ``self.an_iterable`` to a :ref:`range object<the range object>` that goes from ``0`` to random number between ``1`` and ``999``
 
 ----
 
@@ -1034,7 +1034,7 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
 
     git commit -am 'add setUp method'
 
-:ref:`I know how to make a list with the extend method<test_making_a_list_w_extend>`
+:ref:`I know how to make a list with the extend method<test_making_a_list_w_extend>`.
 
 ----
 
@@ -1042,7 +1042,7 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
 test_making_a_list_w_a_list_comprehension
 ****************************************************************************************
 
-Time for the title of this chapter. I can use a `list comprehension`_ to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with one line
+I can use a `list comprehension`_ to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with one line.
 
 ----
 
@@ -1056,13 +1056,13 @@ I add a failing test
 
 .. code-block:: python
   :lineno-start: 24
-  :emphasize-lines: 3-6
+  :emphasize-lines: 3-7
 
-          self.assertEqual(self.a_list, list(self.iterable))
+          self.assertEqual(self.a_list, list(self.an_iterable))
 
       def test_making_a_list_w_a_list_comprehension(self):
           self.assertEqual(
-              list(self.iterable),
+              list(self.an_iterable),
               []
           )
 
@@ -1086,22 +1086,24 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I add a `list comprehension`_ as the expectation
 
 .. code-block:: python
-  :lineno-start: 27
-  :emphasize-lines: 3
+  :lineno-start: 26
+  :emphasize-lines: 4
 
 
+      def test_making_a_list_w_a_list_comprehension(self):
           self.assertEqual(
-              list(self.iterable),
-              [item for item in self.iterable]
+              list(self.an_iterable),
+              [item for item in self.an_iterable]
           )
+
+
+  # Exceptions seen
 
 the test passes.
 
 .. note::
 
-  The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_append_adds_item_to_end_of_a_list>` line
-
-  this `for loop`_
+  A `list comprehension`_ is like a `for loop`_ without the :ref:`append<test_append_adds_item_to_end_of_a_list>` line, for example
 
   .. code-block:: python
     :emphasize-text: for item
@@ -1117,14 +1119,14 @@ the test passes.
 
     a_list = [item for item in iterable]
 
-  ``item`` comes before ``for item`` in the `list comprehension`_ and it  is NOT
+  ``item`` comes before ``for item`` in the `list comprehension`_ and it is NOT
 
   .. code-block:: python
     :emphasize-text: a_list
 
     a_list = [a_list.append(item) for item in iterable]
 
-  because that would be saying ``a_list`` two times
+  because that would be saying ``a_list`` two times.
 
 ----
 
@@ -1142,23 +1144,25 @@ the test passes.
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                list(self.iterable),
-                [item for item in self.iterable]
+                list(self.an_iterable),
+                [item for item in self.an_iterable]
             )
             self.assertEqual(
-                src.list_comprehensions.a_list_comprehension(self.iterable),
-                [item for item in self.iterable]
+                src.list_comprehensions.a_list_comprehension(self.an_iterable),
+                [item for item in self.an_iterable]
             )
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'a_list_comprehension'
+    AttributeError: module 'src.list_comprehensions'
+                    has no attribute 'a_list_comprehension'
 
 * I add the :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :linenos:
     :emphasize-lines: 8-9
 
@@ -1174,27 +1178,29 @@ the test passes.
 
   the test passes.
 
-* I made 2 :ref:`functions<what is a function?>` that do the same thing - one that uses a `for loop`_ and another that uses a `list comprehension`_
+I made 2 :ref:`functions<what is a function?>` that do the same thing - one uses a `for loop`_ and the other uses a `list comprehension`_
 
-  .. code-block:: python
+.. code-block:: python
 
-      result = []
-      for stuff in a_container:
-          result.append(stuff)
+    result = []
+    for stuff in a_container:
+        result.append(stuff)
 
-  and
+and
 
-  .. code-block:: python
+.. code-block:: python
 
-      [element for element in a_collection]
+    [element for element in a_collection]
 
-  the difference between them is that in the first case I have to
+the difference between them is that in the first case I have to
 
-  * make a :ref:`list<what is a list?>`
-  * loop through the :ref:`iterable<what is an iterable?>`
-  * do the operation I want on every item of the :ref:`iterable<what is an iterable?>`
+* make a :ref:`list<what is a list?>`
+* loop through the :ref:`iterable<what is an iterable?>`
+* do the operation I want on every item of the :ref:`iterable<what is an iterable?>`
 
-  with the `list comprehension`_, I do all the steps in one line, and still none of the other ways are better than using ``list()``, yet.
+with the `list comprehension`_, I do all the steps in one line.
+
+So far none of the other ways are better than using the :ref:`list constructor<test_making_a_list>`, yet.
 
 :ref:`I know how to use a list comprehension to make a list<test_making_a_list_w_a_list_comprehension>`
 
@@ -1217,21 +1223,26 @@ What if I had to make a :ref:`list<what is a list?>` from an :ref:`iterable<what
 I add a failing test to ``tests/test_list_comprehensions.py``
 
 .. code-block:: python
-  :lineno-start: 33
-  :emphasize-lines: 4-8, 10-13
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :lineno-start: 31
+  :emphasize-lines: 8-12, 14-17
 
-              [item for item in self.iterable]
+          self.assertEqual(
+              src.list_comprehensions.a_list_comprehension(
+                  self.an_iterable
+              ),
+              [item for item in self.an_iterable]
           )
 
       def test_making_a_list_w_conditions(self):
           even_numbers = []
-          for item in self.iterable:
+          for item in self.an_iterable:
               if item % 2 == 0:
                   even_numbers.append(item)
 
           self.assertEqual(
               even_numbers,
-              list(self.iterable)
+              list(self.an_iterable)
           )
 
 
@@ -1241,12 +1252,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, ...]
+                             != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
 the numbers on the left are even numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`
 
-* ``if item % 2 == 0:`` checks if the number in ``self.iterable`` leaves a remainder of ``0`` when it is divided by ``2``, this is the rule for even numbers
-* ``%`` is the modulo_ operator, which divides the number on the left by the number on the right and returns a remainder, there is a test for it in :ref:`test_the_modulo_operation`
+* ``if item % 2 == 0:`` checks if the number in ``self.an_iterable`` leaves a remainder of ``0`` when it is divided by ``2`` (the rule for even numbers).
+* ``%`` is the modulo_ operator, which divides the number on the left by the number on the right and returns a remainder, there is a test for it in :ref:`test_the_modulo_operation`.
 
 ----
 
@@ -1256,35 +1268,47 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
 ----
 
-How can I make the ``even_numbers`` :ref:`list<what is a list?>` with ``list()`` without changing the :ref:`iterable<what is an iterable?>`? Since I can make the :ref:`list<what is a list?>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
+* How can I make the ``even_numbers`` :ref:`list<what is a list?>` with the :ref:`list constructor<test_making_a_list>` without changing the :ref:`iterable<what is an iterable?>`? Since I can make the :ref:`list<what is a list?>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
 
-.. code-block:: python
-  :lineno-start: 42
-  :emphasize-lines: 3
+  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 44
+    :emphasize-lines: 3
 
-          self.assertEqual(
-              even_numbers,
-              [item for item in self.iterable]
-          )
+            self.assertEqual(
+                even_numbers,
+                [item for item in self.an_iterable]
+            )
 
-the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+    # Exceptions seen
 
-  AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-I add the :ref:`if statement<if statements>`
+  .. code-block:: python
 
-.. code-block:: python
-  :lineno-start: 42
-  :emphasize-lines: 3
+    AssertionError: Lists differ: [0, 2, 4, 6, 8, ...]
+                               != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
-          self.assertEqual(
-              even_numbers,
-              [item for item in self.iterable if item % 2 == 0]
-          )
+* I add the :ref:`if statement<if statements>` to the `list comprehension`_
 
-the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using ``list()``
+  .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :lineno-start: 44
+    :emphasize-lines: 3-6
+
+            self.assertEqual(
+                even_numbers,
+                [
+                    item for item in self.an_iterable
+                          if item % 2 == 0
+                ]
+            )
+
+
+    # Exceptions seen
+
+  the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using the :ref:`list constructor<test_making_a_list>`.
 
 ----
 
@@ -1294,39 +1318,56 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` for practice
+* I add another :ref:`assertion<what is an assertion?>` to practice
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 44
-    :emphasize-lines: 3-6
+    :emphasize-lines: 8-16
 
-                [item for item in self.iterable if item % 2 == 0]
+            self.assertEqual(
+                even_numbers,
+                [
+                    item for item in self.an_iterable
+                          if item % 2 == 0
+                ]
             )
             self.assertEqual(
-                src.list_comprehensions.get_even_numbers(self.iterable),
-                [item for item in self.iterable if item % 2 == 0]
+                src.list_comprehensions.get_even_numbers(
+                    self.an_iterable,
+                )
+                [
+                    item for item in self.an_iterable
+                          if item % 2 == 0
+                ]
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'get_even_numbers'
+    AttributeError: module 'src.list_comprehensions'
+                    has no attribute 'get_even_numbers'
 
 * I add a :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 8
-    :emphasize-lines: 5-6
+    :emphasize-lines: 5-9
 
     def a_list_comprehension(a_collection):
         return [element for element in a_collection]
 
 
     def get_even_numbers(numbers):
-        return [number for number in numbers if number % 2 == 0]
+        return [
+            number for number in numbers
+            if number % 2 == 0
+        ]
 
   the test passes.
 
@@ -1339,7 +1380,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     def test_making_a_list_w_conditions(self):
         even_numbers = []
-        for item in self.iterable:
+        for item in self.an_iterable:
             if item % 3 == 0:
                 even_numbers.append(item)
 
@@ -1358,7 +1399,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
             self.assertEqual(
                 even_numbers,
-                [item for item in self.iterable if item % 3 == 0]
+                [item for item in self.an_iterable if item % 3 == 0]
             )
 
   the test is green again
@@ -1371,8 +1412,8 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.list_comprehensions.get_even_numbers(self.iterable),
-                [item for item in self.iterable if item % 3 == 0]
+                src.list_comprehensions.get_even_numbers(self.an_iterable),
+                [item for item in self.an_iterable if item % 3 == 0]
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -1418,7 +1459,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
         def test_making_a_list_w_conditions(self):
             even_numbers = []
-            for item in self.iterable:
+            for item in self.an_iterable:
                 # if item % 3 == 0:
                 if condition(item):
                     even_numbers.append(item)
@@ -1434,14 +1475,14 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
         def test_making_a_list_w_conditions(self):
             even_numbers = []
-            for item in self.iterable:
+            for item in self.an_iterable:
                 if condition(item):
                     even_numbers.append(item)
 
             self.assertEqual(
                 even_numbers,
-                # [item for item in self.iterable if item % 3 == 0]
-                [item for item in self.iterable if condition(item)]
+                # [item for item in self.an_iterable if item % 3 == 0]
+                [item for item in self.an_iterable if condition(item)]
             )
 
   still green.
@@ -1455,12 +1496,12 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
             self.assertEqual(
                 even_numbers,
-                [item for item in self.iterable if condition(item)]
+                [item for item in self.an_iterable if condition(item)]
             )
             self.assertEqual(
-                src.list_comprehensions.get_even_numbers(self.iterable),
-                # [item for item in self.iterable if item % 3 == 0]
-                [item for item in self.iterable if condition(item)]
+                src.list_comprehensions.get_even_numbers(self.an_iterable),
+                # [item for item in self.an_iterable if item % 3 == 0]
+                [item for item in self.an_iterable if condition(item)]
             )
 
   the test is still green.
@@ -1472,8 +1513,8 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     :lineno-start: 50
 
             self.assertEqual(
-                src.list_comprehensions.get_even_numbers(self.iterable),
-                [item for item in self.iterable if condition(item)]
+                src.list_comprehensions.get_even_numbers(self.an_iterable),
+                [item for item in self.an_iterable if condition(item)]
             )
 
 
@@ -1518,7 +1559,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
         def test_making_a_list_w_conditions(self):
             even_numbers, odd_numbers = [], []
-            for item in self.iterable:
+            for item in self.an_iterable:
 
   ``even_numbers, odd_numbers = [], []`` makes 2 empty :ref:`lists` and names them
 
@@ -1530,7 +1571,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     :emphasize-lines: 5-6
 
             even_numbers, odd_numbers = [], []
-            for item in self.iterable:
+            for item in self.an_iterable:
                 if condition(item):
                     even_numbers.append(item)
                 else:
@@ -1543,11 +1584,11 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     :lineno-start: 54
     :emphasize-lines: 3-6
 
-                [item for item in self.iterable if condition(item)]
+                [item for item in self.an_iterable if condition(item)]
             )
             self.assertEqual(
                 odd_numbers,
-                [item for item in self.iterable]
+                [item for item in self.an_iterable]
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -1567,7 +1608,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
             self.assertEqual(
                 odd_numbers,
-                [item for item in self.iterable if not condition(item)]
+                [item for item in self.an_iterable if not condition(item)]
             )
 
   the test passes.
@@ -1579,11 +1620,11 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     :lineno-start: 58
     :emphasize-lines: 3-6
 
-                [item for item in self.iterable if not condition(item)]
+                [item for item in self.an_iterable if not condition(item)]
             )
             self.assertEqual(
-                src.list_comprehensions.get_odd_numbers(self.iterable),
-                [item for item in self.iterable if not condition(item)]
+                src.list_comprehensions.get_odd_numbers(self.an_iterable),
+                [item for item in self.an_iterable if not condition(item)]
             )
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -1685,7 +1726,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   I have to make the `filter object`_ a :ref:`list<what is a list?>`
 
-* I put it in ``list()``
+* I put it in the :ref:`list constructor<test_making_a_list>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -1766,17 +1807,17 @@ I add a failing test to ``tests/test_list_comprehensions.py``
   :lineno-start: 62
   :emphasize-lines: 4-7, 9-12
 
-              [item for item in self.iterable if not condition(item)]
+              [item for item in self.an_iterable if not condition(item)]
           )
 
       def test_making_a_list_w_processes(self):
           square_club = []
-          for item in self.iterable:
+          for item in self.an_iterable:
               square_club.append(item*item)
 
           self.assertEqual(
               square_club,
-              [item for item in self.iterable]
+              [item for item in self.an_iterable]
           )
 
 
@@ -1806,7 +1847,7 @@ I add the calculation to the `list comprehension`_
 
           self.assertEqual(
               square_club,
-              [item*item for item in self.iterable]
+              [item*item for item in self.an_iterable]
           )
 
 the test passes.
@@ -1826,11 +1867,11 @@ the test passes.
     :lineno-start: 72
     :emphasize-lines: 3-6
 
-                [item*item for item in self.iterable]
+                [item*item for item in self.an_iterable]
             )
             self.assertEqual(
-                src.list_comprehensions.square(self.iterable),
-                [item*item for item in self.iterable]
+                src.list_comprehensions.square(self.an_iterable),
+                [item*item for item in self.an_iterable]
             )
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -1880,7 +1921,7 @@ the test passes.
 
   I have to change the `map object`_ to a :ref:`list<what is a list?>`
 
-* I add ``list()``
+* I add the :ref:`list constructor<test_making_a_list>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -1918,7 +1959,7 @@ the test passes.
 
     def test_making_a_list_w_processes(self):
         square_club = []
-        for item in self.iterable:
+        for item in self.an_iterable:
             # square_club.append(item*item)
             square_club.append(process(item))
 
@@ -1931,13 +1972,13 @@ the test passes.
     :lineno-start: 71
     :emphasize-lines: 6-7
 
-            for item in self.iterable:
+            for item in self.an_iterable:
                 square_club.append(process(item))
 
             self.assertEqual(
                 square_club,
-                # [item*item for item in self.iterable]
-                [process(item) for item in self.iterable]
+                # [item*item for item in self.an_iterable]
+                [process(item) for item in self.an_iterable]
             )
 
   still green.
@@ -1950,12 +1991,12 @@ the test passes.
     :emphasize-lines: 6-7
 
                 square_club,
-                [process(item) for item in self.iterable]
+                [process(item) for item in self.an_iterable]
             )
             self.assertEqual(
-                src.list_comprehensions.square(self.iterable),
-                # [item*item for item in self.iterable]
-                [process(item) for item in self.iterable]
+                src.list_comprehensions.square(self.an_iterable),
+                # [item*item for item in self.an_iterable]
+                [process(item) for item in self.an_iterable]
             )
 
   the test is still green.
@@ -1967,8 +2008,8 @@ the test passes.
     :lineno-start: 78
 
             self.assertEqual(
-                src.list_comprehensions.square(self.iterable),
-                [process(item) for item in self.iterable]
+                src.list_comprehensions.square(self.an_iterable),
+                [process(item) for item in self.an_iterable]
             )
 
 
@@ -2000,12 +2041,12 @@ I add a failing test
   :lineno-start: 80
   :emphasize-lines: 4-10, 12-15
 
-              [process(item) for item in self.iterable]
+              [process(item) for item in self.an_iterable]
           )
 
       def test_making_a_list_w_processes_and_conditions(self):
           even_squares, odd_squares = [], []
-          for item in self.iterable:
+          for item in self.an_iterable:
               if condition(item):
                   even_squares.append(process(item))
               else:
@@ -2013,7 +2054,7 @@ I add a failing test
 
           self.assertEqual(
               even_squares,
-              [item for item in self.iterable]
+              [item for item in self.an_iterable]
           )
 
 
@@ -2044,7 +2085,7 @@ the numbers on the left are the squares of the even numbers from the right
 
             self.assertEqual(
                 even_squares,
-                [item for item in self.iterable if condition(item)]
+                [item for item in self.an_iterable if condition(item)]
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2064,7 +2105,7 @@ the numbers on the left are the squares of the even numbers from the right
 
             self.assertEqual(
                 even_squares,
-                [process(item) for item in self.iterable if condition(item)]
+                [process(item) for item in self.an_iterable if condition(item)]
             )
 
   the test passes.
@@ -2084,11 +2125,11 @@ the numbers on the left are the squares of the even numbers from the right
     :lineno-start: 93
     :emphasize-lines: 3-6
 
-                [process(item) for item in self.iterable if condition(item)]
+                [process(item) for item in self.an_iterable if condition(item)]
             )
             self.assertEqual(
                 odd_squares,
-                [item for item in self.iterable]
+                [item for item in self.an_iterable]
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2108,7 +2149,7 @@ the numbers on the left are the squares of the even numbers from the right
 
             self.assertEqual(
                 odd_squares,
-                [item for item in self.iterable if not condition(item)]
+                [item for item in self.an_iterable if not condition(item)]
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2128,7 +2169,7 @@ the numbers on the left are the squares of the even numbers from the right
 
             self.assertEqual(
                 odd_squares,
-                [process(item) for item in self.iterable if not condition(item)]
+                [process(item) for item in self.an_iterable if not condition(item)]
             )
 
   the test passes.
@@ -2140,7 +2181,7 @@ the numbers on the left are the squares of the even numbers from the right
     :lineno-start: 85
     :emphasize-lines: 2, 4-5, 7-8
 
-            for item in self.iterable:
+            for item in self.an_iterable:
                 item = process(item)
                 if condition(item):
                     # even_squares.append(process(item))
@@ -2157,7 +2198,7 @@ the numbers on the left are the squares of the even numbers from the right
     :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 85
 
-            for item in self.iterable:
+            for item in self.an_iterable:
                 item = process(item)
                 if condition(item):
                     even_squares.append(item)
