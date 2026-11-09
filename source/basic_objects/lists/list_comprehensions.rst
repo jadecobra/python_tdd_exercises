@@ -8,10 +8,13 @@
 .. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
 .. _filter: https://docs.python.org/3/library/functions.html#filter
 .. _filter object: filter_
+.. _filter built-in function: filter_
 .. _filterfalse: https://docs.python.org/3/library/itertools.html#itertools.filterfalse
+.. _itertools.filterfalse: filterfalse_
 .. _filterfalse method: filterfalse_
 .. _map: https://docs.python.org/3/library/functions.html#map
 .. _map object: map_
+.. _map built-in function: map_
 .. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
 .. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
@@ -1119,7 +1122,15 @@ the test passes.
 
     a_list = [item for item in iterable]
 
-  ``item`` comes before ``for item`` in the `list comprehension`_ and it is NOT
+  ``item`` comes before ``for item`` in the `list comprehension`_
+
+  .. code-block:: python
+
+    a_list = []             vs a_list = [
+    for item in iterable:   vs item
+        a_list.append(item) vs for item in iterable]
+
+  and it is NOT
 
   .. code-block:: python
     :emphasize-text: a_list
@@ -1151,6 +1162,9 @@ the test passes.
                 src.list_comprehensions.a_list_comprehension(self.an_iterable),
                 [item for item in self.an_iterable]
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -1343,8 +1357,8 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
             )
             self.assertEqual(
                 src.list_comprehensions.get_even_numbers(
-                    self.an_iterable,
-                )
+                    self.an_iterable
+                ),
                 [
                     item for item in self.an_iterable
                           if item % 2 == 0
@@ -1380,35 +1394,39 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   the test passes.
 
-* I wrote the same :ref:`condition<if statements>` in the test 3 times. I have to make the same change everywhere I wrote it if I want to change it. Let us say the new :ref:`condition<if statements>` is that the number should be divisible by ``3``. I make the change in ``tests/test_list_comprehensions.py``
+* I wrote the same :ref:`condition<if statements>` in the test three times. I have to make the same change everywhere I wrote it if I want to change it. Let us say the new :ref:`condition<if statements>` is that the number should be divisible by ``3``. I make the change in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 36
+    :lineno-start: 38
     :emphasize-lines: 4
 
-    def test_making_a_list_w_conditions(self):
-        even_numbers = []
-        for item in self.an_iterable:
-            if item % 3 == 0:
-                even_numbers.append(item)
+        def test_making_a_list_w_conditions(self):
+            even_numbers = []
+            for item in self.an_iterable:
+                if item % 3 == 0:
+                    even_numbers.append(item)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
+    AssertionError: Lists differ: [0, 3, 6, 9, ...]
+                               != [0, 2, 4, 6, ...]
 
 * I change the :ref:`condition<if statements>` in the `list comprehension`_ of the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 42
-    :emphasize-lines: 3
+    :lineno-start: 44
+    :emphasize-lines: 5
 
             self.assertEqual(
                 even_numbers,
-                [item for item in self.an_iterable if item % 3 == 0]
+                [
+                    item for item in self.an_iterable
+                          if item % 3 == 0
+                ]
             )
 
   the test is green again
@@ -1417,34 +1435,48 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 46
-    :emphasize-lines: 3
+    :lineno-start: 51
+    :emphasize-lines: 7
 
             self.assertEqual(
-                src.list_comprehensions.get_even_numbers(self.an_iterable),
-                [item for item in self.an_iterable if item % 3 == 0]
+                src.list_comprehensions.get_even_numbers(
+                    self.an_iterable
+                ),
+                [
+                    item for item in self.an_iterable
+                          if item % 3 == 0
+                ]
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 2, 4, 6, ...] != [0, 3, 6, 9, ...]
+    AssertionError: Lists differ: [0, 2, 4, 6, ...]
+                               != [0, 3, 6, 9, ...]
 
 * I change the :ref:`condition<if statements>` in the ``get_even_numbers`` :ref:`function<what is a function?>` in ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
-    :caption: terminal
-    :emphasize-lines: 2
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 12
+    :emphasize-lines: 4
 
     def get_even_numbers(numbers):
-        return [number for number in iterable if number % 3 == 0]
+        return [
+            number for number in numbers
+                    if number % 3 == 0
+        ]
 
   the test passes.
 
-* I add a :ref:`function<what is a function?>` to remove the repetition in ``tests/test_list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` to remove the repetition, in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
+    :caption: list_comprehensions/tests/test_list_comprehensions.py
     :linenos:
     :emphasize-lines: 6-7
 
@@ -1459,11 +1491,11 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
     class TestListComprehensions(unittest.TestCase):
 
-* I change the :ref:`if statement<if statements>` in the test to call the new :ref:`function<what is a function?>`
+* I change the :ref:`if statement<if statements>` in :ref:`test_making_a_list_w_conditions` to :ref:`call<how to call a function with input>` the new :ref:`function<what is a function?>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 40
+    :lineno-start: 42
     :emphasize-lines: 4-5
 
         def test_making_a_list_w_conditions(self):
@@ -1479,8 +1511,8 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 40
-    :emphasize-lines: 9-10
+    :lineno-start: 42
+    :emphasize-lines: 11-12
 
         def test_making_a_list_w_conditions(self):
             even_numbers = []
@@ -1490,8 +1522,11 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
             self.assertEqual(
                 even_numbers,
-                # [item for item in self.an_iterable if item % 3 == 0]
-                [item for item in self.an_iterable if condition(item)]
+                [
+                    item for item in self.an_iterable
+                          # if item % 3 == 0
+                          if condition(item)
+                ]
             )
 
   still green.
@@ -1500,36 +1535,53 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 46
-    :emphasize-lines: 7-8
+    :lineno-start: 48
+    :emphasize-lines: 14-15
 
             self.assertEqual(
                 even_numbers,
-                [item for item in self.an_iterable if condition(item)]
+                [
+                    item for item in self.an_iterable
+                          if condition(item)
+                ]
             )
             self.assertEqual(
-                src.list_comprehensions.get_even_numbers(self.an_iterable),
-                # [item for item in self.an_iterable if item % 3 == 0]
-                [item for item in self.an_iterable if condition(item)]
+                src.list_comprehensions.get_even_numbers(
+                    self.an_iterable
+                ),
+                [
+                    item for item in self.an_iterable
+                          # if item % 3 == 0
+                          if condition(item)
+                ]
             )
 
-  the test is still green.
+  green.
 
 * I remove the commented line
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 50
+    :lineno-start: 55
 
             self.assertEqual(
-                src.list_comprehensions.get_even_numbers(self.an_iterable),
-                [item for item in self.an_iterable if condition(item)]
+                src.list_comprehensions.get_even_numbers(
+                    self.an_iterable
+                ),
+                [
+                    item for item in self.an_iterable
+                          if condition(item)
+                ]
             )
 
 
     # Exceptions seen
 
-  .. note:: ``condition`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
+  .. note:: ``condition`` is NOT a good name for a :ref:`function<what is a function?>` because it is too general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as
+
+    .. code-block:: python
+
+      [item for item in iterable if condition]
 
 * I change the :ref:`condition<if statements>` in the new :ref:`function<what is a function?>`
 
@@ -1541,29 +1593,39 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
     def condition(number):
         return number % 2 == 0
 
+
+    class TestListComprehensions(unittest.TestCase):
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
+    AssertionError: Lists differ: [0, 3, 6, 9, ...]
+                               != [0, 2, 4, 6, ...]
 
 * I change the :ref:`condition<if statements>` in ``get_even_numbers`` in ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
     :lineno-start: 12
-    :emphasize-lines: 2
+    :emphasize-lines: 4
 
     def get_even_numbers(numbers):
-        return [number for number in numbers if number % 2 == 0]
+        return [
+            number for number in numbers
+                    if number % 2 == 0
+        ]
 
-  the test passes. Adding the :ref:`function<what is a function?>` adds extra lines, and makes managing the code easier because I now only have to make a change in one place in the test when I need
+  the test passes.
+
+  * The addition of the ``condition`` :ref:`function<what is a function?>` adds extra lines to the test file.
+  * It also makes it easier to manage the code because I now only have to make a change in one place in the test when I need.
 
 * I add a new empty :ref:`list<what is a list?>` to test another :ref:`condition<if statements>` in ``tests/test_list_comprehensions.py``
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 40
+    :lineno-start: 42
     :emphasize-lines: 2
 
         def test_making_a_list_w_conditions(self):
@@ -1576,9 +1638,10 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 41
-    :emphasize-lines: 5-6
+    :lineno-start: 42
+    :emphasize-lines: 6-7
 
+        def test_making_a_list_w_conditions(self):
             even_numbers, odd_numbers = [], []
             for item in self.an_iterable:
                 if condition(item):
@@ -1586,39 +1649,62 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
                 else:
                     odd_numbers.append(item)
 
-* I add an :ref:`assertion<what is an assertion?>`
+            self.assertEqual(
+                even_numbers,
+
+* I add an :ref:`assertion<what is an assertion?>` for the new :ref:`list<what is a list?>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 54
-    :emphasize-lines: 3-6
+    :lineno-start: 57
+    :emphasize-lines: 11-16
 
-                [item for item in self.an_iterable if condition(item)]
+            self.assertEqual(
+                src.list_comprehensions.get_even_numbers(
+                    self.an_iterable
+                ),
+                [
+                    item for item in self.an_iterable
+                          if condition(item)
+                ]
             )
+
             self.assertEqual(
                 odd_numbers,
-                [item for item in self.an_iterable]
+                [
+                    item for item in self.an_iterable
+                ]
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [1, 3, 5, 7, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
+    AssertionError: Lists differ: [1, 3, 5, 7, ...]
+                               != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
 
-  the numbers on the left are odd numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`
+  the numbers on the left are odd numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`.
 
 * I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` with :ref:`logical negation(NOT)<test_logical_negation>` and the ``condition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 56
-    :emphasize-lines: 3
+    :lineno-start: 67
+    :emphasize-lines: 5
 
             self.assertEqual(
                 odd_numbers,
-                [item for item in self.an_iterable if not condition(item)]
+                [
+                    item for item in self.an_iterable
+                          if not condition(item)
+                ]
             )
+
+
+    # Exceptions seen
 
   the test passes.
 
@@ -1626,39 +1712,60 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 58
-    :emphasize-lines: 3-6
+    :lineno-start: 67
+    :emphasize-lines: 8-16
 
-                [item for item in self.an_iterable if not condition(item)]
+            self.assertEqual(
+                odd_numbers,
+                [
+                    item for item in self.an_iterable
+                          if not condition(item)
+                ]
             )
             self.assertEqual(
-                src.list_comprehensions.get_odd_numbers(self.an_iterable),
-                [item for item in self.an_iterable if not condition(item)]
+                src.list_comprehensions.get_odd_numbers(
+                    self.an_iterable
+                ),
+                [
+                    item for item in self.an_iterable
+                          if not condition(item)
+                ]
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
+    AttributeError: module 'src.list_comprehensions'
+                    has no attribute 'get_odd_numbers'.
+                    Did you mean: 'get_even_numbers'?
 
 * I add the :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :lineno-start: 12
-    :emphasize-lines: 5-6
+    :emphasize-lines: 8-12
 
     def get_even_numbers(numbers):
-        return [number for number in numbers if number % 2 == 0]
+        return [
+            number for number in numbers
+                    if number % 2 == 0
+        ]
 
 
     def get_odd_numbers(numbers):
-        return [number for number in numbers if number % 2 != 0]
+        return [
+            number for number in numbers
+                    if number % 2 != 0
+        ]
 
   the test passes.
 
-* These two conditions look the same
+* These two conditions are similar
 
   .. code-block:: python
 
@@ -1670,7 +1777,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   I add a :ref:`function<what is a function?>` to remove the repetition
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :lineno-start: 8
     :emphasize-lines: 5-6
 
@@ -1684,78 +1791,100 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
     def get_even_numbers(numbers):
 
-* I call the :ref:`function<what is a function?>` in ``get_even_numbers``
+* I call the :ref:`function<what is a function?>` in the ``get_even_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :lineno-start: 16
-    :emphasize-lines: 2
+    :emphasize-lines: 4
 
     def get_even_numbers(numbers):
-        return [number for number in numbers if is_even(number)]
-        return [number for number in numbers if number % 2 == 0]
-
-  the test is still green.
-
-* I remove the second :ref:`return statement<the return statement>` and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in ``get_odd_numbers``
-
-  .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 16
-    :emphasize-lines: 6
-
-    def get_even_numbers(numbers):
-        return [number for number in numbers if is_even(number)]
+        return [
+            number for number in numbers
+                    if is_even(number)
+        ]
 
 
     def get_odd_numbers(numbers):
-        return [number for number in numbers if not is_even(number)]
-        return [number for number in numbers if number % 2 != 0]
 
   the test is still green.
 
-* I remove the second :ref:`return statement<the return statement>`
-
-* There is a `Python Built-in Function`_ I can use to do the same thing as this `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<what is a function?>`
+* I use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in the ``get_odd_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 23
+    :emphasize-lines: 4
+
+    def get_odd_numbers(numbers):
+        return [
+            number for number in numbers
+                    if not is_even(number)
+        ]
+
+  still green.
+
+----
+
+*********************************************************************************
+another way to make a list based on a condition
+*********************************************************************************
+
+There is a `Python Built-in Function`_ I can use to do the same thing as this `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition".
+
+
+* I add a :ref:`call<how to call a function with input>` to the `filter built-in function`_ it in the ``get_even_numbers`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :lineno-start: 16
     :emphasize-lines: 2
 
     def get_even_numbers(numbers):
         return filter(is_even, numbers)
-        return [number for number in numbers if is_even(number)]
+        return [
+            number for number in numbers
+                    if is_even(number)
+        ]
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: <filter object at 0xffffab1c23d4> != [0, 2, ...]
+    AssertionError: <filter object at 0xffffab1c23d4>
+                 != [0, 2, ...]
 
-  I have to make the `filter object`_ a :ref:`list<what is a list?>`
+  I have to make the `filter object`_ a :ref:`list<what is a list?>`.
 
 * I put it in the :ref:`list constructor<test_making_a_list>`
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 17
-    :emphasize-lines: 1
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 16
+    :emphasize-lines: 2
 
+    def get_even_numbers(numbers):
         return list(filter(is_even, numbers))
+        return [
+            number for number in numbers
+                    if is_even(number)
+        ]
 
   the test passes. Which do you like better: `filter`_ or the `list comprehension`_?
 
-* filter_ takes a :ref:`function<what is a function?>` as input, which means I would have to make one for odd numbers like ``is_even``
+* filter_ takes a :ref:`function<what is a function?>` as input, which means I would have to make one for odd numbers like ``is_even`` because I cannot pass it ``not is_even`` as input
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 21
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 24
     :emphasize-lines: 2
 
     def get_odd_numbers(numbers):
         return list(filter(not is_even, numbers))
-        return [number for number in numbers if not is_even(number)]
+        return [
+            number for number in numbers
+                    if not is_even(number)
+        ]
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1766,33 +1895,54 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 * I do not want to write a new :ref:`function<what is a function?>`. I can use a `lambda function`_ which is a :ref:`function<what is a function?>` with no name to make it work
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 21
-    :emphasize-lines: 2
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 24
+    :emphasize-lines: 2-7
 
     def get_odd_numbers(numbers):
-        return list(filter(lambda number: not is_even(number), numbers))
-        return [number for number in numbers if not is_even(number)]
+        return list(
+            filter(
+                lambda number: not is_even(number),
+                numbers
+            )
+        )
+        return [
+            number for number in numbers
+                    if not is_even(number)
+        ]
 
   the test passes. This is not sexy.
 
 * another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of `The Python Standard Library`_ and needs an `import statement`_
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 21
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 24
+    :emphasize-lines: 2-3
 
     def get_odd_numbers(numbers):
         import itertools
         return list(itertools.filterfalse(is_even, numbers))
-        return list(filter(lambda number: not is_even(number), numbers))
-        return [number for number in numbers if not is_even(number)]
+        return list(
+            filter(
+                lambda number: not is_even(number),
+                numbers
+            )
+        )
+        return [
+            number for number in numbers
+                    if not is_even(number)
+        ]
 
-  the test is still green.
+  the test is still green. filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the :ref:`condition<if statements>` of the :ref:`function<what is a function?>`
 
-  filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the :ref:`condition<if statements>` of the :ref:`function<what is a function?>`
+Which of the options shown so far do you like? Which is simpler and easier to understand or remember?
 
-I like the `list comprehension`_ from the options, it is simpler, easier to remember, and does not need any `import statements`_. :ref:`I know how to filter a list<test_making_a_list_w_conditions>`
+* :ref:`for loop<what is a for loop?>`
+* `list comprehension`_
+* filter_
+* `itertools.filterfalse`_
+* `lambda function`_
 
 ----
 
@@ -1800,7 +1950,7 @@ I like the `list comprehension`_ from the options, it is simpler, easier to reme
 test_making_a_list_w_processes
 *********************************************************************************
 
-I can also do other operations with a `list comprehension`_ that are not :ref:`append<test_append_adds_item_to_end_of_a_list>`
+:ref:`append<test_append_adds_item_to_end_of_a_list>` is not the only operation I can do with a `list comprehension`_.
 
 ----
 
@@ -1813,10 +1963,18 @@ I can also do other operations with a `list comprehension`_ that are not :ref:`a
 I add a failing test to ``tests/test_list_comprehensions.py``
 
 .. code-block:: python
-  :lineno-start: 62
-  :emphasize-lines: 4-7, 9-12
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :lineno-start: 74
+  :emphasize-lines: 11-14, 16-19
 
-              [item for item in self.an_iterable if not condition(item)]
+          self.assertEqual(
+              src.list_comprehensions.get_odd_numbers(
+                  self.an_iterable
+              ),
+              [
+                  item for item in self.an_iterable
+                        if not condition(item)
+              ]
           )
 
       def test_making_a_list_w_processes(self):
@@ -1836,9 +1994,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 4, 9, ...] != [0, 1, 2, 3, ...]
+  AssertionError: Lists differ: [0, 1, 4, 9, ...]
+                             != [0, 1, 2, 3, ...]
 
-the numbers on the left are squares of the numbers on the right
+the numbers on the left are squares of the numbers on the right.
 
 ----
 
@@ -1851,13 +2010,17 @@ the numbers on the left are squares of the numbers on the right
 I add the calculation to the `list comprehension`_
 
 .. code-block:: python
-  :lineno-start: 70
+  :caption: list_comprehensions/tests/test_list_comprehensions.py
+  :lineno-start: 89
   :emphasize-lines: 3
 
           self.assertEqual(
               square_club,
               [item*item for item in self.an_iterable]
           )
+
+
+  # Exceptions seen
 
 the test passes.
 
@@ -1873,9 +2036,11 @@ the test passes.
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 72
-    :emphasize-lines: 3-6
+    :lineno-start: 89
+    :emphasize-lines: 5-8
 
+            self.assertEqual(
+                square_club,
                 [item*item for item in self.an_iterable]
             )
             self.assertEqual(
@@ -1883,21 +2048,27 @@ the test passes.
                 [item*item for item in self.an_iterable]
             )
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'square'
+    AttributeError: module 'src.list_comprehensions'
+                    has no attribute 'square'
 
 * I add the :ref:`function<what is a function?>` to ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 25
-    :emphasize-lines: 4-5
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
+    :lineno-start: 33
+    :emphasize-lines: 7-8
 
-
-        return [number for number in numbers if not is_even(number)]
+        return [
+            number for number in numbers
+                    if not is_even(number)
+        ]
 
 
     def square(numbers):
@@ -1911,11 +2082,19 @@ the test passes.
 
     x ^ y
 
-* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<what is a list?>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<what is a function?>` with a `lambda function`_
+----
+
+*********************************************************************************
+another way to process a list
+*********************************************************************************
+
+There is a `Python Built-in Function`_ that I can use to process a :ref:`list<what is a list?>`, just like filter_, this one is called map_
+
+* I add a :ref:`call<how to call a function with input>` to the `map built-in function`_ in the ``square`` :ref:`function<what is a function?>` with a `lambda function`_
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 28
+    :lineno-start: 39
     :emphasize-lines: 2
 
     def square(numbers):
@@ -1926,7 +2105,8 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: <map object at 0xffffa1b234c5> != [0, 1, 4, 9, ...]
+    AssertionError: <map object at 0xffffa1b234c5>
+                 != [0, 1, 4, 9, ...]
 
   I have to change the `map object`_ to a :ref:`list<what is a list?>`
 
