@@ -21,12 +21,6 @@
 .. _setUp method: setUp_
 .. _generator expressions: https://docs.python.org/3/reference/expressions.html#generator-expressions
 
-  [
-      process(item)
-      for item in iterable
-      if condition/not condition
-  ]
-
 #################################################################################
 list comprehensions
 #################################################################################
@@ -2580,20 +2574,37 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`I know how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
-* :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`what you can do with Lists<what is a list?>`
-* :ref:`how to test the calculator with lists<how to make a calculator 4>`
-* :ref:`how to use list comprehensions<list comprehensions>`
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
+* :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
+* :ref:`I know how to make a person with loops<how to make a person with loops>`.
+* :ref:`I know how to use lists<what is a list?>`.
+* :ref:`I know how to use list comprehensions<list comprehension>`.
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
 
 :ref:`would you like to test the calculator with your new found magic powers?<how to make a calculator 5>`
 
