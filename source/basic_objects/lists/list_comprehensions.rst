@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner Python TDD tutorial for list comprehensions by Jacob Itegboje (Pumping Python). Learn to create, filter, and transform lists with [x for x in ...] syntax, if conditions, and functions through red-green-refactor with unittest. TestCase.setUp resets instance attributes (self.a_list, self.an_iterable) to prevent shared mutation state. Compares list comprehensions with for loops, list(), extend(), filter(), map(), itertools.filterfalse, and lambdas. Real Python errors: AssertionError "True is not false", "Lists differ: [0, 1, 2, ...] != []", TypeError "takes 0 positional arguments but 1 was given", "list.extend() takes exactly one argument", AttributeError "has no attribute 'a_list'", and TypeError "'bool' object is not callable".
-  :keywords: Jacob Itegboje, Pumping Python, python list comprehensions, list comprehension tutorial, python list comp TDD, TDD list comprehensions, python [x for x in], list comprehension beginners, testing list comprehensions, Python basic objects comprehensions, red green refactor list comp, list comprehension vs loop, list comprehension vs filter, list comprehension vs map, unittest setUp method, setUp reset object attributes, itertools filterfalse, lambda function, makePythonTdd, python list comp best practices, list comp unittest
+  :keywords: Jacob Itegboje, Pumping Python, python list comprehensions, list comprehension tutorial, python list comp TDD, TDD list comprehensions, python [x for x in], list comprehension beginners, testing list comprehensions, Python basic objects comprehensions, red green refactor list comp, list comprehension vs loop, list comprehension vs filter, list comprehension vs map, unittest setUp method, setUp reset object attributes, itertools filterfalse, lambda function, makePythonTdd, python list comp best practices, list comp unittest generator expression
 
 .. include:: ../../links.rst
 
@@ -19,6 +19,13 @@
 .. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _setUp method: setUp_
+.. _generator expressions: https://docs.python.org/3/reference/expressions.html#generator-expressions
+
+  [
+      process(item)
+      for item in iterable
+      if condition/not condition
+  ]
 
 #################################################################################
 list comprehensions
@@ -2479,6 +2486,48 @@ the numbers on the left are the squares of the even numbers on the right.
 
 :ref:`I know how to use list comprehensions to make a list based on conditions (filter) with processes (transform)<test_making_a_list_w_processes_and_conditions>`.
 
+I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<what is a list?>` with one line. I think of it as
+
+.. code-block:: python
+
+  [
+      process(item)
+      for item in iterable
+      if condition/not condition
+  ]
+
+----
+
+*********************************************************************************
+dict comprehensions
+*********************************************************************************
+
+I can also do this with :ref:`dictionaries<what is a dictionary?>`, they are called dict comprehensions and the syntax is
+
+.. code-block:: python
+
+  {
+      a_process(key): another_process(value)
+      for key/value in iterable
+      if condition/not condition
+  }
+
+----
+
+*********************************************************************************
+generator expressions
+*********************************************************************************
+
+There are also `generator expressions`_, they are the same syntax as `list comprehensions`_ but with parentheses (``()``)  instead of brackets (``[]``)
+
+.. code-block:: python
+
+  (
+      process(item)
+      for item in iterable
+      if condition/not condition
+  )
+
 ----
 
 *********************************************************************************
@@ -2511,26 +2560,6 @@ I ran tests to show I can make a :ref:`list<what is a list?>` from an :ref:`iter
   - :ref:`filter the list based on a condition<test_making_a_list_w_conditions>`
   - :ref:`transform the list with a process<test_making_a_list_w_processes>`
   - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
-
-I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<what is a list?>` with one line. I think of it as
-
-.. code-block:: python
-
-  [
-      process(item)
-      for item in iterable
-      if condition/not condition
-  ]
-
-I can also do this with :ref:`dictionaries<what is a dictionary?>`, it is called a dict comprehension and the syntax is
-
-.. code-block:: python
-
-  {
-      a_process(key): another_process(value)
-      for key/value in iterable
-      if condition/not condition
-  }
 
 ----
 
