@@ -818,7 +818,7 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
     class TestListComprehensions(unittest.TestCase):
 
         a_list = []
-        iterable = range(0, random.randint(2, 1000))
+        an_iterable = range(0, random.randint(2, 1000))
 
         def test_making_a_list_w_a_for_loop(self):
 
@@ -2600,13 +2600,24 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehension>`.
+* :ref:`I know how to use list comprehensions<list comprehensions>`.
 
 .. toctree::
   :titlesonly:
   :maxdepth: 1
 
-:ref:`would you like to test the calculator with your new found magic powers?<how to make a calculator 5>`
+  ../../exceptions/AssertionError/AssertionError_w_generators
+  ../../truth_table/projects/atm/atm_w_generators
+  ../../truth_table/projects/car/car_w_generators
+  ../../truth_table/projects/elevator/elevator_w_generators
+  ../../functions/functions_w_generators
+  ../../truth_table/projects/microwave/microwave_w_generators
+  ../../how_to/telephone/telephone_w_generators
+  ../../how_to/person/person_w_generators
+  ../../truth_table/projects/traffic_light/traffic_light_w_generators
+  ../../truth_table/binary_operations/binary_operations_w_generators
+
+:ref:`Would you like to test AssertionError with generators?<test AssertionError with generators>`
 
 -----
 

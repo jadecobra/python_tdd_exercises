@@ -5475,7 +5475,6 @@ what is next?
   ../../truth_table/projects/elevator/elevator_w_loops
   ../../functions/functions_w_loops
   ../../truth_table/projects/microwave/microwave_w_loops
-  ../../basic_objects/none_w_loops
   ../../objects/inheritance_w_loops
   ../../how_to/telephone/telephone_w_loops
   ../../truth_table/projects/traffic_light/traffic_light_w_loops
