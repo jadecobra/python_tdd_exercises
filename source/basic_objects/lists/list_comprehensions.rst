@@ -1,6 +1,6 @@
 .. meta::
-  :description: TDD tutorial for Python list comprehensions: concise way to create and transform lists. Learn [x for x in ...] syntax, conditions, nested comprehensions through red-green-refactor testing with unittest. Builds on basic lists chapter and connects to data structures, None, booleans, and assertion testing from earlier chapters.
-  :keywords: Jacob Itegboje, Pumping Python, python list comprehensions, list comprehension tutorial, python list comp TDD, TDD list comprehensions, python [x for x in], list comprehension beginners, testing list comprehensions, Python basic objects comprehensions, red green refactor list comp, python list comp best practices, list comprehension vs loop, python list comp for beginners, list comp unittest
+  :description: Beginner Python TDD tutorial for list comprehensions by Jacob Itegboje (Pumping Python). Learn to create, filter, and transform lists with [x for x in ...] syntax, if conditions, and functions through red-green-refactor with unittest. TestCase.setUp resets instance attributes (self.a_list, self.an_iterable) to prevent shared mutation state. Compares list comprehensions with for loops, list(), extend(), filter(), map(), itertools.filterfalse, and lambdas. Real Python errors: AssertionError "True is not false", "Lists differ: [0, 1, 2, ...] != []", TypeError "takes 0 positional arguments but 1 was given", "list.extend() takes exactly one argument", AttributeError "has no attribute 'a_list'", and TypeError "'bool' object is not callable".
+  :keywords: Jacob Itegboje, Pumping Python, python list comprehensions, list comprehension tutorial, python list comp TDD, TDD list comprehensions, python [x for x in], list comprehension beginners, testing list comprehensions, Python basic objects comprehensions, red green refactor list comp, list comprehension vs loop, list comprehension vs filter, list comprehension vs map, unittest setUp method, setUp reset object attributes, itertools filterfalse, lambda function, makePythonTdd, python list comp best practices, list comp unittest
 
 .. include:: ../../links.rst
 
@@ -428,7 +428,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
             for number in range(10):
 
-* I use the :ref:`variable<what is a variable>` for ``range(10)`` and ``range(0, 10)`` since they are the same
+* I use the :ref:`variable<what is a variable?>` for ``range(10)`` and ``range(0, 10)`` since they are the same
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -504,7 +504,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
-  .. code-block::
+  .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 4
 
@@ -807,7 +807,7 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
 
   the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than the :ref:`list constructor<test_making_a_list>`.
 
-* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`object attributes<what are object attributes?>` to remove the repetition
+* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`object attributes<what is an object attribute?>` to remove the repetition
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -821,7 +821,7 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
 
         def test_making_a_list_w_a_for_loop(self):
 
-* I use the new :ref:`object attributes<what is an object attribute>` in :ref:`test_making_a_list_w_a_for_loop`
+* I use the new :ref:`object attributes<what is an object attribute?>` in :ref:`test_making_a_list_w_a_for_loop`
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -892,7 +892,7 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
 
     AssertionError: Lists differ: [0, 1, 2, 3, ... XYZ, 0, 1, 2, 3, ...XYZ] != [0, 1, 2, 3, ...XYZ]
 
-  the values in ``a_list`` are double what the :ref:`assertion<what is an assertion?>` expects. I broke something by using the :ref:`object attributes<what are object attributes?>`
+  the values in ``a_list`` are double what the :ref:`assertion<what is an assertion?>` expects. I broke something by using the :ref:`object attributes<what is an object attribute?>`
 
 * I change ``a_list`` back
 
@@ -931,7 +931,7 @@ how to use the setUp method to reset object attributes for every test
 
 The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before.
 
-The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`object attributes<what are object attributes?>` are always reset at the beginning of the test, so that the values are new for each test.
+The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`object attributes<what is an object attribute?>` are always reset at the beginning of the test, so that the values are new for each test.
 
 ----
 
@@ -1004,8 +1004,8 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 6
-    :emphasize-lines: 3-5
+    :lineno-start: 8
+    :emphasize-lines: 2
 
         def setUp(self):
             self.a_list = []
@@ -1013,7 +1013,7 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
 
   the test is green again.
 
-  The `unittest.TestCase.setUp method`_ runs before every test, in this case it sets these :ref:`object attributes (variables)<what are object attributes?>`
+  The `unittest.TestCase.setUp method`_ runs before every test, in this case it sets these :ref:`object attributes (variables)<what is an object attribute?>`
 
   - ``self.a_list`` to an :ref:`empty list<test_making_a_list>`
   - ``self.an_iterable`` to a :ref:`range object<the range object>` that goes from ``0`` to random number between ``1`` and ``999``
@@ -1231,7 +1231,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_making_a_list_w_conditions'
+    'add test_making_a_list_w_a_list_comprehension'
 
 I made 2 :ref:`functions<what is a function?>` that do the same thing - one uses a `for loop`_ and the other uses a `list comprehension`_
 
@@ -1638,7 +1638,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 * I change the :ref:`condition<if statements>` in ``get_even_numbers`` in ``src/list_comprehensions/__init__.py``
 
   .. code-block:: python
-    :caption: list_comprehensions/tests/test_list_comprehensions.py
+    :caption: list_comprehensions/src/list_comprehensions/__init__.py
     :lineno-start: 12
     :emphasize-lines: 4
 
@@ -2340,7 +2340,7 @@ the numbers on the left are the squares of the even numbers on the right.
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
-    :lineno-start: 91
+    :lineno-start: 110
     :emphasize-lines: 3
 
             self.assertEqual(

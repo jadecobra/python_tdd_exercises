@@ -60,7 +60,7 @@ The code in ``list_comprehensions/src/list_comprehensions/__init__.py`` from :re
   :caption: list_comprehensions/src/list_comprehensions/__init__.py
   :language: python
   :linenos:
-  :lines: 1-8
+  :lines: 1-9
 
 .. literalinclude:: src/list_comprehensions.py
   :caption: list_comprehensions/src/list_comprehensions/__init__.py
