@@ -11,52 +11,7 @@ test atm with generators
 #################################################################################
 
 
-I want to use :ref:`for loops<what is a for loop?>` in the :ref:`atm project<Automated Teller Machine>` to give a different message with each denial based on the following inputs
-
-* has the card expired?
-* is the PIN correct?
-* is there enough cash in the account for the withdrawal?
-* will the withdrawal put the account above or below the daily limit for withdrawals?
-
-the :ref:`truth table` could be
-
-==================  ===================== ======================  ==================  =============
-PIN                 cash                  daily limit             card expired        withdrawal
-==================  ===================== ======================  ==================  =============
-:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
-:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
-==================  ===================== ======================  ==================  =============
-
-==================  ======================= ======================  ==================  =============
-PIN                 cash                    daily limit             card expired        withdrawal
-==================  ======================= ======================  ==================  =============
-:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
-:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Not enough CASH in Account`
-==================  ======================= ======================  ==================  =============
-
-==================  ======================= ======================  ==================  =============
-PIN                 cash                    daily limit             card expired        withdrawal
-==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
-:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
-==================  ======================= ======================  ==================  =============
-
-==================  ======================= ======================  ==================  =============
-PIN                 cash                    daily limit             card expired        withdrawal
-==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Exceeded the daily withdrawal limit`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Wrong PIN. Try again...`
-==================  ======================= ======================  ==================  =============
-
-The :ref:`ATM<Automated Teller Machine>` only gives me :green:`'CASH'` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
+I want to use a :ref:`generator<generator expressions>` in the :ref:`atm<Automated Teller Machine>` project.
 
 ----
 
@@ -99,7 +54,7 @@ open the project
 ----
 
 *********************************************************************************
-test_if_card_expired
+test_atm with generators
 *********************************************************************************
 
 The :ref:`truth table` for if the card has :green:`expired` is
