@@ -143,6 +143,7 @@ start the project
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -214,6 +215,7 @@ test_catching_module_not_found_error
 * I change :ref:`test_failure` to ``test_catching_module_not_found_error`` with an `import statement`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-4
 
@@ -236,6 +238,7 @@ test_catching_module_not_found_error
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3
     :emphasize-text: ModuleNotFoundError
@@ -286,6 +289,7 @@ If the statement in the :ref:`try<how to handle Exceptions>` block works, Python
 * I put the failing line in a :ref:`try...except<how to handle Exceptions>` block to :ref:`test_catching_module_not_found_error` to :ref:`handle ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2-5
 
@@ -337,6 +341,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 * I add a test for :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 4-5
 
@@ -360,6 +365,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 * I add NameError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 4
     :emphasize-text: NameError
@@ -380,6 +386,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 * I put the failing line in :ref:`test_catching_name_error` in a :ref:`try...except<how to handle Exceptions>` block to :ref:`handle NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2-5
 
@@ -431,6 +438,7 @@ test_catching_attribute_error
 * I add a test for :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4-5
 
@@ -476,6 +484,7 @@ test_catching_attribute_error
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 5
     :emphasize-text: AttributeError
@@ -497,6 +506,7 @@ test_catching_attribute_error
 * I put the failing line in :ref:`test_catching_attribute_error` in a :ref:`try...except<how to handle Exceptions>` block to :ref:`handle AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2-5
 
@@ -551,6 +561,7 @@ test_catching_type_error
 * I add a test for :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 4-5
 
@@ -608,6 +619,7 @@ test_catching_type_error
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_exceptions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 6
     :emphasize-text: TypeError
@@ -710,6 +722,7 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
 * I add an `else clause`_ to the :ref:`try statement<how to handle Exceptions>` to :ref:`raise AssertionError<what causes AssertionError?>` if :ref:`TypeError<what causes TypeError?>` is not :ref:`raised<how to raise an Exception>` in ``tests/test_exceptions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 6-7
 
@@ -777,6 +790,7 @@ add else clause to try statements
 * I add the `else clause`_ to :ref:`test_catching_attribute_error` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`AttributeError<what causes AttributeError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>` in ``tests/test_exceptions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 6-7
 
@@ -795,6 +809,7 @@ add else clause to try statements
 * I add the `else clause`_ to :ref:`test_catching_name_error` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`NameError<test_catching_name_error>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 6-7
 
@@ -813,6 +828,7 @@ add else clause to try statements
 * I add the `else clause`_ to :ref:`test_catching_module_not_found_error` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6-7
 
@@ -865,6 +881,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
 * I add a :ref:`method<what is a method?>` for the :ref:`try statement<how to use try...except...else>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3-10
     :emphasize-text: exception
@@ -885,6 +902,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
 * I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_module_not_found_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 2-4
 
@@ -905,6 +923,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 7
     :emphasize-text: SyntaxError
@@ -928,6 +947,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
 * I change the ``import does_not_exist`` line in :ref:`test_catching_module_not_found_error` to a string_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 3
 
@@ -978,6 +998,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I add exec_ to the :ref:`try block<how to use try...except...else>` in the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -1018,6 +1039,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_module_not_found_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
         def test_catching_module_not_found_error(self):
@@ -1030,6 +1052,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_name_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -1048,6 +1071,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I change the expected :ref:`Exception<how to test that an Exception is raised>` to :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -1067,6 +1091,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_name_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
 
         def test_catching_name_error(self):
@@ -1077,6 +1102,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_attribute_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2-4
 
@@ -1098,6 +1124,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I change the expected :ref:`Exception<how to test that an Exception is raised>` to :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 3
 
@@ -1119,6 +1146,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_attribute_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
         def test_catching_attribute_error(self):
@@ -1131,6 +1159,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_type_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 2-5
 
@@ -1153,6 +1182,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I change the expected :ref:`Exception<how to test that an Exception is raised>` to :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 4
 
@@ -1176,6 +1206,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_type_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
 
         def test_catching_type_error(self):
@@ -1218,6 +1249,7 @@ test_catching_index_error
 * I add a test for :ref:`IndexError<test_index_error>` with a string_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 7-8
 
@@ -1238,6 +1270,7 @@ test_catching_index_error
 * I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` from ``0`` to ``7``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 2
 
@@ -1252,6 +1285,7 @@ test_catching_index_error
 * If I use a number that is bigger than the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the last item
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 2
 
@@ -1272,6 +1306,7 @@ test_catching_index_error
 * I add :ref:`IndexError<test_index_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 8
     :emphasize-text: IndexError
@@ -1318,6 +1353,7 @@ the test passes.
 * I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item is ``-1``, like reading from right to left
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 3
 
@@ -1333,6 +1369,7 @@ the test passes.
 * I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` from ``-1`` to ``-8`` for the first item, which is negative the total number of items (like reading from right to left)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 3
 
@@ -1348,6 +1385,7 @@ the test passes.
 * I use a negative number that is smaller than the negative of the number of characters in the string_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 3
 
@@ -1367,6 +1405,7 @@ the test passes.
 * I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`handle the Exception<how to use try...except...else>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 3
 
@@ -1382,6 +1421,7 @@ the test passes.
 * I add a tuple_ to :ref:`test_catching_index_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 5
 
@@ -1399,6 +1439,7 @@ the test passes.
 * I use a number that is bigger than the number of items in the tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 5
 
@@ -1420,6 +1461,7 @@ the test passes.
 * I use the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 5-7
 
@@ -1439,6 +1481,7 @@ the test passes.
 * I use a negative number to :ref:`index<test_index_returns_first_position_of_item_in_a_list>` the tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4
 
@@ -1455,6 +1498,7 @@ the test passes.
 * I use a number that is smaller than the negative of the number of items in the tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4
 
@@ -1477,6 +1521,7 @@ the test passes.
 * I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`catch the Exception<how to use try...except...else>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 8-10
 
@@ -1528,6 +1573,7 @@ test_catching_key_error
 * I add a test for :ref:`KeyError<test_key_error>` with a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 5-6
 
@@ -1546,6 +1592,7 @@ test_catching_key_error
 * If I use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2
 
@@ -1564,6 +1611,7 @@ test_catching_key_error
 * I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 9
     :emphasize-text: KeyError
@@ -1589,6 +1637,7 @@ test_catching_key_error
 * I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`catch the Exception<how to use try...except...else>` in :ref:`test_catching_key_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-5
 
@@ -1631,6 +1680,7 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
 * I add a test for ZeroDivisionError_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 7-8
 
@@ -1657,6 +1707,7 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
 * I add ZeroDivisionError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 10
     :emphasize-text: ZeroDivisionError
@@ -1683,6 +1734,7 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
 * I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`catch the Exception<how to use try...except...else>` in :ref:`test_catching_zero_division_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2
 
@@ -1730,6 +1782,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
 * I add a test with the `raise statement`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 4-5
 
@@ -1753,6 +1806,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
 * I can use the `raise statement`_ to cause any :ref:`Exception<how to test that an Exception is raised>` I want
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2
 
@@ -1769,6 +1823,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
     E       AssertionError
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2
 
@@ -1787,6 +1842,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
 * I add ValueError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 11
     :emphasize-text: ValueError
@@ -1806,6 +1862,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
 * I change ValueError_ to :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2
 
@@ -1854,6 +1911,7 @@ the test passes.
 * I can use :ref:`Exception<how to test that an Exception is raised>` to catch any of the :ref:`Exceptions<how to test that an Exception is raised>` that :ref:`inherit<everything is an object>` from it (its :ref:`children/subobjects<how to test if something is a subclass>`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4-5, 9-10
 
@@ -1877,6 +1935,7 @@ the test passes.
   From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I change the :ref:`Exceptions<how to test that an Exception is raised>` back.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4, 8
 
@@ -1894,6 +1953,7 @@ the test passes.
 * I cannot use sibling or cousin :ref:`Exceptions<how to test that an Exception is raised>` to catch other :ref:`Exceptions<how to test that an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 9-10
 
@@ -1922,6 +1982,7 @@ the test passes.
 * I undo the change
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 9
 
@@ -1943,6 +2004,7 @@ the test passes.
 * I cannot use a :ref:`child<how to test if something is a subclass>` :ref:`Exceptions<how to test that an Exception is raised>` to catch its parent :ref:`Exception<how to test that an Exception is raised>`.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2-5
 
@@ -1966,6 +2028,7 @@ the test passes.
 * I undo the change
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2
 
@@ -2002,6 +2065,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add the failing line for :ref:`test_catching_exceptions`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 3
 
@@ -2017,6 +2081,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add assertRaises_ to :ref:`handle Exception<how to handle Exceptions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 3-4
 
@@ -2033,6 +2098,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add a failing line to :ref:`test_catching_zero_division_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3
 
@@ -2047,6 +2113,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add assertRaises_ to :ref:`handle ZeroDivisionError<how to handle Exceptions>`.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3-4
 
@@ -2062,6 +2129,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add a failing line to :ref:`test_catching_key_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 6
 
@@ -2079,6 +2147,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add assertRaises_ to :ref:`handle KeyError<how to handle Exceptions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 6-7
 
@@ -2097,6 +2166,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add a failure with the `assertRaises method`_ to :ref:`test_catching_index_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 5-6
 
@@ -2116,6 +2186,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I change ZeroDivisionError_ to :ref:`IndexError<test_index_error>` in :ref:`test_catching_index_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 5
 
@@ -2131,6 +2202,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add assertRaises_ for the second statement in :ref:`test_catching_index_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3-4
 
@@ -2158,6 +2230,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I change the statement to make it raise :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4
 
@@ -2175,6 +2248,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add assertRaises_ for the third statement
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 8-9
 
@@ -2195,6 +2269,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add assertRaises_ for the fourth statement in :ref:`test_catching_index_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3-4
 
@@ -2210,6 +2285,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I use assertRaises_ in :ref:`test_catching_type_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 6-7
 
@@ -2228,6 +2304,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add assertRaises_ to :ref:`test_catching_attribute_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 5-6
 
@@ -2245,6 +2322,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I use the `assertRaises method`_ in :ref:`test_catching_name_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3-4
 
@@ -2260,6 +2338,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I use assertRaises_ in :ref:`test_catching_module_not_found_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 5-6
 
@@ -2283,6 +2362,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I change the statement
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 6
 
@@ -2314,6 +2394,7 @@ The assertRaises_ in :ref:`test_catching_index_error` all catch the same :ref:`E
 * If I remove the second assertRaises_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 7
 
@@ -2331,6 +2412,7 @@ The assertRaises_ in :ref:`test_catching_index_error` all catch the same :ref:`E
 * If I add a `raise statement`_ before ``'a string'[-9]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 4
 
@@ -2348,6 +2430,7 @@ The assertRaises_ in :ref:`test_catching_index_error` all catch the same :ref:`E
 * If I move the `raise statement`_ above the first :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 2
 
@@ -2369,6 +2452,7 @@ The assertRaises_ in :ref:`test_catching_index_error` all catch the same :ref:`E
 * I undo the changes
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 3-4
 

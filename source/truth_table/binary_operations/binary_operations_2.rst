@@ -166,6 +166,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I add ``negate_first`` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 9-10
 
@@ -203,6 +204,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4
 
@@ -234,6 +236,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 5
 
@@ -257,6 +260,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I add an :ref:`if statement<if statements>` for this case to :ref:`negate_first<test_negate_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 2-3
 
@@ -285,6 +289,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 6
 
@@ -349,6 +354,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in :ref:`the negate_first function<test_negate_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 2-3
 
@@ -363,6 +369,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 3-4
 
@@ -378,6 +385,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 4-5
 
@@ -394,6 +402,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 5-6
 
@@ -423,6 +432,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I add an :ref:`else clause<if statements>` to be clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 8-9
 
@@ -441,6 +451,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I use a :ref:`conditional expression (ternary operator)<conditional expressions>` for the :ref:`if statements` in :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 2
 
@@ -460,6 +471,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 2
 
@@ -472,6 +484,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I remove the other statements from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
     def negate_first(first_input, second_input):
@@ -591,6 +604,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 3-5
 
@@ -658,6 +672,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4
 
@@ -680,6 +695,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-3
 
@@ -709,6 +725,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 5
 
@@ -739,6 +756,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-3
 
@@ -770,6 +788,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 6
 
@@ -845,6 +864,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` (the first case, when the first input is :green:`True` and the second input is :green:`True`). I add :ref:`if statements` for it, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-10
 
@@ -930,6 +950,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-5
 
@@ -947,6 +968,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 3-4, 6-7
 
@@ -965,6 +987,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 4-5, 8-9
 
@@ -997,6 +1020,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 4-5, 9-10
 
@@ -1029,6 +1053,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2-4
 
@@ -1043,6 +1068,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I rewrite the :ref:`else clause<if statements>` with the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input and second_input`` so I can write the statements with a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 3-4
 
@@ -1057,6 +1083,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I move the first :ref:`if statement<if statements>` below this new one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 4-5
 
@@ -1072,6 +1099,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I change ``if first_input and second_input`` to an :ref:`else clause<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 4-5
 
@@ -1088,6 +1116,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-6
 
@@ -1114,6 +1143,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 3, 5
 
@@ -1221,6 +1251,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-4
 
@@ -1253,6 +1284,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I remove the commented lines and other statements from :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 5
 
@@ -1407,6 +1439,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 3-5
 
@@ -1475,6 +1508,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 4
 
@@ -1506,6 +1540,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 5
 
@@ -1538,6 +1573,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 6
 
@@ -1697,6 +1733,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 3-7
 
@@ -1765,6 +1802,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 6
 
@@ -1803,6 +1841,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 7
 
@@ -1842,6 +1881,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 8
 
@@ -1868,6 +1908,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add :ref:`if statements` for the new case to :ref:`logical_disjunction<test_logical_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-4
 
@@ -1936,6 +1977,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-5
 
@@ -1952,6 +1994,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3-4, 6-7
 
@@ -1970,6 +2013,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 4-5, 8-9
 
@@ -1990,6 +2034,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 5-6, 10-11
 
@@ -2024,6 +2069,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 6, 11-12
 
@@ -2058,6 +2104,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 13-15
 
@@ -2082,6 +2129,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to change the :ref:`else clause<if statements>` to the opposite of the :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 3-4
 
@@ -2096,6 +2144,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I move the first :ref:`if statement<if statements>` below the new one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 15-16
 
@@ -2121,6 +2170,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I change it to an :ref:`else clause<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 4-5
 
@@ -2136,6 +2186,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add a :ref:`conditional expression (ternary operator)<conditional expressions>` to :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-6
 
@@ -2167,6 +2218,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3, 5
 
@@ -2183,6 +2235,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * :ref:`not<test_logical_negation>` happens 3 times in this statement. I "multiply" it by every symbol in the statement to try to make it simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-6
 
@@ -2209,6 +2262,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_binary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 8
     :emphasize-text: SyntaxError
@@ -2225,6 +2279,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I change ``not and`` to ``or`` in the :ref:`logical_disjunction function<test_logical_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 4-5
 
@@ -2241,6 +2296,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove ``not not`` because they cancel out
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3-4, 7-8
 
@@ -2335,6 +2391,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-7
 
@@ -2377,6 +2434,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove the commented lines and other statements from :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 8
 

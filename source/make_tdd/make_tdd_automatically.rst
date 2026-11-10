@@ -491,6 +491,7 @@ how to use makePythonTdd to make a different project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -574,6 +575,7 @@ how to use makePythonTdd to make a different project
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``test_more_magic.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 

@@ -369,6 +369,7 @@ test_attribute_error_w_variables
 * I add AttributeError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3
     :emphasize-text: AttributeError
@@ -406,6 +407,7 @@ test_attribute_error_w_variables
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 4
     :emphasize-text: NameError
@@ -455,6 +457,7 @@ test_attribute_error_w_variables
 * I add a statement for ``variable_01`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3
 
@@ -513,6 +516,7 @@ test_attribute_error_w_variables
 * I add a statement for ``variable_02`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4
 
@@ -558,6 +562,7 @@ test_attribute_error_w_variables
 * I add a line for ``variable_03`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5
 
@@ -604,6 +609,7 @@ test_attribute_error_w_variables
 * I add a line for ``variable_04`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6
 
@@ -652,6 +658,7 @@ test_attribute_error_w_variables
 * I add a line for ``variable_05`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7
 
@@ -702,6 +709,7 @@ test_attribute_error_w_variables
 * I add a line for ``variable_06`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 8
 
@@ -754,6 +762,7 @@ test_attribute_error_w_variables
 * I add a line for ``variable_07`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 9
 
@@ -808,6 +817,7 @@ test_attribute_error_w_variables
 * I add a line for ``variable_08`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 10
 
@@ -864,6 +874,7 @@ test_attribute_error_w_variables
 * I add a line for ``variable_09`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 11
 
@@ -962,6 +973,7 @@ test_attribute_error_w_functions
 * I add a test with a :ref:`function call<how to call a function>`, to ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4-5
 
@@ -994,6 +1006,7 @@ test_attribute_error_w_functions
 * I add the name and point it to :ref:`None<what is None?>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4
 
@@ -1013,6 +1026,7 @@ test_attribute_error_w_functions
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -1026,6 +1040,7 @@ test_attribute_error_w_functions
 * I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4-5
 
@@ -1068,6 +1083,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_01`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3
 
@@ -1089,6 +1105,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_01`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2
 
@@ -1108,6 +1125,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_02`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4
 
@@ -1130,6 +1148,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_02`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3
 
@@ -1150,6 +1169,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_03`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 5
 
@@ -1173,6 +1193,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_03`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 4
 
@@ -1194,6 +1215,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_04`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 6
 
@@ -1218,6 +1240,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_04`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 5
 
@@ -1240,6 +1263,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_05`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 7
 
@@ -1265,6 +1289,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_05`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 6
 
@@ -1288,6 +1313,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_06`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 8
 
@@ -1314,6 +1340,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_06`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 7
 
@@ -1338,6 +1365,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_07`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 9
 
@@ -1365,6 +1393,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_07`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 8
 
@@ -1390,6 +1419,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_08`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 10
 
@@ -1418,6 +1448,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_08`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 9
 
@@ -1444,6 +1475,7 @@ test_attribute_error_w_functions
 * I add a :ref:`call<how to call a function>` to ``function_09`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 11
 
@@ -1473,6 +1505,7 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_09`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 10
 

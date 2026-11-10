@@ -165,6 +165,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 12-14
 
@@ -222,6 +223,7 @@ the test passes.
 * I add ``'jane'`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 4-5
 
@@ -326,6 +328,7 @@ the test passes.
 * I add ``'doe'`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 5-6
 
@@ -353,6 +356,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 6-11
 
@@ -509,6 +513,7 @@ the test passes.
 * I add ``year_of_birth=1991`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 11
 
@@ -548,6 +553,7 @@ the test passes.
 * Since there are more than two arguments, I add :ref:`keyword arguments<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 4-10
 
@@ -631,6 +637,7 @@ the test passes.
 * I comment out the :ref:`call<how to call a function with input>` to ``joe`` in :ref:`test_joe` because I no longer need it since the :ref:`person function<extract person function>` does the same thing
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 2
 
@@ -642,6 +649,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'joe'`` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 3
 
@@ -654,6 +662,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'joe'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 7-8, 13-16
 
@@ -683,6 +692,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'blow'`` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 4
 
@@ -696,6 +706,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'blow'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 10-11, 17-18
 
@@ -729,6 +740,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'M'`` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 5
 
@@ -743,6 +755,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'M'`` from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 13-14, 21-22
 
@@ -779,6 +792,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``1996`` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 6
 
@@ -794,6 +808,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1996`` from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 16-17, 24-25
 
@@ -833,6 +848,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
     def test_joe():
@@ -861,6 +877,7 @@ the test passes.
 * I comment out the :ref:`call<how to call a function with input>` to ``jane`` in :ref:`test_jane` because I no longer need it since the :ref:`person function<extract person function>` does the same thing
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2
 
@@ -872,6 +889,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'jane'`` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 3
 
@@ -884,6 +902,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 9-10, 15-19
 
@@ -916,6 +935,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'doe'`` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4
 
@@ -929,6 +949,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 12-13, 19-20
 
@@ -964,6 +985,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'F'`` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 5
 
@@ -978,6 +1000,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'`` from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 15-16, 23-24
 
@@ -1016,6 +1039,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``1991`` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 6
 
@@ -1031,6 +1055,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1991``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 18-19, 26-27
 
@@ -1072,6 +1097,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
 
     def test_jane():
@@ -1100,6 +1126,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` in :ref:`test_john` to a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 2-10
 
@@ -1127,6 +1154,7 @@ the test passes.
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 9-10
 
@@ -1170,6 +1198,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'john'`` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 3
 
@@ -1193,6 +1222,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'john'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 6-7, 13-17
 
@@ -1223,6 +1253,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'smith'`` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 4
 
@@ -1234,6 +1265,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'smith'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 9-10, 17-18
 
@@ -1267,6 +1299,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``'M'`` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 5
 
@@ -1279,6 +1312,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'M'`` from :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 12-13, 21-22
 
@@ -1315,6 +1349,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``1580`` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 6
 
@@ -1328,6 +1363,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1580``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 15-16, 24-25
 
@@ -1367,6 +1403,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
 
     def test_john():
@@ -1393,6 +1430,7 @@ the test passes.
 * I make the same change to :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 3-6, 8-18
 
@@ -1428,6 +1466,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
 
         my_expectation = (
@@ -1465,6 +1504,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
 
     def test_mary():
@@ -1599,6 +1639,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 * I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 7-23
 
@@ -1714,6 +1755,7 @@ the test passes.
 * I remove the commented line from :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
 
     def assert_person_factory_works(
@@ -1738,6 +1780,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
     def test_joe():
@@ -1759,6 +1802,7 @@ the test passes.
 * I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 7-23
 
@@ -1794,6 +1838,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
     def test_jane():
@@ -1815,6 +1860,7 @@ the test passes.
 * I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 7-23
 
@@ -1850,6 +1896,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
     def test_john():
@@ -1871,6 +1918,7 @@ the test passes.
 * I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 7-23
 
@@ -1906,6 +1954,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
 
     def test_mary():
@@ -1954,6 +2003,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 * I change ``reality`` in the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to be the result of a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`person function<extract person function>` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 7-8
 
@@ -2019,6 +2069,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 5
     :emphasize-text: AttributeError
@@ -2082,6 +2133,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 * I remove the commented line from :ref:`assert_person_factory_works<extract assert_person_factory_works function>` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
 
     def assert_person_factory_works(
@@ -2166,6 +2218,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 14-24
 
@@ -2246,6 +2299,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add ``first_name`` in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 1-2
 
@@ -2264,6 +2318,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add ``last_name`` in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2-3
 
@@ -2285,6 +2340,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add ``year_of_birth`` in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-7
 
@@ -2307,6 +2363,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 8-9
 
@@ -2355,6 +2412,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 14-24
 
@@ -2399,6 +2457,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 9-13
 
@@ -2428,6 +2487,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add ``last_name`` to :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 12-13
 
@@ -2458,6 +2518,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add the age calculation to :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 10, 15-16
 
@@ -2534,6 +2595,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_john` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 14-24
 
@@ -2578,6 +2640,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I change ``my_expectation`` to match ``reality`` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 2-3
 
@@ -2622,6 +2685,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 14-24
 
@@ -2666,6 +2730,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 * I change ``my_expectation`` to match ``reality`` in :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 3-4
 
@@ -2755,6 +2820,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 * I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 13-27
 
@@ -2795,6 +2861,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 * I use the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 14-29
 
@@ -2921,6 +2988,7 @@ the test passes.
 * I remove the commented line from :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
     def assert_say_hello_works(
@@ -2948,6 +3016,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
 
     def test_joe():
@@ -2975,6 +3044,7 @@ the test passes.
 * I use the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 14-29
 
@@ -3016,6 +3086,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
 
     def test_jane():
@@ -3043,6 +3114,7 @@ the test passes.
 * I use the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 14-30
 
@@ -3085,6 +3157,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
 
     def test_john():
@@ -3112,6 +3185,7 @@ the test passes.
 * I use the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` in :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 14-30
 
@@ -3154,6 +3228,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
 
     def test_mary():
@@ -3211,6 +3286,7 @@ I want to move the :ref:`say_hello function<test say_hello function>` to separat
 * I change ``reality`` in the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hello function<test say_hello function>` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 5-6
 
@@ -3302,6 +3378,7 @@ the test passes.
 * I remove the commented line from :ref:`assert_say_hello_works<extract assert_say_hello_works function>` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
     def assert_say_hello_works(
@@ -3740,6 +3817,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change :ref:`the return statement` of the :ref:`person function<extract person function>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 12-13
 
@@ -3769,6 +3847,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with those values
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 13-17
 

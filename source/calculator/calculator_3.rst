@@ -117,6 +117,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 * I add :ref:`ZeroDivisionError<test_catching_zero_division_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 6
     :emphasize-text: ZeroDivisionError
@@ -133,6 +134,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 * I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2-5
 
@@ -157,6 +159,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 * I add a :ref:`return statement<the return statement>` to the ``a_random_number`` :ref:`function<what is a function?>` in ``test_calculator.py`` to make it happen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2
 
@@ -185,6 +188,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 * I add an :ref:`exception handler<how to use try...except...else>` to the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 2-14
 

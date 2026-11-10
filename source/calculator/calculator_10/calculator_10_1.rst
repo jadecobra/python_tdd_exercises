@@ -180,6 +180,7 @@ test_streamlit_calculator_title
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3
     :emphasize-text: AttributeError
@@ -232,6 +233,7 @@ test_streamlit_calculator_title
 * I add more to the test to see what happens when I try to run the application even though ``src/streamlit_calculator.py`` is empty
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -246,6 +248,7 @@ test_streamlit_calculator_title
 * I add an :ref:`assertion<what is an assertion?>` for the title of the application
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -265,6 +268,7 @@ test_streamlit_calculator_title
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4
     :emphasize-text: AssertionError
@@ -299,6 +303,7 @@ test_streamlit_calculator_title
 * I add an :ref:`if statement<if statements>` to run the ``main`` :ref:`function<what is a function?>` when the :ref:`module<what is a module?>` gets called as a script
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -340,6 +345,7 @@ test_streamlit_calculator_title
 * I change the :ref:`assertion<what is an assertion?>` to get the first item from the :ref:`list<what is a list?>`, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 1
 
@@ -354,6 +360,7 @@ test_streamlit_calculator_title
 * I use the ``value`` :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``Title`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -486,6 +493,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add an expectation with the ``children`` :ref:`attribute<test_attribute_error_w_object_attributes>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 1
 
@@ -500,6 +508,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 1
     :emphasize-text: assertEqual children { }
@@ -517,6 +526,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I copy the :ref:`dictionary<what is a dictionary?>` from the terminal_ and use it as the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 6-9
 
@@ -539,6 +549,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the ``Title`` :ref:`object<everything is an object>` to ``tester.title[0]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3
 
@@ -560,6 +571,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add a `streamlit container`_ to the ``main`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3
 
@@ -580,6 +592,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3-6
 
@@ -600,6 +613,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the :ref:`assertion<what is an assertion?>` to get the `streamlit Block object`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2, 5
     :emphasize-text: 1
@@ -623,6 +637,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I use the ``__dict__`` :ref:`attribute<test_attribute_error_w_object_attributes>` to get the `streamlit Block object`_ as a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2
 
@@ -643,6 +658,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I set maxDiff_ to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 2
 
@@ -662,6 +678,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I copy the :ref:`dictionary<what is a dictionary?>`, remove the extra characters with ``Find and Replace`` (:kbd:`ctrl+H` (Windows_) or :kbd:`command+option+F` (MacOS_)) and use it as the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 3-38
 
@@ -718,6 +735,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 5
     :emphasize-text: SyntaxError
@@ -731,6 +749,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the :ref:`assertion<what is an assertion?>` to use the ``proto`` :ref:`attribute<test_attribute_error_w_object_attributes>` since it looks like a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 2-3
 
@@ -752,6 +771,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I use the ``flex_container`` :ref:`attribute<test_attribute_error_w_object_attributes>` instead
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 2
 
@@ -773,6 +793,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I use the ``gap_size`` :ref:`attribute<test_attribute_error_w_object_attributes>` directly
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 2-6
 
@@ -794,6 +815,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 7
 
@@ -811,6 +833,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I remove ``self.maxDiff``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
 
         def test_streamlit_calculator_display(self):
@@ -834,6 +857,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add a :ref:`variable<what is a variable?>` for the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 7-10
 
@@ -852,6 +876,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2-7
 
@@ -869,6 +894,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 1
 
@@ -877,6 +903,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2
 
@@ -892,6 +919,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 1
 
@@ -902,6 +930,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 3
 
@@ -918,6 +947,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 1
 
@@ -928,6 +958,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add the last :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 4
 
@@ -945,6 +976,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 1
 
@@ -965,6 +997,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add an :ref:`assertion<what is an assertion?>` for a border in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 5
 
@@ -983,6 +1016,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the :ref:`assertEqual method<test_assertEqual>` to :ref:`assertFalse<another way to test if something is grouped as False>` and remove the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 1
 
@@ -993,6 +1027,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I change the :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 15
 
@@ -1024,6 +1059,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 * I add a border to the container in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3
     :emphasize-text: border

@@ -144,6 +144,7 @@ the test passes.
 * I add a failing line for :ref:`division<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 4
 
@@ -161,6 +162,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 3-4
 
@@ -174,6 +176,7 @@ the test passes.
 * I add another failing line, this time for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3
 
@@ -190,6 +193,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3-4
 
@@ -203,6 +207,7 @@ the test passes.
 * I add another one for :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3
 
@@ -219,6 +224,7 @@ the test passes.
 * I add the `assertRaises method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 8-9
 
@@ -304,6 +310,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 3
 
@@ -320,6 +327,7 @@ the test passes.
 * I change :ref:`assertEqual method<test_assertEqual>` to :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 3-4
 
@@ -333,6 +341,7 @@ the test passes.
 * I try it with the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 5
 
@@ -351,6 +360,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 5-6
 
@@ -366,6 +376,7 @@ the test passes.
 * I try it with the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 7
 
@@ -386,6 +397,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 7-8
 
@@ -411,6 +423,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 * I change the :ref:`assertEqual method<test_assertEqual>` to :ref:`assertRaises<another way to test if an Exception is raised>` in :ref:`test_calculator_with_strings<test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 2-3
 
@@ -431,6 +444,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 * then I add an :ref:`if statement<if statements>` to the :ref:`add function<test_addition>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 2-6
 
@@ -462,6 +476,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 * I change the name of the test to say what it does
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 1
 
@@ -558,6 +573,7 @@ the test passes.
 * I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assertEqual>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 6,8-9
 
@@ -581,6 +597,7 @@ the test passes.
 * I add another :ref:`except clause<how to use try...except...else>` to the :ref:`exception handler<how to use try...except...else>` in the :ref:`divide function<test_division>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 6-7
 
@@ -603,6 +620,7 @@ the test passes.
 * I undo the change, then add an :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2-3
 
@@ -624,6 +642,7 @@ the test passes.
 * I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assertEqual>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 5,7-8
 
@@ -649,6 +668,7 @@ the test passes.
 * I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2-3
 
@@ -667,6 +687,7 @@ the test passes.
 * I change the :ref:`assertRaises<another way to test if an Exception is raised>` for the :ref:`subtract function<test_subtraction>` to :ref:`assertEqual method<test_assertEqual>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 5, 7-8
 
@@ -708,6 +729,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 2
 
@@ -722,6 +744,7 @@ the test passes.
 * I use it to remove the repetition of the error message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 6,10,14,18
 
@@ -800,6 +823,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I use it with the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1
 
@@ -814,6 +838,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the :ref:`if statement<if statements>` from the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
     @input_is_not_none
@@ -828,6 +853,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I use ``input_is_not_none`` with the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 1
 
@@ -842,6 +868,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the :ref:`if statement<if statements>` from the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
 
     @input_is_not_none
@@ -856,6 +883,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I wrap the :ref:`divide function<test_division>` with ``input_is_not_none``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 1
 
@@ -922,6 +950,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assertEqual>` for the :ref:`divide function<test_division>` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 6,8-9
 
@@ -945,6 +974,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I add another :ref:`except clause<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 7-8
 
@@ -964,6 +994,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assertEqual>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 10,12-13
 
@@ -992,6 +1023,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 3-6
 
@@ -1009,6 +1041,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assertEqual>` for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 14, 16-17
 
@@ -1042,6 +1075,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`subtract function<test_subtraction>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3-6
 
@@ -1100,6 +1134,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I use it to wrap the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 1
 
@@ -1116,6 +1151,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
     @type_error_handler
@@ -1132,6 +1168,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I wrap the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 1
 
@@ -1148,6 +1185,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
     @type_error_handler
@@ -1164,6 +1202,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I wrap the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 1
 
@@ -1182,6 +1221,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the second :ref:`except clause<how to use try...except...else>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
     @type_error_handler
@@ -1242,6 +1282,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I use ``numbers_only`` to :ref:`wrap<what is a decorator function?>` the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 1
 
@@ -1256,6 +1297,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
 
     @numbers_only
@@ -1272,6 +1314,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I :ref:`wrap<what is a decorator function?>` the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 1
 
@@ -1286,6 +1329,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
 
     @numbers_only
@@ -1302,6 +1346,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I :ref:`wrap<what is a decorator function?>` the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 1
 
@@ -1319,6 +1364,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
 
     @numbers_only
@@ -1338,6 +1384,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I :ref:`wrap<what is a decorator function?>` the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 1
 
@@ -1359,6 +1406,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
 
     @numbers_only
@@ -1402,6 +1450,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I add a :ref:`variable<what is a variable?>` to :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 1
 
@@ -1416,6 +1465,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I use the :ref:`variable<what is a variable?>` to remove the repetition of the error message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 6,10,14,18
 
@@ -1447,6 +1497,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the name of :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings` to make its :ref:`assertions<what is an assertion?>` part of  :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
 
             self.assertEqual(
@@ -1472,6 +1523,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
 
             self.assertEqual(
@@ -1495,6 +1547,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I change the name from :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 1
 
@@ -1557,6 +1610,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I can make a :ref:`function<what is a function?>` for the :ref:`condition<if statements>` in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 9-10
 
@@ -1578,6 +1632,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * then use ``is_string`` in the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 3-8
 
@@ -1607,6 +1662,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I can make a :ref:`function<what is a function?>` for the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 9-14
 
@@ -1632,6 +1688,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * then use ``one_input_is_a_string`` in the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 3-8
 

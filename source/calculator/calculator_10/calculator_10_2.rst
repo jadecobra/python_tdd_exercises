@@ -104,6 +104,7 @@ I want to add buttons for the numbers and operations.
   .. note:: ``<-`` is :kbd:`<+-` on the keyboard
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 17-21, 23
 
@@ -143,6 +144,7 @@ I want to add buttons for the numbers and operations.
 * I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 6
     :emphasize-text: KeyError
@@ -165,6 +167,7 @@ I want to add buttons for the numbers and operations.
 * I add a button in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5
 
@@ -179,6 +182,7 @@ I want to add buttons for the numbers and operations.
 * `streamlit buttons`_ have a key parameter. I add it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 1
     :emphasize-text: key
@@ -196,6 +200,7 @@ I want to add buttons for the numbers and operations.
 * I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 1
     :emphasize-text: label
@@ -211,6 +216,7 @@ I want to add buttons for the numbers and operations.
 * I add ``<-`` as the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 1
 
@@ -225,6 +231,7 @@ I want to add buttons for the numbers and operations.
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 1
     :emphasize-text: assertEqual
@@ -253,6 +260,7 @@ I want to add buttons for the numbers and operations.
 * I add the label parameter to the button in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5
     :emphasize-text: label
@@ -268,6 +276,7 @@ I want to add buttons for the numbers and operations.
 * I add an :ref:`assertion<what is an assertion?>` for the next button, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 8
 
@@ -289,6 +298,7 @@ I want to add buttons for the numbers and operations.
 * I add the button to ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 2
 
@@ -309,6 +319,7 @@ I want to add buttons for the numbers and operations.
 * I add a :ref:`for loop<what is a for loop?>` for all the buttons, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 7-14, 16-17
 
@@ -339,6 +350,7 @@ I want to add buttons for the numbers and operations.
 * I add the buttons to ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-9, 11-15, 17-21, 23-27
 
@@ -414,6 +426,7 @@ I want to add buttons for the numbers and operations.
 * I call the new :ref:`function<what is a function?>` in ``main``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 4
 
@@ -437,6 +450,7 @@ I want to add buttons for the numbers and operations.
 * I add ``streamlit.errors.StreamlitDuplicateElementKey`` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 7
     :emphasize-text: streamlit.errors.StreamlitDuplicateElementKey
@@ -454,6 +468,7 @@ I want to add buttons for the numbers and operations.
 * I remove the buttons from ``main`` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
     def main():
@@ -485,6 +500,7 @@ I want to add buttons for the numbers and operations.
 * I remove the other two :ref:`assertions<what is an assertion?>` from :ref:`test_streamlit_calculator_buttons` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
         def test_streamlit_calculator_buttons(self):
@@ -508,6 +524,7 @@ I want to add buttons for the numbers and operations.
 * before I continue, there is some repetition to remove. Each test makes the same `streamlit tester object`_. I add it to the `setUp method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3-7
 
@@ -522,6 +539,7 @@ I want to add buttons for the numbers and operations.
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_streamlit_calculator_title`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 6-7
     :emphasize-text: tester
@@ -539,6 +557,7 @@ I want to add buttons for the numbers and operations.
 * I remove the other lines from :ref:`test_streamlit_calculator_title`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
         def test_streamlit_calculator_title(self):
@@ -549,6 +568,7 @@ I want to add buttons for the numbers and operations.
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_streamlit_calculator_display`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 8-9
     :emphasize-text: tester
@@ -571,6 +591,7 @@ I want to add buttons for the numbers and operations.
 * I remove the commented line, ``tester`` :ref:`variable<what is a variable?>` and call to ``tester.run()`` from :ref:`test_streamlit_calculator_display`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
         def test_streamlit_calculator_display(self):
@@ -589,6 +610,7 @@ I want to add buttons for the numbers and operations.
 * I do the same thing in :ref:`test_streamlit_calculator_buttons`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 14-15
     :emphasize-text: tester
@@ -614,6 +636,7 @@ I want to add buttons for the numbers and operations.
 * I remove the commented line, ``tester`` :ref:`variable<what is a variable?>` and call to ``tester.run()`` from :ref:`test_streamlit_calculator_buttons`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
         def test_streamlit_calculator_buttons(self):
@@ -709,6 +732,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to check what is in the first column, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 4
 
@@ -726,6 +750,7 @@ the test passes.
 * I add the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 1
 
@@ -734,6 +759,7 @@ the test passes.
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 4-6
     :emphasize-text: assertEqual { }
@@ -750,6 +776,7 @@ the test passes.
 * I name the columns because I want to put buttons in them, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 6
 
@@ -765,6 +792,7 @@ the test passes.
 * I move the columns to the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2
 
@@ -782,6 +810,7 @@ the test passes.
 * I add the button for ``<-`` to the first column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
     :emphasize-text: column_1
@@ -807,6 +836,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator_columns`` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 5-6
 
@@ -827,6 +857,7 @@ the test passes.
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 3
 
@@ -842,6 +873,7 @@ the test passes.
 * I add a :ref:`for loop<what is a for loop?>` for all the buttons in the first column, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 4-9
 
@@ -878,6 +910,7 @@ the test passes.
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 3
 
@@ -891,6 +924,7 @@ the test passes.
 * I remove the commented line in the ``add_buttons`` :ref:`function<what is a function?>` then move buttons to the first column in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-8
     :emphasize-text: column_1
@@ -930,6 +964,7 @@ the test passes.
 * I call the new :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 4
 
@@ -944,6 +979,7 @@ the test passes.
 * I remove the buttons for column 1 from the ``add_buttons`` :ref:`function<what is a function?>` since ``add_buttons_to_column_1`` now makes them
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
     def add_buttons():
@@ -962,6 +998,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` after the :ref:`for loop<what is a for loop?>`, then add another :ref:`for loop<what is a for loop?>` for the second column, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 11-16
 
@@ -998,6 +1035,7 @@ the test passes.
 * I move buttons to the second column in ``streamlit_calculator,py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 2
     :emphasize-lines: 6-10
     :emphasize-text: column_2
@@ -1028,6 +1066,7 @@ the test passes.
 * I use the keys for the second column, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 1
 
@@ -1052,6 +1091,7 @@ the test passes.
 * I add a :ref:`function<what is a function?>` for adding buttons to the second column in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 9-14
 
@@ -1076,6 +1116,7 @@ the test passes.
 * I call ``add_buttons_to_column_2`` in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 5
 
@@ -1092,6 +1133,7 @@ the test passes.
 * I remove the buttons for the second column from the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
     def add_buttons():
@@ -1109,6 +1151,7 @@ the test passes.
 * I add a :ref:`for loop<what is a for loop?>` for the third column in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 8-13
 
@@ -1142,6 +1185,7 @@ the test passes.
 * I change the column in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 4
     :emphasize-text: 2
@@ -1158,6 +1202,7 @@ the test passes.
 * I move buttons to the third column in the ``add_buttons`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 7-11
     :emphasize-text: column_3
@@ -1190,6 +1235,7 @@ the test passes.
 * I add a :ref:`function<what is a function?>` for adding buttons to the third column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 9-14
 
@@ -1214,6 +1260,7 @@ the test passes.
 * I call the new :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 6
 
@@ -1231,6 +1278,7 @@ the test passes.
 * I remove the buttons for column 3 from the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
     def add_buttons():
@@ -1249,6 +1297,7 @@ the test passes.
 * I add a :ref:`for loop<what is a for loop?>` with an :ref:`assertion<what is an assertion?>` for the operations in the operations column, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 8-13
 
@@ -1282,6 +1331,7 @@ the test passes.
 * I move the buttons to the fourth column, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 3-7
     :emphasize-text: operations
@@ -1311,6 +1361,7 @@ the test passes.
 * I add a :ref:`function<what is a function?>` to add buttons to the fourth column, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 9-14
 
@@ -1335,6 +1386,7 @@ the test passes.
 * I use ``add_buttons_to_column_4`` in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 7
 
@@ -1353,6 +1405,7 @@ the test passes.
 * I remove the buttons for the fourth column from the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
 
     def add_buttons():
@@ -1369,6 +1422,7 @@ the test passes.
 * I write the statements in the ``add_buttons`` :ref:`function<what is a function?>` in the ``main`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4, 6-10
 
@@ -1388,6 +1442,7 @@ the test passes.
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 365
 
     def main():
@@ -1407,6 +1462,7 @@ the test passes.
 * I remove the ``add_buttons`` :ref:`function<what is a function?>` because I no longer need it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
     def add_buttons_to_column_4(column_4):
@@ -1422,6 +1478,7 @@ the test passes.
 * I remove :ref:`test_streamlit_calculator_buttons` because ``test_streamlit_calculator_columns`` tests the same things - the button labels, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
         def test_streamlit_calculator_display(self):
@@ -1440,6 +1497,7 @@ the test passes.
 * I change the name of ``test_streamlit_calculator_columns`` to :ref:`test_streamlit_calculator_columns_and_buttons`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 12
 
@@ -1503,6 +1561,7 @@ the test passes.
   I add 2 new :ref:`for loops<what is a for loop?>` that put all the for loops for testing the buttons together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 4-19
 
@@ -1537,6 +1596,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 7
 
@@ -1554,6 +1614,7 @@ the test passes.
 * I remove the other :ref:`for loops<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
         def test_streamlit_calculator_columns_and_buttons(self):
@@ -1590,6 +1651,7 @@ I want all the buttons to be the same size.
 * `streamlit buttons`_ have a ``width`` option. I set it to ``stretch`` for the ``<-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2
     :emphasize-text: width
@@ -1615,6 +1677,7 @@ I want all the buttons to be the same size.
 * I stretch the rest of the buttons in the first column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-6
     :emphasize-text: stretch
@@ -1643,6 +1706,7 @@ I want all the buttons to be the same size.
 * I stretch the buttons in the second column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2-6
 
@@ -1661,6 +1725,7 @@ I want all the buttons to be the same size.
 * I stretch the buttons in the third column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 2-6
 
@@ -1679,6 +1744,7 @@ I want all the buttons to be the same size.
 * I stretch the buttons in the fourth column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 2-6
 
@@ -1712,6 +1778,7 @@ how to use raw strings and escape characters
 * I add ``r`` and ``\`` to escape the ``-`` character because it means something to streamlit_, which is why it does not show on the button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4
 
@@ -1731,6 +1798,7 @@ how to use raw strings and escape characters
 * I change the ``-`` to ``r'\-'`` in :ref:`test_streamlit_calculator_columns_and_buttons` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 8-9
 
@@ -1754,6 +1822,7 @@ how to use raw strings and escape characters
 * I add ``r`` and ``\`` to escape the ``+`` character because it means something to streamlit_, which is why it does not show on the button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5
 
@@ -1773,6 +1842,7 @@ how to use raw strings and escape characters
 * I change the ``+`` to ``r'\+'`` in :ref:`test_streamlit_calculator_columns_and_buttons` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 9-10
 
@@ -1797,6 +1867,7 @@ how to use raw strings and escape characters
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
         def test_streamlit_calculator_columns_and_buttons(self):
@@ -1918,6 +1989,7 @@ the test passes.
 * I change the expectation from ``secondary`` to ``primary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 3
 
@@ -1935,6 +2007,7 @@ the test passes.
 * I use the ``type`` parameter of `streamlit buttons`_ to change the colors of the buttons for the ``/`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 2-4
     :emphasize-text: primary
@@ -1962,6 +2035,7 @@ the test passes.
 * I add a :ref:`for loop<what is a for loop?>` for all the buttons in the operations column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-7
 
@@ -1985,6 +2059,7 @@ the test passes.
 * I add the ``type`` parameter to the buttons in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5-16
     :emphasize-text: primary
@@ -2014,6 +2089,7 @@ the test passes.
 * I want the ``C`` and ``AC`` buttons to have the same colors as the buttons for the operations. I add them to the tuple_ in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 2
 
@@ -2038,6 +2114,7 @@ the test passes.
 * I change the type for the ``AC`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 2-4
     :emphasize-text: primary
@@ -2060,6 +2137,7 @@ the test passes.
 * I change the type for the ``C`` button in the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2-4
     :emphasize-text: primary
@@ -2095,6 +2173,7 @@ I want the calculator to show the number when I press a button
 * I add a :ref:`variable<what is a variable?>` to name the container so I can use it to show the numbers
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2
 
@@ -2126,6 +2205,7 @@ I want the calculator to show the number when I press a button
 * `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is pressed. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_positional_arguments>` that the :ref:`function<what is a function?>` I give for the ``on_click`` parameter takes. I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3-6
     :emphasize-text: on_click args
@@ -2155,6 +2235,7 @@ I want the calculator to show the number when I press a button
 * I add a parameter for the ``display`` :ref:`variable<what is a variable?>` in the :ref:`function<what is a function?>` signature for ``add_buttons_to_column_1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 1
 
@@ -2169,6 +2250,7 @@ I want the calculator to show the number when I press a button
 * I add the ``display`` :ref:`variable<what is a variable?>` to the call to ``add_buttons_to_column_1`` in the ``main`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 6
 
@@ -2196,6 +2278,7 @@ I want the calculator to show the number when I press a button
 * I make the same change to the other numbers in the first column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 7-14
     :emphasize-text: on_click args
@@ -2220,6 +2303,7 @@ I want the calculator to show the number when I press a button
 * I do the same thing for the numbers in the second column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5-20
     :emphasize-text: on_click args
@@ -2250,6 +2334,7 @@ I want the calculator to show the number when I press a button
 * I add ``display`` to the :ref:`function<what is a function?>` signature of the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 1
 
@@ -2264,6 +2349,7 @@ I want the calculator to show the number when I press a button
 * I add ``display`` to the call to the ``add_buttons_to_column_2`` :ref:`function<what is a function?>` in the ``main`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 7
 
@@ -2282,6 +2368,7 @@ I want the calculator to show the number when I press a button
 * I make the same change for the numbers in the third column
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 5-20
     :emphasize-text: on_click args
@@ -2323,6 +2410,7 @@ I want the calculator to show the number when I press a button
 * I add ``display`` to the signature of the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 1
 
@@ -2337,6 +2425,7 @@ I want the calculator to show the number when I press a button
 * I add ``display`` to the call to the ``add_buttons_to_column_3`` in the ``main`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 8
 

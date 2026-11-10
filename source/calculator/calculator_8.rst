@@ -151,6 +151,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add a :ref:`call<how to call a function with input>` to the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 4-7
 
@@ -175,6 +176,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add parentheses at the end of the line to make it a call
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 3-6
     :emphasize-text: ( )
@@ -196,6 +198,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add a :ref:`variables<what is a variable?>` and a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 2-4
 
@@ -210,6 +213,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the :ref:`dictionary<what is a dictionary?>` to change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 184
     :emphasize-lines: 6-10
 
@@ -230,6 +234,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the :ref:`variables<what is a variable?>` for ``self.random_first_number`` and ``self.random_second_number`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 184
     :emphasize-lines: 3-5
 
@@ -251,6 +256,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
 
         def test_calculator_w_getattribute(self):
@@ -270,6 +276,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add :ref:`subtraction<test_subtraction>` to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 4-7
 
@@ -284,6 +291,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * then I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 187
     :emphasize-lines: 5-8
 
@@ -305,6 +313,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
     :emphasize-lines: 3
 
@@ -320,6 +329,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add :ref:`multiplication<test_multiplication>` to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 7
 
@@ -335,6 +345,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * then I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 192
     :emphasize-lines: 5-8
 
@@ -356,6 +367,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 196
     :emphasize-lines: 3
 
@@ -371,6 +383,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add :ref:`division<test_division>` to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 8
 
@@ -387,6 +400,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * then I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 197
     :emphasize-lines: 5-8
 
@@ -408,6 +422,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 25
 
@@ -448,6 +463,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add a :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 11-18
 
@@ -488,6 +504,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
     :emphasize-lines: 5
 
@@ -503,6 +520,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
 
         def test_calculator_w_getattribute(self):
@@ -534,6 +552,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I add ``calculator_tests`` to the `setUp method`_ to make it an :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 13-18
 
@@ -561,6 +580,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_calculator_w_getattribute`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
     :emphasize-lines: 4-10
 
@@ -582,6 +602,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 197
     :emphasize-lines: 1-2
 
@@ -600,6 +621,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use it in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 200
     :emphasize-lines: 5-6
 
@@ -616,6 +638,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.random_first_number`` for ``x`` and ``self.random_second_number`` for ``y`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 200
     :emphasize-lines: 3-5
 
@@ -634,6 +657,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented lines and the :ref:`variables<what is a variable?>` because they are no longer used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
 
         def test_calculator_w_getattribute(self):
@@ -657,6 +681,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove :ref:`test_calculator_functions` because :ref:`test_calculator_w_getattribute` has the same tests
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
@@ -700,6 +725,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I change the name of :ref:`test_calculator_w_getattribute` to :ref:`test_calculator_functions`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 175
     :emphasize-lines: 1
 
@@ -722,6 +748,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>` of  :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 11-12
 
@@ -747,6 +774,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 169
     :emphasize-lines: 2-3
 
@@ -763,6 +791,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
@@ -794,6 +823,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>` of  :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 2-3
 
@@ -815,6 +845,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 1-2
 
@@ -828,6 +859,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
 
         def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
@@ -849,6 +881,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>` of  :ref:`test_calculator_w_dictionary_items`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 7-8
 
@@ -867,6 +900,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 2-3
 
@@ -883,6 +917,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.calculator_tests`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 6-7
 
@@ -900,6 +935,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
 
         def test_calculator_w_dictionary_items(self):
@@ -953,6 +989,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>` of  :ref:`test_calculator_w_list_items`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 12-13
 
@@ -976,6 +1013,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2-3
 
@@ -992,6 +1030,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use ``self.calculator_tests`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 6-7
 
@@ -1009,6 +1048,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the new commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
 
         def test_calculator_w_list_items(self):
@@ -1067,6 +1107,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I comment out ``self.arithmetic_tests`` in the `setUp method`_ to see if there are any tests that still use it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 20-37
 
@@ -1115,6 +1156,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
         def setUp(self):
@@ -1143,6 +1185,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I make a :ref:`function<what is a function?>` for the :ref:`division result<test_division>` because I can
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3-7
 
@@ -1159,6 +1202,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I use the new :ref:`function<what is a function?>` in ``self.calculator_tests``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 5-6
 
@@ -1181,6 +1225,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I :ref:`wrap<what is a decorator function?>` ``get_division_result`` with the `staticmethod decorator`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3
 
@@ -1200,6 +1245,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented line and the :ref:`exception handler<how to use try...except...else>` from the `setUp method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
 
     def setUp(self):
@@ -1362,6 +1408,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5-6
 
@@ -1381,6 +1428,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add a :ref:`function<what is a function?>` for it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5-6
 
@@ -1402,6 +1450,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add a name to the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -1417,6 +1466,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add a default value to make it a choice
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -1432,6 +1482,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add ``second_input`` with a default value to the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -1447,6 +1498,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * the test must be calling :ref:`divide<test_division>` with :ref:`positional arguments<test_positional_arguments>` in some cases and with :ref:`keyword arguments<test_keyword_arguments>` in others. My solution does not work, I remove ``x`` and ``y`` from the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -1462,6 +1514,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I change the names in :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2
 
@@ -1477,6 +1530,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I use the ``Rename Symbol`` feature to change the names in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1-2
 
@@ -1492,6 +1546,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I do the same thing to ``y``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1-2
 
@@ -1509,6 +1564,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I change the names
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 1-2
 
@@ -1541,6 +1597,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add an :ref:`if statement<if statements>` to the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2-3
     :emphasize-text: dict
@@ -1577,6 +1634,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 2-3
     :emphasize-text: dict
@@ -1595,6 +1653,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I change :ref:`the return statement` of the :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
     :emphasize-text: dict
@@ -1615,6 +1674,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add an :ref:`if statement<if statements>` with the same message in the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 2-3
     :emphasize-text: dict
@@ -1653,6 +1713,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add set_ to the :ref:`if statement<if statements>` in the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
     :emphasize-text: set
@@ -1671,6 +1732,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I do the same thing to the :ref:`if statement<if statements>` in the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2
     :emphasize-text: set
@@ -1689,6 +1751,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I change the :ref:`if statement<if statements>` in the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2
     :emphasize-text: set
@@ -1727,6 +1790,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add :ref:`list<what is a list?>` to the :ref:`if statement<if statements>` of the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
     :emphasize-text: list
@@ -1787,6 +1851,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add tuple_ to the `isinstance built-in function`_ in the :ref:`if statement<if statements>` of the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
     :emphasize-text: tuple
@@ -1807,6 +1872,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add tuple_ to the :ref:`if statement<if statements>` of the other :ref:`functions<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2, 14, 20
     :emphasize-text: tuple
@@ -1935,6 +2001,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I add :ref:`None<what is None?>` to the call to the `isinstance built-in function`_ in the :ref:`if statement<if statements>` of the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4
     :emphasize-text: None
@@ -1958,6 +2025,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I undo the change then add a new condition
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4-5
 
@@ -2027,6 +2095,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I remove the default values from the :ref:`divide function<test_division>` because it is the only one that is different from the others
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 1
 
@@ -2070,6 +2139,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I use it to :ref:`wrap<what is a decorator function?>` the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 1
 
@@ -2087,6 +2157,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I remove the :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
     @check_input
@@ -2101,6 +2172,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I do the same thing to the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 1
 
@@ -2118,6 +2190,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I remove the :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
     @check_input

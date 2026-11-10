@@ -160,6 +160,7 @@ start the project
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -232,6 +233,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 * I add another :ref:`assertion<what is an assertion?>`, this time with input to make a :ref:`dictionary<what is a dictionary?>` with things in it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 3
 
@@ -248,6 +250,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
     :emphasize-text: TypeError
@@ -259,6 +262,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 * I change the value given to ``dict()`` to a tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -274,6 +278,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 * I try a :ref:`keyword argument<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -289,6 +294,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 * I change the expectation to match the values in the terminal_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 1
 
@@ -640,6 +646,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I remove the things around the new :ref:`dictionary<what is a dictionary?>` then change the :ref:`key<test_keys_of_a_dictionary>` and :ref:`value<test_values_of_a_dictionary>` for fun
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 3
 
@@ -653,6 +660,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 2
 
@@ -828,6 +836,7 @@ It also gives me a message about how to show the full difference between the two
 * I add maxDiff_ to the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 2
 
@@ -847,6 +856,7 @@ It also gives me a message about how to show the full difference between the two
     results can be different because of the Python_ version.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 6-51
 
@@ -909,6 +919,7 @@ It also gives me a message about how to show the full difference between the two
 * I copy the names that do NOT have double underscores (__) and paste them below the test to make a TODO list that I use to test what I can do with :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 7-17
 
@@ -950,6 +961,7 @@ test_clear_empties_a_dictionary
 * I add a test for the first :ref:`method<what is a method?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 6-8
 
@@ -970,6 +982,7 @@ test_clear_empties_a_dictionary
 * I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 4
 
@@ -1018,6 +1031,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 1
 
@@ -1032,6 +1046,7 @@ the test passes.
 * I remove clear_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
 
             self.assertEqual(a_dictionary, {})
@@ -1139,6 +1154,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 1
 
@@ -1156,6 +1172,7 @@ the test passes.
 * I remove copy_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
 
             self.assertEqual(
@@ -1223,6 +1240,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I pass a value to the call
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 3
 
@@ -1239,6 +1257,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I change the value to a tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 1
 
@@ -1255,6 +1274,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I add the :ref:`dictionary<what is a dictionary?>` as an expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 3-6
 
@@ -1274,6 +1294,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 1
 
@@ -1295,6 +1316,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I add another :ref:`assert method<test_dir_unittest_testcase>` to see what happened to ``a_dictionary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 7
 
@@ -1318,6 +1340,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * then change the call to fromkeys_ to use the :ref:`dict class<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 4
 
@@ -1336,6 +1359,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I remove ``a_dictionary`` since it is not used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
 
         def test_fromkeys(self):
@@ -1358,6 +1382,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   I add a second input to the call to see what happens
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 2
 
@@ -1371,6 +1396,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I change the second input, I think this will fail
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 2
 
@@ -1388,6 +1414,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I change the values in the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 3
 
@@ -1401,6 +1428,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 1
 
@@ -1417,6 +1445,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I remove fromkeys_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
 
             self.assertEqual(
@@ -1501,6 +1530,7 @@ the test passes.
 * the `get method`_ also expected at least 1 argument, I add :ref:`None<what is None?>` to the call
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 1
 
@@ -1511,6 +1541,7 @@ the test passes.
 * I change the second argument, I think this will fail
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 1
 
@@ -1525,6 +1556,7 @@ the test passes.
 * I add the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 116
     :emphasize-lines: 3-6
 
@@ -1544,6 +1576,7 @@ the test passes.
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 1
 
@@ -1557,6 +1590,7 @@ the test passes.
 * I change ``0`` in the call to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 2
     :emphasize-text: not_in_dictionary
@@ -1571,6 +1605,7 @@ the test passes.
 * I want to see what happens when I use the `get method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`, I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 5-8
 
@@ -1597,6 +1632,7 @@ the test passes.
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 3
 
@@ -1617,6 +1653,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 116
     :emphasize-lines: 1
 
@@ -1639,6 +1676,7 @@ the test passes.
 * I remove get_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
 
             self.assertEqual(
@@ -1704,6 +1742,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I copy the ``dict_items`` :ref:`object<everything is an object>` from the terminal_ and paste  it as the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 2-5
 
@@ -1724,6 +1763,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
     :emphasize-lines: 4
     :emphasize-text: NameError
@@ -1736,6 +1776,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the stuff around the :ref:`list<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 3
 
@@ -1753,6 +1794,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I pass the call to the `items method`_ to ``list()`` to see if it is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 2
 
@@ -1772,6 +1814,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 1
 
@@ -1795,6 +1838,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 * I add another key-value pair to the :ref:`dictionary<what is a dictionary?>` to see what the :ref:`method<what is a method?>` does when there is more than one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 2-5
 
@@ -1820,6 +1864,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 3-6
 
@@ -1836,6 +1881,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 1
 
@@ -1858,6 +1904,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 * I remove items_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
 
             self.assertEqual(
@@ -1932,6 +1979,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I copy the ``dict_keys`` :ref:`object<everything is an object>` from the terminal_ and paste it as the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 3-6
 
@@ -1953,6 +2001,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I use the :ref:`list<what is a list?>` in the ``dict_keys`` :ref:`object<everything is an object>` as the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 5
 
@@ -1972,6 +2021,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I pass the call to the `keys method`_ to ``list()`` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 142
     :emphasize-lines: 2
 
@@ -1989,6 +2039,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 142
     :emphasize-lines: 1
 
@@ -2010,6 +2061,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>` to see what the `keys method`_ returns when there are multiple
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 2-5
 
@@ -2032,6 +2084,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
     :emphasize-lines: 3
 
@@ -2045,6 +2098,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 1
 
@@ -2064,6 +2118,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I remove keys_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
 
             self.assertEqual(
@@ -2129,6 +2184,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I pass a value to the call
 
   .. code-block:: python
+    :caption:
     :lineno-start: 152
     :emphasize-lines: 1
 
@@ -2143,6 +2199,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 162
     :emphasize-lines: 5
     :emphasize-text: KeyError
@@ -2156,6 +2213,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I remove the things around the call in the test and change the value given to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 3
     :emphasize-text: not_in_dictionary
@@ -2173,6 +2231,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 4-5
 
@@ -2201,6 +2260,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   I add another :ref:`assertion<what is an assertion?>` to see what happens when I call it with 2 arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 3
 
@@ -2213,6 +2273,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I change the second argument, I think this will fail
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 1
     :emphasize-text: default
@@ -2228,6 +2289,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I add the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 1-4
 
@@ -2245,6 +2307,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 1
 
@@ -2258,6 +2321,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the `pop method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 5-8
 
@@ -2281,6 +2345,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 3
 
@@ -2294,6 +2359,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I add another :ref:`assertion<what is an assertion?>` to see what the `pop method`_ did to the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 5
 
@@ -2314,6 +2380,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 1
 
@@ -2324,6 +2391,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 1
 
@@ -2348,6 +2416,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I remove pop_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
 
             self.assertEqual(a_dictionary, {})
@@ -2445,6 +2514,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` to see what the `popitem method`_ did to the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 167
     :emphasize-lines: 5
 
@@ -2465,6 +2535,7 @@ the test passes.
 * I change the value to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 1
 
@@ -2475,6 +2546,7 @@ the test passes.
 * this operation does not take input, I change the :ref:`dictionary<what is a dictionary?>` to see what happens
 
   .. code-block:: python
+    :caption:
     :lineno-start: 165
     :emphasize-lines: 2-5
 
@@ -2500,6 +2572,7 @@ the test passes.
 * I change the expectation in the first :ref:`assertEqual method<test_assertEqual>` to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 170
     :emphasize-lines: 3
 
@@ -2517,6 +2590,7 @@ the test passes.
 * I change the value in the second :ref:`assertEqual method<test_assertEqual>` to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 174
     :emphasize-lines: 1
 
@@ -2527,6 +2601,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 165
     :emphasize-lines: 1
 
@@ -2547,6 +2622,7 @@ the test passes.
 * I remove popitem_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 174
 
             self.assertEqual(a_dictionary, {'key0': 'value0'})
@@ -2620,6 +2696,7 @@ the test passes.
 * The error message showed that the :ref:`method<what is a method?>` expects at least 1 argument, I add a second argument
 
   .. code-block:: python
+    :caption:
     :lineno-start: 178
     :emphasize-lines: 1
 
@@ -2630,6 +2707,7 @@ the test passes.
 * I change the second argument, I think this will fail
 
   .. code-block:: python
+    :caption:
     :lineno-start: 178
     :emphasize-lines: 1
 
@@ -2644,6 +2722,7 @@ the test passes.
 * I add the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 177
     :emphasize-lines: 2-5
 
@@ -2662,6 +2741,7 @@ the test passes.
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 178
     :emphasize-lines: 1
 
@@ -2675,6 +2755,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see what setdefault_ did to the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 178
     :emphasize-lines: 5
 
@@ -2695,6 +2776,7 @@ the test passes.
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 176
     :emphasize-lines: 7-13
 
@@ -2717,6 +2799,7 @@ the test passes.
 * I change the ``0`` given in the call to the `setdefault method`_ be clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 178
     :emphasize-lines: 2
 
@@ -2734,6 +2817,7 @@ the test passes.
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 181
     :emphasize-lines: 5
 
@@ -2750,6 +2834,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see what happens when I use setdefault_ with a :ref:`key<test_keys_of_a_dictionary>` that is already in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 176
     :emphasize-lines: 7-10
 
@@ -2782,6 +2867,7 @@ the test passes.
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 182
     :emphasize-lines: 3
 
@@ -2803,6 +2889,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 176
     :emphasize-lines: 1
 
@@ -2830,6 +2917,7 @@ the test passes.
 * I remove setdefault_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
 
             self.assertEqual(
@@ -2861,6 +2949,7 @@ test_update_a_dictionary
 * I add a test for the next :ref:`method<what is a method?>` from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
     :emphasize-lines: 9-11
 
@@ -2884,6 +2973,7 @@ test_update_a_dictionary
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
     :emphasize-lines: 4
 
@@ -2929,6 +3019,7 @@ the test passes.
 * I add a value to the call to the `update method`_ to see what happens
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
     :emphasize-lines: 3
 
@@ -2946,6 +3037,7 @@ the test passes.
 * I change the value to a tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 196
     :emphasize-lines: 1
 
@@ -2962,6 +3054,7 @@ the test passes.
 * I try a :ref:`keyword argument<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 196
     :emphasize-lines: 1
 
@@ -2976,6 +3069,7 @@ the test passes.
 * I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 196
     :emphasize-lines: 2-8
 
@@ -2993,6 +3087,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see what happens when I give a :ref:`key<test_keys_of_a_dictionary>` that is already in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
     :emphasize-lines: 4
 
@@ -3013,6 +3108,7 @@ the test passes.
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 198
     :emphasize-lines: 4
 
@@ -3029,6 +3125,7 @@ the test passes.
 * since the `update method`_ takes :ref:`keyword arguments<test_keyword_arguments>`, I can give it a :ref:`dictionary<what is a dictionary?>` as input. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
     :emphasize-lines: 5-7
 
@@ -3052,6 +3149,7 @@ the test passes.
 * I change the expectation in the :ref:`assertEqual method<test_assertEqual>` to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 201
     :emphasize-lines: 6
 
@@ -3069,6 +3167,7 @@ the test passes.
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
     :emphasize-lines: 1
 
@@ -3096,6 +3195,7 @@ the test passes.
 * I remove update_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 201
 
             self.assertEqual(
@@ -3165,6 +3265,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I add the expected value
 
   .. code-block:: python
+    :caption:
     :lineno-start: 210
     :emphasize-lines: 3-6
 
@@ -3184,6 +3285,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I remove the things around the :ref:`list<what is a list?>` in the ``dict_values`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 212
     :emphasize-lines: 3
 
@@ -3201,6 +3303,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I use ``list()`` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 212
     :emphasize-lines: 2
 
@@ -3218,6 +3321,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 212
     :emphasize-lines: 1
 
@@ -3239,6 +3343,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the :ref:`dictionary<what is a dictionary?>` to see what happens when it has more than one :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 210
     :emphasize-lines: 2-5
 
@@ -3261,6 +3366,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the values in the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 215
     :emphasize-lines: 3-6
 
@@ -3277,6 +3383,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the name of the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 210
     :emphasize-lines: 1
 
@@ -3299,6 +3406,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I remove values_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 215
 
             self.assertEqual(
@@ -3388,6 +3496,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`, this time for a :ref:`key<test_keys_of_a_dictionary>` that is not in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 225
     :emphasize-lines: 2
 
@@ -3403,6 +3512,7 @@ the test passes.
 * I change the :ref:`assertEqual method<test_assertEqual>` to :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 225
     :emphasize-lines: 3-4
 
@@ -3416,6 +3526,7 @@ the test passes.
 * I can use the `get method`_ when I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 227
     :emphasize-lines: 3-6
 
@@ -3435,6 +3546,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 229
     :emphasize-lines: 3
 
@@ -3448,6 +3560,7 @@ the test passes.
 * The `pop method`_ raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the :ref:`dictionary<what is a dictionary?>`, I add a failing line for it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 229
     :emphasize-lines: 6
 
@@ -3467,6 +3580,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 229
     :emphasize-lines: 6-7
 
@@ -3483,6 +3597,7 @@ the test passes.
 * I can give a second argument when I do not want the `pop method`_ to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the :ref:`dictionary<what is a dictionary?>`. I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 234
     :emphasize-lines: 3-6
 
@@ -3502,6 +3617,7 @@ the test passes.
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 236
     :emphasize-lines: 3
 
@@ -3536,6 +3652,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 223
     :emphasize-lines: 19-20
 

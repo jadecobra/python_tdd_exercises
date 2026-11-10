@@ -302,6 +302,7 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_none.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
     :emphasize-text: AssertionError
@@ -318,6 +319,7 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -350,6 +352,7 @@ test_what_is_none
 * I add :ref:`test_what_is_none` with a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-4
     :emphasize-text: Not
@@ -475,6 +478,7 @@ I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     class TestNone(unittest.TestCase):
@@ -489,6 +493,7 @@ I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to
 * I add comments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 8-9
 
@@ -550,6 +555,7 @@ Is :ref:`None<what is None?>` a :ref:`boolean<what are booleans?>`?
 * I add a test to see if :ref:`None<what is None?>` is a :ref:`boolean<what are booleans?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 5-6
 
@@ -603,6 +609,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 2
 
@@ -619,6 +626,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<what are booleans?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4
     :emphasize-text: True
@@ -640,6 +648,7 @@ the test passes.
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4-5
     :emphasize-text: Not
@@ -658,6 +667,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 2
 
@@ -669,6 +679,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 6
     :emphasize-text: assertNotIsInstance
@@ -694,6 +705,7 @@ the test passes.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to the :ref:`assertIsInstance method<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 6-7
 
@@ -713,6 +725,7 @@ the test passes.
 * I add a failing line for the other :ref:`boolean<what are booleans?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 8
     :emphasize-text: assertNotIsInstance
@@ -740,6 +753,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 8-9
 
@@ -761,6 +775,7 @@ the test passes.
 * I add :ref:`assertIsInstance<test_assertIs_instance>` to test if :ref:`None<what is None?>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 10
 
@@ -789,6 +804,7 @@ the test passes.
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 10-11
 
@@ -812,6 +828,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_a_boolean`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
         def test_is_none_a_boolean(self):
@@ -827,6 +844,7 @@ the test passes.
 * I change the last 2 comments I added (``True is NOT None`` and ``False is NOT None``), since this is about :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 2
 
@@ -880,6 +898,7 @@ Is :ref:`None<what is None?>` an integer_?
 * I add a test to see if :ref:`None<what is None?>` is an integer_ (a whole number without decimals)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3-4
 
@@ -931,6 +950,7 @@ the test passes.
 * I add a new failing line with :ref:`assertIsNone<another way to test if something is None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4
 
@@ -951,6 +971,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4-5
 
@@ -968,6 +989,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 6
 
@@ -990,6 +1012,7 @@ the test passes.
 * I change the line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 6-7
 
@@ -1009,6 +1032,7 @@ the test passes.
 * I add a new failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 8
 
@@ -1037,6 +1061,7 @@ the test passes.
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 8-9
 
@@ -1058,6 +1083,7 @@ the test passes.
 * I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 10
 
@@ -1086,6 +1112,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 10-11
 
@@ -1109,6 +1136,7 @@ the test passes.
 * I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 12
 
@@ -1140,6 +1168,7 @@ the test passes.
 * I make the failing line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 12-13
 
@@ -1165,6 +1194,7 @@ the test passes.
 * I add one more failing line to test if :ref:`None<what is None?>` is an integer_ with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 14
 
@@ -1197,6 +1227,7 @@ the test passes.
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 14-15
 
@@ -1224,6 +1255,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_an_integer`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
         def test_is_none_an_integer(self):
@@ -1241,6 +1273,7 @@ the test passes.
 * I add a new comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 2
 
@@ -1334,6 +1367,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>` for ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 4
 
@@ -1354,6 +1388,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 4-5
 
@@ -1371,6 +1406,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>` for ``0.1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 6
 
@@ -1393,6 +1429,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 6-7
 
@@ -1412,6 +1449,7 @@ the test passes.
 * I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``-0.1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 8
 
@@ -1439,6 +1477,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 8-9
 
@@ -1460,6 +1499,7 @@ the test passes.
 * I add the next :ref:`instance test<how to test if something is an instance>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 10
 
@@ -1488,6 +1528,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 10-11
 
@@ -1511,6 +1552,7 @@ the test passes.
 * I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``0.1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 12
 
@@ -1542,6 +1584,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 12-13
 
@@ -1567,6 +1610,7 @@ the test passes.
 * I add one more failing line with the :ref:`assertIsInstance method<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 14
 
@@ -1599,6 +1643,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 14-15
 
@@ -1626,6 +1671,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_a_float`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
 
         def test_is_none_a_float(self):
@@ -1643,6 +1689,7 @@ the test passes.
 * I add a new comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 2
 
@@ -1687,6 +1734,7 @@ Is :ref:`None<what is None?>` a string_?
 * I add a test to see if :ref:`None<what is None?>` is a string_ (anything inside :ref:`quotes`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 3-4
 
@@ -1740,6 +1788,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>` for a string_ that is not empty
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 4
 
@@ -1757,6 +1806,7 @@ the test passes.
 * I change the :ref:`assert method<test_dir_unittest_testcase>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 4-5
 
@@ -1774,6 +1824,7 @@ the test passes.
 * I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for the empty string (``""``)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 6
 
@@ -1799,6 +1850,7 @@ the test passes.
 * I change the :ref:`assert method<test_dir_unittest_testcase>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 6-7
 
@@ -1818,6 +1870,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``'characters'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 8
 
@@ -1844,6 +1897,7 @@ the test passes.
 * I change the :ref:`assert method<test_dir_unittest_testcase>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 8-9
 
@@ -1865,6 +1919,7 @@ the test passes.
 * I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 10
 
@@ -1893,6 +1948,7 @@ the test passes.
 * I change the :ref:`assert method<test_dir_unittest_testcase>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 10-11
 
@@ -1916,6 +1972,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_a_string`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
 
         def test_is_none_a_string(self):
@@ -1931,6 +1988,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 2
 
@@ -1976,6 +2034,7 @@ Is :ref:`None<what is None?>` a tuple_?
 * I add a test to see if :ref:`None<what is None?>` is a tuple_ (anything in parentheses (``( )``) separated by commas)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 3-4
 
@@ -2028,6 +2087,7 @@ the test passes.
 * I add a failing :ref:`assertion<what is an assertion?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4
 
@@ -2048,6 +2108,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4-5
     :emphasize-text: Not
@@ -2066,6 +2127,7 @@ the test passes.
 * I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for the empty tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 6
 
@@ -2090,6 +2152,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 6-7
 
@@ -2109,6 +2172,7 @@ the test passes.
 * I add a failing :ref:`assertion<what is an assertion?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 8
 
@@ -2136,6 +2200,7 @@ the test passes.
 * I change the :ref:`assert method<test_dir_unittest_testcase>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 8-9
 
@@ -2157,6 +2222,7 @@ the test passes.
 * I add one more :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 10
 
@@ -2185,6 +2251,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 10-11
 
@@ -2208,6 +2275,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_a_tuple`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
         def test_is_none_a_tuple(self):
@@ -2223,6 +2291,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2
 
@@ -2271,6 +2340,7 @@ Is :ref:`None<what is None?>` a :ref:`list<what is a list?>`?
 * I add a new test to see if :ref:`None<what is None?>` is a :ref:`list<what is a list?>` (anything in square brackets (``[ ]``))
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 3-4
 
@@ -2323,6 +2393,7 @@ the test passes.
 * I add a failing :ref:`assertion<what is an assertion?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 4
 
@@ -2340,6 +2411,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 4-5
     :emphasize-text: Not
@@ -2358,6 +2430,7 @@ the test passes.
 * I add a failing :ref:`instance test<how to test if something is an instance>` for the empty :ref:`list<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 6
 
@@ -2382,6 +2455,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 6-7
 
@@ -2401,6 +2475,7 @@ the test passes.
 * I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 8
 
@@ -2428,6 +2503,7 @@ the test passes.
 * I change the :ref:`assert method<test_dir_unittest_testcase>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 8-9
 
@@ -2449,6 +2525,7 @@ the test passes.
 * I add one more failing line with the :ref:`assertIsInstance method<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 10
 
@@ -2477,6 +2554,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 10-11
 
@@ -2500,6 +2578,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_a_list`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
 
         def test_is_none_a_list(self):
@@ -2515,6 +2594,7 @@ the test passes.
 * I add a new comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 2
 
@@ -2561,6 +2641,7 @@ Is :ref:`None<what is None?>` a set_?
 * I want to test if :ref:`None<what is None?>` is a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 3-4
 
@@ -2613,6 +2694,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 4
 
@@ -2633,6 +2715,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 4-5
     :emphasize-text: Not
@@ -2651,6 +2734,7 @@ the test passes.
 * I add an :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 6
 
@@ -2674,6 +2758,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 6-7
 
@@ -2693,6 +2778,7 @@ the test passes.
 * I add another :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 8
 
@@ -2719,6 +2805,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 8-9
 
@@ -2740,6 +2827,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_a_set`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
         def test_is_none_a_set(self):
@@ -2754,6 +2842,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 2
 
@@ -2798,6 +2887,7 @@ Is :ref:`None<what is None?>` a :ref:`dictionary<what is a dictionary?>`?
 * One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3-4
 
@@ -2852,6 +2942,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``{'key': 'value'}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 4
 
@@ -2872,6 +2963,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 4-5
     :emphasize-text: Not
@@ -2890,6 +2982,7 @@ the test passes.
 * I add a failing :ref:`instance test<how to test if something is an instance>` for ``{}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 6
 
@@ -2916,6 +3009,7 @@ the test passes.
 * I change the :ref:`assert method<test_dir_unittest_testcase>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 6-7
 
@@ -2935,6 +3029,7 @@ the test passes.
 * I add an :ref:`instance test<how to test if something is an instance>` for ``{'key': 'value'}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 8-10
 
@@ -2962,6 +3057,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 8-9
 
@@ -2985,6 +3081,7 @@ the test passes.
 * I add the last failing :ref:`instance test<how to test if something is an instance>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 12
 
@@ -3015,6 +3112,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 12-13
 
@@ -3040,6 +3138,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_a_dictionary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
 
         def test_is_none_a_dictionary(self):
@@ -3057,6 +3156,7 @@ the test passes.
 * I add the last comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 2
 

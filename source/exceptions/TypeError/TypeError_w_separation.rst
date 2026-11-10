@@ -152,6 +152,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 5
     :emphasize-text: AttributeError
@@ -222,6 +223,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4-5
 
@@ -290,6 +292,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2-3
 
@@ -309,6 +312,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a :ref:`function definition<how to make a function>` for ``function_02`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 6-7
 
@@ -330,6 +334,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add three names to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 6-7
 
@@ -356,6 +361,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-3
 
@@ -375,6 +381,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a :ref:`function definition<how to make a function>` for ``function_03`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 6-7
 
@@ -396,6 +403,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add four names to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 6-7
 
@@ -422,6 +430,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 2-3
 
@@ -441,6 +450,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a :ref:`function definition<how to make a function>` for ``function_04`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 6-7
 
@@ -462,6 +472,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``one`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 6-7
 
@@ -488,6 +499,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2-3
 
@@ -507,6 +519,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a :ref:`function definition<how to make a function>` for ``function_05`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 6-7
 
@@ -528,6 +541,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add two names to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 6-7
 
@@ -554,6 +568,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2-3
 
@@ -574,6 +589,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a :ref:`function definition<how to make a function>` for ``function_06`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 6-7
 
@@ -595,6 +611,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add three names to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 6-7
 
@@ -621,6 +638,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 2-3
 
@@ -643,6 +661,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a :ref:`function definition<how to make a function>` for ``function_07`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 6-7
 
@@ -664,6 +683,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add four names to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 6-7
 
@@ -690,6 +710,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-3
 
@@ -711,6 +732,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a :ref:`function definition<how to make a function>` for ``function_08`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 6-7
 
@@ -732,6 +754,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add two names to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 6-7
 
@@ -758,6 +781,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I remove the commented lines from :ref:`test_type_error_w_positional_arguments` in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
 
     def test_type_error_w_positional_arguments():
@@ -779,6 +803,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2-3
 
@@ -843,6 +868,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4-5
 
@@ -867,6 +893,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_01`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 2-3
 
@@ -891,6 +918,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``second`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3-4
 
@@ -916,6 +944,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I remove ``one`` and ``two`` from the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 4-5
 
@@ -934,6 +963,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 5-6
 
@@ -960,6 +990,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``third`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_02`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 2-3
 
@@ -984,6 +1015,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``second`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 3-4
 
@@ -1008,6 +1040,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``first`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 4-8
 
@@ -1037,6 +1070,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I remove ``one``, ``two`` and ``three`` from the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 7
 
@@ -1058,6 +1092,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 6-7
 
@@ -1086,6 +1121,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_03`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 2-3
 
@@ -1108,6 +1144,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``second`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 3-7
 
@@ -1140,6 +1177,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``third`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 6-7
 
@@ -1174,6 +1212,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add ``fourth`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 7-8
 
@@ -1204,6 +1243,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I remove ``one``, ``two``, ``three`` and ``four`` from the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 8
 
@@ -1226,6 +1266,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 7-8
 
@@ -1252,6 +1293,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_04`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 2-3
 
@@ -1268,6 +1310,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 2-3
 
@@ -1288,6 +1331,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_05`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 2-3
 
@@ -1307,6 +1351,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``two`` to ``argument_1`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 3-4
 
@@ -1324,6 +1369,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 82
     :emphasize-lines: 5-6
 
@@ -1348,6 +1394,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_06`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-3
 
@@ -1367,6 +1414,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``two`` to ``argument_1`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3-4
 
@@ -1387,6 +1435,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``three`` to ``argument_2`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 4-5
 
@@ -1405,6 +1454,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 6-7
 
@@ -1433,6 +1483,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_07`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 2-3
 
@@ -1454,6 +1505,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``two`` to ``argument_1`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3-6
 
@@ -1478,6 +1530,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``three`` to ``argument_2`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 5-7
 
@@ -1502,6 +1555,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``four`` to ``argument_n`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 7-8
 
@@ -1524,6 +1578,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 7-8
 
@@ -1554,6 +1609,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 2-3
 
@@ -1572,6 +1628,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change ``two`` to ``name`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 3-4
 
@@ -1586,6 +1643,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I remove the commented lines from :ref:`test_type_error_w_keyword_arguments` in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
 
     def test_type_error_w_keyword_arguments():
@@ -1596,6 +1654,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
 
         src.type_error.function_02(
@@ -1605,6 +1664,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
 
         src.type_error.function_03(
@@ -1615,6 +1675,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
 
         src.type_error.function_04(argument='value')
@@ -1624,6 +1685,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
 
         src.type_error.function_06(
@@ -1633,6 +1695,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
 
         src.type_error.function_07(
@@ -1643,6 +1706,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
 
         src.type_error.function_08(
@@ -1658,6 +1722,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_args_and_kwargs` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 2-3
 
@@ -1670,6 +1735,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_01`` to ``src.type_error.function_01``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 4-5
 
@@ -1684,6 +1750,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_02`` to ``src.type_error.function_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 2-3
 
@@ -1699,6 +1766,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_03`` to ``src.type_error.function_03``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 5-6
 
@@ -1719,6 +1787,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_04`` to ``src.type_error.function_04``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 7-8
 
@@ -1736,6 +1805,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_05`` to ``src.type_error.function_05``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 2-5
 
@@ -1750,6 +1820,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_06`` to ``src.type_error.function_06``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 4-5
 
@@ -1768,6 +1839,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_07`` to ``src.type_error.function_07``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 6-7
 
@@ -1789,6 +1861,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_08`` to ``src.type_error.function_08``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 7-8
 
@@ -1817,6 +1890,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the order of the arguments in the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
 
     # def function_08():
@@ -1847,6 +1921,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
 
     def function_03(
@@ -1863,6 +1938,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
 
     def function_06(argument_0, argument_1, argument_2):
@@ -1882,6 +1958,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs` in ``tests/test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
 
     def test_type_error_w_args_and_kwargs():
@@ -1893,6 +1970,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
 
         src.type_error.function_03(
@@ -1903,6 +1981,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
 
         src.type_error.function_04(argument='value_2')
@@ -1911,6 +1990,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
 
         src.type_error.function_06(
@@ -1920,6 +2000,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
 
         src.type_error.function_07(
@@ -1930,6 +2011,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
 
         src.type_error.function_08(

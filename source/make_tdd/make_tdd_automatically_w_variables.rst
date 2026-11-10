@@ -201,6 +201,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1
 

@@ -470,6 +470,7 @@ the test passes.
 * I remove the commented line, the :ref:`call<how to call a function with input>` to my :ref:`assert_is_none function<extract assert_is_none function>` and ``self.assertIs(src.functions.identity(None), None)`` from :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
         def test_identity_function(self):

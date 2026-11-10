@@ -409,6 +409,7 @@ test_module_not_found_error
 * I add ModuleNotFoundError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_module_not_found_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3
     :emphasize-text: ModuleNotFoundError

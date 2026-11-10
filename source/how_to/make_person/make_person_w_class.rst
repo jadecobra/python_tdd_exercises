@@ -239,6 +239,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add the `constructor method`_ to the :ref:`Person object<add Person object>` so it can take arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-5
 
@@ -286,6 +287,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``first_name`` in parentheses so that the :ref:`__init__ method<the constructor method>` can take input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -313,6 +315,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``self`` as the first argument
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -363,6 +366,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of :ref:`__init__<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6-7
 
@@ -410,6 +414,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-12
 
@@ -463,6 +468,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 10-11
 
@@ -493,6 +499,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I remove the commented lines from the :ref:`Person object<add Person object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     class Person:
@@ -545,6 +552,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` with the :ref:`attributes<what is an object attribute?>` of ``joe`` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 20-25, 27-37
 
@@ -608,6 +616,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``self.first_name`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7
 
@@ -625,6 +634,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I point ``self.first_name`` to the value for ``first_name`` when the :ref:`__init__ method<the constructor method>` is :ref:`called<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
 
@@ -651,6 +661,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``self.last_name`` and point it to the value for ``last_name`` when the :ref:`__init__ method<the constructor method>` is called
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 9
 
@@ -677,6 +688,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the :ref:`__init__ constructor method<the constructor method>` is called
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 10
 
@@ -758,6 +770,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I remove the commented line from the :ref:`Person object<add Person object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     class Person:
@@ -780,6 +793,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I change the :ref:`call<how to call a function with input>` to ``src.person.say_hello`` in :ref:`test_joe` to a call to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 8-9
     :emphasize-text: joe
@@ -819,6 +833,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add a :ref:`method definition<how to make a function>` for ``say_hello`` to the :ref:`Person object<add Person object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 12-13
 
@@ -854,6 +869,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``first_name`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 1-2
 
@@ -874,6 +890,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``last_name`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 2-3
 
@@ -894,6 +911,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``year_of_birth`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3-4
 
@@ -914,6 +932,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I change :ref:`the return statement` to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 5-6
 
@@ -949,6 +968,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 20-25, 27-37
 
@@ -1003,6 +1023,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` like I did with the :ref:`say_hello function<test say_hello function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 6-11
 
@@ -1075,6 +1096,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person object<add Person object>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` because the :ref:`instance<how to test if something is an instance>` has the :ref:`attributes<what is an object attribute?>` I use in the :ref:`method<what is a method?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3
 
@@ -1107,6 +1129,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``person`` to the :ref:`method definition for say_hello<add say_hello method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4-7
 
@@ -1137,6 +1160,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add the ``person`` :ref:`keyword argument<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 2
 
@@ -1161,6 +1185,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I change :ref:`the return statement` of the :ref:`say_hello method<add say_hello method>` to use the :ref:`attributes<what is an object attribute?>` of the :ref:`class instance<how to test if something is an instance>` it receives as input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 11-16
 
@@ -1249,6 +1274,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I remove the ``first_name``, ``last_name`` and ``year_of_birth`` arguments from the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` since they are repetitions of the :ref:`object attributes<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 4-6
 
@@ -1280,6 +1306,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I remove ``first_name``, ``last_name`` and ``year_of_birth`` from the :ref:`definition of the say_hello method<add say_hello method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 6-7
 
@@ -1314,6 +1341,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I remove the ``first_name``, ``last_name`` and ``year_of_birth`` arguments from the :ref:`call<how to call a function with input>` from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 3-5
 
@@ -1338,6 +1366,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I change the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person object<add Person object>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 1-2
 
@@ -1376,6 +1405,7 @@ what is the staticmethod decorator?
 * I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<everything is an object>`, so I do not send more than what the :ref:`method<what is a method?>` needs. I add :ref:`@staticmethod<what is the staticmethod decorator?>`` to the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 5
 
@@ -1394,6 +1424,7 @@ what is the staticmethod decorator?
 * I change the :ref:`call<how to call a function with input>` to ``Person.say_hello`` from :ref:`test_joe` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person object<add Person object>`, there is no need for it to take a copy of the :ref:`Person object<add Person object>` as input since it should be able to use its own :ref:`attributes<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 2-4
 
@@ -1425,6 +1456,7 @@ what is the staticmethod decorator?
 * I make ``person`` :ref:`optional<test_optional_arguments>` in the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 8-9
 
@@ -1449,6 +1481,7 @@ what is the staticmethod decorator?
 * I change ``person.`` to ``self.`` in :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 17-22
 
@@ -1485,6 +1518,7 @@ what is the staticmethod decorator?
 * I add ``self`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 9-10
 
@@ -1510,6 +1544,7 @@ what is the staticmethod decorator?
 * I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<add say_hello method>` is using :ref:`object attributes<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 5
 
@@ -1585,6 +1620,7 @@ what is the staticmethod decorator?
 * I remove ``person=jane`` from the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person object<add Person object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 3
 
@@ -1610,6 +1646,7 @@ what is the staticmethod decorator?
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` to :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 158
     :emphasize-lines: 20-25, 27-33
 
@@ -1661,6 +1698,7 @@ what is the staticmethod decorator?
 * I change my expectation to match ``reality`` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 184
     :emphasize-lines: 7-8
 
@@ -1681,6 +1719,7 @@ what is the staticmethod decorator?
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` to :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
     :emphasize-lines: 20-25, 27-33
 
@@ -1732,6 +1771,7 @@ what is the staticmethod decorator?
 * I change my expectation to match ``reality`` in :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 220
     :emphasize-lines: 7-8
 
@@ -1785,6 +1825,7 @@ separate and equal Person object
 * I change ``mary`` in :ref:`test_mary` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the :ref:`Person object<add Person object>` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 213
     :emphasize-lines: 1-2
 
@@ -2043,6 +2084,7 @@ separate and equal Person object
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 231
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
@@ -2130,6 +2172,7 @@ separate and equal Person object
 * I add ``self`` to :ref:`the constructor method`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 4-5
 
@@ -2154,6 +2197,7 @@ separate and equal Person object
 * I add the name to the :ref:`Person object<add Person object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3
 
@@ -2178,6 +2222,7 @@ separate and equal Person object
 * I point ``say_hello`` to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3-4
 
@@ -2205,6 +2250,7 @@ separate and equal Person object
 * I change ``say_hello`` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 4, 14-15
 
@@ -2239,6 +2285,7 @@ separate and equal Person object
 * I add a name to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 1-2
 
@@ -2257,6 +2304,7 @@ separate and equal Person object
 * I copy and paste the string_ from the terminal_ to use as :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 3-4
 
@@ -2283,6 +2331,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_mary` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
 
     def test_mary():
@@ -2325,6 +2374,7 @@ separate and equal Person object
 * I change ``john`` in :ref:`test_john` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 7-8
 
@@ -2364,6 +2414,7 @@ separate and equal Person object
 * I change :ref:`the return statement` of the :ref:`say_hello method<add say_hello method>` to return the input, in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 4-5
 
@@ -2391,6 +2442,7 @@ separate and equal Person object
 * I change :ref:`the return statement` to use :ref:`object attributes<what is an object attribute?>` in an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 5-10
 
@@ -2422,6 +2474,7 @@ separate and equal Person object
 * I add ``self.first_name`` to the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 12-13
 
@@ -2454,6 +2507,7 @@ separate and equal Person object
 * I add ``self.last_name`` to the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 9
 
@@ -2481,6 +2535,7 @@ separate and equal Person object
 * I add ``self.year_of_birth`` to the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 10
 
@@ -2502,6 +2557,7 @@ separate and equal Person object
 * I change ``argument`` to ``self`` in the :ref:`say_hello method<add say_hello method>` to follow :ref:`Python convention<conventions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 2-3, 8-13
 
@@ -2540,6 +2596,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_john` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 158
 
     def test_john():
@@ -2582,6 +2639,7 @@ separate and equal Person object
 * I change ``jane`` in :ref:`test_jane` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 7-8
 
@@ -2621,6 +2679,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
 
     def test_jane():
@@ -2663,6 +2722,7 @@ separate and equal Person object
 * I change ``joe`` in :ref:`test_joe` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 7-8
 
@@ -2703,6 +2763,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
 
     def test_joe():
@@ -2828,6 +2889,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 * I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters, in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-13, 15-21
 
@@ -2862,6 +2924,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 20-39
 
@@ -3009,6 +3072,7 @@ the test passes.
 * I remove the commented line from :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def assert_person_can_say_hello(
@@ -3039,6 +3103,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
 
     def test_joe():
@@ -3073,6 +3138,7 @@ the test passes.
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 20-39
 
@@ -3124,6 +3190,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
 
     def test_jane():
@@ -3158,6 +3225,7 @@ the test passes.
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 20-39
 
@@ -3209,6 +3277,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
 
     def test_john():
@@ -3243,6 +3312,7 @@ the test passes.
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
     :emphasize-lines: 20-39
 
@@ -3294,6 +3364,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
 
     def test_mary():
@@ -3378,6 +3449,7 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 18-19
 
@@ -3457,6 +3529,7 @@ the test passes.
 * I remove the commented line from :ref:`assert_equal<extract assert_equal function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def assert_equal(left, right):
@@ -3471,6 +3544,7 @@ the test passes.
 * I use the value of ``my_expectation`` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` without a :ref:`variable<what is a variable?>` since it is only used once
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2-16
 
@@ -3502,6 +3576,7 @@ the test passes.
 * I do the same thing with ``reality`` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 1, 10-11
 
@@ -3534,6 +3609,7 @@ the test passes.
 * I use the :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` directly without a :ref:`variable<what is a variable?>` since it is only used once
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 5-10, 22-28
 
@@ -3577,6 +3653,7 @@ the test passes.
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 5-27
 
@@ -3619,6 +3696,7 @@ the test passes.
 * I remove the commented lines from :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
     def assert_say_hello_works(
@@ -3647,6 +3725,7 @@ the test passes.
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 5-27
 
@@ -3686,6 +3765,7 @@ the test passes.
 * I remove the commented lines from :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
 
     def assert_person_factory_works(
@@ -3741,6 +3821,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 * I add a new test with the `dir built-in function`_ in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 9-13
 
@@ -3783,6 +3864,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 4-8
 
@@ -3866,6 +3948,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
   .. caution:: Your list of attributes and methods may be different because of your Python version.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 4-15
     :emphasize-text: __init__ say_hello
@@ -4033,6 +4116,7 @@ the test passes.
 * I add ``sex`` to the :ref:`list<what is a list?>` of :ref:`attributes and methods of the instance of the Person object<test_dir_person_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 188
     :emphasize-lines: 22
 
@@ -4105,6 +4189,7 @@ the test passes.
 * I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 16
 

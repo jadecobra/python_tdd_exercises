@@ -358,6 +358,7 @@ test_type_error_w_positional_arguments
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -407,6 +408,7 @@ test_type_error_w_positional_arguments
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 4
     :emphasize-text: TypeError
@@ -471,6 +473,7 @@ test_type_error_w_positional_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_01``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 3-4
 
@@ -502,6 +505,7 @@ test_type_error_w_positional_arguments
 * I change the name of the first input, then add another name in parentheses so that :ref:`the call to the function<how to call a function with input>` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 3-4
 
@@ -521,6 +525,7 @@ test_type_error_w_positional_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3
 
@@ -542,6 +547,7 @@ test_type_error_w_positional_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3-4
 
@@ -573,6 +579,7 @@ test_type_error_w_positional_arguments
 * I add a third name in parentheses so that :ref:`the call<how to call a function with input>` to ``function_02`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3-4
 
@@ -592,6 +599,7 @@ test_type_error_w_positional_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_03``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 3
 
@@ -613,6 +621,7 @@ test_type_error_w_positional_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_03``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 3-4
 
@@ -644,6 +653,7 @@ test_type_error_w_positional_arguments
 * I add a fourth name in parentheses so that :ref:`the call<how to call a function with input>` to ``function_03`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 3-4
 
@@ -672,6 +682,7 @@ test_type_error_w_positional_arguments
         function_00('a')
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
 
         def function_01(first, second):
@@ -680,6 +691,7 @@ test_type_error_w_positional_arguments
         function_01('a', 'b')
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
         def function_02(first, second, third):
@@ -688,6 +700,7 @@ test_type_error_w_positional_arguments
         function_02('a', 'b', 'c')
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
         def function_03(first, second, third, fourth):
@@ -741,6 +754,7 @@ test_type_error_w_keyword_arguments
 * I add a test with a call to ``function_04`` with a :ref:`keyword argument<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 4-5
 
@@ -772,6 +786,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_04``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 2-3
 
@@ -803,6 +818,7 @@ test_type_error_w_keyword_arguments
 * I add ``argument`` in the parentheses so that :ref:`the call<how to call a function with input>` to ``function_04`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 2-3
 
@@ -829,6 +845,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_05`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3-6
 
@@ -851,6 +868,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_05``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3-4
 
@@ -887,6 +905,7 @@ test_type_error_w_keyword_arguments
 * I change the name of the input in the :ref:`definition<how to make a function that takes input>` to match :ref:`the call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3-4
 
@@ -919,6 +938,7 @@ test_type_error_w_keyword_arguments
 * I add ``argument_1`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_05`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4-5
 
@@ -942,6 +962,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_06`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 6-10
 
@@ -968,6 +989,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_06``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 6-7
 
@@ -1008,6 +1030,7 @@ test_type_error_w_keyword_arguments
 * I add ``argument_2`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_06`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 6-10
 
@@ -1037,6 +1060,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_07`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 7-12
 
@@ -1065,6 +1089,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_07``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 7-11
 
@@ -1110,6 +1135,7 @@ test_type_error_w_keyword_arguments
 * I add ``argument_n`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_07`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 9-10
 
@@ -1141,6 +1167,7 @@ test_type_error_w_keyword_arguments
 * I remove the commented lines from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
 
     def test_type_error_w_keyword_arguments():
@@ -1150,6 +1177,7 @@ test_type_error_w_keyword_arguments
         function_04(argument='value')
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
 
         def function_05(argument_0, argument_1):
@@ -1161,6 +1189,7 @@ test_type_error_w_keyword_arguments
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
         def function_06(
@@ -1176,6 +1205,7 @@ test_type_error_w_keyword_arguments
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
 
         def function_07(
@@ -1228,6 +1258,7 @@ test_type_error_w_args_and_kwargs
 * I add a test with a call to ``function_08`` with a :ref:`positional and keyword argument<test_args_and_kwargs>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 9-13
 
@@ -1267,6 +1298,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`function definition<how to make a function that takes input>` for ``function_08``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 2-3
 
@@ -1300,6 +1332,7 @@ test_type_error_w_args_and_kwargs
 * I add another name to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 2-3
 
@@ -1313,6 +1346,7 @@ test_type_error_w_args_and_kwargs
 * I change the order of the names in the parentheses of the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 3-4
 
@@ -1343,6 +1377,7 @@ test_type_error_w_args_and_kwargs
 * I add another :ref:`call<how to call a function with input>` to ``function_08``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 5-8
 
@@ -1375,6 +1410,7 @@ test_type_error_w_args_and_kwargs
 * I use :ref:`keyword arguments<test_keyword_arguments>` to make the :ref:`call<how to call a function with input>` clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 6-7
 
@@ -1396,6 +1432,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_01`` with a :ref:`positional and keyword argument<test_args_and_kwargs>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 7
 
@@ -1451,6 +1488,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to only use :ref:`positional arguments<test_positional_arguments>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 7-8
 
@@ -1473,6 +1511,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_02`` with arguments that are not clear
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 3
 
@@ -1507,6 +1546,7 @@ test_type_error_w_args_and_kwargs
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 7
 
@@ -1532,6 +1572,7 @@ test_type_error_w_args_and_kwargs
 * I change the first value in the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to a :ref:`keyword argument<test_keyword_arguments>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 9-10
 
@@ -1566,6 +1607,7 @@ test_type_error_w_args_and_kwargs
 * I add a third argument to the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 4-5
 
@@ -1592,6 +1634,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to use a :ref:`keyword argument<test_keyword_arguments>` for ``True``, to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 5-9
 
@@ -1610,6 +1653,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_03``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 5-10
 
@@ -1640,6 +1684,7 @@ test_type_error_w_args_and_kwargs
 * I move ``function_03`` out of :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5-6, 16
 
@@ -1675,6 +1720,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`keyword argument<test_keyword_arguments>` for the first value in the :ref:`call<how to call a function with input>` to ``function_03`` from :ref:`test_type_error_w_args_and_kwargs` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 6-7
 
@@ -1695,6 +1741,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 9-14
 
@@ -1728,6 +1775,7 @@ test_type_error_w_args_and_kwargs
 * I move ``function_07`` out of :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5-9
 
@@ -1745,6 +1793,7 @@ test_type_error_w_args_and_kwargs
     def test_type_error_w_positional_arguments():
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 6-11
 
@@ -1779,6 +1828,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` to use a :ref:`keyword argument<test_keyword_arguments>`, then change its position
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 2, 4
 
@@ -1799,6 +1849,7 @@ test_type_error_w_args_and_kwargs
 * I use a :ref:`keyword argument<test_keyword_arguments>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 3-4
 
@@ -1816,6 +1867,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function>` to ``function_00`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 7
 
@@ -1850,6 +1902,7 @@ test_type_error_w_args_and_kwargs
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2
 
@@ -1878,6 +1931,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` to ``function_00`` from :ref:`test_type_error_w_args_and_kwargs` to match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 7-8
 
@@ -1904,6 +1958,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_04`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 8
 
@@ -1936,6 +1991,7 @@ test_type_error_w_args_and_kwargs
 * I move ``function_04`` out of :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 5-6
 
@@ -1954,6 +2010,7 @@ test_type_error_w_args_and_kwargs
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 2
 
@@ -1979,6 +2036,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` to ``function_04`` from :ref:`test_type_error_w_args_and_kwargs` to match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 2
 
@@ -1999,6 +2057,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_05`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 3-5
 
@@ -2026,6 +2085,7 @@ test_type_error_w_args_and_kwargs
 * I move ``function_05`` out of :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 5-6
 
@@ -2044,6 +2104,7 @@ test_type_error_w_args_and_kwargs
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3-6
 
@@ -2072,6 +2133,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` to ``function_05`` from :ref:`test_type_error_w_args_and_kwargs` to make it match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 3-6
 
@@ -2096,6 +2158,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_06`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2-6
 
@@ -2125,6 +2188,7 @@ test_type_error_w_args_and_kwargs
 * I move ``function_06`` out of :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5-9
 
@@ -2146,6 +2210,7 @@ test_type_error_w_args_and_kwargs
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 7-11
 
@@ -2180,6 +2245,7 @@ test_type_error_w_args_and_kwargs
 * I use another :ref:`keyword argument<test_keyword_arguments>` in the :ref:`call<how to call a function with input>` to ``function_06`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 4-5
 
@@ -2209,6 +2275,7 @@ test_type_error_w_args_and_kwargs
 * I use one more :ref:`keyword argument<test_keyword_arguments>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 3-4
 
@@ -2234,6 +2301,7 @@ test_type_error_w_args_and_kwargs
 * I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
 
     def test_type_error_w_args_and_kwargs():
@@ -2248,6 +2316,7 @@ test_type_error_w_args_and_kwargs
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
 
         function_03(
@@ -2260,6 +2329,7 @@ test_type_error_w_args_and_kwargs
         function_05((0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
 
         function_06(
@@ -2275,6 +2345,7 @@ test_type_error_w_args_and_kwargs
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
 
         function_08(
@@ -2317,6 +2388,7 @@ test TypeError with required and unexpected arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_03`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-6
 
@@ -2373,6 +2445,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_02`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-7
 
@@ -2402,6 +2475,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I remove the unexpected :ref:`keyword argument<test_keyword_arguments>` from the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 3
 
@@ -2424,6 +2498,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_01`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-4
 
@@ -2450,6 +2525,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I change the :ref:`call<how to call a function with input>` to match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 3
 
@@ -2464,6 +2540,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_00`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2
 
@@ -2486,6 +2563,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I remove ``second`` from the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-3
 
@@ -2509,6 +2587,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I remove ``first`` from the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 3-4
 
@@ -2531,6 +2610,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I use the :ref:`name<test_keyword_arguments>` in the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 3-4
 
@@ -2549,6 +2629,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I move the :ref:`call<how to call a function with input>` to ``function_08`` from :ref:`test_type_error_w_args_and_kwargs` that uses :ref:`keyword arguments<test_keyword_arguments>` to :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 7-10
 
@@ -2567,6 +2648,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
     def test_type_error_w_args_and_kwargs():
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
 
         function_07(
@@ -2595,6 +2677,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I move ``function_08`` out of :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 8-9
 
@@ -2612,6 +2695,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
     def test_type_error_w_positional_arguments():
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 2
 
@@ -2625,6 +2709,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I remove the commented lines from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
 
     def test_type_error_w_keyword_arguments():
@@ -2640,6 +2725,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
 
         function_03(
@@ -2655,6 +2741,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
 
         function_06(
@@ -2681,6 +2768,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_04`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 6
 
@@ -2704,6 +2792,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a value to the :ref:`call<how to call a function with input>` to ``function_04``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 3-4
 
@@ -2720,6 +2809,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_05`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 3
 
@@ -2740,6 +2830,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I remove a value from the :ref:`call<how to call a function with input>` to ``function_05``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 3-4
 
@@ -2756,6 +2847,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_06`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 3
 
@@ -2776,6 +2868,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a value to the :ref:`call<how to call a function with input>` to ``function_06``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 3-4
 
@@ -2792,6 +2885,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3
 
@@ -2812,6 +2906,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I remove a value from the :ref:`call<how to call a function with input>` to ``function_07``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3-4
 
@@ -2828,6 +2923,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a :ref:`call<how to call a function with input>` to ``function_08`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 3
 
@@ -2848,6 +2944,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I add a value to the :ref:`call<how to call a function with input>` to ``function_08``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 3-4
 
@@ -2864,6 +2961,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
 * I remove the commented lines from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
 
     def test_type_error_w_positional_arguments():

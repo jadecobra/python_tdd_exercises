@@ -147,6 +147,7 @@ start the project
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -227,6 +228,7 @@ test_green_light_timer_not_done
   ================  ===============  ================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-10
 
@@ -265,6 +267,7 @@ test_green_light_timer_not_done
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -297,6 +300,7 @@ test_green_light_timer_not_done
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -327,6 +331,7 @@ test_green_light_timer_not_done
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -413,6 +418,7 @@ test_green_light_timer_done
   ================  ===============  ================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10-17
 
@@ -498,6 +504,7 @@ test_green_light_timer_done
 * I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 5-6, 8-9
 
@@ -519,6 +526,7 @@ test_green_light_timer_done
 * I remove the commented lines from :ref:`test_green_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
         def test_green_light_timer_not_done(self):
@@ -535,6 +543,7 @@ test_green_light_timer_done
 * I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 5-6
 
@@ -556,6 +565,7 @@ test_green_light_timer_done
 * I remove the commented lines from :ref:`test_green_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
 
         def test_green_light_timer_done(self):
@@ -600,6 +610,7 @@ test_yellow_light_timer_not_done
   ================  ===============  ================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 10-17
 
@@ -687,6 +698,7 @@ test_yellow_light_timer_not_done
 * I use the new :ref:`variable<what is a variable?>` for ``'YELLOW'`` in :ref:`test_green_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 7-8
 
@@ -707,6 +719,7 @@ test_yellow_light_timer_not_done
 * I remove the commented line from :ref:`test_green_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
 
         def test_green_light_timer_done(self):
@@ -723,6 +736,7 @@ test_yellow_light_timer_not_done
 * I use the new :ref:`variable<what is a variable?>` for ``'YELLOW'`` in :ref:`test_yellow_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5-6, 8-9
 
@@ -745,6 +759,7 @@ test_yellow_light_timer_not_done
 * I remove the commented lines from :ref:`test_yellow_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
         def test_yellow_light_timer_not_done(self):
@@ -789,6 +804,7 @@ test_yellow_light_timer_done
   ================  ===============  ================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 10-17
 
@@ -883,6 +899,7 @@ test_red_light_timer_not_done
   ================  ===============  ================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 10-17
 
@@ -970,6 +987,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` for ``'RED'`` in :ref:`test_yellow_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 7-8
 
@@ -990,6 +1008,7 @@ the test passes.
 * I remove the commented line from :ref:`test_yellow_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
         def test_yellow_light_timer_done(self):
@@ -1006,6 +1025,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` for ``'RED'`` in :ref:`test_red_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 5-6, 8-9
 
@@ -1028,6 +1048,7 @@ the test passes.
 * I remove the commented line from :ref:`test_red_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
 
         def test_red_light_timer_not_done(self):
@@ -1072,6 +1093,7 @@ test_red_light_timer_done
   ================  ===============  ================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 10-17
 
@@ -1208,6 +1230,7 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 * I add an :ref:`if statement<if statements>` for if the timer is :red:`NOT done` and the light is :green:`GREEN`, to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 2-3, 9
 
@@ -1226,6 +1249,7 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 * I add a :ref:`return statement<the return statement>` to return the current light if the timer is :red:`NOT done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 2
 
@@ -1568,6 +1592,7 @@ test_cross_red_parallel_red_timer_done
   ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 10-18
 
@@ -1698,6 +1723,7 @@ test_cross_red_parallel_red_timer_done
 * I add an :ref:`if statement<if statements>` to ``if timer_done:`` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 8-9
 
@@ -1765,6 +1791,7 @@ test_cross_red_parallel_red_timer_not_done
   ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 10-18
 
@@ -1806,6 +1833,7 @@ test_cross_red_parallel_red_timer_not_done
 * I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2-3
 
@@ -1831,6 +1859,7 @@ test_cross_red_parallel_red_timer_not_done
 * I add an :ref:`if statement<if statements>` for if the timer is :red:`NOT done` and the ``current_light`` is :ref:`grouped as True<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2-3
 
@@ -1858,6 +1887,7 @@ test_cross_red_parallel_red_timer_not_done
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
 
         if not timer_done:
@@ -1900,6 +1930,7 @@ test_cross_yellow_parallel_red_timer_done
   ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 10-18
 
@@ -1984,6 +2015,7 @@ the test passes.
 * Two of the :ref:`if statements` in ``if timer_done:`` are for if the current parallel light is :red:`RED`. I change them to remove repetition of ``if current_parallel == red``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 8-16
 
@@ -2009,6 +2041,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
         if timer_done:
@@ -2057,6 +2090,7 @@ test_cross_yellow_parallel_red_timer_not_done
   ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 10-18
 
@@ -2143,6 +2177,7 @@ the test passes.
 * Two of the :ref:`if statements` in ``if not timer_done:`` are also for if the current parallel light is :red:`RED`. I change them to remove repetition of ``if current_parallel == red``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5-13
 
@@ -2167,6 +2202,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
 
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
@@ -2214,6 +2250,7 @@ test_cross_green_parallel_red_timer_done
   ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 10-18
 
@@ -2331,6 +2368,7 @@ test_cross_green_parallel_red_timer_not_done
   ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 10-18
 
@@ -2430,6 +2468,7 @@ the test passes.
 * The three :ref:`if statements` in the ``if not timer_done:`` block for if the current parallel light is :red:`RED` all return the current parallel light and the current cross light. I write one :ref:`return statement<the return statement>` for all of them
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 7
 
@@ -2454,6 +2493,7 @@ the test passes.
 * I remove the :ref:`if statements` for the other cases since they are no longer used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
 
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
@@ -2500,6 +2540,7 @@ test_parallel_red_cross_red_timer_done
   ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 4-5, 7, 9-10
 
@@ -2585,6 +2626,7 @@ test_parallel_red_cross_red_timer_done
 * I add ``red_phase`` to the :ref:`call<how to call a function with input>` to the ``control`` :ref:`function<what is a function?>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 4
 
@@ -2627,6 +2669,7 @@ test_parallel_red_cross_red_timer_done
 * I add an :ref:`if statement<if statements>` to the ``if timer_done:`` block for if the **Traffic Light** is currently in the :red:`RED` phase for cross traffic AND the current parallel light is :red:`RED` AND the current cross light is :red:`RED`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 9-11
 
@@ -2664,6 +2707,7 @@ test_parallel_red_cross_red_timer_done
 * I remove the commented lines from :ref:`test_red_light_timer_done` in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
 
         def test_red_light_timer_done(self):
@@ -2682,6 +2726,7 @@ test_parallel_red_cross_red_timer_done
 * I change the name of the test from :ref:`test_red_light_timer_done` to :ref:`test_parallel_red_cross_red_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 10
 
@@ -2739,6 +2784,7 @@ test_parallel_red_cross_red_timer_not_done
   ==========  ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4-6, 8, 10-11
 
@@ -2781,6 +2827,7 @@ test_parallel_red_cross_red_timer_not_done
 * I remove the commented lines from :ref:`test_red_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
 
       def test_red_light_timer_not_done(self):
@@ -2799,6 +2846,7 @@ test_parallel_red_cross_red_timer_not_done
 * I change the name of the test from :ref:`test_red_light_timer_not_done` to :ref:`test_parallel_red_cross_red_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 10
 
@@ -2856,6 +2904,7 @@ test_parallel_yellow_cross_red_timer_done
   ==========  ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 4-6, 8, 10-11
 
@@ -2939,6 +2988,7 @@ the test passes.
 * Two of the :ref:`if statements` in the ``if timer_done:`` block are for if the current cross light is :red:`RED` which is when ``'cross'`` traffic is in the :red:`RED` phase. I change them to remove repetition of ``if current_cross == red``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 9-18
 
@@ -2968,6 +3018,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
 
         if timer_done:
@@ -2989,6 +3040,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_yellow_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
         def test_yellow_light_timer_done(self):
@@ -3007,6 +3059,7 @@ the test passes.
 * I change the name of the test from :ref:`test_yellow_light_timer_done` to :ref:`test_parallel_yellow_cross_red_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 10
 
@@ -3064,6 +3117,7 @@ test_parallel_yellow_cross_red_timer_not_done
   ==========  ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4-6, 8, 10-11
 
@@ -3146,6 +3200,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_yellow_light_timer_not_done` in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
         def test_yellow_light_timer_not_done(self):
@@ -3164,6 +3219,7 @@ the test passes.
 * I change the name of the test from :ref:`test_yellow_light_timer_not_done` to :ref:`test_parallel_yellow_cross_red_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 10
 
@@ -3221,6 +3277,7 @@ test_parallel_green_cross_red_timer_done
   ==========  ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 4-6, 8, 10-11
 
@@ -3313,6 +3370,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_green_light_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
 
         def test_green_light_timer_done(self):
@@ -3331,6 +3389,7 @@ the test passes.
 * I change the name of the test from :ref:`test_green_light_timer_done` to :ref:`test_parallel_green_cross_red_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 10
 
@@ -3388,6 +3447,7 @@ test_parallel_green_cross_red_timer_not_done
   ==========  ================  ================  =============== =================== =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4-6, 8, 10-11
 
@@ -3480,6 +3540,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_green_light_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
         def test_green_light_timer_not_done(self):
@@ -3498,6 +3559,7 @@ the test passes.
 * I change the name of the test from :ref:`test_green_light_timer_not_done` to :ref:`test_parallel_green_cross_red_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3
 
@@ -3517,6 +3579,7 @@ the test passes.
 * I remove the :ref:`if statements` for the ``current_light`` parameter since they are no longer used, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
 
         if not timer_done:
@@ -3561,6 +3624,7 @@ the test passes.
 * The three :ref:`if statements` in ``if not timer_done:`` all return the current parallel light and the current cross light. I write one :ref:`return statement<the return statement>` for all of them
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2
 
@@ -3580,6 +3644,7 @@ the test passes.
 * I change ``if current_parallel == red`` to ``if red_phase == 'parallel':`` for if the timer is :green:`done` AND the current parallel light is :red:`RED` since it is for when ``'parallel'`` traffic is in the :red:`RED` phase
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 9-10
 
@@ -3635,6 +3700,7 @@ the test passes.
 * I add a ``red_phase=parallel,`` to :ref:`test_cross_green_parallel_red_timer_not_done` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4
 
@@ -3656,6 +3722,7 @@ the test passes.
 * I do the same thing to :ref:`test_cross_green_parallel_red_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 4
 
@@ -3677,6 +3744,7 @@ the test passes.
 * then :ref:`test_cross_yellow_parallel_red_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 4
 
@@ -3698,6 +3766,7 @@ the test passes.
 * I add ``red_phase='parallel'`` to :ref:`test_cross_yellow_parallel_red_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 4
 
@@ -3719,6 +3788,7 @@ the test passes.
 * I add it to :ref:`test_cross_red_parallel_red_timer_not_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 120
     :emphasize-lines: 4
 
@@ -3740,6 +3810,7 @@ the test passes.
 * I add it to :ref:`test_cross_red_parallel_red_timer_done`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 131
     :emphasize-lines: 4
 
@@ -4092,6 +4163,7 @@ It should be :red:`RED` for both ``'cross'`` and ``'parallel'`` traffic for any 
 * I add a test for the safety state with an :ref:`assertion<what is an assertion?>` for if ``current_parallel`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`, ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 131
     :emphasize-lines: 12-21
 
@@ -4171,6 +4243,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if ``current_cross`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED` to :ref:`test_traffic_light_failsafe` in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 142
     :emphasize-lines: 11-19
 
@@ -4206,6 +4279,7 @@ the test passes.
 * I add an :ref:`if statement<if statements>` for if ``current_cross`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED` to :ref:`test_traffic_light_failsafe` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8-13
 
@@ -4241,6 +4315,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if both lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 152
     :emphasize-lines: 10-18
 
@@ -4275,6 +4350,7 @@ the test passes.
 * I add an :ref:`if statement<if statements>` for if both lights are :green:`GREEN`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 8-9
 
@@ -4311,6 +4387,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if the parallel lights are :green:`GREEN` AND the cross lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 161
     :emphasize-lines: 10-18
 
@@ -4345,6 +4422,7 @@ the test passes.
 * I add an :ref:`if statement<if statements>` for if the parallel lights are :green:`GREEN` AND the cross lights are :yellow:`YELLOW`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3-4
 
@@ -4379,6 +4457,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if the parallel lights are :yellow:`YELLOW` AND the cross lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 170
     :emphasize-lines: 10-18
 
@@ -4413,6 +4492,7 @@ the test passes.
 * I add an :ref:`if statement<if statements>` for if the parallel lights are :yellow:`YELLOW` AND the cross lights are :green:`GREEN`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5-6
 
@@ -4453,6 +4533,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_traffic_light_failsafe` for if both lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 10-18
 
@@ -4487,6 +4568,7 @@ the test passes.
 * I add an :ref:`if statement<if statements>` for if both lights are :yellow:`YELLOW`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 7-8
 
@@ -4535,6 +4617,7 @@ the test passes.
 * I add an :ref:`if statement<if statements>` for if the parallel lights and cross lights are the same AND are not equal to :red:`RED`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 1-2, 8-9
 
@@ -4555,6 +4638,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
 
         if not (
@@ -4576,6 +4660,7 @@ the test passes.
 * I add a :ref:`return statement<the return statement>` with the safety state as what the ``control`` :ref:`function<what is a function?>` returns by default. This way if none of its :ref:`conditions<if statements>` are met, it puts the lights in the safety state
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 9
 
@@ -4594,6 +4679,7 @@ the test passes.
 * I remove ``if current_cross == yellow:`` from ``if red_phase == 'parallel':`` since it returns the safety state
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
 
             if red_phase == 'parallel':
@@ -4609,6 +4695,7 @@ the test passes.
 * I remove ``if current_parallel == yellow:`` from ``if red_phase == 'cross':`` since it returns the safety state
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
 
         if timer_done:
@@ -4661,6 +4748,7 @@ extract is_not_safe function
 * I add a :ref:`call<how to call a function with input>` to the :ref:`is_not_safe function<extract is_not_safe function>` for the :ref:`if statements` that check if the lights allow traffic both ways
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 17-24
 
@@ -4696,6 +4784,7 @@ extract is_not_safe function
 * I remove the other :ref:`if statements` that check if the lights allow traffic both ways, because they are no longer needed
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
 
         if is_not_safe(current_parallel, current_cross):
@@ -4800,6 +4889,7 @@ extract is_not_light function
 * I add a :ref:`call<how to call a function with input>` to the :ref:`is_not_light function<extract is_not_light function>` for the :ref:`if statements` that check if ``current_parallel`` is :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 7-14
 
@@ -4823,6 +4913,7 @@ extract is_not_light function
 * I add a :ref:`call<how to call a function with input>` to the :ref:`is_not_light function<extract is_not_light function>` for the :ref:`if statements` that check if ``current_cross`` is :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 3-10
 
@@ -4844,6 +4935,7 @@ extract is_not_light function
 * I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
     def control(
@@ -4879,6 +4971,7 @@ extract is_not_light function
 * I add a :ref:`conditional expression<conditional expressions>` to the :ref:`is_not_light function<extract is_not_light function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3-5
 
@@ -4897,6 +4990,7 @@ extract is_not_light function
 * I remove the :ref:`if statement<if statements>` from the :ref:`is_not_light function<extract is_not_light function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
     def is_not_light(light):
@@ -4929,6 +5023,7 @@ extract triggers_failsafe function
 * I add a :ref:`function<what is a function?>` for the three :ref:`functions<what is a function?>` which trigger the fail safe
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 8-12
 
@@ -4954,6 +5049,7 @@ extract triggers_failsafe function
 * I add a :ref:`call<how to call a function with input>` to the :ref:`triggers_failsafe function<extract triggers_failsafe function>` from the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 7-14
 
@@ -4979,6 +5075,7 @@ extract triggers_failsafe function
 * I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
     def control(
@@ -5021,6 +5118,7 @@ extract global variables for lights
 * I use the :ref:`variables<what is a variable?>` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_safe function<extract is_not_safe function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2, 4-9
 
@@ -5040,6 +5138,7 @@ extract global variables for lights
 * I remove the commented lines from the :ref:`is_not_safe function<extract is_not_safe function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def is_not_safe(parallel, cross):
@@ -5055,6 +5154,7 @@ extract global variables for lights
 * I use the :ref:`variables<what is a variable?>` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_light function<extract is_not_light function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2, 4-6
 
@@ -5073,6 +5173,7 @@ extract global variables for lights
 * I remove the commented lines from the :ref:`is_not_light function<extract is_not_light function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
     def is_not_light(light):
@@ -5086,6 +5187,7 @@ extract global variables for lights
 * I use the :ref:`variables<what is a variable?>` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 3, 6, 9-10
 
@@ -5106,6 +5208,7 @@ extract global variables for lights
         if timer_done:
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3-10, 12-19, 21-22
 
@@ -5137,6 +5240,7 @@ extract global variables for lights
 * I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
 
     def control(
@@ -5180,6 +5284,7 @@ extract next_light function
 * I add a :ref:`function<what is a function?>` for when the timer is :green:`done` and none of the fail safes are triggered
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 8-19
 
@@ -5212,6 +5317,7 @@ extract next_light function
 * I add a :ref:`call<how to call a function with input>` to the :ref:`next_light function<extract next_light function>` from ``if timer_done:`` in the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 12-14
 
@@ -5236,6 +5342,7 @@ extract next_light function
 * I remove the other statements in the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
 
     def control(

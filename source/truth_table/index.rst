@@ -112,6 +112,7 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_truth_table.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 

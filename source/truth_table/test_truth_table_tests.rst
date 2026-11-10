@@ -256,6 +256,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_identity<test_logical_identity>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 4-5
 
@@ -275,6 +276,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a name in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 2-3
 
@@ -291,6 +293,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I return what the test wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
 
@@ -310,6 +313,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
 
@@ -334,6 +338,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
 
@@ -354,6 +359,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`logical_true<test_logical_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 4-5
 
@@ -372,6 +378,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement` for :ref:`logical_true<test_logical_true>` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2
 
@@ -390,6 +397,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`logical_false<test_logical_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 4-5
 
@@ -409,6 +417,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`tautology<test_tautology>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 4-5
 
@@ -428,6 +437,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add two names in parentheses for the :ref:`function<what is a function?>` to take input arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 1-2
 
@@ -444,6 +454,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3
 
@@ -462,6 +473,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`project_second<test_project_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 4-5
 
@@ -481,6 +493,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add two names in parentheses for the :ref:`function<what is a function?>` to take input arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 1-2
 
@@ -497,6 +510,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 3
 
@@ -516,6 +530,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 3
 
@@ -540,6 +555,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 3
 
@@ -561,6 +577,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I remove ``first`` from :ref:`the return statement`  since ``second`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 3
 
@@ -582,6 +599,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`project_first<test_project_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 4-5
 
@@ -603,6 +621,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add two names in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 1-2
 
@@ -619,6 +638,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 3
 
@@ -638,6 +658,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 3
 
@@ -662,6 +683,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change :ref:`the return statement` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 3
 
@@ -683,6 +705,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I remove ``second`` from :ref:`the return statement` since ``first`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 6-7
 
@@ -704,6 +727,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 4-5
 
@@ -722,6 +746,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`negate_second<test_negate_second>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2
 
@@ -738,6 +763,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3
 
@@ -756,6 +782,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_first<test_negate_first>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 4-5
 
@@ -774,6 +801,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`negate_first<test_negate_first>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2
 
@@ -790,6 +818,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 3
 
@@ -808,6 +837,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`material_non_implication<test_material_non_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 4-5
 
@@ -826,6 +856,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`material_non_implication<test_material_non_implication>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2
 
@@ -842,6 +873,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 3
 
@@ -859,6 +891,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 4
 
@@ -878,6 +911,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`material_implication<test_material_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 4-5
 
@@ -896,6 +930,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2
 
@@ -913,6 +948,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 4-5
 
@@ -931,6 +967,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2
 
@@ -947,6 +984,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 3
 
@@ -964,6 +1002,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4
 
@@ -984,6 +1023,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 4-5
 
@@ -1002,6 +1042,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 2
 
@@ -1020,6 +1061,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 4-5
 
@@ -1038,6 +1080,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2
 
@@ -1054,6 +1097,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3
 
@@ -1072,6 +1116,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 4-5
 
@@ -1090,6 +1135,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2
 
@@ -1108,6 +1154,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 4-5
 
@@ -1126,6 +1173,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 2
 
@@ -1142,6 +1190,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 3
 
@@ -1159,6 +1208,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 4
 
@@ -1178,6 +1228,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 4-5
 
@@ -1196,6 +1247,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2
 
@@ -1212,6 +1264,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 3
 
@@ -1231,6 +1284,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 4-5
 
@@ -1249,6 +1303,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 2
 
@@ -1265,6 +1320,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 3
 
@@ -1282,6 +1338,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 4
 
@@ -1302,6 +1359,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 116
     :emphasize-lines: 4-5
 
@@ -1320,6 +1378,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 2
 
@@ -1337,6 +1396,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 4-5
 
@@ -1355,6 +1415,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 2
 
@@ -1371,6 +1432,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 3
 
@@ -1388,6 +1450,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 4
 
@@ -1406,6 +1469,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 5
 
@@ -1435,6 +1499,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`contradiction<test_contradiction>`  returns :red:`False` in four cases. There are only four cases with two inputs. I add a :ref:`return statement<the return statement>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 2
 
@@ -1451,6 +1516,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines from :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
 
     def contradiction(first, second):
@@ -1461,6 +1527,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`converse_implication<test_converse_implication>` returns :red:`False` in only one case. I write out the :ref:`if statement<if statements>` for that case, to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 2-4
 
@@ -1475,6 +1542,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change the statement with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 3-4
 
@@ -1490,6 +1558,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 4-5
 
@@ -1506,6 +1575,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 2
 
@@ -1522,6 +1592,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I "multiply :ref:`not<test_logical_negation>`" by the things in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 2
 
@@ -1538,6 +1609,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 2-3
 
@@ -1551,6 +1623,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not`` because two :ref:`nots<test_logical_negation>` make a right?
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 2
 
@@ -1564,6 +1637,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
 
     def converse_implication(first, second):
@@ -1578,6 +1652,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add an :ref:`if statement<if statements>` for the only case that returns :green:`True` in :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 2-9
 
@@ -1599,6 +1674,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``if first == False`` to terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 2-3
 
@@ -1614,6 +1690,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 3-4
 
@@ -1630,6 +1707,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 2
 
@@ -1642,6 +1720,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
 
     def converse_non_implication(first, second):
@@ -1656,6 +1735,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I make the :ref:`if statements` in :ref:`exclusive_disjunction<test_exclusive_disjunction>` simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2-5
 
@@ -1674,6 +1754,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change the new second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 4-5
 
@@ -1690,6 +1771,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2-3, 6-7
 
@@ -1708,6 +1790,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I write everything in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line, I might as well make it three
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 7-8
 
@@ -1731,6 +1814,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I factor out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 8-9
 
@@ -1751,6 +1835,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I put the two :ref:`if statements` together as one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2-8
 
@@ -1769,6 +1854,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2-6
 
@@ -1789,6 +1875,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I "multiply" :ref:`not<test_logical_negation>` by everything in the parentheses since it happens two times in the line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2-6
 
@@ -1813,6 +1900,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not or`` to :ref:`and<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 4-5
 
@@ -1829,6 +1917,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not`` because "the negation of a negation is ..."
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 6-7
 
@@ -1846,6 +1935,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
 
     def exclusive_disjunction(first, second):
@@ -1864,6 +1954,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`logical_conjunction<test_logical_conjunction>` has only one case that returns :green:`True`. I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 2-5
 
@@ -1879,6 +1970,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 2-3
 
@@ -1894,6 +1986,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 2
 
@@ -1906,6 +1999,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented line and other statements from :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
 
     def logical_conjunction(first, second):
@@ -1919,6 +2013,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`logical_disjunction<test_logical_disjunction>` has only one case that returns :red:`False`, I break up the :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2-5
 
@@ -1934,6 +2029,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change the :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2-3
 
@@ -1949,6 +2045,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 3-4
 
@@ -1965,6 +2062,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change the statement with :ref:`not<test_logical_negation>` since it happens two times
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 4-5
 
@@ -1986,6 +2084,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I factor out :ref:`not<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 5-6
 
@@ -2004,6 +2103,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` for the :ref:`opposite<test_logical_negation>` of the :ref:`if statement<if statements>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2
 
@@ -2016,6 +2116,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2
 
@@ -2028,6 +2129,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
 
     def logical_disjunction(first, second):
@@ -2041,6 +2143,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I break up the :ref:`if statements` in :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2-6
 
@@ -2057,6 +2160,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change the :ref:`if statements` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2-3, 5-6
 
@@ -2074,6 +2178,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3-4, 7-8
 
@@ -2093,6 +2198,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I put the two :ref:`if statements` together as one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2-8
 
@@ -2112,6 +2218,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2-6
 
@@ -2132,6 +2239,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by all the symbols in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2-5
 
@@ -2156,6 +2264,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not or`` to :ref:`and<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 4-5
 
@@ -2172,6 +2281,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the first part of the statement
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3-4
 
@@ -2193,6 +2303,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 4-5
 
@@ -2211,6 +2322,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 5-6
 
@@ -2230,6 +2342,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the second part of the statement
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 9-10
 
@@ -2254,6 +2367,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 10-11
 
@@ -2275,6 +2389,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 11-12
 
@@ -2297,6 +2412,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
 
     def logical_equality(first, second):
@@ -2314,6 +2430,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I make the :ref:`if statement<if statements>` in :ref:`logical_nand<test_logical_nand>` simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 2-5
 
@@ -2330,6 +2447,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 2-3
 
@@ -2346,6 +2464,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 2-3
 
@@ -2358,6 +2477,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented line and other statements from :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
 
     def logical_nand(first, second):
@@ -2371,6 +2491,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`logical_nor<test_logical_nor>` has only one case that returns :green:`True`. I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2-5
 
@@ -2386,6 +2507,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I use :ref:`not<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2-3
 
@@ -2401,6 +2523,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 3-4
 
@@ -2417,6 +2540,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2
 
@@ -2429,6 +2553,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I write the statement with :ref:`not<test_logical_negation>` because it happens two times
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2
 
@@ -2445,6 +2570,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I factor out :ref:`not<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2
 
@@ -2457,6 +2583,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
 
     def logical_nor(first, second):
@@ -2470,6 +2597,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` for the :ref:`if statement<if statements>` of :ref:`material_implication<test_material_implication>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2
 
@@ -2483,6 +2611,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I break up :ref:`the return statement` to make it simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2
 
@@ -2495,6 +2624,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I use :ref:`not<test_logical_negation>` to rewrite it in terms of :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2
 
@@ -2507,6 +2637,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2
 
@@ -2519,6 +2650,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by everything in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2
 
@@ -2535,6 +2667,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2-3
 
@@ -2548,6 +2681,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2
 
@@ -2560,6 +2694,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines from :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
 
     def material_implication(first, second):
@@ -2573,6 +2708,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a :ref:`return statement<the return statement>` for the case that returns :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2
 
@@ -2585,6 +2721,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I make :ref:`the return statement` simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2
 
@@ -2597,6 +2734,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I use :ref:`not<test_logical_negation>` to write it in terms of :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2
 
@@ -2609,6 +2747,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2
 
@@ -2621,6 +2760,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the other statements from :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
 
     def material_non_implication(first, second):
@@ -2634,6 +2774,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * ``first`` is :ref:`True<test_what_is_true>` in the two cases where :ref:`negate_first<test_negate_first>` returns :red:`False`, I add an :ref:`if statement<if statements>` for them
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2-8
 
@@ -2651,6 +2792,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2
 
@@ -2663,6 +2805,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2
 
@@ -2675,6 +2818,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2
 
@@ -2689,6 +2833,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * ``second`` is :ref:`True<test_what_is_true>` in the two cases where :ref:`negate_second<test_negate_second>` returns :red:`False`. I add an :ref:`if statement<if statements>` for them
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-8
 
@@ -2706,6 +2851,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ``if something == False:`` can be written as ``return not something``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2
 
@@ -2718,6 +2864,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2
 
@@ -2730,6 +2877,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented lines and other statements from :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
 
     def negate_second(first, second):
@@ -2741,6 +2889,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented line and other statements from :ref:`project_first<test_project_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
 
     # def project_second():
@@ -2761,6 +2910,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented line and other statements from :ref:`project_second<test_project_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
     # def tautology():
@@ -2778,6 +2928,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the commented line and second :ref:`return statement<the return statement>` from :ref:`tautology<test_tautology>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
     def logical_false():
@@ -2793,6 +2944,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change :ref:`the return statement` of :ref:`logical_false<test_logical_false>` since :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2
 
@@ -2805,6 +2957,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove the second :ref:`return statement<the return statement>` from :ref:`logical_false<test_logical_false>` and :ref:`logical_true<test_logical_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
 
     # def logical_identity():

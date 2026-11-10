@@ -132,6 +132,7 @@ add TestFunctions object
 * I add an :ref:`object<everything is an object>` named ``Functions`` to ``test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 5, 7-8
 
@@ -153,6 +154,7 @@ add TestFunctions object
 * I change the name of the :ref:`object<everything is an object>` to ``TestFunctions``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 5-6
 
@@ -183,6 +185,7 @@ add TestFunctions object
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestFunctions``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2-3
 
@@ -220,6 +223,7 @@ add TestFunctions object
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 6-7
 
@@ -247,6 +251,7 @@ add TestFunctions object
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
     def assert_is_none(something):
@@ -297,6 +302,7 @@ test_making_a_function_w_pass with unittest
 * I move :ref:`test_making_a_function_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-4
 
@@ -350,6 +356,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4-6
 
@@ -372,6 +379,7 @@ the test is green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4-5
 
@@ -391,6 +399,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
     class TestFunctions(unittest.TestCase):
@@ -428,6 +437,7 @@ test_making_a_function_w_return with unittest
 * I move :ref:`test_making_a_function_w_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-4
 
@@ -482,6 +492,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 4-6
 
@@ -504,6 +515,7 @@ green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 4-5
 
@@ -520,6 +532,7 @@ green again.
 * I remove the commented lines from :ref:`test_making_a_function_w_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
             self.assertIs(src.functions.w_pass(), None)
@@ -559,6 +572,7 @@ test_making_a_function_w_return_none with unittest
 * I move :ref:`test_making_a_function_w_return_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5-6
 
@@ -617,6 +631,7 @@ green.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 4-6
 
@@ -639,6 +654,7 @@ green.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 4-5
 
@@ -658,6 +674,7 @@ green.
 * I remove the commented lines from :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
 
             self.assertIs(
@@ -699,6 +716,7 @@ test_what_happens_after_functions_return with unittest
 * I move :ref:`test_what_happens_after_functions_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 5-8
 
@@ -762,6 +780,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 6-9
 
@@ -787,6 +806,7 @@ green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 6-7
 
@@ -806,6 +826,7 @@ green again.
 * I remove the commented lines from :ref:`test_what_happens_after_functions_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
             self.assertIs(
@@ -850,6 +871,7 @@ test_constant_function with unittest
 * I move :ref:`test_constant_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 6-9
 
@@ -914,6 +936,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 6-8
 
@@ -938,6 +961,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 6-7
 
@@ -956,6 +980,7 @@ green again.
 * I remove the commented lines and the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` (since it is now a repetition) from :ref:`test_constant_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
 
             self.assertIs(
@@ -997,6 +1022,7 @@ test_identity_function with unittest
 * I move :ref:`test_identity_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 6-10
 
@@ -1060,6 +1086,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertNotEqual methods<test_assertNotEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4-6, 11-13
 
@@ -1089,6 +1116,7 @@ the test is green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4-5
 
@@ -1113,6 +1141,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 4-5
 
@@ -1132,6 +1161,7 @@ the test is green again.
 * I remove the commented lines and the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
 
         def test_constant_function(self):
@@ -1178,6 +1208,7 @@ test_why_use_a_function with unittest
 * I move :ref:`test_why_use_a_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 5-7, 9-18
 
@@ -1249,6 +1280,7 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 7, 9
 
@@ -1263,6 +1295,7 @@ green again.
             self.assertNotEqual(add_x(1), 4)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 2, 4, 6, 8
 
@@ -1276,6 +1309,7 @@ green again.
             self.assertNotEqual(add_x(5), 8)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 2, 4, 6, 8
 
@@ -1296,6 +1330,7 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 2-3, 5-6
 
@@ -1307,6 +1342,7 @@ green again.
             self.assertEqual(add_x(1), 4)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 2-3, 5-6
 
@@ -1318,6 +1354,7 @@ green again.
             self.assertEqual(add_x(3), 6)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 2-3, 5-6
 
@@ -1329,6 +1366,7 @@ green again.
             self.assertEqual(add_x(5), 8)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 2-3, 5-6
 
@@ -1340,6 +1378,7 @@ green again.
             self.assertEqual(add_x(7), 10)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 2-3, 5-6
 
@@ -1358,6 +1397,7 @@ green again.
 * I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
 
             self.assertEqual(
@@ -1408,6 +1448,7 @@ test_positional_arguments with unittest
 * I move :ref:`test_positional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 3-7
 
@@ -1420,6 +1461,7 @@ test_positional_arguments with unittest
             first, last = 'first', 'last'
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 1-8, 10-12
 
@@ -1438,6 +1480,7 @@ test_positional_arguments with unittest
 
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 1-6, 8-15
 
@@ -1505,6 +1548,7 @@ green.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 5-8, 13-16
 
@@ -1526,6 +1570,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 4-6
 
@@ -1537,6 +1582,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 7-10
 
@@ -1552,6 +1598,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 9-14
 
@@ -1578,6 +1625,7 @@ green.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 5-6, 14-15
 
@@ -1601,6 +1649,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 4-5
 
@@ -1613,6 +1662,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 7-8
 
@@ -1629,6 +1679,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 116
     :emphasize-lines: 9-10
 
@@ -1656,6 +1707,7 @@ green.
 * I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
 
             self.assertEqual(add_x(9), 12)
@@ -1667,6 +1719,7 @@ green.
             first, last = 'first', 'last'
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
 
             self.assertEqual(
@@ -1679,6 +1732,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
 
             self.assertEqual(
@@ -1686,6 +1740,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
 
             a_tuple = (0, 1, 2, 'n')
@@ -1696,6 +1751,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
 
             a_set = {0, 1, 2, 'n'}
@@ -1736,6 +1792,7 @@ test_keyword_arguments with unittest
 * I move :ref:`test_keyword_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 10-14
 
@@ -1755,6 +1812,7 @@ test_keyword_arguments with unittest
             first, last = 'first', 'last'
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 1-12
 
@@ -1772,6 +1830,7 @@ test_keyword_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 1-6
 
@@ -1783,6 +1842,7 @@ test_keyword_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 131
     :emphasize-lines: 1-9
 
@@ -1797,6 +1857,7 @@ test_keyword_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 1-9
 
@@ -1866,6 +1927,7 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 7-12, 19-24
 
@@ -1895,6 +1957,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 137
     :emphasize-lines: 7-12
 
@@ -1912,6 +1975,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 10-16
 
@@ -1933,6 +1997,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 167
     :emphasize-lines: 10-16
 
@@ -1961,6 +2026,7 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 7-8, 20-21
 
@@ -1992,6 +2058,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
     :emphasize-lines: 7-8
 
@@ -2010,6 +2077,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 10-11
 
@@ -2032,6 +2100,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 10-11
 
@@ -2061,6 +2130,7 @@ green again.
 * I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
 
             a_set = {0, 1, 2, 'n'}
@@ -2079,6 +2149,7 @@ green again.
             first, last = 'first', 'last'
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
 
             self.assertEqual(
@@ -2095,6 +2166,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
 
             self.assertEqual(
@@ -2105,6 +2177,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 131
 
             a_tuple = (0, 1, 2, 'n')
@@ -2118,6 +2191,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
 
             a_set = {0, 1, 2, 'n'}
@@ -2159,6 +2233,7 @@ test_args_and_kwargs with unittest
 * I move :ref:`test_args_and_kwargs` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 11-12, 14-19
 
@@ -2237,6 +2312,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 11-16
 
@@ -2269,6 +2345,7 @@ the test is green again.
 * I change the :ref:`call<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 7-8
 
@@ -2291,6 +2368,7 @@ the test is green again.
 * I add :ref:`variables<what is a variable?>` for the :ref:`call<how to call a function with input>` to ``src.functions.args_and_kwargs`` and my expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 5-8
 
@@ -2311,6 +2389,7 @@ the test is green again.
 * I remove the commented lines and the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
 
             a_set = {0, 1, 2, 'n'}
@@ -2362,6 +2441,7 @@ test_optional_arguments with unittest
 * I move :ref:`test_optional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 8-11, 13-19
 
@@ -2386,6 +2466,7 @@ test_optional_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 174
     :emphasize-lines: 1-7
 
@@ -2398,6 +2479,7 @@ test_optional_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 182
     :emphasize-lines: 1-7
 
@@ -2410,6 +2492,7 @@ test_optional_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 190
     :emphasize-lines: 1-8
 
@@ -2473,6 +2556,7 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 167
     :emphasize-lines: 8-13
 
@@ -2491,6 +2575,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 181
     :emphasize-lines: 8-13
 
@@ -2509,6 +2594,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 195
     :emphasize-lines: 8-13
 
@@ -2527,6 +2613,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 209
     :emphasize-lines: 9-15
 
@@ -2554,6 +2641,7 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 167
     :emphasize-lines: 8-9
 
@@ -2573,6 +2661,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 182
     :emphasize-lines: 8-9
 
@@ -2592,6 +2681,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 197
     :emphasize-lines: 8-9
 
@@ -2611,6 +2701,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 212
     :emphasize-lines: 9-10
 
@@ -2639,6 +2730,7 @@ green again.
 * I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
 
             self.assertEqual(
@@ -2662,6 +2754,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 174
 
             first_name, blow = 'joe', 'blow'
@@ -2673,6 +2766,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 182
 
             first_name = 'john'
@@ -2684,6 +2778,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 190
 
             last_name = 'smith'
@@ -2724,6 +2819,7 @@ test_unknown_number_of_arguments with unittest
 * I move :ref:`test_unknown_number_of_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 190
     :emphasize-lines: 10-13, 15-22
 
@@ -2751,6 +2847,7 @@ test_unknown_number_of_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 213
     :emphasize-lines: 1-7
 
@@ -2763,6 +2860,7 @@ test_unknown_number_of_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 221
     :emphasize-lines: 1-8
 
@@ -2776,6 +2874,7 @@ test_unknown_number_of_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 230
     :emphasize-lines: 1-5
 
@@ -2786,6 +2885,7 @@ test_unknown_number_of_arguments with unittest
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 236
     :emphasize-lines: 1-5, 7-9
 
@@ -2854,6 +2954,7 @@ green.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 205
     :emphasize-lines: 9-14
 
@@ -2873,6 +2974,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 220
     :emphasize-lines: 8-13
 
@@ -2891,6 +2993,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 234
     :emphasize-lines: 9-14
 
@@ -2910,6 +3013,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 249
     :emphasize-lines: 6-9
 
@@ -2924,6 +3028,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 259
     :emphasize-lines: 6-9, 14-16
 
@@ -2952,6 +3057,7 @@ green.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 205
     :emphasize-lines: 9-10
 
@@ -2972,6 +3078,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 221
     :emphasize-lines: 8-9
 
@@ -2991,6 +3098,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 236
     :emphasize-lines: 9-10
 
@@ -3011,6 +3119,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 252
     :emphasize-lines: 6-7
 
@@ -3026,6 +3135,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 263
     :emphasize-lines: 6-7, 15-16
 
@@ -3056,6 +3166,7 @@ green.
 * I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 190
 
             last_name = 'smith'
@@ -3082,6 +3193,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 213
 
             a_dictionary = {'a': 2, 'b': 3, 'c': 4}
@@ -3093,6 +3205,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 221
 
             a_tuple = (0, 1, 2)
@@ -3105,6 +3218,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 230
 
             a_tuple = (0, 1, 2, 'n')
@@ -3114,6 +3228,7 @@ green.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 236
 
             a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
@@ -3171,6 +3286,7 @@ I want to use :ref:`object attributes<what is an object attribute?>` to remove r
 * I add :ref:`object attributes<what is an object attribute?>` for ``'first'`` and ``'last'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3-4
 
@@ -3184,6 +3300,7 @@ I want to use :ref:`object attributes<what is an object attribute?>` to remove r
 * I use the :ref:`object attributes<what is an object attribute?>` for ``first`` and ``last`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 5, 8-11, 14-17
 
@@ -3211,6 +3328,7 @@ I want to use :ref:`object attributes<what is an object attribute?>` to remove r
 * I use the :ref:`object attributes<what is an object attribute?>` for ``first`` and ``last`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 5, 9-11, 13-14, 18-20, 22-23
 
@@ -3244,6 +3362,7 @@ I want to use :ref:`object attributes<what is an object attribute?>` to remove r
 * I use the :ref:`object attributes<what is an object attribute?>` for ``first`` and ``last`` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 2, 6-7, 9-10
 
@@ -3266,6 +3385,7 @@ I want to use :ref:`object attributes<what is an object attribute?>` to remove r
 * I remove the commented lines from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
 
         def test_args_and_kwargs(self):
@@ -3296,6 +3416,7 @@ extract a_tuple object attribute
 * I add an :ref:`object attribute<what is an object attribute?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5
 
@@ -3310,6 +3431,7 @@ extract a_tuple object attribute
 * I use the new :ref:`object attribute<what is an object attribute?>` for ``a_tuple`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 5, 8-13
 
@@ -3335,6 +3457,7 @@ extract a_tuple object attribute
 * I use the new :ref:`object attribute<what is an object attribute?>` for ``a_tuple`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 138
     :emphasize-lines: 8, 12-13, 16-17
 
@@ -3380,6 +3503,7 @@ extract a_list object attribute
 * I add an :ref:`object attribute<what is an object attribute?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 6
 
@@ -3395,6 +3519,7 @@ extract a_list object attribute
 * I use the new :ref:`object attribute<what is an object attribute?>` for ``a_list`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2, 6-7, 10-11
 
@@ -3418,6 +3543,7 @@ extract a_list object attribute
 * I use the new :ref:`object attribute<what is an object attribute?>` for ``a_list`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 148
     :emphasize-lines: 2, 7-8, 11-12
 
@@ -3457,6 +3583,7 @@ extract a_set object attribute
 * I add an :ref:`object attribute<what is an object attribute?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 7
 
@@ -3473,6 +3600,7 @@ extract a_set object attribute
 * I use the new :ref:`object attribute<what is an object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 1, 5-6, 8-9
 
@@ -3494,6 +3622,7 @@ extract a_set object attribute
 * I use the new :ref:`object attributes<what is an object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 165
     :emphasize-lines: 1, 5-6, 9-10
 
@@ -3531,6 +3660,7 @@ extract a_dictionary object attribute
 * I add an :ref:`object attribute<what is an object attribute?>` for ``a_dictionary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 8
 
@@ -3548,6 +3678,7 @@ extract a_dictionary object attribute
 * I use the new :ref:`object attribute<what is an object attribute?>` for ``a_dictionary`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 2, 6-7, 10-11
 
@@ -3571,6 +3702,7 @@ extract a_dictionary object attribute
 * I remove the commented lines from :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
 
         def test_positional_arguments(self):
@@ -3592,6 +3724,7 @@ extract a_dictionary object attribute
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
 
             self.assertEqual(
@@ -3613,6 +3746,7 @@ extract a_dictionary object attribute
 * I use the new :ref:`object attributes<what is an object attribute?>` for ``a_dictionary`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 2, 5-6, 11-12
 
@@ -3637,6 +3771,7 @@ extract a_dictionary object attribute
 * I remove the commented lines from :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
 
         def test_keyword_arguments(self):
@@ -3660,6 +3795,7 @@ extract a_dictionary object attribute
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
 
             self.assertEqual(

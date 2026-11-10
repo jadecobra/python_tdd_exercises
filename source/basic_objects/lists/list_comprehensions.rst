@@ -506,6 +506,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 4
 

@@ -482,6 +482,7 @@ test_home_page
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
     :emphasize-text: NameError
@@ -521,6 +522,7 @@ test_home_page
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
     :emphasize-text: ModuleNotFoundError
@@ -538,6 +540,7 @@ test_home_page
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -571,6 +574,7 @@ test_home_page
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_home_page` in ``test_calculator_website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3-4
 
@@ -588,6 +592,7 @@ test_home_page
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 5
     :emphasize-text: AssertionError
@@ -601,6 +606,7 @@ test_home_page
 * I change the expectation in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 1
 
@@ -621,6 +627,7 @@ test_home_page
 * I change the expectation in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -726,6 +733,7 @@ how to view the website
 * I add another :ref:`assertion<what is an assertion?>` for text from the website to :ref:`test_home_page` in ``test_calculator_website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5-8
 
@@ -777,6 +785,7 @@ how to view the website
 * I make the expectation a `bytes object`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
 
@@ -863,6 +872,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I add a new :ref:`function<what is a function?>` to ``website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6-9, 11-15
 
@@ -1010,6 +1020,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I add an :ref:`assertion<what is an assertion?>` to make sure I get the right result back in ``test_calculator_website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 11
 
@@ -1036,6 +1047,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I change ``first_input`` to a float_ in ``website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 4
 
@@ -1054,6 +1066,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I change ``second_input`` to a float_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 6
 
@@ -1079,6 +1092,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I copy the result from the terminal_ and paste it in ``test_calculator_website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 11-14
 
@@ -1112,6 +1126,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I point a :ref:`variable<what is a variable?>` to the result of a call to the ``a_random_number`` :ref:`function<what is a function?>` of ``test_calculator``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 2
 
@@ -1122,6 +1137,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I use the new :ref:`variable<what is a variable?>` as the first input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 4-5
 
@@ -1145,6 +1161,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I try an `f-string`_ so I can use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3
 
@@ -1164,6 +1181,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 7
     :emphasize-text: SyntaxError
@@ -1185,6 +1203,7 @@ how to change a bytes object to a string
 * I change the `bytes object`_ to a string_ with `bytes.decode`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 2-3
 
@@ -1205,6 +1224,7 @@ how to change a bytes object to a string
 * I add the :ref:`variable<what is a variable?>` to the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3
 
@@ -1220,6 +1240,7 @@ how to change a bytes object to a string
 * I add another :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3
 
@@ -1231,6 +1252,7 @@ how to change a bytes object to a string
 * I use the :ref:`variable<what is a variable?>` for the second input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 6-7
 
@@ -1253,6 +1275,7 @@ how to change a bytes object to a string
 * I add ``y`` to the `f-string`_ in the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 3
 
@@ -1266,6 +1289,7 @@ how to change a bytes object to a string
 * I remove the comments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
         def test_calculations(self):
@@ -1290,6 +1314,7 @@ how to change a bytes object to a string
 * I want to test the other operations. I add a :ref:`dictionary<what is a dictionary?>` for the operations
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 5-10
 
@@ -1309,6 +1334,7 @@ how to change a bytes object to a string
 * I add a :ref:`for loop<what is a for loop?>` to the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3-16
 
@@ -1335,6 +1361,7 @@ how to change a bytes object to a string
 * I add a :ref:`key<test_keys_of_a_dictionary>` to the ``data`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 6
 
@@ -1350,6 +1377,7 @@ how to change a bytes object to a string
 * I add a :ref:`variable<what is a variable?>` for the :ref:`calculator function<how to make a calculator>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 3-5
 
@@ -1366,6 +1394,7 @@ how to change a bytes object to a string
 * I add another :ref:`variable<what is a variable?>` for the expected result
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4
 
@@ -1381,6 +1410,7 @@ how to change a bytes object to a string
 * I change the expectation in the :ref:`assertion<what is an assertion?>` to use the new :ref:`variables<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 3-7
 
@@ -1405,6 +1435,7 @@ how to change a bytes object to a string
 * I add a :ref:`variable<what is a variable?>` for value the test passes for the operation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 7
 
@@ -1423,6 +1454,7 @@ how to change a bytes object to a string
 * I add a :ref:`dictionary<what is a dictionary?>` for the operations
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 3-8
 
@@ -1440,6 +1472,7 @@ how to change a bytes object to a string
 * I use the ``__getattribute__`` :ref:`method<what is a method?>` for the result
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 1-4
 
@@ -1455,6 +1488,7 @@ how to change a bytes object to a string
 * I change :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 2-3
 
@@ -1469,6 +1503,7 @@ how to change a bytes object to a string
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
 
     @app.route('/calculate', methods=['POST'])
@@ -1499,6 +1534,7 @@ how to change a bytes object to a string
 * I remove the comments from :ref:`test_calculations` in ``test_calculator_website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
         def test_calculations(self):
@@ -1867,6 +1903,7 @@ good
 * I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-6
 
@@ -1892,6 +1929,7 @@ good
 * I change the expectation of the :ref:`assertion<what is an assertion?>` in ``test_calculator_website.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 15-18
 
@@ -1931,6 +1969,7 @@ good
 * I made the same client in each test. I add an :ref:`object attribute<what is an object attribute?>` for it in the `setUp method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 3-4
 
@@ -1944,6 +1983,7 @@ good
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_home_page`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
 
         def test_home_page(self):
@@ -1956,6 +1996,7 @@ good
 * I use it directly in the response
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 1
 
@@ -1966,6 +2007,7 @@ good
 * I remove the ``client`` :ref:`variable<what is a variable?>` and the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
 
         def test_home_page(self):
@@ -1985,6 +2027,7 @@ good
 * I use the :ref:`object attribute<what is an object attribute?>` in :ref:`test_calculations`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-4
 
@@ -2005,6 +2048,7 @@ good
 * I remove the commented line and the ``client`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
 
         def test_calculations(self):
@@ -2051,6 +2095,7 @@ good
 * I use the :ref:`object attribute<what is an object attribute?>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 5-6
 
@@ -2073,6 +2118,7 @@ good
 * I remove the commented line and ``client`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
 
         def test_website_handling_zero_division_error(self):
@@ -2103,6 +2149,7 @@ good
 * I add :ref:`object attributes<test_attribute_error_w_object_attributes>` for the random numbers to the `setUp method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3
 
@@ -2115,6 +2162,7 @@ good
 * I use it in :ref:`test_calculations`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 2-3
 
@@ -2128,6 +2176,7 @@ good
 * I use the ``Rename Symbol`` to change ``x`` to ``self.x``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 3, 18, 28, 32
 
@@ -2172,6 +2221,7 @@ good
 * I remove the commented line and ``self.x = self.x``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
         def test_calculations(self):
@@ -2213,6 +2263,7 @@ good
 * I use the ``Rename Symbol`` feature to change ``x`` to ``self.x`` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 2, 6, 14
 
@@ -2239,6 +2290,7 @@ good
 * I remove ``self.x = tests.test_calculator.a_random_number()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
 
         def test_website_handling_zero_division_error(self):
@@ -2282,6 +2334,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 * I add another :ref:`assertion<what is an assertion?>` where the second input is not a number and the first input is a number
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 7-12
 
@@ -2376,6 +2429,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 * I change the name of :ref:`test_calculator_sends_message_when_input_is_not_a_number` to :ref:`test_calculator_sends_message_when_inputs_are_not_numbers` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 1
 
@@ -2445,6 +2499,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 * I add a :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 2-8
 

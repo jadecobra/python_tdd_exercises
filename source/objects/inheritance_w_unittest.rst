@@ -145,6 +145,7 @@ add TestObjects class
 * I change the name of the :ref:`object<everything is an object>` to ``TestObjects``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4-5
 
@@ -167,6 +168,7 @@ add TestObjects class
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 5
     :emphasize-text: AttributeError
@@ -188,6 +190,7 @@ add TestObjects class
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestObjects``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5-6
 
@@ -228,6 +231,7 @@ add TestObjects class
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 6-7
 
@@ -255,6 +259,7 @@ add TestObjects class
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
     class WObject(object): pass
@@ -303,6 +308,7 @@ test_making_an_object_w_pass with unittest
 
 * I move :ref:`test_making_an_object_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-5
 
@@ -360,6 +366,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4
 
@@ -381,6 +388,7 @@ the test is green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4-5
 
@@ -397,6 +405,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -417,6 +426,7 @@ the test is green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2-3
 
@@ -432,6 +442,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_making_an_object_w_pass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
     class TestObjects(unittest.TestCase):
@@ -472,6 +483,7 @@ test_making_an_object_w_parentheses with unittest
 * I move :ref:`test_making_an_object_w_parentheses` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 4-6
 
@@ -530,6 +542,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 4-6
 
@@ -553,6 +566,7 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 4-5
 
@@ -571,6 +585,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2-4
 
@@ -593,6 +608,7 @@ green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2-3
 
@@ -610,6 +626,7 @@ green again.
 * I remove the commented lines from :ref:`test_making_an_object_w_parentheses`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 5, 8
 
@@ -652,6 +669,7 @@ test_making_an_object_w_object with unittest
 * I move :ref:`test_making_an_object_w_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 4-6
 
@@ -710,6 +728,7 @@ green.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 4
 
@@ -731,6 +750,7 @@ green.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 4-5
 
@@ -747,6 +767,7 @@ green.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 2
 
@@ -767,6 +788,7 @@ green.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 2-3
 
@@ -782,6 +804,7 @@ green.
 * I remove the commented lines from :ref:`test_making_an_object_w_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
 
             assert issubclass(WParentheses, object)
@@ -823,6 +846,7 @@ test_is_none_an_object with unittest
 * I move :ref:`test_is_none_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 4-7
 
@@ -883,6 +907,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 4
 
@@ -904,6 +929,7 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 4-5
 
@@ -921,6 +947,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsSubobject method<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 3
 
@@ -946,6 +973,7 @@ green again.
 * I comment out the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 3
 
@@ -961,6 +989,7 @@ green again.
 * I remove the other commented lines from :ref:`test_is_none_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
 
             assert issubclass(WObject, object)
@@ -1003,6 +1032,7 @@ test_is_a_boolean_an_object with unittest
 * I move :ref:`test_is_a_boolean_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 5-7
 
@@ -1063,6 +1093,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 4, 7
 
@@ -1088,6 +1119,7 @@ the test is green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 4-5
 
@@ -1110,6 +1142,7 @@ the test is green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2-3
 
@@ -1125,6 +1158,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_is_a_boolean_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
 
             # fails because None is not a class
@@ -1167,6 +1201,7 @@ test_is_an_integer_an_object with unittest
 * I move :ref:`test_is_an_integer_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 4-6
 
@@ -1223,6 +1258,7 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 4, 7
 
@@ -1248,6 +1284,7 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 4-5
 
@@ -1271,6 +1308,7 @@ green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 2-3
 
@@ -1286,6 +1324,7 @@ green again.
 * I remove the commented lines from :ref:`test_is_an_integer_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
 
             assert issubclass(bool, object)
@@ -1327,6 +1366,7 @@ test_is_a_float_an_object with unittest
 * I move :ref:`test_is_a_float_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 4-6
 
@@ -1386,6 +1426,7 @@ green.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4, 7
 
@@ -1411,6 +1452,7 @@ green.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4-5
 
@@ -1434,6 +1476,7 @@ green.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2-3
 
@@ -1449,6 +1492,7 @@ green.
 * I remove the commented lines from :ref:`test_is_a_float_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
 
             assert issubclass(int, object)
@@ -1490,6 +1534,7 @@ test_is_a_string_an_object with unittest
 * I move :ref:`test_is_a_string_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 4-6
 
@@ -1546,6 +1591,7 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 4, 7
 
@@ -1571,6 +1617,7 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 4-5
 
@@ -1594,6 +1641,7 @@ green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2-3
 
@@ -1609,6 +1657,7 @@ green again.
 * I remove the commented lines from :ref:`test_is_a_string_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
 
             assert issubclass(float, object)
@@ -1650,6 +1699,7 @@ test_is_a_tuple_an_object with unittest
 * I move :ref:`test_is_a_tuple_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 4-6
 
@@ -1708,6 +1758,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 4, 7
 
@@ -1733,6 +1784,7 @@ the test is green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 4-5
 
@@ -1756,6 +1808,7 @@ the test is green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 2-3
 
@@ -1771,6 +1824,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
 
             assert issubclass(str, object)
@@ -1812,6 +1866,7 @@ test_is_a_list_an_object with unittest
 * I move :ref:`test_is_a_list_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4-6
 
@@ -1870,6 +1925,7 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 4, 7
 
@@ -1895,6 +1951,7 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 4-5
 
@@ -1918,6 +1975,7 @@ green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 2-3
 
@@ -1933,6 +1991,7 @@ green again.
 * I remove the commented lines from :ref:`test_is_a_list_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
 
             assert issubclass(tuple, object)
@@ -1974,6 +2033,7 @@ test_is_a_set_an_object with unittest
 * I move :ref:`test_is_a_set_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 4-6
 
@@ -2032,6 +2092,7 @@ green.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4, 7
 
@@ -2057,6 +2118,7 @@ green.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4-5
 
@@ -2080,6 +2142,7 @@ green.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 2-3
 
@@ -2095,6 +2158,7 @@ green.
 * I remove the commented lines from :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
 
             assert issubclass(list, object)
@@ -2136,6 +2200,7 @@ test_is_a_dictionary_an_object with unittest
 * I move :ref:`test_is_a_dictionary_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 4-6
 
@@ -2194,6 +2259,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 4, 7
 
@@ -2219,6 +2285,7 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 4-5
 
@@ -2242,6 +2309,7 @@ green again.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 2-3
 
@@ -2257,6 +2325,7 @@ green again.
 * I remove the commented lines from :ref:`test_is_a_dictionary_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
 
             assert issubclass(set, object)
@@ -2298,6 +2367,7 @@ test_dir_object with unittest
 * I move :ref:`test_dir_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 4-16
 
@@ -2366,6 +2436,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 15
 
@@ -2393,6 +2464,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 2-3
 
@@ -2405,6 +2477,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_dir_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
 
             assert issubclass(dict, object)
@@ -2415,6 +2488,7 @@ the test is green again.
             my_expectation = [
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
 
             ]

@@ -133,6 +133,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the expectation of ``assert_equal(reality, 'BOOM!!!')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 2
 
@@ -156,6 +157,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the expectation of ``self.assertEqual(reality, 'BAP!!!')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 3
 
@@ -178,6 +180,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the other statements from :ref:`test_assert_keyword` because they are now covered by the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
 
         def test_assert_keyword(self):
@@ -261,6 +264,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`None<what is None?>` to ``an_object`` in ``assert_is_not_none(None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 2
 
@@ -295,6 +299,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the second ``an_object`` to :ref:`None<what is None?>` in ``self.assertIsNot(an_object, an_object)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3
 
@@ -312,6 +317,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`None<what is None?>` to ``an_object``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 4
 
@@ -335,6 +341,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the other statements from :ref:`test_assertion_error_w_none` because they are now covered by the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
 
         def test_assertion_error_w_none(self):
@@ -415,6 +422,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`False<test_what_is_false>` to ``an_object`` in ``assert_is_not_false(False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 2
 
@@ -434,6 +442,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``self.assertIsNot(an_object, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 3
 
@@ -456,6 +465,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the other statements from :ref:`test_assertion_error_w_false` because they are now covered by the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
 
         def test_assertion_error_w_false(self):
@@ -534,6 +544,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`True<test_what_is_true>` to ``an_object`` in ``assert_is_not_true(True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2
 
@@ -553,6 +564,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``self.assertIsNot(an_object, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3
 
@@ -575,6 +587,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the other statements from :ref:`test_assertion_error_w_true` because they are now covered by the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
 
         def test_assertion_error_w_true(self):
@@ -623,6 +636,7 @@ I can use an :ref:`object attribute<what is an object attribute?>` with a :ref:`
 * I add an :ref:`object attribute<what is an object attribute?>` to the :ref:`TestAssertionError object<add TestPerson object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 10-14
 
@@ -646,6 +660,7 @@ I can use an :ref:`object attribute<what is an object attribute?>` with a :ref:`
 * I use the new :ref:`object attribute<what is an object attribute?>` with a :ref:`single starred expression<single starred expressions>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 7
 
@@ -669,6 +684,7 @@ I can use an :ref:`object attribute<what is an object attribute?>` with a :ref:`
 * I change ``an_object`` to :ref:`None<what is None?>` in ``assert_is_not_none(an_object)`` to make sure the test still works as expected
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 2
 
@@ -735,6 +751,7 @@ the test is green again.
 * I use the new :ref:`object attribute<what is an object attribute?>` with a :ref:`single starred expression<single starred expressions>` in :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 6
 
@@ -756,6 +773,7 @@ the test is green again.
 * I use the new :ref:`object attribute<what is an object attribute?>` with a :ref:`single starred expression<single starred expressions>` in :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 6
 
@@ -777,6 +795,7 @@ the test is green again.
 * I remove the other :ref:`object attributes<what is an object attribute?>` because they are only used by the ``basic_objects`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3
 
@@ -812,6 +831,7 @@ test_assertion_error_w_equality with a for loop
 * I add two :ref:`for loops<what is a for loop?>` to :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 2-6
 
@@ -880,6 +900,7 @@ the test passes.
 * I remove the other statements from :ref:`test_assertion_error_w_equality` because they are now covered by the :ref:`for loops<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
 
         def test_assertion_error_w_equality(self):
@@ -970,6 +991,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move ``assert_is_not_true(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 2-5
 
@@ -990,6 +1012,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move ``self.assertIsNot(an_object, True)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 7-10
 
@@ -1019,6 +1042,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the first :ref:`assertions<what is an assertion?>` from :ref:`test_assertion_error_w_true` because they are now covered by the :ref:`for loop<what is a for loop?>` and :ref:`try statements<how to handle Exceptions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
 
         def test_assertion_error_w_true(self):
@@ -1041,6 +1065,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add :ref:`False<test_what_is_false>` to the tuple_ in :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 6
 
@@ -1063,6 +1088,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move ``assert_is_not_false(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-5
 
@@ -1083,6 +1109,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move ``self.assertIsNot(an_object, False)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 7-10
 
@@ -1104,6 +1131,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the first :ref:`assertions<what is an assertion?>` from :ref:`test_assertion_error_w_false` because they are now covered by the :ref:`for loop<what is a for loop?>` and :ref:`try statements<how to handle Exceptions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
 
         def test_assertion_error_w_false(self):
@@ -1126,6 +1154,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add :ref:`None<what is None?>` to the tuple_ in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 7
 
@@ -1149,6 +1178,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move ``assert_is_not_none(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2-5
 
@@ -1171,6 +1201,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move ``self.assertIsNot(an_object, None)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 7-10
 
@@ -1197,6 +1228,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move ``self.assertIsNotNone(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 6-9
 
@@ -1217,6 +1249,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the first :ref:`assertions<what is an assertion?>` from :ref:`test_assertion_error_w_none` because they are now covered by the :ref:`for loop<what is a for loop?>` and :ref:`try statements<how to handle Exceptions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
         def test_assertion_error_w_none(self):
@@ -1244,6 +1277,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add :ref:`None<what is None?>`, :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` to the ``basic_objects`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3-6
 
@@ -1261,6 +1295,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove :ref:`None<what is None?>`, :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` from :ref:`test_assertion_error_w_none` because they are now part of the ``basic_objects`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 2
 
@@ -1273,6 +1308,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I make the same change to :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 2
 
@@ -1285,6 +1321,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I do the same thing to :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2
 
@@ -1297,6 +1334,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I do the same thing to :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 2-3
 
@@ -1420,6 +1458,7 @@ the test passes.
 * I remove the :ref:`try statement<how to handle Exceptions>` for the :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` in :ref:`test_assertion_error_w_none` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
 
         def test_assertion_error_w_none(self):
@@ -1440,6 +1479,7 @@ the test passes.
 * I remove the :ref:`try statement<how to handle Exceptions>` for the :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` in :ref:`test_assertion_error_w_false` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
 
         def test_assertion_error_w_false(self):
@@ -1455,6 +1495,7 @@ the test passes.
 * I remove the :ref:`try statement<how to handle Exceptions>` for the :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` in :ref:`test_assertion_error_w_true` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
 
         def test_assertion_error_w_true(self):
@@ -1470,6 +1511,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for equality to :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 10
 
@@ -1497,6 +1539,7 @@ the test passes.
 * I move ``self.assertEqual(first, second)`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is equal to the second one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 7-10
 
@@ -1519,6 +1562,7 @@ the test passes.
 * I remove :ref:`test_assertion_error_w_is_vs_equal` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
 
         def test_assertion_error_w_true(self):
@@ -1546,6 +1590,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_true<extract assert_is_not_true function>` back to the :ref:`assert statement<what is an assertion?>` in the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 5
 
@@ -1564,6 +1609,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_false<extract assert_is_not_false function>` back to the :ref:`assert statement<what is an assertion?>` in the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 5
 
@@ -1582,6 +1628,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` to :ref:`assert_is_not_none<extract assert_is_not_none function>` back to the :ref:`assert statement<what is an assertion?>` in the :ref:`assert_is_not function<extract assert_is_not function>`, in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 5
 
@@ -1598,6 +1645,7 @@ the test passes.
 * I add a simple :ref:`assert statement<what is an assertion?>` for when the first :ref:`object<everything is an object>` for the cases where the first item is the same :ref:`object<everything is an object>` as the second one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 5
 
@@ -1623,6 +1671,7 @@ the test passes.
 * I move ``assert first is second`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is NOT the same :ref:`object<everything is an object>` as the second one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 5-8
 
@@ -1652,6 +1701,7 @@ the test passes.
 * I remove the :ref:`try statement<how to handle Exceptions>` for the simple :ref:`assert statements<what is an assertion?>` in :ref:`test_assertion_error_w_none` since it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
 
         def test_assertion_error_w_none(self):
@@ -1667,6 +1717,7 @@ the test passes.
 * I remove :ref:`test_assertion_error_w_false` because it is now covered by :ref:`test_assertion_error<extract test_assertion_error>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
 
         def test_assertion_error_w_none(self):

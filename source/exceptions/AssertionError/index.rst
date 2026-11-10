@@ -526,6 +526,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2-3
 
@@ -546,6 +547,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
   I add another statement to show the "addition" of two strings_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 5
 
@@ -563,6 +565,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
 * I change the statement to an :ref:`assertion<what is an assertion?>` with `the assert keyword`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 5-6
 
@@ -587,6 +590,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 2-3
 
@@ -663,6 +667,7 @@ For example, if I have people fill a form and I want a test for when they leave 
 * I add a new statement to ``test_assertion_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -677,6 +682,7 @@ For example, if I have people fill a form and I want a test for when they leave 
 * I add :ref:`the assert keyword`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3-4
 
@@ -728,6 +734,7 @@ the test passes.
 * I add a note with what I learned from the experiment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6-7
 
@@ -747,6 +754,7 @@ the test passes.
 * I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`False<test_what_is_false>`.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -768,6 +776,7 @@ the test passes.
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5-6
 
@@ -786,6 +795,7 @@ the test passes.
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 6
 
@@ -804,6 +814,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 4
 
@@ -824,6 +835,7 @@ the test passes.
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 4-5
 
@@ -841,6 +853,7 @@ the test passes.
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 2
 
@@ -857,6 +870,7 @@ the test passes.
 * I add an `assert statement`_ for an integer_ (a whole number without decimals)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4
 
@@ -877,6 +891,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4-5
 
@@ -894,6 +909,7 @@ the test passes.
 * I add a note about integers_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -908,6 +924,7 @@ the test passes.
 * I add an `assert statement`_ for a float_ (binary floating point decimal number)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4
 
@@ -928,6 +945,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4-5
 
@@ -945,6 +963,7 @@ the test passes.
 * I add a note about floats_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2
 
@@ -960,6 +979,7 @@ the test passes.
 * I add an `assert statement`_ for a string_ (anything in :ref:`quotes`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 4
 
@@ -982,6 +1002,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 4-5
 
@@ -999,6 +1020,7 @@ the test passes.
 * I add a note about strings_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 2
 
@@ -1015,6 +1037,7 @@ the test passes.
 * I add an `assert statement`_ for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 4
 
@@ -1037,6 +1060,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 4-5
 
@@ -1054,6 +1078,7 @@ the test passes.
 * I add a note about tuples_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2
 
@@ -1071,6 +1096,7 @@ the test passes.
 * I add an `assert statement`_ for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 4
 
@@ -1093,6 +1119,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 4-5
 
@@ -1110,6 +1137,7 @@ the test passes.
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 2
 
@@ -1128,6 +1156,7 @@ the test passes.
 * I add an `assert statement`_ for a set_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 4
 
@@ -1148,6 +1177,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 4-5
 
@@ -1165,6 +1195,7 @@ the test passes.
 * I add a note about sets_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 2
 
@@ -1184,6 +1215,7 @@ the test passes.
 * I add an `assert statement`_ for a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 4
 
@@ -1204,6 +1236,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 4-5
 
@@ -1221,6 +1254,7 @@ the test passes.
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 2
 
@@ -1243,6 +1277,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
 
     assert 'I am' + ' alive' == 'I am alive'
@@ -1326,6 +1361,7 @@ I can use :ref:`assertions<what is an assertion?>` to test if something is the s
 * :ref:`False<test_what_is_false>` is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`. Is :ref:`None<what is None?>` the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`? I add a new statement to ``test_assertion_error.py`` with a comment to group the new statements that will come after
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4-5
 
@@ -1343,6 +1379,7 @@ I can use :ref:`assertions<what is an assertion?>` to test if something is the s
 * I add :ref:`the assert keyword`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 2-3
 
@@ -1396,6 +1433,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 11
 
@@ -1417,6 +1455,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a failing `assert statement`_ about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 6
 
@@ -1441,6 +1480,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 6-7
 
@@ -1460,6 +1500,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 10
 
@@ -1480,6 +1521,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if :ref:`True<test_what_is_true>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 4
 
@@ -1502,6 +1544,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 4-5
 
@@ -1519,6 +1562,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 9
 
@@ -1538,6 +1582,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4
 
@@ -1560,6 +1605,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4-5
 
@@ -1577,6 +1623,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about integers_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 8
 
@@ -1595,6 +1642,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4
 
@@ -1617,6 +1665,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4-5
 
@@ -1634,6 +1683,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about floats_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 7
 
@@ -1651,6 +1701,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4
 
@@ -1673,6 +1724,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4-5
 
@@ -1691,6 +1743,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about strings_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 6
 
@@ -1707,6 +1760,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 4
 
@@ -1729,6 +1783,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 4-5
 
@@ -1746,6 +1801,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about tuples_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 5
 
@@ -1761,6 +1817,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 4
 
@@ -1783,6 +1840,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 4-5
 
@@ -1800,6 +1858,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4
 
@@ -1814,6 +1873,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a set_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 4
 
@@ -1836,6 +1896,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 4-5
 
@@ -1852,6 +1913,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about sets_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 3
 
@@ -1865,6 +1927,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 4
 
@@ -1887,6 +1950,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 4-5
 
@@ -1904,6 +1968,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2
 
@@ -1914,6 +1979,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I remove the commented :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
 
     # test AssertionError with False
@@ -1972,6 +2038,7 @@ test AssertionError with True
 * I add a new statement to ``test_assertion_error.py`` with a comment to group these new statements
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 4-5
 
@@ -1989,6 +2056,7 @@ test AssertionError with True
 * I add :ref:`the assert keyword`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 2-3
 
@@ -2042,6 +2110,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 20
 
@@ -2073,6 +2142,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * :ref:`True<test_what_is_true>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`. Is :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`? I add an `assert statement`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 6
 
@@ -2097,6 +2167,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 6-7
 
@@ -2116,6 +2187,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 18
 
@@ -2145,6 +2217,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ about :ref:`True<test_what_is_true>` that will fail
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4
 
@@ -2165,6 +2238,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
   because :ref:`True is True<test_what_is_true>`.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4-5
 
@@ -2182,6 +2256,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 16
 
@@ -2209,6 +2284,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 4
 
@@ -2231,6 +2307,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 4-5
 
@@ -2248,6 +2325,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about integers_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 14
 
@@ -2273,6 +2351,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 4
 
@@ -2295,6 +2374,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 4-5
 
@@ -2312,6 +2392,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about floats_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 12
 
@@ -2335,6 +2416,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 4
 
@@ -2357,6 +2439,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 4-5
 
@@ -2374,6 +2457,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about strings_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 10
 
@@ -2395,6 +2479,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 4
 
@@ -2415,6 +2500,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 4-5
 
@@ -2432,6 +2518,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about tuples_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 8
 
@@ -2451,6 +2538,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 4
 
@@ -2473,6 +2561,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 4-5
 
@@ -2490,6 +2579,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 6
 
@@ -2507,6 +2597,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a set_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4
 
@@ -2529,6 +2620,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4-5
 
@@ -2546,6 +2638,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about sets_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 4
 
@@ -2561,6 +2654,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 4
 
@@ -2583,6 +2677,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 4-5
 
@@ -2600,6 +2695,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 2
 
@@ -2611,6 +2707,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I remove the commented :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
 
     # test AssertionError with True
@@ -2673,6 +2770,7 @@ I can also use :ref:`assertions<what is an assertion?>` to test if two things ar
 * I add a new statement to ``test_assertion_error.py`` with a comment to group these new statements
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 4-5
 
@@ -2691,6 +2789,7 @@ I can also use :ref:`assertions<what is an assertion?>` to test if two things ar
 * I add :ref:`the assert keyword`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 2-3
 
@@ -2745,6 +2844,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add to the ``None is None`` note
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 31
 
@@ -2783,6 +2883,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 6
 
@@ -2807,6 +2908,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 6-7
 
@@ -2826,6 +2928,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add notes about :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` because equality goes both ways
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 28, 31
 
@@ -2866,6 +2969,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 4
 
@@ -2888,6 +2992,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 4-5
 
@@ -2905,6 +3010,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add notes about :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` because equality goes both ways
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 24, 27
 
@@ -2943,6 +3049,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with itself
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 4
 
@@ -2965,6 +3072,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 4-5
 
@@ -2982,6 +3090,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add to the ``False is False`` note
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 29
 
@@ -3022,6 +3131,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add a new failing :ref:`assertion<what is an assertion?>` to compare :ref:`True<test_what_is_true>` with :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4
 
@@ -3044,6 +3154,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4-5
 
@@ -3061,6 +3172,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add notes about :ref:`True<test_what_is_true>` and :ref:`None<what is None?>` because equality goes both ways
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 26, 33
 
@@ -3105,6 +3217,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`True<test_what_is_true>` with itself
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 4
 
@@ -3127,6 +3240,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 4-5
 
@@ -3144,6 +3258,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add to the ``True is True`` note
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 23
 
@@ -3192,6 +3307,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I remove the commented :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
 
     # test AssertionError with equality
@@ -3252,6 +3368,7 @@ Things can be equal without being the same exact :ref:`object<everything is an o
 * I add statements to test is versus equal
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4-5
 
@@ -3269,6 +3386,7 @@ Things can be equal without being the same exact :ref:`object<everything is an o
 * I add :ref:`the assert keyword`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 2-3
 
@@ -3322,6 +3440,7 @@ the test passes because an integer_ is not the same :ref:`object<everything is a
 * I add another :ref:`assertion<what is an assertion?>`, this time with ``!=``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 6
 
@@ -3346,6 +3465,7 @@ the test passes because an integer_ is not the same :ref:`object<everything is a
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 6-7
 
@@ -3365,6 +3485,7 @@ the test passes because an integer_ is not the same :ref:`object<everything is a
 * I remove the commented :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
 
     # test AssertionError with is vs equal
@@ -3426,6 +3547,7 @@ test_assertion_error_w_is_vs_equal
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with is vs equal`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4
 
@@ -3450,6 +3572,7 @@ test_assertion_error_w_is_vs_equal
 * I add IndentationError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 134
     :emphasize-lines: 3
     :emphasize-text: IndentationError
@@ -3461,6 +3584,7 @@ test_assertion_error_w_is_vs_equal
 * I indent the :ref:`assertions<what is an assertion?>` with four spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 5-6, 8
 
@@ -3481,6 +3605,7 @@ test_assertion_error_w_is_vs_equal
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4-5
 
@@ -3521,6 +3646,7 @@ test_assertion_error_w_is_vs_equal
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
 
     assert True == True
@@ -3560,6 +3686,7 @@ test_assertion_error_w_equality
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with equality`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 4
 
@@ -3582,6 +3709,7 @@ test_assertion_error_w_equality
 * I indent the :ref:`assertions<what is an assertion?>` with four spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 5-6, 8, 10, 12, 14, 16
 
@@ -3616,6 +3744,7 @@ test_assertion_error_w_equality
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 4-5
 
@@ -3640,6 +3769,7 @@ test_assertion_error_w_equality
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
 
     assert {} is not True
@@ -3674,6 +3804,7 @@ test_assertion_error_w_true
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with True`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 4
 
@@ -3696,6 +3827,7 @@ test_assertion_error_w_true
 * I indent the :ref:`assertions<what is an assertion?>` with four spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 5-6, 8, 10, 12, 14, 16, 18, 20, 22, 24
 
@@ -3738,6 +3870,7 @@ test_assertion_error_w_true
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 4-5
 
@@ -3762,6 +3895,7 @@ test_assertion_error_w_true
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
 
     assert {} is not False
@@ -3796,6 +3930,7 @@ test_assertion_error_w_false
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with False`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4
 
@@ -3818,6 +3953,7 @@ test_assertion_error_w_false
 * I indent the :ref:`assertions<what is an assertion?>` with four spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5-6, 8, 10, 12, 14, 16, 18, 20, 22, 24
 
@@ -3861,6 +3997,7 @@ test_assertion_error_w_false
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4-5
 
@@ -3885,6 +4022,7 @@ test_assertion_error_w_false
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
     assert {} is not None
@@ -3919,6 +4057,7 @@ test_assertion_error_w_none
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with None`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 4
 
@@ -3941,6 +4080,7 @@ test_assertion_error_w_none
 * I indent the :ref:`assertions<what is an assertion?>` with four spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 5-6, 8, 10, 12, 14, 16, 18, 20, 22, 24
 
@@ -3983,6 +4123,7 @@ test_assertion_error_w_none
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 4-5
 
@@ -4007,6 +4148,7 @@ test_assertion_error_w_none
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
 
     assert 'I am' + ' alive' == 'I am alive'
@@ -4147,6 +4289,7 @@ pytest only calls the function if the name starts with test
 * I add a :ref:`function<what is a function?>` to show that pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 7-10
 
@@ -4173,6 +4316,7 @@ pytest only calls the function if the name starts with test
 * I add a :ref:`function<what is a function?>` that starts with ``test`` with the same :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 7-8
 
@@ -4223,6 +4367,7 @@ pytest only calls the function if the name starts with test
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 2-3
 

@@ -68,6 +68,7 @@ a better way to handle the results changing
 * I add 2 :ref:`variables<what is a variable?>` to :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5-6
 
@@ -82,6 +83,7 @@ a better way to handle the results changing
 * I use the :ref:`variables<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3-4
 
@@ -130,6 +132,7 @@ the test passes.
 * I remove the comment then do the same thing for the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 4-6
 
@@ -150,6 +153,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 3
 
@@ -163,6 +167,7 @@ the test passes.
 * I remove the comment then add a :ref:`variable<what is a variable?>` for the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 3-5
 
@@ -182,6 +187,7 @@ the test passes.
 * I change the expectation to the right calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 3
 
@@ -195,6 +201,7 @@ the test passes.
 * I remove the comment, then add a :ref:`variable<what is a variable?>` for the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 3-5
 
@@ -210,6 +217,7 @@ the test passes.
 * on to the next one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 3-5
 
@@ -229,6 +237,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 3
 
@@ -242,6 +251,7 @@ the test passes.
 * I remove the comment, then add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 3-5
 
@@ -261,6 +271,7 @@ the test passes.
 * I change the call
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 3
 
@@ -274,6 +285,7 @@ the test passes.
 * I remove the comment then add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 3-5
 
@@ -293,6 +305,7 @@ the test passes.
 * I change the call
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 3
 
@@ -306,6 +319,7 @@ the test passes.
 * I remove the comment then add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 3-5
 
@@ -325,6 +339,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 3
 
@@ -338,6 +353,7 @@ the test passes.
 * I remove the comment then add one more :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 3-5
 
@@ -356,6 +372,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 3
 
@@ -368,6 +385,7 @@ the test passes.
 * I remove the comment then use the ``Rename Symbol`` feature to change the name of the ``add_x`` :ref:`function<what is a function?>` to ``add``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2, 7, 9, 11, 13, 15, 17, 19, 21, 23
     :emphasize-text: add
@@ -401,6 +419,7 @@ the test passes.
 * I only have to make a change in one place if I want to test what happens when I add ``4`` to a number. I change ``x``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -417,6 +436,7 @@ the test passes.
 * I only have to make a change in one place if I want to test what happens when I add ``5`` to a number. I change ``x``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -433,6 +453,7 @@ the test passes.
 * I only have to make a change in one place if I want to test what happens when I add ``6`` to a number. I change ``x``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 

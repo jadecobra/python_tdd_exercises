@@ -102,6 +102,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I add a test to ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 19-20, 22-26, 28-31
 
@@ -164,6 +165,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I add a :ref:`function<what is a function?>` to ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -180,6 +182,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I add the ``on_click`` and ``args`` parameters to the ``C`` button in the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 3-4
 
@@ -219,6 +222,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I change ``0`` to ``'0'`` in the ``reset_number`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 2
 
@@ -240,6 +244,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I add an :ref:`assertion<what is an assertion?>` for the ``AC`` button in :ref:`test_streamlit_calculator_reset` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 15-19, 21-24
 
@@ -280,6 +285,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I add the ``on_click`` and ``args`` parameters to the ``AC`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3-4
 
@@ -315,6 +321,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I add a :ref:`for loop<what is a for loop?>` to :ref:`test_streamlit_calculator_reset` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 4-5, 7-12,14-18
 
@@ -353,6 +360,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
     :emphasize-lines: 4
 
@@ -367,6 +375,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 * I remove the other statements from :ref:`test_streamlit_calculator_reset`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
 
         def test_streamlit_calculator_reset(self):
@@ -454,6 +463,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the key in the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 2
     :emphasize-text: \+
@@ -472,6 +482,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * The calculator is putting the two numbers together since they are strings_. I want it to take the numbers separately then add them as numbers not strings_. I add an :ref:`assertion<what is an assertion?>` to check the value of the first number after the ``+`` button is pressed
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 7-10
 
@@ -505,6 +516,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a default value for the ``first_number`` :ref:`key<test_keys_of_a_dictionary>` in the ``main`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 4
 
@@ -532,6 +544,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I make a :ref:`function<what is a function?>` to change the ``first_number`` :ref:`key<test_keys_of_a_dictionary>` of the `session state object`_ when the ``+`` button is pressed
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 5-8
 
@@ -550,6 +563,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add the ``on_click`` and ``args`` parameters to the ``+`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 15-16
 
@@ -579,6 +593,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add ``display`` as a :ref:`positional argument<test_positional_arguments>` of the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 1
 
@@ -589,6 +604,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add ``display`` to the call to the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` from the ``main`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 11
 
@@ -618,6 +634,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add an :ref:`assertion<what is an assertion?>` for the second number after the ``=`` button is pressed, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 14-17
 
@@ -655,6 +672,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a default value for the ``first_number`` :ref:`key<test_keys_of_a_dictionary>` in the ``main`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 5
 
@@ -683,6 +701,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I make a new :ref:`function<what is a function?>` for the result of the calculation, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 7-10
 
@@ -703,6 +722,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add the ``on_click`` and ``args`` parameters to the ``=`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 16-17
 
@@ -736,6 +756,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add a calculation to the ``calculate`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 4-7
 
@@ -759,6 +780,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the numbers to floats_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-6
     :emphasize-text: float
@@ -800,6 +822,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I want the result to look the same as the other numbers. I change it to a string_ in the ``calculate`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 4
     :emphasize-text: str
@@ -826,6 +849,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_streamlit_calculator_operations` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 169
     :emphasize-lines: 3
     :emphasize-text: str
@@ -849,6 +873,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 24-31
 
@@ -898,6 +923,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add a :ref:`variable<what is a variable?>` then an :ref:`assertion<what is an assertion?>` for an ``'operation'`` :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 5, 7-8, 13-16
 
@@ -950,6 +976,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a default value for the ``operation`` :ref:`key<test_keys_of_a_dictionary>` in the ``main`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 146
     :emphasize-lines:
 
@@ -979,6 +1006,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the value of the ``operation``:ref:`key<test_keys_of_a_dictionary>` in the ``first_number`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 1, 4
     :emphasize-text: operation
@@ -1003,6 +1031,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add the value for ``operation`` to the ``args`` :ref:`list<what is a list?>` for the ``r'\+'`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 13
 
@@ -1037,6 +1066,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add an :ref:`assertion<what is an assertion?>` for the ``operation`` :ref:`key<test_keys_of_a_dictionary>` after the ``-`` button is pressed, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 30, 32-33, 37-40
 
@@ -1098,6 +1128,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add values for the ``on_click`` and ``args`` parameters for the ``r'\-'`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 10
 
@@ -1136,6 +1167,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I use the operation in a :ref:`dictionary<what is a dictionary?>` in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2-4
 
@@ -1157,6 +1189,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I use the ``__getattribute__`` :ref:`method<what is a method?>` to get the :ref:`add function<test_addition>` from the :ref:`calculator module<how to make a calculator>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 8-18
 
@@ -1221,6 +1254,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add a :ref:`key<test_keys_of_a_dictionary>` for ``r'\-'`` to the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` in the ``calculate`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 4
 
@@ -1258,6 +1292,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add an :ref:`assertion<what is an assertion?>` for the value of the first number in the :ref:`subtraction<test_subtraction>` operation in :ref:`test_streamlit_calculator_operations` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 34-37
 
@@ -1326,6 +1361,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I reset the :ref:`calculator<how to make a calculator>` after the first operation :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 30
 
@@ -1387,6 +1423,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
 
         def test_streamlit_calculator_operations(self):
@@ -1445,6 +1482,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I make a :ref:`dictionary<what is a dictionary?>` for the operations in :ref:`test_streamlit_calculator_operations`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 2-7
 
@@ -1462,6 +1500,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I use a :ref:`for loop<what is a for loop?>` with the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 12-15, 17-20
 
@@ -1501,6 +1540,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 166
     :emphasize-lines: 3
 
@@ -1518,6 +1558,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I reset the calculator with the ``AC`` button
 
   .. code-block:: python
+    :caption:
     :lineno-start: 167
     :emphasize-lines: 6
 
@@ -1533,6 +1574,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add an :ref:`assertion<what is an assertion?>` for the operation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 22-25
 
@@ -1579,6 +1621,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 3
 
@@ -1598,6 +1641,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add values for the ``on_click`` and ``args`` parameters to the ``X`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 7
 
@@ -1663,6 +1707,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add a button press for the second number and ``=``, then an :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 29-32
 
@@ -1719,6 +1764,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 3
 
@@ -1732,6 +1778,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add ``X`` to the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 5
 
@@ -1752,6 +1799,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add ``/`` to the ``arithmetic`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 6
 
@@ -1785,6 +1833,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I add an :ref:`assertion<what is an assertion?>` for the calculation in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 34-40
 
@@ -1870,6 +1919,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change ``first_number`` and ``second_number`` to floats_ in the calculation in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 185
     :emphasize-lines: 5-6
 
@@ -1913,6 +1963,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I remove the other statements from :ref:`test_streamlit_calculator_operations`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
 
         def test_streamlit_calculator_operations(self):
@@ -1968,6 +2019,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I remove the commented lines from the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
     def calculate():

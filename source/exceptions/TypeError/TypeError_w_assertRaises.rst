@@ -119,6 +119,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add an :ref:`object definition<how to make an object>` for ``AnObject`` to ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 5, 7
 
@@ -141,6 +142,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add the name to the :ref:`object definition<how to make an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 3-4
 
@@ -158,6 +160,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I define ``method_00`` by pointing it to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 4-5
 
@@ -178,6 +181,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I change ``method_00`` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 5-6
 
@@ -201,6 +205,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
 
     class AnObject(object):
@@ -210,6 +215,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_01`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 3
 
@@ -231,6 +237,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`method definition<how to make a function>` for ``method_01`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 4
 
@@ -271,6 +278,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_02`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 4
 
@@ -293,6 +301,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`definition<how to make a function>` for ``method_02`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 8
 
@@ -317,6 +326,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 4
 
@@ -335,6 +345,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add ``self`` to the parentheses of ``method_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 2-4
 
@@ -353,6 +364,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 1
 
@@ -366,6 +378,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_03`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 5
 
@@ -389,6 +402,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`definition<how to make a function>` for ``method_03`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 6-7
 
@@ -409,6 +423,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add ``AnObject.`` before ``method_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2-3
 
@@ -431,6 +446,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 3-4
 
@@ -444,6 +460,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_04`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 3
 
@@ -465,6 +482,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`method definition<how to make a function>` for ``method_04`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 6-7
 
@@ -491,6 +509,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I pass ``AnObject`` as input in the :ref:`call<how to call a function with input>` to ``method_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 2-3
 
@@ -503,6 +522,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_05`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 3
 
@@ -524,6 +544,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`method definition<how to make a function>` for ``method_05`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 5-6
 
@@ -546,6 +567,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add ``self`` to the parentheses of ``method_05``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 1-2
 
@@ -564,6 +586,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add ``self.`` before ``method_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 3-4
 
@@ -577,6 +600,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_06`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 3
 
@@ -598,6 +622,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`method definition<how to make a function>` for ``method_06`` to ``AnObject``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 6-7
 
@@ -621,6 +646,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add ``self`` to the parentheses of ``method_06``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 1-2
 
@@ -633,6 +659,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_07`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3
 
@@ -654,6 +681,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`method definition<how to make a function>` for ``method_07`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 6-7
 
@@ -679,6 +707,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3-4
 
@@ -705,6 +734,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_00`` of ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 3
 
@@ -718,6 +748,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_08()`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 3
 
@@ -739,6 +770,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`method definition<how to make a function>` for ``method_08`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 4-5
 
@@ -760,6 +792,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 3-4
 
@@ -786,6 +819,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_04`` of ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 6
 
@@ -809,6 +843,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_09()`` from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 3
 
@@ -830,6 +865,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add a :ref:`method definition<how to make a function>` for ``method_09`` to ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 4-5
 
@@ -854,6 +890,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I add the :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_03`` of ``AnObject`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 6
 
@@ -878,6 +915,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I remove the commented lines from ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
 
     class AnObject(object):
@@ -889,6 +927,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
         def method_01(): return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
 
         def method_02(self):
@@ -899,6 +938,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
             return AnObject().method_02()
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
 
         @staticmethod
@@ -909,6 +949,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
             return self.method_02()
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
 
         def method_06(self):
@@ -918,6 +959,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
             return self.method_00()
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
 
         def method_08(self):
@@ -929,6 +971,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 * I remove the commented lines from ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
 
     def test_type_error_w_object_methods():
@@ -983,6 +1026,7 @@ Is every :ref:`object callable<how to make a function>`?
 * I add a test to ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 4-5
 
@@ -1064,6 +1108,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to ``false`` in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 3
 
@@ -1133,6 +1178,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to the other :ref:`boolean<what are booleans?>` in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 4
 
@@ -1156,6 +1202,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``true`` and point it to :ref:`True<test_what_is_true>` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 3
     :emphasize-lines: 3
 
@@ -1176,6 +1223,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``true`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 3
     :emphasize-lines: 3-4
 
@@ -1195,6 +1243,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to an integer_, in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 3
 
@@ -1215,6 +1264,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``an_integer`` and point it to ``1234`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -1245,6 +1295,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``an_integer`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3-4
 
@@ -1262,6 +1313,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to a float_ in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 3
 
@@ -1282,6 +1334,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``a_float`` and point it to ``5.678`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3
 
@@ -1312,6 +1365,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``a_float`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3-4
 
@@ -1329,6 +1383,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 3
 
@@ -1349,6 +1404,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``a_string`` and point it to ``'a string'`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3
 
@@ -1379,6 +1435,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``a_string`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3-4
 
@@ -1396,6 +1453,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 3
 
@@ -1416,6 +1474,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``a_tuple`` and point it to ``(0, 1, 2, 'n')`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
 
@@ -1446,6 +1505,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``a_tuple`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3-4
 
@@ -1463,6 +1523,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to a :ref:`list<what is a list?>` in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 3
 
@@ -1483,6 +1544,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``a_list`` and point it to ``[0, 1, 2, 'n']`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3
 
@@ -1513,6 +1575,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``a_list`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-4
 
@@ -1531,6 +1594,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to a set_ in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 3
 
@@ -1551,6 +1615,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``a_set`` and point it to ``{0, 1, 2, 'n'}`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3
 
@@ -1581,6 +1646,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``a_set`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3-4
 
@@ -1598,6 +1664,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add a :ref:`call<how to call a function>` to a :ref:`dictionary<what is a dictionary?>` in ``test_type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 3
 
@@ -1623,6 +1690,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add ``a_dictionary`` and point it to ``{'key': 'value'}`` in ``type_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3
 
@@ -1653,6 +1721,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``a_dictionary`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-4
 

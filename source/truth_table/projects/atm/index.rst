@@ -140,6 +140,7 @@ start the project
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_atm.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -253,6 +254,7 @@ because I do not have a definition for ``src`` in this file_.
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -285,6 +287,7 @@ because I do not have a definition for ``src`` in this file_.
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -317,6 +320,7 @@ because I do not have a definition for ``src`` in this file_.
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_atm.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -411,6 +415,7 @@ test_right_pin_not_enough_cash
   ==================  ======================= =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-9
 
@@ -578,6 +583,7 @@ test_wrong_pin_enough_cash
   ==================  ======================= =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3-9
 
@@ -760,6 +766,7 @@ test_wrong_pin_not_enough_cash
   ==================  ======================= =================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3-9
 
@@ -793,6 +800,7 @@ test_wrong_pin_not_enough_cash
 * I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 2
 
@@ -911,6 +919,7 @@ extract denied variable
 * I use the new :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 2, 7-8
 
@@ -930,6 +939,7 @@ extract denied variable
 * I remove the commented lines from :ref:`test_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
         def test_right_pin_not_enough_cash(self):
@@ -944,6 +954,7 @@ extract denied variable
 * I use the new :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 2, 7-8
 
@@ -963,6 +974,7 @@ extract denied variable
 * I remove the commented lines from :ref:`test_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
 
         def test_wrong_pin_enough_cash(self):
@@ -977,6 +989,7 @@ extract denied variable
 * I use the :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 2, 7-8
 
@@ -997,6 +1010,7 @@ extract denied variable
 * I remove the commented lines from :ref:`test_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
 
         def test_wrong_pin_not_enough_cash(self):
@@ -1068,6 +1082,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 9-15
 
@@ -1341,6 +1356,7 @@ PIN                 cash                    daily limit             withdrawal
 * I change the name of the test from :ref:`test_right_pin_enough_cash` to :ref:`test_below_limit_right_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3
 
@@ -1408,6 +1424,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 5
 
@@ -1426,6 +1443,7 @@ PIN                 cash                    daily limit             withdrawal
 * I change the name of the test from :ref:`test_right_pin_not_enough_cash` to :ref:`test_above_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 3
 
@@ -1506,6 +1524,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-8
 
@@ -1537,6 +1556,7 @@ PIN                 cash                    daily limit             withdrawal
 * I change my expectation to match reality in :ref:`test_below_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 6
 
@@ -1630,6 +1650,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 5
 
@@ -1648,6 +1669,7 @@ PIN                 cash                    daily limit             withdrawal
 * I change the name of :ref:`test_wrong_pin_enough_cash` to :ref:`test_above_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3
 
@@ -1716,6 +1738,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 3-8
 
@@ -1747,6 +1770,7 @@ PIN                 cash                    daily limit             withdrawal
 * I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 6
 
@@ -1832,6 +1856,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 5
 
@@ -1851,6 +1876,7 @@ PIN                 cash                    daily limit             withdrawal
 * I change the name of the test from :ref:`test_wrong_pin_not_enough_cash` to :ref:`test_above_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 3
 
@@ -1928,6 +1954,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3-8
 
@@ -1960,6 +1987,7 @@ PIN                 cash                    daily limit             withdrawal
 * I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_below_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 6
 
@@ -2209,6 +2237,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2-13
 
@@ -2234,6 +2263,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_below_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
 
         def test_below_limit_wrong_pin_not_enough_cash(self):
@@ -2251,6 +2281,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2-15
 
@@ -2277,6 +2308,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_above_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
         def test_above_limit_wrong_pin_not_enough_cash(self):
@@ -2294,6 +2326,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 2-13
 
@@ -2318,6 +2351,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
 
         def test_below_limit_wrong_pin_enough_cash(self):
@@ -2334,6 +2368,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-15
 
@@ -2360,6 +2395,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_above_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
 
         def test_above_limit_wrong_pin_enough_cash(self):
@@ -2377,6 +2413,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 2-13
 
@@ -2401,6 +2438,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_below_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
 
         def test_below_limit_right_pin_not_enough_cash(self):
@@ -2417,6 +2455,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 2-15
 
@@ -2443,6 +2482,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_above_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
 
         def test_above_limit_right_pin_not_enough_cash(self):
@@ -2460,6 +2500,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_right_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 2-15
 
@@ -2486,6 +2527,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_above_limit_right_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
         def test_above_limit_right_pin_enough_cash(self):
@@ -2503,6 +2545,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly and use :green:`'CASH'` for ``my_expectation`` in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 2-13
 
@@ -2527,6 +2570,7 @@ I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`func
 * I remove the commented lines from :ref:`test_below_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
         def test_below_limit_right_pin_enough_cash(self):
@@ -2609,6 +2653,7 @@ PIN                 cash                  daily limit             card expired  
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 6
 
@@ -2664,6 +2709,7 @@ PIN                 cash                  daily limit             card expired  
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_atm.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
@@ -2706,6 +2752,7 @@ PIN                 cash                  daily limit             card expired  
 * I add the value for the ``above_daily_limit`` parameter to :ref:`test_below_limit_right_pin_enough_cash` to make the :ref:`assertion<what is an assertion?>` clearer, in ``tests/test_atm.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 6
 
@@ -2733,6 +2780,7 @@ PIN                 cash                  daily limit             card expired  
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 11-19
 
@@ -2821,6 +2869,7 @@ PIN                 cash                  daily limit             card expired  
 * I change the name of the test from :ref:`test_below_limit_right_pin_enough_cash` to :ref:`test_card_w_below_limit_right_pin_enough_cash` in ``tests/test_atm.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3
 
@@ -2885,6 +2934,7 @@ PIN                 cash                  daily limit             card expired  
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 7
 
@@ -2919,6 +2969,7 @@ PIN                 cash                  daily limit             card expired  
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 11-19
 
@@ -2961,6 +3012,7 @@ PIN                 cash                  daily limit             card expired  
 * I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_above_limit_right_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 8
 
@@ -3000,6 +3052,7 @@ PIN                 cash                  daily limit             card expired  
 * I change the name of the test from :ref:`test_above_limit_right_pin_enough_cash` to :ref:`test_card_w_above_limit_right_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 11
 
@@ -3067,6 +3120,7 @@ PIN                 cash                    daily limit             card expired
 
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 7
 
@@ -3101,6 +3155,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 11-19
 
@@ -3182,6 +3237,7 @@ the test passes.
 * I change the name of the test from :ref:`test_above_limit_right_pin_not_enough_cash` to :ref:`test_card_w_above_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 11
 
@@ -3248,6 +3304,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 6-7
 
@@ -3282,6 +3339,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 11-19
 
@@ -3363,6 +3421,7 @@ the test passes.
 * I change the name of the test from :ref:`test_below_limit_right_pin_not_enough_cash` to :ref:`test_card_w_below_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 11
 
@@ -3429,6 +3488,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 7
 
@@ -3463,6 +3523,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 11-19
 
@@ -3544,6 +3605,7 @@ the test passes.
 * I change the name from :ref:`test_above_limit_wrong_pin_enough_cash` to :ref:`test_card_w_above_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 11
 
@@ -3609,6 +3671,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 6-7
 
@@ -3643,6 +3706,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 11-19
 
@@ -3724,6 +3788,7 @@ the test passes.
 * I change the name of :ref:`test_below_limit_wrong_pin_enough_cash` to :ref:`test_card_w_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 11
 
@@ -3790,6 +3855,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 7
 
@@ -3824,6 +3890,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 11-19
 
@@ -3905,6 +3972,7 @@ the test passes.
 * I change the name of :ref:`test_above_limit_wrong_pin_not_enough_cash` to :ref:`test_card_w_above_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 120
     :emphasize-lines: 11
 
@@ -3972,6 +4040,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 6-7
 
@@ -4007,6 +4076,7 @@ PIN                 cash                    daily limit             card expired
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 11-19
 
@@ -4095,6 +4165,7 @@ the test passes.
 * I change the name from :ref:`test_below_limit_wrong_pin_not_enough_cash` to :ref:`test_card_w_below_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 11
 

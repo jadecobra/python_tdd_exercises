@@ -216,6 +216,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 9-10
 
@@ -253,6 +254,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 4
 
@@ -275,6 +277,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 2-3
 
@@ -323,6 +326,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 5
 
@@ -352,6 +356,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 6
 
@@ -377,6 +382,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`negate_second function<test_negate_second>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 2-3
 
@@ -391,6 +397,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 3-4
 
@@ -406,6 +413,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 4-5
 
@@ -422,6 +430,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 5-6
 
@@ -451,6 +460,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 2
 
@@ -469,6 +479,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 2
 
@@ -479,6 +490,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I remove the commented lines and other statements from :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
 
     def negate_second(first_input, second_input):
@@ -570,6 +582,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 3-5
 
@@ -636,6 +649,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 4
 
@@ -667,6 +681,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 5
 
@@ -699,6 +714,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 6
 
@@ -723,6 +739,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I add :ref:`if statements` for this case to :ref:`logical_nor<test_logical_nor>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 2-4
 
@@ -800,6 +817,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 2-5
 
@@ -816,6 +834,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 3-4, 6-7
 
@@ -834,6 +853,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 4-5, 8-9
 
@@ -854,6 +874,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 5-6, 10-11
 
@@ -888,6 +909,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 6, 11-12
 
@@ -922,6 +944,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 2-6
 
@@ -938,6 +961,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 3, 5
 
@@ -953,6 +977,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I write the statement in terms of :ref:`not<test_logical_negation>` because it happens 2 times
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 4-7
 
@@ -977,6 +1002,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 4-7
 
@@ -1056,6 +1082,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 2-6
 
@@ -1094,6 +1121,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I remove the commented lines and other statements from :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 7
 
@@ -1194,6 +1222,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 3-7
 
@@ -1267,6 +1296,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 6
 
@@ -1291,6 +1321,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I add an :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 2-3
 
@@ -1318,6 +1349,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 7
 
@@ -1347,6 +1379,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I add another :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 2-3
 
@@ -1381,6 +1414,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 8
 
@@ -1414,6 +1448,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I add an :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 3-4
 
@@ -1508,6 +1543,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 2-5, 8-9
 
@@ -1528,6 +1564,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statements in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 3-4, 6-7, 11-12
 
@@ -1551,6 +1588,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 4-5, 8-9, 14-15
 
@@ -1577,6 +1615,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 5-6, 10-11, 17-18
 
@@ -1618,6 +1657,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to make two of the cases clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 6, 11-13, 19-22
 
@@ -1663,6 +1703,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I do the same thing for the other two cases
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 6-10
 
@@ -1682,6 +1723,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I put the :ref:`if statements` that return the same thing together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 9-10
 
@@ -1699,6 +1741,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` that return :green:`True` together, then use an :ref:`else<if statements>` clause for when :ref:`logical_equality<test_logical_equality>` returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 2-3, 5-18
 
@@ -1740,6 +1783,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 2-8
 
@@ -1758,6 +1802,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 3, 7
 
@@ -1775,6 +1820,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I write the second part of the statement in terms of :ref:`not<test_logical_negation>` because it happens twice
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 6-11
 
@@ -1803,6 +1849,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 7-12
 
@@ -1920,6 +1967,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 2-5
 
@@ -1947,6 +1995,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are equal, which means I can write a much simpler :ref:`return statement<the return statement>` thanks to the equality (``==``) symbol (two equal signs together :kbd:`=+=` on the keyboard)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 2
 
@@ -1962,6 +2011,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove the commented lines and other statements from :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
 
     def logical_equality(first_input, second_input):
@@ -2079,6 +2129,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 3-7
 
@@ -2150,6 +2201,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 6
 
@@ -2174,6 +2226,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add an :ref:`if statement<if statements>` to :ref:`material_implication<test_material_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 2-3
 
@@ -2201,6 +2254,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 7
 
@@ -2237,6 +2291,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 8
 
@@ -2267,6 +2322,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add an :ref:`if statement<if statements>` to the :ref:`material_implication function<test_material_implication>` for the one case where it returns :red:`False`, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 2-4
 
@@ -2344,6 +2400,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 2-5
 
@@ -2360,6 +2417,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 5-6
 
@@ -2377,6 +2435,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 3-4, 7-8
 
@@ -2396,6 +2455,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 4-5, 9-10
 
@@ -2444,6 +2504,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 5, 10-11
 
@@ -2477,6 +2538,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 2-4
 
@@ -2490,6 +2552,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<if statements>` of the :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 3-4
 
@@ -2504,6 +2567,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 2-6
 
@@ -2520,6 +2584,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 3, 5
 
@@ -2535,6 +2600,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I "multiply" :ref:`not<test_logical_negation>` by the symbols in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 4-7
 
@@ -2559,6 +2625,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 6-7
 
@@ -2578,6 +2645,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove ``not not`` because they cancel out
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 8-9
 
@@ -2665,6 +2733,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 2-5
 
@@ -2703,6 +2772,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove the commented lines and other statements from :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 6
 
@@ -2783,6 +2853,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_contradiction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-10
 
@@ -2804,6 +2875,7 @@ extract global variables for truth table cases
 * I remove the commented lines from :ref:`test_logical_conjunction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
         def test_contradiction(self):
@@ -2818,6 +2890,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_conjunction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 5-8
 
@@ -2837,6 +2910,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_project_second`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3-6
 
@@ -2854,6 +2928,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_converse_non_implication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 5-8
 
@@ -2873,6 +2948,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_negate_first`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 3-6
 
@@ -2890,6 +2966,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_nand`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 3-6
 
@@ -2907,6 +2984,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_tautology`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3-6
 
@@ -2924,6 +3002,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_disjunction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 5-8
 
@@ -2943,6 +3022,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_exclusive_disjunction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 3-6
 
@@ -2960,6 +3040,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_material_non_implication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 82
     :emphasize-lines: 5-8
 
@@ -2979,6 +3060,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_project_first`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 3-6
 
@@ -2996,6 +3078,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_converse_implication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 5-8
 
@@ -3015,6 +3098,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_negate_second`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 3-6
 
@@ -3032,6 +3116,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_nor`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 3-6
 
@@ -3049,6 +3134,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_equality`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 5-8
 
@@ -3068,6 +3154,7 @@ extract global variables for truth table cases
 * I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_material_implication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 5-8
 

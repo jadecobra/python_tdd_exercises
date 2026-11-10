@@ -169,6 +169,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add an :ref:`object<everything is an object>` to ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 16, 18
 
@@ -203,6 +204,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add a `constructor method`_ to the ``Person`` :ref:`object<everything is an object>` so it can take arguments, it is used to define how copies of the :ref:`object<everything is an object>` are made
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 3-5
 
@@ -226,6 +228,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add the name in parentheses so that the ``__init__`` `constructor method`_ can take input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 4-5
 
@@ -249,6 +252,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add ``self`` as the first argument the way I do with all the test :ref:`methods<what is a method?>` in the book
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 5-6
 
@@ -275,6 +279,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of ``__init__``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 6-7
 
@@ -300,6 +305,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 7-8
 
@@ -333,6 +339,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I change ``reality`` in :ref:`test_classy_person_says_hello` to use a :ref:`method<what is a method?>` I can add to ``Person``, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 8-9
     :emphasize-text: joe
@@ -364,6 +371,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add a :ref:`method definition<how to make a function>` for it to the ``Person`` :ref:`object<everything is an object>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 14-15
 
@@ -396,6 +404,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 * I add ``person`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 14-15
 
@@ -437,6 +446,7 @@ what is the staticmethod decorator?
 * I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` whenit does not use anything that belongs to the :ref:`object<everything is an object>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add :ref:`@staticmethod<what is the staticmethod decorator?>` to ``say_hello``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 15
 
@@ -476,6 +486,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_classy_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 10-14
 
@@ -507,6 +518,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I copy the value from the terminal_ and paste it in :ref:`the return statement` for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`object<everything is an object>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 4-5
 
@@ -521,6 +533,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add an :ref:`assertion<what is an assertion?>` for the next person to :ref:`test_classy_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 10-14, 16-21
     :emphasize-text: Person jane
@@ -563,6 +576,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 10-11
     :emphasize-text: sex
@@ -594,6 +608,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a default value for ``sex`` to make it optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 4-5
 
@@ -618,6 +633,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a default value for ``last_name`` to make it optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 2-3
 
@@ -642,6 +658,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a default value for ``year_of_birth`` to make it optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 6-7
 
@@ -668,6 +685,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the string_ in :ref:`the return statement` of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`object<everything is an object>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is an object attribute?>` of the person it receives, in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 5-9
 
@@ -693,6 +711,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add an :ref:`attribute<what is an object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``first_name``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 3
 
@@ -715,6 +734,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``first_name`` :ref:`attribute<what is an object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 18
 
@@ -749,6 +769,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the :ref:`variable<what is a variable?>` to an :ref:`object attribute<what is an object attribute?>` by adding ``self.`` before it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 9-10
 
@@ -780,6 +801,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add the ``last_name`` :ref:`attribute<what is an object attribute?>` to the string_ in :ref:`the return statement` of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 7-9
 
@@ -808,6 +830,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add an :ref:`attribute<what is an object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``last_name``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 4
 
@@ -831,6 +854,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``last_name`` :ref:`attribute<what is an object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 16
 
@@ -863,6 +887,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change ``last_name`` to an :ref:`object attribute<what is an object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 11-12
 
@@ -916,6 +941,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the :ref:`default value<test_optional_arguments>` for ``last_name`` in the :ref:`__init__ method<the constructor method>` to ``'doe'`` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 3-4
 
@@ -945,6 +971,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a calculation for the age with the ``year_of_birth`` :ref:`attribute<what is an object attribute?>` to :ref:`the return statement` of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 4-7, 14-15
 
@@ -977,6 +1004,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add an :ref:`attribute<what is an object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``year_of_birth``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 5
 
@@ -1001,6 +1029,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``year_of_birth`` :ref:`attribute<what is an object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 16
 
@@ -1031,6 +1060,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change ``year_of_birth`` to an :ref:`object attribute<what is an object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 14-15
 
@@ -1056,6 +1086,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * ``self.first_name``, ``self.last_name`` and ``self.year_of_birth`` are now defined twice in the :ref:`object<everything is an object>`. I remove the first definition since the :ref:`attributes<what is an object attribute?>` are also made in the :ref:`__init__ method<the constructor method>` and that gets called when copies of the ``Person`` :ref:`object<everything is an object>` are made, no need to have a default person be ``jane doe`` born in ``1991``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 3-5
 
@@ -1090,6 +1121,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I use the new :ref:`function<what is a function?>` for the age calculation in the :ref:`person function<test_factory_w_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 9-13
 
@@ -1116,6 +1148,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I use the new :ref:`function<what is a function?>` for the age calculation in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 4-8
 
@@ -1142,6 +1175,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * The :ref:`say_hello method<test_classy_person_says_hello>` is in the ``Person`` :ref:`object<everything is an object>`, there is no need for it to take a copy of the ``Person`` :ref:`object<everything is an object>` as input since it should be able to access the :ref:`attributes<what is an object attribute?>` of the :ref:`object<everything is an object>` it belongs to. I change ``person.`` to ``self.`` to use :ref:`object attributes<what is an object attribute?>` instead
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 8-9, 14-15, 17-18
 
@@ -1175,6 +1209,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the name of the input parameter from ``person`` to ``self``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 3-4
 
@@ -1188,6 +1223,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<test_classy_person_says_hello>` is using :ref:`object attributes<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 2
 
@@ -1201,6 +1237,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the call to ``src.person.say_hello(joe)`` for ``joe`` because I can call :ref:`methods<what is a method?>` directly from a copy of an :ref:`object<everything is an object>`, in :ref:`test_classy_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 3-4
 
@@ -1225,6 +1262,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the call to ``src.person.say_hello(joe)`` for ``jane`` as well
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 7-8
 
@@ -1250,6 +1288,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add an :ref:`assertion<what is an assertion?>` for the next person
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 9-13, 15-20
     :emphasize-text: Person john
@@ -1289,6 +1328,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 3-6
 
@@ -1306,6 +1346,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add an :ref:`assertion<what is an assertion?>` for ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 10-15, 17-22
     :emphasize-text: Person a_person
@@ -1347,6 +1388,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change ``my_expectation`` to match ``reality`` for ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 10-11
 
@@ -1398,6 +1440,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I add :ref:`variables<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 2-3, 5-6
 
@@ -1417,6 +1460,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'joe'``, ``'blow'`` and ``1996``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 2-7, 15-18
 
@@ -1446,6 +1490,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I add :ref:`variables<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 13-14, 16-17
 
@@ -1477,6 +1522,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'jane'`` and ``1991``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 2, 4-6, 12-15
 
@@ -1509,6 +1555,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I do the same thing with ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 134
     :emphasize-lines: 11-12, 14-15, 18-23, 30-33
 
@@ -1553,6 +1600,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I do the same thing with ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 12-13, 15-16, 19-24, 32-35
 
@@ -1602,6 +1650,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I can add a random person with random values for the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.Person`` to replace ``joe``, ``jane``, ``john`` and ``mary`` since they are all made the same way
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 2-3, 5-6, 8-12, 14-16
 
@@ -1634,6 +1683,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I change ``my_expectation`` to match ``reality`` for ``a_random_person``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 2-6
 
@@ -1650,6 +1700,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I remove the commented lines and the other people from :ref:`test_classy_person_says_hello` because ``a_random_person`` covers their cases
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
 
         def test_classy_person_says_hello(self):
@@ -1702,6 +1753,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I add an :ref:`object attribute<what is an object attribute?>` called ``random_first_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3
 
@@ -1714,6 +1766,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 5-6
 
@@ -1732,6 +1785,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2-3, 7-8, 12-13
 
@@ -1761,6 +1815,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 2-3, 11-12, 20-22
 
@@ -1797,6 +1852,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 2-3, 10-11, 18-20
 
@@ -1851,6 +1907,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I add an :ref:`object attribute<what is an object attribute?>` called ``random_year_of_birth`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 4
 
@@ -1864,6 +1921,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I use ``self.random_year_of_birth`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 2-3, 14-15, 19-22
 
@@ -1899,6 +1957,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I use ``self.random_year_of_birth`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 4-5, 10-11, 18-21
 
@@ -1933,6 +1992,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I use ``self.random_year_of_birth`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 7-10, 17-18
 
@@ -1972,6 +2032,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I use ``self.random_year_of_birth`` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 6-9, 15-16
 
@@ -2017,6 +2078,7 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 * I add an :ref:`object attribute<what is an object attribute?>` called ``random_last_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 4
 
@@ -2031,6 +2093,7 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 * I use ``self.random_last_name`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 8-9
 
@@ -2051,6 +2114,7 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 * I use ``self.random_last_name`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 4-5, 16-17, 27-28
 
@@ -2093,6 +2157,7 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 * I use ``self.random_last_name`` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 120
     :emphasize-lines: 4-5, 15-16, 25-26
 
@@ -2153,6 +2218,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I add an :ref:`object attribute<what is an object attribute?>` called ``age`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 6
 
@@ -2168,6 +2234,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I use ``self.age`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 9-12
 
@@ -2193,6 +2260,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
 
         def test_factory_w_keyword_arguments(self):
@@ -2217,6 +2285,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I use ``self.age`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 13-16
 
@@ -2246,6 +2315,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
         def test_factory_w_optional_arguments(self):
@@ -2267,6 +2337,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I use ``self.age`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 11-12, 30-31
 
@@ -2311,6 +2382,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
 
         def test_factory_person_says_hello(self):
@@ -2335,6 +2407,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I use ``self.age`` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 4-5, 22-23
 
@@ -2372,6 +2445,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
 
         def test_classy_person_says_hello(self):
@@ -2429,6 +2503,7 @@ I want each test to get new random values every time they run and the :ref:`unit
 * I add the `unittest.TestCase.setUp method`_ to ``TestPerson`` then move the :ref:`object attributes<what is an object attribute?>` into it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-6, 8-12
 
@@ -2477,6 +2552,7 @@ I want each test to get new random values every time they run and the :ref:`unit
 * I change the ``first_name`` :ref:`variable<what is a variable?>` to an :ref:`object attribute<what is an object attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 2-3
     :emphasize-text: self
@@ -2512,6 +2588,7 @@ I want each test to get new random values every time they run and the :ref:`unit
 * I change the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` to :ref:`object attributes<what is an object attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use them as well
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4-13
     :emphasize-text: self
@@ -2554,6 +2631,7 @@ I want each test to get new random values every time they run and the :ref:`unit
 * I change the ``age`` :ref:`variable<what is a variable?>` to :ref:`object attributes<what is an object attribute?>` in the `setUp method`_ for the other :ref:`methods<what is a method?>` to be able to use it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 11-12
     :emphasize-text: self
@@ -2595,6 +2673,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 * I no longer need the :ref:`calculate_age function<extract calculate_age function>` because it is only called by the `setUp method`_. I use `datetime.datetime.now`_ directly
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 12-18
 
@@ -2624,6 +2703,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 * I no longer need the :ref:`get_random_year_of_birth function<extract get_random_year_of_birth function>` because it is only called by the `setUp method`_. I use `random.randint`_ directly
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 8-14
 
@@ -2657,6 +2737,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 * I use the ``this_year`` :ref:`variable<what is a variable?>` in the calculation for ``self.age``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 19-23
 
@@ -2691,6 +2772,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
 
     class TestPerson(unittest.TestCase):
@@ -2759,6 +2841,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I add a new test with the `dir built-in function`_ in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 9-12
 
@@ -2800,6 +2883,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 3-7
 
@@ -2829,6 +2913,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I add the opening :ref:`quote<quotes>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 6
 
@@ -2858,6 +2943,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 4-37
     :emphasize-text: __init__ say_hello
@@ -2913,6 +2999,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 3-34
     :emphasize-text: __init__ say_hello
@@ -3121,6 +3208,7 @@ the test passes.
 * I add ``sex`` to the list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 35
 
@@ -3178,6 +3266,7 @@ the test passes.
 * I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`object<everything is an object>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 21
 

@@ -198,6 +198,7 @@ first input     second input   return
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2
     :emphasize-text: AttributeError
@@ -218,6 +219,7 @@ first input     second input   return
 * I add :ref:`contradiction<test_contradiction>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 5-6
 
@@ -240,6 +242,7 @@ first input     second input   return
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` , in ``tests/test_binary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3
     :emphasize-text: TypeError
@@ -251,6 +254,7 @@ first input     second input   return
 * I add ``first_input`` as the name of the first argument in the :ref:`function signature<how to make a function>` for :ref:`contradiction<test_contradiction>`, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 1-2
 
@@ -270,6 +274,7 @@ first input     second input   return
 * I add ``second_input`` as the name of the second input in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-4
 
@@ -304,6 +309,7 @@ first input     second input   return
 * I change :ref:`the return statement` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4-5
 
@@ -318,6 +324,7 @@ first input     second input   return
 * I remove the commented lines from :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
     def logical_negation(the_input):
@@ -336,6 +343,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5-7
 
@@ -370,6 +378,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8-10
 
@@ -408,6 +417,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 11-13
 
@@ -443,6 +453,7 @@ first input     second input   return
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.contradiction``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -467,6 +478,7 @@ first input     second input   return
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.contradiction``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4-5, 8-9, 12-13, 16-17
 
@@ -497,6 +509,7 @@ first input     second input   return
 * I remove the commented lines from :ref:`test_contradiction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3-6
 
@@ -637,6 +650,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3-8
 
@@ -706,6 +720,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 7-11
 
@@ -741,6 +756,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_binary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 4
     :emphasize-text: AssertionError
@@ -753,6 +769,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 * I make the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py`` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -777,6 +794,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 * I change :ref:`the return statement` of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2
 
@@ -801,6 +819,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 12-16
 
@@ -854,6 +873,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I add an `if statement`_ for when the first input is :red:`False` to the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2-3
 
@@ -914,6 +934,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 17-21
 
@@ -947,6 +968,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add an `if statement`_ for it in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2-9
 
@@ -968,6 +990,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I add a :ref:`return statement<the return statement>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5
 
@@ -983,6 +1006,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I change :ref:`None<what is None?>` to :red:`False` in :ref:`the return statement`, to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5
 
@@ -999,6 +1023,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I add :ref:`bool<how to test if something is grouped as True>` to the `if statements`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2-5
 
@@ -1026,6 +1051,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   I remove ``== True`` from the `if statements`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3-4, 6-7
 
@@ -1055,6 +1081,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I remove :ref:`bool<how to test if something is grouped as True>` from the `if statements`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 4-5, 8-9
 
@@ -1100,6 +1127,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   I use :ref:`AND<test_logical_conjunction>` to put the two `if statements`_ together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5, 9-10
 
@@ -1121,6 +1149,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I add an else_ clause to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2-4
 
@@ -1195,6 +1224,7 @@ conditional expressions
 * There is a way to write the `if statement`_ and `else clause`_ on one line instead of four lines. It is called a `ternary operator`_ or `conditional expression`_. I add one to the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 2-6
 
@@ -1236,6 +1266,7 @@ conditional expressions
 * I can make the `conditional expression`_ even simpler, if I remove ``True if`` and ``else False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3, 5
 
@@ -1270,6 +1301,7 @@ conditional expressions
 * I remove the other statements from :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
     def contradiction(first_input, second_input):
@@ -1282,6 +1314,7 @@ conditional expressions
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` of ``tests/test_binary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 2-4
 
@@ -1316,6 +1349,7 @@ conditional expressions
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.logical_conjunction``  from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 6-7, 12-13, 18-19, 24-25
 
@@ -1356,6 +1390,7 @@ conditional expressions
 * I remove the commented lines from :ref:`test_logical_conjunction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 5-8
 
@@ -1561,6 +1596,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3-6
 
@@ -1628,6 +1664,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 5-7
 
@@ -1657,6 +1694,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I make :ref:`project_second<test_project_second>` return ``second_input`` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 2
 
@@ -1674,6 +1712,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I remove the other statement from :ref:`project_second<test_project_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
 
     def project_second(first_input, second_input):
@@ -1682,6 +1721,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`, in ``tests/test_binary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 8-10
 
@@ -1716,6 +1756,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 11-13
 
@@ -1748,6 +1789,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.project_second``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 2
 
@@ -1772,6 +1814,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.project_second`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 4-5, 8-9, 12-13, 16-17
 
@@ -1802,6 +1845,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I remove the commented lines from :ref:`project_second<test_project_second>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 3-6
 
@@ -1924,6 +1968,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3-8
 
@@ -1992,6 +2037,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 7-11
 
@@ -2029,6 +2075,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 12-16
 
@@ -2063,6 +2110,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I add an `if statement`_ for this case to the :ref:`converse_non_implication function<test_converse_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 2-3
 
@@ -2121,6 +2169,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 17-21
 
@@ -2160,6 +2209,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I add an `if statement`_ for the one case that returns :green:`True`, to the one in :ref:`the converse_non_implication function<test_converse_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3-4
 
@@ -2174,6 +2224,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I add :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 2-5
 
@@ -2190,6 +2241,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3-4
 
@@ -2207,6 +2259,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I remove ``== True`` to remove repetition
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 4-5, 7-8
 
@@ -2226,6 +2279,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 5-6, 9-10
 
@@ -2276,6 +2330,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 6, 10-11
 
@@ -2309,6 +2364,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I add an `else clause`_ to be clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 12-14
 
@@ -2386,6 +2442,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I use a `conditional expression`_ in :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 2-6
 
@@ -2412,6 +2469,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I remove ``True if`` and ``else False`` to make the simpler :ref:`return statement<the return statement>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3, 5
 
@@ -2500,6 +2558,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 2-5
 
@@ -2533,6 +2592,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I remove the commented lines and other statements from :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 6
 
@@ -2548,6 +2608,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication`` in ``tests/test_binary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2-4
 
@@ -2582,6 +2643,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.converse_non_implication``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 6-7, 12-13, 18-19, 24-25
 
@@ -2622,6 +2684,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I remove the commented lines from :ref:`test_converse_non_implication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 5-8
 

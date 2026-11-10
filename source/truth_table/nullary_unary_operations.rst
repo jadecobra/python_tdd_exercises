@@ -113,6 +113,7 @@ test_logical_true
 * I change :ref:`test_failure` to :ref:`test_logical_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3-6
 
@@ -146,6 +147,7 @@ test_logical_true
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_nullary_unary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3
     :emphasize-text: AttributeError
@@ -237,6 +239,7 @@ test_logical_false
 * I add a test for :ref:`logical_false<test_logical_false>` to ``tests/test_nullary_unary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6-9
 
@@ -295,6 +298,7 @@ test_logical_false
 * I change :ref:`True <test_what_is_true>` to :red:`False` in :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2-3
 
@@ -368,6 +372,7 @@ test_logical_identity
   ==============  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 7, 9-12
 
@@ -407,6 +412,7 @@ test_logical_identity
 * I add a :ref:`function<what is a function?>` named ``logical_identity`` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5-6
 
@@ -429,6 +435,7 @@ test_logical_identity
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_nullary_unary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 4
     :emphasize-text: TypeError
@@ -441,6 +448,7 @@ test_logical_identity
 * I add a name in parentheses so that :ref:`logical_identity<test_logical_identity>` can take calls with one input, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1-2
 
@@ -459,6 +467,7 @@ test_logical_identity
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3-4
 
@@ -486,6 +495,7 @@ test_logical_identity
   ==============  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 5-7
 
@@ -511,6 +521,7 @@ test_logical_identity
 * I change :ref:`the return statement` of :ref:`logical_identity<test_logical_identity>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3-4
 
@@ -530,6 +541,7 @@ test_logical_identity
 * I change :ref:`the return statement` of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3, 5
 
@@ -548,6 +560,7 @@ test_logical_identity
 * I remove the commented lines from :ref:`logical_identity<test_logical_identity>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
 
     def logical_false():
@@ -644,6 +657,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
 * I add ``logical_negation`` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5-6
 
@@ -665,6 +679,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2-3
 
@@ -691,6 +706,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
   ==============  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5-7
 
@@ -716,6 +732,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
 * I change :ref:`the return statement` of the :ref:`logical_negation function<test_logical_negation>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-4
 
@@ -735,6 +752,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
 * I make the :ref:`function<what is a function?>` return its input again
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2, 4
 
@@ -768,6 +786,7 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
 * I add not_ to :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2, 5
 
@@ -804,6 +823,7 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
 * I remove the commented lines from :ref:`logical_negation<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
     def logical_negation(the_input):
@@ -812,6 +832,7 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
 * I add to the name of the test as a note, in ``tests/test_nullary_unary.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 5
     :emphasize-text: _aka_not

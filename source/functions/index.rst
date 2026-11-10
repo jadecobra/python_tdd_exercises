@@ -351,6 +351,7 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -510,6 +511,7 @@ A call to a :ref:`function<what is a function?>` gets the output of the :ref:`fu
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 4
     :emphasize-text: TypeError
@@ -683,6 +685,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``w_return``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 4
 
@@ -713,6 +716,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 4-5
 
@@ -730,6 +734,7 @@ the test passes.
 * I add parentheses to :ref:`call<how to call a function>` ``w_return`` inside :ref:`test_making_a_function_w_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 6
 
@@ -762,6 +767,7 @@ the test passes.
 * I use the def_ and pass_ keywords to change ``w_return`` to the simplest :ref:`function<what is a function?>` I can make
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 3, 6-7
 
@@ -805,6 +811,7 @@ functions_ are made with
 * I change pass_ to a `return statement`_ with the return_ keyword
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 7-8
 
@@ -909,6 +916,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 * I add a test with ``w_return_none``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 8-9
 
@@ -967,6 +975,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``w_return_none``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4
 
@@ -997,6 +1006,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4-5
 
@@ -1014,6 +1024,7 @@ the test passes.
 * I add parentheses to :ref:`call<how to call a function>` ``w_return_none`` inside :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 6
 
@@ -1046,6 +1057,7 @@ the test passes.
 * I change ``w_return_none`` to a :ref:`function<what is a function?>` with the def_ and return_ keywords
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3, 6-7
 
@@ -1067,6 +1079,7 @@ the test passes.
 * I add :ref:`None<what is None?>` to the `return statement`_ of ``w_return_none``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 7-8
 
@@ -1089,6 +1102,7 @@ the test passes.
 * I change :ref:`None<what is None?>` to ``'something'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 8-9
     :emphasize-text: something
@@ -1134,6 +1148,7 @@ the test passes.
 * I undo the change
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 8-9
 
@@ -1165,6 +1180,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
 
     def test_making_a_function_w_return():
@@ -1238,6 +1254,7 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 8-9
 
@@ -1297,6 +1314,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 4
 
@@ -1327,6 +1345,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 4-5
 
@@ -1344,6 +1363,7 @@ the test passes.
 * I add parentheses to :ref:`call<how to call a function>` ``return_leaves_the_function`` inside :ref:`test_what_happens_after_functions_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 6
 
@@ -1376,6 +1396,7 @@ the test passes.
 * I change ``return_leaves_the_function`` to a :ref:`function<what is a function?>` with the def_ and return_ keywords
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 3, 6-7
 
@@ -1397,6 +1418,7 @@ the test passes.
 * I add a `return statement`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 7
 
@@ -1444,6 +1466,7 @@ the test passes.
 * I move ``return None``, to make it the first `return statement`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 7-8
 
@@ -1466,6 +1489,7 @@ the test passes.
 * I change the second `return statement`_ as a reminder
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 8-9
 
@@ -1489,6 +1513,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
 
     def test_making_a_function_w_return_none():
@@ -1540,6 +1565,7 @@ There are :ref:`functions<what is a function?>` that always return the same thin
 * I add a test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 9-10
 
@@ -1599,6 +1625,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 4
 
@@ -1629,6 +1656,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 4-5
 
@@ -1646,6 +1674,7 @@ the test passes.
 * I add parentheses to :ref:`call<how to call a function>` ``constant``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 6
 
@@ -1678,6 +1707,7 @@ the test passes.
 * I change ``constant`` to a :ref:`function<what is a function?>` with the def_ and return_ keywords
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 3, 6-7
 
@@ -1705,6 +1735,7 @@ the test passes.
 * I change the `return statement`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 7-8
 
@@ -1731,6 +1762,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 10-11
 
@@ -1760,6 +1792,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
 
     def test_what_happens_after_functions_return():

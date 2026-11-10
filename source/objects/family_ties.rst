@@ -177,6 +177,7 @@ open the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
     :emphasize-text: AssertionError
@@ -193,6 +194,7 @@ open the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -220,6 +222,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 * I change :ref:`test_failure` to :ref:`test_making_an_object_w_inheritance` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-7
 
@@ -245,6 +248,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -286,6 +290,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4
 
@@ -317,6 +322,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 * I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_an_object_w_inheritance` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2-3
 
@@ -343,6 +349,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8-11
 
@@ -411,6 +418,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 5
     :emphasize-text: ModuleNotFoundError
@@ -445,6 +453,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 * I add ``src.`` to the parent of ``Doe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2-3
 
@@ -469,6 +478,7 @@ more about instances vs subobjects
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assertIs_instance>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8-11
 
@@ -505,6 +515,7 @@ more about instances vs subobjects
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8-9
 
@@ -532,6 +543,7 @@ more about instances vs subobjects
 * I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -547,6 +559,7 @@ more about instances vs subobjects
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.family_ties.Doe`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6-7, 13-15, 19-20
 
@@ -589,6 +602,7 @@ what happens when a child calls the parent?
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsInstance method<test_assertIs_instance>`, this time with an :ref:`instance<how to test if something is an instance>` of ``Doe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 7-10
 
@@ -629,6 +643,7 @@ what happens when a child calls the parent?
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 6
     :emphasize-text: TypeError
@@ -651,6 +666,7 @@ how to call the parent from the child
 * I add the `super built-in function`_ to ``Doe`` to call the parent :ref:`__init__ method<the constructor method>` (``Parent.__init__``) directly from ``Doe``, in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3-4, 6-7
 
@@ -688,6 +704,7 @@ how to call the parent from the child
 * I add a value for ``first_name`` to the call to ``src.family_ties.Doe()`` in :ref:`test_making_an_object_w_inheritance` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2-3
 
@@ -720,6 +737,7 @@ how to call the parent from the child
 * I add a parameter for ``first_name`` to the :ref:`__init__ method<the constructor method>` of ``Doe`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 6-7
 
@@ -754,6 +772,7 @@ how to call the parent from the child
 * I add the required parameter to ``super().__init__()`` in ``Doe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 8-9
 
@@ -783,6 +802,7 @@ how to call the parent from the child
 * I add a test for the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 7-10
 
@@ -812,6 +832,7 @@ how to call the parent from the child
 * I change the expectation to the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the ``Person`` :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 3-4
 
@@ -829,6 +850,7 @@ how to call the parent from the child
 * I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -839,6 +861,7 @@ how to call the parent from the child
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.person.Person`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 9-10, 23-24, 30-31, 37-38
 
@@ -890,6 +913,7 @@ how to call the parent from the child
 * I add a :ref:`variable<what is a variable?>` for ``src.family_ties.Doe('the_first')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -909,6 +933,7 @@ how to call the parent from the child
 * I use the new :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 3-4
 
@@ -925,6 +950,7 @@ how to call the parent from the child
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7, 11, 15, 19, 23
 
@@ -1000,6 +1026,7 @@ I want to test how the :ref:`attributes<what is an object attribute?>` of :ref:`
 * I add a new test for :ref:`Inheritance<test_dir_object>` with an :ref:`assertion<what is an assertion?>`, in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5-7
 
@@ -1066,6 +1093,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 6-7
     :emphasize-text: joe
@@ -1092,6 +1120,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add a new :ref:`object definition<how to make an object>` to ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7
 
@@ -1123,6 +1152,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add an :ref:`object attribute<what is an object attribute?>` for ``last_name`` in the ``Blow`` :ref:`object<everything is an object>` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 1-2, 4
 
@@ -1148,6 +1178,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add the :ref:`__init__ method<the constructor method>` to customize the last name
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4, 6-7
 
@@ -1181,6 +1212,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method definition<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 6-7
 
@@ -1210,6 +1242,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     class Doe(src.person.Person):
@@ -1226,6 +1259,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`object<everything is an object>` directly, since all the ``Blow`` :ref:`object<everything is an object>` does is customize the ``last_name`` :ref:`attribute<what is an object attribute?>`, there is nothing special about it or the ``Doe`` :ref:`object<everything is an object>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 9-10
     :emphasize-text: person
@@ -1253,6 +1287,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add ``last_name='blow'`` to the call
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 1-2
 
@@ -1268,6 +1303,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 5-6
 
@@ -1290,6 +1326,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 2-3
 
@@ -1305,6 +1342,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add an :ref:`assertion<what is an assertion?>` for ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 5-6
 
@@ -1328,6 +1366,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add an :ref:`object definition<how to make an object>` for ``Smith`` to ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 7
 
@@ -1388,6 +1427,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add ``first_name`` to the parentheses of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 4-5
 
@@ -1409,6 +1449,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
     class Blow(src.person.Person):
@@ -1427,6 +1468,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add another :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 4-5
     :emphasize-text: person
@@ -1449,6 +1491,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 2-3
 
@@ -1464,6 +1507,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
 
         def test_objects_w_one_parent(self):
@@ -1553,6 +1597,7 @@ Can an :ref:`object<everything is an object>` have more than one parent? How are
 * I add a test with an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 4-6
     :emphasize-text: Jane
@@ -1585,6 +1630,7 @@ Can an :ref:`object<everything is an object>` have more than one parent? How are
 * I add an :ref:`object definition<how to make an object>` for ``Jane`` to ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 7
 
@@ -1617,6 +1663,7 @@ Can an :ref:`object<everything is an object>` have more than one parent? How are
 * I add the :ref:`__init__ method<the constructor method>` to the :ref:`definition<how to make an object>` of ``Jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 1-2, 4-5
 
@@ -1635,6 +1682,7 @@ Can an :ref:`object<everything is an object>` have more than one parent? How are
 * I add a value for ``first_name`` to the :ref:`definition<how to make an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 5
 
@@ -1658,6 +1706,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for the value of the  ``last_name`` :ref:`attribute<what is an object attribute?>` of ``jane`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 4
 
@@ -1680,6 +1729,7 @@ the test passes.
 * I add a value for ``last_name`` to ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 6
 
@@ -1699,6 +1749,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 5-7
 
@@ -1724,6 +1775,7 @@ the test passes.
 * I change the parent of ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 2-3
 
@@ -1741,6 +1793,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ to use to remove the repetition of ``last_name``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 6-8
 
@@ -1775,6 +1828,7 @@ the test passes.
 * I add ``jane`` as the value for ``first_name`` in the call to the parent
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 6-7
 
@@ -1810,6 +1864,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``mary``, another instance of ``Jane`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 9-10
 
@@ -1846,6 +1901,7 @@ the test passes.
 * I add ``first_name`` to the parentheses for the :ref:`__init__ method<the constructor method>` of ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 6
 
@@ -1880,6 +1936,7 @@ the test passes.
 * I add a :ref:`default value<test_optional_arguments>` to make ``first_name`` optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 6-7
 
@@ -1922,6 +1979,7 @@ the test passes.
 * I change the call to the `super built-in function`_ to use the name instead of a fixed value
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 9-10
 
@@ -1944,6 +2002,7 @@ the test passes.
 * I remove the commented lines and ``return None``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
     class Smith(src.person.Person):
@@ -1960,6 +2019,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` that will fail, for the last name of ``mary`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3
 
@@ -1979,6 +2039,7 @@ the test passes.
 * I change the expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3-4
 
@@ -1997,6 +2058,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``joe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 2-3
     :emphasize-text: Joe
@@ -2031,6 +2093,7 @@ the test passes.
 * I add an :ref:`object definition<how to make an object>` for the ``Joe`` :ref:`object<everything is an object>` to ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 7
 
@@ -2062,6 +2125,7 @@ the test passes.
 * I add the :ref:`__init__ method<the constructor method>` to ``Joe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 1-2, 4-5
 
@@ -2080,6 +2144,7 @@ the test passes.
 * I add ``self.first_name`` to ``Joe`` with a value
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5
 
@@ -2095,6 +2160,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_multiple_parents` to make sure that ``joe`` is a ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 4
 
@@ -2114,6 +2180,7 @@ the test passes.
 * I add ``last_name`` to the :ref:`__init__ method<the constructor method>` of ``Joe`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 6
 
@@ -2130,6 +2197,7 @@ the test passes.
 * I add :ref:`assertIsSubclass<test_assertIs_subclass>` to :ref:`test_objects_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 5-7
 
@@ -2152,6 +2220,7 @@ the test passes.
 * I change the parent of ``Joe`` to ``Blow`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 2-3
 
@@ -2169,6 +2238,7 @@ the test passes.
 * I no longer need ``self.last_name = 'blow'`` because it is a repetition. I add a :ref:`call<how to call a function with input>` to the `super built-in function`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 6-8
 
@@ -2205,6 +2275,7 @@ the test passes.
 * I add ``self.first_name`` to ``Blow``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4
 
@@ -2228,6 +2299,7 @@ the test passes.
 * I remove the commented lines and ``return None``, from ``Joe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
 
     class Jane(Doe):
@@ -2246,6 +2318,7 @@ the test passes.
 * I change ``mary`` to be an :ref:`instance<how to test if something is an instance>` of ``Mary``, a :ref:`child (subclass)<how to test if something is a subclass>` of ``Jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 1-2
 
@@ -2268,6 +2341,7 @@ the test passes.
 * I add an :ref:`object definition<how to make an object>` for ``Mary`` to ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 7, 9-10
 
@@ -2306,6 +2380,7 @@ the test passes.
 * I add the :ref:`__init__ method<the constructor method>` to ``Mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 1-2, 4-5
 
@@ -2334,6 +2409,7 @@ the test passes.
 * I add a value for ``last_name``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 6
 
@@ -2354,6 +2430,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ to remove the repetition
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 5-7
 
@@ -2384,6 +2461,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 6-8
 
@@ -2410,6 +2488,7 @@ the test passes.
 * I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to the :ref:`assertIsSubobject method<test_assertIs_subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 6-7
 
@@ -2439,6 +2518,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` to test if I can make ``Joe`` and ``Jane`` both be parents of ``Mary``?
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 10-12
 
@@ -2471,6 +2551,7 @@ what happens when a child has more than one parent?
 * I add ``Joe`` as a parent of ``Mary`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 2-3
 
@@ -2510,6 +2591,7 @@ what happens when a child has more than one parent?
 * I change the :ref:`__init__ method<the constructor method>` of ``Joe`` to take a ``first_name`` argument
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 3-4
 
@@ -2531,6 +2613,7 @@ what happens when a child has more than one parent?
 * I add a :ref:`default value<test_optional_arguments>` to make ``first_name`` optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 4-5
 
@@ -2567,6 +2650,7 @@ what happens when a child has more than one parent?
 * I use the parameter name in the call to ``super`` instead of a fixed value in ``Joe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 6-7
 
@@ -2587,6 +2671,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_objects_w_multiple_parents` for the last name of ``mary`` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 5-6
 
@@ -2614,6 +2699,7 @@ what happens when a child has more than one parent?
 * I change the order of the parents of ``Mary`` to see what it does to the value of ``last_name``, in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 3-4
 
@@ -2645,6 +2731,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` to show this in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 4
 
@@ -2667,6 +2754,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`object attribute<what is an object attribute?>` to ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 5
 
@@ -2682,6 +2770,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``eye_color`` :ref:`attribute<what is an object attribute?>` of ``Mary`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 7
 
@@ -2714,6 +2803,7 @@ what happens when a child has more than one parent?
 * I change the order of the parents of ``Mary`` from ``(Joe, Jane)`` back to ``(Jane, Joe)`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3-4
 
@@ -2753,6 +2843,7 @@ what happens when a child has more than one parent?
 * I change the order of the parents to ``(Joe, Jane)`` again
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3-4
 
@@ -2775,6 +2866,7 @@ what happens when a child has more than one parent?
 * I add the ``eye_color`` :ref:`object attribute<what is an object attribute?>` to ``Joe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 8
 
@@ -2796,6 +2888,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.eye_color`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 7-8
 
@@ -2844,6 +2937,7 @@ what happens when a child has more than one parent?
 * I remove the commented lines from ``Joe`` and ``Mary`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
 
     class Jane(Doe):
@@ -2870,6 +2964,7 @@ what happens when a child has more than one parent?
 * I add ``john`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 17-18
 
@@ -2905,6 +3000,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`object definition<how to make an object>` for ``John`` to ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 7
 
@@ -2935,6 +3031,7 @@ what happens when a child has more than one parent?
 * I add the :ref:`__init__ method<the constructor method>` to ``John`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 1-2, 4-5
 
@@ -2949,6 +3046,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` to make sure that ``John`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Smith``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 3-5
 
@@ -2974,6 +3072,7 @@ what happens when a child has more than one parent?
 * I change the parent of ``John`` to ``Smith`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 2-3
 
@@ -2989,6 +3088,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 3
 
@@ -3013,6 +3113,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`object attribute<what is an object attribute?>` for ``last_name`` to ``John`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 7
 
@@ -3032,6 +3133,7 @@ what happens when a child has more than one parent?
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ so :ref:`instances<how to test if something is an instance>` of ``John`` can inherit the ``last_name`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 6-8
 
@@ -3055,6 +3157,7 @@ what happens when a child has more than one parent?
 * I add the ``first_name`` :ref:`attribute<what is an object attribute?>` to ``Smith``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4
 
@@ -3078,6 +3181,7 @@ what happens when a child has more than one parent?
 * I remove the commented lines from ``John``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
 
     class Mary(Joe, Jane):
@@ -3096,6 +3200,7 @@ what happens when a child has more than one parent?
 * I add ``lil``, an :ref:`instance<how to test if something is an instance>` of a :ref:`child (subclass)<how to test if something is a subclass>` of ``John`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 8-11
 
@@ -3123,6 +3228,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`object definition<how to make an object>` for ``Lil`` to ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 7
 
@@ -3139,6 +3245,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` to test ``John`` and ``Mary`` as parents of ``Lil``?
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 5-7
 
@@ -3163,6 +3270,7 @@ what happens when a child has more than one parent?
 * I add ``Mary`` as a parent to ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 1-2
 
@@ -3174,6 +3282,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``first_name`` :ref:`attribute<what is an object attribute?>` of ``lil`` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 2
 
@@ -3211,6 +3320,7 @@ what happens when a child has more than one parent?
 * I add the :ref:`__init__ method<the constructor method>` with a value for the ``first_name`` :ref:`attribute<what is an object attribute?>` into ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2-3, 5-6
 
@@ -3226,6 +3336,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is an attribute?>` of ``lil``, in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 3
 
@@ -3253,6 +3364,7 @@ what happens when a child has more than one parent?
 * I add a value for ``last_name`` to ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 7
 
@@ -3269,6 +3381,7 @@ what happens when a child has more than one parent?
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ to remove the repetition
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 6-8
 
@@ -3302,6 +3415,7 @@ what happens when a child has more than one parent?
 * I change the :ref:`__init__ method<the constructor method>` in ``John`` to take in a parameter for ``first_name`` with a :ref:`default value<test_optional_arguments>` to make it optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 3-6
 
@@ -3337,6 +3451,7 @@ what happens when a child has more than one parent?
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ in ``Smith``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4-9
 
@@ -3383,6 +3498,7 @@ what happens when a child has more than one parent?
 * I add ``first_name`` with a :ref:`default value<test_optional_arguments>` to the :ref:`__init__ method<the constructor method>` of ``Mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 3-6
 
@@ -3404,6 +3520,7 @@ what happens when a child has more than one parent?
 * I add ``last_name`` to the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4-5
 
@@ -3427,6 +3544,7 @@ what happens when a child has more than one parent?
 * I add a :ref:`default value<test_optional_arguments>` for ``last_name``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 5-9
 
@@ -3471,6 +3589,7 @@ what happens when a child has more than one parent?
 * I change the order of the parents of ``Lil`` to ``(Mary, John)`` to see if the value will change to ``john.last_name``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 3-4
 
@@ -3508,6 +3627,7 @@ what happens when a child has more than one parent?
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ in ``Blow``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4-7
 
@@ -3558,6 +3678,7 @@ what happens when a child has more than one parent?
 * I add ``last_name`` to ``Jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-4
 
@@ -3580,6 +3701,7 @@ what happens when a child has more than one parent?
 * I give ``last_name`` a :ref:`default value<test_optional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 7-11
 
@@ -3637,6 +3759,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.last_name`` in :ref:`test_objects_w_multiple_parents`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 4-5
 
@@ -3706,6 +3829,7 @@ what happens when a child has more than one parent?
 * I remove the commented lines from ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
     class Blow(src.person.Person):
@@ -3768,6 +3892,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 4
 
@@ -3794,6 +3919,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 4-5
 
@@ -3822,6 +3948,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for ``joe.eye_color`` that will fail
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 5
 
@@ -3843,6 +3970,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 5-6
 
@@ -3861,6 +3989,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for ``john.eye_color``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 4
 
@@ -3881,6 +4010,7 @@ what happens when a child has more than one parent?
 * I add the ``eye_color`` :ref:`attribute<what is an object attribute?>` to ``Smith`` in ``family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3
 
@@ -3903,6 +4033,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for ``john.eye_color`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 4-5
 
@@ -3920,6 +4051,7 @@ what happens when a child has more than one parent?
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
 
         def test_objects_w_multiple_parents(self):

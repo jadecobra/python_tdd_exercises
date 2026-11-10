@@ -139,6 +139,7 @@ start the project
 * I change :green:`True` to :red:`False` in ``tests/test_car.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -212,6 +213,7 @@ test_start_pressed
   ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-7
 
@@ -247,6 +249,7 @@ test_start_pressed
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -278,6 +281,7 @@ test_start_pressed
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -310,6 +314,7 @@ test_start_pressed
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_car.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -385,6 +390,7 @@ test_start_not_pressed
   ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3-7
 
@@ -479,6 +485,7 @@ test_key_close_start_pressed
   ================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -552,6 +559,7 @@ test_key_close_start_pressed
 * I change the name of :ref:`test_start_pressed` to :ref:`test_key_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -595,6 +603,7 @@ test_key_not_close_start_pressed
   ================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3-7
 
@@ -722,6 +731,7 @@ test_key_close_start_not_pressed
   ================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 6
 
@@ -739,6 +749,7 @@ test_key_close_start_not_pressed
 * I change the name from :ref:`test_start_not_pressed` to :ref:`test_key_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 3
 
@@ -793,6 +804,7 @@ test_key_not_close_start_not_pressed
   ================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 3-7
 
@@ -875,6 +887,7 @@ test_key_not_close_start_not_pressed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match ``reality`` in :ref:`test_key_not_close_start_not_pressed` in ``tests/test_car.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 5
 
@@ -971,6 +984,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.car.ignition`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_key_not_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 2-10
 
@@ -993,6 +1007,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I remove the commented lines from :ref:`test_key_not_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
         def test_key_not_close_start_not_pressed(self):
@@ -1008,6 +1023,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.car.ignition`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_key_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 2-12
 
@@ -1031,6 +1047,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I remove the commented lines from :ref:`test_key_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
         def test_key_close_start_not_pressed(self):
@@ -1046,6 +1063,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.car.ignition`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_key_not_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 2-10
 
@@ -1067,6 +1085,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I remove the commented lines from :ref:`test_key_not_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
 
         def test_key_not_close_start_pressed(self):
@@ -1081,6 +1100,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I :ref:`call<how to call a function with input>` ``src.car.ignition`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_key_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2-12
 
@@ -1104,6 +1124,7 @@ I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`func
 * I remove the commented lines from :ref:`test_key_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
 
         def test_key_close_start_pressed(self):
@@ -1163,6 +1184,7 @@ test_brake_pressed_key_close_start_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -1221,6 +1243,7 @@ test_brake_pressed_key_close_start_pressed
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_car.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
@@ -1266,6 +1289,7 @@ test_brake_pressed_key_close_start_pressed
 * I change the name from :ref:`test_key_close_start_pressed` to :ref:`test_brake_pressed_key_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -1311,6 +1335,7 @@ test_brake_not_pressed_key_close_start_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10-17
 
@@ -1371,6 +1396,7 @@ test_brake_not_pressed_key_close_start_pressed
 * I write a simpler version of the new :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1-2
 
@@ -1383,6 +1409,7 @@ test_brake_not_pressed_key_close_start_pressed
 * I want the ``ignition`` :ref:`function<what is a function?>` to only check if the brake is :green:`pressed` if the start button is :green:`pressed` AND the key is :green:`close` to the ignition. I change the :ref:`if statements`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2-3, 5-7
 
@@ -1457,6 +1484,7 @@ test_brake_pressed_key_not_close_start_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 5-6
 
@@ -1491,6 +1519,7 @@ test_brake_pressed_key_not_close_start_pressed
 * I change the name of the test from :ref:`test_key_not_close_start_pressed` to :ref:`test_brake_pressed_key_not_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 10
 
@@ -1543,6 +1572,7 @@ test_brake_not_pressed_key_not_close_start_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10-17
 
@@ -1583,6 +1613,7 @@ test_brake_not_pressed_key_not_close_start_pressed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match the result of the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 2
 
@@ -1703,6 +1734,7 @@ test_brake_pressed_key_close_start_not_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 6
 
@@ -1729,6 +1761,7 @@ test_brake_pressed_key_close_start_not_pressed
 * I change the name from :ref:`test_key_close_start_not_pressed` to :ref:`test_brake_pressed_key_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 10
 
@@ -1781,6 +1814,7 @@ test_brake_not_pressed_key_close_start_not_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 10-17
 
@@ -1821,6 +1855,7 @@ test_brake_not_pressed_key_close_start_not_pressed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2
 
@@ -1873,6 +1908,7 @@ test_brake_pressed_key_not_close_start_not_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 5-6
 
@@ -1908,6 +1944,7 @@ test_brake_pressed_key_not_close_start_not_pressed
 * I change the name from :ref:`test_key_not_close_start_not_pressed` to :ref:`test_brake_pressed_key_not_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 10
 
@@ -1957,6 +1994,7 @@ test_brake_not_pressed_key_not_close_start_not_pressed
   ================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 10-17
 
@@ -1998,6 +2036,7 @@ test_brake_not_pressed_key_not_close_start_not_pressed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match the result of the :ref:`call<how to call a function with input>` to ``src.car.ignition`` in :ref:`test_brake_not_pressed_key_not_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 2
 
@@ -2215,6 +2254,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
   ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 7
 
@@ -2309,6 +2349,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
   ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 10-17
 
@@ -2344,6 +2385,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match the result of the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 10
 
@@ -2389,6 +2431,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 * I change the name of the test to from :ref:`test_brake_not_pressed_key_not_close_start_not_pressed` to :ref:`test_park_w_brake_not_pressed_key_not_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 10
 
@@ -2442,6 +2485,7 @@ test_park_w_brake_pressed_key_not_close_start_not_pressed
   ================  ================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 7
 
@@ -2475,6 +2519,7 @@ test_park_w_brake_pressed_key_not_close_start_not_pressed
   ================  ================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 10-17
 
@@ -2562,6 +2607,7 @@ the test passes.
 * I change the name from :ref:`test_brake_pressed_key_not_close_start_not_pressed` to :ref:`test_park_w_brake_pressed_key_not_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 10
 
@@ -2615,6 +2661,7 @@ test_park_w_brake_not_pressed_key_close_start_not_pressed
   ==============  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 7
 
@@ -2648,6 +2695,7 @@ test_park_w_brake_not_pressed_key_close_start_not_pressed
   ==============  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 10-17
 
@@ -2735,6 +2783,7 @@ the test passes.
 * I change the name of the test from :ref:`test_brake_not_pressed_key_close_start_not_pressed` to :ref:`test_park_w_brake_not_pressed_key_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 10
 
@@ -2788,6 +2837,7 @@ test_park_w_brake_pressed_key_close_start_not_pressed
   ==============  ================  ==================  ==================  ================
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 7
 
@@ -2821,6 +2871,7 @@ test_park_w_brake_pressed_key_close_start_not_pressed
   ==============  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 10-17
 
@@ -2908,6 +2959,7 @@ the test passes.
 * I change the name from :ref:`test_brake_pressed_key_close_start_not_pressed` to :ref:`test_park_w_brake_pressed_key_close_start_not_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 10
 
@@ -2961,6 +3013,7 @@ test_park_w_brake_not_pressed_key_not_close_start_pressed
   ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 7
 
@@ -2994,6 +3047,7 @@ test_park_w_brake_not_pressed_key_not_close_start_pressed
   ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 10-17
 
@@ -3081,6 +3135,7 @@ the test passes.
 * I change the name from :ref:`test_brake_not_pressed_key_not_close_start_pressed` to :ref:`test_park_w_brake_not_pressed_key_not_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10
 
@@ -3134,6 +3189,7 @@ test_park_w_brake_pressed_key_not_close_start_pressed
   ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 7
 
@@ -3167,6 +3223,7 @@ test_park_w_brake_pressed_key_not_close_start_pressed
   ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10-17
 
@@ -3254,6 +3311,7 @@ the test passes.
 * I change the name from :ref:`test_brake_pressed_key_not_close_start_pressed` to :ref:`test_park_w_brake_pressed_key_not_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 10
 
@@ -3307,6 +3365,7 @@ test_park_w_brake_not_pressed_key_close_start_pressed
   ==============  ==================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 7
 
@@ -3340,6 +3399,7 @@ test_park_w_brake_not_pressed_key_close_start_pressed
   ==============  ==================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 10-17
 
@@ -3427,6 +3487,7 @@ the test passes.
 * I change the name from :ref:`test_brake_not_pressed_key_close_start_pressed` to :ref:`test_park_w_brake_not_pressed_key_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10
 
@@ -3480,6 +3541,7 @@ test_park_w_brake_pressed_key_close_start_pressed
   ==============  ==================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7
 
@@ -3513,6 +3575,7 @@ test_park_w_brake_pressed_key_close_start_pressed
   ==============  ==================  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10-17
 
@@ -3591,6 +3654,7 @@ the test passes.
 * I make the :ref:`if statement<if statements>` simpler with :ref:`Logical Negation (NOT)<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1-2
 
@@ -3603,6 +3667,7 @@ the test passes.
 * I want the :ref:`function<what is a function?>` to check if the start button is :green:`pressed` before it checks the other :ref:`conditions<if statements>`. I add an :ref:`if statement<if statements>`, then change :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2-3, 6-8
 
@@ -3621,6 +3686,7 @@ the test passes.
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the :ref:`if statements` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 4-5, 7-14
 
@@ -3662,6 +3728,7 @@ the test passes.
 * I change the name from :ref:`test_brake_pressed_key_close_start_pressed` to :ref:`test_park_w_brake_pressed_key_close_start_pressed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 

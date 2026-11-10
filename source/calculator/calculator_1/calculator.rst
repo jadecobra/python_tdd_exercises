@@ -248,6 +248,7 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
     :emphasize-text: AssertionError
@@ -264,6 +265,7 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -362,6 +364,7 @@ test_addition
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -393,6 +396,7 @@ test_addition
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -437,6 +441,7 @@ test_addition
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -506,6 +511,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add another :ref:`assertion<what is an assertion?>` to show the problem with the :ref:`function<what is a function?>` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3
 
@@ -560,6 +566,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add another test to make sure the :ref:`function<what is a function?>` works for other numbers in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -577,6 +584,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I change the expectation in the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 1
 
@@ -587,6 +595,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add another test with a different number for the first input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -605,6 +614,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I change the expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 1
 
@@ -615,6 +625,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add an :ref:`assertion<what is an assertion?>` with bigger numbers
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -634,6 +645,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I change the expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 1
 
@@ -644,6 +656,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add another :ref:`assertion<what is an assertion?>` with a negative number
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7
 
@@ -664,6 +677,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I change the expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 1
 
@@ -674,6 +688,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I try another :ref:`assertion<what is an assertion?>` with two negative numbers
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 4
 
@@ -691,6 +706,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I make the expectation match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 1
 
@@ -701,6 +717,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add an :ref:`assertion<what is an assertion?>` with floats_ (binary floating point decimal numbers)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 4
 
@@ -718,6 +735,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 1
 
@@ -728,6 +746,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 4
 
@@ -747,6 +766,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 1-4
 
@@ -761,6 +781,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 7-10
 
@@ -786,6 +807,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 16
 
@@ -838,6 +860,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   I add names to the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2-7
 
@@ -855,6 +878,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I do the same thing to the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 9-14
 
@@ -878,6 +902,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I do the next one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 8-13
 
@@ -900,6 +925,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * then the next one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 8-13
 
@@ -922,6 +948,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * then the next
 
   .. code-block:: python
+    :caption:
     :lineno-start: 29
     :emphasize-lines: 8-13
 
@@ -944,6 +971,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * on to the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 8-13
 
@@ -966,6 +994,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * and the next
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 8-13
 
@@ -988,6 +1017,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * more?
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 8-13
 
@@ -1010,6 +1040,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * I add :ref:`variables<what is a variable?>` to the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 8-9, 11-12
 
@@ -1032,6 +1063,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 * ah, the last one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 8-9, 11-12
 
@@ -1085,6 +1117,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I use a random value for ``first_number`` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 2-3
 
@@ -1104,6 +1137,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I want to see the test fail to be sure everything works as expected. I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 7
 
@@ -1127,6 +1161,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I change the expectation of the :ref:`assertion<what is an assertion?>` back to the right calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3
 
@@ -1140,6 +1175,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I remove the commented line then use a random value for ``second_number``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 2-3
 
@@ -1153,6 +1189,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I remove the commented line and the other :ref:`assertions<what is an assertion?>` because they are covered by the one that uses random numbers. I do not need them anymore
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
 
         def test_addition(self):
@@ -1171,6 +1208,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I use the ``Rename Symbol`` feature to change the name of :ref:`variables<what is a variable?>` to say what they are
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 2-3, 7-8, 10
 
@@ -1191,6 +1229,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * There is some repetition, If I want to use a different range of random numbers for the test, I have to make a change in more than one place. For example
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 2-3
 
@@ -1220,6 +1259,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I use the new :ref:`function<what is a function?>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2-5
 
@@ -1234,6 +1274,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
         def test_addition(self):
@@ -1243,6 +1284,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I change the expectation in the :ref:`assertion<what is an assertion?>` to make sure the test works
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 6
 
@@ -1263,6 +1305,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I undo the change
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 10
 
@@ -1286,6 +1329,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I now only need to change the range of random numbers for the test in one place
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2
 
@@ -1297,6 +1341,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I can use any range of numbers the computer can handle, for example
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2
 
@@ -1317,6 +1362,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
   I make the range smaller
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2
 
@@ -1328,6 +1374,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 * I remove ``test addition`` from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
 
     # TODO
@@ -1422,6 +1469,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I point ``subtract`` to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -1438,6 +1486,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I change ``subtract`` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1-2
 
@@ -1453,6 +1502,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I make ``subtract`` take inputs
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -1474,6 +1524,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I make the ``subtract`` :ref:`function<what is a function?>` return the difference between the inputs
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2
 
@@ -1485,6 +1536,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove ``test subtraction`` from the TODO list in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
     # TODO
@@ -1556,6 +1608,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * Using what I know so far, I add a :ref:`function<what is a function?>` to ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5-6
 
@@ -1571,6 +1624,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
 
     # TODO
@@ -1647,6 +1701,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add the :ref:`function<what is a function?>` to ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5-6
 
@@ -1662,6 +1717,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove the TODO list from ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
 
         def test_division(self):
@@ -1699,6 +1755,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add :ref:`object attributes (variables)<test_attribute_error_w_object_attributes>` to remove the repetition and use the same numbers for all the tests
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3-4
 
@@ -1712,6 +1769,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_addition`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 2-5
 
@@ -1728,6 +1786,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.add`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3-6
 
@@ -1746,6 +1805,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 8-9
 
@@ -1765,6 +1825,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_addition`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
 
         def test_addition(self):
@@ -1785,6 +1846,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_subtraction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2-5
 
@@ -1801,6 +1863,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.subtract`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 3-6
 
@@ -1819,6 +1882,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 8-9
 
@@ -1838,6 +1902,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_subtraction`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
         def test_subtraction(self):
@@ -1858,6 +1923,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_multiplication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 2-5
 
@@ -1874,6 +1940,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.multiply`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3-6
 
@@ -1892,6 +1959,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 8-9
 
@@ -1911,6 +1979,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_multiplication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
 
         def test_multiplication(self):
@@ -1931,6 +2000,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_division`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 2-5
 
@@ -1947,6 +2017,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.divide`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 3-6
 
@@ -1965,6 +2036,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 8-9
 
@@ -1984,6 +2056,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_division`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
         def test_division(self):
@@ -2167,6 +2240,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   I add 2 names for the :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -2182,6 +2256,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
 * I change :ref:`the return statement` to see the difference between the inputs and the expected output, this is the :ref:`identity function<test_identity_function>` again
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2
 
@@ -2197,6 +2272,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
 * I change it to the multiplication of the inputs to match the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2
 
@@ -2214,6 +2290,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
 * I add another :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5-6
 
@@ -2233,6 +2310,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2
 

@@ -122,6 +122,7 @@ add TestAssertionError object
 * I add an :ref:`object<everything is an object>` named ``AssertionError`` with a :ref:`method<what is a method?>` for the :ref:`first failing test<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5, 7-8
 
@@ -142,6 +143,7 @@ add TestAssertionError object
 * I change the name of the :ref:`object<everything is an object>` to ``TestAssertionError``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5-6
 
@@ -164,6 +166,7 @@ add TestAssertionError object
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 142
     :emphasize-lines: 7
     :emphasize-text: AttributeError
@@ -187,6 +190,7 @@ add TestAssertionError object
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestAssertionError``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 6-7
 
@@ -210,6 +214,7 @@ add TestAssertionError object
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 146
     :emphasize-lines: 5
     :emphasize-text: NameError
@@ -240,6 +245,7 @@ add TestAssertionError object
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_failure` in the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 6-7
 
@@ -267,6 +273,7 @@ add TestAssertionError object
 * I remove the commented lines from :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
     def assert_equal(x, y):
@@ -316,6 +323,7 @@ test_assert_keyword with unittest
 * I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3-6
 
@@ -342,6 +350,7 @@ test_assert_keyword with unittest
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 6
     :emphasize-text: TypeError
@@ -386,6 +395,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` for the three :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4, 7, 10
 
@@ -418,6 +428,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(1+1, 2)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 4-5
 
@@ -436,6 +447,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``('1'+'1', '11')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 8-9
 
@@ -460,6 +472,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``('I am'+' alive', 'I am alive')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 2-3
 
@@ -477,6 +490,7 @@ the test is green again.
 * I add :ref:`variables<what is a variable?>` for ``'I am' + ' alive'`` and ``'I am alive'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 3-4
 
@@ -494,6 +508,7 @@ the test is green again.
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'I am' + ' alive'`` and ``'I am alive'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 3-4, 6-7
 
@@ -513,6 +528,7 @@ the test is green again.
 * I add :ref:`variables<what is a variable?>` for ``'1' + '1'`` and ``'11'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 7-8
 
@@ -531,6 +547,7 @@ the test is green again.
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'1' + '1'`` and ``'11'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 3-4, 6-7
 
@@ -549,6 +566,7 @@ the test is green again.
 * I add :ref:`variables<what is a variable?>` for ``1 + 1`` and ``2``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 3-4
 
@@ -563,6 +581,7 @@ the test is green again.
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``1 + 1`` and ``2``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 5-6, 8-9
 
@@ -583,6 +602,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assert_keyword`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
     class TestAssertionError(unittest.TestCase):
@@ -634,6 +654,7 @@ test_assertion_error_w_none with unittest
   .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`object<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 6-7, 9-17
 
@@ -705,6 +726,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4, 7, 10
 
@@ -720,6 +742,7 @@ the test is green again.
             self.assertIs(True, None)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 2, 5, 8, 11
 
@@ -736,6 +759,7 @@ the test is green again.
             self.assertIs((), None)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 2, 5, 8
 
@@ -766,6 +790,7 @@ the test is green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(None, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4-5
 
@@ -792,6 +817,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(False, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-3
 
@@ -816,6 +842,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(True, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2-3
 
@@ -834,6 +861,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 2-3
 
@@ -852,6 +880,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0.0, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2-3
 
@@ -870,6 +899,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``('', None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 2-3
 
@@ -888,6 +918,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``((), None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 2-3
 
@@ -906,6 +937,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``([], None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2-3
 
@@ -924,6 +956,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(set(), None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 2-3
 
@@ -942,6 +975,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``({}, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 2-3
 
@@ -959,6 +993,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``{}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 5
 
@@ -977,6 +1012,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 2-3, 5-6
 
@@ -995,6 +1031,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 5
 
@@ -1012,6 +1049,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 2-3, 5-6
 
@@ -1029,6 +1067,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``[]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 5
 
@@ -1044,6 +1083,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``[]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2-3, 5-6
 
@@ -1061,6 +1101,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 5
 
@@ -1076,6 +1117,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 2-3, 5-6
 
@@ -1093,6 +1135,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``''``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 5
 
@@ -1108,6 +1151,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``''``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 2-3, 5-6
 
@@ -1125,6 +1169,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 5
 
@@ -1140,6 +1185,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 2-3, 5-6
 
@@ -1157,6 +1203,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 5
 
@@ -1172,6 +1219,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 2-3, 5-6
 
@@ -1189,6 +1237,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
 
             reality = 'I am' + ' alive'
@@ -1207,6 +1256,7 @@ the test is green again.
             self.assertIsNot(True, None)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
             an_integer = 0
@@ -1222,6 +1272,7 @@ the test is green again.
             self.assertIsNot(a_string, None)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
 
             a_tuple = ()
@@ -1269,6 +1320,7 @@ test_assertion_error_w_false with unittest
 * I move :ref:`test_assertion_error_w_false` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 5-6, 8-16
 
@@ -1335,6 +1387,7 @@ the test is green again.
 * I add calls to :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs<test_assertIs>` to :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 4, 7, 10
 
@@ -1350,6 +1403,7 @@ the test is green again.
             self.assertIs(True, False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 2, 5, 8, 11
 
@@ -1366,6 +1420,7 @@ the test is green again.
             self.assertIs((), False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 2, 5, 8
 
@@ -1396,6 +1451,7 @@ the test is green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(False, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 4-5
 
@@ -1416,6 +1472,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(None, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 2-3
 
@@ -1434,6 +1491,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(True, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2-3
 
@@ -1452,6 +1510,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 2-3
 
@@ -1470,6 +1529,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0.0, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 2-3
 
@@ -1488,6 +1548,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``('', False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2-3
 
@@ -1506,6 +1567,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``((), False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 2-3
 
@@ -1524,6 +1586,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``([], False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 2-3
 
@@ -1542,6 +1605,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(set(), False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 2-3
 
@@ -1560,6 +1624,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``({}, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 2-3
 
@@ -1577,6 +1642,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``{}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 5
 
@@ -1592,6 +1658,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 2-3, 5-6
 
@@ -1610,6 +1677,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 5
 
@@ -1625,6 +1693,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 2-3, 5-6
 
@@ -1642,6 +1711,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``[]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 5
 
@@ -1657,6 +1727,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``[]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 2-3, 5-6
 
@@ -1674,6 +1745,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 5
 
@@ -1689,6 +1761,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 2-3, 5-6
 
@@ -1706,6 +1779,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``''``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 5
 
@@ -1721,6 +1795,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``''``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 2-3, 5-6
 
@@ -1738,6 +1813,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 5
 
@@ -1753,6 +1829,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 2-3, 5-6
 
@@ -1770,6 +1847,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 5
 
@@ -1785,6 +1863,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 2-3, 5-6
 
@@ -1802,6 +1881,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
 
             a_dictionary = {}
@@ -1819,6 +1899,7 @@ the test is green again.
             self.assertIsNot(True, False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
 
             an_integer = 0
@@ -1834,6 +1915,7 @@ the test is green again.
             self.assertIsNot(a_string, False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
 
             a_tuple = ()
@@ -1881,6 +1963,7 @@ test_assertion_error_w_true with unittest
 * I move :ref:`test_assertion_error_w_true` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 5-6, 8-16
 
@@ -1950,6 +2033,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs<test_assertIs>` to :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 4, 7, 10, 13, 16, 19, 22, 25, 28, 31
 
@@ -2003,6 +2087,7 @@ the test is green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(True, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 4-5
 
@@ -2023,6 +2108,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(None, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 2-3
 
@@ -2041,6 +2127,7 @@ the test is green again.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(False, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 2-3
 
@@ -2059,6 +2146,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 2-3
 
@@ -2077,6 +2165,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0.0, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 2-3
 
@@ -2095,6 +2184,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``('', True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
     :emphasize-lines: 2-3
 
@@ -2113,6 +2203,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``((), True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 148
     :emphasize-lines: 2-3
 
@@ -2131,6 +2222,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``([], True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 152
     :emphasize-lines: 2-3
 
@@ -2149,6 +2241,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(set(), True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
     :emphasize-lines: 2-3
 
@@ -2167,6 +2260,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``({}, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 2-3
 
@@ -2184,6 +2278,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``{}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
     :emphasize-lines: 5
 
@@ -2199,6 +2294,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 2-3, 5-6
 
@@ -2217,6 +2313,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 152
     :emphasize-lines: 5
 
@@ -2232,6 +2329,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
     :emphasize-lines: 2-3, 5-6
 
@@ -2249,6 +2347,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``[]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 148
     :emphasize-lines: 5
 
@@ -2264,6 +2363,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``[]``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 152
     :emphasize-lines: 2-3, 5-6
 
@@ -2281,6 +2381,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
     :emphasize-lines: 3
 
@@ -2296,6 +2397,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 148
     :emphasize-lines: 2-3, 5-6
 
@@ -2313,6 +2415,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``''``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 5
 
@@ -2328,6 +2431,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``''``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
     :emphasize-lines: 2-3, 5-6
 
@@ -2345,6 +2449,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 5
 
@@ -2360,6 +2465,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 140
     :emphasize-lines: 2-3, 5-6
 
@@ -2377,6 +2483,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 5
 
@@ -2392,6 +2499,7 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 2-3, 5-6
 
@@ -2409,6 +2517,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
 
             a_dictionary = {}
@@ -2426,6 +2535,7 @@ the test is green again.
             self.assertIsNot(False, True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
 
             an_integer = 0
@@ -2441,6 +2551,7 @@ the test is green again.
             self.assertIsNot(a_string, True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
 
             a_tuple = ()
@@ -2488,6 +2599,7 @@ test_assertion_error_w_equality with unittest
 * I move :ref:`test_assertion_error_w_equality` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
     :emphasize-lines: 5-8, 10-12
 
@@ -2552,6 +2664,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to :ref:`assertNotEqual<test_assertNotEqual>` and :ref:`assertEqual<test_assertEqual>` to :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 4, 7, 10, 13, 16, 19
 
@@ -2593,6 +2706,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(None, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 4-5
 
@@ -2613,6 +2727,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(False, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 166
     :emphasize-lines: 2-3
 
@@ -2631,6 +2746,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(True, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 170
     :emphasize-lines: 2-3
 
@@ -2649,6 +2765,7 @@ the test is green again.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``(False, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 174
     :emphasize-lines: 2-3
 
@@ -2673,6 +2790,7 @@ the test is green again.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``(False, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 178
     :emphasize-lines: 2-3
 
@@ -2691,6 +2809,7 @@ the test is green again.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``(True, None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 182
     :emphasize-lines: 2-3
 
@@ -2706,6 +2825,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
 
             a_dictionary = {}
@@ -2723,6 +2843,7 @@ the test is green again.
             self.assertEqual(True, True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 170
 
             assert_not_equal(False, None)
@@ -2763,6 +2884,7 @@ test_assertion_error_w_is_vs_equal with unittest
 * I move :ref:`test_assertion_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 176
     :emphasize-lines: 4-6
 
@@ -2821,6 +2943,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIs<test_assertIs>` for ``assert 0 is not 0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 4
 
@@ -2842,6 +2965,7 @@ the test is green again.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 4-5
 
@@ -2858,6 +2982,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``assert 0 == 0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 185
     :emphasize-lines: 2
 
@@ -2878,6 +3003,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 185
     :emphasize-lines: 2-3
 
@@ -2893,6 +3019,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assertion_error_w_is_vs_equal`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 176
 
             assert_not_equal(True, None)
@@ -2934,6 +3061,7 @@ will_not_run with unittest
 * I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestAssertionError class<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 183
     :emphasize-lines: 4-7
 
@@ -2953,6 +3081,7 @@ will_not_run with unittest
 * I add a :ref:`call<how to call a function with input>` to :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
     :emphasize-lines: 5
 
@@ -2970,6 +3099,7 @@ will_not_run with unittest
 * I add ``self`` to the parentheses of :ref:`will not run<pytest only calls the function if the name starts with test>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 183
     :emphasize-lines: 4-5
 
@@ -2988,6 +3118,7 @@ will_not_run with unittest
 * I change the name from :ref:`will not run<pytest only calls the function if the name starts with test>` to ``test_will_not_run``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
     :emphasize-lines: 2-3
 
@@ -3048,6 +3179,7 @@ the test is green again.
 * I remove the new commented lines from :ref:`will not run<pytest only calls the function if the name starts with test>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
 
         def will_not_run():
@@ -3085,6 +3217,7 @@ test_failure with unittest
 * I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
     :emphasize-lines: 7-9
 
@@ -3149,6 +3282,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 192
     :emphasize-lines: 5
 
@@ -3170,6 +3304,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 192
     :emphasize-lines: 5-6
 
@@ -3188,6 +3323,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_failure<pytest only calls the function if the name starts with test>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 186
 
         def will_not_run():
@@ -3223,6 +3359,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add an :ref:`object attribute<what is an object attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 3
 
@@ -3235,6 +3372,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 11-15
 
@@ -3261,6 +3399,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 15-19
 
@@ -3291,6 +3430,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 15-19
 
@@ -3323,6 +3463,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add an :ref:`object attribute<what is an object attribute?>` for ``a_float = 0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4
 
@@ -3336,6 +3477,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3-7
 
@@ -3354,6 +3496,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 3-7
 
@@ -3372,6 +3515,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 147
     :emphasize-lines: 3-7
 
@@ -3392,6 +3536,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add an :ref:`object attribute<what is an object attribute?>` for ``a_string = ''``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 5
 
@@ -3406,6 +3551,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 3-7
 
@@ -3424,6 +3570,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 3-7
 
@@ -3442,6 +3589,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 158
     :emphasize-lines: 3-7
 
@@ -3462,6 +3610,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add an :ref:`object attribute<what is an object attribute?>` for ``a_tuple = ()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 6
 
@@ -3477,6 +3626,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 3-7
 
@@ -3495,6 +3645,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 123
     :emphasize-lines: 3-7
 
@@ -3513,6 +3664,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 169
     :emphasize-lines: 3-7
 
@@ -3533,6 +3685,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add an :ref:`object attribute<what is an object attribute?>` for ``a_list = []``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 7
 
@@ -3549,6 +3702,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 3-7
 
@@ -3567,6 +3721,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 3-7
 
@@ -3585,6 +3740,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 180
     :emphasize-lines: 3-7
 
@@ -3605,6 +3761,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add an :ref:`object attribute<what is an object attribute?>` for ``a_set = set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 8
 
@@ -3622,6 +3779,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 3-7
 
@@ -3640,6 +3798,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 3-7
 
@@ -3658,6 +3817,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
     :emphasize-lines: 3-7
 
@@ -3678,6 +3838,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add an :ref:`object attribute<what is an object attribute?>` for ``a_dictionary = {}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 9
 
@@ -3696,6 +3857,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 3-7
 
@@ -3714,6 +3876,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 3-7
 
@@ -3732,6 +3895,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`object attribute<what is an object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 202
     :emphasize-lines: 3-7
 
@@ -3752,6 +3916,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I remove the commented lines from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 158
 
         def test_assertion_error_w_true(self):
@@ -3765,6 +3930,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(False, True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 168
 
             assert_is_not_true(self.an_integer)
@@ -3777,6 +3943,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_string, True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 177
 
             assert_is_not_true(self.a_tuple)
@@ -3796,6 +3963,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I remove the commented lines from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
 
         def test_assertion_error_w_false(self):
@@ -3809,6 +3977,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(True, False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 116
 
             assert_is_not_false(self.an_integer)
@@ -3821,6 +3990,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_string, False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
 
             assert_is_not_false(self.a_tuple)
@@ -3840,6 +4010,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I remove the commented lines from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
 
         def test_assertion_error_w_none(self):
@@ -3853,6 +4024,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(True, None)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
 
             assert_is_not_none(self.an_integer)
@@ -3865,6 +4037,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_string, None)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
 
             assert_is_not_none(self.a_tuple)

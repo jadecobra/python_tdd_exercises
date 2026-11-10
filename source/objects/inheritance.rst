@@ -433,6 +433,7 @@ test_making_an_object_w_pass
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -508,6 +509,7 @@ I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:
 * I remove the commented line from :ref:`test_making_an_object_w_pass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def test_making_an_object_w_pass():
@@ -556,6 +558,7 @@ I can also make an :ref:`object<what is an object?>` with parentheses/brackets `
 * I add another test to ``test_objects.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -608,6 +611,7 @@ I can also make an :ref:`object<what is an object?>` with parentheses/brackets `
 * I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_an_object_w_parentheses` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2-3
 
@@ -631,6 +635,7 @@ I can also make an :ref:`object<what is an object?>` with parentheses/brackets `
 * I add parentheses to the :ref:`definition<how to make an object>` of ``WParentheses``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 1-2
     :emphasize-text: ()
@@ -711,6 +716,7 @@ I can make an :ref:`object<what is an object?>` with :ref:`object (the mother of
 * I add a test with an :ref:`assertion<what is an assertion?>` for a new :ref:`object<what is an object?>` to ``test_objects.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 5-6
 
@@ -741,6 +747,7 @@ I can make an :ref:`object<what is an object?>` with :ref:`object (the mother of
 * I add an :ref:`object definition<how to make an object>` for ``WObject``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4
 
@@ -763,6 +770,7 @@ I can make an :ref:`object<what is an object?>` with :ref:`object (the mother of
 * I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_an_object_w_object` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 2-3
 
@@ -786,6 +794,7 @@ I can make an :ref:`object<what is an object?>` with :ref:`object (the mother of
 * I add :ref:`object<everything is an object>` to the parentheses of the :ref:`object definition<how to make an object>` for ``WObject``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1-2
     :emphasize-text: object
@@ -812,6 +821,7 @@ I can make an :ref:`object<what is an object?>` with :ref:`object (the mother of
     class WObject(object): pass
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
     def test_making_an_object_w_pass():
@@ -878,6 +888,7 @@ I want to test if :ref:`None<what is None?>` is an :ref:`instance of object<how 
 * I add a test with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 5-6
 
@@ -933,6 +944,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_none_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
 
     def test_is_none_an_object():
@@ -980,6 +992,7 @@ I want to test if a :ref:`boolean<what are booleans?>` is a :ref:`subclass of ob
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool (the class for booleans)<how to test if something is grouped as True>` to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 5-6
 
@@ -1045,6 +1058,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_boolean_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
 
     def test_is_a_boolean_an_object():
@@ -1085,6 +1099,7 @@ I want to test if an integer_ (a whole number without decimals) is a :ref:`subcl
 * I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`object<what is an object?>` for whole numbers without decimals), to show that everything in Python_ is a :ref:`child of object.<what is an object?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 5-6
 
@@ -1140,6 +1155,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_an_integer_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
     def test_is_an_integer_an_object():
@@ -1180,6 +1196,7 @@ I want to test if a float_ (a binary floating point decimal number) is a :ref:`s
 * I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`object<what is an object?>` for binary floating point decimal numbers), to show that everything in Python_ is a :ref:`child of object.<what is an object?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 5-6
 
@@ -1235,6 +1252,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_float_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
 
     def test_is_a_float_an_object():
@@ -1275,6 +1293,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is a :ref:`subclass of o
 * I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`object<what is an object?>` for anything in :ref:`quotes`), to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 5-6
 
@@ -1330,6 +1349,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_string_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
 
     def test_is_a_string_an_object():
@@ -1370,6 +1390,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 * I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`object<what is an object?>` for anything in parentheses ``( )`` separated by a comma), to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 5-6
 
@@ -1425,6 +1446,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
     def test_is_a_tuple_an_object():
@@ -1465,6 +1487,7 @@ I want to test if a :ref:`list<what is a list?>` (anything in square brackets ``
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 5-6
 
@@ -1520,6 +1543,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_list_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
 
     def test_is_a_list_an_object():
@@ -1559,6 +1583,7 @@ I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value 
 * I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`object<what is an object?>` for anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`), to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 5-6
 
@@ -1614,6 +1639,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
 
     def test_is_a_set_an_object():
@@ -1653,6 +1679,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 5-6
 
@@ -1708,6 +1735,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_dictionary_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
 
     def test_is_a_dictionary_an_object():
@@ -1744,6 +1772,7 @@ An :ref:`instance<how to test if something is an instance>` is a copy of an :ref
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_an_object_w_pass` to show that :ref:`an instance (a copy)<how to test if something is an instance>` is different from a :ref:`subclass (child)<how to test if something is a subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3
 
@@ -1765,6 +1794,7 @@ An :ref:`instance<how to test if something is an instance>` is a copy of an :ref
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 4
     :emphasize-text: TypeError
@@ -1809,6 +1839,7 @@ the test passes.
 * I remove the commented line from :ref:`test_making_an_object_w_pass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
     def test_making_an_object_w_pass():
@@ -1821,6 +1852,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_an_object_w_parentheses` to show that :ref:`an instance (a copy)<how to test if something is an instance>` is different from a :ref:`subclass (child)<how to test if something is a subclass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3
 
@@ -1842,6 +1874,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3-4
 
@@ -1858,6 +1891,7 @@ the test passes.
 * I remove the commented line from :ref:`test_making_an_object_w_parentheses`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
 
     def test_making_an_object_w_parentheses():
@@ -1870,6 +1904,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_an_object_w_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 3
 
@@ -1891,6 +1926,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 3-4
 
@@ -1907,6 +1943,7 @@ the test passes.
 * I remove the commented line from :ref:`test_making_an_object_w_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
     def test_making_an_object_w_object():
@@ -1919,6 +1956,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_none_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 3
 
@@ -1940,6 +1978,7 @@ the test passes.
 * I add a note and comment the line out
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 3-4
 
@@ -1954,6 +1993,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_boolean_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 2
 
@@ -1975,6 +2015,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 2-3
 
@@ -1995,6 +2036,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_boolean_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
 
     def test_is_a_boolean_an_object():
@@ -2007,6 +2049,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_an_integer_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 2
 
@@ -2028,6 +2071,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 2-3
 
@@ -2048,6 +2092,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_an_integer_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
 
     def test_is_an_integer_an_object():
@@ -2060,6 +2105,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_float_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2
 
@@ -2081,6 +2127,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 2-3
 
@@ -2101,6 +2148,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_float_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
 
     def test_is_a_float_an_object():
@@ -2114,6 +2162,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_string_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2
 
@@ -2136,6 +2185,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-3
 
@@ -2156,6 +2206,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_string_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
 
     def test_is_a_string_an_object():
@@ -2168,6 +2219,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 2
 
@@ -2189,6 +2241,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 2-3
 
@@ -2209,6 +2262,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
 
     def test_is_a_tuple_an_object():
@@ -2222,6 +2276,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_list_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2
 
@@ -2243,6 +2298,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2-3
 
@@ -2263,6 +2319,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_list_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
     def test_is_a_list_an_object():
@@ -2275,6 +2332,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 2
 
@@ -2296,6 +2354,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 2-3
 
@@ -2316,6 +2375,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
 
     def test_is_a_set_an_object():
@@ -2328,6 +2388,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_dictionary_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 2
 
@@ -2349,6 +2410,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 2-3
 
@@ -2370,6 +2432,7 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_dictionary_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
 
     def test_is_a_dictionary_an_object():
@@ -2424,6 +2487,7 @@ I want to test the :ref:`attributes<what is an object attribute?>` and :ref:`met
 * I add a test to ``test_objects.py`` with a call to the `dir built-in function`_ to get the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 6-9
 
@@ -2514,6 +2578,7 @@ I want to test the :ref:`attributes<what is an object attribute?>` and :ref:`met
   .. caution:: Your list of attributes and methods may be different because of your Python version.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 3-12
     :emphasize-text: __init__

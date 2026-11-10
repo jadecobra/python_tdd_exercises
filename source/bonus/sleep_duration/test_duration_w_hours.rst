@@ -51,6 +51,7 @@ requirements
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -61,6 +62,7 @@ requirements
 * I change the name of the :ref:`object<everything is an object>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 1
 

@@ -177,6 +177,7 @@ because ``src`` is not defined in ``tests/test_functions.py``.
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 260
     :emphasize-lines: 6
     :emphasize-text: AttributeError
@@ -212,6 +213,7 @@ because ``src`` is not defined in ``tests/test_functions.py``.
 * I remove the commented line and :ref:`the w_pass function<test_making_a_function_w_pass>` from :ref:`test_making_a_function_w_pass` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
     def test_making_a_function_w_pass():
@@ -260,6 +262,7 @@ move w_return
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 5-6
 
@@ -313,6 +316,7 @@ the test passes.
 * I remove the commented line and :ref:`the w_return function<test_making_a_function_w_return>` from :ref:`test_making_a_function_w_return` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
     def test_making_a_function_w_return():
@@ -358,6 +362,7 @@ move w_return_none
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 5-6
 
@@ -414,6 +419,7 @@ the test passes.
 * I remove the commented line and :ref:`the w_return_none function<test_making_a_function_w_return_none>` from :ref:`test_making_a_function_w_return_none` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
     def test_making_a_function_w_return_none():
@@ -459,6 +465,7 @@ move return_leaves_the_function
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 6-9
 
@@ -519,6 +526,7 @@ the test passes.
 * I remove the commented line and :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` from :ref:`test_what_happens_after_functions_return` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
     def test_what_happens_after_functions_return():
@@ -567,6 +575,7 @@ move constant function
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 5-8
 
@@ -626,6 +635,7 @@ the test passes.
 * I remove the commented line and :ref:`the constant function<test_constant_function>` from :ref:`test_constant_function` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
     def test_constant_function():
@@ -674,6 +684,7 @@ move identity function
 * I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_identity_function` to use the results of calls to the :ref:`identity function<test_identity_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of calls to the :ref:`identity function<test_identity_function>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 5-10
 
@@ -734,6 +745,7 @@ the test passes.
 * I remove the commented line and :ref:`the identity function<test_identity_function>` from :ref:`test_identity_function` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
 
     def test_identity_function():
@@ -783,6 +795,7 @@ move positional_arguments
 * I comment out the :ref:`positional_arguments function<test_positional_arguments>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 17-18
 
@@ -826,6 +839,7 @@ move positional_arguments
 * I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_positional_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-4
 
@@ -846,6 +860,7 @@ move positional_arguments
 * I change the :ref:`call<how to call a function with input>` to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_keyword_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 4-5
 
@@ -875,6 +890,7 @@ move positional_arguments
 * I add a copy of the :ref:`positional_arguments function<test_positional_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 5-6
 
@@ -909,6 +925,7 @@ move positional_arguments
 * I remove the commented :ref:`positional_arguments function<test_positional_arguments>` from ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
 
     def test_why_use_a_function():
@@ -954,6 +971,7 @@ move keyword_arguments
 * I comment out the :ref:`keyword_arguments function<test_keyword_arguments>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 11-12
 
@@ -990,6 +1008,7 @@ move keyword_arguments
 * I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_keyword_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 2-4
 
@@ -1011,6 +1030,7 @@ move keyword_arguments
 * I add a copy of the :ref:`keyword_arguments function<test_keyword_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 5-6
 
@@ -1033,6 +1053,7 @@ move keyword_arguments
 * I change the :ref:`call<how to call a function with input>` to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_positional_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 4-5
 
@@ -1078,6 +1099,7 @@ move keyword_arguments
 * I remove the commented lines from :ref:`test_positional_arguments` and :ref:`test_keyword_arguments` and the commented :ref:`keyword_arguments function<test_keyword_arguments>` from ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
 
     def test_positional_arguments():
@@ -1116,6 +1138,7 @@ move keyword_arguments
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
 
     def test_keyword_arguments():
@@ -1192,6 +1215,7 @@ move args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 142
     :emphasize-lines: 8-9
 
@@ -1255,6 +1279,7 @@ the test passes.
 * I remove the commented line and the :ref:`args_and_kwargs function<test_args_and_kwargs>` from :ref:`test_args_and_kwargs` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 142
 
     def test_args_and_kwargs():
@@ -1308,6 +1333,7 @@ move optional_arguments
 * I comment out the :ref:`optional_arguments function<test_optional_arguments>` in :ref:`test_optional_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 2-5
 
@@ -1337,6 +1363,7 @@ move optional_arguments
 * I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` to the :ref:`optional_arguments function<test_optional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 6-8
 
@@ -1364,6 +1391,7 @@ move optional_arguments
 * I add a copy of the :ref:`optional_arguments function<test_optional_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 5-8
 
@@ -1403,6 +1431,7 @@ move optional_arguments
 * I remove the commented :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
 
     def test_optional_arguments():
@@ -1437,6 +1466,7 @@ move unknown_number_of_arguments function
 * I comment out the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in :ref:`test_unknown_number_of_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 192
     :emphasize-lines: 2-5
 
@@ -1466,6 +1496,7 @@ move unknown_number_of_arguments function
 * I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 192
     :emphasize-lines: 6-8
 
@@ -1492,6 +1523,7 @@ move unknown_number_of_arguments function
 * I add a copy of the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 7-10
 
@@ -1535,6 +1567,7 @@ move unknown_number_of_arguments function
 * I remove the commented :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 192
 
     def test_unknown_number_of_arguments():
@@ -1905,6 +1938,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`optional_arguments<test_optional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4-5
 
@@ -1924,6 +1958,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a name to allow the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 1-2
 
@@ -1940,6 +1975,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) to replace :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-4
 
@@ -1958,6 +1994,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add another name to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 2-3
 
@@ -1977,6 +2014,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I make the argument :ref:`optional<test_optional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-4
 
@@ -1997,6 +2035,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change :ref:`the return statement` of :ref:`optional_arguments<test_optional_arguments>` to see the difference between the input and the expected output
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 6-7
 
@@ -2020,6 +2059,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change the :ref:`default value<test_optional_arguments>` to ``'doe'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4-5
 
@@ -2044,6 +2084,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add the name in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 5-8
 
@@ -2071,6 +2112,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change the order of the arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 7-9
 
@@ -2098,6 +2140,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I make ``first_input`` the first argument to see if the problem is the position it is in
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 8-9
 
@@ -2126,6 +2169,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I make ``argument`` :ref:`optional<test_optional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 9-10
 
@@ -2158,6 +2202,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add ``first_input`` to :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 15-16
 
@@ -2190,6 +2235,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I remove ``argument`` from the parentheses and :ref:`return statement<the return statement>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 10-11, 17-18
 
@@ -2225,6 +2271,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add the name in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 12-13
 
@@ -2260,6 +2307,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I give the argument a :ref:`default value<test_optional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 13-14
 
@@ -2296,6 +2344,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add ``last_input`` to :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 20-21
 
@@ -2333,6 +2382,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I remove ``argument_b`` from the parentheses and :ref:`return statement<the return statement>`,  then change the :ref:`default value<test_optional_arguments>` of ``last_input`` to ``'doe'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 14-15, 22-23
 
@@ -2370,6 +2420,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`args_and_kwargs<test_args_and_kwargs>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4-5
 
@@ -2389,6 +2440,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add ``last_input`` in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 1-2
 
@@ -2408,6 +2460,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add another name before ``last_input``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 2-3
 
@@ -2425,6 +2478,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I :ref:`return<the return statement>` the inputs
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4-5
 
@@ -2444,6 +2498,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`keyword_arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 4-5
 
@@ -2465,6 +2520,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add ``first_input`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 1-2
 
@@ -2483,6 +2539,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add ``last_input`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 2-3
 
@@ -2500,6 +2557,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I copy and paste the tuple_ from the terminal_ as :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 4-5
 
@@ -2518,6 +2576,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change :ref:`the return statement` to see the difference between the inputs and the output
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 5-6
 
@@ -2539,6 +2598,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`positional_arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 4-5
 
@@ -2560,6 +2620,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add the name to the parentheses in the :ref:`definition<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 1-2
 
@@ -2580,6 +2641,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add ``first_input`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 2-3
 
@@ -2598,6 +2660,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) the value from the terminal_ to change :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 4-5
 
@@ -2618,6 +2681,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change :ref:`the return statement` to see the difference between the inputs and the output
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 5-6
 
@@ -2642,6 +2706,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change the order of the inputs in :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 6-7
 
@@ -2665,6 +2730,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change the order of inputs in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 3-4
 
@@ -2687,6 +2753,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`identity<test_identity_function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 4-5
 
@@ -2706,6 +2773,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a name to the :ref:`function definition<how to make a function>` to make it take input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 1-2
 
@@ -2722,6 +2790,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 3-4
 
@@ -2739,6 +2808,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I :ref:`return<the return statement>` the input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
     :emphasize-lines: 4-5
 
@@ -2758,6 +2828,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`constant<test_constant_function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 4-5
 
@@ -2776,6 +2847,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I copy and paste the value from the terminal_ as :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 2-3
 
@@ -2793,6 +2865,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`return_leaves_the_function<test_what_happens_after_functions_return>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4-5
 
@@ -2812,6 +2885,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`w_return_none<test_making_a_function_w_return_none>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 5-6
 
@@ -2832,6 +2906,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`w_return<test_making_a_function_w_return>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 5-6
 
@@ -2852,6 +2927,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`w_pass<test_making_a_function_w_pass>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 5-6
 
@@ -2890,6 +2966,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
     def args_and_kwargs(argument, last_input):
@@ -2904,6 +2981,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
         return first_input, last_input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
 
     def identity(argument):
@@ -2918,6 +2996,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
         return None
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
     def w_return_none():

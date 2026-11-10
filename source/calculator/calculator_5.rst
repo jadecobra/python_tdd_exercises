@@ -141,6 +141,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 8-11
 
@@ -168,6 +169,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 3
 
@@ -181,6 +183,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 3
 
@@ -196,6 +199,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove the repetition
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 3, 7, 11
 
@@ -223,6 +227,7 @@ how to multiply a list
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 5-8
 
@@ -249,6 +254,7 @@ how to multiply a list
 * I change the expectation of the test to the error message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 3
 
@@ -268,6 +274,7 @@ how to multiply a list
 * I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3-7
 
@@ -286,6 +293,7 @@ how to multiply a list
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` in :ref:`test_calculator_sends_message_when_input_is_a_list` to ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 5-8
 
@@ -310,6 +318,7 @@ how to multiply a list
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 19
 
@@ -342,6 +351,7 @@ how to multiply a list
 * I remove the name of the test to move the new :ref:`assertions<what is an assertion?>` to :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
 
             self.assertEqual(
@@ -370,6 +380,7 @@ how to multiply a list
 * I remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
@@ -521,6 +532,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 8-14
 
@@ -548,6 +560,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
 * I change the calculation to division
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 6
 
@@ -567,6 +580,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 8-14
 
@@ -594,6 +608,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 6
 
@@ -613,6 +628,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 8-14
 
@@ -640,6 +656,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
     :emphasize-lines: 6
 
@@ -734,6 +751,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 * I add another :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 146
     :emphasize-lines: 5-8
 
@@ -755,6 +773,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 * I change the calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 3
 
@@ -768,6 +787,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 5-8
 
@@ -789,6 +809,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 * I change the calculation in the expectation to :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 3
 
@@ -802,6 +823,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 * I add the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 5-8
 
@@ -823,6 +845,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 * I change the expectation to :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 49
 
@@ -956,6 +979,7 @@ the test passes.
 * I add a failing line for :ref:`division<test_division>` with the new :ref:`list<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 6
 
@@ -975,6 +999,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 166
     :emphasize-lines: 3-4
 
@@ -988,6 +1013,7 @@ the test passes.
 * I add a line for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 168
     :emphasize-lines: 3
 
@@ -1004,6 +1030,7 @@ the test passes.
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 168
     :emphasize-lines: 3-4
 
@@ -1017,6 +1044,7 @@ the test passes.
 * I add the last line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 170
     :emphasize-lines: 3
 
@@ -1033,6 +1061,7 @@ the test passes.
 * I handle the :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 10-11
 

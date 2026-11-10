@@ -199,6 +199,7 @@ this means
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 8-14
 
@@ -226,6 +227,7 @@ this means
 * I change the calculation to :ref:`division<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 6
 
@@ -242,6 +244,7 @@ this means
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 8-14
 
@@ -269,6 +272,7 @@ this means
 * I change the expectation to use the correct :ref:`variables<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 6
 
@@ -285,6 +289,7 @@ this means
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 8-14
 
@@ -312,6 +317,7 @@ this means
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 33
 
@@ -403,6 +409,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 3-6
 
@@ -423,6 +430,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 214
     :emphasize-lines: 6
     :emphasize-text: KeyError
@@ -437,6 +445,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I remove the comments to put ``x`` and ``y`` back as :ref:`keys<test_keys_of_a_dictionary>` in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 3, 5
 
@@ -467,6 +476,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I change ``two_numbers['x']`` to ``two_numbers['first_input']`` to use the new :ref:`keys<test_keys_of_a_dictionary>` in the :ref:`assertions<What is an assertion?>` for :ref:`addition<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
 
             self.assertEqual(
@@ -487,6 +497,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I comment out the :ref:`assertion<what is an assertion?>` with ``**two_numbers``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
     :emphasize-lines: 8-11
 
@@ -509,6 +520,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I use ``two_numbers['second_input']`` for ``two_numbers['y']``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 5-6
 
@@ -527,6 +539,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I remove the commented lines then make the same change for :ref:`division<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 10-13
 
@@ -552,6 +565,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I do the same thing for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 10-13
 
@@ -577,6 +591,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I do it in the :ref:`assertions<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 131
     :emphasize-lines: 10-13
 
@@ -602,6 +617,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I remove the ``x`` and ``y`` :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
 
         def test_calculator_w_dictionary_items(self):
@@ -648,6 +664,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I remove the comments from the :ref:`assertion<what is an assertion?>` with ``**two_numbers``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
 
             self.assertEqual(
@@ -664,6 +681,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I change the calculation in the :ref:`assertion<what is an assertion?>` to :ref:`addition<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 3
 
@@ -685,6 +703,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 5-8
 
@@ -706,6 +725,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I change the calculation to use :ref:`division<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 147
     :emphasize-lines: 3
 
@@ -719,6 +739,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 147
     :emphasize-lines: 5-8
 
@@ -740,6 +761,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I change the calculation to :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 3
 
@@ -753,6 +775,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I add the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 5-8
 
@@ -774,6 +797,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 49
 
@@ -967,6 +991,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what 
 * I add a new test with a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 177
     :emphasize-lines: 54-60
 
@@ -1055,6 +1080,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what 
 * I add :ref:`for loops<what is a for loop?>` with the `subTest method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 230
     :emphasize-lines: 9-28
 
@@ -1160,6 +1186,7 @@ the test passes.
 * I remove :ref:`test_calculator_sends_message_when_input_is_not_a_number` because :ref:`test_calculator_sends_message_when_input_is_not_a_number` covers all its :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 165
 
         def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
@@ -1179,6 +1206,7 @@ the test passes.
 * I change the name of :ref:`test_calculator_w_for_loops_and_dictionaries` to :ref:`test_calculator_sends_message_when_input_is_not_a_number` to say what it does
 
   .. code-block:: python
+    :caption:
     :lineno-start: 177
     :emphasize-lines: 1
 
@@ -1235,6 +1263,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 * I add a new test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 177
     :emphasize-lines: 30-36, 38-46
 
@@ -1310,6 +1339,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 * I add a :ref:`dictionary<what is a dictionary?>` for the calculations of each operation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 206
     :emphasize-lines: 9-22
 
@@ -1341,6 +1371,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 * I use the new :ref:`dictionary<what is a dictionary?>` for the calculation in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 229
     :emphasize-lines: 8
 
@@ -1418,6 +1449,7 @@ this means all these statements are the same
 * I can put the two :ref:`dictionaries<what is a dictionary?>` in this test together because they have the same :ref:`keys<test_keys_of_a_dictionary>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 214
     :emphasize-lines: 16-35
 
@@ -1462,6 +1494,7 @@ this means all these statements are the same
 * I add a new :ref:`assertion<what is an assertion?>` in a :ref:`for loop<what is a for loop?>` with the `subTest method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 250
     :emphasize-lines: 11-19
 
@@ -1499,6 +1532,7 @@ this means all these statements are the same
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 260
     :emphasize-lines: 5
 
@@ -1514,6 +1548,7 @@ this means all these statements are the same
 * I remove the other :ref:`dictionaries<what is a dictionary?>` and :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 206
 
         def test_calculator_functions(self):
@@ -1555,6 +1590,7 @@ this means all these statements are the same
 * I remove :ref:`test_addition`, :ref:`test_subtraction` and :ref:`test_multiplication`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
 
     class TestCalculator(unittest.TestCase):
@@ -1570,6 +1606,7 @@ this means all these statements are the same
 * I change ``y`` to ``0`` in :ref:`test_calculator_functions`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 2-3
 
@@ -1591,6 +1628,7 @@ this means all these statements are the same
 * I add an :ref:`exception handler<how to use try...except...else>` to make a :ref:`variable<what is a variable?>` for the result of :ref:`division<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
 
         def test_calculator_functions(self):
@@ -1624,6 +1662,7 @@ this means all these statements are the same
 * I use ``division_result`` in the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 189
     :emphasize-lines: 12-13
 
@@ -1656,6 +1695,7 @@ this means all these statements are the same
 * I change ``'BOOM!!!'`` to the error message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 184
     :emphasize-lines: 4
 
@@ -1669,6 +1709,7 @@ this means all these statements are the same
 * I change ``y`` back to ``self.random_second_number``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 179
     :emphasize-lines: 3
 
@@ -1719,6 +1760,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I add the :ref:`variables<what is a variable?>` from :ref:`test_calculator_functions` to the `setUp method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 5-6, 8-11, 13-30
 
@@ -1756,6 +1798,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I use the new :ref:`object attribute<what is an object attribute?>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_functions`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 219
     :emphasize-lines: 1-2
 
@@ -1772,6 +1815,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I use it in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 222
     :emphasize-lines: 2-3
 
@@ -1788,6 +1832,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I use it for the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 222
     :emphasize-lines: 6-7
 
@@ -1805,6 +1850,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I comment out the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_functions`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 195
 
             try:
@@ -1838,6 +1884,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I comment out the :ref:`exception handler<how to use try...except...else>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
 
         def test_calculator_functions(self):
@@ -1854,6 +1901,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I comment out the ``x`` and ``y`` :ref:`variables<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
 
         def test_calculator_functions(self):
@@ -1872,6 +1920,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I undo the change
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
 
         def test_calculator_functions(self):
@@ -1883,6 +1932,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I change the inputs in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 222
     :emphasize-lines: 4-6
 
@@ -1902,6 +1952,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I comment out ``x`` and ``y`` again
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
     :emphasize-lines: 2-3
 
@@ -1914,6 +1965,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 191
 
         def test_calculator_functions(self):
@@ -1937,6 +1989,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I use the new :ref:`object attribute <test_attribute_error_w_object_attributes>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 162
     :emphasize-lines: 18-19
 
@@ -1977,6 +2030,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I use it in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 185
     :emphasize-lines: 2-3
 
@@ -1993,6 +2047,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I remove the commented lines and the ``arithmetic`` :ref:`variable<what is a variable?>` because it is no longer used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 162
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
@@ -2026,6 +2081,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
     :emphasize-lines: 4-8
 
@@ -2061,6 +2117,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I add the `assertRaises method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 3-6
 
@@ -2076,6 +2133,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I remove the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
 
         def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
@@ -2095,6 +2153,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I use the :ref:`list<what is a list?>` for the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
     :emphasize-lines: 2-3
 
@@ -2108,6 +2167,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I put the two `with statements`_ together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 2-11
 
@@ -2128,6 +2188,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I remove the commented lines and ``not_two_numbers`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 150
 
         def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
@@ -2149,6 +2210,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_w_dictionary_items`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 7-14
 
@@ -2226,6 +2288,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 5
 
@@ -2241,6 +2304,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I remove all the :ref:`assertions<what is an assertion?>` that have ``**two_numbers``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
 
         def test_calculator_w_dictionary_items(self):
@@ -2296,6 +2360,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_w_list_items`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 12-19
 
@@ -2378,6 +2443,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 5
 
@@ -2393,6 +2459,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 * I remove all the other :ref:`assertions<what is an assertion?>` that have ``*two_numbers``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
 
         def test_calculator_w_list_items(self):

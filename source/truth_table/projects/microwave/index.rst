@@ -142,6 +142,7 @@ start the project
 * I change :green:`True` to :red:`False` in ``tests/test_microwave.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -215,6 +216,7 @@ test_pressed_start
   ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-8
 
@@ -242,6 +244,7 @@ test_pressed_start
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -282,6 +285,7 @@ test_pressed_start
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -315,6 +319,7 @@ test_pressed_start
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_microwave.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -387,6 +392,7 @@ test_not_pressed_start
   ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8-13
 
@@ -489,6 +495,7 @@ test_open_door_not_pressed_start
   =============== ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 8-14
 
@@ -566,6 +573,7 @@ test_open_door_not_pressed_start
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_microwave.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
@@ -622,6 +630,7 @@ test_open_door_pressed_start
   =============== ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 8-14
 
@@ -698,6 +707,7 @@ test_closed_door_not_pressed_start
   =============== ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4
 
@@ -722,6 +732,7 @@ test_closed_door_not_pressed_start
 * I change the name of the test from :ref:`test_not_pressed_start` to :ref:`test_closed_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8
 
@@ -764,6 +775,7 @@ test_closed_door_pressed_start
   =============== ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -789,6 +801,7 @@ test_closed_door_pressed_start
 * I change the name of the test from :ref:`test_pressed_start` to :ref:`test_closed_door_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -907,6 +920,7 @@ test_timer_set_closed_door_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -972,6 +986,7 @@ the test passes.
 * I change the name of the test from :ref:`test_closed_door_pressed_start` to :ref:`test_timer_set_closed_door_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -1011,6 +1026,7 @@ test_timer_set_closed_door_not_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 5
 
@@ -1041,6 +1057,7 @@ test_timer_set_closed_door_not_pressed_start
 * I change the name of the test from :ref:`test_closed_door_not_pressed_start` to :ref:`test_timer_set_closed_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10
 
@@ -1093,6 +1110,7 @@ test_not_timer_set_closed_door_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 10-17
 
@@ -1194,6 +1212,7 @@ test_not_timer_set_closed_door_not_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10-17
 
@@ -1234,6 +1253,7 @@ test_not_timer_set_closed_door_not_pressed_start
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_set_closed_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 2
 
@@ -1300,6 +1320,7 @@ test_timer_set_open_door_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 5
 
@@ -1326,6 +1347,7 @@ test_timer_set_open_door_pressed_start
 * I change the name of the test from :ref:`test_open_door_pressed_start` to :ref:`test_timer_set_open_door_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 10
 
@@ -1374,6 +1396,7 @@ test_timer_set_open_door_not_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 5
 
@@ -1405,6 +1428,7 @@ test_timer_set_open_door_not_pressed_start
 * I change the name of the test from :ref:`test_open_door_not_pressed_start` to :ref:`test_timer_set_open_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 10
 
@@ -1457,6 +1481,7 @@ test_not_timer_set_open_door_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 10-17
 
@@ -1498,6 +1523,7 @@ test_not_timer_set_open_door_pressed_start
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_set_open_door_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 2
 
@@ -1561,6 +1587,7 @@ test_not_timer_set_open_door_not_pressed_start
   =============== ==============  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 10-17
 
@@ -1602,6 +1629,7 @@ test_not_timer_set_open_door_not_pressed_start
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_set_open_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 2
 
@@ -1861,6 +1889,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 7
 
@@ -1931,6 +1960,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 2-9
 
@@ -1969,6 +1999,7 @@ door            timer           start button        too hot             output
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_set_open_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 2
 
@@ -1998,6 +2029,7 @@ door            timer           start button        too hot             output
 * I change the name of the test from :ref:`test_not_timer_set_open_door_not_pressed_start` to :ref:`test_too_hot_w_not_timer_set_open_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 10
 
@@ -2062,6 +2094,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 7
 
@@ -2103,6 +2136,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 2-9
 
@@ -2188,6 +2222,7 @@ the test passes.
 * I change the name of the test from :ref:`test_not_timer_set_open_door_pressed_start` to :ref:`test_too_hot_w_not_timer_set_open_door_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 10
 
@@ -2252,6 +2287,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 7
 
@@ -2285,6 +2321,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-9
 
@@ -2362,6 +2399,7 @@ the test passes.
 * I change the name of the test from :ref:`test_timer_set_open_door_not_pressed_start` to :ref:`test_too_hot_w_timer_set_open_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 10
 
@@ -2426,6 +2464,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 7
 
@@ -2467,6 +2506,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 2-9
 
@@ -2552,6 +2592,7 @@ the test passes.
 * I change the name of the test from :ref:`test_timer_set_open_door_pressed_start` to :ref:`test_too_hot_w_timer_set_open_door_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 10
 
@@ -2616,6 +2657,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 7
 
@@ -2649,6 +2691,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 2-9
 
@@ -2726,6 +2769,7 @@ the test passes.
 * I change the name of the test from :ref:`test_not_timer_set_closed_door_not_pressed_start` to :ref:`test_too_hot_w_not_timer_set_closed_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10
 
@@ -2790,6 +2834,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 7
 
@@ -2831,6 +2876,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 2-9
 
@@ -2916,6 +2962,7 @@ the test passes.
 * I change the name of the test from :ref:`test_not_timer_set_closed_door_pressed_start` to :ref:`test_too_hot_w_not_timer_set_closed_door_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 10
 
@@ -2980,6 +3027,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 7
 
@@ -3013,6 +3061,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 2-9
 
@@ -3090,6 +3139,7 @@ the test passes.
 * I change the name of the test from :ref:`test_timer_set_closed_door_not_pressed_start` to :ref:`test_too_hot_w_timer_set_closed_door_not_pressed_start`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10
 
@@ -3154,6 +3204,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7
 
@@ -3195,6 +3246,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2-9
 
@@ -3282,6 +3334,7 @@ door            timer           start button        too hot             output
 * I change the name of the test from :ref:`test_timer_set_closed_door_pressed_start` to :ref:`test_too_hot_w_timer_set_closed_door_pressed_start`, in ``tests/test_microwave.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -3664,6 +3717,7 @@ refactor microwave function
 * I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the :ref:`if statements` together since they all return :red:`False`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1-14
 
@@ -3689,6 +3743,7 @@ refactor microwave function
 * I write the new statement in terms of :ref:`not<test_logical_negation>` since it happens three times
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 1-12
 
@@ -3716,6 +3771,7 @@ refactor microwave function
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 1-12
 
@@ -3739,6 +3795,7 @@ refactor microwave function
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 8-9
 
@@ -3757,6 +3814,7 @@ refactor microwave function
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`else clause<if statements>` in relation to the :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 1-7
 
@@ -3774,6 +3832,7 @@ refactor microwave function
 * I cancel out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 2
 

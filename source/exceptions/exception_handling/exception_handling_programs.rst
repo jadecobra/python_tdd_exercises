@@ -98,6 +98,7 @@ test_catching_exceptions_w_messages
 * I add a failing test to ``tests/test_exceptions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 6-7
 
@@ -148,6 +149,7 @@ test_catching_exceptions_w_messages
 * I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1
 
@@ -162,6 +164,7 @@ test_catching_exceptions_w_messages
 * I make ``raise_exception`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 1-2
 
@@ -181,6 +184,7 @@ test_catching_exceptions_w_messages
 * I want the :ref:`function<what is a function?>` to :ref:`raise Exception<how to raise an Exception>` when it is :ref:`called<how to call a function with input>`, as a way to make a failure happen. I add :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`test_catching_exceptions_w_messages` in ``tests/test_exceptions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 82
     :emphasize-lines: 2-3
 
@@ -197,6 +201,7 @@ test_catching_exceptions_w_messages
 * I add a :ref:`raise statement<how to raise an Exception>` to the ``raise_exception`` :ref:`function<what is a function?>` in ``src/exceptions/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 2
 
@@ -275,6 +280,7 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
 * I add an :ref:`f-string<telephone>` to my :ref:`assert_raises method<extract assert_raises method>` in ``tests/test_exceptions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8
 
@@ -292,6 +298,7 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
 * I change the statement in :ref:`test_catching_module_not_found_error` to make the test fail
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 3-4
 
@@ -316,6 +323,7 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
 * I undo the change to :ref:`test_catching_module_not_found_error`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
     def test_catching_module_not_found_error(self):
@@ -404,6 +412,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add ``an_exception_handler`` to ``src/exceptions/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5
 
@@ -422,6 +431,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I point ``an_exception_handler`` to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1
 
@@ -436,6 +446,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I make ``an_exception_handler`` a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1-2
 
@@ -452,6 +463,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I make ``an_exception_handler`` take input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1
 
@@ -469,6 +481,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I change :ref:`the return statement` to match the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2
 
@@ -547,6 +560,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I make ``an_exception_handler`` return its input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2
 
@@ -590,6 +604,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the name of the input parameter to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1-2
 
@@ -600,6 +615,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I make ``an_exception_handler`` return the result of a :ref:`call<how to call a function with input>` to its input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2
 
@@ -647,6 +663,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move the statements into a :ref:`try statement<how to handle Exceptions>` in ``an_exception_handler`` to make it choose what to do if an :ref:`Exception is raised<how to raise an Exception>`,  in ``src/exceptions/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2-5
 
@@ -667,6 +684,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add :ref:`else to the try statement<how to use try...except...else>` for if ``a_function()`` runs and does NOT :ref:`raise an Exception<how to raise an Exception>`, to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3, 6-7
 
@@ -683,6 +701,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change :ref:`the return statement` in the `else clause`_ to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 7
 
@@ -699,6 +718,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I can be more :ref:`explicit with the Exception<test_catching_exceptions>` in the :ref:`except<how to handle Exceptions>` block
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 4-5
 
@@ -724,6 +744,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change it back to what works
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 4
 

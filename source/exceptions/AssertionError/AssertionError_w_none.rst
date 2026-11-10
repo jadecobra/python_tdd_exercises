@@ -68,6 +68,7 @@ use assertIsNotNone and assertIsNone
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 4
 
@@ -89,6 +90,7 @@ use assertIsNotNone and assertIsNone
 * I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to a call to :ref:`the assertIsNone method<another way to test if something is None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 4-5
 
@@ -105,6 +107,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3
 
@@ -123,6 +126,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3-4
 
@@ -138,6 +142,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 3
 
@@ -156,6 +161,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 3-4
 
@@ -171,6 +177,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for an integer_ (a whole number without decimals)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 3
 
@@ -189,6 +196,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 3-4
 
@@ -204,6 +212,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for a float_ (binary floating point decimal number)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 3
 
@@ -222,6 +231,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 3-4
 
@@ -237,6 +247,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for a string_ (anything in :ref:`quotes`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 3
 
@@ -255,6 +266,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 3-4
 
@@ -270,6 +282,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 3
 
@@ -288,6 +301,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 3-4
 
@@ -303,6 +317,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 3
 
@@ -321,6 +336,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 3-4
 
@@ -336,6 +352,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 3
 
@@ -354,6 +371,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 3-4
 
@@ -369,6 +387,7 @@ use assertIsNotNone and assertIsNone
 * I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 3
 
@@ -387,6 +406,7 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 3-4
 
@@ -402,6 +422,7 @@ use assertIsNotNone and assertIsNone
 * I remove the commented lines from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
 
         def test_assertion_error_w_none(self):
@@ -418,6 +439,7 @@ use assertIsNotNone and assertIsNone
             self.assertIsNotNone(True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 67
 
             assert_is_not_none(self.an_integer)
@@ -433,6 +455,7 @@ use assertIsNotNone and assertIsNone
             self.assertIsNotNone(self.a_string)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
 
             assert_is_not_none(self.a_tuple)

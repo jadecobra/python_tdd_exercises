@@ -104,6 +104,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I add a test for the `session state object`_, I want it to hold the number when I click the buttons, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 9-10
 
@@ -140,6 +141,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a :ref:`key<test_keys_of_a_dictionary>` that will hold the numbers to show in the Calculator, in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 3
 
@@ -163,6 +165,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I add ``0`` as the expectation in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2
 
@@ -178,6 +181,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I change the :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 1
 
@@ -196,6 +200,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I add the `session state object`_ to the ``show`` :ref:`function<what is a function?>` so that when a button is clicked, it will be added to the `session state object`_ then shown in the disply
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2-4
 
@@ -212,6 +217,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def show(display, number):
@@ -221,6 +227,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I add an :ref:`assertion<what is an assertion?>` to test what happens to the `session state object`_ when I press a button for a number
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 3-4
 
@@ -243,6 +250,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 1
 
@@ -253,6 +261,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I add more button presses and another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 5-8
 
@@ -274,6 +283,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 1-3
 
@@ -295,6 +305,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I want the calculator to remove ``0`` when it is the first number after I click on other numbers. I change the :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 4, 8-10
 
@@ -318,6 +329,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I add a :ref:`condition<if statements>` to the ``show`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2-5
 
@@ -355,6 +367,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I use it in :ref:`test_streamlit_session_state`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 2, 4-6
     :emphasize-text: x
@@ -381,6 +394,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 7
 
@@ -407,6 +421,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I use random numbers for the other button presses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-10
 
@@ -433,6 +448,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I use the random numbers in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 2
 
@@ -455,6 +471,7 @@ what is a while loop?
 * I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while loop`_ to :ref:`test_streamlit_session_state`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 6-9
 
@@ -487,6 +504,7 @@ what is a while loop?
 * I add a :ref:`for loop<what is a for loop?>` to test with a 10 digit number
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 25-31, 33-36
 
@@ -543,6 +561,7 @@ what is a while loop?
 * I comment out the other lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 15-23
 
@@ -589,6 +608,7 @@ what is a while loop?
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
         def test_streamlit_session_state(self):
@@ -619,6 +639,7 @@ what is a while loop?
 * I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change ``x`` to ``expectation`` because I like the name better
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 5-7, 9, 11-13, 21, 25
     :emphasize-text: expectation
@@ -668,6 +689,7 @@ test_streamlit_calculator_w_decimals
 * I add a test for decimal numbers
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 6-23
 
@@ -724,6 +746,7 @@ test_streamlit_calculator_w_decimals
 * I add a :ref:`function<what is a function?>` for decimals in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 1
     :emphasize-lines: 4-9
 
@@ -745,6 +768,7 @@ test_streamlit_calculator_w_decimals
 * I change the ``on_click`` parameter for the ``.`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>` to use the new :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 3-4
     :emphasize-text: handle_decimals
@@ -760,6 +784,7 @@ test_streamlit_calculator_w_decimals
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
 
     def add_buttons_to_column_3(column_3, display):
@@ -797,6 +822,7 @@ test_streamlit_calculator_w_decimals
 * I change the `else clause`_ to an :ref:`if statement<if statements>` to make it simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -813,6 +839,7 @@ test_streamlit_calculator_w_decimals
 * I remove the other :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def handle_decimals(display, number):
@@ -843,6 +870,7 @@ test_streamlit_calculator_w_decimals
 * I add a :ref:`for loop<what is a for loop?>` to :ref:`test_streamlit_calculator_w_decimals` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 2-6
 
@@ -881,6 +909,7 @@ test_streamlit_calculator_w_decimals
 * I remove the other button presses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
 
         def test_streamlit_calculator_w_decimals(self):
@@ -905,6 +934,7 @@ test_streamlit_calculator_w_decimals
 * I keep writing ``self.tester.button(key).click().run()``, time to add a :ref:`method<what is a method?>` for button presses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 3-4
 
@@ -918,6 +948,7 @@ test_streamlit_calculator_w_decimals
 * I use the new :ref:`method<what is a method?>` in :ref:`test_streamlit_session_state`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 9-10 ,18-22
     :emphasize-text: press_button
@@ -956,6 +987,7 @@ test_streamlit_calculator_w_decimals
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
 
         def test_streamlit_session_state(self):
@@ -987,6 +1019,7 @@ test_streamlit_calculator_w_decimals
 * I use the ``press_button`` :ref:`method<what is a method?>` in :ref:`test_streamlit_calculator_w_decimals`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 3-7
 
@@ -1008,6 +1041,7 @@ test_streamlit_calculator_w_decimals
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
 
         def test_streamlit_calculator_w_decimals(self):
@@ -1041,6 +1075,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I add a new test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 6-15
 
@@ -1101,6 +1136,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I add the ``on_click`` parameter to the ``<-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2-5
     :emphasize-text: backspace
@@ -1157,6 +1193,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I add a :ref:`variable<what is a variable?>` with a :ref:`for loop<what is a for loop?>` for a random number in :ref:`test_streamlit_calculator_backspace`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 2-3, 5-7, 9-12
 
@@ -1205,6 +1242,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I add a :ref:`while loop<what is a while loop?>` to make sure ``a_random_number`` is never negative
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 3-4
 
@@ -1227,6 +1265,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I change the expectation to remove the last digit from the random number
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 3
 
@@ -1246,6 +1285,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I comment out the other button presses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 16-19
 
@@ -1283,6 +1323,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 23-24
 
@@ -1317,6 +1358,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
 
         def test_streamlit_calculator_backspace(self):
@@ -1427,6 +1469,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add the ``on_click`` parameter for the ``+/-`` button in the ``add_buttons_to_column_1``  :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 18-21
     :emphasize-text: plus_minus
@@ -1469,6 +1512,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a button press and :ref:`assertion<what is an assertion?>` to make sure I can turn a negative number to a positive number with the ``+/-`` button, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 12-15
 
@@ -1500,6 +1544,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add another :ref:`if statement<if statements>` to the ``plus_minus`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2-3, 6
 
@@ -1517,6 +1562,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use else_ for the second :ref:`if statement<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -1535,6 +1581,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def plus_minus(display):
@@ -1552,6 +1599,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a :ref:`variable<what is a variable?>` to remove repetition from :ref:`test_streamlit_calculator_w_plus_minus` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 2
     :emphasize-text: a_number
@@ -1564,6 +1612,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the :ref:`variable<what is a variable?>` in the :ref:`assertions<what is an assertion?>` and button presses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 3-4, 6-7, 12-13, 18-19
     :emphasize-text: a_number
@@ -1594,6 +1643,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
 
         def test_streamlit_calculator_w_plus_minus(self):
@@ -1616,6 +1666,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I try a bigger number
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 2
 
@@ -1634,6 +1685,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 3-4
 
@@ -1652,6 +1704,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I try a number with all the digits and decimals
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 2
 
@@ -1714,6 +1767,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add ``number`` in the parentheses for the ``plus_minus`` :ref:`function<what is a function?>` to make it have the same signature as the ``show`` and ``handle_decimals`` :ref:`functions<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 1
 
@@ -1744,6 +1798,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a second argument to the ``args`` parameter for the ``+/-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 20
     :emphasize-text: +/-
@@ -1778,6 +1833,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add ``number`` in the parentheses for the ``backspace`` :ref:`function<what is a function?>` to make it have the same signature as the ``show``, ``handle_decimals`` and ``plus_minus`` :ref:`functions<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 1
 
@@ -1804,6 +1860,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a second argument to the ``args`` parameter for the ``<-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 4
 
@@ -1852,6 +1909,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the new :ref:`function<what is a function?>` in the ``plus_minus`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 8-9
 
@@ -1870,6 +1928,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
 
     def plus_minus(display, number):
@@ -1887,6 +1946,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the new :ref:`function<what is a function?>` in the ``backspace`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 4-5
 
@@ -1901,6 +1961,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
     def backspace(display, number):
@@ -1914,6 +1975,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the new :ref:`function<what is a function?>` in the ``handle_decimals`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 4-5
 
@@ -1928,6 +1990,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
     def handle_decimals(display, number):
@@ -1941,6 +2004,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the new :ref:`function<what is a function?>` in the ``show`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 6-7
 
@@ -1957,6 +2021,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
     def show(display, number):
@@ -1972,6 +2037,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a new :ref:`function<what is a function?>` for adding the number to the `session state object`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 7-11
 
@@ -1993,6 +2059,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a :ref:`function<what is a function?>` to handle all the button clicks
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 9-11
 
@@ -2014,6 +2081,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I try the ``on_click`` :ref:`function<what is a function?>` with the ``7`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 7-9
 
@@ -2045,6 +2113,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the ``on_click`` :ref:`function<what is a function?>` with all the other number buttons in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 12-14, 17-19
 
@@ -2078,6 +2147,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
 
     def add_buttons_to_column_1(column_1, display):
@@ -2108,6 +2178,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the ``on_click`` :ref:`function<what is a function?>` with all the number buttons in the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 6-8, 11-13, 16-18, 21-23
 
@@ -2141,6 +2212,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
 
     def add_buttons_to_column_2(column_2, display):
@@ -2170,6 +2242,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the ``on_click`` :ref:`function<what is a function?>` with all the number buttons in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 6-8, 11-13, 16-18
 
@@ -2202,6 +2275,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
 
     def add_buttons_to_column_3(column_3, display):
@@ -2231,6 +2305,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the ``show`` :ref:`function<what is a function?>` because it is no longer used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
     def add_number_to_state(number):
@@ -2247,6 +2322,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a new :ref:`function<what is a function?>` to make decimal numbers
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 7-9
 
@@ -2266,6 +2342,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I use the new :ref:`function<what is a function?>` with the ``.`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 18-20
 
@@ -2308,6 +2385,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I make the ``value`` parameter a choice in the ``on_click`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 1-2
 
@@ -2323,6 +2401,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented line from the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
 
     def add_buttons_to_column_3(column_3, display):
@@ -2352,6 +2431,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the ``handle_decimals`` :ref:`function<what is a function?>` because it is no longer used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
     def backspace(display, number):
@@ -2367,6 +2447,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the ``on_click`` and ``args`` parameters for the ``<-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 3-5
 
@@ -2392,6 +2473,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the ``backspace`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 1-2, 5
 
@@ -2406,6 +2488,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines from the ``backspace`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
     def backspace():
@@ -2420,6 +2503,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the ``on_click`` and ``args`` parameters for the ``+/-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 20-22
 
@@ -2463,6 +2547,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the ``plus_minus`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 1-2, 9
 
@@ -2481,6 +2566,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines from the ``plus_minus`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
 
     def plus_minus():
@@ -2496,6 +2582,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines from the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
     def add_buttons_to_column_1(column_1, display):

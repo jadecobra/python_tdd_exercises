@@ -171,6 +171,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 5
     :emphasize-text: AttributeError

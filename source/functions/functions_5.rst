@@ -70,6 +70,7 @@ a better way to test why use a function
 * I add a :ref:`variable<what is a variable?>` to :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -86,6 +87,7 @@ a better way to test why use a function
 * I add a :ref:`for loop<what is a for loop?>` with an :ref:`assertion<what is an assertion?>` and the `subTest method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3-5
 
@@ -147,6 +149,7 @@ the test passes.
 
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
 
           def test_why_use_a_function(self):
@@ -164,6 +167,7 @@ the test passes.
 * I add a :ref:`for loop<what is a for loop?>` for the value of ``x``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 4-6
 
@@ -200,6 +204,7 @@ the test passes.
 * I change the calculation in the expectation to the right thing
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 1
 
@@ -210,6 +215,7 @@ the test passes.
 * I remove the ``x`` :ref:`variable<what is a variable?>`, then the :ref:`default values<test_optional_arguments>` from the ``add`` :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -228,6 +234,7 @@ the test passes.
 * I can use a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>` instead of the two :ref:`for loops<what is a for loop?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 7-9
 
@@ -250,6 +257,7 @@ the test passes.
 * I change the calculation in the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 1
 
@@ -260,6 +268,7 @@ the test passes.
 * I can do the same thing with the `product method`_ from the `itertools module`_ which comes with Python_, it needs an `import statement`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 5-8
 
@@ -281,6 +290,7 @@ the test passes.
 * I change the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 1
 
@@ -293,6 +303,7 @@ the test passes.
 * I can use a `range object`_ to make the test use more than 10 numbers
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 1-2
 
@@ -305,6 +316,7 @@ the test passes.
 * I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 6
 
@@ -326,6 +338,7 @@ the test passes.
 * I change the expectation back then remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
 
     class TestFunctions(unittest.TestCase):

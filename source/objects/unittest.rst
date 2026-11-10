@@ -383,6 +383,7 @@ I want to see what comes with the `unittest module`_.
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -476,6 +477,7 @@ I want to see what comes with the `unittest module`_.
   .. caution:: Your list of attributes and methods may be different depending on your Python version
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-19
     :emphasize-text: TestCase
@@ -630,6 +632,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-48
     :emphasize-text: __init__ assertRaisesRegex assertRaises assertEqual assertNotEqual assertFalse assertTrue assertIsNot assertIs assertNotIs Instance Subclass None maxDiff subTest
@@ -715,6 +718,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I type these names below the test as a TODO list to test what I can do with them
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 4-11
 
@@ -758,6 +762,7 @@ test_assertIsNot
 * I add a test for assertIsNot_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 4-5
 
@@ -792,6 +797,7 @@ test_assertIsNot
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 7
     :emphasize-text: TypeError
@@ -815,6 +821,7 @@ test_assertIsNot
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of the `unittest.TestCase class`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 2-3
 
@@ -838,6 +845,7 @@ test_assertIsNot
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIsNot`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 3-4
 
@@ -860,6 +868,7 @@ test_assertIsNot
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 4-5
 
@@ -885,6 +894,7 @@ test_assertIsNot
 * I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertIsNot method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 5
 
@@ -907,6 +917,7 @@ test_assertIsNot
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 5-6
 
@@ -927,6 +938,7 @@ test_assertIsNot
 * I remove assertIsNot_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
 
         unittest.TestCase().assertIsNot(None, False)
@@ -984,6 +996,7 @@ test_assertIs
 * I add a test for the `assertIs method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 78
     :emphasize-lines: 10-11
 
@@ -1042,6 +1055,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the `assertIs method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 4
 
@@ -1066,6 +1080,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of the `unittest.TestCase class`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 4-5
 
@@ -1091,6 +1106,7 @@ the test passes.
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIs`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 5-6
 
@@ -1115,6 +1131,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 6-7
 
@@ -1135,6 +1152,7 @@ the test passes.
 * I remove assertIs_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
 
         unittest.TestCase().assertIs(False, False)
@@ -1190,6 +1208,7 @@ test_assertNotEqual
 * I add a test for assertNotEqual_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 10-11
 
@@ -1229,6 +1248,7 @@ test_assertNotEqual
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertNotEqual`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 2-3
 
@@ -1250,6 +1270,7 @@ test_assertNotEqual
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3-4
 
@@ -1274,6 +1295,7 @@ test_assertNotEqual
 * I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotEqual method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 4
 
@@ -1295,6 +1317,7 @@ test_assertNotEqual
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 4-5
 
@@ -1314,6 +1337,7 @@ test_assertNotEqual
 * I remove assertNotEqual_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
 
         unittest.TestCase().assertNotEqual(True, 0)
@@ -1369,6 +1393,7 @@ test_assertEqual
 * I add a test for the `assertEqual method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 9-10
 
@@ -1426,6 +1451,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the `assertEqual method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 4
 
@@ -1448,6 +1474,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 4-5
 
@@ -1466,6 +1493,7 @@ the test passes.
 * I remove assertEqual_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
 
         unittest.TestCase().assertEqual(0.0, 0.0)
@@ -1521,6 +1549,7 @@ test_assertNotIsInstance
 * I add a test for the `assertNotIsInstance method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 8-9
 
@@ -1561,6 +1590,7 @@ test_assertNotIsInstance
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of the `unittest.TestCase class`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 2-3
 
@@ -1582,6 +1612,7 @@ test_assertNotIsInstance
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertNotIsInstance`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 4-6
 
@@ -1607,6 +1638,7 @@ test_assertNotIsInstance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 5-6
 
@@ -1634,6 +1666,7 @@ test_assertNotIsInstance
 * I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotIsInstance method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 4-6
 
@@ -1660,6 +1693,7 @@ test_assertNotIsInstance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 5-6
 
@@ -1684,6 +1718,7 @@ test_assertNotIsInstance
 * I remove assertNotIsInstance_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
 
         unittest.TestCase().assertNotIsInstance(
@@ -1745,6 +1780,7 @@ test_assertIs_instance
 * I add a test for `assertIsInstance`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 7-8
 
@@ -1783,6 +1819,7 @@ test_assertIs_instance
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of the `unittest.TestCase class`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 2-3
 
@@ -1804,6 +1841,7 @@ test_assertIs_instance
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIsInstance`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 3-6
 
@@ -1831,6 +1869,7 @@ test_assertIs_instance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 5-6
 
@@ -1858,6 +1897,7 @@ test_assertIs_instance
 * I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertIsInstance method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 4-6
 
@@ -1884,6 +1924,7 @@ test_assertIs_instance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 5-6
 
@@ -1907,6 +1948,7 @@ test_assertIs_instance
 * I add :ref:`variables<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 2-3
 
@@ -1931,6 +1973,7 @@ test_assertIs_instance
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``unittest.TestCase`` and ``unittest.TestCase()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 8-9, 13-14
 
@@ -1958,6 +2001,7 @@ test_assertIs_instance
 * I remove assertIsInstance_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 134
 
         unittest.TestCase().assertIsInstance(
@@ -2022,6 +2066,7 @@ test_assertNotIsSubclass
 * I add a test for `assertNotIsSubclass`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 134
     :emphasize-lines: 8-9
 
@@ -2060,6 +2105,7 @@ test_assertNotIsSubclass
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertNotIsSubclass`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 3-5
 
@@ -2085,6 +2131,7 @@ test_assertNotIsSubclass
 * I change the :ref:`assertion<what is an assertion?>` to use an :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 4-5
 
@@ -2111,6 +2158,7 @@ test_assertNotIsSubclass
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 5-6
 
@@ -2138,6 +2186,7 @@ test_assertNotIsSubclass
 * I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotIsSubobject method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 3-5
 
@@ -2164,6 +2213,7 @@ test_assertNotIsSubclass
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 4-5
 
@@ -2188,6 +2238,7 @@ test_assertNotIsSubclass
 * I remove assertNotIsSubclass_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 147
 
         unittest.TestCase().assertNotIsSubclass(
@@ -2253,6 +2304,7 @@ test_assertIs_subclass
 * I add a test for the `assertIsSubobject method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 147
     :emphasize-lines: 8-9
 
@@ -2286,6 +2338,7 @@ test_assertIs_subclass
 * I change the :ref:`instance<how to test if something is an instance>` to the :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 2-3
 
@@ -2305,6 +2358,7 @@ test_assertIs_subclass
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 3-4
 
@@ -2321,6 +2375,7 @@ test_assertIs_subclass
 * I add a :ref:`call<how to call a function with input>` to assertIsSubclass_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 5
 
@@ -2348,6 +2403,7 @@ test_assertIs_subclass
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of the `unittest.TestCase class`_, then add two things to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 5-8
 
@@ -2376,6 +2432,7 @@ test_assertIs_subclass
 * I change the :ref:`instance<how to test if something is an instance>` to the :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 7-8
 
@@ -2403,6 +2460,7 @@ test_assertIs_subclass
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 8-9
 
@@ -2436,6 +2494,7 @@ test_assertIs_subclass
 * I remove assertIsSubclass_ from the TODO list
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
 
     def test_assertIs_subclass():
@@ -2512,6 +2571,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertIsNot`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 7-8
 
@@ -2532,6 +2592,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertIsNot`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
 
     def test_assertIsNot():
@@ -2544,6 +2605,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertIs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 7-8
 
@@ -2564,6 +2626,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertIs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
 
     def test_assertIs():
@@ -2576,6 +2639,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertNotEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 6-7
 
@@ -2595,6 +2659,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertNotEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
 
     def test_assertNotEqual():
@@ -2607,6 +2672,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 5-6
 
@@ -2625,6 +2691,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
 
     def test_assertEqual():
@@ -2637,6 +2704,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 8-9
 
@@ -2661,6 +2729,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
 
     def test_assertNotIsInstance():
@@ -2677,6 +2746,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertIs_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
     :emphasize-lines: 11-12
 
@@ -2705,6 +2775,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertIs_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
 
     def test_assertIs_instance():
@@ -2722,6 +2793,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 120
     :emphasize-lines: 7-8
 
@@ -2746,6 +2818,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 120
 
     def test_assertNotIsSubclass():
@@ -2762,6 +2835,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assertIs_subclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 6-7
 
@@ -2785,6 +2859,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I remove the commented lines from :ref:`test_assertIs_subclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
 
     def test_assertIs_subclass():
@@ -2831,6 +2906,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add an :ref:`object<everything is an object>` named ``Unittest``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4, 6-7
 
@@ -2881,6 +2957,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything that belongs to the :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -2903,6 +2980,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6-7
 
@@ -2932,6 +3010,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_dir_unittest` to replace ``test_failure`` as a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4-23
 
@@ -2958,6 +3037,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_dir_unittest`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -2972,6 +3052,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add a :ref:`call<how to call a function with input>` to the `assertNotEqual method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2
 
@@ -2986,6 +3067,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I change assertNotEqual_ to assertEqual_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 2-3
 
@@ -3001,6 +3083,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_dir_unittest_testcase` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-50
 
@@ -3023,6 +3106,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3
 
@@ -3036,6 +3120,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add a :ref:`call<how to call a function with input>` to the `assertNotEqual method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 2
 
@@ -3050,6 +3135,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I change assertNotEqual_ to assertEqual_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 2-3
 
@@ -3065,6 +3151,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I indent (move with four spaces) :ref:`test_assertIsNot` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 3-5
 
@@ -3090,6 +3177,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIsNot`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 3
 
@@ -3103,6 +3191,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_assertIs` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 3-5
 
@@ -3128,6 +3217,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 3
 
@@ -3141,6 +3231,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I indent :ref:`test_assertNotEqual` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3-5
 
@@ -3166,6 +3257,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertNotEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3
 
@@ -3179,6 +3271,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_assertEqual` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 3-5
 
@@ -3204,6 +3297,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 3
 
@@ -3217,6 +3311,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_assertNotIsInstance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 3-9
 
@@ -3244,6 +3339,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 3
 
@@ -3257,6 +3353,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_assertIs_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 6-7, 9-12
 
@@ -3289,6 +3386,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIs_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 5
 
@@ -3304,6 +3402,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_assertNotIsSubclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 123
     :emphasize-lines: 5-11
 
@@ -3333,6 +3432,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 123
     :emphasize-lines: 5
 
@@ -3348,6 +3448,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I move :ref:`test_assertIs_subclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 5-9
 
@@ -3377,6 +3478,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIs_subclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 132
     :emphasize-lines: 5
 
@@ -3394,6 +3496,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest object>` to make it an :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -3408,6 +3511,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the new :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 4
 
@@ -3428,6 +3532,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses of :ref:`test_dir_unittest`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7-8
 
@@ -3449,6 +3554,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I am using ``self`` in the :ref:`test_dir_unittest`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -3467,6 +3573,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the new :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3-4
 
@@ -3487,6 +3594,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 3-5
 
@@ -3502,6 +3610,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIsNot`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 4-5
 
@@ -3523,6 +3632,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertIsNot`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 1-3
 
@@ -3535,6 +3645,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 4-5
 
@@ -3556,6 +3667,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertIs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 1-3
 
@@ -3568,6 +3680,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 4-5
 
@@ -3589,6 +3702,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertNotEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 108
     :emphasize-lines: 1-3
 
@@ -3601,6 +3715,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 4-5
 
@@ -3622,6 +3737,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 1-3
 
@@ -3634,6 +3750,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 6-7
 
@@ -3659,6 +3776,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 1-3
 
@@ -3671,6 +3789,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 7-8
 
@@ -3697,6 +3816,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertIs_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 1-3
 
@@ -3709,6 +3829,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
     :emphasize-lines: 6-7
 
@@ -3734,6 +3855,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
     :emphasize-lines: 1-3
 
@@ -3746,6 +3868,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs_subclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
     :emphasize-lines: 4-5
 
@@ -3769,6 +3892,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assertIs_subclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 156
     :emphasize-lines: 1-3
 
@@ -3820,6 +3944,7 @@ It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is an 
 * I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_dir_unittest`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 4-5
 
@@ -3843,6 +3968,7 @@ It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is an 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 164
     :emphasize-lines: 5
     :emphasize-text: AttributeError
@@ -3927,6 +4053,7 @@ the test passes because
             my_expectation = [
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
 
             ]
@@ -3940,6 +4067,7 @@ the test passes because
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assertIs_subclass` to show that :ref:`TestUnittest<extract TestUnittest object>` is a :ref:`subclass<how to test if something is a subclass>` of the `unittest.TestCase class`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 148
     :emphasize-lines: 9-11
 
@@ -3970,6 +4098,7 @@ the test passes because
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 148
     :emphasize-lines: 9-10
 
@@ -4015,6 +4144,7 @@ the test passes because
 * I change ``self.TOOLBOX.assertIsSubclass`` to  ``self.assertIsSubclass``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 148
     :emphasize-lines: 6-7
 
@@ -4040,6 +4170,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertIs_subclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
 
             self.TOOLBOX.assertNotIsSubclass(
@@ -4065,6 +4196,7 @@ the test passes because
 * I change the :ref:`call<how to call a function with input>` to the `assertNotIsSubobject method`_ in :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 137
     :emphasize-lines: 8-9
 
@@ -4108,6 +4240,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
 
             self.TOOLBOX.assertIsInstance(
@@ -4127,6 +4260,7 @@ the test passes because
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assertIs_instance` to show that ``self`` in the :ref:`TestUnittest class<extract TestUnittest object>` is an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 12-14
 
@@ -4161,6 +4295,7 @@ the test passes because
 * I change assertNotIsInstance_ to assertIsInstance_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 13-14
 
@@ -4209,6 +4344,7 @@ the test passes because
 * I change ``self.TOOLBOX.assertIsInstance`` to  ``self.assertIsInstance``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 10-11
 
@@ -4235,6 +4371,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertIs_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
 
             self.TOOLBOX.assertNotIsInstance(
@@ -4258,6 +4395,7 @@ the test passes because
 * I change the :ref:`call<how to call a function with input>` to the `assertNotIsInstance method`_ in :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 8-9
 
@@ -4303,6 +4441,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
 
             self.TOOLBOX.assertEqual(0.0, 0.0)
@@ -4320,6 +4459,7 @@ the test passes because
 * I change the :ref:`call<how to call a function with input>` to assertEqual_ in :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 6-7
 
@@ -4355,6 +4495,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
 
             self.TOOLBOX.assertNotEqual(True, 0)
@@ -4368,6 +4509,7 @@ the test passes because
 * I change the :ref:`call<how to call a function with input>` to the `assertNotEqual method`_ in :ref:`test_assertNotEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 6-7
 
@@ -4403,6 +4545,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertNotEqual`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
 
             self.TOOLBOX.assertIs(False, False)
@@ -4416,6 +4559,7 @@ the test passes because
 * I change the :ref:`call<how to call a function with input>` to the `assertIs method`_ in :ref:`test_assertIs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 6-7
 
@@ -4451,6 +4595,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertIs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
 
             self.TOOLBOX.assertIsNot(None, False)
@@ -4464,6 +4609,7 @@ the test passes because
 * I change the :ref:`call<how to call a function with input>` to the `assertIsNot method`_ in :ref:`test_assertIsNot`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 6-7
 
@@ -4499,6 +4645,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_assertIsNot`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
 
             self.TOOLBOX.assertEqual(reality, my_expectation)
@@ -4512,6 +4659,7 @@ the test passes because
 * I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 4-5
 
@@ -4528,6 +4676,7 @@ the test passes because
 * I remove the commented lines from :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
             assert reality == my_expectation
@@ -4538,6 +4687,7 @@ the test passes because
             my_expectation = [
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
 
             ]
@@ -4549,6 +4699,7 @@ the test passes because
 * I remove the ``TOOLBOX`` :ref:`object attribute<what is an object attribute?>` since it is no longer used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     class TestUnittest(unittest.TestCase):

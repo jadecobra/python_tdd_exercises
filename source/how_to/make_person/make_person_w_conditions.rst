@@ -185,6 +185,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add a :ref:`method definition<how to make a function>` to the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 12-13
 
@@ -214,6 +215,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 10
 
@@ -248,6 +250,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add ``can_vote`` to :ref:`test_dir_person_object` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 210
 
         def test_dir_person_object(self):
@@ -258,6 +261,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 222
     :emphasize-lines: 2-3
     :emphasize-text: can_vote
@@ -273,6 +277,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add ``can_vote`` to :ref:`test_dir_person_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 228
 
         def test_dir_person_instance(self):
@@ -290,6 +295,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 248
     :emphasize-text: can_vote
     :emphasize-lines: 2-3
@@ -348,6 +354,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add a :ref:`call<how to call a function with input>` to :ref:`can_vote<add can_vote method>` from :ref:`test_mary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
 
         def test_mary(self):
@@ -356,6 +363,7 @@ I want :ref:`can_vote<add can_vote method>` to return
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 170
     :emphasize-lines: 8-14
 
@@ -395,6 +403,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add ``is_citizen`` to the :ref:`instance of the Person object<add Person object>` for ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 177
     :emphasize-lines: 6
 
@@ -420,6 +429,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6
 
@@ -443,6 +453,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I give ``is_citizen`` a value to make it :ref:`optional<test_optional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6
 
@@ -459,6 +470,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add an :ref:`instance attribute<what is an object attribute?>` for ``is_citizen`` so I can use it in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 12
 
@@ -483,6 +495,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I use the :ref:`object attribute<what is an object attribute?>` in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3
 
@@ -500,6 +513,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the :ref:`can_vote method<add can_vote method>` then add ``self`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 1-3
 
@@ -514,6 +528,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add ``is_citizen`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 237
 
         def test_dir_person_instance(self):
@@ -531,6 +546,7 @@ I want :ref:`can_vote<add can_vote method>` to return
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 257
     :emphasize-lines: 2-4
     :emphasize-text: is_citizen
@@ -550,6 +566,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I remove the commented lines and the second :ref:`return statement<the return statement>` from the :ref:`can_vote method<add can_vote method>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
 
         def __init__(
@@ -579,6 +596,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add a :ref:`call<how to call a function with input>` to :ref:`can_vote<add can_vote method>` from :ref:`test_john`, in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
 
         def test_john(self):
@@ -587,6 +605,7 @@ I want :ref:`can_vote<add can_vote method>` to return
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
     :emphasize-lines: 8-14
 
@@ -616,6 +635,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add ``is_citizen`` to the :ref:`instance of the Person object<add Person object>` for ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 6
 
@@ -633,6 +653,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add a :ref:`call<how to call a function with input>` to :ref:`can_vote<add can_vote method>` from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
 
         def test_jane(self):
@@ -641,6 +662,7 @@ I want :ref:`can_vote<add can_vote method>` to return
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 8-14
 
@@ -672,6 +694,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 7-8
 
@@ -691,6 +714,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I remove the commented line from :ref:`test_jane`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
 
             jane = src.person.Person(
@@ -737,6 +761,7 @@ I can do that with an :ref:`if statement<if statements>`
 * I add a test for a person who is a citizen and younger than ``18``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 201
     :emphasize-lines: 3-11
 
@@ -774,6 +799,7 @@ I can do that with an :ref:`if statement<if statements>`
 * I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a function with input>` to the :ref:`calculate_age function<add calculate_age function>` from the :ref:`can_vote method<add can_vote method>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-4
 
@@ -870,6 +896,7 @@ add can_get_license method
 * I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_mary` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 194
     :emphasize-lines: 9
 
@@ -903,6 +930,7 @@ add can_get_license method
 * I add a :ref:`method definition<how to make a function that takes input>` for :ref:`can_get_license<add can_get_license method>` to the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 12-13
 
@@ -932,6 +960,7 @@ add can_get_license method
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3
 
@@ -946,6 +975,7 @@ add can_get_license method
 * I add ``can_get_license`` to :ref:`test_dir_person_object` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 247
 
         def test_dir_person_object(self):
@@ -956,6 +986,7 @@ add can_get_license method
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 260
     :emphasize-lines: 2
     :emphasize-text: can_get_license
@@ -970,6 +1001,7 @@ add can_get_license method
 * I add ``can_get_license`` to :ref:`test_dir_person_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 265
 
         def test_dir_person_instance(self):
@@ -987,6 +1019,7 @@ add can_get_license method
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 285
     :emphasize-lines: 2-4
 
@@ -1035,6 +1068,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_john`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 9
 
@@ -1067,6 +1101,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add ``passed_test`` to the :ref:`instance of the Person object<add Person object>` for ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 7
 
@@ -1094,6 +1129,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add ``passed_test`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6
 
@@ -1117,6 +1153,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I give ``passed_test`` a value to make it :ref:`optional<test_optional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6
 
@@ -1133,6 +1170,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I use ``self.passed_test`` in the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3
 
@@ -1150,6 +1188,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the :ref:`can_get_license method<add can_get_license method>` then add ``self`` to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 1-3
 
@@ -1168,6 +1207,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add an :ref:`instance attribute<what is an object attribute?>` for ``passed_test`` so I can use it in the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 11
 
@@ -1195,6 +1235,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add ``passed_test`` to the :ref:`instance of the Person object<add Person object>` for ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 196
     :emphasize-lines: 7
 
@@ -1214,6 +1255,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add ``passed_test`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 268
 
         def test_dir_person_instance(self):
@@ -1231,6 +1273,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 289
     :emphasize-lines: 2-3
     :emphasize-text: passed_test
@@ -1257,6 +1300,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I remove the commented lines and the second :ref:`return statement<the return statement>` from the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
 
             self.is_citizen = is_citizen
@@ -1270,6 +1314,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_jane`, in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 8
 
@@ -1295,6 +1340,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add ``passed_test`` to the :ref:`instance of the Person object<add Person object>` for ``jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 6
 
@@ -1313,6 +1359,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 8
 
@@ -1338,6 +1385,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` in :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 6
 
@@ -1352,6 +1400,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I remove the commented line from :ref:`test_joe`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
 
             joe = src.person.Person(
@@ -1397,6 +1446,7 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_underage_citizen<add condition to can_vote>` for a person who is younger than 18 and passed the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 210
     :emphasize-lines: 8, 11
 
@@ -1535,6 +1585,7 @@ I can make an :ref:`attribute<what is an object attribute?>` to remove the repet
 * I add an :ref:`instance attribute<what is an object attribute?>` to the :ref:`__init__ method<the constructor method>` so that the age is calculated once when an :ref:`instance<how to test if something is an instance>` is made, not every time one of the :ref:`methods is called<how to call a function with input>`.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 14
 
@@ -1589,6 +1640,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I add the `unittest.skip decorator`_ to :ref:`test_when_person_is_older_than_120` with a note that it fails because the age is bigger than ``120``, in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 219
     :emphasize-lines: 4
 
@@ -1611,6 +1663,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I remove the comments from :ref:`test_when_person_is_older_than_120` because they are a repetition of the message in the `unittest.skip decorator`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 222
 
         @unittest.skip('fails because age > 120')
@@ -1627,6 +1680,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I add the `unittest.skip decorator`_ to :ref:`test_when_year_of_birth_is_the_future` with a message that it will always fail since it uses a year of birth that is in the future
 
   .. code-block:: python
+    :caption:
     :lineno-start: 231
     :emphasize-lines: 1
 
@@ -1644,6 +1698,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I remove the comments from :ref:`test_when_year_of_birth_is_the_future`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 231
 
         @unittest.skip('fails because age < 0')
@@ -1660,6 +1715,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I add the `unittest.skip decorator`_ to :ref:`test_when_year_of_birth_is_not_an_integer` with a message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 240
     :emphasize-lines: 1-3
 
@@ -1684,6 +1740,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I remove the repeated message from :ref:`test_when_year_of_birth_is_not_an_integer`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 240
 
         @unittest.skip(
@@ -1715,6 +1772,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I add ``age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 272
 
         def test_dir_person_instance(self):
@@ -1732,6 +1790,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 292
     :emphasize-lines: 2-5
     :emphasize-text: age
@@ -1760,6 +1819,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I use ``self.age`` in the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 2-4
 
@@ -1777,6 +1837,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I use ``self.age`` in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 2-4
 
@@ -1794,6 +1855,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I use ``self.age`` in the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 5-6
 
@@ -1813,6 +1875,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I remove the commented line from the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 4
 
@@ -1899,6 +1962,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I add ``check_age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 272
 
         def test_dir_person_instance(self):
@@ -1916,6 +1980,7 @@ because I added a new :ref:`method<what is a method?>`.
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 292
     :emphasize-lines: 3-5
     :emphasize-text: check_age
@@ -1939,6 +2004,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I add ``check_age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_object` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 254
 
         def test_dir_person_object(self):
@@ -1949,6 +2015,7 @@ because I added a new :ref:`method<what is a method?>`.
                     ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 267
     :emphasize-lines: 2-3
     :emphasize-text: check_age
@@ -1974,6 +2041,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2
 
@@ -1999,6 +2067,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I add ``self`` to the parentheses of the :ref:`check_age method<extract check_age method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 4
 
@@ -2017,6 +2086,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I remove the other statements from the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
 
         def can_get_license(self):
@@ -2027,6 +2097,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 2
 
@@ -2045,6 +2116,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I remove the other statements from the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
         def can_vote(self):

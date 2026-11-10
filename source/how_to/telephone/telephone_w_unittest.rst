@@ -134,6 +134,7 @@ add TestTelephone class
 * I change the name of the :ref:`object<everything is an object>` to ``TestTelephone``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5-6
 
@@ -164,6 +165,7 @@ add TestTelephone class
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestTelephone``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 2-3
 
@@ -201,6 +203,7 @@ add TestTelephone class
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in :ref:`test_failure`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 6-7
 
@@ -277,6 +280,7 @@ test_passing_none with unittest
 * I move :ref:`test_passing_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3-4
 
@@ -331,6 +335,7 @@ the test is green again.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 3-4
 
@@ -351,6 +356,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4-5
 
@@ -368,6 +374,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_passing_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
 
     class TestTelephone(unittest.TestCase):
@@ -404,6 +411,7 @@ test_passing_booleans with unittest
 * I move :ref:`test_passing_booleans` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 4-6
 
@@ -462,6 +470,7 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-6
 
@@ -484,6 +493,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 4-5
 
@@ -504,6 +514,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 7-8
 
@@ -524,6 +535,7 @@ green again.
 * I remove the commented lines from :ref:`test_passing_booleans`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
 
         def test_passing_none(self):
@@ -562,6 +574,7 @@ test_passing_an_integer with unittest
 * I move :ref:`test_passing_an_integer` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 5-7
 
@@ -622,6 +635,7 @@ green.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 4-7
 
@@ -645,6 +659,7 @@ green.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 5-6
 
@@ -662,6 +677,7 @@ green.
 * I remove the commented lines from :ref:`test_passing_an_integer`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
 
         def test_passing_booleans(self):
@@ -703,6 +719,7 @@ test_passing_a_float with unittest
 * I move :ref:`test_passing_a_float` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 7-9
 
@@ -767,6 +784,7 @@ green again.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_float`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 4-7
 
@@ -790,6 +808,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_float`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 5-6
 
@@ -807,6 +826,7 @@ green again.
 * I remove the commented lines from :ref:`test_passing_a_float`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
 
         def test_passing_an_integer(self):
@@ -850,6 +870,7 @@ test_passing_a_string with unittest
 * I move :ref:`test_passing_a_string` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
     :emphasize-lines: 7-9
 
@@ -914,6 +935,7 @@ the test is green again.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_string`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 4-7
 
@@ -937,6 +959,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_string`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 5-6
 
@@ -954,6 +977,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_passing_a_string`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 27
 
         def test_passing_a_float(self):
@@ -997,6 +1021,7 @@ test_passing_a_tuple with unittest
 * I move :ref:`test_passing_a_tuple` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 7-9
 
@@ -1059,6 +1084,7 @@ green again.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 4-7
 
@@ -1083,6 +1109,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 5-6
 
@@ -1100,6 +1127,7 @@ green again.
 * I remove the commented lines from :ref:`test_passing_a_tuple`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
 
         def test_passing_a_string(self):
@@ -1143,6 +1171,7 @@ test_passing_a_list with unittest
 * I move :ref:`test_passing_a_list` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 7-9
 
@@ -1208,6 +1237,7 @@ green.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_list`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4-7
 
@@ -1232,6 +1262,7 @@ green.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_list`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 5-6
 
@@ -1249,6 +1280,7 @@ green.
 * I remove the commented lines from :ref:`test_passing_a_list`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
 
         def test_passing_a_tuple(self):
@@ -1292,6 +1324,7 @@ test_passing_a_set with unittest
 * I move :ref:`test_passing_a_set` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 7-9
 
@@ -1355,6 +1388,7 @@ green again.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_set`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 4-5
 
@@ -1377,6 +1411,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_set`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 5-6
 
@@ -1395,6 +1430,7 @@ green again.
 * I remove the commented lines from :ref:`test_passing_a_set`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
 
         def test_passing_a_list(self):
@@ -1436,6 +1472,7 @@ test_passing_a_dictionary with unittest
 * I move :ref:`test_passing_a_dictionary` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 5-12
 
@@ -1501,6 +1538,7 @@ the test is green again.
 * I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 9-10
 
@@ -1529,6 +1567,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 10-11
 
@@ -1552,6 +1591,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
 
         def test_passing_a_set(self):
@@ -1596,6 +1636,7 @@ test_passing_an_object with unittest
 * I move :ref:`test_passing_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3-14
 
@@ -1662,6 +1703,7 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 3-10
 
@@ -1677,6 +1719,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 1-12
 
@@ -1694,6 +1737,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 1-10
 
@@ -1721,6 +1765,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 4-5, 9-10
 
@@ -1738,6 +1783,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 2-3, 5-6
 
@@ -1751,6 +1797,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 2-3, 5-6
 
@@ -1764,6 +1811,7 @@ green again.
             )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 2-3, 7-8, 10-11
 
@@ -1789,6 +1837,7 @@ green again.
 * I remove the commented lines from :ref:`test_passing_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
 
             self.assertEqual(reality, my_expectation)
@@ -1807,6 +1856,7 @@ green again.
             self.assertEqual(text(str), "I got: <class 'str'>")
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
 
             self.assertEqual(

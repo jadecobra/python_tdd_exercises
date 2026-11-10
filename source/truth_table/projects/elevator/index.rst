@@ -150,6 +150,7 @@ start the project
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_elevator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -223,6 +224,7 @@ test_number_pushed
   ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-8
 
@@ -250,6 +252,7 @@ test_number_pushed
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -290,6 +293,7 @@ test_number_pushed
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -322,6 +326,7 @@ test_number_pushed
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_elevator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -394,6 +399,7 @@ test_number_not_pushed
   ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 8-13
 
@@ -494,6 +500,7 @@ test_doors_closed_number_pushed
   =================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -566,6 +573,7 @@ test_doors_closed_number_pushed
 * I change the name of :ref:`test_number_pushed` to :ref:`test_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -610,6 +618,7 @@ test_doors_open_number_pushed
   =================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 9-15
 
@@ -725,6 +734,7 @@ test_doors_closed_number_not_pushed
   =================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 5
 
@@ -750,6 +760,7 @@ test_doors_closed_number_not_pushed
 * I change the name of :ref:`test_number_not_pushed` to :ref:`test_doors_closed_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 9
 
@@ -803,6 +814,7 @@ test_doors_open_number_not_pushed
   =================  ==================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 9-15
 
@@ -842,6 +854,7 @@ test_doors_open_number_not_pushed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_doors_open_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 2
 
@@ -989,6 +1002,7 @@ test_above_weight_doors_open_number_not_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 6
 
@@ -1047,6 +1061,7 @@ test_above_weight_doors_open_number_not_pushed
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_elevator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
@@ -1089,6 +1104,7 @@ test_above_weight_doors_open_number_not_pushed
 * I change the name of the test from :ref:`test_doors_open_number_not_pushed` to :ref:`test_above_weight_doors_open_number_not_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 9
 
@@ -1140,6 +1156,7 @@ test_below_weight_doors_open_number_not_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 10-17
 
@@ -1183,6 +1200,7 @@ test_below_weight_doors_open_number_not_pushed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_open_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 2
 
@@ -1242,6 +1260,7 @@ test_above_weight_doors_closed_number_not_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 6
 
@@ -1276,6 +1295,7 @@ test_above_weight_doors_closed_number_not_pushed
 * I change the name of the test from :ref:`test_doors_closed_number_not_pushed` to :ref:`test_above_weight_doors_closed_number_not_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 9
 
@@ -1327,6 +1347,7 @@ test_below_weight_doors_closed_number_not_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 10-17
 
@@ -1367,6 +1388,7 @@ test_below_weight_doors_closed_number_not_pushed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_closed_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 2
 
@@ -1433,6 +1455,7 @@ test_above_weight_doors_open_number_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 6
 
@@ -1459,6 +1482,7 @@ test_above_weight_doors_open_number_pushed
 * I change the name of the test from :ref:`test_doors_open_number_pushed` to :ref:`test_above_weight_doors_open_number_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 9
 
@@ -1512,6 +1536,7 @@ test_below_weight_doors_open_number_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 10-17
 
@@ -1554,6 +1579,7 @@ test_below_weight_doors_open_number_pushed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_open_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2
 
@@ -1612,6 +1638,7 @@ test_above_weight_doors_closed_number_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -1631,6 +1658,7 @@ test_above_weight_doors_closed_number_pushed
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -1695,6 +1723,7 @@ test_above_weight_doors_closed_number_pushed
 * I change the name of the test from :ref:`test_doors_closed_number_pushed` to :ref:`test_above_weight_doors_closed_number_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 
@@ -1740,6 +1769,7 @@ test_below_weight_doors_closed_number_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10-17
 
@@ -1782,6 +1812,7 @@ test_below_weight_doors_closed_number_pushed
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in :ref:`test_below_weight_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 2
 
@@ -2038,6 +2069,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7
 
@@ -2127,6 +2159,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10-17
 
@@ -2161,6 +2194,7 @@ floor button       doors            weight limit   emergency button   output
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_above_weight_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10
 
@@ -2200,6 +2234,7 @@ floor button       doors            weight limit   emergency button   output
 * I change the name of the test from :ref:`test_above_weight_doors_closed_number_pushed` to :ref:`test_emergency_w_above_weight_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3
 
@@ -2257,6 +2292,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 7
 
@@ -2277,6 +2313,7 @@ floor button       doors            weight limit   emergency button   output
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 2
 
@@ -2398,6 +2435,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10-17
 
@@ -2432,6 +2470,7 @@ floor button       doors            weight limit   emergency button   output
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in :ref:`test_below_weight_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10
 
@@ -2479,6 +2518,7 @@ floor button       doors            weight limit   emergency button   output
 * I change the name of the test from :ref:`test_below_weight_doors_closed_number_pushed` to :ref:`test_emergency_w_below_weight_doors_closed_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 10
 
@@ -2543,6 +2583,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 7
 
@@ -2576,6 +2617,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 10-17
 
@@ -2663,6 +2705,7 @@ the test passes.
 * I change the name of the test from :ref:`test_above_weight_doors_open_number_pushed` to :ref:`test_emergency_w_above_weight_doors_open_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 10
 
@@ -2727,6 +2770,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 7
 
@@ -2768,6 +2812,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 10-17
 
@@ -2863,6 +2908,7 @@ the test passes.
 * I change the name of the test from :ref:`test_below_weight_doors_open_number_pushed` to :ref:`test_emergency_w_below_weight_doors_open_number_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 10
 
@@ -2927,6 +2973,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 7
 
@@ -2960,6 +3007,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 10-17
 
@@ -3047,6 +3095,7 @@ the test passes.
 * I change the name of the test from :ref:`test_above_weight_doors_closed_number_not_pushed` to :ref:`test_emergency_w_above_weight_doors_closed_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 10
 
@@ -3111,6 +3160,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 7
 
@@ -3152,6 +3202,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 10-17
 
@@ -3247,6 +3298,7 @@ the test passes.
 * I change the name of the test from :ref:`test_below_weight_doors_closed_number_not_pushed` to :ref:`test_emergency_w_below_weight_doors_closed_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 10
 
@@ -3311,6 +3363,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 7
 
@@ -3344,6 +3397,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 10-17
 
@@ -3431,6 +3485,7 @@ the test passes.
 * I change the name of the test from :ref:`test_above_weight_doors_open_number_not_pushed` to :ref:`test_emergency_w_above_weight_doors_open_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 10
 
@@ -3495,6 +3550,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 7
 
@@ -3542,6 +3598,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 10-17
 
@@ -3641,6 +3698,7 @@ the test passes.
 * I change the name of the test from :ref:`test_below_weight_doors_open_number_not_pushed` to :ref:`test_emergency_w_below_weight_doors_open_number_not_pushed`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 124
     :emphasize-lines: 10
 
@@ -4066,6 +4124,7 @@ refactor controller
 * I put the two statements that have ``not`` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
 

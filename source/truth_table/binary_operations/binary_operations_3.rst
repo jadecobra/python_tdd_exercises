@@ -175,6 +175,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 11-12
 
@@ -214,6 +215,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 4
 
@@ -236,6 +238,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add an :ref:`if statement<if statements>` to the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-3
 
@@ -264,6 +267,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 5
 
@@ -291,6 +295,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add an :ref:`if statement<if statements>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-3
 
@@ -322,6 +327,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 6
 
@@ -353,6 +359,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add an :ref:`if statement<if statements>` for this case, to the one for when the first input is :red:`False` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3-4
 
@@ -438,6 +445,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * there are two cases where :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` and two cases where it returns :green:`True`. I add an :ref:`if statement<if statements>` for the other case where it returns :green:`True`, to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 6-8
 
@@ -469,6 +477,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-5, 8-11
 
@@ -491,6 +500,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write three of the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3-4, 6-7, 13-14
 
@@ -516,6 +526,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 4-5, 8-9, 13-14, 17-18
 
@@ -546,6 +557,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 5-6, 10-11, 16-17, 21-22
 
@@ -606,6 +618,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I move the :ref:`if statements` to put them together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-9
 
@@ -625,6 +638,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add :ref:`if statements` for the other two cases to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 5-6, 10-11
 
@@ -646,6 +660,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to write the :ref:`if statements` for all the cases
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-19
 
@@ -686,6 +701,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I move the first :ref:`if statement<if statements>` to the bottom to be with the other statement that returns the same thing (:red:`False`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 8-9
 
@@ -705,6 +721,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the :ref:`if statements` that return the same thing together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 1-9, 11-18
 
@@ -748,6 +765,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I change the second :ref:`if statement<if statements>` to an :ref:`else clause<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 10-15
 
@@ -773,6 +791,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-8
 
@@ -791,6 +810,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3, 7
 
@@ -936,6 +956,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-10
 
@@ -962,6 +983,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` when the two inputs are equal, it returns :green:`True` when the two inputs are NOT equal. I add an :ref:`if statement<if statements>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 2-5
 
@@ -977,6 +999,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<test_logical_negation>` of the new :ref:`if statement<if statements>` so I can write a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 4-5
 
@@ -993,6 +1016,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add a new :ref:`conditional expression<conditional expressions>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-6
 
@@ -1013,6 +1037,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3, 5
 
@@ -1028,6 +1053,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I can also write the :ref:`conditional expression<conditional expressions>` with the NOT equal symbol (``!=``) (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2
 
@@ -1044,6 +1070,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I remove the commented lines and other statements from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
 
     def exclusive_disjunction(first_input, second_input):
@@ -1200,6 +1227,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 3-7
 
@@ -1271,6 +1299,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 6
 
@@ -1295,6 +1324,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add an :ref:`if statement<if statements>` to :ref:`material_non_implication<test_material_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 2-3
 
@@ -1322,6 +1352,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 7
 
@@ -1353,6 +1384,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 8
 
@@ -1383,6 +1415,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add an :ref:`if statement<if statements>` for the one case that returns :green:`True`, to the :ref:`material_non_implication function<test_material_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 2-4
 
@@ -1460,6 +1493,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 2-5
 
@@ -1476,6 +1510,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 5-6
 
@@ -1493,6 +1528,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 3-4, 7-8
 
@@ -1512,6 +1548,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 4-5, 9-10
 
@@ -1536,6 +1573,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 5, 10-11
 
@@ -1569,6 +1607,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 2-6
 
@@ -1595,6 +1634,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 3, 5
 
@@ -1677,6 +1717,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 2-5
 
@@ -1710,6 +1751,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove the commented lines and other statements from :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 6
 
@@ -1827,6 +1869,7 @@ because :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_inp
 * I change :ref:`the return statement` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-3, 8-14
 
@@ -1856,6 +1899,7 @@ because :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_inp
 * I put the first two :ref:`return statements<the return statement>` back, then remove the commented lines from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2-3
 
@@ -1931,6 +1975,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 3-5
 
@@ -2000,6 +2045,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 4
 
@@ -2031,6 +2077,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 5
 
@@ -2054,6 +2101,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add an :ref:`if statement<if statements>` for this case to the :ref:`project_first function<test_project_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2-3
 
@@ -2117,6 +2165,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 6
 
@@ -2142,6 +2191,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2-3
 
@@ -2156,6 +2206,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3-4
 
@@ -2171,6 +2222,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 4-5
 
@@ -2187,6 +2239,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 5-6
 
@@ -2204,6 +2257,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 8-9
 
@@ -2222,6 +2276,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I use :ref:`Logical Negation (NOT)<if statements>` for the :ref:`else clause<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 8-9
 
@@ -2241,6 +2296,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove the :ref:`nots<test_logical_negation>` because they cancel out
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 9-10
 
@@ -2261,6 +2317,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`project_first<test_project_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2
 
@@ -2280,6 +2337,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 2
 
@@ -2292,6 +2350,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove the other statements from :ref:`project_first<test_project_first>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
 
     def project_first(first_input, second_input):
@@ -2408,6 +2467,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 3-7
 
@@ -2476,6 +2536,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 6
 
@@ -2503,6 +2564,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * time for the next case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 7
 
@@ -2528,6 +2590,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add an :ref:`if statement<if statements>` to :ref:`converse_implication<test_converse_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 2-3
 
@@ -2556,6 +2619,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 8
 
@@ -2586,6 +2650,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add an :ref:`if statement<if statements>` for the only case that returns :red:`False`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 3-4
 
@@ -2663,6 +2728,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 2-5
 
@@ -2679,6 +2745,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 3-4
 
@@ -2696,6 +2763,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove ``== True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 4-5, 7-8
 
@@ -2715,6 +2783,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 5-6, 9-10
 
@@ -2739,6 +2808,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 6, 10-11
 
@@ -2772,6 +2842,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 12-14
 
@@ -2795,6 +2866,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I use the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`if statement<if statements>` for the :ref:`else clause<if statements>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 3-4
 
@@ -2809,6 +2881,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I "multiply" the :ref:`not<test_logical_negation>` by every symbol in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 4-9
 
@@ -2834,6 +2907,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 7-8
 
@@ -2854,6 +2928,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove ``not not``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 6-7
 
@@ -2875,6 +2950,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 2-6
 
@@ -2891,6 +2967,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 102
     :emphasize-lines: 3, 5
 
@@ -2973,6 +3050,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 2-5
 
@@ -3006,6 +3084,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the commented lines from :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 92
     :emphasize-lines: 6
 

@@ -309,6 +309,7 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
     :emphasize-text: AssertionError
@@ -325,6 +326,7 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -347,6 +349,7 @@ test_factory_w_keyword_arguments
 * I change :ref:`test_failure` to :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-6
 
@@ -372,6 +375,7 @@ test_factory_w_keyword_arguments
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -410,6 +414,7 @@ test_factory_w_keyword_arguments
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 4
     :emphasize-text: AttributeError
@@ -443,6 +448,7 @@ test_factory_w_keyword_arguments
 * I want the :ref:`function<what is a function?>` to take an argument called ``first_name``. I add it to the call from the test in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2-5
 
@@ -469,6 +475,7 @@ test_factory_w_keyword_arguments
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 5
     :emphasize-text: TypeError
@@ -496,6 +503,7 @@ test_factory_w_keyword_arguments
 * I want the :ref:`function<what is a function?>` to take an argument called ``last_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -539,6 +547,7 @@ test_factory_w_keyword_arguments
 * I want the :ref:`function<what is a function?>` to take an argument called ``sex``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 6
 
@@ -586,6 +595,7 @@ test_factory_w_keyword_arguments
 * I want the :ref:`function<what is a function?>` to take an argument for ``year_of_birth``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7
 
@@ -634,6 +644,7 @@ test_factory_w_keyword_arguments
 * I want the :ref:`person function<test_factory_w_keyword_arguments>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by commas) as output when it is called. I change ``my_expectation`` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 9-10
 
@@ -707,6 +718,7 @@ test_factory_w_keyword_arguments
 * I add a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`person function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 10-13
 
@@ -781,6 +793,7 @@ test_factory_w_keyword_arguments
 * I change the value of ``first_name`` to ``'jane'`` to use a real name for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3-4, 10-11
 
@@ -864,6 +877,7 @@ test_factory_w_keyword_arguments
 * I typed the value for ``first_name`` two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``'jane'`` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 2
 
@@ -875,6 +889,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 7-8, 17-18
 
@@ -909,6 +924,7 @@ test_factory_w_keyword_arguments
 * I add a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`person function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 19
 
@@ -1010,6 +1026,7 @@ test_factory_w_keyword_arguments
 * I change the value of ``last_name`` to ``'doe'`` to use a real name for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 9-10, 20-21
 
@@ -1119,6 +1136,7 @@ test_factory_w_keyword_arguments
 * I typed the value for ``last_name`` two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``'doe'`` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 3
 
@@ -1131,6 +1149,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 11-12, 23-24
 
@@ -1171,6 +1190,7 @@ test_factory_w_keyword_arguments
 * I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`person function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 25
 
@@ -1286,6 +1306,7 @@ test_factory_w_keyword_arguments
 * I change the value of ``sex`` to ``'F'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 13-14, 26-27
 
@@ -1407,6 +1428,7 @@ test_factory_w_keyword_arguments
 * I typed the value for ``sex`` two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``'F'`` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
 
@@ -1420,6 +1442,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 15-16, 29-30
 
@@ -1466,6 +1489,7 @@ test_factory_w_keyword_arguments
 * I want the :ref:`person function<test_factory_w_keyword_arguments>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` to ``my_expectation``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 31
 
@@ -1594,6 +1618,7 @@ test_factory_w_keyword_arguments
 * I change ``2000`` to ``1996`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 17-18, 32-33
 
@@ -1746,6 +1771,7 @@ test_factory_w_keyword_arguments
 * I typed the year of birth two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``1996`` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5
 
@@ -1760,6 +1786,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1996`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 19-20, 35-36
 
@@ -1810,6 +1837,7 @@ test_factory_w_keyword_arguments
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
 
         def test_factory_w_keyword_arguments(self):
@@ -1878,6 +1906,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 * I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a method?>` from the `datetime module`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 17-21
 
@@ -2193,6 +2222,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``datetime.datetime.now().year`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 9-11, 26-27
 
@@ -2234,6 +2264,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 21
 
@@ -2295,6 +2326,7 @@ I want to use random values in the test to make sure the :ref:`person function<t
 * I add randomness to the ``sex`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 4-5
 
@@ -2379,6 +2411,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 * I remove the commented line in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
         def test_factory_w_keyword_arguments(self):
@@ -2417,6 +2450,7 @@ I want to use random values in the test to make sure the :ref:`person function<t
 * I use `random.choice`_ for the ``last_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3-6
 
@@ -2489,6 +2523,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 * I remove the commented line from ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
     def test_factory_w_keyword_arguments(self):
@@ -2529,6 +2564,7 @@ I want to use random values in the test to make sure the :ref:`person function<t
 * I add randomness to the ``first_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2-5
 
@@ -2625,6 +2661,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 * I remove the commented line from ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
         def test_factory_w_keyword_arguments(self):
@@ -2681,6 +2718,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 * I use the new :ref:`function<what is a function?>` for the ``first_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2-3
 
@@ -2699,6 +2737,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 * Each call to the `random.choice`_ passes a tuple_ (:ref:`an iterable<what is an iterable?>`). I want the :ref:`function<what is a function?>` to be able to take any number of arguments I send, without knowing how many I will send
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-4, 6-7
 
@@ -2726,6 +2765,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 * I add a :ref:`starred expressions<single starred expressions>` like I did in :ref:`test_unknown_number_of_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -2747,6 +2787,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 * I use the new :ref:`function<what is a function?>` for the ``last_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 8-9, 11-12
 
@@ -2779,6 +2820,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 * I use the new :ref:`function<what is a function?>` for the ``sex`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 13-14
 
@@ -2811,6 +2853,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 25
 
@@ -2856,6 +2899,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 * I add a :ref:`dictionary<what is a dictionary?>` for ``first_name``, ``last_name`` and ``year_of_birth``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 10-14
 
@@ -2882,6 +2926,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 * I use the new :ref:`variable<what is a variable?>` to remove ``first_name``, ``last_name``, and ``sex`` from the call to ``src.person.person``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 22-25
 
@@ -3042,6 +3087,7 @@ the test is green again, because this happens
 * I use the :ref:`variable<what is a variable?>` for ``my_expectation``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 10-13
 
@@ -3099,6 +3145,7 @@ the test is green again, because this happens
 * I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` because they are now only used once (by ``a_person``)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2-8, 11-20
 
@@ -3129,6 +3176,7 @@ the test is green again, because this happens
 * I add a :ref:`function<what is a function?>` with a tuple_ of all the names for the test to have more random names to pick from
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 5-9
 
@@ -3150,6 +3198,7 @@ the test is green again, because this happens
 * I use the :ref:`function<what is a function?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-lines: 14-21
 
@@ -3182,6 +3231,7 @@ the test is green again, because this happens
 * I change the :ref:`assertion<what is an assertion?>` to make sure the test works correctly
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 16-17
 
@@ -3221,6 +3271,7 @@ the test is green again, because this happens
 * I change the :ref:`assertion<what is an assertion?>` back
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 16-17
 
@@ -3248,6 +3299,7 @@ the test is green again, because this happens
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
     :emphasize-text: get_random_name pick_one a_person
 
@@ -3306,6 +3358,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I make a copy of :ref:`test_factory_w_keyword_arguments` and paste it below in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 11-16, 18-21, 23-31
 
@@ -3347,6 +3400,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I change the name of the new test to :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 11
     :emphasize-text: test_factory_w_optional_arguments
@@ -3371,6 +3425,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4
 
@@ -3401,6 +3456,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a default value for ``last_name`` to make it optional, in the :ref:`person function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 2-3
 
@@ -3422,6 +3478,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
@@ -3436,6 +3493,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a default value for ``sex`` to make it optional, in the :ref:`person function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -3458,6 +3516,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a default value for ``year_of_birth`` to make it optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -3529,6 +3588,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 7
 
@@ -3562,6 +3622,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I change the default value for ``last_name`` in the :ref:`person function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3, 6
 
@@ -3608,6 +3669,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the :ref:`person function<test_factory_w_keyword_arguments>` without it, in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 10
 
@@ -3680,6 +3742,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 54
     :emphasize-lines: 8
 
@@ -3714,6 +3777,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I change the default value for ``sex`` in the :ref:`person function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
 
@@ -3754,6 +3818,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I no longer need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it only has one :ref:`key<test_keys_of_a_dictionary>`, I can use a :ref:`variable<what is a variable?>` for ``first_name`` instead
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 2
 
@@ -3768,6 +3833,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I use the :ref:`variable<what is a variable?>` for ``first_name`` in the call to ``src.person.person``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 3
 
@@ -3819,6 +3885,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I comment out ``**a_person,``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2
 
@@ -3856,6 +3923,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``first_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 8
 
@@ -3881,6 +3949,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
         def test_factory_w_optional_arguments(self):
@@ -3911,6 +3980,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines from ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     def person(
@@ -3959,6 +4029,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 * I add a new test to ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 13-18, 20-22
 
@@ -4008,6 +4079,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 * I add the :ref:`function<what is a function?>` to ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 16-17
 
@@ -4041,6 +4113,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 * I add a name to the definition
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 1-2
 
@@ -4063,6 +4136,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 9-13
 
@@ -4094,6 +4168,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in :ref:`the return statement` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3-4
 
@@ -4107,6 +4182,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for another person, to :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 9-13, 15-19
 
@@ -4148,6 +4224,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3, 6-9
 
@@ -4223,6 +4300,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>`, then add it to :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 4, 8-11
 
@@ -4307,6 +4385,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` , then add it to :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 5, 12-13
 
@@ -4385,6 +4464,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-text: get
 
@@ -4401,6 +4481,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for a new person to :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 14-18, 20-25
 
@@ -4444,6 +4525,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 9-12
 
@@ -4470,6 +4552,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for one more person
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 10-15, 17-22
 
@@ -4510,6 +4593,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change ``my_expectation`` to match ``reality`` for ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 10-13
 
@@ -4537,6 +4621,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add a :ref:`variable<what is a variable?>` for ``datetime.datetime.now().year``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 2
 
@@ -4552,6 +4637,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``datetime.datetime.now().year`` from the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 14-15, 29-30, 43-44, 61-62
 
@@ -4628,6 +4714,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add :ref:`variables<what is a variable?>` for ``'mary'``, ``'public'``, ``2000`` and the age calculation of ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 100
     :emphasize-lines: 11-14
 
@@ -4656,6 +4743,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'mary'``, ``'public'``, ``2000`` and the age calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 7-12, 20, 22-24
 
@@ -4694,6 +4782,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add :ref:`variables<what is a variable?>` for ``'john'``, ``'smith'``, ``1580`` and the age calculation of ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 9-12
 
@@ -4719,6 +4808,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 7-12, 19, 21-23
 
@@ -4753,6 +4843,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add :ref:`variables<what is a variable?>` for ``'jane'``, ``1991`` and the age calculation of ``jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 10-12
 
@@ -4778,6 +4869,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'jane'``, ``1991`` and the age calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 6-7, 9-10, 15, 17-19
 
@@ -4808,6 +4900,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add :ref:`variables<what is a variable?>` for ``'joe'``, ``'blow'``, ``1996`` and the age calculation for ``joe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 4-7
 
@@ -4828,6 +4921,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 10-15, 21, 23-25
 
@@ -4864,6 +4958,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
 
         def test_factory_person_says_hello(self):
@@ -4968,6 +5063,7 @@ Each test uses ``datetime.datetime.now().year`` to get the current year.
 * I add a :ref:`function<what is a function?>` that returns the value of the current year
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 8-9
 
@@ -4989,6 +5085,7 @@ Each test uses ``datetime.datetime.now().year`` to get the current year.
 * I use the new :ref:`function<what is a function?>` for ``this_year`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 8-9
 
@@ -5010,6 +5107,7 @@ Each test uses ``datetime.datetime.now().year`` to get the current year.
 * I use the :ref:`function<what is a function?>` for ``this_year`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 4-5
 
@@ -5027,6 +5125,7 @@ Each test uses ``datetime.datetime.now().year`` to get the current year.
 * I use the :ref:`function<what is a function?>` for ``this_year`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 2-3
 
@@ -5065,6 +5164,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`function<what is a function?>` to calculate age
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 5-9
 
@@ -5086,6 +5186,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 7-8
 
@@ -5107,6 +5208,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-text: calculate_age
 
@@ -5137,6 +5239,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 9-10
 
@@ -5160,6 +5263,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-text: calculate_age
 
@@ -5188,6 +5292,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``joe`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 8-9
 
@@ -5223,6 +5328,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3-4
 
@@ -5254,6 +5360,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 4-5
 
@@ -5286,6 +5393,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 10-11
 
@@ -5320,6 +5428,7 @@ I want to use random values for ``year_of_birth`` in the tests
 * I use a call to `random.randint`_ to get a random value for the ``year_of_birth`` of ``joe``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 7-10
 
@@ -5359,6 +5468,7 @@ I want to use random values for ``year_of_birth`` in the tests
 * I use a call to `random.randint`_ to get a random value for the ``year_of_birth`` of ``jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 2-5
 
@@ -5394,6 +5504,7 @@ I want to use random values for ``year_of_birth`` in the tests
 * I use a call to `random.randint`_ to get a random value for the ``year_of_birth`` of ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 120
     :emphasize-lines: 3-6
 
@@ -5430,6 +5541,7 @@ I want to use random values for ``year_of_birth`` in the tests
 * I use a call to `random.randint`_ to get a random value for the ``year_of_birth`` of ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 142
     :emphasize-lines: 3-6
 
@@ -5485,6 +5597,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I add a :ref:`function<what is a function?>` to use to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 8-12
 
@@ -5509,6 +5622,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 8-12
 
@@ -5530,6 +5644,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
 
         def test_factory_w_keyword_arguments(self):
@@ -5555,6 +5670,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 4-8
 
@@ -5572,6 +5688,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
 
         def test_factory_w_optional_arguments(self):
@@ -5595,6 +5712,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``joe`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 8-10, 12
 
@@ -5638,6 +5756,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``jane``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 3-5, 7
 
@@ -5677,6 +5796,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 4-6, 8
 
@@ -5717,6 +5837,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
     :emphasize-lines: 4-6, 8
 
@@ -5735,6 +5856,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I remove the commented lines and ``this_year`` :ref:`variable<what is a variable?>` since it is no longer used
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
 
         def test_factory_person_says_hello(self):
@@ -6095,6 +6217,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I use the `datetime module`_ to get the current year, then use it for the ``age`` calculation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 10-13
 
@@ -6126,6 +6249,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a new input parameter to the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 1-5
     :emphasize-text: last_name
@@ -6148,6 +6272,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a default value for ``last_name`` so Python_ does not take it is a :ref:`positional argument<test_positional_arguments>` when a name is not given
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 3-4
 
@@ -6169,6 +6294,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add the name to the :ref:`definition of the function<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 4-5
     :emphasize-text: sex
@@ -6192,6 +6318,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a default value for ``sex`` to make it optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 5-6
 
@@ -6223,6 +6350,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I use the ``sex`` input parameter in :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 13-14
 
@@ -6264,6 +6392,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change the default value of ``sex`` to ``'M'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 6-7
 
@@ -6295,6 +6424,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I use the ``last_name`` input parameter in :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 13-14
 
@@ -6338,6 +6468,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I change the default value for ``last_name`` to match the expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 7-8
 
@@ -6437,6 +6568,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a name to the :ref:`function definition<how to make a function>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 3-4
 
@@ -6457,6 +6589,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I copy (:kbd:`ctrl/command+c`) the string_ from the terminal_ and paste it (:kbd:`ctrl/command+v`) to replace :ref:`the return statement`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -6483,6 +6616,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I return the input to compare it with what the test expects
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6
 
@@ -6508,6 +6642,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I return an :ref:`f-string<what is string interpolation?>` with the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 6-10
     :emphasize-text: get
@@ -6538,6 +6673,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change ``argument`` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 4, 7-9
     :emphasize-text: a_dictionary

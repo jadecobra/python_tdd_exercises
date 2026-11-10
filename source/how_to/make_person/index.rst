@@ -108,6 +108,7 @@ test_joe
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -158,6 +159,7 @@ test_joe
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 7
     :emphasize-lines: 4
     :emphasize-text: TypeError
@@ -479,6 +481,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I add a :ref:`variable<what is a variable?>` for ``john`` and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5
 
@@ -510,6 +513,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I change ``john`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 5-7
 
@@ -542,6 +546,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I change :ref:`the return statement` of ``john``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 7-8
 
@@ -576,6 +581,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
 
     def jane():
@@ -645,6 +651,7 @@ because there is no definition for ``mary``, it is just a name.
 * I add a :ref:`variable<what is a variable?>` for ``mary`` and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5
 
@@ -676,6 +683,7 @@ because there is no definition for ``mary``, it is just a name.
 * I change ``mary`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5-7
 
@@ -708,6 +716,7 @@ because there is no definition for ``mary``, it is just a name.
 * I change :ref:`the return statement` of ``mary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 7-8
 
@@ -742,6 +751,7 @@ because there is no definition for ``mary``, it is just a name.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
     def john():

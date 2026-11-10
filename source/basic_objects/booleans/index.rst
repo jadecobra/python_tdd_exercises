@@ -312,6 +312,7 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_booleans.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
     :emphasize-lines: 7-8
     :emphasize-text: AssertionError
@@ -328,6 +329,7 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 2-3
 
@@ -411,6 +413,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 6-7
 
@@ -431,6 +434,7 @@ the test passes.
 * :ref:`test_when_year_of_birth_is_not_an_integer` showed me that :ref:`False<test_what_is_false>` is an integer_. I add an :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 4
 
@@ -454,6 +458,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2
 
@@ -468,6 +473,7 @@ the test passes.
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 4-5
 
@@ -493,6 +499,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I put :ref:`bool<what are booleans?>` and int_ together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 6
 
@@ -516,6 +523,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>` for ``(False, (bool, int))``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 6-7
 
@@ -535,6 +543,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I comment out the first :ref:`assertions<what is an assertion?>` since they are covered by the new one
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 3, 5
 
@@ -552,6 +561,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a float_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3
 
@@ -572,6 +582,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, float)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 11
     :emphasize-lines: 3-4
 
@@ -588,6 +599,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a string_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3
 
@@ -608,6 +620,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, str)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 3-4
 
@@ -624,6 +637,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3
 
@@ -644,6 +658,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, tuple)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 15
     :emphasize-lines: 3-4
 
@@ -660,6 +675,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a :ref:`list<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3
 
@@ -680,6 +696,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, list)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 3-4
 
@@ -696,6 +713,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a set_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3
 
@@ -716,6 +734,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, set)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3-4
 
@@ -732,6 +751,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3
 
@@ -752,6 +772,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, dict)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
     :emphasize-lines: 3-4
 
@@ -768,6 +789,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I use a tuple_ with float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>` with a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2-8
 
@@ -797,6 +819,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 2-3
 
@@ -818,6 +841,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I use the :ref:`assertIsNot method<test_assertIsNot>` like I did in :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 8
 
@@ -844,6 +868,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(False, False)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
     :emphasize-lines: 8-9
 
@@ -881,6 +906,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 * I add an :ref:`assertion<what is an assertion?>` with a call to bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 3
 
@@ -910,6 +936,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 2
 
@@ -979,6 +1006,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
 * I add :ref:`assertFalse<another way to test if something is grouped as False>` to the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 3
 
@@ -1007,6 +1035,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 2
 
@@ -1051,6 +1080,7 @@ the test passes because ``bool(False)`` is :ref:`False<test_what_is_false>`.
 * I can skip bool_ and get the same result. I add another :ref:`call<how to call a function with input>` to the `assertFalse method`_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 3
 
@@ -1072,6 +1102,7 @@ the test passes because ``bool(False)`` is :ref:`False<test_what_is_false>`.
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 3-4
 
@@ -1090,6 +1121,7 @@ the test passes because ``bool(False)`` is :ref:`False<test_what_is_false>`.
 * I remove the commented lines and single :ref:`instance tests<how to test if something is an instance>` for float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
     class TestBooleans(unittest.TestCase):
@@ -1204,6 +1236,7 @@ the test passes.
 * I add comments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 2-3
 
@@ -1224,6 +1257,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assertIs_instance>` with a tuple_ that has float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 2-8
 
@@ -1253,6 +1287,7 @@ the test passes.
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 2-3
 
@@ -1274,6 +1309,7 @@ the test passes.
 * I use the :ref:`assertIsNot method<test_assertIsNot>` like I did in :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 8
 
@@ -1300,6 +1336,7 @@ the test passes.
 * I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(True, True)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 24
     :emphasize-lines: 8-9
 
@@ -1337,6 +1374,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 * I add an :ref:`assertion<what is an assertion?>` with a call to bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
     :emphasize-lines: 3
 
@@ -1366,6 +1404,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 2
 
@@ -1435,6 +1474,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
 * I add :ref:`assertTrue<another way to test if something is grouped as True>` to the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 3
 
@@ -1463,6 +1503,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 9
 
@@ -1515,6 +1556,7 @@ the test passes because ``bool(True)`` is :ref:`True<test_what_is_true>`.
 * I add another :ref:`call<how to call a function with input>` to the `assertTrue method`_ without :ref:`bool<what are booleans?>` to show that I can skip it
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 3
 
@@ -1536,6 +1578,7 @@ the test passes because ``bool(True)`` is :ref:`True<test_what_is_true>`.
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 35
     :emphasize-lines: 3-4
 
@@ -1554,6 +1597,7 @@ the test passes because ``bool(True)`` is :ref:`True<test_what_is_true>`.
 * I remove the commented lines from :ref:`test_what_is_true`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
         def test_what_is_true(self):
@@ -1602,6 +1646,7 @@ Is :ref:`None<what is None?>` grouped as :ref:`False<test_what_is_false>` or :re
 * I add a test to see if :ref:`None<what is None?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-4
 
@@ -1653,6 +1698,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 4
 
@@ -1673,6 +1719,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``None, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 4-5
 
@@ -1690,6 +1737,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<test_what_is_none>` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 3
 
@@ -1709,6 +1757,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``None, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 3-4
 
@@ -1725,6 +1774,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3
 
@@ -1744,6 +1794,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``None, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
     :emphasize-lines: 3-4
 
@@ -1760,6 +1811,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 3
 
@@ -1781,6 +1833,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(None)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 3-4
 
@@ -1797,6 +1850,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 6
 
@@ -1811,6 +1865,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`None<what is None?>` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 3
 
@@ -1832,6 +1887,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 3-4
 
@@ -1848,6 +1904,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_none_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
 
         def test_is_none_falsy_or_truthy(self):
@@ -1892,6 +1949,7 @@ Is an integer_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_wh
 * I add a test for if an integer_ (a whole number without decimals) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 3-4
 
@@ -1943,6 +2001,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4
 
@@ -1963,6 +2022,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``-1, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4-5
 
@@ -1980,6 +2040,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 3
 
@@ -1999,6 +2060,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``-1, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 3-4
 
@@ -2015,6 +2077,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 3
 
@@ -2034,6 +2097,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``-1, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 47
     :emphasize-lines: 3-4
 
@@ -2050,6 +2114,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(-1)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 3
 
@@ -2071,6 +2136,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``bool(-1)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 3-4
 
@@ -2088,6 +2154,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 2
 
@@ -2099,6 +2166,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``-1`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 3
 
@@ -2120,6 +2188,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``-1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 3-4
 
@@ -2137,6 +2206,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``-1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 2
 
@@ -2147,6 +2217,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``-1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 4-5, 7-8
 
@@ -2160,6 +2231,7 @@ the test passes.
             self.assertIsNot(a_negative_integer, False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2-3, 5-6
 
@@ -2171,6 +2243,7 @@ the test passes.
             self.assertIsNot(a_negative_integer, True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 2-3, 5-6
 
@@ -2189,6 +2262,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
         def test_is_an_integer_falsy_or_truthy(self):
@@ -2206,6 +2280,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 3
 
@@ -2227,6 +2302,7 @@ the test passes.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 3-4
 
@@ -2243,6 +2319,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 3
 
@@ -2262,6 +2339,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 51
     :emphasize-lines: 3-4
 
@@ -2278,6 +2356,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see if ``0`` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 3
 
@@ -2297,6 +2376,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``0, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 3-4
 
@@ -2313,6 +2393,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if ``0`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 3
 
@@ -2332,6 +2413,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 55
     :emphasize-lines: 3-4
 
@@ -2348,6 +2430,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` with bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 3
 
@@ -2369,6 +2452,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(0)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 57
     :emphasize-lines: 3-4
 
@@ -2385,6 +2469,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 7
 
@@ -2404,6 +2489,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``0`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3
 
@@ -2425,6 +2511,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 59
     :emphasize-lines: 3-4
 
@@ -2441,6 +2528,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
 
             self.assertTrue(a_negative_integer)
@@ -2458,6 +2546,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if ``1`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 3
 
@@ -2477,6 +2566,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``1, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 3-4
 
@@ -2493,6 +2583,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see if ``1`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 3
 
@@ -2512,6 +2603,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``1, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 3-4
 
@@ -2528,6 +2620,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see if ``1`` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3
 
@@ -2549,6 +2642,7 @@ the test passes.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``1, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 60
     :emphasize-lines: 3-4
 
@@ -2565,6 +2659,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if ``1`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3
 
@@ -2584,6 +2679,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``1, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 62
     :emphasize-lines: 3-4
 
@@ -2598,6 +2694,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` with bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 3
 
@@ -2620,6 +2717,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``bool(1)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 3-4
 
@@ -2636,6 +2734,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 2
 
@@ -2651,6 +2750,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 3
 
@@ -2672,6 +2772,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 3-4
 
@@ -2689,6 +2790,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 56
     :emphasize-lines: 3
 
@@ -2700,6 +2802,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1`` for the other statements and keep ``self.assertEqual(1, True)`` since it shows the exact value of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 3-4, 6-7
 
@@ -2712,6 +2815,7 @@ the test passes.
             self.assertIsNot(a_positive_integer, False)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 4-5
 
@@ -2722,6 +2826,7 @@ the test passes.
             self.assertIsNot(a_positive_integer, True)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 2-3, 5-6
 
@@ -2740,6 +2845,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
 
             a_positive_integer = 1
@@ -2784,6 +2890,7 @@ Is a float_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_
 * I add a test for if a float_ (a binary floating point decimal number) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 64
     :emphasize-lines: 3-5
 
@@ -2837,6 +2944,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 3
 
@@ -2856,6 +2964,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_negative_float, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 68
     :emphasize-lines: 3-4
 
@@ -2872,6 +2981,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 3
 
@@ -2891,6 +3001,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_negative_float, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 70
     :emphasize-lines: 3-4
 
@@ -2907,6 +3018,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 3
 
@@ -2926,6 +3038,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_negative_float, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 3-4
 
@@ -2942,6 +3055,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(a_negative_float)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 3
 
@@ -2963,6 +3077,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``bool(a_negative_float)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 74
     :emphasize-lines: 3-4
 
@@ -2980,6 +3095,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 2
 
@@ -2991,6 +3107,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``a_negative_float`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 3
 
@@ -3012,6 +3129,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``a_negative_float``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 3-4
 
@@ -3029,6 +3147,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
 
         def test_is_a_float_falsy_or_truthy(self):
@@ -3046,6 +3165,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 3
 
@@ -3067,6 +3187,7 @@ the test passes.
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0.0, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
     :emphasize-lines: 3-4
 
@@ -3083,6 +3204,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 3
 
@@ -3102,6 +3224,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0.0, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 75
     :emphasize-lines: 3-4
 
@@ -3118,6 +3241,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see if ``0.0`` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 3
 
@@ -3137,6 +3261,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``0.0, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 3-4
 
@@ -3153,6 +3278,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if ``0.0`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 3
 
@@ -3172,6 +3298,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0.0, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 3-4
 
@@ -3188,6 +3315,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(0.0)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 3
 
@@ -3209,6 +3337,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(0.0)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 81
     :emphasize-lines: 3-4
 
@@ -3225,6 +3354,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2
 
@@ -3241,6 +3371,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``0.0`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 3
 
@@ -3262,6 +3393,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 3-4
 
@@ -3278,6 +3410,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 73
 
             self.assertTrue(a_negative_float)
@@ -3295,6 +3428,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a float_ bigger than ``0.0`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 3-4
 
@@ -3315,6 +3449,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_positive_float, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 4-5
 
@@ -3332,6 +3467,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see if ``a_positive_float`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 82
     :emphasize-lines: 4
 
@@ -3352,6 +3488,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_positive_float, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 82
     :emphasize-lines: 4-5
 
@@ -3369,6 +3506,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see if ``0.1`` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 3
 
@@ -3388,6 +3526,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_positive_float, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 3-4
 
@@ -3404,6 +3543,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if ``a_positive_float`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 3
 
@@ -3423,6 +3563,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_positive_float, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 87
     :emphasize-lines: 3-4
 
@@ -3437,6 +3578,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(a_positive_float)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 3
 
@@ -3459,6 +3601,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``bool(a_positive_float)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 3-4
 
@@ -3475,6 +3618,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 2
 
@@ -3486,6 +3630,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``a_positive_float`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 3
 
@@ -3507,6 +3652,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``0.1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 3-4
 
@@ -3524,6 +3670,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 82
 
             a_positive_float = 0.1
@@ -3540,6 +3687,7 @@ the test passes.
 * I make the comments for ``# bool(0.1) is True``, ``# bool(-0.1) is True``, ``# bool(1) is True``, ``# bool(-1) is True``, ``# bool(0.0) is False`` and ``# bool(0) is False`` simpler because floats_ and integers_ are numbers and :ref:`0.0 is equal to 0<test_assertion_error_w_is_vs_equal>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 91
     :emphasize-lines: 2-3
 
@@ -3551,6 +3699,7 @@ the test passes.
     # True is a boolean
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 2
 
@@ -3607,6 +3756,7 @@ Is a string_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what
 * I add a test for if a string_ (anything in :ref:`quotes`) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3-4
 
@@ -3663,6 +3813,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if ``str()`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 4
 
@@ -3683,6 +3834,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``str(), False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 4-5
 
@@ -3700,6 +3852,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty string_ is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 3
 
@@ -3719,6 +3872,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``str(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 3-4
 
@@ -3735,6 +3889,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty string_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 3
 
@@ -3754,6 +3909,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``str(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 3-4
 
@@ -3768,6 +3924,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(str())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 3
 
@@ -3789,6 +3946,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(str())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 97
     :emphasize-lines: 3-4
 
@@ -3805,6 +3963,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 2
 
@@ -3817,6 +3976,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``str()`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 3
 
@@ -3844,6 +4004,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``str()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 3-4
 
@@ -3861,6 +4022,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_string_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
 
         def test_is_a_string_falsy_or_truthy(self):
@@ -3877,6 +4039,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a string_ with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3-4
 
@@ -3897,6 +4060,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_string, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 4-5
 
@@ -3914,6 +4078,7 @@ the test passes.
 * add an :ref:`assertion<what is an assertion?>` for if ``a_string`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 4
 
@@ -3934,6 +4099,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_string, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
     :emphasize-lines: 4-5
 
@@ -3951,6 +4117,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if ``a_string`` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 3
 
@@ -3970,6 +4137,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_string, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 101
     :emphasize-lines: 3-4
 
@@ -3986,6 +4154,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to see if ``a_string`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 3
 
@@ -4005,6 +4174,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_string, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 103
     :emphasize-lines: 3-4
 
@@ -4021,6 +4191,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(a_string)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 3
 
@@ -4042,6 +4213,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``bool(a_string)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 77
     :emphasize-lines: 3-4
 
@@ -4058,6 +4230,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 2
 
@@ -4070,6 +4243,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``a_string`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 3
 
@@ -4091,6 +4265,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 3-4
 
@@ -4108,6 +4283,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_string_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 98
 
             a_string = "string with things"
@@ -4124,6 +4300,7 @@ the test passes.
 * I change the new comments to make them clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 2
 
@@ -4136,6 +4313,7 @@ the test passes.
     # True is a boolean
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 2
 
@@ -4177,6 +4355,7 @@ Is a tuple_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_
 * I add a test for if a tuple_ (anything in parentheses ``( )`` separated by a comma) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 104
     :emphasize-lines: 3-4
 
@@ -4232,6 +4411,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 4
 
@@ -4254,6 +4434,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``tuple(), False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 4-5
 
@@ -4271,6 +4452,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 3
 
@@ -4290,6 +4472,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``tuple(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 3-4
 
@@ -4306,6 +4489,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 3
 
@@ -4327,6 +4511,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``tuple(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 111
     :emphasize-lines: 3-4
 
@@ -4343,6 +4528,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(tuple())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 3
 
@@ -4364,6 +4550,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(tuple())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 113
     :emphasize-lines: 3-4
 
@@ -4380,6 +4567,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
     :emphasize-lines: 2
 
@@ -4391,6 +4579,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``tuple()`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 3
 
@@ -4413,6 +4602,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 115
     :emphasize-lines: 3-4
 
@@ -4430,6 +4620,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_tuple_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
 
         def test_is_a_tuple_falsy_or_truthy(self):
@@ -4446,6 +4637,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a tuple_ with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 3
 
@@ -4466,6 +4658,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_tuple, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 112
     :emphasize-lines: 3-4
 
@@ -4483,6 +4676,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a tuple_ with things is the same :ref:`object<everything in Python is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 4
 
@@ -4503,6 +4697,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_tuple, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
     :emphasize-lines: 4-5
 
@@ -4520,6 +4715,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a tuple_ with things is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 3
 
@@ -4539,6 +4735,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_tuple, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 3-4
 
@@ -4555,6 +4752,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a tuple_ with things is the same :ref:`object<everything in Python is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 3
 
@@ -4574,6 +4772,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_tuple, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 119
     :emphasize-lines: 3-4
 
@@ -4590,6 +4789,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(a_tuple)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 3
 
@@ -4611,6 +4811,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``bool(a_tuple)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 3-4
 
@@ -4627,6 +4828,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 2
 
@@ -4638,6 +4840,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for a tuple_ with things without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 123
     :emphasize-lines: 3
 
@@ -4659,6 +4862,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``a_tuple``
 
   .. code-block:: python
+    :caption:
     :lineno-start:  123
     :emphasize-lines: 3-4
 
@@ -4676,6 +4880,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_tuple_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 114
 
             a_tuple = (0, 1, 2, 'n')
@@ -4718,6 +4923,7 @@ Is a :ref:`list<what is a list?>` grouped as :ref:`False<test_what_is_false>` or
 * I add a test for if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 120
     :emphasize-lines: 3-4
 
@@ -4773,6 +4979,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`list<what is a list?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 4
 
@@ -4795,6 +5002,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``list(), False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
     :emphasize-lines: 4-5
 
@@ -4812,6 +5020,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`list<what is a list?>` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 3
 
@@ -4833,6 +5042,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``list(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 3-4
 
@@ -4849,6 +5059,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`list<what is a list?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 3
 
@@ -4870,6 +5081,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``list(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 127
     :emphasize-lines: 3-4
 
@@ -4886,6 +5098,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(list())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 3
 
@@ -4907,6 +5120,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(list())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 129
     :emphasize-lines: 3-4
 
@@ -4923,6 +5137,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 2
 
@@ -4934,6 +5149,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``list()`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 131
     :emphasize-lines: 3
 
@@ -4956,6 +5172,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``list()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 131
     :emphasize-lines: 3-4
 
@@ -4973,6 +5190,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_list_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 122
 
         def test_is_a_list_falsy_or_truthy(self):
@@ -4989,6 +5207,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list<what is a list?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 3-4
 
@@ -5009,6 +5228,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_list, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 4-5
 
@@ -5026,6 +5246,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a :ref:`list<what is a list?>` with things is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 4
 
@@ -5046,6 +5267,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_list, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
     :emphasize-lines: 4-5
 
@@ -5063,6 +5285,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list<what is a list?>` with things is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 3
 
@@ -5082,6 +5305,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_list, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
     :emphasize-lines: 3-4
 
@@ -5098,6 +5322,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a :ref:`list<what is a list?>` with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 135
     :emphasize-lines: 3
 
@@ -5117,6 +5342,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_list, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 135
     :emphasize-lines: 3-4
 
@@ -5133,6 +5359,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(a_list)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 137
     :emphasize-lines: 3
 
@@ -5154,6 +5381,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``(bool(a_list))``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 137
     :emphasize-lines: 3-4
 
@@ -5170,6 +5398,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 2
 
@@ -5181,6 +5410,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``a_list`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
     :emphasize-lines: 3
 
@@ -5202,6 +5432,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``a_list``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
     :emphasize-lines: 3-4
 
@@ -5219,6 +5450,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_list_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 130
 
             a_list = [0, 1, 2, 'n']
@@ -5261,6 +5493,7 @@ Is a set_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is
 * I add a test for if a set_ (anything in curly braces that is not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` ``{ }``) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 3-4
 
@@ -5316,6 +5549,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty set_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 138
     :emphasize-lines: 4
 
@@ -5338,6 +5572,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``set(), False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 138
     :emphasize-lines: 4-5
 
@@ -5355,6 +5590,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty set_ is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 3
 
@@ -5376,6 +5612,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``set(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 3-4
 
@@ -5392,6 +5629,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty set_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 3
 
@@ -5413,6 +5651,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``set(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 3-4
 
@@ -5429,6 +5668,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(set())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
     :emphasize-lines: 3
 
@@ -5450,6 +5690,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(set())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 145
     :emphasize-lines: 3-4
 
@@ -5466,6 +5707,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 2
 
@@ -5477,6 +5719,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``set()`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 147
     :emphasize-lines: 3
 
@@ -5498,6 +5741,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``set()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 147
     :emphasize-lines: 3-4
 
@@ -5515,6 +5759,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 138
 
         def test_is_a_set_falsy_or_truthy(self):
@@ -5531,6 +5776,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a set_ with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
     :emphasize-lines: 3-4
 
@@ -5551,6 +5797,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_set, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 144
     :emphasize-lines: 4-5
 
@@ -5568,6 +5815,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a set_ with things is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 146
     :emphasize-lines: 4
 
@@ -5588,6 +5836,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_set, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 146
     :emphasize-lines: 4-5
 
@@ -5605,6 +5854,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a set_ with things is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 149
     :emphasize-lines: 3
 
@@ -5624,6 +5874,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_set, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 149
     :emphasize-lines: 3-4
 
@@ -5640,6 +5891,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a set_ with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 3
 
@@ -5659,6 +5911,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_set, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
     :emphasize-lines: 3-4
 
@@ -5675,6 +5928,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(a_set)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 3
 
@@ -5696,6 +5950,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``(bool(a_set))``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 153
     :emphasize-lines: 3-4
 
@@ -5712,6 +5967,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 2
 
@@ -5723,6 +5979,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``a_set`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 3
 
@@ -5744,6 +6001,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``a_set``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 155
     :emphasize-lines: 3-4
 
@@ -5761,6 +6019,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 146
 
             a_set = {0, 1, 2, 'n'}
@@ -5803,6 +6062,7 @@ Is a :ref:`dictionary<what is a dictionary?>` grouped as :ref:`False<test_what_i
 * I add a test for if a :ref:`dictionary<what is a dictionary?>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separated by commas in curly braces ``{ }``) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 152
     :emphasize-lines: 3-4
 
@@ -5858,6 +6118,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 4
 
@@ -5880,6 +6141,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``dict(), False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 4-5
 
@@ -5897,6 +6159,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`dictionary<what is a dictionary?>` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 157
     :emphasize-lines: 3
 
@@ -5918,6 +6181,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``dict(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 157
     :emphasize-lines: 3-4
 
@@ -5934,6 +6198,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 3
 
@@ -5955,6 +6220,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``dict(), True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 159
     :emphasize-lines: 3-4
 
@@ -5971,6 +6237,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(dict())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 161
     :emphasize-lines: 3-4
 
@@ -5992,6 +6259,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(dict())``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 161
     :emphasize-lines: 3-4
 
@@ -6008,6 +6276,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 177
     :emphasize-lines: 2
 
@@ -6027,6 +6296,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``dict()`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 3
 
@@ -6049,6 +6319,7 @@ the test passes.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``dict()``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 3-4
 
@@ -6066,6 +6337,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
 
         def test_is_a_dictionary_falsy_or_truthy(self):
@@ -6082,6 +6354,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`dictionary<what is a dictionary?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 3-4
 
@@ -6102,6 +6375,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_dictionary, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 4-5
 
@@ -6119,6 +6393,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a :ref:`dictionary<what is a dictionary?>` with things is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 162
     :emphasize-lines: 4
 
@@ -6139,6 +6414,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_dictionary, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 162
     :emphasize-lines: 4-5
 
@@ -6156,6 +6432,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`dictionary<what is a dictionary?>` with things is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 165
     :emphasize-lines: 3
 
@@ -6175,6 +6452,7 @@ the test passes.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_dictionary, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 165
     :emphasize-lines: 3-4
 
@@ -6191,6 +6469,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if a :ref:`dictionary<what is a dictionary?>` with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 167
     :emphasize-lines: 3
 
@@ -6210,6 +6489,7 @@ the test passes.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_dictionary, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 167
     :emphasize-lines: 3-4
 
@@ -6226,6 +6506,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``bool(a_dictionary)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 169
     :emphasize-lines: 3
 
@@ -6247,6 +6528,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``(bool(a_dictionary))``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 169
     :emphasize-lines: 3-4
 
@@ -6263,6 +6545,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
+    :caption:
     :lineno-start: 175
     :emphasize-lines: 2
 
@@ -6282,6 +6565,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``a_dictionary`` without bool_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 3
 
@@ -6303,6 +6587,7 @@ the test passes.
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``a_dictionary``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 171
     :emphasize-lines: 3-4
 
@@ -6320,6 +6605,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 162
 
             a_dictionary = {'key': 'value'}
@@ -6375,6 +6661,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I add a :ref:`function<what is a function?>` to test if something is grouped as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
         def test_what_is_true(self):
@@ -6382,6 +6669,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-9
 
@@ -6400,6 +6688,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` in :ref:`test_is_none_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 2-8
 
@@ -6431,6 +6720,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``an_object, False`` in the :ref:`assert_is_falsy method<extract assert_is_falsy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 2-3
 
@@ -6448,6 +6738,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``an_object, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 36
     :emphasize-lines: 2-3
 
@@ -6465,6 +6756,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``an_object, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 2-3
 
@@ -6482,6 +6774,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``an_object, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 2-3
 
@@ -6499,6 +6792,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(an_object)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 2-3
 
@@ -6510,6 +6804,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 2-3
 
@@ -6532,6 +6827,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the commented lines from :ref:`assert_is_falsy<extract assert_is_falsy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
 
         def assert_is_falsy(self, an_object):
@@ -6547,6 +6843,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the commented lines from :ref:`test_is_none_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
         def test_is_none_falsy_or_truthy(self):
@@ -6557,6 +6854,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for ``0`` in :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
 
         def test_is_an_integer_falsy_or_truthy(self):
@@ -6564,6 +6862,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 9
 
@@ -6590,6 +6889,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_is_falsy method<extract assert_is_falsy method>` because I cannot it use it for ``0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
 
             self.assertTrue(a_negative_integer)
@@ -6608,6 +6908,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for ``0.0`` in :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
 
         def test_is_a_float_falsy_or_truthy(self):
@@ -6615,6 +6916,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 9
 
@@ -6641,6 +6943,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_is_falsy method<extract assert_is_falsy method>` because I cannot it use it for ``0.0``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
 
             self.assertTrue(a_negative_float)
@@ -6659,6 +6962,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I add a comment about the value of :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 185
     :emphasize-lines: 2
 
@@ -6684,6 +6988,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty :ref:`dictionary<what is a dictionary?>` in :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 157
     :emphasize-lines: 2-8
 
@@ -6703,6 +7008,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the commented lines from :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 157
 
         def test_is_a_dictionary_falsy_or_truthy(self):
@@ -6713,6 +7019,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty set_ in :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
     :emphasize-lines: 2-8
 
@@ -6732,6 +7039,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the commented lines from :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 141
 
         def test_is_a_set_falsy_or_truthy(self):
@@ -6742,6 +7050,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty :ref:`list<what is a list?>` in :ref:`test_is_a_list_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
     :emphasize-lines: 2-8
 
@@ -6761,6 +7070,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the commented lines from :ref:`test_is_a_list_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 125
 
         def test_is_a_list_falsy_or_truthy(self):
@@ -6771,6 +7081,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty tuple_ in :ref:`test_is_a_tuple_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
     :emphasize-lines: 2-8
 
@@ -6790,6 +7101,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the commented lines from :ref:`test_is_a_tuple_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 109
 
         def test_is_a_tuple_falsy_or_truthy(self):
@@ -6800,6 +7112,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty string_ in :ref:`test_is_a_string_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 2-8
 
@@ -6819,6 +7132,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 * I remove the commented lines from :ref:`test_is_a_string_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
 
         def test_is_a_string_falsy_or_truthy(self):
@@ -6866,6 +7180,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I add a :ref:`method<what is a method?>` to test if something is grouped as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
 
         def assert_is_falsy(self, an_object):
@@ -6873,6 +7188,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 3-9
 
@@ -6891,6 +7207,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a negative integer_ in :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
     :emphasize-lines: 2-9
 
@@ -6921,6 +7238,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``an_object, False`` in the :ref:`assert_is_truthy method<extract assert_is_truthy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
     :emphasize-lines: 2-3
 
@@ -6938,6 +7256,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``an_object, False``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 44
     :emphasize-lines: 2-3
 
@@ -6953,6 +7272,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``an_object, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 46
     :emphasize-lines: 2-3
 
@@ -6970,6 +7290,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``an_object, True``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 2-3
 
@@ -6987,6 +7308,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``bool(an_object)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 50
     :emphasize-lines: 2-3
 
@@ -7004,6 +7326,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` for ``an_object``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 52
     :emphasize-lines: 2-3
 
@@ -7026,6 +7349,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`assert_is_truthy<extract assert_is_truthy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 42
 
         def assert_is_truthy(self, an_object):
@@ -7041,6 +7365,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 53
 
         def test_is_an_integer_falsy_or_truthy(self):
@@ -7051,6 +7376,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a positive integer_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
     :emphasize-lines: 8
 
@@ -7076,6 +7402,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_is_truthy method<extract assert_is_truthy method>` because I cannot it use it for ``1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 63
 
             a_positive_integer = 1
@@ -7093,6 +7420,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I add a comment about the value of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 151
 
     # NOTES
@@ -7112,6 +7440,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a :ref:`dictionary<what is a dictionary?>` with things in :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
     :emphasize-lines: 4-11
 
@@ -7135,6 +7464,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 139
 
         def test_is_a_dictionary_falsy_or_truthy(self):
@@ -7147,6 +7477,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a set_ with things in :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 4-11
 
@@ -7169,6 +7500,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
 
         def test_is_a_set_falsy_or_truthy(self):
@@ -7180,6 +7512,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a :ref:`list<what is a list?>` with things in :ref:`test_is_a_list_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
     :emphasize-lines: 4-11
 
@@ -7202,6 +7535,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`test_is_a_list_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 117
 
         def test_is_a_list_falsy_or_truthy(self):
@@ -7213,6 +7547,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a tuple_ with things in :ref:`test_is_a_tuple_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
     :emphasize-lines: 4-11
 
@@ -7235,6 +7570,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`test_is_a_tuple_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 106
 
         def test_is_a_tuple_falsy_or_truthy(self):
@@ -7246,6 +7582,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a string_ with things in :ref:`test_is_a_string_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
     :emphasize-lines: 4-11
 
@@ -7268,6 +7605,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`test_is_a_string_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 95
 
         def test_is_a_string_falsy_or_truthy(self):
@@ -7279,6 +7617,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a positive float_ in :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 85
     :emphasize-lines: 3-10
 
@@ -7300,6 +7639,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for a negative float_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
     :emphasize-lines: 2-9
 
@@ -7320,6 +7660,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 * I remove the commented lines from :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 71
 
         def test_is_a_float_falsy_or_truthy(self):
@@ -7374,6 +7715,7 @@ I can add a :ref:`method<what is a method?>` to remove this repetition.
 * I add a :ref:`method<what is a method?>` named :ref:`assert_is_not_the_same_as_false_or_true<extract assert_is_not_the_same_as_false_or_true method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 20
 
         def test_what_is_true(self):
@@ -7381,6 +7723,7 @@ I can add a :ref:`method<what is a method?>` to remove this repetition.
             ...
 
   .. code-block:: python
+    :caption:
     :lineno-start: 32
     :emphasize-lines: 3-7
 
@@ -7397,6 +7740,7 @@ I can add a :ref:`method<what is a method?>` to remove this repetition.
 * I use the :ref:`assert_is_not_the_same_as_false_or_true method<extract assert_is_not_the_same_as_false_or_true method>` in :ref:`assert_is_falsy<extract assert_is_falsy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
     :emphasize-lines: 2-6
 
@@ -7416,6 +7760,7 @@ I can add a :ref:`method<what is a method?>` to remove this repetition.
 * I remove the commented lines from :ref:`assert_is_falsy<extract assert_is_falsy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 40
 
         def assert_is_falsy(self, an_object):
@@ -7428,6 +7773,7 @@ I can add a :ref:`method<what is a method?>` to remove this repetition.
 * I use the :ref:`assert_is_not_the_same_as_false_or_true method<extract assert_is_not_the_same_as_false_or_true method>` in :ref:`assert_is_truthy<extract assert_is_truthy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 2-6
 
@@ -7447,6 +7793,7 @@ I can add a :ref:`method<what is a method?>` to remove this repetition.
 * I remove the commented lines from :ref:`assert_is_truthy<extract assert_is_truthy method>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
 
         def assert_is_truthy(self, an_object):

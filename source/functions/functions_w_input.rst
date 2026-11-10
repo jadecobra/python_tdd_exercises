@@ -338,6 +338,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_identity_function` in
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 6-8
 
@@ -375,6 +376,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I make the ``identity`` :ref:`function<what is a function?>` return what it gets
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 4-5
 
@@ -410,6 +412,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
 
     def test_identity_function():
@@ -457,6 +460,7 @@ Why would I use a :ref:`function<what is a function?>` when I can just write cod
 * I add a test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 37
     :emphasize-lines: 9-10
 
@@ -516,6 +520,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 1``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4
 
@@ -538,6 +543,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4-5
 
@@ -555,6 +561,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 2``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 6
 
@@ -579,6 +586,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 6-7
 
@@ -598,6 +606,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 3``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 8
 
@@ -624,6 +633,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 8-9
 
@@ -645,6 +655,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 4``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 10
 
@@ -673,6 +684,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 10-11
 
@@ -696,6 +708,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 5``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 12
 
@@ -726,6 +739,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 12-13
 
@@ -751,6 +765,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 6``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 14
 
@@ -783,6 +798,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 14-15
 
@@ -810,6 +826,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 7``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 16
 
@@ -844,6 +861,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 16-17
 
@@ -873,6 +891,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 8``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 18
 
@@ -909,6 +928,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 18-19
 
@@ -940,6 +960,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 9``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 20
 
@@ -978,6 +999,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 20-21
 
@@ -1011,6 +1033,7 @@ the test passes.
 * all these :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``. If I want to test what happens when I add a number to ``2``, I would have to change ``1`` in 10 places. I change ``1`` to ``2`` for the calculation part of the :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 3-4, 6-7, 9-10, 12-13, 15-16, 18-19, 21-22, 24-25, 27-28, 30-31
     :emphasize-text: 2
@@ -1059,6 +1082,7 @@ the test passes.
 * I change the result side of each :ref:`assertion<what is an assertion?>` to make them :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 4-5, 8-9, 12-13, 16-17, 20-21, 24-25, 28-29, 32-33, 36-37, 40-41
 
@@ -1127,6 +1151,7 @@ the test passes.
 * What if I want to test what happens when I add ``3`` to a number? Wait! No more, please! I do not want to have to make a change for each new number, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat. I add a :ref:`function<what is a function?>` to :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 2-3
 
@@ -1142,6 +1167,7 @@ the test passes.
 * I use the new :ref:`function<what is a function?>` for the calculation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 8-9
     :emphasize-text: add_x
@@ -1191,6 +1217,7 @@ the test passes.
 * I use the ``add_x`` :ref:`function<what is a function?>` for the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 13-14, 18-19, 23-24, 28-29, 33-34, 38-39, 43-44, 48-49, 53-54
     :emphasize-text: add_x
@@ -1258,6 +1285,7 @@ the test passes.
 * Now I only have to make a change in one place if I want to test what happens if I add ``3`` to a number
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 3-4
 
@@ -1289,6 +1317,7 @@ the test passes.
 * I change the results part of the :ref:`assertions<what is an assertion?>` one at a time
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 10-11, 16-17, 22-23, 28-29, 34-35, 40-41, 46-47, 52-53, 58-59, 64-65
 
@@ -1366,6 +1395,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
 
     def test_why_use_a_function():
@@ -1424,6 +1454,7 @@ test_positional_arguments
 * I add :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4-5
 
@@ -1486,6 +1517,7 @@ the test passes.
 * I add input to the :ref:`function call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 5-6
 
@@ -1516,6 +1548,7 @@ the test passes.
 * I add a name in parentheses to make the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 2-3
 
@@ -1541,6 +1574,7 @@ the test passes.
 * I add another input to the :ref:`function call<how to call a function with input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 7-8
 
@@ -1573,6 +1607,7 @@ the test passes.
 * I make the :ref:`function<what is a function?>` take two inputs by changing the name of the first input to be clearer, then I add a another name to the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 3-4
 
@@ -1594,6 +1629,7 @@ the test passes.
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
     :emphasize-lines: 9-13
 
@@ -1640,6 +1676,7 @@ the test passes.
 * I change :ref:`the return statement` to make the :ref:`function<what is a function?>` return its inputs as output (like :ref:`the identity function<test_identity_function>`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 5-6
 
@@ -1677,6 +1714,7 @@ the test passes.
 * The bad thing about giving arguments this way, is I must use the exact same order in the :ref:`function definition<how to make a function that takes input>` when I make a :ref:`call a function<how to call a function with input>` or I get something different. The good thing about giving arguments this way is I do not need to know the names of the arguments. I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 15-18
 
@@ -1731,6 +1769,7 @@ the test passes.
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 17-18
     :emphasize-text: last
@@ -1763,6 +1802,7 @@ the test passes.
 * I add :ref:`variables<what is a variable?>` for ``'first'`` and ``'last'`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 12
 
@@ -1795,6 +1835,7 @@ the test passes.
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
     :emphasize-lines: 15-18, 21, 23-25
 
@@ -1833,6 +1874,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` to :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
     :emphasize-lines: 9-12
 
@@ -1870,6 +1912,7 @@ the test passes.
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 3-4
 
@@ -1896,6 +1939,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_positional_arguments` with a tuple_ (anything in parentheses ``( )`` separated by a comma) and a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 7-12
 
@@ -1937,6 +1981,7 @@ the test passes.
 * I change reality to match my expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 93
     :emphasize-lines: 4-5
 
@@ -1967,6 +2012,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 61
 
     def test_positional_arguments():
@@ -2164,6 +2210,7 @@ the test passes.
 * I change the expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 84
     :emphasize-lines: 3-4
 
@@ -2204,6 +2251,7 @@ the test passes.
 * I :ref:`call the assert_equal function<extract assert_equal function>` for the third :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 90
     :emphasize-lines: 1-7
 
@@ -2226,6 +2274,7 @@ the test passes.
 * I change the expectation to match reality for the third :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 94
     :emphasize-lines: 2-3
 
@@ -2260,6 +2309,7 @@ the test passes.
 * I use the :ref:`assert_equal function<extract assert_equal function>` for the fourth :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 3-10
 
@@ -2287,6 +2337,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` to ``positional_arguments`` to match the expectation of the fourth :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 99
     :emphasize-lines: 8-9
 
@@ -2331,6 +2382,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_positional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 65
 
     def test_positional_arguments():
@@ -2349,6 +2401,7 @@ the test passes.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 80
 
         assert_equal(
@@ -2408,6 +2461,7 @@ the test passes.
 * I change the expectations of the :ref:`assertions<what is an assertion?>` of :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
     :emphasize-lines: 6-7, 9-10, 12-13, 15-16, 18-19, 21-22, 24-25, 27-28, 30-31, 33-34
 
@@ -2468,6 +2522,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_why_use_a_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 49
 
     def test_why_use_a_function():
@@ -2491,6 +2546,7 @@ the test passes.
 * I use the :ref:`assert_equal function<extract assert_equal function>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 5-8
 
@@ -2515,6 +2571,7 @@ the test passes.
 * I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 6-7
 
@@ -2540,6 +2597,7 @@ the test passes.
 * I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
     :emphasize-lines: 9-10
 
@@ -2575,6 +2633,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 41
 
     def test_identity_function():
@@ -2590,6 +2649,7 @@ the test passes.
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`test_constant_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 5-6
 
@@ -2613,6 +2673,7 @@ the test passes.
 * I change the expectation to match reality in :ref:`test_constant_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 6-7
 
@@ -2643,6 +2704,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
 
     def test_constant_function():
@@ -2710,6 +2772,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 * I use the new :ref:`function<what is a function?>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 5-6
 
@@ -2783,6 +2846,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
     def test_making_a_function_w_pass():
@@ -2797,6 +2861,7 @@ the test passes.
 * I use the :ref:`assert_is_none function<extract assert_is_none function>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_function_w_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 5-6
 
@@ -2822,6 +2887,7 @@ the test passes.
 * I :ref:`call<how to call a function with input>` the :ref:`w_return function<test_making_a_function_w_return>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
     :emphasize-lines: 6-7
 
@@ -2852,6 +2918,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_making_a_function_w_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 16
 
     def test_making_a_function_w_return():
@@ -2866,6 +2933,7 @@ the test passes.
 * I use the :ref:`assert_is_none function<extract assert_is_none function>` in :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 5-6
 
@@ -2891,6 +2959,7 @@ the test passes.
 * I :ref:`call<how to call a function with input>` the :ref:`w_return_none function<test_making_a_function_w_return_none>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 6-7
 
@@ -2920,6 +2989,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
 
     def test_making_a_function_w_return_none():
@@ -2934,6 +3004,7 @@ the test passes.
 * I use the :ref:`assert_is_none function<extract assert_is_none function>` in :ref:`test_what_happens_after_functions_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 6-7
 
@@ -2960,6 +3031,7 @@ the test passes.
 * I :ref:`call<how to call a function with input>` the :ref:`return_leaves_the_function function<test_what_happens_after_functions_return>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 7-8
 
@@ -2990,6 +3062,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_what_happens_after_functions_return`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
 
     def test_what_happens_after_functions_return():
@@ -3005,6 +3078,7 @@ the test passes.
 * I use the :ref:`assert_is_none function<extract assert_is_none function>` in :ref:`test_identity_function` for the :ref:`assertion<what is an assertion?>` that has :ref:`None<what is None?>` as its expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 5-6
 
@@ -3028,6 +3102,7 @@ the test passes.
 * I change the input in :ref:`call<how to call a function with input>` to the :ref:`identity function<test_identity_function>` from :ref:`object<everything is an object>` to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
     :emphasize-lines: 6-7
 
@@ -3059,6 +3134,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_identity_function`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 45
 
     def test_identity_function():
@@ -3107,6 +3183,7 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
 * I add a test for `keyword arguments`_ to ``test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 88
     :emphasize-lines: 9-10
 
@@ -3182,6 +3259,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add input to the :ref:`function call<how to call a function with input>` with a name
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 5-8
 
@@ -3214,6 +3292,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add a name in parentheses to make the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 2-3
 
@@ -3235,6 +3314,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I change the name of the input in the :ref:`function definition<how to make a function that takes input>` (``the_input``) to match the name used in the :ref:`function call<how to call a function with input>` (``first_input``)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 3-4
 
@@ -3263,6 +3343,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add another :ref:`keyword argument<test_keyword_arguments>` to the :ref:`function call<how to call a function with input>` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 9-13
 
@@ -3302,6 +3383,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I make the :ref:`function<what is a function?>` take two inputs by adding another name in parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 4-5
 
@@ -3329,6 +3411,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I change the name of the input in the :ref:`function definition<how to make a function that takes input>` (``second_input``) to match the name used in the :ref:`function call<how to call a function with input>` (``last_input``)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 5-6
 
@@ -3365,6 +3448,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 15-16
 
@@ -3422,6 +3506,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I change :ref:`the return statement` to make the :ref:`function<what is a function?>` return its inputs as output (like :ref:`the identity function<test_identity_function>`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 7-8
 
@@ -3463,6 +3548,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * The bad thing about giving arguments this way, is I must use the exact names in the :ref:`function definition<how to make a function that takes input>` when I make a :ref:`call to the function<how to call a function with input>`. The good thing about giving arguments this way is that the names do not have to match the order in the :ref:`function definition<how to make a function that takes input>`. I add an :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 10-15
 
@@ -3519,6 +3605,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 105
     :emphasize-lines: 14-15
 
@@ -3558,6 +3645,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add :ref:`variables<what is a variable?>` for ``'first'`` and ``'last'`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 10
 
@@ -3577,6 +3665,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 107
     :emphasize-lines: 9-10, 14-15, 18-19
 
@@ -3609,6 +3698,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add another :ref:`assertion<what is an assertion?>` to :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 11-16
 
@@ -3666,6 +3756,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 118
     :emphasize-lines: 15-16
 
@@ -3706,6 +3797,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_keyword_arguments` with a tuple_ and a :ref:`list<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 9-17
 
@@ -3769,6 +3861,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I change reality to match my expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 128
     :emphasize-lines: 13-16
 
@@ -3895,6 +3988,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   I :ref:`call<how to call a function with input>` the :ref:`positional_arguments function<test_positional_arguments>` with :ref:`keyword arguments<test_keyword_arguments>` to show that the two :ref:`functions<what is a function?>` are the same
 
   .. code-block:: python
+    :caption:
     :lineno-start: 136
     :emphasize-lines: 13-21
     :emphasize-text: positional
@@ -3935,6 +4029,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I move the :ref:`positional_arguments function<test_positional_arguments>` out of :ref:`test_positional_arguments` so that it can be :ref:`called<how to call a function with input>` from anywhere in the file_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 66
     :emphasize-lines: 4-5, 9
 
@@ -4006,6 +4101,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_positional_arguments` to show that I can :ref:`call<how to call a function with input>` the :ref:`keyword_arguments function<test_keyword_arguments>` with :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 8-15
     :emphasize-text: keyword
@@ -4040,6 +4136,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I move the :ref:`keyword_arguments function<test_keyword_arguments>` out of :ref:`test_keyword_arguments` so that it can be :ref:`called<how to call a function with input>` from anywhere in the file_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 96
     :emphasize-lines: 11-12
 
@@ -4107,6 +4204,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I remove the commented lines from :ref:`test_keyword_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 110
 
     def test_keyword_arguments():
@@ -4126,6 +4224,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 126
 
         assert_equal(
@@ -4136,6 +4235,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 133
 
         a_tuple = (0, 1, 2, 'n')
@@ -4149,6 +4249,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
 
         a_set = {0, 1, 2, 'n'}
@@ -4198,6 +4299,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I add a test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 143
     :emphasize-lines: 12-18
     :emphasize-text: first
@@ -4243,6 +4345,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 5
     :emphasize-text: SyntaxError
@@ -4256,6 +4359,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I change the order of the arguments to follow Python_ rules
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 4-5
     :emphasize-text: first
@@ -4283,6 +4387,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I add a :ref:`function definition<how to make a function that takes input>` for ``args_and_kwargs``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 2-3
 
@@ -4318,6 +4423,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I add ``last_input`` to the parentheses of ``args_and_kwargs``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 2-3
 
@@ -4362,6 +4468,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I add ``first_input`` to the parentheses of ``args_and_kwargs`` to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 3-4
     :emphasize-text: first_input
@@ -4396,6 +4503,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * The :ref:`call<how to call a function with input>` gives the values for ``last_input`` as both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 4-5
 
@@ -4416,6 +4524,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I use the right names and put them in the right order
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 5-6
     :emphasize-text: first_input
@@ -4461,6 +4570,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 7-8
 
@@ -4487,6 +4597,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I add :ref:`variables<what is a variable?>` for ``'first'`` and ``'last'`` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
     :emphasize-lines: 10
 
@@ -4515,6 +4626,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 163
     :emphasize-lines: 6-7, 9-10
 
@@ -4538,6 +4650,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I remove the commented lines from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 154
 
     def test_args_and_kwargs():
@@ -4590,6 +4703,7 @@ I can make an argument_ of a :ref:`function<what is a function?>` optional, whic
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 160
     :emphasize-lines: 9-16
 
@@ -4663,6 +4777,7 @@ the test passes.
 * I remove ``last_input=last_name`` from the :ref:`call<how to call a function with input>` to ``optional_arguments`` to show that it is a required argument
 
   .. code-block:: python
+    :caption:
     :lineno-start: 168
     :emphasize-lines: 8-9
 
@@ -4695,6 +4810,7 @@ the test passes.
 * I give the argument a :ref:`default value<test_optional_arguments>` to make it optional
 
   .. code-block:: python
+    :caption:
     :lineno-start: 168
     :emphasize-lines: 2-5
 
@@ -4755,6 +4871,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` to show that I can still :ref:`call the function<how to call a function with input>` with different values
 
   .. code-block:: python
+    :caption:
     :lineno-start: 175
     :emphasize-lines: 10-16
 
@@ -4787,6 +4904,7 @@ the test passes.
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 184
     :emphasize-lines: 6-7
 
@@ -4820,6 +4938,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` to :ref:`test_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 184
     :emphasize-lines: 10-16
 
@@ -4852,6 +4971,7 @@ the test passes.
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 193
     :emphasize-lines: 5-6
 
@@ -4896,6 +5016,7 @@ the test passes.
 * I add one more :ref:`assertion<what is an assertion?>` to :ref:`test_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 193
     :emphasize-lines: 10-17
 
@@ -4930,6 +5051,7 @@ the test passes.
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 202
     :emphasize-lines: 7-8
 
@@ -4965,6 +5087,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_optional_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 168
 
     def test_optional_arguments():
@@ -4982,6 +5105,7 @@ the test passes.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 174
 
         first_name, blow = 'joe', 'blow'
@@ -4993,6 +5117,7 @@ the test passes.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 190
 
         first_name = 'john'
@@ -5004,6 +5129,7 @@ the test passes.
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 198
 
         last_name = 'smith'
@@ -5141,6 +5267,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
 * I add :ref:`test_unknown_number_of_arguments` to ``test_functions.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 198
     :emphasize-lines: 11-17
 
@@ -5184,6 +5311,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 2-3
 
@@ -5215,6 +5343,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
 * I add ``a`` to the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 2-3
 
@@ -5252,6 +5381,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I use a double starred expression to replace ``a`` in the parentheses
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 3-4
 
@@ -5273,6 +5403,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I add ``x`` as the name of the first :ref:`positional argument<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 4-5
     :emphasize-text: x
@@ -5295,6 +5426,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I change the order of the inputs in ``unknown_number_of_arguments``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 5-6
     :emphasize-text: x
@@ -5319,6 +5451,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I add ``y`` as the name of the other :ref:`positional argument<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 6-7
 
@@ -5360,6 +5493,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I add an :ref:`assertion<what is an assertion?>` to see what happens if I :ref:`call the function<how to call a function with input>` with three :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 217
     :emphasize-lines: 8-13
 
@@ -5389,6 +5523,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 224
     :emphasize-lines: 5-6
 
@@ -5414,6 +5549,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I add an :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call the function<how to call a function with input>` with three :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 224
     :emphasize-lines: 9-14
 
@@ -5449,6 +5585,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I change the definition of the ``unknown_number_of_arguments`` :ref:`function<what is a function?>` to make it take three :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 7-8
     :emphasize-text: z
@@ -5485,6 +5622,7 @@ Python_ also has a way for a :ref:`function<what is a function?>` to take any nu
 * I use a single starred expression (``*``) to replace the :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 8-9
 
@@ -5510,6 +5648,7 @@ Python_ also has a way for a :ref:`function<what is a function?>` to take any nu
 * ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to make it clearer
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 9-12
 
@@ -5538,6 +5677,7 @@ how Python treats starred and double starred expressions
 * I change :ref:`the return statement` because I want the :ref:`function<what is a function?>` to return its input (remember the :ref:`identity function<test_identity_function>`?)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 13-14
 
@@ -5589,6 +5729,7 @@ how Python treats starred and double starred expressions
 * I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>` of :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 217
     :emphasize-lines: 11-12
 
@@ -5639,6 +5780,7 @@ how Python treats starred and double starred expressions
 * I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>` of :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 223
     :emphasize-lines: 14-15
 
@@ -5691,6 +5833,7 @@ how Python treats starred and double starred expressions
 * I change my expectation to match reality in the last :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 231
     :emphasize-lines: 14-15
 
@@ -5726,6 +5869,7 @@ how Python treats starred expressions
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
     :emphasize-lines: 16-17
 
@@ -5757,6 +5901,7 @@ how Python treats starred expressions
 * I use the :ref:`variables<what is a variable?>` to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>` from the first :ref:`assertion<what is an assertion?>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 223
     :emphasize-lines: 5-6, 9-10
 
@@ -5803,6 +5948,7 @@ how Python treats starred expressions
 * I change the tuple_ with ``*`` so that Python_ breaks up its contents, allowing them to be used as separate arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 223
     :emphasize-lines: 6-7
 
@@ -5839,6 +5985,7 @@ how Python treats double starred expressions
 * I change the :ref:`dictionary<what is a dictionary?>` with ``**`` so that Python_ breaks up the contents, allowing them to be used as :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 223
     :emphasize-lines: 7-8
 
@@ -5888,6 +6035,7 @@ how Python treats double starred expressions
 * I add a :ref:`variable<what is a variable?>` for the :ref:`dictionary<what is a dictionary?>` of the second :ref:`assertion<what is an assertion?>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 223
     :emphasize-lines: 15
 
@@ -5918,6 +6066,7 @@ how Python treats double starred expressions
 * I use the ``a_tuple`` and new ``a_dictionary`` :ref:`variables<what is a variable?>` to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>` from the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 237
     :emphasize-lines: 4-5, 9-10
 
@@ -5965,6 +6114,7 @@ how Python treats double starred expressions
 * I change the :ref:`dictionary<what is a dictionary?>` with ``**`` so that Python_ breaks up the contents, allowing them to be used as :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 237
     :emphasize-lines: 5-6
 
@@ -5993,6 +6143,7 @@ how Python treats double starred expressions
 * I change the tuple_ with ``*`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 237
     :emphasize-lines: 6-7
 
@@ -6042,6 +6193,7 @@ how Python treats double starred expressions
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the third :ref:`assertion<what is an assertion?>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 237
     :emphasize-lines: 15-16
 
@@ -6075,6 +6227,7 @@ how Python treats double starred expressions
 * I use the :ref:`variables<what is a variable?>` to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>` from the third :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 251
     :emphasize-lines: 4-5, 9-10
 
@@ -6124,6 +6277,7 @@ how Python treats double starred expressions
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
   .. code-block:: python
+    :caption:
     :lineno-start: 251
     :emphasize-lines: 6-7
 
@@ -6181,6 +6335,7 @@ how Python treats double starred expressions
 * I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to ``unknown_number_of_arguments`` using only :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 251
     :emphasize-lines: 14-18
 
@@ -6246,6 +6401,7 @@ how Python treats double starred expressions
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 264
     :emphasize-lines: 4-5
 
@@ -6264,6 +6420,7 @@ how Python treats double starred expressions
 * I add another :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call the function<how to call a function with input>` with ONLY :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 264
     :emphasize-lines: 8-12
 
@@ -6324,6 +6481,7 @@ how Python treats double starred expressions
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 271
     :emphasize-lines: 4-5
 
@@ -6342,6 +6500,7 @@ how Python treats double starred expressions
 * I add one more :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call<how to call a function with input>` the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` with no inputs
 
   .. code-block:: python
+    :caption:
     :lineno-start: 271
     :emphasize-lines: 8-10
 
@@ -6373,6 +6532,7 @@ how Python treats double starred expressions
 * I change my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 278
     :emphasize-lines: 2-3
 
@@ -6403,6 +6563,7 @@ how Python treats double starred expressions
 * I remove the commented lines from :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 208
 
     def test_unknown_number_of_arguments():
@@ -6421,6 +6582,7 @@ how Python treats double starred expressions
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 223
 
         a_dictionary = {'a': 2, 'b': 3, 'c': 4}
@@ -6433,6 +6595,7 @@ how Python treats double starred expressions
 
 
   .. code-block:: python
+    :caption:
     :lineno-start: 231
 
         a_tuple = (0, 1, 2)
@@ -6445,6 +6608,7 @@ how Python treats double starred expressions
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 240
 
         a_tuple = (0, 1, 2, 'n')
@@ -6454,6 +6618,7 @@ how Python treats double starred expressions
         )
 
   .. code-block:: python
+    :caption:
     :lineno-start: 246
 
         a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}

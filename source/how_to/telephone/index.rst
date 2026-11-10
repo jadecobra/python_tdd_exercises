@@ -358,6 +358,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 5
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -401,6 +402,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption:
     :lineno-start: 8
     :emphasize-lines: 4
     :emphasize-text: TypeError
@@ -715,6 +717,7 @@ how to write an f-string
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`True (the other boolean)<test_what_is_true>` to :ref:`test_passing_booleans`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3
     :emphasize-text: "
@@ -736,6 +739,7 @@ how to write an f-string
 * I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in my expectation
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3-4
 
@@ -772,6 +776,7 @@ how to write an f-string
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`test_passing_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 2-3
 
@@ -791,6 +796,7 @@ how to write an f-string
 * I change the expectation of the :ref:`assertion<what is an assertion?>` to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
     :emphasize-lines: 3-4
 
@@ -807,6 +813,7 @@ how to write an f-string
 * I remove the commented lines from :ref:`test_passing_none`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 9
 
     def test_passing_none():
@@ -818,6 +825,7 @@ how to write an f-string
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 2, 4-6
 
@@ -836,6 +844,7 @@ how to write an f-string
 * I remove the commented lines from :ref:`test_passing_booleans`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
 
     def test_passing_booleans():
@@ -879,6 +888,7 @@ Can I pass an integer_ (a whole number without decimals) as input to a :ref:`fun
 * I add a test for an integer_ to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 13
     :emphasize-lines: 6-7
     :emphasize-text: "
@@ -943,6 +953,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``1234``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 2
 
@@ -957,6 +968,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1234``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 4-5
 
@@ -979,6 +991,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 5-6
 
@@ -997,6 +1010,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the commented lines from :ref:`test_passing_an_integer`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
 
     def test_passing_an_integer():
@@ -1038,6 +1052,7 @@ Can I pass a float_ (binary floating point decimal number) as input to a :ref:`f
 * I add a test for a float_ (binary floating point decimal numbers) to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 18
     :emphasize-lines: 6-7
     :emphasize-text: "
@@ -1102,6 +1117,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``5.678``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 2
 
@@ -1116,6 +1132,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``5.678``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 4-5
 
@@ -1138,6 +1155,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 5-6
 
@@ -1156,6 +1174,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the commented lines from :ref:`test_passing_a_float`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
 
     def test_passing_a_float():
@@ -1199,6 +1218,7 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?
 * I add a test for a string_ (anything in :ref:`quotes`) to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 23
     :emphasize-lines: 6-7
 
@@ -1262,6 +1282,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``'hello'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 2
 
@@ -1276,6 +1297,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'hello'``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4-5
 
@@ -1298,6 +1320,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 4-5
 
@@ -1316,6 +1339,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the commented lines from :ref:`test_passing_a_string`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
 
     def test_passing_a_string():
@@ -1358,6 +1382,7 @@ Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as in
 * I add a test for a tuple_ to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 28
     :emphasize-lines: 6-10
 
@@ -1429,6 +1454,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 2
 
@@ -1446,6 +1472,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``(0, 1, 2, 'n')``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 4, 6-7
 
@@ -1471,6 +1498,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 7-8
 
@@ -1492,6 +1520,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the commented lines from :ref:`test_passing_a_tuple`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 3
 
@@ -1536,6 +1565,7 @@ Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 * I add a test for a :ref:`list<what is a list?>` to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 33
     :emphasize-lines: 6-10
 
@@ -1608,6 +1638,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 * I add a :ref:`variable<what is a variable?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 2
 
@@ -1625,6 +1656,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``[0, 1, 2, 'n']``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 4, 6-7
 
@@ -1650,6 +1682,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 * I change my expectation to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 7-8
 
@@ -1671,6 +1704,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 * I remove the commented lines from :ref:`test_passing_a_list`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 3
 
@@ -1714,6 +1748,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I add a test for a set_ to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 6-10
     :emphasize-text: '
@@ -1750,6 +1785,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I change the set_ in my expectation to match reality
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 4-5
     :emphasize-text: " '
@@ -1800,6 +1836,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I add a :ref:`variable<what is a variable?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 2
 
@@ -1817,6 +1854,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 4, 6-7
 
@@ -1842,6 +1880,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I change my expectation to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 7-8
 
@@ -1872,6 +1911,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I remove the commented lines from :ref:`test_passing_a_set`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
 
     def test_passing_a_set():
@@ -1915,6 +1955,7 @@ Can I pass a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in cu
 * I add a test for a :ref:`dictionary<what is a dictionary?>` to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 6-15
     :emphasize-text: "
@@ -2004,6 +2045,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``{'key0': 'value0', 'keyN': [0, 1, 2, 'n'],}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 2-5
 
@@ -2020,6 +2062,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{'key0': 'value0', 'keyN': [0, 1, 2, 'n'],}``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 6-16
 
@@ -2054,6 +2097,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 16-17
 
@@ -2084,6 +2128,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the commented lines from :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
 
     def test_passing_a_dictionary():
@@ -2132,6 +2177,7 @@ Can I pass any :ref:`object<everything is an object>` as input to a :ref:`functi
 * I add a failing test to see what happens when I pass a :ref:`class <everything is an object>` from a test to the ``text`` :ref:`function<what is a function?>`, to ``test_telephone.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 48
     :emphasize-lines: 11-12
 
@@ -2205,6 +2251,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` (the class for booleans)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 4
 
@@ -2228,6 +2275,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for :ref:`bool<what are booleans?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 6-7
 
@@ -2247,6 +2295,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`object<everything is an object>` for whole numbers without decimals)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 8
 
@@ -2272,6 +2321,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for int_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 8-9
 
@@ -2293,6 +2343,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`object<everything is an object>` for binary floating point decimal numbers)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 10
 
@@ -2320,6 +2371,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for float_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 10-11
 
@@ -2343,6 +2395,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`object<everything is an object>` for anything in :ref:`quotes`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 12
 
@@ -2372,6 +2425,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for str_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 12-13
 
@@ -2397,6 +2451,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`object<everything is an object>` for anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 14
 
@@ -2428,6 +2483,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for tuple_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 14-15
 
@@ -2455,6 +2511,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`list<what is a list?>`  (the :ref:`object<everything is an object>` for anything in square brackets '[ ]')
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 16
 
@@ -2488,6 +2545,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for :ref:`list<what is a list?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 16-17
 
@@ -2517,6 +2575,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`object<everything is an object>` for anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 18
 
@@ -2552,6 +2611,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for set_
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 18-19
 
@@ -2583,6 +2643,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>` (the :ref:`object<everything is an object>` for key-value pairs in curly braces '{ }' separated by commas)
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 20
 
@@ -2620,6 +2681,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for :ref:`dict<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
     :emphasize-lines: 20-21
 
@@ -2661,6 +2723,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the commented lines from :ref:`test_passing_an_object`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 58
 
     def test_passing_an_object():

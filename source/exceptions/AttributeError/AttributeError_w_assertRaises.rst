@@ -79,6 +79,7 @@ test_attribute_error_w_object_attributes
 * I add a test for :ref:`object attributes<what is an object attribute?>` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 17
     :emphasize-lines: 14-15
 
@@ -121,6 +122,7 @@ test_attribute_error_w_object_attributes
 * I add a :ref:`function<what is a function?>` to ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
     :emphasize-lines: 4
 
@@ -139,6 +141,7 @@ test_attribute_error_w_object_attributes
 * I add a :ref:`variable<what is a variable?>` for ``attribute_00`` to the :ref:`function <what is a function?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 1-2, 4-5
 
@@ -153,6 +156,7 @@ test_attribute_error_w_object_attributes
 * I change ``AnObject`` from a :ref:`function<what is a function?>` to an :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 2-3
 
@@ -176,6 +180,7 @@ test_attribute_error_w_object_attributes
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 34
     :emphasize-lines: 7
     :emphasize-text: SyntaxError
@@ -191,6 +196,7 @@ test_attribute_error_w_object_attributes
 * I comment out :ref:`the return statement` from ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 6
 
@@ -225,6 +231,7 @@ test_attribute_error_w_object_attributes
 * I remove the commented lines
 
   .. code-block:: python
+    :caption:
     :lineno-start: 22
 
     def function_09(): return function_08()
@@ -237,6 +244,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject().attribute_01`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 3
 
@@ -258,6 +266,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_01`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 4
 
@@ -281,6 +290,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject.attribute_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 4
 
@@ -303,6 +313,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_02`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 5
 
@@ -326,6 +337,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject().attribute_03`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 5
 
@@ -349,6 +361,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_03`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 6
 
@@ -373,6 +386,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject.attribute_04`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 6
 
@@ -397,6 +411,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_04`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 7
 
@@ -423,6 +438,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject().attribute_05`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 7
 
@@ -448,6 +464,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_05`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 8
 
@@ -474,6 +491,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject().attribute_06`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 8
 
@@ -500,6 +518,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_06`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 9
 
@@ -527,6 +546,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject.attribute_07`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 9
 
@@ -554,6 +574,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_07`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 10
 
@@ -582,6 +603,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject.attribute_08`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 10
 
@@ -610,6 +632,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_08`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 11
 
@@ -639,6 +662,7 @@ test_attribute_error_w_object_attributes
 * I add a line for ``src.attribute_error.AnObject().attribute_09`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 11
 
@@ -668,6 +692,7 @@ test_attribute_error_w_object_attributes
 * I add ``attribute_09`` to the :ref:`object definition<how to make an object>` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 12
 
@@ -731,6 +756,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a test for :ref:`methods<what is a method?>` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 6-7
 
@@ -763,6 +789,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the name to ``AnObject`` and point it to :ref:`None<what is None?>`, in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 14
 
@@ -792,6 +819,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I use the def_ keyword to change it from a :ref:`variable (attribute)<what is a variable?>` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 14-16
 
@@ -827,6 +855,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
 
     class AnObject(object):
@@ -848,6 +877,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * You know the "drill", I add a line for ``src.attribute_error.AnObject.method_01`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 3
 
@@ -869,6 +899,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 17-18
 
@@ -896,6 +927,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 4
 
@@ -918,6 +950,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 4-5
 
@@ -946,6 +979,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add ``self`` to the parentheses of ``method_02``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 1-2
 
@@ -965,6 +999,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` sinceit does not use anything that belongs to the :ref:`object<everything is an object>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
     :emphasize-lines: 4-6
 
@@ -988,6 +1023,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I remove the commented line
 
   .. code-block:: python
+    :caption:
     :lineno-start: 69
 
         def method_01():
@@ -1000,6 +1036,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_03`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 5
 
@@ -1023,6 +1060,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 72
     :emphasize-lines: 5-6
 
@@ -1038,6 +1076,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_04`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 6
 
@@ -1062,6 +1101,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4-5
 
@@ -1090,6 +1130,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`definition<how to make a function>` for ``method_04``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 76
     :emphasize-lines: 4
 
@@ -1112,6 +1153,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_05`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 7
 
@@ -1137,6 +1179,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 79
     :emphasize-lines: 5-6
 
@@ -1152,6 +1195,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_06`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 8
 
@@ -1178,6 +1222,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 83
     :emphasize-lines: 4-5
 
@@ -1198,6 +1243,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_07`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 9
 
@@ -1225,6 +1271,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 86
     :emphasize-lines: 4-5
 
@@ -1239,6 +1286,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_08`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 10
 
@@ -1267,6 +1315,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 4-5
 
@@ -1295,6 +1344,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` sinceit does not use anything that belongs to the :ref:`object<everything is an object>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 89
     :emphasize-lines: 4
 
@@ -1317,6 +1367,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a line for ``src.attribute_error.AnObject.method_09`` to ``test_attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
     :emphasize-lines: 11
 
@@ -1351,6 +1402,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 25
     :emphasize-lines: 44-45
 

@@ -114,6 +114,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add ``self.`` to ``random_first_number``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 12
     :emphasize-lines: 2
 
@@ -130,6 +131,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add ``self.`` to ``random_second_number``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 10
     :emphasize-lines: 5
 
@@ -220,6 +222,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I change the expectation to match
 
   .. code-block:: python
+    :caption:
     :lineno-start: 188
     :emphasize-lines: 5
 
@@ -241,6 +244,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a way to tell which item is causing my failure when I am using a :ref:`for loop<what is a for loop?>`, I add it to the test
 
   .. code-block:: python
+    :caption:
     :lineno-start: 176
     :emphasize-lines: 13-19
 
@@ -286,6 +290,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * then add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` to the :ref:`add function<test_addition>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 9-16
 
@@ -336,6 +341,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add a new :ref:`if statement<if statements>` to the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
     :emphasize-lines: 3-19
 
@@ -365,6 +371,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I remove the other :ref:`if statements`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 38
 
     @numbers_only
@@ -384,6 +391,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>` to :ref:`test_calculator_w_a_for_loop` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 176
     :emphasize-lines: 20-25
 
@@ -431,6 +439,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I change the expectation to use the error message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 195
     :emphasize-lines: 5
 
@@ -451,6 +460,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add an :ref:`if statement<if statements>` to the :ref:`divide function<test_division>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 30
     :emphasize-lines: 3-8
 
@@ -478,6 +488,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 195
     :emphasize-lines: 7-12
 
@@ -515,6 +526,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 201
     :emphasize-lines: 5
 
@@ -535,6 +547,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 9-14
 
@@ -563,6 +576,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add a new :ref:`if statement<if statements>` to put the two statements together
 
   .. code-block:: python
+    :caption:
     :lineno-start: 19
     :emphasize-lines: 3-20
 
@@ -593,6 +607,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I remove the other :ref:`if statements`
 
   .. code-block:: python
+    :caption:
     :lineno-start:  19
 
     @numbers_only
@@ -616,6 +631,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 201
     :emphasize-lines: 7-12
 
@@ -651,6 +667,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I change the expectation to use the error message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 207
     :emphasize-lines: 5
 
@@ -674,6 +691,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add an :ref:`if statement<if statements>` to the :ref:`subtract function<test_subtraction>` in ``calculator.py``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 14
     :emphasize-lines: 3-8
 
@@ -743,6 +761,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I remove the :ref:`if statement<if statements>` from the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 21
 
     @numbers_only
@@ -758,6 +777,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I remove the :ref:`if statement<if statements>` from the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 26
 
     @numbers_only
@@ -773,6 +793,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I remove the :ref:`if statement<if statements>` from the :ref:`divide function<test_division>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 31
 
     @numbers_only
@@ -791,6 +812,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I remove the :ref:`if statement<if statements>` from the :ref:`add function<test_addition>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 39
 
     @numbers_only
@@ -817,6 +839,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I use the :ref:`variable<what is a variable?>` to remove the repetition of ``(str, list, bool)``
 
   .. code-block:: python
+    :caption:
     :lineno-start: 6
     :emphasize-lines: 4-5, 7-8
 
@@ -951,6 +974,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I remove :ref:`test_calculator_sends_message_when_input_is_not_a_number` because it tests :ref:`None<what is None?>`, strings_  and :ref:`lists<what is a list?>`, while :ref:`test_calculator_w_a_for_loop` tests :ref:`None<what is None?>`, :ref:`booleans<what are booleans?>`, strings_, tuples_, :ref:`lists<what is a list?>`, sets_ and :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 43
 
         def test_division(self):
@@ -973,6 +997,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I change the name of :ref:`test_calculator_w_a_for_loop` to :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 1
 
@@ -1026,6 +1051,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * Using a :ref:`for loop<what is a for loop?>` means I do not have to write a lot of tests. I can add more data to the :ref:`iterable<what is an iterable?>` without having to add more tests
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 7-11
 
@@ -1048,6 +1074,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I can also write the test with a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`, though it looks ugly
 
   .. code-block:: python
+    :caption:
     :lineno-start: 121
     :emphasize-lines: 4-17
 
@@ -1088,6 +1115,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I change the expectation to the error message
 
   .. code-block:: python
+    :caption:
     :lineno-start: 4
 
             [
