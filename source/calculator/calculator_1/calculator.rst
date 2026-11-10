@@ -36,6 +36,7 @@ start the project
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init calculator
@@ -85,6 +86,7 @@ start the project
 * I `make a directory`_ for the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir tests
@@ -197,6 +199,7 @@ start the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -206,6 +209,7 @@ start the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -213,6 +217,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 8, 10
 
     ======================== FAILURES ========================
@@ -2278,6 +2283,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

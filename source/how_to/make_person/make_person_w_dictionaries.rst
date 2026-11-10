@@ -87,6 +87,7 @@ open the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -95,6 +96,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -640,6 +642,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_factory_function'
@@ -1087,6 +1090,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>` in ``tests/test_person.py``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 41
 
         def test_say_hello_function(self):
@@ -1258,6 +1262,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_say_hello_function'
@@ -1860,6 +1865,7 @@ the subTest method
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_say_hello_method'
@@ -2264,6 +2270,7 @@ extract people object attribute
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract people object attribute'
@@ -2643,6 +2650,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_can_person_vote'
@@ -2877,6 +2885,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2980,6 +2989,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

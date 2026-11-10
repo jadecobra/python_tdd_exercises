@@ -62,6 +62,7 @@ open the project
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd truth_table
@@ -69,6 +70,7 @@ open the project
 * I run the tests with `pytest-watcher`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -478,6 +480,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add negate_first'
@@ -1264,6 +1267,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_nand'
@@ -1559,6 +1563,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add tautology'
@@ -2389,6 +2394,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_disjunction'
@@ -2491,6 +2497,7 @@ close the project
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

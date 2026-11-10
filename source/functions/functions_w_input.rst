@@ -143,6 +143,7 @@ open the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd functions
@@ -158,6 +159,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -423,6 +425,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1109,6 +1112,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1385,6 +1389,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1997,6 +2002,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -2651,6 +2657,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -3067,6 +3074,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -4159,6 +4167,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -4550,6 +4559,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -5011,6 +5021,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -6465,6 +6476,7 @@ how Python treats double starred expressions
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -6487,6 +6499,7 @@ close the project
 * I `change directory`_ to the parent of ``functions``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -93,6 +93,7 @@ open the project
 * I `change directory`_ to the ``person`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -106,6 +107,7 @@ open the project
 * I make a new file_ in the ``tests`` folder_ named ``test_family_ties.py``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     touch tests/test_family_ties.py
@@ -113,6 +115,7 @@ open the project
 * I make a new file_ in the ``src`` folder_ named ``family_ties.py``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     touch src/family_ties.py
@@ -136,6 +139,7 @@ open the project
 * I go back to the terminal_ to add the new files_ and folders_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -145,6 +149,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -152,6 +157,7 @@ open the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 8, 10
 
     ============================ FAILURES ==========================
@@ -966,6 +972,7 @@ how to call the parent from the child
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1518,6 +1525,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_objects_w_one_parent'
@@ -3972,6 +3980,7 @@ what happens when a child has more than one parent?
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -4049,6 +4058,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

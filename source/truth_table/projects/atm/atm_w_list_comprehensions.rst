@@ -82,6 +82,7 @@ open the project
 * I `change directory`_ to the :ref:`atm folder<Automated Teller Machine>` in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd atm
@@ -90,6 +91,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -517,6 +519,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_if_card_expired'
@@ -776,6 +779,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_if_above_daily_limit'
@@ -1002,6 +1006,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_if_wrong_pin'
@@ -1151,6 +1156,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'rename to test_if_not_enough_cash'
@@ -1566,6 +1572,7 @@ becomes
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_if_not_enough_cash'

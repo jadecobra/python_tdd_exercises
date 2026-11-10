@@ -111,6 +111,7 @@ open the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -119,6 +120,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -679,6 +681,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_person_factory'
@@ -1348,6 +1351,7 @@ because
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_say_hello_function'
@@ -2135,6 +2139,7 @@ the subTest method
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_say_hello_method'
@@ -2403,6 +2408,7 @@ extract people object attribute
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract people object attribute'
@@ -2801,6 +2807,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_if_person_can_vote'
@@ -3038,6 +3045,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3157,6 +3165,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -4043,6 +4052,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract test_person_object'
@@ -4693,6 +4703,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract object attributes'
@@ -4846,6 +4857,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -5064,6 +5076,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -5251,6 +5264,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -5390,6 +5404,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -5406,6 +5421,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -102,6 +102,7 @@ open the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -117,6 +118,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -511,6 +513,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I open a new terminal_ then change directories to ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -518,6 +521,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add Person object'
@@ -1748,6 +1752,7 @@ what is the staticmethod decorator?
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add say_hello method'
@@ -2769,6 +2774,7 @@ separate and equal Person object
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3322,6 +3328,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3704,6 +3711,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3814,6 +3822,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 * I press :kbd:`w` on the keyboard in the terminal_ where the tests are running, to show the menu for `pytest-watcher`_ and it shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 2, 10
 
     [pytest-watcher]
@@ -3832,6 +3841,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 * I press :kbd:`c` on the keyboard to change runner args, and the terminal_ shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 7, 14
 
     [pytest-watcher]
@@ -3888,6 +3898,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -4061,6 +4072,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 22
     :emphasize-text: sex
 
@@ -4148,6 +4160,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -4166,6 +4179,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

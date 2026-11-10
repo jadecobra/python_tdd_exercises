@@ -29,6 +29,7 @@ requirements
 * I type this in a terminal_ to make sure git_ is installed
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git

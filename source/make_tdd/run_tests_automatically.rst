@@ -89,6 +89,7 @@ open the project
 * I `change directory`_ to the ``person`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -127,6 +128,7 @@ open the project
   I use uv_ to run `pytest-watcher`_ in the terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher
@@ -190,6 +192,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 * I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen. For example, if I type this in the terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     echo "Hello, my name is Jacob"
@@ -256,6 +259,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 * I use the `cat program`_ to look at what is in ``requirements.txt``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat requirements.txt
@@ -293,6 +297,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 * I use cat_ to look at what is in ``requirements.txt`` now
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat requirements.txt
@@ -316,6 +321,7 @@ how to install Python packages with uv
 * I use cat_ to show what is in ``pyproject.toml``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat pyproject.toml
@@ -323,6 +329,7 @@ how to install Python packages with uv
 * I use uv_ to install `pytest-watcher`_ from the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -374,6 +381,7 @@ how to install Python packages with uv
 * I use cat_ to show what is now in ``pyproject.toml``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat pyproject.toml
@@ -465,6 +473,7 @@ how to run tests automatically with uv and pytest-watcher
 * I change ``assert False is False`` to ``assert False is True`` in ``test_person.py``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 2-3
 
     # False is True
@@ -478,6 +487,7 @@ how to run tests automatically with uv and pytest-watcher
 * I go back to the terminal_ to run the test again
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -534,6 +544,7 @@ how to open the test file in the editor from the terminal
   the terminal_ shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 8
 
     [ptw] Detected modified: ./tests/test_person.py ->
@@ -579,6 +590,7 @@ close the project
 * I click in the terminal_ then add the new files_ and folders_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -588,6 +600,7 @@ close the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -600,6 +613,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -635,6 +649,7 @@ how to view all the commands I typed to automate running tests
 * I type history_ in the terminal_ to see all the commands I typed in this chapter
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     history

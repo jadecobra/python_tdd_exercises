@@ -48,6 +48,7 @@ start the project
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init person
@@ -63,6 +64,7 @@ start the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -224,6 +226,7 @@ start the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -233,6 +236,7 @@ start the project
 * I add the new files_ and folders_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -242,6 +246,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'setup project'
@@ -267,6 +272,7 @@ start the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -274,6 +280,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 8, 10
 
     ======================== FAILURES ========================
@@ -1831,6 +1838,7 @@ test_factory_w_keyword_arguments
 * I open a new terminal_ then change directories to ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -1838,6 +1846,7 @@ test_factory_w_keyword_arguments
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am 'add test_factory_w_keyword_arguments'
@@ -1929,6 +1938,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2067,6 +2077,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 3, 5
 
     AssertionError:
@@ -2256,6 +2267,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'use random values for year_of_birth'
@@ -2377,6 +2389,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'use random values for sex'
@@ -2488,6 +2501,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'use random values for last_name'
@@ -2625,6 +2639,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'use random values for first_name'
@@ -2811,6 +2826,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract pick_one function'
@@ -3263,6 +3279,7 @@ the test is green again, because this happens
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract a_person dictionary'
@@ -3913,6 +3930,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -4929,6 +4947,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am \
@@ -5025,6 +5044,7 @@ Each test uses ``datetime.datetime.now().year`` to get the current year.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -5280,6 +5300,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract calculate_age function'
@@ -5443,6 +5464,7 @@ I want to use random values for ``year_of_birth`` in the tests
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -5799,6 +5821,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -6587,6 +6610,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am \
@@ -6607,6 +6631,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

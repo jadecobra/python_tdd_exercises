@@ -72,6 +72,7 @@ start the project
 * I `change directory`_ to the ``type_error`` folder_ in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd type_error
@@ -87,6 +88,7 @@ start the project
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init type_error
@@ -103,6 +105,7 @@ start the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd type_error
@@ -116,6 +119,7 @@ start the project
 * I `make a directory`_ for the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir tests
@@ -225,6 +229,7 @@ start the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -234,6 +239,7 @@ start the project
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -243,6 +249,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit --all --message 'setup project'
@@ -252,6 +259,7 @@ start the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -693,6 +701,7 @@ test_type_error_w_positional_arguments
 * I open a new terminal_ then change directories to ``type_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd type_error
@@ -700,6 +709,7 @@ test_type_error_w_positional_arguments
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1187,6 +1197,7 @@ test_type_error_w_keyword_arguments
 * I add a git_ commit message in the other terminal
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -2281,6 +2292,7 @@ test_type_error_w_args_and_kwargs
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -2890,6 +2902,7 @@ close the project
 * I `change directory`_ to the parent of ``type_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -35,6 +35,7 @@ open the project
 * I `change directory`_ to the :ref:`attribute_error<what causes AttributeError?>` folder_ in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd attribute_error
@@ -44,6 +45,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -696,6 +698,7 @@ test_attribute_error_w_object_attributes
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1402,6 +1405,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1423,6 +1427,7 @@ close the project
 * I `change directory`_ to the parent of ``attribute_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

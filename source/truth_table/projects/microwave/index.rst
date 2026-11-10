@@ -121,6 +121,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 10
 
     ======================== FAILURES =========================
@@ -158,6 +159,7 @@ start the project
 * I open a new terminal_ then `change directory`_ to ``microwave``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd microwave
@@ -165,6 +167,7 @@ start the project
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -172,6 +175,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'setup project'
@@ -356,6 +360,7 @@ test_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_pressed_start'
@@ -437,6 +442,7 @@ test_not_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_not_pressed_start'
@@ -589,6 +595,7 @@ test_open_door_not_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_open_door_not_pressed_start'
@@ -670,6 +677,7 @@ test_open_door_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_open_door_pressed_start'
@@ -735,6 +743,7 @@ test_closed_door_not_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_closed_door_not_pressed_start'
@@ -796,6 +805,7 @@ test_closed_door_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_closed_door_pressed_start'
@@ -979,6 +989,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1054,6 +1065,7 @@ test_timer_set_closed_door_not_pressed_start
 * I add a git_ commit message in the other terminal
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1154,6 +1166,7 @@ test_not_timer_set_closed_door_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1259,6 +1272,7 @@ test_not_timer_set_closed_door_not_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1338,6 +1352,7 @@ test_timer_set_open_door_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1414,6 +1429,7 @@ test_timer_set_open_door_not_pressed_start
 * I add a git_ commit message in the other terminal
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1517,6 +1533,7 @@ test_not_timer_set_open_door_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1624,6 +1641,7 @@ test_not_timer_set_open_door_not_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2005,6 +2023,7 @@ door            timer           start button        too hot             output
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2194,6 +2213,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2367,6 +2387,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2556,6 +2577,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2729,6 +2751,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2918,6 +2941,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3091,6 +3115,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3275,6 +3300,7 @@ door            timer           start button        too hot             output
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3802,6 +3828,7 @@ refactor microwave function
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'refactor microwave function'

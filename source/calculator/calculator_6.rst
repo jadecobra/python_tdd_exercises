@@ -31,6 +31,7 @@ open the project
 * I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd calculator
@@ -44,6 +45,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -267,6 +269,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<basic objects>` I am testing
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 3, 4
     :emphasize-text: SUBFAILED True False
 
@@ -1123,6 +1126,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

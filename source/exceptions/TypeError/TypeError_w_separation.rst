@@ -50,6 +50,7 @@ open the project
 * I `change directory`_ to the :ref:`type_error folder<what causes TypeError?>` in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd type_error
@@ -65,6 +66,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -1967,6 +1969,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I open a terminal_ then `change directory`_ to the :ref:`type_error folder<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd type_error
@@ -1974,6 +1977,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1992,6 +1996,7 @@ close the project
 * I `change directory`_ to the parent of ``type_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

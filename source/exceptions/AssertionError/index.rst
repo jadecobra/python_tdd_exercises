@@ -121,6 +121,7 @@ start the project
 * I `change directory`_ to the ``assertion_error`` folder_ in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd assertion_error
@@ -136,6 +137,7 @@ start the project
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init assertion_error
@@ -152,6 +154,7 @@ start the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd assertion_error
@@ -165,6 +168,7 @@ start the project
 * I `make a directory`_ for the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir tests
@@ -273,6 +277,7 @@ start the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -282,6 +287,7 @@ start the project
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -291,6 +297,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit --all --message 'setup project'
@@ -300,6 +307,7 @@ start the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -610,6 +618,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
 * I open a new terminal_ then change directories to ``assertion_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd assertion_error
@@ -623,6 +632,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1280,6 +1290,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1932,6 +1943,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -2628,6 +2640,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -3200,6 +3213,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -3364,6 +3378,7 @@ the test passes because an integer_ is not the same :ref:`object<everything is a
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -3485,6 +3500,7 @@ test_assertion_error_w_is_vs_equal
   the terminal_ shows :green:`green` and the name of the test file_ with a better message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 7, 9
 
     ================== test session starts ===================
@@ -3521,6 +3537,7 @@ test_assertion_error_w_is_vs_equal
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -3636,6 +3653,7 @@ test_assertion_error_w_equality
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -3757,6 +3775,7 @@ test_assertion_error_w_true
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -3879,6 +3898,7 @@ test_assertion_error_w_false
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -4000,6 +4020,7 @@ test_assertion_error_w_none
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -4105,6 +4126,7 @@ test_assert_keyword
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -4169,6 +4191,7 @@ pytest only calls the function if the name starts with test
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 7, 10, 12, 14, 16, 18-19
 
     ================== test session starts ===================
@@ -4215,6 +4238,7 @@ pytest only calls the function if the name starts with test
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -4237,6 +4261,7 @@ close the project
 * I `change directory`_ to the parent of ``assertion_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

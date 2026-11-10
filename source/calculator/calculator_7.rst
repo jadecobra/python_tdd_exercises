@@ -31,6 +31,7 @@ open the project
 * I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd calculator
@@ -44,6 +45,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -2464,6 +2466,7 @@ close the project
 * I deactivate the `virtual environment`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     deactivate
@@ -2477,6 +2480,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

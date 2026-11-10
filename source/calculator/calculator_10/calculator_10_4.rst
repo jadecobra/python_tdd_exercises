@@ -25,6 +25,7 @@ open the project
 * I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd calculator
@@ -54,6 +55,7 @@ open the project
 * I open another terminal_ then use uv_ in the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run streamlit run src/streamlit_calculator.py
@@ -1833,6 +1835,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`Exceptions<how to test that an Exception is raised>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: NameError
 
     SUBFAILED(operation='\\+') ... - NameError: name 'src' is not defined
@@ -1891,6 +1894,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I change the expectation to a string_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 4-9
 
                     function = arithmetic_operations[operation]
@@ -2006,6 +2010,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -2023,6 +2028,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

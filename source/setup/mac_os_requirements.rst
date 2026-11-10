@@ -22,6 +22,7 @@ MacOS requirements
 * Open a terminal_ then type this to install the `uv Python package manager`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     brew install uv

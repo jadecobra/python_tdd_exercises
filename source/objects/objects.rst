@@ -56,6 +56,7 @@ open the project
 * I `change directory`_ to the ``person`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -69,6 +70,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -76,6 +78,7 @@ open the project
   the terminal_ is my friend, and shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 5
 
     rootdir: .../pumping_python/person
@@ -1369,6 +1372,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I open a new terminal_ then change directories to ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -1376,6 +1380,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am 'add test_classy_person_says_hello'
@@ -1678,6 +1683,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1826,6 +1832,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1991,6 +1998,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2126,6 +2134,7 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2388,6 +2397,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2723,6 +2733,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am 'move object attributes to setUp method'
@@ -2953,6 +2964,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3252,6 +3264,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3270,6 +3283,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

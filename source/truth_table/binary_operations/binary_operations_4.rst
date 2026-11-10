@@ -98,6 +98,7 @@ open the project
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd truth_table
@@ -111,6 +112,7 @@ open the project
 * I run the tests with `pytest-watcher`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -485,6 +487,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add negate_second'
@@ -1105,6 +1108,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_nor'
@@ -1977,6 +1981,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_equality'
@@ -2713,6 +2718,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add material_implication'
@@ -3086,6 +3092,7 @@ extract global variables for truth table cases
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3104,6 +3111,7 @@ close the project
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

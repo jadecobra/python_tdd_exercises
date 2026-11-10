@@ -60,6 +60,7 @@ start the project
 * I `change directory`_ to the ``attribute_error`` folder_ in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd attribute_error
@@ -75,6 +76,7 @@ start the project
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init attribute_error
@@ -91,6 +93,7 @@ start the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd attribute_error
@@ -213,6 +216,7 @@ start the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -222,6 +226,7 @@ start the project
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -231,6 +236,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'setup project'
@@ -240,6 +246,7 @@ start the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -247,6 +254,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 6, 8, 10
 
     ======================== FAILURES ========================
@@ -930,6 +938,7 @@ test_attribute_error_w_variables
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1491,6 +1500,7 @@ test_attribute_error_w_functions
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1511,6 +1521,7 @@ close the project
 * I `change directory`_ to the parent of ``attribute_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -85,6 +85,7 @@ start the project
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init telephone
@@ -101,6 +102,7 @@ start the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd telephone
@@ -114,6 +116,7 @@ start the project
 * I `make a directory`_ for the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir tests
@@ -223,6 +226,7 @@ start the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -232,6 +236,7 @@ start the project
 * I add the new files_ and folders_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -241,6 +246,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit --all --message 'setup project'
@@ -250,6 +256,7 @@ start the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -257,6 +264,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 6, 8, 10
 
     ======================== FAILURES ========================
@@ -477,6 +485,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 * I open a new terminal_ then change directories to ``telephone``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd telephone
@@ -490,6 +499,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_passing_none'
@@ -838,6 +848,7 @@ how to write an f-string
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -998,6 +1009,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_passing_an_integer'
@@ -1156,6 +1168,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1315,6 +1328,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_passing_a_string'
@@ -1491,6 +1505,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1669,6 +1684,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_passing_a_list'
@@ -1868,6 +1884,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -2084,6 +2101,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2667,6 +2685,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -2689,6 +2708,7 @@ close the project
 * I `change directory`_ to the parent of ``telephone``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

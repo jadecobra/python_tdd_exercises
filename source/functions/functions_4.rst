@@ -19,6 +19,7 @@ open the project
 * I `change directory`_ to the ``functions`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd functions
@@ -32,6 +33,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -459,6 +461,7 @@ close the project
 * I `change directory`_ to the parent of ``functions``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

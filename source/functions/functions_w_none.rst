@@ -46,6 +46,7 @@ open the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd functions
@@ -61,6 +62,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -492,6 +494,7 @@ the test passes.
 * I open a new terminal_ then change directories to ``functions``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd functions
@@ -499,6 +502,7 @@ the test passes.
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am 'use assertIsNone'
@@ -516,6 +520,7 @@ close the project
 * I `change directory`_ to the parent of ``functions``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -100,6 +100,7 @@ open the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -109,6 +110,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -310,6 +312,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I open a new terminal_ then make sure I am in the ``person`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -317,6 +320,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add can_vote method'
@@ -702,6 +706,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -843,6 +848,7 @@ I can do that with an :ref:`if statement<if statements>`
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -999,6 +1005,7 @@ add can_get_license method
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1359,6 +1366,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1499,6 +1507,7 @@ the test passes because Python_ checks if ``age`` (the result of ``calculate_age
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1819,6 +1828,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with skipping t
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2045,6 +2055,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2063,6 +2074,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

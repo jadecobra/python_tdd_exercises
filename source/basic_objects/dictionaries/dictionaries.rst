@@ -120,6 +120,7 @@ start the project
 * I run the program_ in the terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ./makePythonTdd.sh
@@ -136,6 +137,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 10
     :emphasize-text: tests/test_dictionaries.py:7
 
@@ -3583,6 +3585,7 @@ close the project
 * I `change directory`_ to the parent of ``dictionaries``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

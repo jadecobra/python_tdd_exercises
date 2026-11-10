@@ -51,6 +51,7 @@ open the project
 * I `change directory`_ to the :ref:`type_error folder<what causes TypeError?>` in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd type_error
@@ -60,6 +61,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -256,6 +258,7 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 * I add :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_01``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 5-6
 
     class AnObject(object):
@@ -949,6 +952,7 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 * I open a new terminal_ then make sure I am in the ``type_error`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd type_error
@@ -956,6 +960,7 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1687,6 +1692,7 @@ I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1705,6 +1711,7 @@ close the project
 * I `change directory`_ to the parent of ``type_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

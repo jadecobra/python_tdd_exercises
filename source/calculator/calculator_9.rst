@@ -50,6 +50,7 @@ open the project
 * I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd calculator
@@ -79,6 +80,7 @@ open the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -332,6 +334,7 @@ test_home_page
 * I add `jinja2.exceptions.TemplateNotFound`_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 6
     :emphasize-text: jinja2.exceptions.TemplateNotFound
 
@@ -356,6 +359,7 @@ how to view the website
 * I want to see what I just made. I open a new terminal_, then use uv_ to run the Flask_ server
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run flask --app src/website run --debug
@@ -2153,6 +2157,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -62,6 +62,7 @@ open the project
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd truth_table
@@ -75,6 +76,7 @@ open the project
 * I run the tests with `pytest-watcher`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -1067,6 +1069,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add exclusive_disjunction'
@@ -1722,6 +1725,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1885,6 +1889,7 @@ because :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_inp
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2295,6 +2300,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add project_first'
@@ -3015,6 +3021,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add converse_implication'
@@ -3089,6 +3096,7 @@ close the project
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

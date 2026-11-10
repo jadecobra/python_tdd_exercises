@@ -120,6 +120,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 10
     :emphasize-text: tests/test_exceptions.py:7
 
@@ -159,6 +160,7 @@ start the project
 * I open a new terminal_ then `change directory`_ to ``exceptions``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd exceptions
@@ -166,6 +168,7 @@ start the project
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -173,6 +176,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'setup project'
@@ -306,6 +310,7 @@ If the statement in the :ref:`try<how to handle Exceptions>` block works, Python
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -399,6 +404,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -518,6 +524,7 @@ test_catching_attribute_error
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -753,6 +760,7 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -823,6 +831,7 @@ add else clause to try statements
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1181,6 +1190,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1488,6 +1498,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1595,6 +1606,7 @@ test_catching_key_error
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1685,6 +1697,7 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1967,6 +1980,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_catching_exceptions'
@@ -2286,6 +2300,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'use assertRaises'
@@ -2380,6 +2395,7 @@ close the exceptions project
 * I `change directory`_ to the parent of ``exceptions``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

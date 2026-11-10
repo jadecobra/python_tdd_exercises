@@ -473,6 +473,7 @@ how to make a directory
 * I use the `mkdir program`_ to make a `folder (directory)`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir pumping_python
@@ -504,6 +505,7 @@ how to make a directory
 * I use cd_ to `change directory`_ to ``pumping_python``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd pumping_python
@@ -545,6 +547,7 @@ how to make a directory
 * I want to work in a directory_ named ``doe``, I try to `change directory`_ to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -575,6 +578,7 @@ how to make a directory
 * I use mkdir_ to make ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir doe
@@ -605,6 +609,7 @@ how to make a directory
 * I `change directory`_ to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -620,6 +625,7 @@ how to make a directory
 * I use pwd_ to see where I am
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     pwd
@@ -659,6 +665,7 @@ how to see what is in a directory
 * I can use ls_ to see what is in a directory_ and see more information about the files_ and folders_ in it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ls
@@ -719,6 +726,7 @@ how to see what is in a directory
 * I try to `change directory`_ to ``.``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd .
@@ -737,6 +745,7 @@ how to see what is in a directory
 * I try cd_ with ``..``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -764,6 +773,7 @@ how to look at directory relationships
 * I use cd_ to go back to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -777,6 +787,7 @@ how to look at directory relationships
 * I can use the `tree program`_ to see the files_ and folders_ in a directory_ and how they are related. I type it in the terminal_ to see what is in the ``doe`` directory_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -810,6 +821,7 @@ how to look at directory relationships
 * I try to `change directory`_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane
@@ -840,6 +852,7 @@ how to look at directory relationships
 * I use mkdir_ to make ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir jane
@@ -849,6 +862,7 @@ how to look at directory relationships
 * I use ls_ to see what is now in ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ls
@@ -862,6 +876,7 @@ how to look at directory relationships
 * I use tree_ to show what is in ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -898,6 +913,7 @@ how to look at directory relationships
 * I `change directory`_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane
@@ -913,6 +929,7 @@ how to look at directory relationships
 * I `change directory`_ to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -929,6 +946,7 @@ how to look at directory relationships
 * I `change directory`_ back to the parent of ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -949,6 +967,7 @@ how to look at directory relationships
 * I try to `change directory`_ to ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john
@@ -979,6 +998,7 @@ how to look at directory relationships
 * I use mkdir_ to make ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir john
@@ -988,6 +1008,7 @@ how to look at directory relationships
 * I use ls_ to see what is in ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ls
@@ -1001,6 +1022,7 @@ how to look at directory relationships
 * I use tree_ to show the folders_ inside ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -1038,6 +1060,7 @@ how to look at directory relationships
 * I `change directory`_ to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -1054,6 +1077,7 @@ how to look at directory relationships
 * I `change directory`_ back to the parent of ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1072,6 +1096,7 @@ how to look at directory relationships
 * I `change directory`_ to a hidden folder_ in ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd .a_hidden_folder_in_doe
@@ -1088,6 +1113,7 @@ how to look at directory relationships
 * I use mkdir_ to make ``.a_hidden_folder_in_doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir .a_hidden_folder_in_doe
@@ -1097,6 +1123,7 @@ how to look at directory relationships
 * I use ls_ to see what is in ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ls
@@ -1144,6 +1171,7 @@ how to look at directory relationships
 * I use tree_ to show the folders_ inside ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -1220,6 +1248,7 @@ how to look at directory relationships
 * I `change directory`_ to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -1251,6 +1280,7 @@ how to look at directory relationships
 * I `change directory`_ back to the parent of ``.a_hidden_folder_in_doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1271,6 +1301,7 @@ how to look at directory relationships
 * I change directory_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane
@@ -1284,6 +1315,7 @@ how to look at directory relationships
 * I use ls_ to show what is in ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ls
@@ -1319,6 +1351,7 @@ how to look at directory relationships
 * I use tree_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -1336,6 +1369,7 @@ how to look at directory relationships
 * I `change directory`_ to ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd mary
@@ -1351,6 +1385,7 @@ how to look at directory relationships
 * I use mkdir_ to make ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir mary
@@ -1360,6 +1395,7 @@ how to look at directory relationships
 * I try to `change directory`_ to ``mary`` again
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd mary
@@ -1377,6 +1413,7 @@ how to look at directory relationships
 * I `change directory`_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane
@@ -1393,6 +1430,7 @@ how to look at directory relationships
 * I go up a level to the parent of ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1408,6 +1446,7 @@ how to look at directory relationships
 * I `change directory`_ to a hidden folder_ in ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd .a_hidden_folder_in_jane
@@ -1424,6 +1463,7 @@ how to look at directory relationships
 * I make ``.a_hidden_folder_in_jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir .a_hidden_folder_in_jane
@@ -1433,6 +1473,7 @@ how to look at directory relationships
 * I try to `change directory`_ to ``.a_hidden_folder_in_jane`` again
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd .a_hidden_folder_in_jane
@@ -1446,6 +1487,7 @@ how to look at directory relationships
 * I `change directory`_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane
@@ -1462,6 +1504,7 @@ how to look at directory relationships
 * I go up a level to the parent of ``.a_hidden_folder_in_jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1477,6 +1520,7 @@ how to look at directory relationships
 * I use tree_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -1533,6 +1577,7 @@ how to look at directory relationships
 * I go up a level to the parent of ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1550,6 +1595,7 @@ how to look at directory relationships
 * I change directory_ to ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john
@@ -1565,6 +1611,7 @@ how to look at directory relationships
 * I use ls_ to show what is in ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ls
@@ -1600,6 +1647,7 @@ how to look at directory relationships
 * I use tree_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -1617,6 +1665,7 @@ how to look at directory relationships
 * I `change directory`_ to ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd lil
@@ -1632,6 +1681,7 @@ how to look at directory relationships
 * I use mkdir_ to make ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir lil
@@ -1641,6 +1691,7 @@ how to look at directory relationships
 * I try to `change directory`_ to ``lil`` again
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd lil
@@ -1658,6 +1709,7 @@ how to look at directory relationships
 * I `change directory`_ to ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john
@@ -1674,6 +1726,7 @@ how to look at directory relationships
 * I go up a level to the parent of ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1689,6 +1742,7 @@ how to look at directory relationships
 * I `change directory`_ to a hidden folder_ in ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd .a_hidden_folder_in_john
@@ -1705,6 +1759,7 @@ how to look at directory relationships
 * I use mkdir_ to make ``.a_hidden_folder_in_john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir .a_hidden_folder_in_john
@@ -1714,6 +1769,7 @@ how to look at directory relationships
 * I try to `change directory`_ to ``.a_hidden_folder_in_john`` again
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd .a_hidden_folder_in_john
@@ -1727,6 +1783,7 @@ how to look at directory relationships
 * I `change directory`_ to ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john
@@ -1743,6 +1800,7 @@ how to look at directory relationships
 * I go up a level to the parent of ``.a_hidden_folder_in_john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1758,6 +1816,7 @@ how to look at directory relationships
 * I use tree_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -1814,6 +1873,7 @@ how to look at directory relationships
 * I go up a level to the parent of ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1829,6 +1889,7 @@ how to look at directory relationships
 * I use tree_ to show the files_ and folders_ related to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -2007,6 +2068,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 * I `change directory`_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane
@@ -2103,6 +2165,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 * I `change directory`_ to the parent of ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -2120,6 +2183,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 * I `change directory`_ to ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john
@@ -2216,6 +2280,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 * I `change directory`_ to the parent of ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -2351,6 +2416,7 @@ how to use directory relationships
 * I try to `change directory`_  from ``doe`` to ``mary`` in one step
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd mary
@@ -2423,6 +2489,7 @@ how to use directory relationships
 * I can go from ``doe`` to ``jane`` to ``mary`` in one step with
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane/mary
@@ -2438,6 +2505,7 @@ how to use directory relationships
 * I `change directory`_ to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -2454,6 +2522,7 @@ how to use directory relationships
 * I can go from ``mary`` back to ``doe`` in one step with ``..``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../..
@@ -2476,6 +2545,7 @@ how to use directory relationships
 * I try to `change directory`_  from ``doe`` to ``lil`` in one step
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd lil
@@ -2548,6 +2618,7 @@ how to use directory relationships
 * I can go from ``doe`` to ``john`` to ``lil`` in one step with
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john/lil
@@ -2563,6 +2634,7 @@ how to use directory relationships
 * I `change directory`_ to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe
@@ -2579,6 +2651,7 @@ how to use directory relationships
 * I can go from ``lil`` back to ``doe`` in one step with ``..``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../..
@@ -2670,6 +2743,7 @@ how to use touch with directory relationships
 * I `change directory`_ to ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane/mary
@@ -2730,6 +2804,7 @@ how to use touch with directory relationships
 * I use mkdir_ to make a hidden directory_ in ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir .a_hidden_folder_in_mary
@@ -2782,6 +2857,7 @@ how to use touch with directory relationships
 * I use cd_ to go back to the grandparent of ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../..
@@ -2799,6 +2875,7 @@ how to use touch with directory relationships
 * I `change directory`_ to ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john/lil
@@ -2851,6 +2928,7 @@ how to use touch with directory relationships
 * I use mkdir_ to make a hidden directory_ in ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir .a_hidden_folder_in_lil
@@ -2901,6 +2979,7 @@ how to use touch with directory relationships
 * I use cd_ to go back to the grandparent of ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../..
@@ -3182,6 +3261,7 @@ how to use touch with directory relationships
 * I `change directory`_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane
@@ -3274,6 +3354,7 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 * I `change directory`_ to ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../john/lil
@@ -3281,6 +3362,7 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 * I use mv_ to change ``child_of_sibling_of_john`` to ``child_of_sibling_of_jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     mv child_of_sibling_of_john \
@@ -3324,6 +3406,7 @@ mv_ means move, it takes two arguments
 * I use cd_ to go back to the grandparent of ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../..
@@ -3419,6 +3502,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ to ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd john
@@ -3503,6 +3587,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ to ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../jane/mary
@@ -3510,6 +3595,7 @@ mv_ means move, it takes two arguments
 * I use mv_ to change ``child_of_sibling_of_jane`` to ``child_of_sibling_of_john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     mv child_of_sibling_of_jane \
@@ -3533,6 +3619,7 @@ mv_ means move, it takes two arguments
 * I use cd_ to go back to the grandparent of ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../..
@@ -3634,6 +3721,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ to ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd jane/mary
@@ -3694,6 +3782,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ to ``john``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../../john
@@ -3701,6 +3790,7 @@ mv_ means move, it takes two arguments
 * I use mv_ to change ``aka_aunt_of_mary`` to ``aka_uncle_of_mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     mv aka_aunt_of_mary aka_uncle_of_mary
@@ -3708,6 +3798,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ back to ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../jane/mary
@@ -3840,6 +3931,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ to ``lil`` from ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../../john/lil
@@ -3908,6 +4000,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ to ``jane``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../../jane
@@ -3915,6 +4008,7 @@ mv_ means move, it takes two arguments
 * I use mv_ to change ``aka_uncle_of_lil`` to ``aka_aunt_of_lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     mv aka_uncle_of_lil aka_aunt_of_lil
@@ -3922,6 +4016,7 @@ mv_ means move, it takes two arguments
 * I `change directory`_ back to ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../john/lil
@@ -4131,6 +4226,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 * I `change directory`_ to ``mary``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe/jane/mary
@@ -4332,6 +4428,7 @@ how to use tree with directory relationships
 * I `change directories`_ from ``mary`` to ``lil``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../../john/lil
@@ -4497,6 +4594,7 @@ how to use tree with directory relationships
 * I go to the parent of ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ../../..
@@ -4730,6 +4828,7 @@ how to remove a directory and all the things in it
 * I try to `change directory`_  back to ``doe``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd doe

@@ -86,6 +86,7 @@ how to setup the project
   .. note:: skip this step if you are already in the ``pumping_python`` directory_ or made it earlier
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd pumping_python
@@ -119,6 +120,7 @@ how to setup the project
 * I type tree_ in the terminal_ to see what files_ and folders_ are in the ``pumping_python`` directory_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     tree
@@ -161,6 +163,7 @@ how to setup the project
 * I `change directory`_ to the ``person`` project in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -184,6 +187,7 @@ how to setup a project with uv
 * I use the `uv Python Package Manager`_ to setup the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init person
@@ -207,6 +211,7 @@ how to change directory to the project
 * I try to `change directory`_ to the ``person`` folder_ again
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -262,6 +267,7 @@ how to see what is inside a file
 * I can use the `cat program`_ to see what is inside ``.gitignore``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat .gitignore
@@ -269,6 +275,7 @@ how to see what is inside a file
 * I use cat_ to see what is inside ``pyproject.toml``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat pyproject.toml
@@ -276,6 +283,7 @@ how to see what is inside a file
 * I use cat_ to see what is in ``.python-version``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat .python-version
@@ -291,6 +299,7 @@ how to see what is inside a file
 * I use cat_ to show what is inside ``README.md``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat README.md
@@ -329,6 +338,7 @@ how to run a Python program
 * I can also use uv_ to run the program_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run person
@@ -344,6 +354,7 @@ how to run a Python program
 * I use cat_ to see what is in ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat src/person/__init__.py
@@ -410,6 +421,7 @@ how to make a directory for the tests
 * I make a child folder_ to keep the tests separate from the other files_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir tests
@@ -732,6 +744,7 @@ the terminal_ still shows ``NO TESTS RAN``
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 16, 18
 
     E
@@ -864,6 +877,7 @@ the terminal_ still shows ``NO TESTS RAN``
 * I add the new files_ and folders_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -873,6 +887,7 @@ the terminal_ still shows ``NO TESTS RAN``
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -891,6 +906,7 @@ close the project
 * I click in the terminal and `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -926,6 +942,7 @@ how to view all the commands typed in a terminal
 * I type history_ in the terminal_ to see all the commands I have typed so far
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     history

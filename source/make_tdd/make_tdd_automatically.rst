@@ -422,6 +422,7 @@ how to make a shell script run as a command
 * I change the mode of the file_ to add executable permissions
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     chmod +x makePythonTdd.sh
@@ -431,6 +432,7 @@ how to make a shell script run as a command
 * I list the permissions again with ls_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ls -l makePythonTdd.sh
@@ -451,6 +453,7 @@ how to make a shell script run as a command
 * I try the command again
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     ./makePythonTdd.sh
@@ -458,6 +461,7 @@ how to make a shell script run as a command
   the terminal_ is my friend, and shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 10
 
     ========================== FAILURES ===========================
@@ -549,6 +553,7 @@ how to use makePythonTdd to make a different project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 10
 
     ======================== FAILURES =========================

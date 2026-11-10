@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test AssertionError with loops in the assertion_error project so one test can cover many objects. pytest-watcher shows AssertionError. The first loop in test_assert_keyword fails with assert 2 == 'BOOM!!!', then '11' and 'I am alive', until each expectation is the loop variable. Later loops walk None, False, True, 0, 0.0, an empty string, an empty tuple, list, set, and dict. Unittest cores include unexpectedly identical, unexpectedly None, and None != False. A basic_objects class attribute and a single starred expression replace the repeated tuples. Nested loops make test_assertion_error: ten objects by ten objects is one hundred subtests. self.assertEqual on the unequal pairs fails eighty four of them. assert first is second fails ninety. try and except AssertionError run the opposite check, so the grid stays green. The file still has assert_equal, assert_not_equal, test_assert_keyword, and test_assertion_error_w_none.
-  :keywords: AssertionError, for loop, subTest, pytest-watcher, basic_objects, starred expression, assertIsNot, assertEqual, assertNotEqual, try, except, test_assertion_error, pumping python, Jacob Itegboje
+  :description:
+  :keywords:
 
 .. include:: ../../links.rst
 
@@ -10,7 +10,7 @@ test AssertionError with generators
 
 ----
 
-I want to use :ref:`for loops<what is a for loop?>` in the :ref:`assertion_error<what is an assertion?>` project.
+I want to use a :ref:`generator<generator expressions>` in the :ref:`assertion_error<what is an assertion?>` project.
 
 ----
 
@@ -20,37 +20,37 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :linenos:
   :lines: 1-9
 
-.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 12
   :lines: 12-17
 
-.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 19
   :lines: 19-36
 
-.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 38
   :lines: 38-46
 
-.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 48
   :lines: 48-54
 
-.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_loops.py
+.. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 56
@@ -66,6 +66,7 @@ open the project
 * I `change directory`_ to the :ref:`assertion_error folder<what is an assertion?>` in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd assertion_error
@@ -75,6 +76,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -82,7 +84,7 @@ open the project
 ----
 
 *********************************************************************************
-test_assert_keyword with for loop
+test_assertion_error with a generator
 *********************************************************************************
 
 =================================================================================
@@ -91,9 +93,10 @@ test_assert_keyword with for loop
 
 ----
 
-I add a tuple_ with a :ref:`for loop<what is a for loop?>` for the items in :ref:`test_assert_keyword`
+I add a :ref:`generator expression<generator expression>` for the `for loops<what is a for loop?>` in :ref:`test_assertion_error`
 
 .. code-block:: python
+  :caption:
   :lineno-start: 38
   :emphasize-lines: 2-9
 
@@ -193,6 +196,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I open a new terminal_ then make sure I am in the ``assertion_error`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd assertion_error
@@ -200,6 +204,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'test_assert_keyword with a for loop'
@@ -354,6 +359,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -472,6 +478,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -590,6 +597,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -784,6 +792,7 @@ the test is green again.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -889,6 +898,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1301,6 +1311,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1686,6 +1697,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1704,6 +1716,7 @@ close the project
 * I `change directory`_ to the parent of ``assertion_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -31,6 +31,7 @@ open the project
 * I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd calculator
@@ -44,6 +45,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -51,6 +53,7 @@ open the project
   the terminal_ is my friend, and shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
@@ -164,6 +167,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
   the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 7
 
         def test_division(self):
@@ -232,6 +236,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -84,6 +84,7 @@ open the project
 * I change directory_ to the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -93,6 +94,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -262,6 +264,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I open a new terminal_ then make sure I am in the ``person`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd person
@@ -269,6 +272,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -360,6 +364,7 @@ move test_joe to TestPerson
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'move test_joe to TestPerson'
@@ -458,6 +463,7 @@ move test_jane to TestPerson
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'move test_jane to TestPerson'
@@ -556,6 +562,7 @@ move test_john to TestPerson
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'move test_john to TestPerson'
@@ -654,6 +661,7 @@ move test_mary to TestPerson
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'move test_mary to TestPerson'
@@ -815,6 +823,7 @@ green again.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am
@@ -1009,6 +1018,7 @@ the test is green again.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am
@@ -1519,6 +1529,7 @@ move assert_person_can_say_hello to TestPerson
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am
@@ -1854,6 +1865,7 @@ move assert_say_hello_works to TestPerson
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am
@@ -2344,6 +2356,7 @@ move assert_person_factory_works to TestPerson
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am
@@ -2362,6 +2375,7 @@ close the project
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -36,6 +36,7 @@ open the project
 * I `change directory`_ to the :ref:`assertion_error folder<what is an assertion?>` in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd assertion_error
@@ -45,6 +46,7 @@ open the project
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -455,6 +457,7 @@ use assertIsNotNone and assertIsNone
 * I open a new terminal_ then change directories to ``assertion_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd assertion_error
@@ -462,6 +465,7 @@ use assertIsNotNone and assertIsNone
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -482,6 +486,7 @@ close the project
 * I `change directory`_ to the parent of ``assertion_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

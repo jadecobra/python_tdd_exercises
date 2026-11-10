@@ -33,6 +33,7 @@ open the project
 * I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd calculator
@@ -46,6 +47,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -53,6 +55,7 @@ open the project
   the terminal_ is my friend, and shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
@@ -1714,6 +1717,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

@@ -109,6 +109,7 @@ start the project
 * I `change directory`_ to the ``unittest`` folder_ in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd unittest
@@ -122,6 +123,7 @@ start the project
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init unittest
@@ -136,6 +138,7 @@ start the project
 * I `change directory`_ to ``unittest``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd unittest
@@ -149,6 +152,7 @@ start the project
 * I `make a directory`_ for the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir tests
@@ -252,6 +256,7 @@ start the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -259,6 +264,7 @@ start the project
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -266,6 +272,7 @@ start the project
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'setup project'
@@ -273,6 +280,7 @@ start the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -280,6 +288,7 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 6, 8, 10
 
     ======================== FAILURES ========================
@@ -423,6 +432,7 @@ I want to see what comes with the `unittest module`_.
 * I press :kbd:`w` on the keyboard in the terminal_ where the tests are running, to show the menu for `pytest-watcher`_ and it shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 2, 10
 
     [pytest-watcher]
@@ -441,6 +451,7 @@ I want to see what comes with the `unittest module`_.
 * I press :kbd:`c` on the keyboard to change runner args, and the terminal_ shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 7, 14
 
     [pytest-watcher]
@@ -501,6 +512,7 @@ I want to see what comes with the `unittest module`_.
 * I open a new terminal_ then make sure I am in the ``unittest`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd unittest
@@ -508,6 +520,7 @@ I want to see what comes with the `unittest module`_.
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -575,6 +588,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I press :kbd:`w` on the keyboard in the terminal_ where the tests are running, to show the menu for `pytest-watcher`_ and it shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 2, 10
 
     [pytest-watcher]
@@ -593,6 +607,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I press :kbd:`c` on the keyboard to change runner args, and the terminal_ shows
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 7, 14
 
     [pytest-watcher]
@@ -721,6 +736,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -922,6 +938,7 @@ test_assertIsNot
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1129,6 +1146,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1307,6 +1325,7 @@ test_assertNotEqual
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1458,6 +1477,7 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1678,6 +1698,7 @@ test_assertNotIsInstance
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -1952,6 +1973,7 @@ test_assertIs_instance
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2183,6 +2205,7 @@ test_assertNotIsSubclass
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2432,6 +2455,7 @@ test_assertIs_subclass
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -2775,6 +2799,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -3767,6 +3792,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'extract TestUnittest object'
@@ -4534,6 +4560,7 @@ the test passes because
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'use unittest.TestCase'
@@ -4554,6 +4581,7 @@ close the project
 * I `change directory`_ to the parent of ``unittest``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

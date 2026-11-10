@@ -67,6 +67,7 @@ Linux/Windows Subsystem for Linux requirements
 * use apt_ to install git_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     sudo apt install git --yes
@@ -76,6 +77,7 @@ Linux/Windows Subsystem for Linux requirements
 * configure git_ so it knows who you are
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git config --global user.email EMAIL_ADDRESS@DOMAIN.com
@@ -85,6 +87,7 @@ Linux/Windows Subsystem for Linux requirements
 * configure name that git_ should use for you
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git config --global user.name USERNAME

@@ -25,6 +25,7 @@ open the project
 * I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd calculator
@@ -48,6 +49,7 @@ open the project
 * I check to see what is in my ``requirements.txt``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cat requirements.txt
@@ -64,6 +66,7 @@ open the project
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -372,6 +375,7 @@ how to see the streamlit calculator website
 * I open another terminal_ then use uv_ in the ``calculator`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run streamlit run src/streamlit_calculator.py
@@ -1051,6 +1055,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
@@ -1068,6 +1073,7 @@ close the project
 * I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

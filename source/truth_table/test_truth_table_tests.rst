@@ -43,6 +43,7 @@ open the project
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd truth_table
@@ -56,6 +57,7 @@ open the project
 * I run the tests with `pytest-watcher`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -2841,6 +2843,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'test truth_table tests'
@@ -2857,6 +2860,7 @@ close the project
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

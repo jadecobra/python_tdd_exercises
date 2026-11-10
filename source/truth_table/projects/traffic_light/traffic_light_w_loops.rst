@@ -415,6 +415,7 @@ the test passes.
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \
@@ -798,6 +799,7 @@ The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit -am \

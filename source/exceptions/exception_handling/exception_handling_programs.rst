@@ -55,6 +55,7 @@ open the project
 * I `change directory`_ to the ``exceptions`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd exceptions
@@ -62,6 +63,7 @@ open the project
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -330,6 +332,7 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_catching_exceptions_w_messages'
@@ -477,6 +480,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_catching_failure'
@@ -736,6 +740,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add test_catching_success'
@@ -813,6 +818,7 @@ close the project
 * I `change directory`_ to the parent of ``exceptions``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

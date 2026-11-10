@@ -41,6 +41,7 @@ start the project
 * I `change directory`_ to the ``module_not_found_error`` project in the ``pumping_python`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd module_not_found_error
@@ -56,6 +57,7 @@ start the project
 * I use the `uv Python Package Manager`_ to setup the project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv init module_not_found_error
@@ -70,6 +72,7 @@ start the project
 * I `change directory`_ to the ``module_not_found_error`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd module_not_found_error
@@ -83,6 +86,7 @@ start the project
 * I make a child folder_ to keep the tests separate from the other files_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir tests
@@ -320,6 +324,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add the new files_ and folders_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -329,6 +334,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1054,6 +1060,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 * I make a new folder_ named ``doe`` in the ``src`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mkdir src/doe
@@ -1394,6 +1401,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add .
@@ -1401,6 +1409,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 * I add a git_ commit message in the terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1-2
 
     git commit --all --message \
@@ -1421,6 +1430,7 @@ close the project
 * I `change directory`_ to the parent of ``module_not_found_error``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

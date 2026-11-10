@@ -80,6 +80,7 @@ test_logical_true
 * I use mv_ to change the name of ``test_truth_table.py`` to ``test_nullary_unary.py`` in the ``tests`` folder_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     mv tests/test_truth_table.py tests/test_nullary_unary.py
@@ -203,6 +204,7 @@ test_logical_true
 * I open a new terminal_, then add ``tests/test_nullary_unary.py`` to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add tests/test_nullary_unary.py
@@ -210,6 +212,7 @@ test_logical_true
 * I add a git_ commit message
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_true'
@@ -316,6 +319,7 @@ test_logical_false
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_false'
@@ -556,6 +560,7 @@ test_logical_identity
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_identity'
@@ -823,6 +828,7 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_negation'
@@ -849,6 +855,7 @@ close the project
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..

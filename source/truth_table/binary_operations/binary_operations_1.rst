@@ -79,6 +79,7 @@ open the project
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd truth_table
@@ -107,6 +108,7 @@ open the project
 * I add ``tests/test_binary.py`` to git_ for tracking
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git add tests/test_binary.py
@@ -116,6 +118,7 @@ open the project
 * I run the tests with `pytest-watcher`_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     uv run pytest-watcher . --now --patterns "**/*.py"
@@ -510,6 +513,7 @@ first input     second input   return
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add contradiction'
@@ -1370,6 +1374,7 @@ conditional expressions
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add logical_conjunction'
@@ -1813,6 +1818,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add project_second'
@@ -2637,6 +2643,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     git commit -am 'add converse_non_implication'
@@ -2738,6 +2745,7 @@ close the project
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: python
+    :caption: terminal
     :emphasize-lines: 1
 
     cd ..
