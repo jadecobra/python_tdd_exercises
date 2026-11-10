@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test AssertionError with generators in the assertion_error project. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Replace nested for loops across basic_objects with a generator expression ((first, second) for first in self.basic_objects for second in self.basic_objects). RED: add raise Exception inside with self.subTest(pair=(first, second)) to verify all one hundred subtests fail. GREEN: remove raise Exception. REFACTOR: remove commented loops and fix indentation. Another way: replace the generator expression with itertools.product(self.basic_objects, self.basic_objects). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools to pass. Verify with raise Exception again. Simplify with the repeat parameter: itertools.product(self.basic_objects, repeat=3) triggers ValueError: too many values to unpack (expected 2, got 3). Fix to repeat=2. Git commit 'test_assertion_error with a generator'.
+  :keywords: Jacob Itegboje, Pumping Python, test AssertionError with generators, generator expressions, itertools.product, repeat parameter itertools, nested for loops, subTest, basic_objects, 100 subtests, NameError name itertools is not defined, ValueError too many values to unpack, expected 2 got 3, raise Exception, uv run pytest-watcher, assertion_error project, red green refactor, python tdd generator, test_assertion_error
 
 .. include:: ../../links.rst
 
@@ -34,7 +34,7 @@ Here is the code in :ref:`test_assertion_error` by the end of the chapter
 .. literalinclude:: ../../code/assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 54
+  :lineno-start: 20
   :lines: 20-40
 
 
@@ -79,7 +79,7 @@ I add a :ref:`generator expression<generator expressions>` for the :ref:`for loo
 
 .. code-block:: python
   :caption: assertion_error/tests/test_assertion_error.py
-  :lineno-start: 38
+  :lineno-start: 19
   :emphasize-lines: 2-8, 10
 
       def test_assertion_error(self):
@@ -97,7 +97,7 @@ I add a :ref:`generator expression<generator expressions>` for the :ref:`for loo
                       except AssertionError:
                           assert first is not second
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for one hundred sub tests.
+the terminal_ shows :ref:`Exception<how to test that an Exception is raised>` for one hundred sub tests.
 
 ----
 
@@ -217,7 +217,7 @@ I can also make a :ref:`generator<generator expressions>` with the `product meth
 
 ----
 
-* I add an :ref:`Exception<how to test that an exception is raised>` after the first :ref:`try...except block<how to handle Exceptions>` to make sure the test works
+* I add an :ref:`Exception<how to test that an Exception is raised>` after the first :ref:`try...except block<how to handle Exceptions>` to make sure the test works
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -236,7 +236,7 @@ I can also make a :ref:`generator<generator expressions>` with the `product meth
                     except AssertionError:
                         self.assertIs(first, second)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for one hundred sub tests.
+  the terminal_ shows :ref:`Exception<how to test that an Exception is raised>` for one hundred sub tests.
 
 * I remove the comments and the :ref:`Exception<how to test that an Exception is raised>` from :ref:`test_assertion_error`
 
@@ -296,7 +296,7 @@ I can also make a :ref:`generator<generator expressions>` with the `product meth
 
         def test_assertion_error(self):
             for first, second in itertools.product(
-                self.basic_objects, repeat=2
+                self.basic_objects, repeat=2,
             ):
 
   the test passes.
@@ -333,7 +333,7 @@ close the project
 review
 *********************************************************************************
 
-I can use a :ref:`generator expression<generator expressions>` to replace :ref:`for loops<what is a for loop?>`, and I can use `itertools.product` for nested :ref:`for loops<what is a for loop?>`.
+I can use a :ref:`generator expression<generator expressions>` to replace :ref:`for loops<what is a for loop?>`, and I can use `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
 
 ----
 

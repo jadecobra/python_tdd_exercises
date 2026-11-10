@@ -185,5 +185,5 @@ The code in :ref:`test_assertion_error` after :ref:`test AssertionError with gen
 .. literalinclude:: assertion_error/tests/test_assertion_error_w_generators.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 54
+  :lineno-start: 20
   :lines: 20-40
