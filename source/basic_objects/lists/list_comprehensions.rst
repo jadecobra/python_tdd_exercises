@@ -86,8 +86,9 @@ questions about list comprehensions
 * :ref:`how can I make a list with the extend method?<test_making_a_list_w_extend>`
 * :ref:`how can I make a list with a list comprehension?<test_making_a_list_w_a_list_comprehension>`
 * :ref:`how can I make a list based on a condition?<test_making_a_list_w_conditions>`
-* :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
+* :ref:`how can I use the filter function?<another way to make a list based on a condition>`
 * :ref:`how can I transform a list?<test_making_a_list_w_processes>`
+* :ref:`how can I use the map function?<another way to process a list>`
 * :ref:`how can I transform and filter a list?<test_making_a_list_w_processes_and_conditions>`
 * :ref:`how can I make sure object attributes are reset for every test?<how to use the setUp method to reset object attributes for every test>`
 
@@ -1947,7 +1948,7 @@ There is a `Python Built-in Function`_ I can use to do the same thing as this `l
 
   the test passes. This is not sexy.
 
-* another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of `The Python Standard Library`_ and needs an `import statement`_
+* another option is to use the `filterfalse method`_ from the `itertools library`_, it is part of `The Python Standard Library`_ and needs an `import statement`_
 
   .. code-block:: python
     :caption: list_comprehensions/src/list_comprehensions/__init__.py

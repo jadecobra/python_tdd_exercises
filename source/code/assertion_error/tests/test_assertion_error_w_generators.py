@@ -18,12 +18,8 @@ class TestAssertionError(unittest.TestCase):
     )
 
     def test_assertion_error(self):
-        # for first, second in (
-        #     (first, second) for first in self.basic_objects
-        #                     for second in self.basic_objects
-        # ):
         for first, second in itertools.product(
-            self.basic_objects, repeat=2
+            self.basic_objects, repeat=2,
         ):
             with self.subTest(pair=(first, second)):
                 try:

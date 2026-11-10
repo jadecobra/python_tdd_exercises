@@ -3,8 +3,6 @@
    :keywords: Jacob Itegboje, Python functions, Test-Driven Development, Python programming, keyword arguments, positional arguments, coding tutorial
 
 .. include:: ../links.rst
-.. _product: https://docs.python.org/3/library/itertools.html#itertools.product
-.. _product method: product_
 
 #################################################################################
 functions 5: use for loops

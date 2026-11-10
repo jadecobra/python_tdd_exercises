@@ -46,7 +46,9 @@
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _import statements: `import statement`_
 .. _int: https://docs.python.org/3/library/functions.html#int
-.. _itertools module: https://docs.python.org/3/library/itertools.html
+.. _itertools: https://docs.python.org/3/library/itertools.html
+.. _itertools module: itertools_
+.. _itertools library: itertools_
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: int_
 .. _integers: int_
