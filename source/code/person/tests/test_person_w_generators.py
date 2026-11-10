@@ -1,4 +1,5 @@
 import datetime
+import itertools
 import src.person
 import unittest
 
@@ -6,74 +7,36 @@ import unittest
 class TestPerson(unittest.TestCase):
 
     this_year = datetime.date.today().year
-    younger_than_18 = this_year - 17
-    not_younger_than_18 = this_year - 18
 
     first_name = 'first_name'
     last_name = 'last_name'
     sex = 'M'
 
-    booleans = False, True
+    booleans = (False, True)
     people = (
-        (not_younger_than_18, first, second, third, fourth
-        for first in booleans
-        for second in booleans
-        for third in booleans
-        for fourth in booleans)
+        (year_of_birth, is_citizen, passed_test)
+        for year_of_birth in (
+            this_year-17, this_year-18,
+            None, 2026.0, '2026', (2026,),
+            {2026}, {'year_of_birth': 2026},
+        )
+        for is_citizen in (False, True)
+        for passed_test in (False, True)
     )
-
-    people = (
+    people = itertools.product(
         (
-            # is_citizen, passed_test
-            not_younger_than_18, True, True,
-            True, True,
+            this_year-17, this_year-18,
+            None, 2026.0, '2026', (2026,),
+            {2026}, {'year_of_birth': 2026},
         ),
-        (
-            # is_citizen, not passed_test
-            not_younger_than_18, True, False,
-            True, False,
-        ),
-        (
-            # not is_citizen, passed_test
-            not_younger_than_18, False, True,
-            False, True,
-        ),
-        (
-            # not is_citizen, not passed_test
-            not_younger_than_18, False, False,
-            False, False,
-        ),
-        (
-            # underage, is_citizen, passed_test
-            younger_than_18, True, True,
-            False, False,
-        ),
-        (
-            # underage, not is_citizen, passed_test
-            younger_than_18, False, True,
-            False, False,
-        ),
-        (
-            # underage, is_citizen, not passed_test
-            younger_than_18, True, False,
-            False, False,
-        ),
-        (
-            # underage, not is_citizen, not passed_test
-            younger_than_18, False, False,
-            False, False,
-        ),
-        # year_of_birth is not an integer
-        (None, False, False,),
-        (2026.0, False, False,),
-        ('2026', False, False,),
-        ((2026,), False, False,),
+        (False, True),
+        (False, True)
     )
 
     def calculate_age(self, year_of_birth):
         return self.this_year - year_of_birth
 
-    def test_person_object(self):
+    def test_person_class(self):
         for a_person in self.people:
             year_of_birth = a_person[0]
 
@@ -101,10 +64,16 @@ class TestPerson(unittest.TestCase):
                             f' {self.calculate_age(year_of_birth)}.'
                         )
                     )
-                    self.assertEqual(an_instance.can_vote(), a_person[3])
-                    self.assertEqual(
-                        an_instance.can_get_license(), a_person[4]
-                    )
+                    if self.calculate_age(year_of_birth) < 18:
+                        self.assertEqual(an_instance.can_vote(), False)
+                        self.assertEqual(
+                            an_instance.can_get_license(), False
+                        )
+                    else:
+                        self.assertEqual(an_instance.can_vote(), a_person[1])
+                        self.assertEqual(
+                            an_instance.can_get_license(), a_person[2]
+                        )
 
     def test_say_hello_function(self):
         for a_person in self.people:
@@ -172,25 +141,29 @@ class TestPerson(unittest.TestCase):
                 )
 
     def test_dir_person_object(self):
+        dir_person = dir(object)
+        dir_person.extend((
+            '__dict__', '__firstlineno__',
+            '__module__', '__static_attributes__',
+            '__weakref__',
+            'can_get_license', 'can_vote',
+            'check_age', 'say_hello',
+        ))
+        dir_person.sort()
         self.assertEqual(
             dir(src.person.Person),
-            [
-                '__class__', '__delattr__', '__dict__',
-                '__dir__', '__doc__', '__eq__',
-                '__firstlineno__', '__format__', '__ge__',
-                '__getattribute__', '__getstate__', '__gt__',
-                '__hash__', '__init__', '__init_subclass__',
-                '__le__', '__lt__', '__module__', '__ne__',
-                '__new__', '__reduce__', '__reduce_ex__',
-                '__repr__', '__setattr__', '__sizeof__',
-                '__static_attributes__', '__str__',
-                '__subclasshook__', '__weakref__',
-                'can_get_license', 'can_vote', 'check_age',
-                'say_hello',
-            ]
+            dir_person
         )
 
     def test_dir_person_instance(self):
+        self.maxDiff = None
+        dir_person_instance = dir(src.person.Person)
+        dir_person_instance.extend((
+            'age', 'first_name', 'is_citizen',
+            'last_name', 'passed_test',
+            'sex', 'year_of_birth',
+        ))
+        dir_person_instance.sort()
         self.assertEqual(
             dir(
                 src.person.Person(
@@ -200,22 +173,7 @@ class TestPerson(unittest.TestCase):
                     year_of_birth=2026,
                 )
             ),
-            [
-                '__class__', '__delattr__', '__dict__',
-                '__dir__', '__doc__', '__eq__',
-                '__firstlineno__', '__format__', '__ge__',
-                '__getattribute__', '__getstate__', '__gt__',
-                '__hash__', '__init__', '__init_subclass__',
-                '__le__', '__lt__', '__module__', '__ne__',
-                '__new__', '__reduce__', '__reduce_ex__',
-                '__repr__', '__setattr__', '__sizeof__',
-                '__static_attributes__', '__str__',
-                '__subclasshook__', '__weakref__',
-                'age', 'can_get_license', 'can_vote',
-                'check_age', 'first_name', 'is_citizen',
-                'last_name', 'passed_test', 'say_hello',
-                'sex', 'year_of_birth',
-            ]
+            dir_person_instance
         )
 
 

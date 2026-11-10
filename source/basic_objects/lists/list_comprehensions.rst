@@ -2613,7 +2613,7 @@ what is next?
   ../../functions/functions_w_generators
   ../../truth_table/projects/microwave/microwave_w_generators
   ../../how_to/telephone/telephone_w_generators
-  ../../how_to/person/person_w_generators
+  ../../how_to/person/make_person_w_generators
   ../../truth_table/projects/traffic_light/traffic_light_w_generators
   ../../truth_table/binary_operations/binary_operations_w_generators
 
