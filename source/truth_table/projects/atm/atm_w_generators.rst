@@ -1,10 +1,10 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test atm with generators in the atm project. Continues the Automated Teller Machine truth table. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Refactor nested for loops over booleans (right_pin, enough_cash, above_daily_limit, card_expired) into a generator expression using placeholder variable _ for unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product(booleans, repeat=4). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools. Simplify by passing (False, True) directly into itertools.product((False, True), repeat=4) and removing the booleans variable. Git commit 'test_atm with generators'.
+  :keywords: Jacob Itegboje, Pumping Python, test atm with generators, Automated Teller Machine, ATM project, generator expressions, itertools.product, repeat parameter, nested for loops, subTest, 16 subtests, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, withdraw, truth table, red green refactor
 
 .. include:: ../../../links.rst
 
-.. _atm:
+.. _test atm with generators:
 
 #################################################################################
 test atm with generators
@@ -21,7 +21,7 @@ preview
 
 This is the test I have at the end of the chapter
 
-.. literalinclude:: ../../../code/atm/tests/test_atm_w_loops.py
+.. literalinclude:: ../../../code/atm/tests/test_atm_w_generators.py
   :caption: atm/tests/test_atm.py
   :language: python
   :linenos:
@@ -61,8 +61,6 @@ test_atm with generators
 :red:`RED`: make it fail
 =================================================================================
 
-----
-
 I add a :ref:`generator expression<generator expressions>` for the :ref:`for loops<what is a for loop?>` in :ref:`test_atm<extract test_atm>`
 
 .. code-block:: python
@@ -98,6 +96,7 @@ I add a :ref:`generator expression<generator expressions>` for the :ref:`for loo
                               above_daily_limit=above_daily_limit,
                               card_expired=card_expired,
                           ):
+                              raise Exception
                               result = src.atm.withdraw(
                                   right_pin=right_pin,
                                   enough_cash=enough_cash,
@@ -113,14 +112,11 @@ the terminal_ is my friend, and shows :ref:`Exception<how to raise an Exception>
 :green:`GREEN`: make it pass
 =================================================================================
 
-----
-
 I remove the :ref:`Exception<how to raise an Exception>`
 
 .. code-block:: python
   :caption: atm/tests/test_atm.py
   :lineno-start: 23
-  :emphasize-lines: 7
 
                           with self.subTest(
                               right_pin=right_pin,
@@ -128,7 +124,6 @@ I remove the :ref:`Exception<how to raise an Exception>`
                               above_daily_limit=above_daily_limit,
                               card_expired=card_expired,
                           ):
-                              raise Exception
                               result = src.atm.withdraw(
                                   right_pin=right_pin,
                                   enough_cash=enough_cash,
@@ -161,8 +156,6 @@ the test is green again.
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
-
-----
 
 * I use :ref:`itertools.product<another way to make a generator for nested loops>` in place of the :ref:`generator expression<generator expressions>`
 
@@ -204,7 +197,7 @@ the test is green again.
                                 card_expired=card_expired,
                             ):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
     :caption: terminal
@@ -256,7 +249,7 @@ the test is green again.
     :caption: terminal
     :emphasize-lines: 1
 
-    git commit -am 'add test_if_not_enough_cash'
+    git commit -am 'test_atm with generators'
 
 ----
 

@@ -49,6 +49,7 @@
 .. _itertools: https://docs.python.org/3/library/itertools.html
 .. _itertools module: itertools_
 .. _itertools library: itertools_
+.. _itertools.product: https://docs.python.org/3/library/itertools.html#itertools.product
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: int_
 .. _integers: int_
