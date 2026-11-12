@@ -36,9 +36,9 @@
 what is a dictionary?
 #################################################################################
 
-A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<everything is an object>`. I add tests to see which of :ref:`the Python basic data types<basic objects>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`. The :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<everything is an object>`. I add tests to see which of :ref:`the Python basic data types<basic objects>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
 
-I think this is the most important :ref:`data structure<basic objects>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<what is a list?>` and tuples_. In programming I have had to work with JSON_ which I can read and write as dictionaries_
+I think this is the most important :ref:`data structure<basic objects>` because it can hold all the others, same as with :ref:`lists<what is a list?>` and tuples_. In programming I have had to work with JSON_ which I can read and write as dictionaries_.
 
 ----
 
@@ -77,93 +77,29 @@ questions about dictionaries
 start the project
 *********************************************************************************
 
-* I name this project ``dictionaries``
-* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1``
+* I open a terminal_
+* I give ``dictionaries`` as the first argument to the :ref:`makePythonTdd<makePythonTdd with variables>` program_
 
-  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tab-set::
+    :sync-group: os
 
-    .. code-block:: python
-      :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-      code makePythonTdd.sh
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
 
-    on `Windows`_ without `Windows Subsystem for Linux`_ use
+        ./makePythonTdd.sh dictionaries
 
-    .. code-block:: python
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      code makePythonTdd.ps1
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
 
-* I change everywhere I have ``list_comprehensions`` to the name of this project
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2, 3, 5, 12, 20
-
-    #!/bin/bash
-    mkdir dictionaries
-    cd dictionaries
-    mkdir src
-    touch src/dictionaries.py
-    mkdir tests
-    touch tests/__init__.py
-
-    echo "import unittest
-
-
-    class TestDictionaries(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions seen
-    # AssertionError
-    " > tests/test_dictionaries.py
-
-  .. note::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
-
-    .. code-block:: PowerShell
-      :linenos:
-      :emphasize-lines: 1-2, 4, 11, 18
-
-      mkdir dictionaries
-      cd dictionaries
-      mkdir src
-      New-Item src/dictionaries.py
-      mkdir tests
-      New-Item tests/__init__.py
-
-      "import unittest
-
-
-      class TestDictionaries(unittest.TestCase):
-
-          def test_failure(self):
-              self.assertFalse(True)
-
-      # Exceptions seen
-      # AssertionError
-      " | Out-File tests/test_dictionaries.py
-
-* I run the program_ in the terminal_
-
-  .. code-block:: python
-    :caption: terminal
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh
-
-  .. note::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      .\makePythonTdd.ps1
+        .\makePythonTdd.ps1 dictionaries
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -172,32 +108,77 @@ start the project
     :emphasize-lines: 10
     :emphasize-text: tests/test_dictionaries.py:7
 
-    ========================= FAILURES =========================
-    _______________________ TestDictionaries.test_failure ________________________
+    ======================== FAILURES ==========================
+    ______________ Testdictionaries.test_failure _________________
 
-    self = <tests.test_dictionaries.TestDictionaries testMethod=test_failure>
+    self = <tests.test_dictionaries.Testdictionaries testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_dictionaries.py:7: AssertionError
-    ================== short test summary info ====================
-    FAILED tests/test_dictionaries.py::TestDictionaries::test_failure - AssertionError: True is not false
-    ==================== 1 failed in X.YZs =====================
+    ================== short test summary info ==================
+    FAILED tests/test_dictionaries.py::Testdictionaries::test_failure - AssertionError: True is not false
+    ===================== 1 failed in X.YZs =====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_dictionaries.py:7`` to put the cursor on line 7
+* I open ``test_dictionaries.py`` from the ``tests`` folder_ then put the cursor on line 7
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :lineno-start: 4
+    :emphasize-lines: 4-5
 
-            self.assertFalse(False)
+    class Testdictionaries(unittest.TestCase):
+
+        def test_failure(self):
+            # self.assertFalse(True)
+            self.assertTrue(True)
+
+
+    # Exceptions seen
 
   the test passes.
+
+* I change ``Testdictionaries`` to ``TestDictionaries`` to match :ref:`Python convention<conventions>`
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :linenos:
+    :emphasize-lines: 4
+
+    import unittest
+
+
+    class TestDictionaries(unittest.TestCase):
+
+        def test_failure(self):
+
+* I open a new terminal_ then `change directory`_ to ``dictionaries``
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    cd dictionaries
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git add .
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
 
 ----
 
@@ -211,9 +192,10 @@ test_making_a_dictionary
 
 ----
 
-I change :ref:`test_failure` to ``test_making_a_dictionary`` then add an assertion_
+I change :ref:`test_failure` to ``test_making_a_dictionary`` then add an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :linenos:
   :emphasize-lines: 6-7
 
@@ -228,6 +210,7 @@ I change :ref:`test_failure` to ``test_making_a_dictionary`` then add an asserti
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {} != None
 
@@ -242,15 +225,19 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change the expectation to match
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 6
   :emphasize-lines: 2
 
       def test_making_a_dictionary(self):
           self.assertEqual(dict(), {})
 
+
+  # Exceptions seen
+
 the test passes. These are two ways to make an empty :ref:`dictionary<what is a dictionary?>`
 
-* ``dict()``
+* the dict_ constructor - ``dict()``
 * curly braces - ``{}``
 
 ----
@@ -261,7 +248,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`, this time with input to make a :ref:`dictionary<what is a dictionary?>` with things in it
+* I add an :ref:`assertion<what is an assertion?>` for a :ref:`dictionary<what is a dictionary?>` with things in it
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -272,9 +259,13 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
             self.assertEqual(dict(), {})
             self.assertEqual(dict(0), {})
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'int' object is not iterable
 
@@ -300,11 +291,15 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
             self.assertEqual(dict(), {})
             self.assertEqual(dict((0, 1)), {})
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: none
 
-    TypeError: cannot convert dictionary update sequence element #0 to a sequence
+    TypeError: cannot convert dictionary update
+               sequence element #0 to a sequence
 
 * I try a :ref:`keyword argument<test_keyword_arguments>`
 
@@ -319,6 +314,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} != {}
 
@@ -350,6 +346,7 @@ test_making_a_dictionary_w_none_as_a_key
 I add a test to see if I can use :ref:`None<what is None?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 8
   :emphasize-lines: 3-4
 
@@ -364,6 +361,7 @@ I add a test to see if I can use :ref:`None<what is None?>` as a :ref:`key in a 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {None: 'boom'} != {None: 'bap'}
 
@@ -378,6 +376,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 11
   :emphasize-lines: 1
 
@@ -400,6 +399,7 @@ test_making_a_dictionary_w_a_boolean_as_a_key
 I add a test to see if I can use a :ref:`boolean<what are booleans?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 10
   :emphasize-lines: 4-5
 
@@ -415,6 +415,7 @@ I add a test to see if I can use a :ref:`boolean<what are booleans?>` as a :ref:
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {False: 'boom'} != {False: 'bap'}
 
@@ -429,6 +430,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 14
   :emphasize-lines: 1
 
@@ -447,6 +449,7 @@ the test passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key in a 
 I add an :ref:`assertion<what is an assertion?>` for the :ref:`other boolean<test_what_is_true>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 13
   :emphasize-lines: 3-4
 
@@ -459,12 +462,14 @@ I add an :ref:`assertion<what is an assertion?>` for the :ref:`other boolean<tes
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {False: 'boom', True: 'bap'} != {False: 'boom'}
 
 I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 14
   :emphasize-lines: 3
 
@@ -490,6 +495,7 @@ test_making_a_dictionary_w_a_number_as_a_key
 I add a failing test to see if I can use a number as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 16
   :emphasize-lines: 4-8
 
@@ -508,6 +514,7 @@ I add a failing test to see if I can use a number as a :ref:`key in a dictionary
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {0: 'boom'} != {0: 'bap'}
 
@@ -522,6 +529,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 20
   :emphasize-lines: 3
 
@@ -543,6 +551,7 @@ the test passes. I can use an integer_ as a :ref:`key in a dictionary<test_keys_
 I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`. I add a float_ to the :ref:`dictionary<what is a dictionary?>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 19
   :emphasize-lines: 3
 
@@ -555,12 +564,14 @@ I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {0: 'boom', 0.1: 'bap'} != {0: 'boom'}
 
 I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 20
   :emphasize-lines: 3
 
@@ -586,6 +597,7 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 I add a test to see if I can use a tuple_ (anything in parentheses (``()``) separated by commas, separated by a comma) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 20
   :emphasize-lines: 6-10
 
@@ -606,6 +618,7 @@ I add a test to see if I can use a tuple_ (anything in parentheses (``()``) sepa
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {(0, 1): 'boom'} != {(0, 1): 'bap'}
 
@@ -620,6 +633,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 26
 
           self.assertEqual(
@@ -644,6 +658,7 @@ test_making_a_dictionary_w_a_list_as_a_key
 I add a test for :ref:`lists` (anything in square brackets (``[]``))
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 26
   :emphasize-lines: 6-9
 
@@ -663,6 +678,7 @@ I add a test for :ref:`lists` (anything in square brackets (``[]``))
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   TypeError: unhashable type: 'list'
 
@@ -716,6 +732,7 @@ test_making_a_dictionary_w_a_set_as_a_key
 I add another test with a set_ (single items in curly braces (``{}``)) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 32
   :emphasize-lines: 4-5
 
@@ -731,6 +748,7 @@ I add another test with a set_ (single items in curly braces (``{}``)) as a :ref
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   TypeError: unhashable type: 'set'
 
@@ -745,6 +763,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I add :ref:`assertRaises<another way to test if an Exception is raised>` to handle the :ref:`Exception<how to test that an Exception is raised>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 35
   :emphasize-lines: 2-3
 
@@ -769,6 +788,7 @@ test_making_a_dictionary_w_a_dictionary_as_a_key
 I add another test, this time for a :ref:`dictionary<what is a dictionary?>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 36
   :emphasize-lines: 4-6
 
@@ -785,6 +805,7 @@ I add another test, this time for a :ref:`dictionary<what is a dictionary?>`
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   TypeError: unhashable type: 'dict'
 
@@ -799,6 +820,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 39
   :emphasize-lines: 3-4
 
@@ -827,6 +849,7 @@ test_dir_dictionaries
 I add a new test with the `dir built-in function`_ to see the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`dictionaries<what is a dictionary?>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 41
   :emphasize-lines: 4-8
 
@@ -845,6 +868,7 @@ I add a new test with the `dir built-in function`_ to see the :ref:`attributes<w
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
@@ -1025,6 +1049,7 @@ test_clear_empties_a_dictionary
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} != {'key': 'value'}
 
@@ -1041,6 +1066,7 @@ test_clear_empties_a_dictionary
 I change the values to match
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 98
   :emphasize-lines: 4
 
@@ -1111,6 +1137,7 @@ test_copy_a_dictionary
 I add a test for the `copy method`_
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 101
   :emphasize-lines: 3-5
 
@@ -1127,6 +1154,7 @@ I add a test for the `copy method`_
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {'key': 'value'} is not None
 
@@ -1143,6 +1171,7 @@ this :ref:`method<what is a method?>` returns a copy of the :ref:`dictionary<wha
 I add the value to the :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 103
   :emphasize-lines: 3-6
 
@@ -1156,12 +1185,14 @@ I add the value to the :ref:`assertion<what is an assertion?>`
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
 I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 103
   :emphasize-lines: 3
 
@@ -1239,6 +1270,7 @@ test_fromkeys_makes_a_dictionary_from_an_iterable
 I add a test for the next :ref:`method<what is a method?>` from the TODO list
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 105
   :emphasize-lines: 6-8
 
@@ -1257,6 +1289,7 @@ I add a test for the next :ref:`method<what is a method?>` from the TODO list
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   TypeError: fromkeys expected at least 1 argument, got 0
 
@@ -1282,6 +1315,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'int' object is not iterable
 
@@ -1297,6 +1331,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: None, 1: None} is not None
 
@@ -1319,6 +1354,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
@@ -1362,6 +1398,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} != {}
 
@@ -1407,6 +1444,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a method?>` without inputs the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: fromkeys expected at least 1 argument, got 0
 
@@ -1439,6 +1477,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: 'default', 1: 'default'} != {0: None, 1: None}
 
@@ -1511,6 +1550,7 @@ test_get_value_of_a_key_in_a_dictionary
 I add a test for the `get method`_
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 111
   :emphasize-lines: 6-8
 
@@ -1529,6 +1569,7 @@ I add a test for the `get method`_
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   TypeError: get expected at least 1 argument, got 0
 
@@ -1543,6 +1584,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I add a value to the call
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 118
   :emphasize-lines: 1
 
@@ -1581,6 +1623,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' is not None
 
@@ -1601,6 +1644,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' is not None : default
 
@@ -1655,6 +1699,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'value' != 'default'
 
@@ -1741,6 +1786,7 @@ test_items_returns_iterable_of_key_value_pairs_of_a_dictionary
 I add the next test from the TODO list
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 122
   :emphasize-lines: 6-8
 
@@ -1759,6 +1805,7 @@ I add the next test from the TODO list
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: dict_items([('key', 'value')]) is not None
 
@@ -1786,6 +1833,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'dict_items' is not defined
 
@@ -1819,6 +1867,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
@@ -1837,6 +1886,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [('key', 'value')] is not None : [('key', 'value')]
 
@@ -1889,6 +1939,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [('key0', 'value0'), ('keyN', [0, 1, 2, 'n'])] != [('key', 'value')]
 
@@ -1973,6 +2024,7 @@ test_keys_of_a_dictionary
 I add a new test
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 132
   :emphasize-lines: 9-11
 
@@ -1994,6 +2046,7 @@ I add a new test
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: dict_keys(['key']) is not None
 
@@ -2024,6 +2077,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'dict_keys' is not defined
 
@@ -2046,6 +2100,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: dict_keys(['key']) is not None : ['key']
 
@@ -2064,6 +2119,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ['key'] is not None : ['key']
 
@@ -2109,6 +2165,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: ['key0', 'keyN'] != ['key']
 
@@ -2181,6 +2238,7 @@ test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 I wonder if the `pop method`_ of :ref:`dictionaries<what is a dictionary?>` behaves the same way as the :ref:`pop method of lists<test_pop_removes_and_returns_last_item_from_a_list>`. I add a test for it
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 145
   :emphasize-lines: 6-8
 
@@ -2199,6 +2257,7 @@ I wonder if the `pop method`_ of :ref:`dictionaries<what is a dictionary?>` beha
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   TypeError: pop expected at least 1 argument, got 0
 
@@ -2224,6 +2283,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: 0
 
@@ -2256,6 +2316,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: 'not in dictionary'
 
@@ -2285,6 +2346,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 * I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: pop expected at least 1 argument, got 0
 
@@ -2314,6 +2376,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' is not None
 
@@ -2332,6 +2395,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' is not None : default
 
@@ -2368,6 +2432,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'value' != 'default'
 
@@ -2403,6 +2468,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} != {'key': 'value'}
 
@@ -2475,6 +2541,7 @@ test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary
 I add a failing test for the next item in the TODO list
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 163
   :emphasize-lines: 3-5
 
@@ -2490,6 +2557,7 @@ I add a failing test for the next item in the TODO list
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: ('key', 'value') is not None
 
@@ -2506,6 +2574,7 @@ the `popitem method`_ returns the :ref:`key-value pair<test_items_returns_iterab
 I add the value from the terminal_ as the expectation
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 166
   :emphasize-lines: 2-5
 
@@ -2518,6 +2587,7 @@ I add the value from the terminal_ as the expectation
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: ('key', 'value') is not None : ('key', 'value')
 
@@ -2558,6 +2628,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} != {'key': 'value'}
 
@@ -2595,6 +2666,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n']) != ('key', 'value')
 
@@ -2615,6 +2687,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key0': 'value0'} != {'key': 'value'}
 
@@ -2680,6 +2753,7 @@ test_setdefault_adds_given_key_to_a_dictionary
 I add a test for the `setdefault method`_
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 174
   :emphasize-lines: 3-5
 
@@ -2695,6 +2769,7 @@ I add a test for the `setdefault method`_
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   TypeError: setdefault expected at least 1 argument, got 0
 
@@ -2709,6 +2784,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 I pass a value in the call
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 178
   :emphasize-lines: 1
 
@@ -2747,6 +2823,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' is not None
 
@@ -2766,6 +2843,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' is not None : default
 
@@ -2799,6 +2877,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value', 0: 'default'} != {'key': 'value'}
 
@@ -2842,6 +2921,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 0: 'default'}
 
@@ -2890,6 +2970,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'value' != 'default'
 
@@ -3016,6 +3097,7 @@ test_update_a_dictionary
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} != {}
 
@@ -3032,6 +3114,7 @@ test_update_a_dictionary
 I change the values in the expectation to match the terminal_
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 197
   :emphasize-lines: 1
 
@@ -3062,6 +3145,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'int' object is not iterable
 
@@ -3077,6 +3161,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -3094,6 +3179,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value'}
 
@@ -3131,6 +3217,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'updated value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value', 'new_key': [0, 1, 2, 'n']}
 
@@ -3172,6 +3259,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n'], 'another_key': {0, 1, 2, 'n'}} != {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n']}
 
@@ -3258,6 +3346,7 @@ test_values_of_a_dictionary
 I add a test for the last :ref:`method<what is a method?>` in my TODO list
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 201
   :emphasize-lines: 10-12
 
@@ -3280,6 +3369,7 @@ I add a test for the last :ref:`method<what is a method?>` in my TODO list
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: dict_values(['value']) is not None
 
@@ -3310,6 +3400,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'dict_values' is not defined
 
@@ -3328,6 +3419,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: dict_values(['value']) is not None : ['value']
 
@@ -3346,6 +3438,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ['value'] is not None : ['value']
 
@@ -3391,6 +3484,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: ['value0', [0, 1, 2, 'n']] != ['value']
 
@@ -3472,6 +3566,7 @@ test_key_error
 I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref:`key<test_keys_of_a_dictionary>` that is in a :ref:`dictionary<what is a dictionary?>`
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 215
   :emphasize-lines: 9-11
 
@@ -3493,6 +3588,7 @@ I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   AssertionError: 'value' != ''
 
@@ -3509,6 +3605,7 @@ I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in 
 I change the value in the expectation to match the terminal_
 
 .. code-block:: python
+  :caption: dictionaries/tests/test_dictionaries.py
   :lineno-start: 225
   :emphasize-lines: 1
 
@@ -3537,6 +3634,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: 'not_in_dictionary'
 
@@ -3571,6 +3669,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' != ''
 
@@ -3605,6 +3704,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: 'not_in_dictionary'
 
@@ -3642,6 +3742,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'default' != ''
 
@@ -3675,6 +3776,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: 'popitem(): dictionary is empty'
 
