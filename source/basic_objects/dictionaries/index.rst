@@ -322,14 +322,29 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 8
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 3
 
+        def test_making_a_dictionary(self):
+            self.assertEqual(dict(), {})
             self.assertEqual(dict(key='value'), {'key': 'value'})
+
+
+    # Exceptions seen
 
   the test passes.
 
-:ref:`I know how to make a dictionary<test_making_a_dictionary>`. I used a string_ as a :ref:`key<test_keys_of_a_dictionary>` in this test. Next I test other :ref:`Python basic data types<basic objects>` to see which ones I can use as :ref:`keys<test_keys_of_a_dictionary>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_making_a_dictionary'
+
+:ref:`I know how to make a dictionary<test_making_a_dictionary>`.
+
+I used a string_ as a :ref:`key<test_keys_of_a_dictionary>` in this test. Next I test other :ref:`Python basic data types<basic objects>` to see which ones I can use as :ref:`keys<test_keys_of_a_dictionary>`.
 
 ----
 
@@ -373,16 +388,30 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change ``'bap'`` to ``'boom'``
+* I change ``'bap'`` to ``'boom'``
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 11
-  :emphasize-lines: 1
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 10
+    :emphasize-lines: 2
 
-          self.assertEqual({None: 'boom'}, {None: 'boom'})
+        def test_making_a_dictionary_w_none_as_a_key(self):
+            self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-the test passes. I can use strings_ and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    git commit -am 'add test_making_a_dictionary_w_none_as_a_key'
+
+I can use strings_ and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -400,10 +429,9 @@ I add a test to see if I can use a :ref:`boolean<what are booleans?>` as a :ref:
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 10
-  :emphasize-lines: 4-5
+  :lineno-start: 11
+  :emphasize-lines: 3-4
 
-      def test_making_a_dictionary_w_none_as_a_key(self):
           self.assertEqual({None: 'boom'}, {None: 'boom'})
 
       def test_making_a_dictionary_w_a_boolean_as_a_key(self):
@@ -427,16 +455,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change ``'bap'`` to ``'boom'``
+* I change ``'bap'`` to ``'boom'``
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 14
-  :emphasize-lines: 1
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 13
+    :emphasize-lines: 2
 
-          self.assertEqual({False: 'boom'}, {False: 'boom'})
+        def test_making_a_dictionary_w_a_boolean_as_a_key(self):
+            self.assertEqual({False: 'boom'}, {False: 'boom'})
 
-the test passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+
+    # Exceptions seen
+
+  the test passes.
+
+I can use :ref:`False<test_what_is_false>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -446,39 +480,54 @@ the test passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key in a 
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` for the :ref:`other boolean<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`other boolean<test_what_is_true>`
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 13
-  :emphasize-lines: 3-4
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 13
+    :emphasize-lines: 2-5
 
-      def test_making_a_dictionary_w_a_boolean_as_a_key(self):
-          self.assertEqual(
-              {False: 'boom', True: 'bap'},
-              {False: 'boom'}
-          )
+        def test_making_a_dictionary_w_a_boolean_as_a_key(self):
+            self.assertEqual(
+                {False: 'boom', True: 'bap'},
+                {False: 'boom'}
+            )
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
-  :caption: terminal
+  .. code-block:: python
+    :caption: terminal
 
-  AssertionError: {False: 'boom', True: 'bap'} != {False: 'boom'}
+    AssertionError: {False: 'boom', True: 'bap'} != {False: 'boom'}
 
-I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
+* I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 14
-  :emphasize-lines: 3
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 13
+    :emphasize-lines: 4
 
-          self.assertEqual(
-              {False: 'boom', True: 'bap'},
-              {False: 'boom', True: 'bap'}
-          )
+        def test_making_a_dictionary_w_a_boolean_as_a_key(self):
+            self.assertEqual(
+                {False: 'boom', True: 'bap'},
+                {False: 'boom', True: 'bap'}
+            )
 
-the test passes. I can use strings_, :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_dictionary_w_a_boolean_as_a_key'
+
+I can use strings_, :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`.
 
 ----
 
