@@ -579,15 +579,21 @@ I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 20
-  :emphasize-lines: 3
+  :lineno-start: 19
+  :emphasize-lines: 4
 
+      def test_making_a_dictionary_w_a_number_as_a_key(self):
           self.assertEqual(
               {0: 'boom'},
               {0: 'boom'}
           )
 
-the test passes. I can use an integer_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+
+  # Exceptions seen
+
+the test passes.
+
+I can use an integer_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`.
 
 ----
 
@@ -597,39 +603,51 @@ the test passes. I can use an integer_ as a :ref:`key in a dictionary<test_keys_
 
 ----
 
-I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`. I add a float_ to the :ref:`dictionary<what is a dictionary?>`
+* I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`. I add a float_ to the :ref:`dictionary<what is a dictionary?>`
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 19
-  :emphasize-lines: 3
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 19
+    :emphasize-lines: 3
 
-      def test_making_a_dictionary_w_a_number_as_a_key(self):
-          self.assertEqual(
-              {0: 'boom', 0.1: 'bap'},
-              {0: 'boom'}
-          )
+        def test_making_a_dictionary_w_a_number_as_a_key(self):
+            self.assertEqual(
+                {0: 'boom', 0.1: 'bap'},
+                {0: 'boom'}
+            )
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
-  :caption: terminal
+  .. code-block:: python
+    :caption: terminal
 
-  AssertionError: {0: 'boom', 0.1: 'bap'} != {0: 'boom'}
+    AssertionError: {0: 'boom', 0.1: 'bap'} != {0: 'boom'}
 
-I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
+* I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 20
-  :emphasize-lines: 3
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 19
+    :emphasize-lines: 4
 
-          self.assertEqual(
-              {0: 'boom', 0.1: 'bap'},
-              {0: 'boom', 0.1: 'bap'}
-          )
+        def test_making_a_dictionary_w_a_number_as_a_key(self):
+            self.assertEqual(
+                {0: 'boom', 0.1: 'bap'},
+                {0: 'boom', 0.1: 'bap'}
+            )
 
-the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_dictionary_w_a_number_as_a_key'
+
+I can use strings_, numbers (floats_ and integers_), :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`.
 
 ----
 
