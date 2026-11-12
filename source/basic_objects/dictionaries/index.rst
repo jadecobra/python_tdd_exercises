@@ -661,7 +661,7 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 
 ----
 
-I add a test to see if I can use a tuple_ (anything in parentheses (``()``) separated by commas, separated by a comma) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I add a test to see if I can use a tuple_ (anything in parentheses (``()``) separated by a comma) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
@@ -697,18 +697,35 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change ``'bap'`` to ``'boom'``
+* I change ``'bap'`` to ``'boom'``
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 26
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 25
+    :emphasize-lines: 4
 
-          self.assertEqual(
-              {(0, 1): 'boom'},
-              {(0, 1): 'boom'}
-          )
+        def test_making_a_dictionary_w_a_tuple_as_a_key(self):
+            self.assertEqual(
+                {(0, 1): 'boom'},
+                {(0, 1): 'boom'}
+            )
 
-the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_dictionary_w_a_tuple_as_a_key'
+
+
+I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`.
 
 ----
 
@@ -722,7 +739,7 @@ test_making_a_dictionary_w_a_list_as_a_key
 
 ----
 
-I add a test for :ref:`lists` (anything in square brackets (``[]``))
+I add a test for making a :ref:`dictionary<what is a dictionary>` with a :ref:`list` (anything in square brackets (``[]``)) as a :ref:`key<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
@@ -747,7 +764,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  TypeError: unhashable type: 'list'
+  TypeError: cannot use 'list' as a dict key
+             (unhashable type: 'list')
 
 ----
 
@@ -766,8 +784,10 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         def test_making_a_dictionary_w_a_list_as_a_key(self):
 
-            {[3, 2, 1]: 'BOOM!!!'}
+                {[3, 2, 1]: 'BOOM!!!'}
 
+
+    # Exceptions seen
 
   the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
 
@@ -782,7 +802,18 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             with self.assertRaises(TypeError):
                 {[3, 2, 1]: 'BOOM!!!'}
 
-  the test passes. I cannot use a :ref:`list<what is a list?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_dictionary_w_a_list_as_a_key'
+
+I cannot use a :ref:`list<what is a list?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
