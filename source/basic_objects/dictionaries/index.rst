@@ -1432,7 +1432,7 @@ I add a test for the `copy method`_
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 101
+  :lineno-start: 66
   :emphasize-lines: 3-5
 
           self.assertEqual(a_dictionary, {})
@@ -1452,7 +1452,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: {'key': 'value'} is not None
 
-this :ref:`method<what is a method?>` returns a copy of the :ref:`dictionary<what is a dictionary?>`, :ref:`same as with lists<test_copy_a_list>`
+this `copy method`_ returns a copy of the :ref:`dictionary<what is a dictionary?>`, :ref:`same as with lists<test_copy_a_list>`.
 
 ----
 
@@ -1466,7 +1466,7 @@ I add the value to the :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 103
+  :lineno-start: 68
   :emphasize-lines: 3-6
 
       def test_copy(self):
@@ -1476,6 +1476,9 @@ I add the value to the :ref:`assertion<what is an assertion?>`
               {'key': 'value'}
           )
 
+
+  'copy',
+
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
@@ -1483,11 +1486,11 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
-I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 103
+  :lineno-start: 68
   :emphasize-lines: 3
 
       def test_copy(self):
@@ -1511,8 +1514,10 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 103
-    :emphasize-lines: 1
+    :lineno-start: 66
+    :emphasize-lines: 3
+
+            self.assertEqual(a_dictionary, {})
 
         def test_copy_a_dictionary(self):
             a_dictionary = {'key': 'value'}
@@ -1529,7 +1534,7 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 105
+    :lineno-start: 70
 
             self.assertEqual(
                 a_dictionary.copy(),
@@ -1547,7 +1552,7 @@ the test passes.
     'update',
     'values'
 
-:ref:`I know how to copy a dictionary<test_copy_a_dictionary>`
+:ref:`I know how to copy a dictionary<test_copy_a_dictionary>`.
 
 ----
 
@@ -1565,7 +1570,7 @@ I add a test for the next :ref:`method<what is a method?>` from the TODO list
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 105
+  :lineno-start: 70
   :emphasize-lines: 6-8
 
           self.assertEqual(
@@ -1585,7 +1590,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  TypeError: fromkeys expected at least 1 argument, got 0
+  TypeError: fromkeys expected at least 1 argument,
+             got 0
 
 ----
 
@@ -1595,16 +1601,19 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I pass a value to the call
+* I pass a value to the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 110
+    :lineno-start: 75
     :emphasize-lines: 3
 
         def test_fromkeys(self):
             a_dictionary = {'key': 'value'}
             self.assertIsNone(a_dictionary.fromkeys(0))
+
+
+    'fromkeys',
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1617,26 +1626,34 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 112
-    :emphasize-lines: 1
+    :lineno-start: 75
+    :emphasize-lines: 3-5
 
-            self.assertIsNone(a_dictionary.fromkeys((0, 1)))
+        def test_fromkeys(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.fromkeys((0, 1))
+            )
+
+
+    'fromkeys',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {0: None, 1: None} is not None
+    AssertionError: {0: None, 1: None}
+                    is not None
 
-  the `fromkeys method`_ returns a :ref:`dictionary<what is a dictionary?>` that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None<what is None?>`. It reminds me of a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`
+  the `fromkeys method`_ returns a :ref:`dictionary<what is a dictionary?>` that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`, and :ref:`None<what is None?>` as their default :ref:`values<test_values_of_a_dictionary>`. It reminds me of a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`.
 
-* I add the :ref:`dictionary<what is a dictionary?>` as an expectation
+* I add the :ref:`dictionary<what is a dictionary?>` as the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 110
-    :emphasize-lines: 3-6
+    :lineno-start: 75
+    :emphasize-lines: 5
 
         def test_fromkeys(self):
             a_dictionary = {'key': 'value'}
@@ -1650,19 +1667,25 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
+    AssertionError: {0: None, 1: None}
+                    is not None : {0: None, 1: None}
 
-* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 112
-    :emphasize-lines: 1
+    :lineno-start: 75
+    :emphasize-lines: 3
 
+        def test_fromkeys(self):
+            a_dictionary = {'key': 'value'}
             self.assertEqual(
                 a_dictionary.fromkeys((0, 1)),
                 {0: None, 1: None}
             )
+
+
+    'fromkeys',
 
   the test passes.
 
@@ -1674,11 +1697,11 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add another :ref:`assert method<test_dir_unittest_testcase>` to see what happened to ``a_dictionary``
+* I add another :ref:`assertion<what is an assertion?>` to see what happened to ``a_dictionary``
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 110
+    :lineno-start: 75
     :emphasize-lines: 7
 
         def test_fromkeys(self):
@@ -1703,7 +1726,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 110
+    :lineno-start: 75
     :emphasize-lines: 4
 
         def test_fromkeys(self):
@@ -1722,7 +1745,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 110
+    :lineno-start: 75
 
         def test_fromkeys(self):
             self.assertEqual(
@@ -1773,7 +1796,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {0: 'default', 1: 'default'} != {0: None, 1: None}
+    AssertionError: {0: 'default', 1: 'default'}
+                 != {0: None, 1: None}
 
 * I change the values in the expectation to match
 
@@ -1793,7 +1817,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 110
+    :lineno-start: 75
     :emphasize-lines: 1
 
         def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
@@ -1942,7 +1966,7 @@ the test passes.
 
     AssertionError: 'default' is not None : default
 
-* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -2186,7 +2210,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the values are the same
 
-* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -2417,7 +2441,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: ['key'] is not None : ['key']
 
-* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -2693,7 +2717,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     AssertionError: 'default' is not None : default
 
-* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -3141,7 +3165,7 @@ the test passes.
 
     AssertionError: 'default' is not None : default
 
-* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -3736,7 +3760,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     AssertionError: ['value'] is not None : ['value']
 
-* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
