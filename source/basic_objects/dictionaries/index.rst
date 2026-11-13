@@ -2148,11 +2148,14 @@ the test passes.
 
   the test passes. The `get method`_ has a :ref:`condition<if statements>`
 
+  .. code-block:: shell
+
+    a_dictionary = {'key': 'value'}
+
   - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the value of the ``default`` parameter
 
     .. code-block:: shell
 
-      a_dictionary = {'key': 'value'}
       a_dictionary.get('not in dictionary') -> None
       └── def get(self, key, default=None):
           ├── default = None
@@ -2163,7 +2166,6 @@ the test passes.
 
     .. code-block:: shell
 
-      a_dictionary = {'key': 'value'}
       a_dictionary.get(
           'not in dictionary', 'default'
       ) -> 'default'
@@ -2178,7 +2180,6 @@ the test passes.
 
     .. code-block:: shell
 
-      a_dictionary = {'key': 'value'}
       a_dictionary.get(
           'key', 'default'
       ) -> 'value'
@@ -3039,11 +3040,14 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   the test passes. The `pop method`_ has a :ref:`condition<if statements>` with an :ref:`Exception Handler<how to handle exceptions>`
 
+  .. code-block:: shell
+
+    a_dictionary = {'key': 'value'}
+
   - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it raises :ref:`KeyError<test_key_error>` if no value is given for the ``default`` parameter
 
     .. code-block:: shell
 
-      a_dictionary = {'key': 'value'}
       a_dictionary.pop('not_in_dictionary') -> KeyError
       └── def pop(self, key, default=something):
           ├── default = something
@@ -3060,7 +3064,6 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     .. code-block:: shell
 
-      a_dictionary = {'key': 'value'}
       a_dictionary.pop(
           'not_in_dictionary',  None
       ) -> None
@@ -3077,7 +3080,6 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     .. code-block:: shell
 
-      a_dictionary = {'key': 'value'}
       a_dictionary.pop(
           'not_in_dictionary', 'default'
       ) -> 'default'
@@ -3096,7 +3098,6 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     .. code-block:: shell
 
-      a_dictionary = {'key': 'value'}
       a_dictionary.pop('key', 'default') -> 'value'
       └── def pop(self, key, default=something):
           ├── default = 'default'
@@ -3148,8 +3149,6 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
     git commit -am \
     'add test_pop_removes_given_key_from_a_dictionary_and_returns_its_value'
 
-
-
 :ref:`I know how to remove a key and its value from a dictionary<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
 
 ----
@@ -3168,7 +3167,7 @@ I add a failing test for the next item in the TODO list
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 163
+  :lineno-start: 145
   :emphasize-lines: 3-5
 
           self.assertEqual(a_dictionary, {})
@@ -3187,7 +3186,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: ('key', 'value') is not None
 
-the `popitem method`_ returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the :ref:`dictionary<what is a dictionary?>` as a tuple_
+the `popitem method`_ returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the :ref:`dictionary<what is a dictionary?>` as a tuple_.
 
 ----
 
@@ -3197,38 +3196,48 @@ the `popitem method`_ returns the :ref:`key-value pair<test_items_returns_iterab
 
 ----
 
-I add the value from the terminal_ as the expectation
+* I add the value from the terminal_ as the expectation
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 166
-  :emphasize-lines: 2-5
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 147
+    :emphasize-lines: 3-6
 
-          a_dictionary = {'key': 'value'}
-          self.assertIsNone(
-              a_dictionary.popitem(),
-              ('key', 'value')
-          )
+        def test_popitem(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.popitem(),
+                ('key', 'value')
+            )
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
-  :caption: terminal
+    'popitem',
 
-  AssertionError: ('key', 'value') is not None : ('key', 'value')
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual method<test_assertEqual>`
+  .. code-block:: python
+    :caption: terminal
 
-.. code-block::
-  :lineno-start: 167
-  :emphasize-lines: 1
+    AssertionError: ('key', 'value')
+                    is not None : ('key', 'value')
 
-          self.assertEqual(
-              a_dictionary.popitem(),
-              ('key', 'value')
-          )
+* I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
-the test passes.
+  .. code-block::
+    :lineno-start: 147
+    :emphasize-lines: 3
+
+        def test_popitem(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                a_dictionary.popitem(),
+                ('key', 'value')
+            )
+
+
+    'popitem',
+
+  the test passes.
 
 ----
 
@@ -3242,7 +3251,7 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 167
+    :lineno-start: 149
     :emphasize-lines: 5
 
             self.assertEqual(
@@ -3251,6 +3260,9 @@ the test passes.
             )
             self.assertEqual(a_dictionary, {'key': 'value'})
 
+
+    'popitem',
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
@@ -3258,24 +3270,31 @@ the test passes.
 
     AssertionError: {} != {'key': 'value'}
 
-  popitem_ removes and returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+  popitem_ removes and returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`.
 
 * I change the value to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 171
-    :emphasize-lines: 1
+    :lineno-start: 149
+    :emphasize-lines: 5
 
+            self.assertEqual(
+                a_dictionary.popitem(),
+                ('key', 'value')
+            )
             self.assertEqual(a_dictionary, {})
+
+
+    'popitem',
 
   the test passes.
 
-* this operation does not take input, I change the :ref:`dictionary<what is a dictionary?>` to see what happens
+* This operation does not take input, I change the :ref:`dictionary<what is a dictionary?>` to see what happens
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 165
+    :lineno-start: 147
     :emphasize-lines: 2-5
 
         def test_popitem(self):
@@ -3294,21 +3313,23 @@ the test passes.
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n']) != ('key', 'value')
+    AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n'])
+                                != ('key', 'value')
 
-  popitem_ removes and returns the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a :ref:`dictionary<what is a dictionary?>`
+  popitem_ removes and returns the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a :ref:`dictionary<what is a dictionary?>`.
 
-* I change the expectation in the first :ref:`assertEqual method<test_assertEqual>` to match
+* I change the expectation of the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 170
+    :lineno-start: 152
     :emphasize-lines: 3
 
             self.assertEqual(
                 a_dictionary.popitem(),
                 ('keyN', [0, 1, 2, 'n'])
             )
+            self.assertEqual(a_dictionary, {})
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3317,29 +3338,13 @@ the test passes.
 
     AssertionError: {'key0': 'value0'} != {}
 
-* I change the value in the second :ref:`assertEqual method<test_assertEqual>` to match
+* I change the expectation of the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 174
-    :emphasize-lines: 1
+    :lineno-start: 152
+    :emphasize-lines: 5
 
-            self.assertEqual(a_dictionary, {'key0': 'value0'})
-
-  the test passes.
-
-* I change the name of the test
-
-  .. code-block:: python
-    :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 165
-    :emphasize-lines: 1
-
-        def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
-            a_dictionary = {
-                'key0': 'value0',
-                'keyN': [0, 1, 2, 'n'],
-            }
             self.assertEqual(
                 a_dictionary.popitem(),
                 ('keyN', [0, 1, 2, 'n'])
@@ -3348,6 +3353,23 @@ the test passes.
 
 
     'popitem',
+
+  the test passes.
+
+* I change the name of the test
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 145
+    :emphasize-lines: 3
+
+            self.assertEqual(a_dictionary, {})
+
+        def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
+            a_dictionary = {
+                'key0': 'value0',
+                'keyN': [0, 1, 2, 'n'],
+            }
 
 * I remove popitem_ from the TODO list
 
@@ -3362,7 +3384,16 @@ the test passes.
     'update',
     'values'
 
-:ref:`I know how to remove the last key-value pair from a dictionary<test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary'
+
+:ref:`I know how to remove the last key-value pair from a dictionary<test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary>`.
 
 ----
 
@@ -3380,7 +3411,7 @@ I add a test for the `setdefault method`_
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 174
+  :lineno-start: 156
   :emphasize-lines: 3-5
 
           self.assertEqual(a_dictionary, {'key0': 'value0'})
@@ -3397,7 +3428,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  TypeError: setdefault expected at least 1 argument, got 0
+  TypeError: setdefault expected at least 1 argument,
+             got 0
 
 ----
 
@@ -3411,10 +3443,15 @@ I pass a value in the :ref:`call<how to call a function with input>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 178
-  :emphasize-lines: 1
+  :lineno-start: 158
+  :emphasize-lines: 3
 
+      def test_setdefault(self):
+          a_dictionary = {'key': 'value'}
           self.assertIsNone(a_dictionary.setdefault(0))
+
+
+  'setdefault',
 
 the test passes.
 
@@ -3430,10 +3467,17 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 178
-    :emphasize-lines: 1
+    :lineno-start: 158
+    :emphasize-lines: 3-5
 
-            self.assertIsNone(a_dictionary.setdefault(0, None))
+        def test_setdefault(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.setdefault(0, None)
+            )
+
+
+    'setdefault',
 
   the test is still green.
 
@@ -3441,10 +3485,17 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 178
-    :emphasize-lines: 1
+    :lineno-start: 158
+    :emphasize-lines: 4
 
-            self.assertIsNone(a_dictionary.setdefault(0, 'default'))
+        def test_setdefault(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.setdefault(0, 'default')
+            )
+
+
+    'setdefault',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3457,9 +3508,10 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 177
-    :emphasize-lines: 2-5
+    :lineno-start: 158
+    :emphasize-lines: 5
 
+        def test_setdefault(self):
             a_dictionary = {'key': 'value'}
             self.assertIsNone(
                 a_dictionary.setdefault(0, 'default'),
@@ -3477,9 +3529,11 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 178
-    :emphasize-lines: 1
+    :lineno-start: 158
+    :emphasize-lines: 3
 
+        def test_setdefault(self):
+            a_dictionary = {'key': 'value'}
             self.assertEqual(
                 a_dictionary.setdefault(0, 'default'),
                 'default'
@@ -3491,7 +3545,7 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 178
+    :lineno-start: 160
     :emphasize-lines: 5
 
             self.assertEqual(
@@ -3507,17 +3561,15 @@ the test passes.
 
     AssertionError: {'key': 'value', 0: 'default'} != {'key': 'value'}
 
-  setdefault_ adds the given :ref:`key<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>` with the default :ref:`value<test_values_of_a_dictionary>` and returns the default value
+  setdefault_ adds the given :ref:`key<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>` with the default :ref:`value<test_values_of_a_dictionary>` and returns the default :ref:`value<test_values_of_a_dictionary>`.
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 176
-    :emphasize-lines: 7-13
+    :lineno-start: 160
+    :emphasize-lines: 5-11
 
-        def test_setdefault(self):
-            a_dictionary = {'key': 'value'}
             self.assertEqual(
                 a_dictionary.setdefault(0, 'default'),
                 'default'
@@ -3530,17 +3582,20 @@ the test passes.
                 }
             )
 
+
+    'setdefault',
+
   the test passes.
 
-* I change the ``0`` given in the :ref:`call<how to call a function with input>` to the `setdefault method`_ be clearer
+* I change the values given in the :ref:`call<how to call a function with input>` to the `setdefault method`_ be clearer
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 178
+    :lineno-start: 160
     :emphasize-lines: 2
 
             self.assertEqual(
-                a_dictionary.setdefault('new_key', 'default'),
+                a_dictionary.setdefault('new_key', 'new value'),
                 'default'
             )
 
@@ -3549,22 +3604,45 @@ the test passes.
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 0: 'default'}
+    AssertionError: 'new value' != 'default'
 
-* I change the expectation to match
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 181
+    :lineno-start: 160
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                a_dictionary.setdefault('new_key', 'new value'),
+                'new value'
+            )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    AssertionError: {'key': 'value', 'new_key': 'new value'}
+                 != {'key': 'value', 0: 'default'}
+
+* I change the expectation of the second :ref:`assertion<what is an assertion?>` to match
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 164
     :emphasize-lines: 5
 
             self.assertEqual(
                 a_dictionary,
                 {
                     'key': 'value',
-                    'new_key': 'default',
+                    'new_key': 'new value',
                 }
             )
+
+
+    'setdefault',
 
   the test is green again
 
@@ -3572,14 +3650,14 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 176
+    :lineno-start: 158
     :emphasize-lines: 7-10
 
         def test_setdefault(self):
             a_dictionary = {'key': 'value'}
             self.assertEqual(
-                a_dictionary.setdefault('new_key', 'default'),
-                'default'
+                a_dictionary.setdefault('new_key', 'new value'),
+                'new value'
             )
             self.assertEqual(
                 a_dictionary.setdefault('key', 'default'),
@@ -3589,7 +3667,7 @@ the test passes.
                 a_dictionary,
                 {
                     'key': 'value',
-                    'new_key': 'default',
+                    'new_key': 'new value',
                 }
             )
 
@@ -3600,13 +3678,13 @@ the test passes.
 
     AssertionError: 'value' != 'default'
 
-  setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key in a dictionary<test_keys_of_a_dictionary>`, if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`
+  setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key in a dictionary<test_keys_of_a_dictionary>`, if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`.
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 182
+    :lineno-start: 164
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -3614,15 +3692,48 @@ the test passes.
                 'value'
             )
 
-  the test passes.
+  the test passes. The `setdefault method`_ has a :ref:`condition<if statements>`
 
-  .. note::
+  .. code-block:: shell
 
-    setdefault_ has a :ref:`condition<if statements>`
+      a_dictionary = {'key': 'value'}
 
-    - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>` it adds it with a default value of :ref:`None<what is None?>` and returns :ref:`None<what is None?>`
-    - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>` and I call setdefault_ with a second argument, it adds the :ref:`key<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>` with the second argument as the :ref:`value<test_values_of_a_dictionary>` and returns the second argument
-    - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>` it returns its :ref:`value<test_values_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+  - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it adds it with the value of the ``value`` parameter and returns the value
+
+    .. code-block:: shell
+
+      a_dictionary.setdefault('new_key') -> None
+      └── def setdefault(self, key, value=None):
+          ├── value = None
+          └── if key not in self:
+              ├── self[key] = value
+              └── return value
+              else:
+                  ...
+
+    .. code-block:: shell
+
+      a_dictionary.setdefault(
+          'new_key', 'new value'
+      ) -> 'new value'
+      └── def setdefault(self, key, value=None):
+          ├── value = 'new value'
+          └── if key not in self:
+              ├── self[key] = value
+              └── return value
+              else:
+                  ...
+
+    .. code-block:: shell
+
+      a_dictionary.setdefault('key', 'default') -> 'value'
+      └── def setdefault(self, key, value=None):
+          ├── value = 'new value'
+          ├── if key not in self:
+          │       self[key] = value
+          │       return value
+          └── else:
+                  return self[key]
 
 * I change the name of the test
 
