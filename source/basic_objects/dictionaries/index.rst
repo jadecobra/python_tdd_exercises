@@ -1484,7 +1484,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  AssertionError: {'key': 'value'} is not None : {'key': 'value'}
+  AssertionError: {'key': 'value'}
+                  is not None : {'key': 'value'}
 
 I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
@@ -2145,53 +2146,66 @@ the test passes.
 
     'get',
 
-  the test passes. The test shows that the `get method`_ has a :ref:`condition<if statements>`
+  the test passes. The `get method`_ has a :ref:`condition<if statements>`
 
-  - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the default argument
+  - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the value of the ``default`` parameter
 
     .. code-block:: shell
 
       a_dictionary = {'key': 'value'}
       a_dictionary.get('not in dictionary') -> None
-      └── def get(key, default=None):
+      └── def get(self, key, default=None):
           ├── default = None
-          ├── if key in a_dictionary:
-          │       return value of the key
+          ├── if key in self:
+          │       return self[key]
           └── else:
-          └── return default
+              └── return default
+
+    .. code-block:: shell
+
+      a_dictionary = {'key': 'value'}
       a_dictionary.get(
           'not in dictionary', 'default'
       ) -> 'default'
-      └── def get(key, default=None):
+      └── def get(self, key, default=None):
           ├── default = 'default'
-          ├── second_input = False
-          └── if first_input == True:
-              └── if second_input == False:
-                  └── return False
-              return True
+          ├── if key in self:
+          │       return self[key]
+          └── else:
+              └── return default
 
   - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`, it returns its :ref:`value<test_values_of_a_dictionary>`
+
+    .. code-block:: shell
+
+      a_dictionary = {'key': 'value'}
+      a_dictionary.get(
+          'key', 'default'
+      ) -> 'value'
+      └── def get(self, key, default=None):
+          ├── default = 'default'
+          └── if key in self:
+              └── return self[key]
+              else:
+                  return default
 
 * I change the name of the test
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 116
-    :emphasize-lines: 1
+    :lineno-start: 84
+    :emphasize-lines: 6
+
+            self.assertEqual(
+                {key: 'value' for key in (0, 1)},
+                {0: 'value', 1: 'value'}
+            )
 
         def test_get_value_of_a_key_in_a_dictionary(self):
             a_dictionary = {'key': 'value'}
-            self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
-                'default'
+            self.assertIsNone(
+                a_dictionary.get('not in dictionary')
             )
-            self.assertEqual(
-                a_dictionary.get('key', 'default'),
-                'value'
-            )
-
-
-    'get',
 
   the test is still green.
 
@@ -2199,7 +2213,7 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 122
+    :lineno-start: 100
 
             self.assertEqual(
                 a_dictionary.get('key', 'default'),
@@ -2222,7 +2236,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_fromkeys_makes_a_dictionary_from_an_iterable'
+    'add test_get_value_of_a_key_in_a_dictionary'
 
 :ref:`I know how to get the value of a key that is in a dictionary<test_get_value_of_a_key_in_a_dictionary>`
 
@@ -2242,7 +2256,7 @@ I add the next test from the TODO list
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 122
+  :lineno-start: 100
   :emphasize-lines: 6-8
 
           self.assertEqual(
@@ -2262,7 +2276,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  AssertionError: dict_items([('key', 'value')]) is not None
+  AssertionError: dict_items([('key', 'value')])
+                  is not None
 
 ----
 
@@ -2276,7 +2291,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 128
+    :lineno-start: 105
     :emphasize-lines: 2-5
 
             a_dictionary = {'key': 'value'}
@@ -2292,13 +2307,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     NameError: name 'dict_items' is not defined
 
-  this new :ref:`object<everything is an object>` has a :ref:`list<what is a list?>` and :ref:`I know how to work with lists<what is a list?>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+  this new :ref:`object<everything is an object>` has a :ref:`list<what is a list?>` and :ref:`I know how to work with lists<what is a list?>`.
 
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 145
+    :lineno-start: 122
     :emphasize-lines: 4
     :emphasize-text: NameError
 
@@ -2311,7 +2326,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 129
+    :lineno-start: 107
     :emphasize-lines: 3
 
             self.assertIsNone(
@@ -2324,13 +2339,14 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
+    AssertionError: dict_items([('key', 'value')])
+                    is not None : [('key', 'value')]
 
-* I pass the call to the `items method`_ to ``list()`` to see if it is :ref:`iterable<what is an iterable?>`
+* I pass the :ref:`call<how to call a function with input>` to the `items method`_ to ``list()`` to see if it is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 129
+    :lineno-start: 107
     :emphasize-lines: 2
 
             self.assertIsNone(
@@ -2343,17 +2359,20 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: [('key', 'value')] is not None : [('key', 'value')]
+    AssertionError: [('key', 'value')]
+                    is not None : [('key', 'value')]
 
-  the values are the same
+  the values are the same.
 
 * I change :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 129
+    :lineno-start: 105
     :emphasize-lines: 1
 
+        def test_items(self):
+            a_dictionary = {'key': 'value'}
             self.assertEqual(
                 list(a_dictionary.items()),
                 [('key', 'value')]
@@ -2361,7 +2380,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test passes.
 
-This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the :ref:`dictionary<what is a dictionary?>`. The ``dict_items`` :ref:`object<everything is an object>` is :ref:`iterable<what is an iterable?>`
+This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the :ref:`dictionary<what is a dictionary?>`. The ``dict_items`` :ref:`object<everything is an object>` is :ref:`iterable<what is an iterable?>`.
 
 ----
 
@@ -2375,7 +2394,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 127
+    :lineno-start: 105
     :emphasize-lines: 2-5
 
         def test_items(self):
@@ -2396,37 +2415,17 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: Lists differ: [('key0', 'value0'), ('keyN', [0, 1, 2, 'n'])] != [('key', 'value')]
+    AssertionError:
+        Lists differ: [('key0', 'value0'), ('keyN', [0, 1, 2, 'n'])]
+                   != [('key', 'value')]
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 132
+    :lineno-start: 110
     :emphasize-lines: 3-6
 
-            self.assertEqual(
-                list(a_dictionary.items()),
-                [
-                    ('key0', 'value0'),
-                    ('keyN', [0, 1, 2, 'n']),
-                ]
-            )
-
-  the test passes.
-
-* I change the name of the test
-
-  .. code-block:: python
-    :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 127
-    :emphasize-lines: 1
-
-        def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
-            a_dictionary = {
-                'key0': 'value0',
-                'keyN': [0, 1, 2, 'n'],
-            }
             self.assertEqual(
                 list(a_dictionary.items()),
                 [
@@ -2438,11 +2437,31 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 
     'items',
 
+  the test passes.
+
+* I change the name of the test
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 100
+    :emphasize-lines: 6
+
+            self.assertEqual(
+                a_dictionary.get('key', 'default'),
+                'value'
+            )
+
+        def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
+            a_dictionary = {
+                'key': 'value',
+                'keyN': [0, 1, 2, 'n'],
+            }
+
 * I remove items_ from the TODO list
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 132
+    :lineno-start: 110
 
             self.assertEqual(
                 list(a_dictionary.items()),
@@ -2460,9 +2479,16 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
     'update',
     'values'
 
-  all tests are still passing
+* I add a git_ commit message
 
-:ref:`I know how to look at the key-value pairs in a dictionary as a list of tuples<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_items_returns_iterable_of_key_value_pairs_of_a_dictionary'
+
+:ref:`I know how to show the key-value pairs in a dictionary as a list of tuples<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`.
 
 ----
 
@@ -2480,7 +2506,7 @@ I add a new test
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 132
+  :lineno-start: 110
   :emphasize-lines: 9-11
 
               self.assertEqual(
@@ -2505,7 +2531,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: dict_keys(['key']) is not None
 
-this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`
+this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`.
 
 ----
 
@@ -2519,7 +2545,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 140
+    :lineno-start: 118
     :emphasize-lines: 3-6
 
         def test_keys(self):
@@ -2529,6 +2555,9 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
                 dict_keys(['key'])
             )
 
+
+    'keys',
+
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
@@ -2536,13 +2565,13 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     NameError: name 'dict_keys' is not defined
 
-  the ``dict_keys`` :ref:`object<everything is an object>` has a :ref:`list<what is a list?>`
+  the ``dict_keys`` :ref:`object<everything is an object>` has a :ref:`list<what is a list?>`.
 
 * I use the :ref:`list<what is a list?>` in the ``dict_keys`` :ref:`object<everything is an object>` as the expectation
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 140
+    :lineno-start: 118
     :emphasize-lines: 5
 
         def test_keys(self):
@@ -2557,15 +2586,18 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: dict_keys(['key']) is not None : ['key']
+    AssertionError: dict_keys(['key'])
+                    is not None : ['key']
 
-* I pass the call to the `keys method`_ to ``list()`` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
+* I pass the :ref:`call<how to call a function with input>` to the `keys method`_ to ``list()`` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 142
-    :emphasize-lines: 2
+    :lineno-start: 118
+    :emphasize-lines: 4
 
+        def test_keys(self):
+            a_dictionary = {'key': 'value'}
             self.assertIsNone(
                 list(a_dictionary.keys()),
                 ['key']
@@ -2582,9 +2614,11 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 142
-    :emphasize-lines: 1
+    :lineno-start: 118
+    :emphasize-lines: 3
 
+        def test_keys(self):
+            a_dictionary = {'key': 'value'}
             self.assertEqual(
                 list(a_dictionary.keys()),
                 ['key']
@@ -2604,12 +2638,12 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 140
+    :lineno-start: 118
     :emphasize-lines: 2-5
 
         def test_keys(self):
             a_dictionary = {
-                'key0': 'value0',
+                'key': 'value',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
@@ -2622,19 +2656,22 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: Lists differ: ['key0', 'keyN'] != ['key']
+    AssertionError: Lists differ:  ['key', 'keyN'] != ['key']
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 145
+    :lineno-start: 123
     :emphasize-lines: 3
 
             self.assertEqual(
                 list(a_dictionary.keys()),
-                ['key0', 'keyN']
+                ['key', 'keyN']
             )
+
+
+    'keys',
 
   the test passes.
 
@@ -2642,27 +2679,28 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 140
-    :emphasize-lines: 1
+    :lineno-start: 110
+    :emphasize-lines: 9
+
+            self.assertEqual(
+                list(a_dictionary.items()),
+                [
+                    ('key', 'value'),
+                    ('keyN', [0, 1, 2, 'n']),
+                ]
+            )
 
         def test_keys_of_a_dictionary(self):
             a_dictionary = {
-                'key0': 'value0',
+                'key': 'value',
                 'keyN': [0, 1, 2, 'n'],
             }
-            self.assertEqual(
-                list(a_dictionary.keys()),
-                ['key0', 'keyN']
-            )
-
-
-    'keys',
 
 * I remove keys_ from the TODO list
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 145
+    :lineno-start: 123
 
             self.assertEqual(
                 list(a_dictionary.keys()),
@@ -2676,7 +2714,16 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
     'update',
     'values'
 
-:ref:`I know how to look at the keys in a dictionary<test_keys_of_a_dictionary>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_keys_of_a_dictionary'
+
+:ref:`I know how to look at the keys of a dictionary<test_keys_of_a_dictionary>`.
 
 ----
 
@@ -2694,7 +2741,7 @@ I wonder if the `pop method`_ of :ref:`dictionaries<what is a dictionary?>` beha
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 145
+  :lineno-start: 123
   :emphasize-lines: 6-8
 
           self.assertEqual(
@@ -2714,9 +2761,10 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  TypeError: pop expected at least 1 argument, got 0
+  TypeError: pop expected at least 1 argument,
+             got 0
 
-this `pop method`_ is different from the :ref:`pop method of lists<test_pop_removes_and_returns_last_item_from_a_list>`
+this `pop method`_ is different from the :ref:`pop method of lists<test_pop_removes_and_returns_last_item_from_a_list>`.
 
 ----
 
@@ -2726,14 +2774,19 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
 ----
 
-* I pass a value to the call
+* I pass a value to the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 152
-    :emphasize-lines: 1
+    :lineno-start: 128
+    :emphasize-lines: 3
 
+        def test_pop(self):
+            a_dictionary = {'key': 'value'}
             self.assertIsNone(a_dictionary.pop(0))
+
+
+    'pop',
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
@@ -2746,7 +2799,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 162
+    :lineno-start: 140
     :emphasize-lines: 5
     :emphasize-text: KeyError
 
@@ -2756,17 +2809,20 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
     # NameError
     # KeyError
 
-* I remove the things around the call in the test and change the value given to make it clearer
+* I remove the things around the :ref:`call<how to call a function with input>` in the test and change the value given to make it clearer
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 150
+    :lineno-start: 128
     :emphasize-lines: 3
     :emphasize-text: not_in_dictionary
 
         def test_pop(self):
             a_dictionary = {'key': 'value'}
             a_dictionary.pop('not_in_dictionary')
+
+
+    'pop',
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
@@ -2779,7 +2835,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 150
+    :lineno-start: 128
     :emphasize-lines: 4-5
 
         def test_pop(self):
@@ -2788,7 +2844,10 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
             with self.assertRaises(KeyError):
                 a_dictionary.pop('not_in_dictionary')
 
-  the test passes. When I call the `pop method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is not in the :ref:`dictionary<what is a dictionary?>` it raises :ref:`KeyError<test_key_error>`
+
+    'pop',
+
+  the test passes. When I call the `pop method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is not in the :ref:`dictionary<what is a dictionary?>` it raises :ref:`KeyError<test_key_error>`.
 
 ----
 
@@ -2798,35 +2857,50 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
 ----
 
-* I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
+* When I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    TypeError: pop expected at least 1 argument, got 0
+    TypeError: pop expected at least 1 argument,
+               got 0
 
-  I add another :ref:`assertion<what is an assertion?>` to see what happens when I call it with 2 arguments
+  I add another :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call<how to call a function with input>` the `pop method_` with two arguments
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 153
-    :emphasize-lines: 3
+    :lineno-start: 131
+    :emphasize-lines: 4-6
 
             with self.assertRaises(KeyError):
                 a_dictionary.pop('not_in_dictionary')
-            self.assertIsNone(a_dictionary.pop('not_in_dictionary', None))
+
+            self.assertIsNone(
+                a_dictionary.pop('not_in_dictionary',  None)
+            )
+
+
+    'pop',
 
   the test is still green.
 
-* I change the second argument, I think this will fail
+* I add another :ref:`assertion<what is an assertion?>` with a different second argument, I think this will fail
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 155
-    :emphasize-lines: 1
+    :lineno-start: 134
+    :emphasize-lines: 4-6
     :emphasize-text: default
 
-            self.assertIsNone(a_dictionary.pop('not_in_dictionary', 'default'))
+            self.assertIsNone(
+                a_dictionary.pop('not_in_dictionary',  None)
+            )
+            self.assertIsNone(
+                a_dictionary.pop('not_in_dictionary', 'default')
+            )
+
+
+    'pop',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2839,13 +2913,16 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 155
-    :emphasize-lines: 1-4
+    :lineno-start: 137
+    :emphasize-lines: 2-3
 
             self.assertIsNone(
                 a_dictionary.pop('not_in_dictionary', 'default'),
                 'default'
             )
+
+
+    'pop',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2858,13 +2935,19 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 155
-    :emphasize-lines: 1
+    :lineno-start: 134
+    :emphasize-lines: 4
 
+            self.assertIsNone(
+                a_dictionary.pop('not_in_dictionary',  None)
+            )
             self.assertEqual(
                 a_dictionary.pop('not_in_dictionary', 'default'),
                 'default'
             )
+
+
+    'pop',
 
   the test passes.
 
@@ -2872,7 +2955,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 155
+    :lineno-start: 137
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -2884,6 +2967,9 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
                 'default'
             )
 
+
+    'pop',
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
@@ -2891,13 +2977,13 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     AssertionError: 'value' != 'default'
 
-  I get ``'value'`` back. The `pop method`_ returns the value of the given :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+  I get ``'value'`` back. The `pop method`_ returns the value of the given :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`.
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 159
+    :lineno-start: 141
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -2905,13 +2991,16 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
                 'value'
             )
 
+
+    'pop',
+
   the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>` to see what the `pop method`_ did to the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 159
+    :lineno-start: 141
     :emphasize-lines: 5
 
             self.assertEqual(
@@ -2920,6 +3009,9 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
             )
             self.assertEqual(a_dictionary, {'key': 'value'})
 
+
+    'pop',
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
@@ -2927,35 +3019,15 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     AssertionError: {} != {'key': 'value'}
 
-  the `pop method`_ removes the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and returns the :ref:`value<test_values_of_a_dictionary>` of the given :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+  the `pop method`_ removes the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and returns the :ref:`value<test_values_of_a_dictionary>` of the given :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`.
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 163
-    :emphasize-lines: 1
+    :lineno-start: 141
+    :emphasize-lines: 5
 
-            self.assertEqual(a_dictionary, {})
-
-  the test passes.
-
-* I change the name of the test
-
-  .. code-block:: python
-    :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 150
-    :emphasize-lines: 1
-
-        def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
-            a_dictionary = {'key': 'value'}
-
-            with self.assertRaises(KeyError):
-                a_dictionary.pop('not_in_dictionary')
-            self.assertEqual(
-                a_dictionary.pop('not_in_dictionary', 'default'),
-                'default'
-            )
             self.assertEqual(
                 a_dictionary.pop('key', 'default'),
                 'value'
@@ -2965,11 +3037,99 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     'pop',
 
+  the test passes. The `pop method`_ has a :ref:`condition<if statements>` with an :ref:`Exception Handler<how to handle exceptions>`
+
+  - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it raises :ref:`KeyError<test_key_error>` if no value is given for the ``default`` parameter
+
+    .. code-block:: shell
+
+      a_dictionary = {'key': 'value'}
+      a_dictionary.pop('not_in_dictionary') -> KeyError
+      └── def pop(self, key, default=something):
+          ├── default = something
+          └── try:
+          ┌───┴── value = self[key]
+          └── except KeyError:
+              └── if default is something:
+                  └── raise KeyError
+                  return default
+              else:
+                  ...
+
+  - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it raises :ref:`KeyError<test_key_error>` AND if a value is given for the ``default`` parameter
+
+    .. code-block:: shell
+
+      a_dictionary = {'key': 'value'}
+      a_dictionary.pop(
+          'not_in_dictionary',  None
+      ) -> None
+      └── def pop(self, key, default=something):
+          ├── default = None
+          └── try:
+          ┌───┴── value = self[key]
+          └── except KeyError:
+              ├── if default is something:
+              │       raise KeyError
+              └── return default
+              else:
+                  ...
+
+    .. code-block:: shell
+
+      a_dictionary = {'key': 'value'}
+      a_dictionary.pop(
+          'not_in_dictionary', 'default'
+      ) -> 'default'
+      └── def pop(self, key, default=something):
+          ├── default = 'default'
+          └── try:
+          ┌───┴── value = self[key]
+          └── except KeyError:
+              ├── if default is something:
+              │       raise KeyError
+              └── return default
+              else:
+                  ...
+
+  - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`, it removes the key and returns its :ref:`value<test_values_of_a_dictionary>`
+
+    .. code-block:: shell
+
+      a_dictionary = {'key': 'value'}
+      a_dictionary.pop('key', 'default') -> 'value'
+      └── def pop(self, key, default=something):
+          ├── default = 'default'
+          ├── try:
+          │   └── value = self[key]
+          │   except KeyError:
+          │       if default is something:
+          │           raise KeyError
+          │       return default
+          └── else:
+              ├── del self[key]
+              └── return value
+
+* I change the name of the test
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 123
+    :emphasize-lines: 6
+
+            self.assertEqual(
+                list(a_dictionary.keys()),
+                ['key', 'keyN']
+            )
+
+        def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
+            a_dictionary = {'key': 'value'}
+
 * I remove pop_ from the TODO list
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 163
+    :lineno-start: 145
 
             self.assertEqual(a_dictionary, {})
 
@@ -2978,6 +3138,17 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
     'setdefault',
     'update',
     'values'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_pop_removes_given_key_from_a_dictionary_and_returns_its_value'
+
+
 
 :ref:`I know how to remove a key and its value from a dictionary<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
 
@@ -3236,7 +3407,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-I pass a value in the call
+I pass a value in the :ref:`call<how to call a function with input>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
@@ -3255,7 +3426,7 @@ the test passes.
 
 ----
 
-* The error message showed that the :ref:`method<what is a method?>` expects at least 1 argument, I add a second argument
+* The error message showed that the :ref:`method<what is a method?>` expects at least one argument, I add a second argument
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -3361,7 +3532,7 @@ the test passes.
 
   the test passes.
 
-* I change the ``0`` given in the call to the `setdefault method`_ be clearer
+* I change the ``0`` given in the :ref:`call<how to call a function with input>` to the `setdefault method`_ be clearer
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -3585,7 +3756,7 @@ the test passes.
 
 ----
 
-* I add a value to the call to the `update method`_ to see what happens
+* I add a value to the :ref:`call<how to call a function with input>` to the `update method`_ to see what happens
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -4390,4 +4561,4 @@ If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 st
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
     <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review of pumping python, if this has been a 7 star experience for you</a>
   </div>
-  <!-- End TrustBox widget -->
+  <!-- End TrustBox widget -->`
