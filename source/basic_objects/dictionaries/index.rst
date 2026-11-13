@@ -1712,6 +1712,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(a_dictionary, {})
 
+
+    'fromkeys',
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
@@ -1721,8 +1724,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   the :ref:`dictionary<what is a dictionary?>` did not change
 
-* I remove the last line I added
-* then change the call to fromkeys_ to use the :ref:`dict class<what is a dictionary?>`
+* I remove ``self.assertEqual(a_dictionary, {})``
+* I change ``a_dictionary.fromkeys((0, 1))`` to use the :ref:`dict class<what is a dictionary?>` instead of ``a_dictionary``
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -1741,7 +1744,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   the test is still green.
 
-* I remove ``a_dictionary`` since it is not used
+* I remove ``a_dictionary`` since it is no longer used
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -1758,24 +1761,33 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   still green.
 
-* the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a method?>` without inputs the terminal_ showed :ref:`TypeError<what causes TypeError?>`
+* the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I :ref:`called<how to call a function with input>` the :ref:`method<what is a method?>` without inputs the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    TypeError: fromkeys expected at least 1 argument, got 0
+    TypeError: fromkeys expected at least 1 argument,
+               got 0
 
-  I add a second input to the call to see what happens
+  I add a second :ref:`assertion<what is an assertion>` to see what happens when I give :ref:`None<what is None?>` as the second input
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 111
-    :emphasize-lines: 2
+    :lineno-start: 75
+    :emphasize-lines: 6-9
 
+        def test_fromkeys(self):
+            self.assertEqual(
+                dict.fromkeys((0, 1)),
+                {0: None, 1: None}
+            )
             self.assertEqual(
                 dict.fromkeys((0, 1), None),
                 {0: None, 1: None}
             )
+
+
+    'fromkeys',
 
   the test is still green.
 
@@ -1783,9 +1795,14 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 111
-    :emphasize-lines: 2
+    :lineno-start: 75
+    :emphasize-lines: 7
 
+        def test_fromkeys(self):
+            self.assertEqual(
+                dict.fromkeys((0, 1)),
+                {0: None, 1: None}
+            )
             self.assertEqual(
                 dict.fromkeys((0, 1), 'default'),
                 {0: None, 1: None}
@@ -1803,7 +1820,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 111
+    :lineno-start: 80
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -1811,34 +1828,80 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
                 {0: 'default', 1: 'default'}
             )
 
-  the test is green again. This is like a dict comprehension because it made a :ref:`dictionary<what is a dictionary?>` using the items from the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`
+
+    'fromkeys',
+
+  the test is green again.
+
+* This is like a :ref:`dict comprehension<dict comprehensions>` because it made a :ref:`dictionary<what is a dictionary?>` using the items from an :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`
+
+  .. code-block:: python
+    :caption: dictionaries80/tests/test_dictionaries.py
+    :lineno-start: 80
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                dict.fromkeys((0, 1), 'default'),
+                {0: 'default', 1: 'default'}
+            )
+            self.assertEqual(
+                {key: 'value' for key in (0, 1)},
+                {}
+            )
+
+
+    'fromkeys',
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {0: 'value', 1: 'value'} != {}
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :caption: dictionaries80/tests/test_dictionaries.py
+    :lineno-start: 84
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                {key: 'value' for key in (0, 1)},
+                {0: 'value', 1: 'value'}
+            )
+
+
+    'fromkeys',
+
+  the test passes.
 
 * I change the name of the test
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 75
-    :emphasize-lines: 1
+    :lineno-start: 70
+    :emphasize-lines: 6
+
+            self.assertEqual(
+                a_dictionary.copy(),
+                {'key': 'value'}
+            )
 
         def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
             self.assertEqual(
-                dict.fromkeys((0, 1), 'default'),
-                {0: 'default', 1: 'default'}
+                dict.fromkeys((0, 1)),
+                {0: None, 1: None}
             )
-
-
-    'fromkeys',
-    'get',
 
 * I remove fromkeys_ from the TODO list
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 111
+    :lineno-start: 84
 
             self.assertEqual(
-                dict.fromkeys((0, 1), 'default'),
-                {0: 'default', 1: 'default'}
+                {key: 'value' for key in (0, 1)},
+                {0: 'value', 1: 'value'}
             )
 
 
@@ -1851,7 +1914,16 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     'update',
     'values'
 
-:ref:`I know how to make a dictionary from an iterable<tesT_fromkeys_makes_a_dictionary_from_an_iterable>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_fromkeys_makes_a_dictionary_from_an_iterable'
+
+:ref:`I know how to make a dictionary from an iterable<tesT_fromkeys_makes_a_dictionary_from_an_iterable>`.
 
 ----
 
