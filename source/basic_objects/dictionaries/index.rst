@@ -1941,12 +1941,12 @@ I add a test for the `get method`_
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 111
+  :lineno-start: 84
   :emphasize-lines: 6-8
 
           self.assertEqual(
-              dict.fromkeys((0, 1), 'default'),
-              {0: 'default', 1: 'default'}
+              {key: 'value' for key in (0, 1)},
+              {0: 'value', 1: 'value'}
           )
 
       def test_get(self):
@@ -1961,7 +1961,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  TypeError: get expected at least 1 argument, got 0
+  TypeError: get expected at least 1 argument,
+             got 0
 
 ----
 
@@ -1971,14 +1972,19 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-I add a value to the call
+I add a value to the :ref:`call<how to call a function with input>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 118
-  :emphasize-lines: 1
+  :lineno-start: 89
+  :emphasize-lines: 3
 
+      def test_get(self):
+          a_dictionary = {'key': 'value'}
           self.assertIsNone(a_dictionary.get(0))
+
+
+  'get',
 
 the test passes.
 
@@ -1990,14 +1996,22 @@ the test passes.
 
 ----
 
-* the `get method`_ also expected at least 1 argument, I add :ref:`None<what is None?>` to the call
+* the `get method`_ also expected at least one argument, I add another :ref:`assertion<what is an assertion?>` with :ref:`None<what is None?>` as the second input to the :ref:`call<how to call a function with input>` to the `get method`_
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 118
-    :emphasize-lines: 1
+    :lineno-start: 89
+    :emphasize-lines: 4-6
 
-            self.assertIsNone(a_dictionary.get(0, None))
+        def test_get(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(a_dictionary.get(0))
+            self.assertIsNone(
+                a_dictionary.get(0, None)
+            )
+
+
+    'get',
 
   the test is still green.
 
@@ -2005,10 +2019,15 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 118
-    :emphasize-lines: 1
+    :lineno-start: 92
+    :emphasize-lines: 2
 
-            self.assertIsNone(a_dictionary.get(0, 'default'))
+            self.assertIsNone(
+                a_dictionary.get(0, 'default'),
+            )
+
+
+    'get',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2021,15 +2040,16 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 116
-    :emphasize-lines: 3-6
+    :lineno-start: 92
+    :emphasize-lines: 3
 
-        def test_get(self):
-            a_dictionary = {'key': 'value'}
             self.assertIsNone(
                 a_dictionary.get(0, 'default'),
                 'default'
             )
+
+
+    'get',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2042,9 +2062,12 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 118
-    :emphasize-lines: 1
+    :lineno-start: 89
+    :emphasize-lines: 4
 
+        def test_get(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(a_dictionary.get(0))
             self.assertEqual(
                 a_dictionary.get(0, 'default'),
                 'default'
@@ -2052,18 +2075,24 @@ the test passes.
 
   the test passes.
 
-* I change ``0`` in the call to make it clearer
+* I change ``0`` in the :ref:`call<how to call a function with input>` to make it clearer
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 118
-    :emphasize-lines: 2
+    :lineno-start: 89
+    :emphasize-lines: 3, 5
     :emphasize-text: not_in_dictionary
 
+        def test_get(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(a_dictionary.get('not in dictionary'))
             self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
+                a_dictionary.get('not in dictionary', 'default'),
                 'default'
             )
+
+
+    'get',
 
   the test is still green.
 
