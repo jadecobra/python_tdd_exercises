@@ -2080,14 +2080,18 @@ the test passes.
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
     :lineno-start: 89
-    :emphasize-lines: 3, 5
+    :emphasize-lines: 3-5, 7-9
     :emphasize-text: not_in_dictionary
 
         def test_get(self):
             a_dictionary = {'key': 'value'}
-            self.assertIsNone(a_dictionary.get('not in dictionary'))
+            self.assertIsNone(
+                a_dictionary.get('not in dictionary')
+            )
             self.assertEqual(
-                a_dictionary.get('not in dictionary', 'default'),
+                a_dictionary.get(
+                    'not in dictionary', 'default'
+                ),
                 'default'
             )
 
@@ -2096,15 +2100,17 @@ the test passes.
 
   the test is still green.
 
-* I want to see what happens when I use the `get method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`, I add another :ref:`assertion<what is an assertion?>`
+* I add another :ref:`assertion<what is an assertion?>` to see what happens when I use the `get method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 118
-    :emphasize-lines: 5-8
+    :lineno-start: 94
+    :emphasize-lines: 7-10
 
             self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
+                a_dictionary.get(
+                    'not in dictionary', 'default'
+                ),
                 'default'
             )
             self.assertEqual(
@@ -2122,13 +2128,13 @@ the test passes.
 
     AssertionError: 'value' != 'default'
 
-  I get ``'value'`` back
+  I get ``'value'`` back.
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 122
+    :lineno-start: 100
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -2136,14 +2142,35 @@ the test passes.
                 'value'
             )
 
-  the test passes.
 
-  .. note::
+    'get',
 
-    The `get method`_ has a :ref:`condition<if statements>`
+  the test passes. The test shows that the `get method`_ has a :ref:`condition<if statements>`
 
-    - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the default argument
-    - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`, it returns its :ref:`value<test_values_of_a_dictionary>`
+  - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the default argument
+
+    .. code-block:: shell
+
+      a_dictionary = {'key': 'value'}
+      a_dictionary.get('not in dictionary') -> None
+      └── def get(key, default=None):
+          ├── default = None
+          ├── if key in a_dictionary:
+          │       return value of the key
+          └── else:
+          └── return default
+      a_dictionary.get(
+          'not in dictionary', 'default'
+      ) -> 'default'
+      └── def get(key, default=None):
+          ├── default = 'default'
+          ├── second_input = False
+          └── if first_input == True:
+              └── if second_input == False:
+                  └── return False
+              return True
+
+  - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`, it returns its :ref:`value<test_values_of_a_dictionary>`
 
 * I change the name of the test
 
@@ -2187,6 +2214,15 @@ the test passes.
     'setdefault',
     'update',
     'values'
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_fromkeys_makes_a_dictionary_from_an_iterable'
 
 :ref:`I know how to get the value of a key that is in a dictionary<test_get_value_of_a_key_in_a_dictionary>`
 
