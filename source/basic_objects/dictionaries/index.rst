@@ -813,7 +813,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     git commit -am \
     'add test_making_a_dictionary_w_a_list_as_a_key'
 
-I cannot use a :ref:`list<what is a list?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I cannot use a :ref:`list<what is a list?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`.
 
 ----
 
@@ -827,7 +827,7 @@ test_making_a_dictionary_w_a_set_as_a_key
 
 ----
 
-I add another test with a set_ (single items in curly braces (``{}``)) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I add a test with a set_ (single items in curly braces (``{}``)) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
@@ -858,18 +858,32 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-I add :ref:`assertRaises<another way to test if an Exception is raised>` to handle the :ref:`Exception<how to test that an Exception is raised>`
+* I add :ref:`assertRaises<another way to test if an Exception is raised>` to handle the :ref:`Exception<how to test that an Exception is raised>`
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 35
-  :emphasize-lines: 2-3
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 35
+    :emphasize-lines: 2-3
 
-      def test_making_a_dictionary_w_a_set_as_a_key(self):
-          with self.assertRaises(TypeError):
-              {{3, 2, 1}: 'BOOM!!!'}
+        def test_making_a_dictionary_w_a_set_as_a_key(self):
+            with self.assertRaises(TypeError):
+                {{3, 2, 1}: 'BOOM!!!'}
 
-the test is green again. I cannot use :ref:`lists` or sets_ as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_dictionary_w_a_set_as_a_key'
+
+I cannot use :ref:`lists` or sets_ as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`.
 
 ----
 
@@ -883,7 +897,7 @@ test_making_a_dictionary_w_a_dictionary_as_a_key
 
 ----
 
-I add another test, this time for a :ref:`dictionary<what is a dictionary?>`
+I add a test with a :ref:`dictionary<what is a dictionary?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
@@ -915,27 +929,38 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-I add :ref:`assertRaises<another way to test if an Exception is raised>`
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
-.. code-block:: python
-  :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 39
-  :emphasize-lines: 3-4
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 39
+    :emphasize-lines: 3-4
 
-      def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
-          a_dictionary = {'key': 'value'}
-          with self.assertRaises(TypeError):
-              {a_dictionary: 'BOOM!!!'}
+        def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
+            a_dictionary = {'key': 'value'}
+            with self.assertRaises(TypeError):
+                {a_dictionary: 'BOOM!!!'}
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the test passes. I cannot use :ref:`dictionaries<what is a dictionary?>`, sets_ or :ref:`lists` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`. They are not hashable_, which means they can change in their lifetime
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_a_dictionary_w_a_dictionary_as_a_key'
+
+I cannot use :ref:`dictionaries<what is a dictionary?>`, sets_ or :ref:`lists` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`. They are not hashable_, which means they can change in their lifetime.
 
 ----
 
 *********************************************************************************
-test_dir_dictionaries
+test_dir_dict
 *********************************************************************************
 
 =================================================================================
@@ -954,7 +979,7 @@ I add a new test with the `dir built-in function`_ to see the :ref:`attributes<w
           with self.assertRaises(TypeError):
               {a_dictionary: 'BOOM!!!'}
 
-      def test_dir_dictionaries(self):
+      def test_dir_dict(self):
           self.assertEqual(
               dir(dict),
               []
@@ -968,15 +993,15 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
+  AssertionError: Lists differ: [
+      '__class__', '__class_getitem__', '__cont[530 chars]ues'
+  ] != []
 
 It also gives me a message about how to show the full difference between the two :ref:`lists`
 
 .. code-block:: python
 
   Diff is 720 characters long. Set self.maxDiff to None to see it.
-
-`unittest.TestCase.maxDiff`_ is an :ref:`object attribute<what is an object attribute?>` that is used to set the maximum length of differences between 2 items that the terminal_ is my friend, and shows
 
 ----
 
@@ -986,14 +1011,14 @@ It also gives me a message about how to show the full difference between the two
 
 ----
 
-* I add maxDiff_ to the test
+* I add maxDiff_ to the :ref:`test_dir_dict`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
     :lineno-start: 44
     :emphasize-lines: 2
 
-        def test_dir_dictionaries(self):
+        def test_dir_dict(self):
             self.maxDiff = None
             self.assertEqual(
                 dir(dict),
@@ -1013,7 +1038,7 @@ It also gives me a message about how to show the full difference between the two
     :lineno-start: 44
     :emphasize-lines: 6-51
 
-        def test_dir_dictionaries(self):
+        def test_dir_dict(self):
             self.maxDiff = None
             self.assertEqual(
                 dir(dict),
@@ -1069,7 +1094,7 @@ It also gives me a message about how to show the full difference between the two
 
   the test passes.
 
-* I copy the names that do NOT have double underscores (__) and paste them below the test to make a TODO list that I use to test what I can do with :ref:`dictionaries<what is a dictionary?>`
+* I copy the names that do NOT have double underscores (``__``) and paste them below the test to make a TODO list that I use to test what I can do with :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -1098,6 +1123,161 @@ It also gives me a message about how to show the full difference between the two
     # Exceptions seen
 
   the test is still green.
+
+----
+
+*********************************************************************************
+test_dir_dict with extend and sort
+*********************************************************************************
+
+The :ref:`attributes and methods of the dictionary object<test_dir_dict>` are the :ref:`attributes and methods of 'object'<test_dir_object>` with extra things. I can make the :ref:`attributes and methods of the dictionary object<test_dir_dict>` by adding the "extra" to the :ref:`attributes and methods of 'object'<test_dir_object>`, since they are both :ref:`lists<what is a list?>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of the dict object<test_dir_dict>`, then add an :ref:`assertion<what is an assertion?>` for it, in :ref:`test_dir_dict`
+
+.. code-block:: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 165
+  :emphasize-lines: 2-10
+
+      def test_dir_dict(self):
+          dir_person = dir(object)
+          dir_person.extend((
+              'can_get_license', 'can_vote',
+              'check_age', 'say_hello',
+          ))
+          self.assertEqual(
+              dir(src.person.Person),
+              dir_person
+          )
+
+          self.assertEqual(
+              dir(src.person.Person),
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+  AssertionError: Lists differ: [
+      '__c[24 chars]'__dict__', '__dir__', '__doc__',
+      '__eq__', '_[381 chars]llo'
+  ] != [
+      '__c[24 chars]'__dir__', '__doc__', '__eq__',
+      '__format__', [296 chars]llo'
+  ]
+
+with a note about the difference
+
+.. code-block:: python
+  :caption: terminal
+
+  First list contains 5 additional elements.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the five additional elements
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 165
+    :emphasize-lines: 4-6
+
+        def test_dir_dict(self):
+            dir_person = dir(object)
+            dir_person.extend((
+                '__dict__', '__firstlineno__',
+                '__module__', '__static_attributes__',
+                '__weakref__',
+                'can_get_license', 'can_vote',
+                'check_age', 'say_hello',
+            ))
+            self.assertEqual(
+                dir(src.person.Person),
+                dir_person
+            )
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
+
+* I add a :ref:`call to the sort method<test_sort_a_list>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 167
+    :emphasize-lines: 8
+
+            dir_person.extend((
+                '__dict__', '__firstlineno__',
+                '__module__', '__static_attributes__',
+                '__weakref__',
+                'can_get_license', 'can_vote',
+                'check_age', 'say_hello',
+            ))
+            dir_person.sort()
+            self.assertEqual(
+                dir(src.person.Person),
+                dir_person
+            )
+
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    '__dir__', '__doc__', '__eq__',
+
+  the test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_dict`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 174
+
+            dir_person.sort()
+            self.assertEqual(
+                dir(src.person.Person),
+                dir_person
+            )
+
+        def test_dir_person_instance(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_dir_dict with extend and sort'
+
+:ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
+
+
+* Since all :ref:`objects<everything is an object>` inherit from :ref:`object<everything is an object>` I should be able to use the :ref:`extend method<test_extend>`
+
+
+
 
 ----
 
@@ -2787,7 +2967,7 @@ the test passes.
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {'key0': 'value0'} != {'key': 'value'}
+    AssertionError: {'key0': 'value0'} != {}
 
 * I change the value in the second :ref:`assertEqual method<test_assertEqual>` to match
 
@@ -3965,7 +4145,7 @@ I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` w
 * :ref:`test_making_a_dictionary_w_a_set_as_a_key`
 * :ref:`test_making_a_dictionary_w_a_dictionary_as_a_key`
 
-I also ran these tests for the :ref:`methods of dictionaries<test_dir_dictionaries>`
+I also ran these tests for the :ref:`methods of dictionaries<test_dir_dict>`
 
 * :ref:`test_clear_empties_a_dictionary`
 * :ref:`test_copy_a_dictionary`
