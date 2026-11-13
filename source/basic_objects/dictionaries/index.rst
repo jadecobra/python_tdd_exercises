@@ -1143,23 +1143,25 @@ The :ref:`attributes and methods of the dictionary object<test_dir_dict>` are th
 I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of the dict object<test_dir_dict>`, then add an :ref:`assertion<what is an assertion?>` for it, in :ref:`test_dir_dict`
 
 .. code-block:: python
-  :caption: person/tests/test_person.py
-  :lineno-start: 165
-  :emphasize-lines: 2-10
+  :caption: dictionaries/tests/test_dictionaries.py
+  :lineno-start: 44
+  :emphasize-lines: 3-9
 
       def test_dir_dict(self):
-          dir_person = dir(object)
-          dir_person.extend((
-              'can_get_license', 'can_vote',
-              'check_age', 'say_hello',
+          self.maxDiff = None
+          dir_dict = dir(object)
+          dir_dict.extend((
+              'clear', 'copy', 'fromkeys',
+              'get', 'items', 'keys',
+              'pop', 'popitem', 'setdefault',
+              'update', 'values'
           ))
           self.assertEqual(
-              dir(src.person.Person),
-              dir_person
+              dir(dict),
+              dir_dict
           )
-
           self.assertEqual(
-              dir(src.person.Person),
+              dir(dict),
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1167,11 +1169,11 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   :caption: terminal
 
   AssertionError: Lists differ: [
-      '__c[24 chars]'__dict__', '__dir__', '__doc__',
-      '__eq__', '_[381 chars]llo'
+      '__class__', '__class_getitem__', '__contains__',
+      '__dela[514 chars]ues'
   ] != [
-      '__c[24 chars]'__dir__', '__doc__', '__eq__',
-      '__format__', [296 chars]llo'
+      '__class__', '__delattr__', '__dir__', '__doc__',
+      '__eq__[361 chars]ues'
   ]
 
 with a note about the difference
@@ -1179,7 +1181,7 @@ with a note about the difference
 .. code-block:: python
   :caption: terminal
 
-  First list contains 5 additional elements.
+  First list contains 11 additional elements.
 
 ----
 
@@ -1189,25 +1191,26 @@ with a note about the difference
 
 ----
 
-* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the five additional elements
+* I add the eleven additional elements
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 165
-    :emphasize-lines: 4-6
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 47
+    :emphasize-lines: 2-5
 
-        def test_dir_dict(self):
-            dir_person = dir(object)
-            dir_person.extend((
-                '__dict__', '__firstlineno__',
-                '__module__', '__static_attributes__',
-                '__weakref__',
-                'can_get_license', 'can_vote',
-                'check_age', 'say_hello',
+            dir_dict.extend((
+                '__class_getitem__', '__contains__',
+                '__delitem__', '__getitem__', '__ior__',
+                '__iter__', '__len__', '__or__',
+                '__reversed__', '__ror__', '__setitem__',
+                'clear', 'copy', 'fromkeys',
+                'get', 'items', 'keys',
+                'pop', 'popitem', 'setdefault',
+                'update', 'values'
             ))
             self.assertEqual(
-                dir(src.person.Person),
-                dir_person
+                dir(dict),
+                dir_dict
             )
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
@@ -1215,28 +1218,27 @@ with a note about the difference
 * I add a :ref:`call to the sort method<test_sort_a_list>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 167
-    :emphasize-lines: 8
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 47
+    :emphasize-lines: 11
 
-            dir_person.extend((
-                '__dict__', '__firstlineno__',
-                '__module__', '__static_attributes__',
-                '__weakref__',
-                'can_get_license', 'can_vote',
-                'check_age', 'say_hello',
+            dir_dict.extend((
+                '__class_getitem__', '__contains__',
+                '__delitem__', '__getitem__', '__ior__',
+                '__iter__', '__len__', '__or__',
+                '__reversed__', '__ror__', '__setitem__',
+                'clear', 'copy', 'fromkeys',
+                'get', 'items', 'keys',
+                'pop', 'popitem', 'setdefault',
+                'update', 'values'
             ))
-            dir_person.sort()
+            dir_dict.sort()
             self.assertEqual(
-                dir(src.person.Person),
-                dir_person
+                dir(dict),
+                dir_dict
             )
-
             self.assertEqual(
-                dir(src.person.Person),
-                [
-                    '__class__', '__delattr__', '__dict__',
-                    '__dir__', '__doc__', '__eq__',
+                dir(dict),
 
   the test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
 
@@ -1251,33 +1253,39 @@ with a note about the difference
 * I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_dict`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 174
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 58
 
-            dir_person.sort()
             self.assertEqual(
-                dir(src.person.Person),
-                dir_person
+                dir(dict),
+                dir_dict
             )
 
-        def test_dir_person_instance(self):
+
+    'clear',
+    'copy',
+    'fromkeys',
+    'get',
+    'items',
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
+
+
+    # Exceptions seen
 
 * I add a git_ commit message
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
-    git commit -am \
-    'test_dir_dict with extend and sort'
+    git commit -am 'add test_dir_dict'
 
 :ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
-
-
-* Since all :ref:`objects<everything is an object>` inherit from :ref:`object<everything is an object>` I should be able to use the :ref:`extend method<test_extend>`
-
-
-
 
 ----
 
@@ -1291,16 +1299,16 @@ test_clear_empties_a_dictionary
 
 ----
 
-* I add a test for the first :ref:`method<what is a method?>`
+* I add a test for the `clear method`_
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 93
+    :lineno-start: 58
     :emphasize-lines: 6-8
 
-                    'update',
-                    'values'
-                ]
+            self.assertEqual(
+                dir(dict),
+                dir_dict
             )
 
         def test_clear(self):
@@ -1316,7 +1324,7 @@ test_clear_empties_a_dictionary
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 98
+    :lineno-start: 63
     :emphasize-lines: 4
 
         def test_clear(self):
@@ -1331,7 +1339,7 @@ test_clear_empties_a_dictionary
 
     AssertionError: {} != {'key': 'value'}
 
-  the `clear method`_ emptied the :ref:`dictionary<what is a dictionary?>`, :ref:`same as it does with lists<test_clear_empties_a_list>`
+  the `clear method`_ emptied the :ref:`dictionary<what is a dictionary?>`, :ref:`same as it does with lists<test_clear_empties_a_list>`.
 
 ----
 
@@ -1341,17 +1349,20 @@ test_clear_empties_a_dictionary
 
 ----
 
-I change the values to match
+I change the expectation to match
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 98
+  :lineno-start: 63
   :emphasize-lines: 4
 
       def test_clear(self):
           a_dictionary = {'key': 'value'}
           self.assertIsNone(a_dictionary.clear())
           self.assertEqual(a_dictionary, {})
+
+
+  'clear',
 
 the test passes.
 
@@ -1367,8 +1378,13 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 98
-    :emphasize-lines: 1
+    :lineno-start: 58
+    :emphasize-lines: 6
+
+            self.assertEqual(
+                dir(dict),
+                dir_dict
+            )
 
         def test_clear_empties_a_dictionary(self):
             a_dictionary = {'key': 'value'}
@@ -1382,7 +1398,7 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 101
+    :lineno-start: 66
 
             self.assertEqual(a_dictionary, {})
 
