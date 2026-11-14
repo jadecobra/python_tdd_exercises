@@ -206,9 +206,10 @@ the test is green again.
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'test_elevator with generators'
+    git commit -am \
+    'test_elevator_controller with generators'
 
 ----
 

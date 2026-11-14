@@ -1,17 +1,14 @@
 .. meta::
-  :description: Pumping Python, by Johnny Blase. In the functions project, pytest-watcher reruns tests/test_functions.py while for loops and subTest replace repeated assertions. Four tests that assertIsNone on w_pass, w_return, w_return_none, and return_leaves_the_function become test_functions_return_none_by_default. The red step calls assertIsNotNone and the terminal shows AssertionError: unexpectedly None, then assertIsNone. test_identity_function loops None, object, the strings first and last, a tuple, a list, a set, and a dictionary. assertNotEqual on equal values shows AssertionError: None == None (and the same shape for the other objects) before assertEqual. test_why_use_a_for_loop loops add_x. A red expectation of 'BOOM!!!' shows AssertionError: 3 != 'BOOM!!!'. range(0, 10) and range(10) are the same numbers; range(1000) runs one thousand subtests and is slower. test_positional_arguments, test_keyword_arguments, and test_args_and_kwargs collapse into one loop over input pairs and four functions. A swapped tuple shows AssertionError: Tuples differ: ('first', 'last') != ('last', 'first'). args_and_kwargs still takes argument and last_input, so last_input= and first_input= raise TypeError: args_and_kwargs() got an unexpected keyword argument 'first_input'. Did you mean 'last_input'? The green step renames argument to first_input in the definition and the return, in src/functions/__init__.py. The review asks whether the loop still says what the test is checking.
-  :keywords: for loop, subTest, range, assertIsNone, assertIsNotNone, assertEqual, assertNotEqual, unexpectedly None, Tuples differ, TypeError, first_input, args_and_kwargs, pytest-watcher, test_functions.py, Pumping Python, Johnny Blase
+  :description:
+  :keywords:
 
 .. include:: ../links.rst
-
-.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
-.. _range object: range_
 
 #################################################################################
 test functions with generators
 #################################################################################
 
-I want to use :ref:`for loops<what is a for loop?>` in the :ref:`functions<what is a function?>` project.
+I want to use a :ref:`generator<generator expressions>` in the :ref:`functions<what is a function?>` project.
 
 ----
 
@@ -21,31 +18,31 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_generators.py
   :caption: functions/tests/test_functions.py
   :language: python
   :linenos:
   :lines: 1-12
 
-.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_generators.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 14
   :lines: 14-27
 
-.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_generators.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 29
   :lines: 29-39
 
-.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_generators.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 41
   :lines: 41-49
 
-.. literalinclude:: ../code/functions/tests/test_functions_w_loops.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_generators.py
   :caption: functions/tests/test_functions.py
   :language: python
   :lineno-start: 51
@@ -1205,7 +1202,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test functions with loops: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test functions with generators: tests>`
 
 ----
 
@@ -1239,8 +1236,10 @@ what is next?
 * :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
+* :ref:`I know how to use lists<what is a list?>`.
+* :ref:`I know how to use list comprehensions<list comprehensions>`.
 
-:ref:`Would you like to test the microwave project with loops?<test microwave with loops>`
+:ref:`Would you like to test the microwave project with generators?<test microwave with generators>`
 
 ----
 
