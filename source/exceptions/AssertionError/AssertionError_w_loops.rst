@@ -96,6 +96,7 @@ test_assert_keyword with for loop
 I add a tuple_ with a :ref:`for loop<what is a for loop?>` for the items in :ref:`test_assert_keyword`
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 38
   :emphasize-lines: 2-9
 
@@ -114,6 +115,7 @@ I add a tuple_ with a :ref:`for loop<what is a for loop?>` for the items in :ref
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   SUBFAILED[(2, 2)] ...test_assert_keyword -
       AssertionError: assert 2 == 'BOOM!!!'
@@ -146,6 +148,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED[(2, 2)] ...test_assert_keyword -
         AssertionError: 2 != 'BAP!!!'
@@ -226,6 +229,7 @@ test_assertion_error_w_none with for loop
 I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_none`
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 48
   :emphasize-lines: 6-15
 
@@ -275,7 +279,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=False) ::test_assertion_error_w_none -
         AssertionError: unexpectedly identical: False
@@ -386,6 +391,7 @@ test_assertion_error_w_false with a for loop
 I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_false`
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 64
   :emphasize-lines: 5-13
 
@@ -434,7 +440,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=True) test_assertion_error_w_false -
         AssertionError: unexpectedly identical: True
@@ -508,6 +515,7 @@ test_assertion_error_w_true with a for loop
 I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_true`
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 78
   :emphasize-lines: 5-13
 
@@ -556,7 +564,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=False) ...test_assertion_error_w_true -
         AssertionError: unexpectedly identical: False
@@ -695,7 +704,8 @@ I can use an :ref:`object attribute<what is an object attribute?>` with a :ref:`
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=False) test_assertion_error_w_none -
         AssertionError: assert None is not None
@@ -846,7 +856,8 @@ test_assertion_error_w_equality with a for loop
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(pair=(None, False)) ...test_assertion_error_w_equality -
         AssertionError: None != False
@@ -872,6 +883,7 @@ test_assertion_error_w_equality with a for loop
 I move ``self.assertEqual(first, second)`` into a :ref:`try statement<how to handle exceptions>` to handle the cases where the pairings are not equal
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 77
   :emphasize-lines: 6-9
 
@@ -961,6 +973,7 @@ which looks like some of the pairs from :ref:`test_assertion_error_w_equality`
 I add :ref:`True<test_what_is_true>` to the tuple_ in :ref:`test_assertion_error_w_true`
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 66
   :emphasize-lines: 6
 
@@ -976,6 +989,7 @@ I add :ref:`True<test_what_is_true>` to the tuple_ in :ref:`test_assertion_error
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   SUBFAILED(object=True) ...
       AssertionError: assert True is not True
@@ -1006,6 +1020,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: True
 
@@ -1080,7 +1095,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=False) ...
         AssertionError: assert False is not False
@@ -1103,6 +1119,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: False
 
@@ -1170,7 +1187,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=None) ...
         AssertionError: assert None is not None
@@ -1193,7 +1211,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=None)...
         AssertionError: unexpectedly identical: None
@@ -1220,7 +1239,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+    :caption: terminal
 
     SUBFAILED(object=None) ...
         AssertionError: unexpectedly None
@@ -1380,6 +1400,7 @@ I can make a :ref:`function<what is a function?>` with a :ref:`for loop<what is 
 I add a :ref:`function<what is a function?>` with two :ref:`for loops<what is a for loop?>` like I did in :ref:`test_assertion_error_w_equality`
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 28
   :emphasize-lines: 8-12
 
@@ -1401,6 +1422,7 @@ I add a :ref:`function<what is a function?>` with two :ref:`for loops<what is a 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
   SUBFAILED(pair=(None, None)) ...test_assertion_error -
       AssertionError: unexpectedly identical: None
@@ -1434,6 +1456,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I move ``self.assertIsNot(first, second)`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is the same :ref:`object<everything is an object>` as the second one
 
 .. code-block:: python
+  :caption: assertion_error/tests/test_assertion_error.py
   :lineno-start: 35
   :emphasize-lines: 2-5
 
@@ -1663,6 +1686,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for ninety sub tests
 
   .. code-block:: python
+    :caption: terminal
 
     ============ 90 failed, 6 passed in A.BCs ==============
 
@@ -1734,6 +1758,7 @@ the test passes.
 * I remove the :ref:`assert_is_not_none<extract assert_is_not_none function>`, :ref:`assert_is_not_false<extract assert_is_not_false function>` and :ref:`assert_is_not_true functions<extract assert_is_not_true function>` because they are no longer used
 
   .. code-block:: python
+    :caption: assertion_error/tests/test_assertion_error.py
     :linenos:
 
     import unittest
