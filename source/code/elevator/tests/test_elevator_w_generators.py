@@ -6,11 +6,10 @@ import unittest
 class TestElevator(unittest.TestCase):
 
     def test_elevator_controller(self):
-        booleans = (False, True)
         for (
             number_pushed, doors_closed,
-            above_weight, emergency
-        ) in itertools.product(booleans, repeat=4):
+            above_weight, emergency,
+        ) in itertools.product((False, True), repeat=4):
             with self.subTest(
                 number_pushed=number_pushed,
                 doors_closed=doors_closed,

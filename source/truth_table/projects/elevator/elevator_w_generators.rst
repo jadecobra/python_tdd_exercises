@@ -148,13 +148,13 @@ the test is green again.
 
         def test_elevator_controller(self):
             booleans = (False, True)
-            # for right_pin in booleans:
-            #     for enough_cash in booleans:
-            #         for above_daily_limit in booleans:
-            #             for card_expired in booleans:
+            # for number_pushed in booleans:
+            #     for doors_closed in booleans:
+            #         for above_weight in booleans:
+            #             for emergency in booleans:
             # for (
-            #     right_pin, enough_cash,
-            #     above_daily_limit, card_expired
+            #     number_pushed, doors_closed,
+            #     above_weight, emergency,
             # ) in (
             #     (_, _, _, _)
             #     for _ in booleans
@@ -169,14 +169,14 @@ the test is green again.
     :emphasize-lines: 1-4
 
             for (
-                right_pin, enough_cash,
-                above_daily_limit, card_expired
-            ) in itertools.product(booleans, repeat=4):
+                number_pushed, doors_closed,
+                above_weight, emergency,
+            ) in itertools.product((False, True), repeat=4):
                             with self.subTest(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=above_daily_limit,
-                                card_expired=card_expired,
+                                number_pushed=number_pushed,
+                                doors_closed=doors_closed,
+                                above_weight=above_weight,
+                                emergency=emergency,
                             ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
@@ -184,8 +184,8 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-     NameError: name 'itertools' is not defined.
-                Did you forget to import 'itertools'?
+    NameError: name 'itertools' is not defined.
+               Did you forget to import 'itertools'?
 
 * I add an `import statement`_ for the `itertools library`_
 
@@ -198,30 +198,7 @@ the test is green again.
     import src.elevator
     import unittest
 
-
-    class TestATM(unittest.TestCase):
-
   the test is green again.
-
-* I no longer need the ``booleans`` :ref:`variable<what is a variable?>` because it is only used once as input to :ref:`itertools.product<another way to make a generator for nested loops>`
-
-  .. code-block:: python
-    :caption: elevator/tests/test_elevator.py
-    :lineno-start: 24
-    :emphasize-lines: 4
-
-            for (
-                right_pin, enough_cash,
-                above_daily_limit, card_expired
-            ) in itertools.product((False, True), repeat=4):
-                            with self.subTest(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=above_daily_limit,
-                                card_expired=card_expired,
-                            ):
-
-  the test is still green.
 
 * I remove the ``booleans`` :ref:`variable<what is a variable?>` and commented lines, then fix indentation in :ref:`test_elevator<extract test_elevator_controller>`
 
