@@ -49,8 +49,100 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
   :language: python
   :linenos:
+  :lines: 1-
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :linenos:
+  :lines: 1-17
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 19
+  :lines: 19-29
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 31
+  :lines: 31-42
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 44
+  :lines: 44-61
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 63
+  :lines: 63-73
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 75
+  :lines: 75-87
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 89
+  :lines: 89-103
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 105
+  :lines: 105-116
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 118
+  :lines: 118-126
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 128
+  :lines: 128-145
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 147
+  :lines: 147-156
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 158
+  :lines: 158-174
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 176
+  :lines: 176-195
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 197
+  :lines: 197-205
+
+.. literalinclude:: ../../code/tests/test_dictionaries.py
+  :caption: dictionaries/tests/test_dictionaries.py
+  :language: python
+  :lineno-start: 207
+  :lines: 207-
 
 ----
 
@@ -4449,7 +4541,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 test_key_error
 *********************************************************************************
 
-`KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<how to test that an Exception is raised>` to know when working with a :ref:`dictionary<what is a dictionary?>`. It happened earlier in :ref:`my test for the pop method<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
+`KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<how to test that an Exception is raised>` to know when working with a :ref:`dictionary<what is a dictionary?>`. It happened earlier in :ref:`my test for the pop method<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`.
 
 ----
 
@@ -4463,20 +4555,19 @@ I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 215
-  :emphasize-lines: 9-11
+  :lineno-start: 202
+  :emphasize-lines: 6-10
 
           self.assertEqual(
               list(a_dictionary.values()),
-              [
-                  'value0',
-                  [0, 1, 2, 'n']
-              ]
+              ['value0', [0, 1, 2, 'n']]
           )
 
       def test_key_error(self):
           a_dictionary = {'key': 'value'}
-          self.assertEqual(a_dictionary['key'], '')
+          self.assertEqual(
+              a_dictionary['key'], ''
+          )
 
 
   # Exceptions seen
@@ -4488,7 +4579,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'value' != ''
 
-I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a :ref:`dictionary<what is a dictionary?>` by giving the :ref:`key<test_key_error>` in ``[]``, the same way :ref:`I can get items from a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in ``[]``
+I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a :ref:`dictionary<what is a dictionary?>` by giving the :ref:`key<test_key_error>` in ``[]``, the same way :ref:`I can get items from a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in ``[]``.
 
 ----
 
@@ -4502,10 +4593,17 @@ I change the value in the expectation to match the terminal_
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 225
-  :emphasize-lines: 1
+  :lineno-start: 207
+  :emphasize-lines: 4
 
-          self.assertEqual(a_dictionary['key'], 'value')
+      def test_key_error(self):
+          a_dictionary = {'key': 'value'}
+          self.assertEqual(
+              a_dictionary['key'], 'value'
+          )
+
+
+  # Exceptions seen
 
 the test passes.
 
@@ -4521,11 +4619,20 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 225
-    :emphasize-lines: 2
+    :lineno-start: 207
+    :emphasize-lines: 6-8
 
-            self.assertEqual(a_dictionary['key'], 'value')
-            self.assertEqual(a_dictionary['not_in_dictionary'])
+        def test_key_error(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                a_dictionary['key'], 'value'
+            )
+            self.assertEqual(
+                a_dictionary['not_in_dictionary']
+            )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
@@ -4534,33 +4641,43 @@ the test passes.
 
     KeyError: 'not_in_dictionary'
 
-* I change the :ref:`assertEqual method<test_assertEqual>` to :ref:`assertRaises<another way to test if an Exception is raised>`
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 225
-    :emphasize-lines: 3-4
+    :lineno-start: 209
+    :emphasize-lines: 5-6
 
-            self.assertEqual(a_dictionary['key'], 'value')
+            self.assertEqual(
+                a_dictionary['key'], 'value'
+            )
 
             with self.assertRaises(KeyError):
                 a_dictionary['not_in_dictionary']
 
+
+    # Exceptions seen
+
   the test passes.
 
-* I can use the `get method`_ when I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a :ref:`dictionary<what is a dictionary?>`
+* I can use the `get method`_ to avoid :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 227
-    :emphasize-lines: 3-6
+    :lineno-start: 213
+    :emphasize-lines: 3-8
 
             with self.assertRaises(KeyError):
                 a_dictionary['not_in_dictionary']
             self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
+                a_dictionary.get(
+                    'not_in_dictionary', 'default'
+                ),
                 ''
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -4573,29 +4690,81 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 229
-    :emphasize-lines: 3
+    :lineno-start: 215
+    :emphasize-lines: 5
 
             self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
+                a_dictionary.get(
+                    'not_in_dictionary', 'default'
+                ),
                 'default'
             )
 
-  the test passes. This is a repetition of :ref:`test_get_value_of_a_key_in_a_dictionary`, here is another one
+
+    # Exceptions seen
+
+  the test passes. I was wrong about the `get method`_ earlier, it uses an :ref:`Exception handler<how to handle exceptions>` like the `pop method`_
+
+  .. code-block:: shell
+
+    a_dictionary = {'key': 'value'}
+
+  - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the value of the ``default`` parameter
+
+    .. code-block:: shell
+
+      a_dictionary.get('not in dictionary') -> None
+      └── def get(self, key, default=None):
+          ├── default = None
+          └── try:
+          ┌───┴── return self[key]
+          └── except KeyError:
+              └── return default
+
+    .. code-block:: shell
+
+      a_dictionary.get(
+          'not in dictionary', 'default'
+      ) -> 'default'
+      └── def get(self, key, default=None):
+          ├── default = 'default'
+          └── try:
+          ┌───┴── return self[key]
+          └── except KeyError:
+              └── return default
+
+  - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`, it returns its :ref:`value<test_values_of_a_dictionary>`
+
+    .. code-block:: shell
+
+      a_dictionary.get(
+          'key', 'default'
+      ) -> 'value'
+      └── def get(self, key, default=None):
+          ├── default = 'default'
+          └── try:
+              └── return self[key]
+              except KeyError:
+                  return default
 
 * The `pop method`_ raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the :ref:`dictionary<what is a dictionary?>`, I add a failing line for it
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 229
-    :emphasize-lines: 6
+    :lineno-start: 215
+    :emphasize-lines: 8
 
             self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
+                a_dictionary.get(
+                    'not_in_dictionary', 'default'
+                ),
                 'default'
             )
 
             a_dictionary.pop('not_in_dictionary')
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
@@ -4608,16 +4777,21 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 229
-    :emphasize-lines: 6-7
+    :lineno-start: 215
+    :emphasize-lines: 8-9
 
             self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
+                a_dictionary.get(
+                    'not_in_dictionary', 'default'
+                ),
                 'default'
             )
 
             with self.assertRaises(KeyError):
                 a_dictionary.pop('not_in_dictionary')
+
+
+    # Exceptions seen
 
   the test passes.
 
@@ -4625,15 +4799,20 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 234
-    :emphasize-lines: 3-6
+    :lineno-start: 222
+    :emphasize-lines: 3-8
 
             with self.assertRaises(KeyError):
                 a_dictionary.pop('not_in_dictionary')
             self.assertEqual(
-                a_dictionary.pop('not_in_dictionary', 'default'),
+                a_dictionary.pop(
+                    'not_in_dictionary', 'default'
+                ),
                 ''
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -4646,11 +4825,13 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 236
-    :emphasize-lines: 3
+    :lineno-start: 224
+    :emphasize-lines: 5
 
             self.assertEqual(
-                a_dictionary.pop('not_in_dictionary', 'default'),
+                a_dictionary.pop(
+                    'not_in_dictionary', 'default'
+                ),
                 'default'
             )
 
@@ -4658,16 +4839,21 @@ the test passes.
 
 * The `popitem method`_ also raises :ref:`KeyError<test_key_error>` when called on an empty :ref:`dictionary<what is a dictionary?>`
 
-  .. code-block::
-    :lineno-start: 236
-    :emphasize-lines: 6
+  .. code-block:: python
+    :lineno-start: 224
+    :emphasize-lines: 8
 
             self.assertEqual(
-                a_dictionary.pop('not_in_dictionary', 'default'),
+                a_dictionary.pop(
+                    'not_in_dictionary', 'default'
+                ),
                 'default'
             )
 
             {}.popitem()
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
@@ -4676,30 +4862,19 @@ the test passes.
 
     KeyError: 'popitem(): dictionary is empty'
 
-  I cannot remove the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a :ref:`dictionary<what is a dictionary?>` that has no :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+  I cannot remove the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a :ref:`dictionary<what is a dictionary?>` that has no :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`.
 
 * I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 223
-    :emphasize-lines: 19-20
+    :lineno-start: 224
+    :emphasize-lines: 8-9
 
-        def test_key_error(self):
-            a_dictionary = {'key': 'value'}
-            self.assertEqual(a_dictionary['key'], 'value')
-
-            with self.assertRaises(KeyError):
-                a_dictionary['not_in_dictionary']
             self.assertEqual(
-                a_dictionary.get('not_in_dictionary', 'default'),
-                'default'
-            )
-
-            with self.assertRaises(KeyError):
-                a_dictionary.pop('not_in_dictionary')
-            self.assertEqual(
-                a_dictionary.pop('not_in_dictionary', 'default'),
+                a_dictionary.pop(
+                    'not_in_dictionary', 'default'
+                ),
                 'default'
             )
 
@@ -4715,7 +4890,16 @@ the test passes.
 
   the test passes.
 
-:ref:`I know what causes KeyError<test_key_error>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_key_error'
+
+:ref:`I know what causes KeyError<test_key_error>`.
 
 ----
 
@@ -4724,10 +4908,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_dictionaries.py``
-
-* I click in the terminal_ where the tests are running
-* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
-
+* I click in the terminal_ where the tests are running then use :kbd:`q` on the keyboard to leave the tests
 * I `change directory`_ to the parent of ``dictionaries``
 
   .. code-block:: python
@@ -4735,15 +4916,6 @@ close the project
     :emphasize-lines: 1
 
     cd ..
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: PowerShell
-
-    ...\pumping_python
-
-  I am back in the ``pumping_python`` directory_.
-
 
 ----
 
@@ -4753,7 +4925,7 @@ review
 
 Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<everything is an object>` can be used as values.
 
-I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic data types<basic objects>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic objects<basic objects>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 * :ref:`test_making_a_dictionary_w_none_as_a_key`
 * :ref:`test_making_a_dictionary_w_a_boolean_as_a_key`

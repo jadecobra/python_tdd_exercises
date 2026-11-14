@@ -43,56 +43,21 @@ class TestDictionaries(unittest.TestCase):
 
     def test_dir_dict(self):
         self.maxDiff = None
+        dir_dict = dir(object)
+        dir_dict.extend((
+            '__class_getitem__', '__contains__',
+            '__delitem__', '__getitem__', '__ior__',
+            '__iter__', '__len__', '__or__',
+            '__reversed__', '__ror__', '__setitem__',
+            'clear', 'copy', 'fromkeys',
+            'get', 'items', 'keys',
+            'pop', 'popitem', 'setdefault',
+            'update', 'values'
+        ))
+        dir_dict.sort()
         self.assertEqual(
             dir(dict),
-            [
-                '__class__',
-                '__class_getitem__',
-                '__contains__',
-                '__delattr__',
-                '__delitem__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getitem__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__init__',
-                '__init_subclass__',
-                '__ior__',
-                '__iter__',
-                '__le__',
-                '__len__',
-                '__lt__',
-                '__ne__',
-                '__new__',
-                '__or__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__reversed__',
-                '__ror__',
-                '__setattr__',
-                '__setitem__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__',
-                'clear',
-                'copy',
-                'fromkeys',
-                'get',
-                'items',
-                'keys',
-                'pop',
-                'popitem',
-                'setdefault',
-                'update',
-                'values'
-            ]
+            dir_dict
         )
 
     def test_clear_empties_a_dictionary(self):
@@ -109,14 +74,27 @@ class TestDictionaries(unittest.TestCase):
 
     def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
         self.assertEqual(
+            dict.fromkeys((0, 1)),
+            {0: None, 1: None}
+        )
+        self.assertEqual(
             dict.fromkeys((0, 1), 'default'),
             {0: 'default', 1: 'default'}
+        )
+        self.assertEqual(
+            {key: 'value' for key in (0, 1)},
+            {0: 'value', 1: 'value'}
         )
 
     def test_get_value_of_a_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
+        self.assertIsNone(
+            a_dictionary.get('not in dictionary')
+        )
         self.assertEqual(
-            a_dictionary.get('not_in_dictionary', 'default'),
+            a_dictionary.get(
+                'not in dictionary', 'default'
+            ),
             'default'
         )
         self.assertEqual(
@@ -126,25 +104,25 @@ class TestDictionaries(unittest.TestCase):
 
     def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
-            'key0': 'value0',
+            'key': 'value',
             'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.items()),
             [
-                ('key0', 'value0'),
+                ('key', 'value'),
                 ('keyN', [0, 1, 2, 'n']),
             ]
         )
 
     def test_keys_of_a_dictionary(self):
         a_dictionary = {
-            'key0': 'value0',
+            'key': 'value',
             'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.keys()),
-            ['key0', 'keyN']
+            ['key', 'keyN']
         )
 
     def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
@@ -152,6 +130,10 @@ class TestDictionaries(unittest.TestCase):
 
         with self.assertRaises(KeyError):
             a_dictionary.pop('not_in_dictionary')
+
+        self.assertIsNone(
+            a_dictionary.pop('not_in_dictionary',  None)
+        )
         self.assertEqual(
             a_dictionary.pop('not_in_dictionary', 'default'),
             'default'
@@ -176,8 +158,8 @@ class TestDictionaries(unittest.TestCase):
     def test_setdefault_adds_given_key_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(
-            a_dictionary.setdefault('new_key', 'default'),
-            'default'
+            a_dictionary.setdefault('new_key', 'new value'),
+            'new value'
         )
         self.assertEqual(
             a_dictionary.setdefault('key', 'default'),
@@ -187,17 +169,22 @@ class TestDictionaries(unittest.TestCase):
             a_dictionary,
             {
                 'key': 'value',
-                'new_key': 'default',
+                'new_key': 'new value',
             }
         )
 
     def test_update_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
-        self.assertIsNone(a_dictionary.update(key='updated value'))
-        self.assertIsNone(a_dictionary.update({
-            'another_key': {0, 1, 2, 'n'}
-        }))
+
+        for key, value in (
+            ('key', 'updated value'),
+            ('new_key', [0, 1, 2, 'n']),
+            ('another_key', {0, 1, 2, 'n'}),
+        ):
+            self.assertIsNone(
+                a_dictionary.update({key: value})
+            )
+
         self.assertEqual(
             a_dictionary,
             {
@@ -214,27 +201,30 @@ class TestDictionaries(unittest.TestCase):
         }
         self.assertEqual(
             list(a_dictionary.values()),
-            [
-                'value0',
-                [0, 1, 2, 'n'],
-            ]
+            ['value0', [0, 1, 2, 'n']]
         )
 
     def test_key_error(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary['key'], 'value')
+        self.assertEqual(
+            a_dictionary['key'], 'value'
+        )
 
         with self.assertRaises(KeyError):
             a_dictionary['not_in_dictionary']
         self.assertEqual(
-            a_dictionary.get('not_in_dictionary', 'default'),
+            a_dictionary.get(
+                'not_in_dictionary', 'default'
+            ),
             'default'
         )
 
         with self.assertRaises(KeyError):
             a_dictionary.pop('not_in_dictionary')
         self.assertEqual(
-            a_dictionary.pop('not_in_dictionary', 'default'),
+            a_dictionary.pop(
+                'not_in_dictionary', 'default'
+            ),
             'default'
         )
 
