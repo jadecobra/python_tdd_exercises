@@ -4999,6 +4999,7 @@ what is next?
   ../../truth_table/projects/microwave/microwave_w_dictionaries
   ../../how_to/person/make_person_w_dictionaries
   ../../truth_table/projects/traffic_light/traffic_light_w_dictionaries
+  ../../truth_table/binary_operations/binary_operations_w_dictionaries
 
 :ref:`Would you like to use dictionaries in the calculator tests?<how to make a calculator 6>`
 
