@@ -11,7 +11,7 @@ test atm with loops
 #################################################################################
 
 
-I want to use :ref:`for loops<what is a for loop?>` in the :ref:`atm project<Automated Teller Machine>` project to give a different message with each denial based on the following inputs
+I want to use :ref:`for loops<what is a for loop?>` in the :ref:`atm<Automated Teller Machine>` project to give a different message with each denial based on the following inputs
 
 * has the card expired?
 * is the PIN correct?

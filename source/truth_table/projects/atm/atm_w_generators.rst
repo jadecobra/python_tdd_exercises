@@ -76,7 +76,7 @@ I add a :ref:`generator expression<generator expressions>` for the :ref:`for loo
           #             for card_expired in booleans:
           for (
               right_pin, enough_cash,
-              above_daily_limit, card_expired
+              above_daily_limit, card_expired,
           ) in (
               (_, _, _, _)
               for _ in booleans
@@ -139,11 +139,11 @@ the test is green again.
 
   for (
       right_pin, enough_cash,
-      above_daily_limit, card_expired
+      above_daily_limit, card_expired,
   ) in (
       (
           right_pin, enough_cash,
-          above_daily_limit, card_expired
+          above_daily_limit, card_expired,
       )
       for right_pin in booleans
       for enough_cash in booleans
@@ -172,7 +172,7 @@ the test is green again.
             #             for card_expired in booleans:
             # for (
             #     right_pin, enough_cash,
-            #     above_daily_limit, card_expired
+            #     above_daily_limit, card_expired,
             # ) in (
             #     (_, _, _, _)
             #     for _ in booleans
@@ -188,7 +188,7 @@ the test is green again.
 
             for (
                 right_pin, enough_cash,
-                above_daily_limit, card_expired
+                above_daily_limit, card_expired,
             ) in itertools.product(booleans, repeat=4):
                             with self.subTest(
                                 right_pin=right_pin,
@@ -230,7 +230,7 @@ the test is green again.
 
             for (
                 right_pin, enough_cash,
-                above_daily_limit, card_expired
+                above_daily_limit, card_expired,
             ) in itertools.product((False, True), repeat=4):
                             with self.subTest(
                                 right_pin=right_pin,
