@@ -3724,6 +3724,9 @@ the test passes.
               else:
                   ...
 
+
+  - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`it return its :ref:`value<test_values_of_a_dictionary>`
+
     .. code-block:: shell
 
       a_dictionary.setdefault('key', 'default') -> 'value'
@@ -3739,41 +3742,25 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 176
-    :emphasize-lines: 1
+    :lineno-start: 156
+    :emphasize-lines: 3
+
+            self.assertEqual(a_dictionary, {'key0': 'value0'})
 
         def test_setdefault_adds_given_key_to_a_dictionary(self):
             a_dictionary = {'key': 'value'}
-            self.assertEqual(
-                a_dictionary.setdefault('new_key', 'default'),
-                'default'
-            )
-            self.assertEqual(
-                a_dictionary.setdefault('key', 'default'),
-                'value'
-            )
-            self.assertEqual(
-                a_dictionary,
-                {
-                    'key': 'value',
-                    'new_key': 'default',
-                }
-            )
-
-
-    'setdefault',
 
 * I remove setdefault_ from the TODO list
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 186
+    :lineno-start: 168
 
             self.assertEqual(
                 a_dictionary,
                 {
                     'key': 'value',
-                    'new_key': 'default',
+                    'new_key': 'new value',
                 }
             )
 
@@ -3781,7 +3768,16 @@ the test passes.
     'update',
     'values'
 
-:ref:`I know how to add a key with a default value to a dictionary<test_setdefault_adds_given_key_to_a_dictionary>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_setdefault_adds_given_key_to_a_dictionary'
+
+:ref:`I know how to add a key with a default value to a dictionary<test_setdefault_adds_given_key_to_a_dictionary>`.
 
 ----
 
@@ -3799,14 +3795,14 @@ test_update_a_dictionary
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 186
+    :lineno-start: 168
     :emphasize-lines: 9-11
 
             self.assertEqual(
                 a_dictionary,
                 {
                     'key': 'value',
-                    'new_key': 'default',
+                    'new_key': 'new value',
                 }
             )
 
@@ -3817,19 +3813,22 @@ test_update_a_dictionary
 
     'update',
 
-  the test is green. The `update method`_ returns :ref:`None<what is None?>`
+  the test is green. The `update method`_ returns :ref:`None<what is None?>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 194
+    :lineno-start: 176
     :emphasize-lines: 4
 
         def test_update(self):
             a_dictionary = {'key': 'value'}
             self.assertIsNone(a_dictionary.update())
             self.assertEqual(a_dictionary, {})
+
+
+    'update',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3838,7 +3837,7 @@ test_update_a_dictionary
 
     AssertionError: {'key': 'value'} != {}
 
-  the :ref:`dictionary<what is a dictionary?>` did not change
+  the :ref:`dictionary<what is a dictionary?>` did not change.
 
 ----
 
@@ -3852,10 +3851,16 @@ I change the values in the expectation to match the terminal_
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 197
-  :emphasize-lines: 1
+  :lineno-start: 176
+  :emphasize-lines: 4
 
+      def test_update(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.update())
           self.assertEqual(a_dictionary, {'key': 'value'})
+
+
+  'update',
 
 the test passes.
 
@@ -3871,7 +3876,7 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 194
+    :lineno-start: 176
     :emphasize-lines: 3
 
         def test_update(self):
@@ -3890,44 +3895,56 @@ the test passes.
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 196
-    :emphasize-lines: 1
+    :lineno-start: 176
+    :emphasize-lines: 3
 
+        def test_update(self):
+            a_dictionary = {'key': 'value'}
             self.assertIsNone(a_dictionary.update((0, 1)))
+            self.assertEqual(a_dictionary, {'key': 'value'})
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: python
+  .. code-block:: none
     :caption: terminal
 
-    TypeError: cannot convert dictionary update sequence element #0 to a sequence
+    TypeError: cannot convert dictionary update
+               sequence element #0 to a sequence
 
-  I had the same error message when I tried to :ref:`make a dictionary with things in it<test_making_a_dictionary>`
+  I had the same error message when I tried to :ref:`make a dictionary with things in it<test_making_a_dictionary>`.
 
 * I try a :ref:`keyword argument<test_keyword_arguments>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 196
-    :emphasize-lines: 1
+    :lineno-start: 176
+    :emphasize-lines: 3-5
 
-            self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
+        def test_update(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.update(new_key=[0, 1, 2, 'n'])
+            )
+            self.assertEqual(a_dictionary, {'key': 'value'})
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {'key': 'value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value'}
+    AssertionError: {'key': 'value', 'new_key': [0, 1, 2, 'n']}
+                 != {'key': 'value'}
 
 * I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 196
-    :emphasize-lines: 2-8
+    :lineno-start: 178
+    :emphasize-lines: 6-9
 
-            self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
+            self.assertIsNone(
+                a_dictionary.update(new_key=[0, 1, 2, 'n'])
+            )
             self.assertEqual(
                 a_dictionary,
                 {
@@ -3936,35 +3953,49 @@ the test passes.
                 }
             )
 
+
+    'update',
+
   the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` to see what happens when I give a :ref:`key<test_keys_of_a_dictionary>` that is already in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 194
-    :emphasize-lines: 4
+    :lineno-start: 178
+    :emphasize-lines: 4-6
 
-        def test_update(self):
-            a_dictionary = {'key': 'value'}
-            self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
-            self.assertIsNone(a_dictionary.update(key='updated value'))
+            self.assertIsNone(
+                a_dictionary.update(new_key=[0, 1, 2, 'n'])
+            )
+            self.assertIsNone(
+                a_dictionary.update(key='updated value')
+            )
             self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'value',
+                    'new_key': [0, 1, 2, 'n'],
+                }
+            )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {'key': 'updated value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value', 'new_key': [0, 1, 2, 'n']}
+    AssertionError: {
+        'key': 'updated value',
+        'new_key': [0, 1, 2, 'n']
+    } != {'key': 'value', 'new_key': [0, 1, 2, 'n']}
 
-  the `update method`_ changes the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` that is already in a :ref:`dictionary<what is a dictionary?>`
+  the `update method`_ changes the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` that is already in a :ref:`dictionary<what is a dictionary?>`.
 
 * I change the expectation to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 198
+    :lineno-start: 184
     :emphasize-lines: 4
 
             self.assertEqual(
@@ -3975,38 +4006,52 @@ the test passes.
                 }
             )
 
+
+    'update',
+
   the test passes.
 
 * since the `update method`_ takes :ref:`keyword arguments<test_keyword_arguments>`, I can give it a :ref:`dictionary<what is a dictionary?>` as input. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 194
-    :emphasize-lines: 5-7
+    :lineno-start: 181
+    :emphasize-lines: 4-8
 
-        def test_update(self):
-            a_dictionary = {'key': 'value'}
-            self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
-            self.assertIsNone(a_dictionary.update(key='updated value'))
-            self.assertIsNone(a_dictionary.update(
-                {'another_key': {0, 1, 2, 'n'}}
-            ))
+            self.assertIsNone(
+                a_dictionary.update(key='updated value')
+            )
+            self.assertIsNone(
+                a_dictionary.update(
+                    {'another_key': {0, 1, 2, 'n'}}
+                )
+            )
             self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'updated value',
+                    'new_key': [0, 1, 2, 'n'],
+                }
+            )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n'], 'another_key': {0, 1, 2, 'n'}} != {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n']}
+    AssertionError: {
+        'key[14 chars]lue',
+        'new_key': [0, 1, 2, 'n'],
+        'another_key': {0, 1, 2, 'n'}
+    } != {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n']}
 
-  I can use the `update method`_ to add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from one :ref:`dictionary<what is a dictionary?>` to another
+  I can use the `update method`_ to add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from one :ref:`dictionary<what is a dictionary?>` to another.
 
-* I change the expectation in the :ref:`assertEqual method<test_assertEqual>` to match
+* I change the expectation in the :ref:`assertion<what is an assertion?>` to match
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 201
+    :lineno-start: 189
     :emphasize-lines: 6
 
             self.assertEqual(
@@ -4018,28 +4063,96 @@ the test passes.
                 }
             )
 
+
+    'update',
+
   the test passes.
 
-* I change the name of the test
+* I add a :ref:`for loop<what is a for loop?>` for the repeated :ref:`calls<how to call a function with input>` to the `update method`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 194
-    :emphasize-lines: 1
+    :lineno-start: 184
+    :emphasize-lines: 6-13
 
-        def test_update_a_dictionary(self):
-            a_dictionary = {'key': 'value'}
-            self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
-            self.assertIsNone(a_dictionary.update(key='updated value'))
-            self.assertIsNone(a_dictionary.update(
-                {'another_key': {0, 1, 2, 'n'}}
-            ))
+            self.assertIsNone(
+                a_dictionary.update(
+                    {'another_key': {0, 1, 2, 'n'}}
+                )
+            )
+            for key, value in (
+                ('key', 'updated value'),
+                ('new_key', [0, 1, 2, 'n']),
+                ('another_key', {0, 1, 2, 'n'}),
+            ):
+                self.assertIsNone(
+                    a_dictionary.update(key=value)
+                )
+
             self.assertEqual(
                 a_dictionary,
                 {
                     'key': 'updated value',
                     'new_key': [0, 1, 2, 'n'],
-                    'another_key': {0, 1, 2, 'n'}
+                    'another_key': {0, 1, 2, 'n'},
+                }
+            )
+
+
+    'update',
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    AssertionError: {
+        'key': {0, 1, 2, 'n'},
+        'new_key': [0, 1, 2, 'n'][27 chars]'n'}
+    } != {
+        'key': 'updated value',
+        'new_key': [0, 1, 2, 'n'[28 chars]'n'}
+    }
+
+  it changed :ref:`value<test_values_of_a_dictionary>` for ``key`` because I used it as a :ref:`keyword argument<test_keyword_arguments>`.
+
+* I change the input to the :ref:`call<how to call a function with input>` to the `update method`_ to a :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 194
+    :emphasize-lines: 2
+
+                self.assertIsNone(
+                    a_dictionary.update({key: value})
+                )
+
+  the test is green again.
+
+* I remove the first three :ref:`assertions<what is an assertion?>` since they are now covered by the :ref:`for loop<what is a for loop?>`
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 176
+
+        def test_update(self):
+            a_dictionary = {'key': 'value'}
+
+            for key, value in (
+                ('key', 'updated value'),
+                ('new_key', [0, 1, 2, 'n']),
+                ('another_key', {0, 1, 2, 'n'}),
+            ):
+                self.assertIsNone(
+                    a_dictionary.update({key: value})
+                )
+
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'updated value',
+                    'new_key': [0, 1, 2, 'n'],
+                    'another_key': {0, 1, 2, 'n'},
                 }
             )
 
@@ -4048,25 +4161,59 @@ the test passes.
 
   the test is still green.
 
+* I change the name of the test
+
+  .. code-block:: python
+    :caption: dictionaries/tests/test_dictionaries.py
+    :lineno-start: 168
+    :emphasize-lines: 9
+
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'value',
+                    'new_key': 'new value',
+                }
+            )
+
+        def test_update_a_dictionary(self):
+            a_dictionary = {'key': 'value'}
+
+  the test is still green.
+
 * I remove update_ from the TODO list
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 201
+    :lineno-start: 188
 
             self.assertEqual(
                 a_dictionary,
                 {
                     'key': 'updated value',
                     'new_key': [0, 1, 2, 'n'],
-                    'another_key': {0, 1, 2, 'n'}
+                    'another_key': {0, 1, 2, 'n'},
                 }
             )
 
 
     'values'
 
-:ref:`I know how to add key-value pairs from one dictionary to another<test_update_a_dictionary>`
+
+    # Exceptions seen
+
+
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_update_a_dictionary'
+
+:ref:`I know how to add key-value pairs from one dictionary to another<test_update_a_dictionary>`.
 
 ----
 
@@ -4084,7 +4231,7 @@ I add a test for the last :ref:`method<what is a method?>` in my TODO list
 
 .. code-block:: python
   :caption: dictionaries/tests/test_dictionaries.py
-  :lineno-start: 201
+  :lineno-start: 188
   :emphasize-lines: 10-12
 
           self.assertEqual(
@@ -4110,7 +4257,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: dict_values(['value']) is not None
 
-this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
+this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`.
 
 ----
 
@@ -4124,15 +4271,18 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 210
+    :lineno-start: 197
     :emphasize-lines: 3-6
 
         def test_values(self):
             a_dictionary = {'key': 'value'}
             self.assertIsNone(
-                a_dictionary.values,
+                a_dictionary.values(),
                 dict_values(['value'])
             )
+
+
+    'values'
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -4145,7 +4295,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 212
+    :lineno-start: 199
     :emphasize-lines: 3
 
             self.assertIsNone(
@@ -4158,13 +4308,14 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: dict_values(['value']) is not None : ['value']
+    AssertionError: dict_values(['value'])
+                    is not None : ['value']
 
 * I use ``list()`` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 212
+    :lineno-start: 199
     :emphasize-lines: 2
 
             self.assertIsNone(
@@ -4183,9 +4334,11 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 212
-    :emphasize-lines: 1
+    :lineno-start: 197
+    :emphasize-lines: 3
 
+        def test_values(self):
+            a_dictionary = {'key': 'value'}
             self.assertEqual(
                 list(a_dictionary.values()),
                 ['value']
@@ -4205,7 +4358,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 210
+    :lineno-start: 197
     :emphasize-lines: 2-5
 
         def test_values(self):
@@ -4223,22 +4376,23 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: Lists differ: ['value0', [0, 1, 2, 'n']] != ['value']
+    AssertionError: Lists differ: ['value0', [0, 1, 2, 'n']]
+                               != ['value']
 
 * I change the values in the expectation
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 215
-    :emphasize-lines: 3-6
+    :lineno-start: 202
+    :emphasize-lines: 3
 
             self.assertEqual(
                 list(a_dictionary.values()),
-                [
-                    'value0',
-                    [0, 1, 2, 'n'],
-                ]
+                ['value0', [0, 1, 2, 'n']]
             )
+
+
+    'values'
 
   the test passes.
 
@@ -4246,43 +4400,48 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 210
-    :emphasize-lines: 1
+    :lineno-start: 188
+    :emphasize-lines: 10
+
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'updated value',
+                    'new_key': [0, 1, 2, 'n'],
+                    'another_key': {0, 1, 2, 'n'},
+                }
+            )
 
         def test_values_of_a_dictionary(self):
             a_dictionary = {
                 'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
-            self.assertEqual(
-                list(a_dictionary.values()),
-                [
-                    'value0',
-                    [0, 1, 2, 'n'],
-                ]
-            )
 
-
-    'values'
-
-* I remove values_ from the TODO list
+* I remove ``values`` from the TODO list
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
-    :lineno-start: 215
+    :lineno-start: 202
 
             self.assertEqual(
                 list(a_dictionary.values()),
-                [
-                    'value0',
-                    [0, 1, 2, 'n']
-                ]
+                ['value0', [0, 1, 2, 'n']]
             )
 
 
     # Exceptions seen
 
-:ref:`I know how to look at the values of a dictionary<test_values_of_a_dictionary>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_values_of_a_dictionary'
+
+:ref:`I know how to look at the values of a dictionary<test_values_of_a_dictionary>`.
 
 ----
 
