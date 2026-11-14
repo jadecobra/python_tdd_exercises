@@ -52,12 +52,6 @@ I have these tests by the end of the chapter
   :caption: dictionaries/tests/test_dictionaries.py
   :language: python
   :linenos:
-  :lines: 1-
-
-.. literalinclude:: ../../code/tests/test_dictionaries.py
-  :caption: dictionaries/tests/test_dictionaries.py
-  :language: python
-  :linenos:
   :lines: 1-17
 
 .. literalinclude:: ../../code/tests/test_dictionaries.py
@@ -4894,10 +4888,9 @@ the test passes.
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
-    git commit -am \
-    'add test_key_error'
+    git commit -am 'add test_key_error'
 
 :ref:`I know what causes KeyError<test_key_error>`.
 
@@ -4961,7 +4954,7 @@ and a test for the important :ref:`Exception<how to test that an Exception is ra
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: dictionaries: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<dictionaries: tests>`
 
 ----
 
