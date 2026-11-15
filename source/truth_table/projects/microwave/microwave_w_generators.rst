@@ -5,7 +5,7 @@
   :description:
   :keywords:
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 .. _microwave with loops:
 
@@ -13,52 +13,7 @@
 test microwave with generators
 #################################################################################
 
-I want to use :ref:`for loops<what is a for loop?>` in the :ref:`microwave` project. It has tests for a **Microwave** with these inputs:
-
-* is the **Microwave** door closed?
-* is the timer set?
-* is the **Microwave** too hot?
-* was the start button pressed?
-
-the inputs gave me this :ref:`truth table`
-
-=============== ==============  ==================  ==================  =============
-door            timer           start button        too hot             output
-=============== ==============  ==================  ==================  =============
-:green:`closed` :green:`set`    :green:`pressed`    :green:`too hot`    :red:`False`
-:green:`closed` :green:`set`    :green:`pressed`    :red:`NOT too hot`  :green:`True`
-:green:`closed` :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`False`
-:green:`closed` :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
-=============== ==============  ==================  ==================  =============
-
-=============== ==============  ==================  ==================  =============
-door            timer           start button        too hot             output
-=============== ==============  ==================  ==================  =============
-:green:`closed` :red:`NOT set`  :green:`pressed`    :green:`too hot`    :red:`False`
-:green:`closed` :red:`NOT set`  :green:`pressed`    :red:`NOT too hot`  :red:`False`
-:green:`closed` :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`False`
-:green:`closed` :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
-=============== ==============  ==================  ==================  =============
-
-=============== ==============  ==================  ==================  =============
-door            timer           start button        too hot             output
-=============== ==============  ==================  ==================  =============
-:red:`open`     :green:`set`    :green:`pressed`    :green:`too hot`    :red:`False`
-:red:`open`     :green:`set`    :green:`pressed`    :red:`NOT too hot`  :red:`False`
-:red:`open`     :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`False`
-:red:`open`     :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
-=============== ==============  ==================  ==================  =============
-
-=============== ==============  ==================  ==================  =============
-door            timer           start button        too hot             output
-=============== ==============  ==================  ==================  =============
-:red:`open`     :red:`NOT set`  :green:`pressed`    :green:`too hot`    :red:`False`
-:red:`open`     :red:`NOT set`  :green:`pressed`    :red:`NOT too hot`  :red:`False`
-:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`False`
-:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
-=============== ==============  ==================  ==================  =============
-
-The only time this **Microwave** :green:`heats` up food is when the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the **Microwave** temperature is :red:`NOT too hot` AND the start button is :green:`pressed`.
+I want to use a :ref:`generator<generator expressions>` in the :ref:`microwave` project.
 
 *********************************************************************************
 preview
@@ -66,7 +21,7 @@ preview
 
 These is the test I have at the end of the chapter
 
-.. literalinclude:: ../../../code/microwave/tests/test_microwave_w_loops.py
+.. literalinclude:: ../../../code/microwave/tests/test_microwave_w_generators.py
   :caption: microwave/tests/test_microwave.py
   :language: python
   :linenos:
@@ -99,7 +54,7 @@ open the project
 ----
 
 *********************************************************************************
-extract test_microwave
+test_microwave with generators
 *********************************************************************************
 
 =================================================================================
@@ -108,44 +63,50 @@ extract test_microwave
 
 ----
 
-I add a test with :ref:`for loops<what is a for loop?>` for the sixteen cases
+I add a :ref:`generator expression<generator expressions>` for the nested :ref:`for loops<what is a for loop?>` in :ref:`test_microwave<extract test_microwave>`
 
 .. code-block:: python
   :caption: microwave/tests/test_microwave.py
-  :lineno-start: 5
-  :emphasize-lines: 3-14
-
-  class TestMicrowave(unittest.TestCase):
+  :lineno-start: 7
+  :emphasize-lines: 3-16
 
       def test_microwave(self):
           booleans = (False, True)
-          for closed_door in booleans:
-              for timer_set in booleans:
-                  for pressed_start in booleans:
-                      for too_hot in booleans:
+          # for closed_door in booleans:
+          #     for timer_set in booleans:
+          #         for pressed_start in booleans:
+          #             for too_hot in booleans:
+          for (
+              closed_door, timer_set,
+              pressed_start, too_hot,
+          ) in (
+              (_, _, _, _)
+              for _ in booleans
+              for _ in booleans
+              for _ in booleans
+              for _ in booleans
+          ):
+
+.. code-block:: python
+  :caption: microwave/tests/test_microwave.py
+  :lineno-start: 23
+  :emphasize-lines: 7
+
                           with self.subTest(
                               closed_door=closed_door,
                               timer_set=timer_set,
                               pressed_start=pressed_start,
                               too_hot=too_hot,
                           ):
-
-.. code-block:: python
-  :caption: microwave/tests/test_microwave.py
-  :lineno-start: 19
-  :emphasize-lines: 1-7
-
+                              raise Exception
                               result = src.microwave.microwave(
                                   closed_door=closed_door,
                                   timer_set=timer_set,
                                   pressed_start=pressed_start,
                                   too_hot=too_hot,
                               )
-                              self.assertEqual(result, 'BOOM!!!')
 
-      def test_too_hot_w_timer_set_closed_door_pressed_start(self):
-
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all sixteen cases.
+the terminal_ is my friend, and shows :ref:`Exception<how to raise an Exception>` for sixteen sub tests.
 
 ----
 
@@ -153,46 +114,26 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all s
 :green:`GREEN`: make it pass
 =================================================================================
 
-----
+I remove the :ref:`Exception<how to raise an Exception>`
 
-* I change ``self.assertEqual(result, 'BOOM!!!')`` to handle all the fifteen cases where the :ref:`microwave` does :red:`NOT heat` up food
+.. code-block:: python
+  :caption: microwave/tests/test_microwave.py
+  :lineno-start: 23
 
-  .. code-block:: python
-    :caption: microwave/tests/test_microwave.py
-    :lineno-start: 19
-    :emphasize-lines: 7
+                          with self.subTest(
+                              closed_door=closed_door,
+                              timer_set=timer_set,
+                              pressed_start=pressed_start,
+                              too_hot=too_hot,
+                          ):
+                              result = src.microwave.microwave(
+                                  closed_door=closed_door,
+                                  timer_set=timer_set,
+                                  pressed_start=pressed_start,
+                                  too_hot=too_hot,
+                              )
 
-                                result = src.microwave.microwave(
-                                    closed_door=closed_door,
-                                    timer_set=timer_set,
-                                    pressed_start=pressed_start,
-                                    too_hot=too_hot,
-                                )
-                                self.assertFalse(result)
-
-        def test_too_hot_w_timer_set_closed_door_pressed_start(self):
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for the one case where the :ref:`microwave` will :green:`heat` up food
-
-* I move the :ref:`assertion<what is an assertion?>` into a :ref:`try statement<how to handle Exceptions>` for it
-
-  .. code-block:: python
-    :caption: microwave/tests/test_microwave.py
-    :lineno-start: 19
-    :emphasize-lines: 7-10
-
-                                result = src.microwave.microwave(
-                                    closed_door=closed_door,
-                                    timer_set=timer_set,
-                                    pressed_start=pressed_start,
-                                    too_hot=too_hot,
-                                )
-                                try:
-                                    self.assertFalse(result)
-                                except AssertionError:
-                                    self.assertTrue(result)
-
-        def test_too_hot_w_timer_set_closed_door_pressed_start(self):
+the test is green again.
 
 ----
 
@@ -200,29 +141,77 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all s
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-----
-
-* I remove all the other tests because they are now covered by :ref:`test_microwave<extract test_microwave>`
+* I use :ref:`itertools.product<another way to make a generator for nested loops>` for the :ref:`generator expression<generator expressions>`
 
   .. code-block:: python
     :caption: microwave/tests/test_microwave.py
-    :lineno-start: 25
+    :lineno-start: 7
+    :emphasize-lines: 2, 7-16
 
-                                try:
-                                    self.assertFalse(result)
-                                except AssertionError:
-                                    self.assertTrue(result)
+        def test_microwave(self):
+            # booleans = (False, True)
+            # for closed_door in booleans:
+            #     for timer_set in booleans:
+            #         for pressed_start in booleans:
+            #             for too_hot in booleans:
+            # for (
+            #     closed_door, timer_set,
+            #     pressed_start, too_hot,
+            # ) in (
+            #     (_, _, _, _)
+            #     for _ in booleans
+            #     for _ in booleans
+            #     for _ in booleans
+            #     for _ in booleans
+            # ):
 
+  .. code-block:: python
+    :caption: microwave/tests/test_microwave.py
+    :lineno-start: 23
+    :emphasize-lines: 1-4
 
-    # Exceptions seen
+            for (
+                closed_door, timer_set,
+                pressed_start, too_hot,
+            ) in itertools.product((False, True), repeat=4):
+                            with self.subTest(
+                                closed_door=closed_door,
+                                timer_set=timer_set,
+                                pressed_start=pressed_start,
+                                too_hot=too_hot,
+                            ):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: shell
+    :caption: terminal
+
+    NameError: name 'itertools' is not defined.
+               Did you forget to import 'itertools'?
+
+* I add an `import statement`_ for the `itertools library`_
+
+  .. code-block:: python
+    :caption: microwave/tests/test_microwave.py
+    :linenos:
+    :emphasize-lines: 1
+
+    import itertools
+    import src.microwave
+    import unittest
+
+  the test is green again.
+
+* I remove the commented lines, then fix indentation in :ref:`test_microwave<extract test_microwave>`
 
 * I add a git_ commit message
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'extract test_microwave'
+    git commit -am \
+    'test_microwave with generators'
 
 ----
 
@@ -233,7 +222,7 @@ close the project
 * I close ``tests/test_microwave.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests
-* I `change directory`_ back to the parent of :ref:`microwave`
+* I `change directory`_ to the parent of :ref:`microwave`
 
   .. code-block:: python
     :caption: terminal
@@ -247,7 +236,7 @@ close the project
 review
 *************************************************************************************
 
-Another test with nested :ref:`for loops<what is for loop?>`, :ref:`there has to be a better way<test microwave with list comprehensions>`
+I can use a :ref:`generator expression<generator expressions>` to replace :ref:`for loops<what is a for loop?>`, and I can use `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
 
 ----
 
@@ -255,7 +244,7 @@ Another test with nested :ref:`for loops<what is for loop?>`, :ref:`there has to
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<Microwave: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test microwave with generators: test>`
 
 ----
 
@@ -281,11 +270,18 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 * :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
-* :ref:`I know how Python groups objects into False or True<what are booleans?>`
-* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
-* :ref:`I know how to write programs that make decisions<truth table>`
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
+* :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
+* :ref:`I know how to make a person with loops<how to make a person with loops>`.
+* :ref:`I know how to use lists<what is a list?>`.
+* :ref:`I know how to use list comprehensions<list comprehensions>`.
 
-:ref:`Would you like to test making a Car starter?<car>`
+:ref:`Would you like to test the traffic_light project with generators?<test traffic_light with generators>`
 
 ----
 
