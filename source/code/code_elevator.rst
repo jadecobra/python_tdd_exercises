@@ -114,3 +114,17 @@ The code in ``elevator/tests/test_elevator.py`` from :ref:`test elevator with lo
   :language: python
   :linenos:
   :lines: 1-36
+
+----
+
+*********************************************************************************
+test elevator with generators: test
+*********************************************************************************
+
+The code in ``elevator/tests/test_elevator.py`` from :ref:`test elevator with generators`
+
+.. literalinclude:: elevator/tests/test_elevator_w_generators.py
+  :caption: elevator/tests/test_elevator.py
+  :language: python
+  :linenos:
+  :lines: 1-36

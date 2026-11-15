@@ -317,3 +317,17 @@ The change I made to ``functions/src/functions/__init__.py`` in :ref:`test funct
   :language: python
   :lineno-start: 7
   :lines: 7-17
+
+----
+
+*********************************************************************************
+test functions with generators: tests
+*********************************************************************************
+
+The code in :ref:`test_args_and_kwargs` at the end of :ref:`test functions with generators`
+
+.. literalinclude:: functions/tests/test_functions_w_generators.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 52
+  :lines: 52-92
