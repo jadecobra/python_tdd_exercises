@@ -114,3 +114,17 @@ The code in ``microwave/tests/test_microwave.py`` from :ref:`test microwave with
   :language: python
   :linenos:
   :lines: 1-36
+
+----
+
+*********************************************************************************
+test microwave with generators: test
+*********************************************************************************
+
+The code in ``microwave/tests/test_microwave.py`` from :ref:`test microwave with generators`
+
+.. literalinclude:: microwave/tests/test_microwave_w_generators.py
+  :caption: microwave/tests/test_microwave.py
+  :language: python
+  :linenos:
+  :lines: 1-36
