@@ -27,7 +27,6 @@ class TestTrafficLight(unittest.TestCase):
             ('parallel', RED, RED, False, (RED, RED, NOT_WALK)),
             ('parallel', RED, RED, True, (GREEN, RED, WALK)),
         ):
-
             with self.subTest(
                 red_phase=red_phase,
                 current_parallel=current_parallel,

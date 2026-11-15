@@ -112,6 +112,8 @@ the terminal_ is my friend, and shows :ref:`Exception<how to raise an Exception>
 :green:`GREEN`: make it pass
 =================================================================================
 
+----
+
 I remove the :ref:`Exception<how to raise an Exception>`
 
 .. code-block:: python
@@ -138,6 +140,8 @@ the test is green again.
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I use :ref:`itertools.product<another way to make a generator for nested loops>` for the :ref:`generator expression<generator expressions>`
 

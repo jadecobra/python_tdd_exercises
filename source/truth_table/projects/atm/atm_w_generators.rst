@@ -61,6 +61,8 @@ test_atm with generators
 :red:`RED`: make it fail
 =================================================================================
 
+----
+
 I add a :ref:`generator expression<generator expressions>` for the :ref:`for loops<what is a for loop?>` in :ref:`test_atm<extract test_atm>`
 
 .. code-block:: python
@@ -112,6 +114,8 @@ the terminal_ is my friend, and shows :ref:`Exception<how to raise an Exception>
 :green:`GREEN`: make it pass
 =================================================================================
 
+----
+
 I remove the :ref:`Exception<how to raise an Exception>`
 
 .. code-block:: python
@@ -156,6 +160,8 @@ the test is green again.
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I use :ref:`itertools.product<another way to make a generator for nested loops>` in place of the :ref:`generator expression<generator expressions>`
 

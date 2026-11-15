@@ -191,3 +191,27 @@ The code in ``traffic_light/src/traffic_light/__init__.py`` from :ref:`test traf
   :language: python
   :lineno-start: 41
   :lines: 41-58
+
+----
+
+*********************************************************************************
+test traffic_light with generators: tests
+*********************************************************************************
+
+.. literalinclude:: traffic_light/tests/test_traffic_light_w_generators.py
+  :caption: traffic_light/tests/test_traffic_light.py
+  :language: python
+  :linenos:
+  :lines: 1-7
+
+.. literalinclude:: traffic_light/tests/test_traffic_light_w_generators.py
+  :caption: traffic_light/tests/test_traffic_light.py
+  :language: python
+  :lineno-start: 10
+  :lines: 10-44
+
+.. literalinclude:: traffic_light/tests/test_traffic_light_w_generators.py
+  :caption: traffic_light/tests/test_traffic_light.py
+  :language: python
+  :lineno-start: 46
+  :lines: 46-
