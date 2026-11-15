@@ -21,8 +21,8 @@ This is the code in :ref:`test_args_and_kwargs` at the end of the chapter
 .. literalinclude:: ../code/functions/tests/test_functions_w_generators.py
   :caption: functions/tests/test_functions.py
   :language: python
-  :lineno-start: 51
-  :lines: 51-90
+  :lineno-start: 52
+  :lines: 52-92
 
 ----
 
