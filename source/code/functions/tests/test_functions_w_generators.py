@@ -50,18 +50,18 @@ class TestFunctions(unittest.TestCase):
                 )
 
     def test_args_and_kwargs(self):
-        for (first, second), a_function in itertools.product(
+        for a_function, (first, second) in itertools.product(
             (
+                src.functions.positional_arguments,
+                src.functions.keyword_arguments,
+                src.functions.args_and_kwargs,
+                src.functions.optional_arguments,
+            ), (
                 (self.first, self.last),
                 (self.last, self.first),
                 (0, 1),
                 (self.a_tuple, self.a_list),
                 (self.a_set, self.a_dictionary),
-            ), (
-                src.functions.positional_arguments,
-                src.functions.keyword_arguments,
-                src.functions.args_and_kwargs,
-                src.functions.optional_arguments,
             )
         ):
             with self.subTest(
@@ -74,7 +74,7 @@ class TestFunctions(unittest.TestCase):
                 self.assertEqual(
                     a_function(
                         last_input=first,
-                        first_input=second
+                        first_input=second,
                     ),
                     (second, first)
                 )
