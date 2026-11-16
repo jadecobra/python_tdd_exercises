@@ -22,7 +22,7 @@ This is the test I have at the end of the chapter
   :caption: truth_table/tests/test_binary.py
   :language: python
   :linenos:
-  :lines: 1-74
+  :lines: 1-75
 
 ----
 
@@ -194,45 +194,51 @@ the test is green again.
 
 ----
 
-* I use :ref:`itertools.product<another way to make a generator for nested loops>` in place of the :ref:`generator expression<generator expressions>`
+* I use :ref:`itertools.product<another way to make a generator for nested loops>` to make the statement simpler
 
   .. code-block:: python
     :caption: truth_table/tests/test_binary.py
     :lineno-start: 7
-    :emphasize-lines: 7-16
+    :emphasize-lines: 2-10
 
         def test_binary_operations(self):
-            booleans = (False, True)
-            # for right_pin in booleans:
-            #     for enough_cash in booleans:
-            #         for above_daily_limit in booleans:
-            #             for card_expired in booleans:
-            # for (
-            #     right_pin, enough_cash,
-            #     above_daily_limit, card_expired,
-            # ) in (
-            #     (_, _, _, _)
-            #     for _ in booleans
-            #     for _ in booleans
-            #     for _ in booleans
-            #     for _ in booleans
-            # ):
+            # booleans = (False, True)
+            # for first, second, operation, expectation in (
+            #     (first, second, operation, expectation)
+            #     for first in booleans
+            #     for second in booleans
+            for first, second in itertools.product(
+                (False, True), repeat=2
+            ):
+                for operation, expectation in (
+                    (src.truth_table.contradiction, False),
+                    (
+                        src.truth_table.logical_conjunction,
+                        (first, second) == (True, True)
+                    ),
 
   .. code-block:: python
     :caption: truth_table/tests/test_binary.py
-    :lineno-start: 23
-    :emphasize-lines: 1-4
+    :lineno-start: 59
+    :emphasize-lines: 5-14
 
-            for (
-                right_pin, enough_cash,
-                above_daily_limit, card_expired,
-            ) in itertools.product(booleans, repeat=4):
-                            with self.subTest(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=above_daily_limit,
-                                card_expired=card_expired,
-                            ):
+                    (
+                        src.truth_table.material_implication,
+                        (first, second) != (True, False)
+                    ),
+                ):
+                    with self.subTest(
+                        operation.__name__,
+                        first=first,
+                        second=second
+                    ):
+                        self.assertEqual(
+                            operation(first, second),
+                            expectation
+                        )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -254,31 +260,9 @@ the test is green again.
     import unittest
 
 
-    class TestATM(unittest.TestCase):
-
   the test is green again.
 
-* I no longer need the ``booleans`` :ref:`variable<what is a variable?>` because it is only used once as input to :ref:`itertools.product<another way to make a generator for nested loops>`
-
-  .. code-block:: python
-    :caption: truth_table/tests/test_binary.py
-    :lineno-start: 24
-    :emphasize-lines: 4
-
-            for (
-                right_pin, enough_cash,
-                above_daily_limit, card_expired,
-            ) in itertools.product((False, True), repeat=4):
-                            with self.subTest(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=above_daily_limit,
-                                card_expired=card_expired,
-                            ):
-
-  the test is still green.
-
-* I remove the ``booleans`` :ref:`variable<what is a variable?>` and commented lines, then fix indentation in :ref:`test_binary_operations`
+* I remove the commented lines
 
 * I add a git_ commit message
 
