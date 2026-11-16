@@ -481,7 +481,7 @@ I can use a :ref:`generator expression<generator expressions>` or `itertools.pro
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<Binary Operations with loops: test>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<Binary Operations with generators: test>`
 
 ----
 
@@ -515,8 +515,10 @@ what is next?
 * :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
+* :ref:`I know how to use lists<what is a list?>`.
+* :ref:`I know how to use list comprehensions<list comprehensions>`.
 
-:ref:`Would you like to test lists?<what is a list?>`
+:ref:`Would you like to test dictionaries?<what is a dictionary?>`
 
 ----
 

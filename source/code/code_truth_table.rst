@@ -362,3 +362,16 @@ The code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: test bi
   :caption: truth_table/tests/test_binary.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+Binary Operations with generators: test
+*********************************************************************************
+
+The code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: test binary operations with generators`
+
+.. literalinclude:: truth_table/tests/test_binary_w_generators.py
+  :caption: truth_table/tests/test_binary.py
+  :language: python
+  :linenos:
