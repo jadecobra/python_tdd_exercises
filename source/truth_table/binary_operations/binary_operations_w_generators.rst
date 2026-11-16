@@ -220,7 +220,7 @@ the test is green again.
   .. code-block:: python
     :caption: truth_table/tests/test_binary.py
     :lineno-start: 59
-    :emphasize-lines: 5-14
+    :emphasize-lines: 6-14
 
                     (
                         src.truth_table.material_implication,
