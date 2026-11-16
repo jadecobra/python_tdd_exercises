@@ -49,7 +49,7 @@ table of contents
   make a person with loops<how_to/make_person/make_person_w_loops>
   basic_objects/lists/index
   basic_objects/lists/list_comprehensions
-  basic_objects/dictionaries/index
+  basic_objects/dictionaries
   questions the book answers<review>
   make TDD manually<make_tdd/make_tdd_manually>
 

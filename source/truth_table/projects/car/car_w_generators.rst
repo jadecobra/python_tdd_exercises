@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test car with generators in the car project. Continues the Car truth table (test_car_ignition). Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Refactor four nested for loops over booleans (start_is_pressed, key_is_close, brake_is_pressed, in_park) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product((False, True), repeat=4). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools at the top of tests/test_car.py, remove booleans and commented lines, and fix indentation. Git commit 'test_car_ignition with generators'.
+  :keywords: Jacob Itegboje, Pumping Python, test car with generators, Car project, test_car_ignition, generator expressions, itertools.product, repeat parameter, nested for loops, subTest, 16 subtests, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, src.car.ignition, truth table, red green refactor
 
 .. include:: ../../../links.rst
 
@@ -105,7 +105,7 @@ I add a :ref:`generator expression<generator expressions>` for the :ref:`for loo
                                 in_park=in_park,
                             )
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for sixteen sub tests.
+the terminal_ shows :ref:`Exception<how to raise an Exception>` for sixteen sub tests.
 
 ----
 
@@ -205,7 +205,7 @@ the test passes.
 
   the test is green again.
 
-* I remove the ``booleans`` :ref:`variable<what is a variable?>` and commented lines, then fix indentation in :ref:`test_car<extract test_car>`
+* I remove the ``booleans`` :ref:`variable<what is a variable?>` and commented lines, then fix indentation in :ref:`test_car_ignition<extract test_car_ignition>`
 
 * I add a git_ commit message
 
@@ -247,7 +247,7 @@ I can use a :ref:`generator expression<generator expressions>` or `itertools.pro
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test car with generator: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test car with generators: test>`
 
 ----
 
@@ -282,7 +282,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test the Elevator project with generators?<test elevator with generators>`
 

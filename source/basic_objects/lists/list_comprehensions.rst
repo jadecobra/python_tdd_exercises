@@ -22,14 +22,10 @@
 .. _generator expressions: https://docs.python.org/3/reference/expressions.html#generator-expressions
 
 #################################################################################
-list comprehensions
+what is a list comprehension?
 #################################################################################
 
 ----
-
-*********************************************************************************
-what is a list comprehension?
-*********************************************************************************
 
 A `List Comprehension`_ is a simple way to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with one line.
 
@@ -2602,7 +2598,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 .. toctree::
   :titlesonly:

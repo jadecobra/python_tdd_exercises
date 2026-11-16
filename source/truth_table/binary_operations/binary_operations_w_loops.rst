@@ -276,7 +276,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     # AttributeError
     # TypeError
     # AssertionError
-    # Syntaxerror
+    # SyntaxError
 
 * I change the :ref:`assertions<what is an assertion?>` in :ref:`test_binary_operations` with another :ref:`for loop<what is a for loop?>`
 

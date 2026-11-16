@@ -1136,7 +1136,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   the test passes. There are a few problems with doing it this way
 
   - it makes a :ref:`list<what is a list?>` that is never used
-  - I could tell which data type caused the failure since I cannot use the `subTest method`_ in the :ref:`list comprehension<list comprehensions>`
+  - I could tell which data type caused the failure since I cannot use the `subTest method`_ in the :ref:`list comprehension<what is a list comprehension?>`
   - I would have to repeat all those lines for the other :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>`
 
 :ref:`I know a better way to test the calculator with inputs that are NOT numbers<test_calculator_w_a_for_loop>`
@@ -1235,7 +1235,7 @@ what is next?
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`
-* :ref:`how to use list comprehensions<list comprehensions>`
+* :ref:`how to use list comprehensions<what is a list comprehension?>`
 
 :ref:`Would you like to test if a boolean is an integer or a float?<how to test if something is grouped as True>`
 

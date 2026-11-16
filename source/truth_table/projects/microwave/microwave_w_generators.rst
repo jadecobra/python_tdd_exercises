@@ -1,13 +1,10 @@
-.. REDO::
-
-
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test microwave with generators in the microwave project. Continues the Microwave truth table (test_microwave). Open existing project with cd microwave and uv run pytest-watcher . --now --patterns "**/*.py". Refactor four nested for loops over booleans (closed_door, timer_set, pressed_start, too_hot) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product((False, True), repeat=4). Terminal shows NameError: name 'itertools' is not defined. Did you forget to import 'itertools'? Add import itertools at the top of tests/test_microwave.py, remove commented lines, and fix indentation. Git commit 'test_microwave with generators'.
+  :keywords: Jacob Itegboje, Pumping Python, test microwave with generators, Microwave project, test_microwave, generator expressions, itertools.product, repeat parameter, nested for loops, subTest, 16 subtests, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, src.microwave.microwave, truth table, red green refactor
 
 .. include:: ../../../links.rst
 
-.. _microwave with loops:
+.. _test microwave with generators:
 
 #################################################################################
 test microwave with generators
@@ -19,7 +16,7 @@ I want to use a :ref:`generator<generator expressions>` in the :ref:`microwave` 
 preview
 *********************************************************************************
 
-These is the test I have at the end of the chapter
+This is the test I have at the end of the chapter
 
 .. literalinclude:: ../../../code/microwave/tests/test_microwave_w_generators.py
   :caption: microwave/tests/test_microwave.py
@@ -279,7 +276,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test the traffic_light project with generators?<test traffic_light with generators>`
 

@@ -457,7 +457,7 @@ what is next?
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
 
-:ref:`Would you like to test list comprehensions?<list comprehensions>`
+:ref:`Would you like to test list comprehensions?<what is a list comprehension?>`
 
 ----
 

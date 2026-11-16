@@ -2603,7 +2603,7 @@ what is next?
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`
-* :ref:`how to use list comprehensions<list comprehensions>`
+* :ref:`how to use list comprehensions<what is a list comprehension?>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 
 I edited ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` for the last few projects. I want to automate the process so that I can call the program and it does all the steps for me when I give it the name of the project.

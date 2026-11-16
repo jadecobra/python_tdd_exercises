@@ -1150,7 +1150,7 @@ what is next?
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 * :ref:`what you can do with Lists<what is a list?>`
 
-:ref:`would you like to test list comprehensions?<list comprehensions>` They are a quick way to make :ref:`lists`
+:ref:`would you like to test list comprehensions?<what is a list comprehension?>` They are a quick way to make :ref:`lists`
 
 -----
 

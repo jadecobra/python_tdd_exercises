@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test atm with generators in the atm project. Continues the Automated Teller Machine truth table. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Refactor nested for loops over booleans (right_pin, enough_cash, above_daily_limit, card_expired) into a generator expression using placeholder variable _ for unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product(booleans, repeat=4). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools. Simplify by passing (False, True) directly into itertools.product((False, True), repeat=4) and removing the booleans variable. Git commit 'test_atm with generators'.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test atm with generators in the atm project. Continues the Automated Teller Machine truth table. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Refactor nested for loops over booleans (right_pin, enough_cash, above_daily_limit, card_expired) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product(booleans, repeat=4). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools. Simplify by passing (False, True) directly into itertools.product((False, True), repeat=4) and removing the booleans variable. Git commit 'test_atm with generators'.
   :keywords: Jacob Itegboje, Pumping Python, test atm with generators, Automated Teller Machine, ATM project, generator expressions, itertools.product, repeat parameter, nested for loops, subTest, 16 subtests, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, withdraw, truth table, red green refactor
 
 .. include:: ../../../links.rst
@@ -263,7 +263,7 @@ the test is green again.
 close the project
 *********************************************************************************
 
-* I close ``tests/test_atm.py`` and ``src/atm/__init__.py``
+* I close ``tests/test_atm.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests
 * I `change directory`_ to the parent of :ref:`atm`
@@ -323,7 +323,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test the Car project with generators?<test car with generators>`
 

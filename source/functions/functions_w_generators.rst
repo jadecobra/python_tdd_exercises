@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with generators in the functions project. Continues test_args_and_kwargs in functions/tests/test_functions.py. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Refactor nested for loops over input pairs and functions (positional_arguments, keyword_arguments, args_and_kwargs, optional_arguments) into a generator expression. RED: add raise Exception inside with self.subTest to verify all 20 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product. Terminal shows NameError: name 'itertools' is not defined. Did you forget to import 'itertools'? Add import itertools at the top of tests/test_functions.py. Terminal shows ValueError: not enough values to unpack (expected 3, got 2); unpack for a_function, (first, second) as a tuple to pass. Remove commented lines, fix indentation, and git commit 'test_args_and_kwargs with generators'.
+  :keywords: Jacob Itegboje, Pumping Python, test functions with generators, functions project, test_args_and_kwargs, generator expressions, itertools.product, nested for loops, subTest, 20 subtests, tuple unpacking, NameError name itertools is not defined, ValueError not enough values to unpack, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, src.functions, red green refactor
 
 .. include:: ../links.rst
 
@@ -280,7 +280,7 @@ close the project
 review
 *********************************************************************************
 
-* I used :ref:`for loops<what is a for loop?>` to remove repetition from the tests. If you did not go through this project and someone gave you this code, do you think you can tell what it is testing?
+I can use a :ref:`generator expression<generator expressions>` or `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
 
 ----
 
@@ -323,7 +323,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test the microwave project with generators?<test microwave with generators>`
 

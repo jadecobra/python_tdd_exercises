@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): truth table: test binary operations with generators. Continues the truth_table project in tests/test_binary.py using unittest and uv run pytest-watcher . --now --patterns "**/*.py". Replaces nested for loops in test_binary_operations with a generator expression, raising Exception across sixty four subtests (16 binary operations over (False, True)), then refactors to itertools.product((False, True), repeat=2), hitting NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?) before adding import itertools and removing booleans and commented lines. Second refactor uses src.truth_table.__getattribute__(operation)(first, second) to remove src.truth_table repetition, hitting TypeError: attribute name must be string, not 'function' and AttributeError: 'str' object has no attribute '__name__'. Did you mean: '__ne__'? before switching operation tuples to string names and updating self.subTest. Preview test_binary_w_generators.py.
+  :keywords: Jacob Itegboje, Pumping Python, truth table test binary operations with generators, test_binary_operations, test_binary.py, test_binary_w_generators.py, generator expression, itertools.product, repeat parameter, __getattribute__, unittest subTest, sixty four sub tests, NameError name itertools is not defined, TypeError attribute name must be string not function, AttributeError str object has no attribute __name__, raise Exception, uv run pytest-watcher, pytest-watcher, truth_table, red green refactor
 
 .. include:: ../../links.rst
 
@@ -12,7 +12,7 @@
 truth table: test binary operations with generators
 #################################################################################
 
-I want to use :ref:`for loops<what is a for loop?>` in the :ref:`truth table` project for :ref:`binary operations<truth table: Binary Operations>`
+I want to use a :ref:`generator<generator expressions>` in the :ref:`truth table` project for :ref:`binary operations<truth table: Binary Operations>`
 
 *********************************************************************************
 preview
@@ -20,11 +20,11 @@ preview
 
 This is the test I have at the end of the chapter
 
-.. literalinclude:: ../../code/truth_table/tests/test_binary_w_loops.py
+.. literalinclude:: ../../code/truth_table/tests/test_binary_w_generators.py
   :caption: truth_table/tests/test_binary.py
   :language: python
   :linenos:
-  :lines: 1-75
+  :lines: 1-76
 
 ----
 
@@ -62,7 +62,7 @@ test_binary_operations with generators
 
 ----
 
-I change the the nested :ref:`for loops<what is a for loop?>` in :ref:`test_binary_operations` to a :ref:`generator expression<generator expressions>`
+I change the nested :ref:`for loops<what is a for loop?>` in :ref:`test_binary_operations` to a :ref:`generator expression<generator expressions>`
 
 .. code-block:: python
   :caption: truth_table/tests/test_binary.py
@@ -447,7 +447,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :caption: terminal
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'refactor with __getattribute__'
 
 ----
@@ -516,7 +516,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test dictionaries?<what is a dictionary?>`
 

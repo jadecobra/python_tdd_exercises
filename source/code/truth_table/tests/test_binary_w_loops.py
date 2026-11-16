@@ -71,4 +71,4 @@ class TestBinaryOperations(unittest.TestCase):
 # AttributeError
 # TypeError
 # AssertionError
-# Syntaxerror
+# SyntaxError

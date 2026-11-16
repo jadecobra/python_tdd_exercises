@@ -2266,7 +2266,7 @@ what is next?
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`
-* :ref:`how to use list comprehensions<list comprehensions>`
+* :ref:`how to use list comprehensions<what is a list comprehension?>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with objects<what is an object?>`

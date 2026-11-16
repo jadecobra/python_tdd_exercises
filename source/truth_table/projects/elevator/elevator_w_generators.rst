@@ -1,12 +1,12 @@
 :orphan:
 
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test elevator with generators in the elevator project. Continues the Elevator truth table (test_elevator_controller). Open existing project with cd elevator and uv run pytest-watcher . --now --patterns "**/*.py". Refactor four nested for loops over booleans (number_pushed, doors_closed, above_weight, emergency) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product((False, True), repeat=4). Terminal shows NameError: name 'itertools' is not defined. Did you forget to import 'itertools'? Add import itertools at the top of tests/test_elevator.py, remove booleans and commented lines, and fix indentation. Git commit 'test_elevator_controller with generators'.
+  :keywords: Jacob Itegboje, Pumping Python, test elevator with generators, Elevator project, test_elevator_controller, generator expressions, itertools.product, repeat parameter, nested for loops, subTest, 16 subtests, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, src.elevator.controller, truth table, red green refactor
 
 .. include:: ../../../links.rst
 
-.. _elevator:
+.. _test elevator with generators:
 
 #################################################################################
 test elevator with generators
@@ -18,7 +18,7 @@ I want to use a :ref:`generator<generator expressions>` in the :ref:`elevator` p
 preview
 *********************************************************************************
 
-These is the test I have at the end of the chapter
+This is the test I have at the end of the chapter
 
 .. literalinclude:: ../../../code/elevator/tests/test_elevator_w_generators.py
   :caption: elevator/tests/test_elevator.py
@@ -36,7 +36,7 @@ open the project
 
   .. code-block:: python
     :caption: terminal
-    emphasize-lines: 1
+    :emphasize-lines: 1
 
     cd elevator
 
@@ -204,7 +204,7 @@ the test is green again.
 
   the test is green again.
 
-* I remove the ``booleans`` :ref:`variable<what is a variable?>` and commented lines, then fix indentation in :ref:`test_elevator<extract test_elevator_controller>`
+* I remove the ``booleans`` :ref:`variable<what is a variable?>` and commented lines, then fix indentation in :ref:`test_elevator_controller<extract test_elevator_controller>`
 
 * I add a git_ commit message
 
@@ -281,7 +281,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test the functions project with generators?<test functions with generators>`
 

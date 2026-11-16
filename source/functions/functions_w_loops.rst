@@ -1197,7 +1197,7 @@ close the project
 review
 *********************************************************************************
 
-* I used :ref:`for loops<what is a for loop?>` to remove repetition from the tests. If you did not go through this project and someone gave you this code, do you think you can tell what it is testing?
+I used :ref:`for loops<what is a for loop?>` to remove repetition from the tests. If you did not go through this project and someone gave you this code, do you think you can tell what it is testing?
 
 ----
 

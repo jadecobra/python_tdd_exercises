@@ -33,4 +33,4 @@ class TestMicrowave(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
-# Syntaxerror
+# SyntaxError

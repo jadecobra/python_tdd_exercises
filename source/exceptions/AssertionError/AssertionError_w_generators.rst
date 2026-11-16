@@ -166,7 +166,7 @@ the test is green again.
 another way to make a generator for nested loops
 *********************************************************************************
 
-I can also make a :ref:`generator<generator expressions>` with the `product method`_ from the `itertools library`_, it is part of `The Python Standard Library`_ and needs an `import statement`_
+I can also make a :ref:`generator<generator expressions>` with the `product method`_ from the `itertools library`_ which is part of `The Python Standard Library`_ and needs an `import statement`_
 
 * I add a :ref:`call<how to call a function with input>` to `itertools.product`_ from :ref:`test_assertion_error`
 
@@ -376,7 +376,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test the ATM project with generators?<test atm with generators>`
 

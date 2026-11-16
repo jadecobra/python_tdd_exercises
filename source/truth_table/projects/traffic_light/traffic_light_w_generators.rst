@@ -1,10 +1,10 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test traffic_light with generators in the traffic_light project. Continues the Traffic Light truth table (test_traffic_light_control and test_traffic_light_failsafe). Open existing project with cd traffic_light and uv run pytest-watcher . --now --patterns "**/*.py". Refactor test_traffic_light_control to unpack (red_phase, current_parallel, current_cross, timer_done, expectation) in the for loop instead of indexing row[0]..row[4] (NameError: name 'row' is not defined), and commit 'use names with test_traffic_light_control'. Refactor four nested for loops in test_traffic_light_failsafe into a generator expression using (_, _, _, _) over ('cross', 'parallel', 'bad input'), inputs, inputs, and (False, True). RED: add raise Exception inside with self.subTest to verify all 54 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product(('cross', 'parallel', 'bad input'), inputs, inputs, (False, True)). Terminal shows NameError: name 'itertools' is not defined. Did you forget to import 'itertools'? Add import itertools at the top of tests/test_traffic_light.py, remove commented lines, and fix indentation. Git commit 'test_traffic_light_failsafe with generators'.
+  :keywords: Jacob Itegboje, Pumping Python, test traffic_light with generators, Traffic Light project, test_traffic_light_control, test_traffic_light_failsafe, generator expressions, itertools.product, nested for loops, tuple unpacking, subTest, 54 subtests, NameError name row is not defined, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, src.traffic_light.control, truth table, red green refactor
 
 .. include:: ../../../links.rst
 
-.. _traffic_light:
+.. _test traffic_light with generators:
 
 #################################################################################
 test traffic_light with generators
@@ -109,7 +109,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
     :caption: traffic_light/tests/test_traffic_light.py
-    :lineno-start: 25
+    :lineno-start: 26
     :emphasize-lines: 5-8
 
                 ('parallel', RED, YELLOW, True, (RED, RED, NOT_WALK)),
@@ -134,7 +134,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
     :caption: traffic_light/tests/test_traffic_light.py
-    :lineno-start: 34
+    :lineno-start: 35
     :emphasize-lines: 14
 
                 with self.subTest(
@@ -167,7 +167,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
     :caption: traffic_light/tests/test_traffic_light.py
-    :lineno-start: 25
+    :lineno-start: 26
 
             ('parallel', RED, YELLOW, True, (RED, RED, NOT_WALK)),
             ('parallel', RED, RED, False, (RED, RED, NOT_WALK)),
@@ -267,7 +267,6 @@ I remove the :ref:`Exception<how to raise an Exception>`
                               current_cross=current_cross,
                               timer_done=timer_done,
                           ):
-                              raise Exception
                               self.assertEqual(
                                   src.traffic_light.control(
                                       red_phase=red_phase,
@@ -277,9 +276,6 @@ I remove the :ref:`Exception<how to raise an Exception>`
                                   ),
                                   (RED, RED, NOT_WALK)
                               )
-
-
-  # Exceptions seen
 
 the test is green again.
 
@@ -353,7 +349,7 @@ the test is green again.
 
   the test is green again.
 
-* I remove the commented lines, then fix indentation in :ref:`test_traffic_light`
+* I remove the commented lines, then fix indentation in :ref:`test_traffic_light_failsafe`
 
 * I add a git_ commit message
 
@@ -430,7 +426,7 @@ what is next?
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
-* :ref:`I know how to use list comprehensions<list comprehensions>`.
+* :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 
 :ref:`Would you like to test binary operations from the truth_table project with generators?<truth table: test binary operations with generators>`
 
