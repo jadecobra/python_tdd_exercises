@@ -48,6 +48,7 @@ table of contents
   make a person with exceptions<how_to/make_person/make_person_w_exceptions>
   make a person with loops<how_to/make_person/make_person_w_loops>
   basic_objects/lists/index
+  basic_objects/lists/list_comprehensions
   basic_objects/dictionaries/index
   questions the book answers<review>
   make TDD manually<make_tdd/make_tdd_manually>

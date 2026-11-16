@@ -3982,7 +3982,6 @@ what is next?
   :maxdepth: 1
 
   ../../how_to/make_person/make_person_w_lists
-  list_comprehensions
 
 :ref:`Would you like to refactor the attributes of the person object and instance with lists?<test person with lists>`
 
