@@ -278,7 +278,7 @@ what is next?
 * :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
 * :ref:`I know how to use dictionaries<what is a dictionary?>`.
 
-:ref:`Would you like to test the Microwave project with dictionaries?<test microwave with dictionaries>`
+:ref:`Would you like to use a dictionary in the person project?<test microwave with dictionaries>`
 
 ----
 
