@@ -278,7 +278,7 @@ the test is green again.
 ----
 
 *********************************************************************************
-use __getattribute__
+refactor with __getattribute__
 *********************************************************************************
 
 I use the full path for each of the :ref:`binary operations<truth table: binary operations>`. :ref:`Python objects<what is an object?>` have a :ref:`method<what is an object attribute?>` I can use to remove the repetition of ``src.truth_table`` by passing the name of the :ref:`attribute<what is an object attribute?>` or :ref:`method<what is a method?>`.
@@ -294,7 +294,7 @@ I use the full path for each of the :ref:`binary operations<truth table: binary 
 I add a :ref:`call<how to call a function with input>` to the `getattribute method`_
 
 .. code-block:: python
-  :caption: atm/tests/test_atm.py
+  :caption: truth_table/tests/test_binary.py
   :lineno-start: 60
   :emphasize-lines: 7-9
 
@@ -331,7 +331,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I change the :ref:`functions<what is a function?>` to just the names as strings_
 
   .. code-block:: python
-    :caption: atm/tests/test_atm.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 8
     :emphasize-lines: 6, 8, 11, 13
 
@@ -352,7 +352,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
                     ),
 
   .. code-block:: python
-    :caption: atm/tests/test_atm.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 23
     :emphasize-lines: 1, 3, 6, 8
 
@@ -368,7 +368,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
                     ),
 
   .. code-block:: python
-    :caption: atm/tests/test_atm.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 33
     :emphasize-lines: 2, 6, 9, 11
 
@@ -387,7 +387,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
                     ),
 
   .. code-block:: python
-    :caption: atm/tests/test_atm.py
+    :caption: truth_table/tests/test_binary.py
     :lineno-start: 46
     :emphasize-lines: 1, 3, 7, 11
 
@@ -418,19 +418,37 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     AttributeError: 'str' object has no attribute '__name__'. Did you mean: '__ne__'?
 
-* I change ``operation.__name__`` since the :ref:`object<what is an object?>` is now a string_
+* I change ``operation.__name__`` because I changed the operations from the :ref:`functions<what is a function?>` to their names which are strings_
 
   .. code-block:: python
+    :caption: truth_table/tests/test_binary.py
+    :lineno-start: 60
+    :emphasize-lines: 2-3
 
-----
+                    with self.subTest(
+                        operation,
+                        first=first, second=second
+                    ):
+                        self.assertEqual(
+                            src.truth_table.__getattribute__(
+                                operation
+                            )(first, second),
+                            expectation
+                        )
 
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
 
-----
+    # Exceptions seen
 
+  the test is green again.
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'refactor with __getattribute__'
 
 ----
 
@@ -440,13 +458,14 @@ close the project
 
 * I close ``tests/test_binary.py``
 * I click in the terminal_ where the tests are running
-* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
+* I use :kbd:`q` on the keyboard to leave the tests
+* I `change directory`_ to the parent of :ref:`truth_table`
 
   .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
 
-    .../pumping_python
-
-  I am back in the ``pumping_python`` directory_.
+    cd ..
 
 ----
 
@@ -454,7 +473,7 @@ close the project
 review
 *************************************************************************************
 
-I used :ref:`for loops<what is a for loop?>` to turn all the tests into one which is simpler and at the same time more complex.
+I can use a :ref:`generator expression<generator expressions>` or `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
 
 ----
 

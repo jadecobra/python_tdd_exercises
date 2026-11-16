@@ -236,7 +236,7 @@ close the project
 review
 *************************************************************************************
 
-I can use a :ref:`generator expression<generator expressions>` and `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
+I can use a :ref:`generator expression<generator expressions>` or `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
 
 ----
 

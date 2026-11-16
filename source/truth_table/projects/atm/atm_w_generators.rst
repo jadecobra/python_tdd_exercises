@@ -265,13 +265,14 @@ close the project
 
 * I close ``tests/test_atm.py`` and ``src/atm/__init__.py``
 * I click in the terminal_ where the tests are running
-* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
+* I use :kbd:`q` on the keyboard to leave the tests
+* I `change directory`_ to the parent of :ref:`atm`
 
   .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
 
-    .../pumping_python
-
-  I am back in the ``pumping_python`` directory_.
+    cd ..
 
 ----
 
@@ -279,7 +280,7 @@ close the project
 review
 *************************************************************************************
 
-I can use a :ref:`generator expression<generator expressions>` and `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
+I can use a :ref:`generator expression<generator expressions>` or `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
 
 ----
 
