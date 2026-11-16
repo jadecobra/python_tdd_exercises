@@ -308,7 +308,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

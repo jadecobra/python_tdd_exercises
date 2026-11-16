@@ -20,9 +20,9 @@ The :ref:`factory<extract person function>` and :ref:`say_hello functions<test s
 * ``last_name``
 * ``year_of_birth``
 
-I want to give those values once, and get a representation for a person. I can do that with an :ref:`object<everything is an object>`.
+I want to give those values once, and get a representation for a person. I can do that with an :ref:`object<what is an object?>`.
 
-I think of :ref:`objects<everything is an object>` as :ref:`attributes (variables)<what is an object attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
+I think of :ref:`objects<what is an object?>` as :ref:`attributes (variables)<what is an object attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
 
 ----
 
@@ -137,7 +137,7 @@ open the project
 add Person object
 *********************************************************************************
 
-I made a :ref:`function<what is a function?>` that makes a string_ for a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with an :ref:`object<everything is an object>` because it is :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` that belong together.
+I made a :ref:`function<what is a function?>` that makes a string_ for a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with an :ref:`object<what is an object?>` because it is :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -147,7 +147,7 @@ I made a :ref:`function<what is a function?>` that makes a string_ for a person 
 
 ----
 
-I make an :ref:`instance<how to test if something is an instance>` of an :ref:`object<everything is an object>` for ``joe`` in :ref:`test_joe` in ``tests/test_person.py``
+I make an :ref:`instance<how to test if something is an instance>` of an :ref:`object<what is an object?>` for ``joe`` in :ref:`test_joe` in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 38
@@ -224,9 +224,9 @@ because there is no definition for ``Person`` in ``tests/test_person.py``.
 
       TypeError: Person() takes no arguments
 
-    because :ref:`objects<everything is an object>` do not take arguments like a :ref:`function<what is a function?>` and I "called" this one with four arguments.
+    because :ref:`objects<what is an object?>` do not take arguments like a :ref:`function<what is a function?>` and I "called" this one with four arguments.
 
-  - :ref:`objects<everything is an object>` need a :ref:`method (function)<what is a method?>` that handles arguments.
+  - :ref:`objects<what is an object?>` need a :ref:`method (function)<what is a method?>` that handles arguments.
   - I can :ref:`make a class with the pass keyword<test_making_an_object_w_pass>`.
 ----
 
@@ -539,7 +539,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 add say_hello method
 *********************************************************************************
 
-I made a person :ref:`say hi with a function<test say_hello function>`, I can also do the same thing with an :ref:`object<everything is an object>` because it is :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` that belong together.
+I made a person :ref:`say hi with a function<test say_hello function>`, I can also do the same thing with an :ref:`object<what is an object?>` because it is :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -1361,7 +1361,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     def test_john():
 
-  the test passes. This is still a repetition, I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person object<add Person object>` as input to the :ref:`say_hello method<add Person object>` of the same :ref:`object<everything is an object>`.
+  the test passes. This is still a repetition, I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person object<add Person object>` as input to the :ref:`say_hello method<add Person object>` of the same :ref:`object<what is an object?>`.
 
 * I change the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person object<add Person object>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<add say_hello method>`
 
@@ -1402,7 +1402,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 what is the staticmethod decorator?
 *********************************************************************************
 
-* I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<everything is an object>`, so I do not send more than what the :ref:`method<what is a method?>` needs. I add :ref:`@staticmethod<what is the staticmethod decorator?>`` to the :ref:`say_hello method<add say_hello method>`
+* I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<what is an object?>`, so I do not send more than what the :ref:`method<what is a method?>` needs. I add :ref:`@staticmethod<what is the staticmethod decorator?>`` to the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :caption:
@@ -2056,7 +2056,7 @@ separate and equal Person object
 
   which raises :ref:`AttributeError<what causes AttributeError?>` since :ref:`None<what is None?>` does not have anything named ``say_hello`` in it.
 
-* I change ``Person`` to an :ref:`object<everything is an object>`
+* I change ``Person`` to an :ref:`object<what is an object?>`
 
   .. code-block:: python
     :linenos:
@@ -2096,7 +2096,7 @@ separate and equal Person object
     # AttributeError
     # SyntaxError
 
-* I change :ref:`the return statement` in the ``Person`` :ref:`object<everything is an object>` to the pass_ keyword, in ``src/person/__init__.py``
+* I change :ref:`the return statement` in the ``Person`` :ref:`object<what is an object?>` to the pass_ keyword, in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2192,7 +2192,7 @@ separate and equal Person object
 
     AttributeError: 'Person' object has no attribute 'say_hello'
 
-  better, I can add an :ref:`attribute<what is an object attribute?>` to an :ref:`object<everything is an object>`.
+  better, I can add an :ref:`attribute<what is an object attribute?>` to an :ref:`object<what is an object?>`.
 
 * I add the name to the :ref:`Person object<add Person object>`
 
@@ -3805,7 +3805,7 @@ I used the :ref:`assert_equal function<extract assert_equal function>` to remove
 test_dir_person_object
 *********************************************************************************
 
-Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
+Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<what is an object?>` it is given in parentheses. It allows me to see what makes up an :ref:`object<what is an object?>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
 
 I want to use it to see the :ref:`attributes and methods of the Person object<test_dir_person_object>`.
 
@@ -3975,8 +3975,8 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 
   - the test passes.
   - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<add say_hello method>` I defined are in the :ref:`list of attributes and methods<test_dir_person_object>`.
-  - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<everything is an object>`
-  - The :ref:`attributes<what is an object attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`object<everything is an object>`, not :ref:`an instance of the class<how to test if something is an instance>`.
+  - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<what is an object?>`
+  - The :ref:`attributes<what is an object attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`object<what is an object?>`, not :ref:`an instance of the class<how to test if something is an instance>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -4000,7 +4000,7 @@ test_dir_person_instance
 
 ----
 
-I add a test to see the difference between the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`object<everything is an object>`
+I add a test to see the difference between the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`object<what is an object?>`
 
 .. code-block:: python
   :lineno-start: 182
@@ -4283,7 +4283,7 @@ close the project
 review
 *************************************************************************************
 
-* I ran tests to write an :ref:`object<everything is an object>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
+* I ran tests to write an :ref:`object<what is an object?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
 
 * My tests have problems
 
@@ -4325,7 +4325,7 @@ what is next?
   ../../objects/inheritance
   ../../objects/unittest
 
-:ref:`Would you like to know where the extra attributes and methods of the Person object came from?<everything is an object>`
+:ref:`Would you like to know where the extra attributes and methods of the Person object came from?<what is an object?>`
 
 ----
 

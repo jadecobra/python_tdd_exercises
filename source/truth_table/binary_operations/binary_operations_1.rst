@@ -1036,7 +1036,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         return False
         return None
 
-  still green because ``bool(something)`` returns :green:`True` if the :ref:`object<everything is an object>` in parentheses is :ref:`grouped as True<test_what_is_true>`.
+  still green because ``bool(something)`` returns :green:`True` if the :ref:`object<what is an object?>` in parentheses is :ref:`grouped as True<test_what_is_true>`.
 
 * Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` if ``first_input`` is :green:`True`, which is a repetition.
 
@@ -1517,7 +1517,7 @@ examples of Logical Conjunction
 
 -----
 
-.. admonition:: All of the statements below have the same result as ``return something`` because Python_ groups :ref:`objects<everything is an object>` as :red:`False` or :green:`True`
+.. admonition:: All of the statements below have the same result as ``return something`` because Python_ groups :ref:`objects<what is an object?>` as :red:`False` or :green:`True`
 
   * return :green:`True`  if ``something`` is equal to :green:`True`
 

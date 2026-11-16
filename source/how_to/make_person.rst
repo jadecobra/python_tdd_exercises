@@ -16,7 +16,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`, two important :ref:`objects<everything is an object>` to know in Python_.
+This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`, two important :ref:`objects<what is an object?>` to know in Python_.
 
 I want to make a contact list or database of people. I can use a :ref:`function<what is a function?>` for filling out information for a person, for example
 
@@ -401,7 +401,7 @@ test_factory_w_keyword_arguments
     import src.person
     import unittest
 
-  - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``src/person/__init__.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
+  - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<what is an object?>` for the ``src/person/__init__.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -1975,7 +1975,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-* ``import datetime`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``datetime.py`` file_ on the computer that came with Python_
+* ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is an object?>` for the `datetime module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``datetime.py`` file_ on the computer that came with Python_
 
   .. code-block:: python
 
@@ -2001,7 +2001,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
     datetime.datetime.today() # returns datetime.datetime object
 
-* ``datetime.datetime`` :ref:`objects<everything is an object>` have a ``year`` :ref:`attribute<what is an object attribute?>` that gives me the value of the current year which means I can do this to get the value of the current year
+* ``datetime.datetime`` :ref:`objects<what is an object?>` have a ``year`` :ref:`attribute<what is an object attribute?>` that gives me the value of the current year which means I can do this to get the value of the current year
 
   .. code-block:: python
 
@@ -2027,7 +2027,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
     this_year = datetime.datetime.today().year
 
-  that was a lot of words, they become clearer in the chapters on :ref:`objects<everything is an object>`.
+  that was a lot of words, they become clearer in the chapters on :ref:`objects<what is an object?>`.
 
 ----
 
@@ -2117,7 +2117,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
   where ``X`` is a random age
 
-  - ``import random`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `random module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``random.py`` file_ on the computer that came with Python_
+  - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is an object?>` for the `random module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``random.py`` file_ on the computer that came with Python_
 
     .. code-block:: python
 
@@ -2183,7 +2183,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
             sex, year_of_birth,
         ):
 
-  the test passes because ``import datetime`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ so I can use it in ``src/person/__init__.py``.
+  the test passes because ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is an object?>` for the `datetime module`_ so I can use it in ``src/person/__init__.py``.
 
 ----
 
@@ -6820,7 +6820,7 @@ what is next?
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 
-:ref:`Would you like to see another way to make a person?<everything is an object>`
+:ref:`Would you like to see another way to make a person?<what is an object?>`
 
 ----
 

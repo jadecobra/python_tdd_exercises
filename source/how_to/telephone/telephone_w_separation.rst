@@ -194,8 +194,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   all the tests are green again because
 
-  - Python_ brings in an :ref:`object<everything is an object>` for the ``__init__.py`` file_ from the ``telephone`` folder_ in the ``src`` folder_ so I can use it in ``tests/test_telephone.py`` as ``src.telephone`` when ``import src.telephone`` runs.
-  - Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``src/telephone/__init__.py`` file_ (``src.telephone``) when ``src.telephone.text`` is :ref:`called<how to call a function with input>`.
+  - Python_ brings in an :ref:`object<what is an object?>` for the ``__init__.py`` file_ from the ``telephone`` folder_ in the ``src`` folder_ so I can use it in ``tests/test_telephone.py`` as ``src.telephone`` when ``import src.telephone`` runs.
+  - Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<what is an object?>` it imported for the ``src/telephone/__init__.py`` file_ (``src.telephone``) when ``src.telephone.text`` is :ref:`called<how to call a function with input>`.
 
   I think of ``src.telephone.text`` like an address
 

@@ -153,7 +153,7 @@ everything is an object review
 * :ref:`is a set an object?<test_is_a_set_an_object>`
 * :ref:`is a dictionary an object?<test_is_a_dictionary_an_object>`
 * :ref:`what is the difference between an instance and a subclass?<instance vs subclass>`
-* :ref:`what do all Python objects inherit from?<everything is an object>`
+* :ref:`what do all Python objects inherit from?<what is an object?>`
 
 ----
 
@@ -329,7 +329,7 @@ what is next?
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with objects<everything is an object>`
+* :ref:`what you can do with objects<what is an object?>`
 * :ref:`how to raise ModuleNotFoundError<what is a module?>`
 
 :ref:`Do you remember how to make a Python Test Driven Development environment?<how to make a Python Test Driven Development environment>`

@@ -31,7 +31,7 @@ I used :ref:`assertIs<test_assertIs>` and :ref:`assertIsNot<test_assertIsNot>` i
 * :ref:`True is NOT None<test_assertion_error_w_true>` and :ref:`True is NOT equal to None<test_assertion_error_w_equality>`
 * :ref:`None is None<test_assertion_error_w_none>` and :ref:`None is equal to None<test_assertion_error_w_equality>`
 
-I want to test what groups Python_ places the :ref:`objects<everything is an object>` seen so far (:ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists<what is a list?>`, sets_ and :ref:`dictionaries<what is a dictionary?>`). Which do you think will be in the :ref:`False<test_what_is_false>` group or the :ref:`True<test_what_is_true>` group?
+I want to test what groups Python_ places the :ref:`objects<what is an object?>` seen so far (:ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists<what is a list?>`, sets_ and :ref:`dictionaries<what is a dictionary?>`). Which do you think will be in the :ref:`False<test_what_is_false>` group or the :ref:`True<test_what_is_true>` group?
 
 *********************************************************************************
 preview
@@ -494,7 +494,7 @@ the test passes.
 how to test if something is an instance of more than one object
 *********************************************************************************
 
-The :ref:`instance methods<how to test if something is an instance>` can take a tuple_ of :ref:`objects<everything is an object>`.
+The :ref:`instance methods<how to test if something is an instance>` can take a tuple_ of :ref:`objects<what is an object?>`.
 
 * I put :ref:`bool<what are booleans?>` and int_ together
 
@@ -893,7 +893,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 how to test if something is grouped as False
 *********************************************************************************
 
-I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` with the `bool built-in function`_ from `The Python Standard Library`_. It returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the :ref:`object<everything is an object>` given in parentheses.
+I can test if Python_ groups an :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>` with the `bool built-in function`_ from `The Python Standard Library`_. It returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the :ref:`object<what is an object?>` given in parentheses.
 
 ----
 
@@ -981,7 +981,7 @@ another way to test if something is grouped as False
 
 ----
 
-The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`False<test_what_is_false>` - assertFalse_.
+The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<what is an object?>` is :ref:`False<test_what_is_false>` - assertFalse_.
 
 .. code-block:: python
 
@@ -993,7 +993,7 @@ which is like
 
   assertIs(bool(an_object), False)
 
-it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` in parentheses is grouped as :ref:`True<test_what_is_true>`.
+it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is an object?>` in parentheses is grouped as :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -1116,7 +1116,7 @@ the test passes because ``bool(False)`` is :ref:`False<test_what_is_false>`.
 
   the test passes because ``bool(False)`` is :ref:`False<test_what_is_false>`.
 
-  The `assertFalse method`_ raises :ref:`AssertionError<what causes AssertionError?>` if the result of a :ref:`call<how to call a function with input>` to the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`True<test_what_is_true>`.
+  The `assertFalse method`_ raises :ref:`AssertionError<what causes AssertionError?>` if the result of a :ref:`call<how to call a function with input>` to the `bool built-in function`_ with an :ref:`object<what is an object?>` is :ref:`True<test_what_is_true>`.
 
 * I remove the commented lines and single :ref:`instance tests<how to test if something is an instance>` for float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>`
 
@@ -1198,7 +1198,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   AssertionError: True is an instance
                   of <class 'bool'>
 
-this was also in :ref:`test_is_none_a_boolean`, without the tuple_ of :ref:`objects<everything is an object>`.
+this was also in :ref:`test_is_none_a_boolean`, without the tuple_ of :ref:`objects<what is an object?>`.
 
 ----
 
@@ -1361,7 +1361,7 @@ the test passes.
 how to test if something is grouped as True
 *********************************************************************************
 
-I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>` with the `bool built-in function`_ since it returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the :ref:`object<everything is an object>` given in parentheses.
+I can test if Python_ groups an :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>` with the `bool built-in function`_ since it returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the :ref:`object<what is an object?>` given in parentheses.
 
 ----
 
@@ -1449,7 +1449,7 @@ another way to test if something is grouped as True
 
 ----
 
-The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`True<test_what_is_true>` - assertTrue_.
+The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<what is an object?>` is :ref:`True<test_what_is_true>` - assertTrue_.
 
 .. code-block:: python
 
@@ -1461,7 +1461,7 @@ which is like
 
   assertIs(bool(an_object), True)
 
-it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` in parentheses is grouped as :ref:`False<test_what_is_false>`.
+it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is an object?>` in parentheses is grouped as :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -1592,7 +1592,7 @@ the test passes because ``bool(True)`` is :ref:`True<test_what_is_true>`.
 
   the test passes because ``bool(True)`` is :ref:`True<test_what_is_true>`.
 
-  The `assertTrue method`_ raises :ref:`AssertionError<what causes AssertionError?>` if the result of a :ref:`call<how to call a function with input>` to the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`False<test_what_is_false>`.
+  The `assertTrue method`_ raises :ref:`AssertionError<what causes AssertionError?>` if the result of a :ref:`call<how to call a function with input>` to the `bool built-in function`_ with an :ref:`object<what is an object?>` is :ref:`False<test_what_is_false>`.
 
 * I remove the commented lines from :ref:`test_what_is_true`
 
@@ -1695,7 +1695,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -1771,7 +1771,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -1998,7 +1998,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -2074,7 +2074,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -2316,7 +2316,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to test if ``0`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` to test if ``0`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -2390,7 +2390,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if ``0`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if ``0`` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -2580,7 +2580,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to see if ``1`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` to see if ``1`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -2656,7 +2656,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if ``1`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if ``1`` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -2941,7 +2941,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -3015,7 +3015,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -3201,7 +3201,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -3275,7 +3275,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if ``0.0`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if ``0.0`` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -3464,7 +3464,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to see if ``a_positive_float`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` to see if ``a_positive_float`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -3540,7 +3540,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if ``a_positive_float`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if ``a_positive_float`` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -3810,7 +3810,7 @@ the test passes.
 ----
 
 
-* I add an :ref:`assertion<what is an assertion?>` for if ``str()`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if ``str()`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -3886,7 +3886,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty string_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty string_ is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -4075,7 +4075,7 @@ the test passes.
 
   the test passes.
 
-* add an :ref:`assertion<what is an assertion?>` for if ``a_string`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* add an :ref:`assertion<what is an assertion?>` for if ``a_string`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -4151,7 +4151,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to see if ``a_string`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` to see if ``a_string`` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -4408,7 +4408,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -4429,7 +4429,7 @@ the test passes.
 
     AssertionError: () is not False
 
-  the empty tuple_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
+  the empty tuple_ is not the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`.
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``tuple(), False``
 
@@ -4486,7 +4486,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -4506,7 +4506,7 @@ the test passes.
 
     AssertionError: () is not True
 
-  the empty tuple_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
+  the empty tuple_ is not the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`.
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``tuple(), True``
 
@@ -4976,7 +4976,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`list<what is a list?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`list<what is a list?>` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -4997,7 +4997,7 @@ the test passes.
 
     AssertionError: [] is not False
 
-  the empty :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+  the empty :ref:`list<what is a list?>` is not the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``list(), False``
 
@@ -5056,7 +5056,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`list<what is a list?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`list<what is a list?>` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -5076,7 +5076,7 @@ the test passes.
 
     AssertionError: [] is not True
 
-  the empty :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+  the empty :ref:`list<what is a list?>` is not the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``list(), True``
 
@@ -5243,7 +5243,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`list<what is a list?>` with things is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`list<what is a list?>` with things is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -5319,7 +5319,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`list<what is a list?>` with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`list<what is a list?>` with things is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -5546,7 +5546,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty set_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty set_ is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -5567,7 +5567,7 @@ the test passes.
 
     AssertionError: set() is not False
 
-  the empty set_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+  the empty set_ is not the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``set(), False``
 
@@ -5626,7 +5626,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty set_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty set_ is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -5646,7 +5646,7 @@ the test passes.
 
     AssertionError: set() is not True
 
-  the empty set_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+  the empty set_ is not the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``set(), True``
 
@@ -5812,7 +5812,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a set_ with things is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if a set_ with things is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -5888,7 +5888,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a set_ with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a set_ with things is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -6115,7 +6115,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -6136,7 +6136,7 @@ the test passes.
 
     AssertionError: {} is not False
 
-  the empty :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+  the empty :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``dict(), False``
 
@@ -6195,7 +6195,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if the empty :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -6215,7 +6215,7 @@ the test passes.
 
     AssertionError: {} is not True
 
-  the empty :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+  the empty :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``dict(), True``
 
@@ -6390,7 +6390,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`dictionary<what is a dictionary?>` with things is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`dictionary<what is a dictionary?>` with things is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption:
@@ -6466,7 +6466,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`dictionary<what is a dictionary?>` with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a :ref:`dictionary<what is a dictionary?>` with things is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption:
@@ -6636,7 +6636,7 @@ the test passes.
 extract assert_is_falsy method
 *********************************************************************************
 
-All the :ref:`objects<everything is an object>` had the same :ref:`assertions<what is an assertion?>` when testing if something is grouped as :ref:`False<test_what_is_false>`
+All the :ref:`objects<what is an object?>` had the same :ref:`assertions<what is an assertion?>` when testing if something is grouped as :ref:`False<test_what_is_false>`
 
 .. code-block:: python
 
@@ -7155,7 +7155,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 extract assert_is_truthy method
 *********************************************************************************
 
-All the :ref:`objects<everything is an object>` had the same :ref:`assertions<what is an assertion?>` when testing if something is grouped as :ref:`True<test_what_is_true>`
+All the :ref:`objects<what is an object?>` had the same :ref:`assertions<what is an assertion?>` when testing if something is grouped as :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -7692,7 +7692,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 extract assert_is_not_the_same_as_false_or_true method
 *********************************************************************************
 
-The :ref:`assert_is_falsy<extract assert_is_falsy method>` and :ref:`assert_is_truthy methods<extract assert_is_truthy method>` use the same :ref:`assertion<what is an assertion?>` to make sure that the :ref:`object<everything is an object>` they receive is not the same as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
+The :ref:`assert_is_falsy<extract assert_is_falsy method>` and :ref:`assert_is_truthy methods<extract assert_is_truthy method>` use the same :ref:`assertion<what is an assertion?>` to make sure that the :ref:`object<what is an object?>` they receive is not the same as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
 
 .. code-block:: python
 
@@ -7846,7 +7846,7 @@ review
 
 I know that :ref:`bool is an object<test_is_a_boolean_an_object>`. It only has two instances - :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`
 
-In Python_ the following :ref:`objects<everything is an object>` are grouped as
+In Python_ the following :ref:`objects<what is an object?>` are grouped as
 
 * The following things are grouped as :ref:`False<test_what_is_false>`
 
@@ -7855,16 +7855,16 @@ In Python_ the following :ref:`objects<everything is an object>` are grouped as
   * ``0.0``
   * :ref:`None<what is None?>`
 
-  they are not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` whose value is ``0``.
+  they are not the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>` whose value is ``0``.
 
 * The following things are grouped as :ref:`True<test_what_is_true>`
 
   * containers with things
   * positive and negative numbers
 
-  they are not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>` whose value is ``1``.
+  they are not the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>` whose value is ``1``.
 
-This comes in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if an :ref:`object<everything is an object>` is grouped as :ref:`False<test_what_is_false>` (``0``, empty or :ref:`None<what is None?>` ) or is grouped as :ref:`True<test_what_is_true>` (positive and negative numbers or has something in it).
+This comes in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if an :ref:`object<what is an object?>` is grouped as :ref:`False<test_what_is_false>` (``0``, empty or :ref:`None<what is None?>` ) or is grouped as :ref:`True<test_what_is_true>` (positive and negative numbers or has something in it).
 
 I can use :ref:`assertFalse<another way to test if something is grouped as False>` in place of ``assertIs(bool(x), False)`` and :ref:`assertTrue<another way to test if something is grouped as True>` for ``assertIs(bool(x), True)``.
 
@@ -7897,7 +7897,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

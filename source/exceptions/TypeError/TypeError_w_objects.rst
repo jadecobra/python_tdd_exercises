@@ -12,7 +12,7 @@ TypeError with objects
 
 ----
 
-Since :ref:`methods<what is a method?>` are :ref:`functions<what is a function?>` in an :ref:`object<everything is an object>` I can assume that they have the same behavior as what I tested in the :ref:`functions project<what is a function?>`.
+Since :ref:`methods<what is a method?>` are :ref:`functions<what is a function?>` in an :ref:`object<what is an object?>` I can assume that they have the same behavior as what I tested in the :ref:`functions project<what is a function?>`.
 
 ----
 
@@ -275,12 +275,12 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
         @staticmethod
         def method_01(): return None
 
-  the test passes because I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<everything is an object>`.
+  the test passes because I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<what is an object?>`.
 
   Both :ref:`methods<what is a method?>` look the same. The difference is in how I :ref:`call<how to call a function>` them ``AnObject.method_00()`` vs ``AnObject().method_01()``.
 
-  - ``AnObject.method_00()`` :ref:`calls<how to call a function>` ``method_00`` of the ``AnObject`` :ref:`object<everything is an object>`.
-  - ``AnObject().method_01()`` :ref:`calls<how to call a function>` ``method_01`` of an :ref:`instance<how to test if something is an instance>` of the ``AnObject`` :ref:`object<everything is an object>`.
+  - ``AnObject.method_00()`` :ref:`calls<how to call a function>` ``method_00`` of the ``AnObject`` :ref:`object<what is an object?>`.
+  - ``AnObject().method_01()`` :ref:`calls<how to call a function>` ``method_01`` of an :ref:`instance<how to test if something is an instance>` of the ``AnObject`` :ref:`object<what is an object?>`.
 
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_02`` from ``tests/test_type_error.py``
 
@@ -380,7 +380,7 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
         def method_02(self):
             return self.method_01()
 
-  the test passes because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which allows it to use things that belong to the :ref:`object<everything is an object>`.
+  the test passes because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which allows it to use things that belong to the :ref:`object<what is an object?>`.
 
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_03`` from ``tests/test_type_error.py``
 
@@ -449,8 +449,8 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 
   because
 
-  - ``method_02`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`object<everything is an object>` it belongs to as input.
-  - I :ref:`called the method<how to call a function>` with the :ref:`object<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
+  - ``method_02`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`object<what is an object?>` it belongs to as input.
+  - I :ref:`called the method<how to call a function>` with the :ref:`object<what is an object?>` not an :ref:`instance of the class<how to test if something is an instance>`.
 
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>`
 
@@ -464,7 +464,7 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
             # return AnObject.method_02()
             return AnObject().method_02()
 
-  the test passes. This is a silly example because I used ``AnObject()`` inside a :ref:`method<what is a method?>` of ``AnObject``. I could just use ``self``. I would only need this if I was calling a :ref:`method<what is a method?>` of a different :ref:`object<everything is an object>`.
+  the test passes. This is a silly example because I used ``AnObject()`` inside a :ref:`method<what is a method?>` of ``AnObject``. I could just use ``self``. I would only need this if I was calling a :ref:`method<what is a method?>` of a different :ref:`object<what is an object?>`.
 
 * Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_04`` from ``tests/test_type_error.py``
 
@@ -512,8 +512,8 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 
   because
 
-  - ``method_02`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`object<everything is an object>` it belongs to as input.
-  - I :ref:`called the method<how to call a function>` with the :ref:`object<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
+  - ``method_02`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`object<what is an object?>` it belongs to as input.
+  - I :ref:`called the method<how to call a function>` with the :ref:`object<what is an object?>` not an :ref:`instance of the class<how to test if something is an instance>`.
 
 * I pass ``AnObject`` as input in the :ref:`call<how to call a function with input>` to ``method_02``
 
@@ -710,8 +710,8 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 
   because
 
-  - ``method_07`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`object<everything is an object>` it belongs to as input.
-  - I :ref:`called the method<how to call a function>` with the :ref:`object<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
+  - ``method_07`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`object<what is an object?>` it belongs to as input.
+  - I :ref:`called the method<how to call a function>` with the :ref:`object<what is an object?>` not an :ref:`instance of the class<how to test if something is an instance>`.
 
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``tests/test_type_error.py``
 
@@ -752,7 +752,7 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
         @staticmethod
         def method_00(): return None
 
-  the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<everything is an object>`.
+  the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<what is an object?>`.
 
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_08()`` from ``tests/test_type_error.py``
 
@@ -1800,11 +1800,11 @@ review
 The tests show that
 
 * If I :ref:`call a method<how to call a function>` with an :ref:`instance<how to test if something is an instance>`, it takes the :ref:`instance<how to test if something is an instance>` as the first argument (``self``).
-* I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if the :ref:`method<what is a method?>` does not use anything that belongs to the :ref:`object<everything is an object>` it is part of.
+* I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if the :ref:`method<what is a method?>` does not use anything that belongs to the :ref:`object<what is an object?>` it is part of.
 * :ref:`There are objects that are not callable<test_type_error_w_the_uncallables>`.
 
 
-All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` when I :ref:`call an object<everything is an object>` in a way that is different from its :ref:`definition<how to make a function>`.
+All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` when I :ref:`call an object<what is an object?>` in a way that is different from its :ref:`definition<how to make a function>`.
 
 :ref:`How many questions can you answer about TypeError with objects?<questions about TypeError with objects>`
 
@@ -1835,7 +1835,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 
 :ref:`Would you like to see another way to write tests?<another way to write tests>`
 

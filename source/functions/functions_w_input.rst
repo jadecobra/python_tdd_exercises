@@ -252,7 +252,7 @@ the test passes because I get :ref:`None<what is None?>` when I :ref:`call<how t
 how to call a function with input
 *********************************************************************************
 
-I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<everything is an object>` in parentheses (``()``) when I use the name after it is defined.
+I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<what is an object?>` in parentheses (``()``) when I use the name after it is defined.
 
 .. code-block:: python
 
@@ -369,7 +369,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
     I get :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is only equal to None<what is None?>`.
 
-  - :ref:`object<everything is an object>` is the mother of everything in Python_ - :ref:`everything in Python is an object (they inherit from it)<everything is an object>`.
+  - :ref:`object<what is an object?>` is the mother of everything in Python_ - :ref:`everything in Python is an object (they inherit from it)<what is an object?>`.
 
 
 
@@ -2735,7 +2735,7 @@ the test passes.
 extract assert_is_none function
 *********************************************************************************
 
-The :ref:`assertions<what is an assertion?>` in :ref:`test_what_happens_after_functions_return`, :ref:`test_making_a_function_w_return_none`, :ref:`test_making_a_function_w_return` and :ref:`test_making_a_function_w_pass` are the same, they check if the result of a :ref:`function call<how to call a function with input>` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+The :ref:`assertions<what is an assertion?>` in :ref:`test_what_happens_after_functions_return`, :ref:`test_making_a_function_w_return_none`, :ref:`test_making_a_function_w_return` and :ref:`test_making_a_function_w_pass` are the same, they check if the result of a :ref:`function call<how to call a function with input>` is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`.
 
 .. code-block:: python
 
@@ -3099,7 +3099,7 @@ the test passes.
 
     AssertionError: assert <class 'object'> is None
 
-* I change the input in :ref:`call<how to call a function with input>` to the :ref:`identity function<test_identity_function>` from :ref:`object<everything is an object>` to :ref:`None<what is None?>`
+* I change the input in :ref:`call<how to call a function with input>` to the :ref:`identity function<test_identity_function>` from :ref:`object<what is an object?>` to :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption:
@@ -3246,7 +3246,7 @@ the test passes.
 what is a keyword argument?
 *********************************************************************************
 
-A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`function call<how to call a function>`. Where key is a name, and the value is any :ref:`object<everything is an object>` the :ref:`function<what is a function?>` accepts.
+A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`function call<how to call a function>`. Where key is a name, and the value is any :ref:`object<what is an object?>` the :ref:`function<what is a function?>` accepts.
 
 ----
 

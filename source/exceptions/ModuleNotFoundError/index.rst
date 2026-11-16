@@ -404,7 +404,7 @@ test_module_not_found_error
 
     FAILED (errors=1)
 
-  because when ``import src.module_00`` runs, Python_ tries to bring in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``module_00.py`` file_ from the ``src`` folder_.
+  because when ``import src.module_00`` runs, Python_ tries to bring in an :ref:`object (everything in Python is an object)<what is an object?>` for the ``module_00.py`` file_ from the ``src`` folder_.
 
 * I add ModuleNotFoundError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_module_not_found_error.py``
 
@@ -473,7 +473,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-- the test passes because when ``import src.module_00`` runs, Python_ brings in an :ref:`object<everything is an object>` for the ``module_00.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``
+- the test passes because when ``import src.module_00`` runs, Python_ brings in an :ref:`object<what is an object?>` for the ``module_00.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``
 
   .. code-block:: shell
 
@@ -576,7 +576,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import src.module_01`` brings in an :ref:`object<everything is an object>` for the ``module_01.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.module_01`` brings in an :ref:`object<what is an object?>` for the ``module_01.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -670,7 +670,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import src.module_02`` brings in an :ref:`object<everything is an object>` for the ``module_02.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.module_02`` brings in an :ref:`object<what is an object?>` for the ``module_02.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -763,7 +763,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import src.module_03`` brings in an :ref:`object<everything is an object>` for the ``module_03.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.module_03`` brings in an :ref:`object<what is an object?>` for the ``module_03.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -857,7 +857,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import src.module_04`` brings in an :ref:`object<everything is an object>` for the ``module_04.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.module_04`` brings in an :ref:`object<what is an object?>` for the ``module_04.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -952,7 +952,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import src.module_05`` brings in an :ref:`object<everything is an object>` for the ``module_05.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.module_05`` brings in an :ref:`object<what is an object?>` for the ``module_05.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -1004,7 +1004,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
     NO TESTS RAN
 
-  the test passes because ``import src.module_not_found_error`` brings in an :ref:`object (everything is an object)<everything is an object>` for the ``module_not_found_error`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.module_not_found_error`` brings in an :ref:`object (everything is an object)<what is an object?>` for the ``module_not_found_error`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -1089,7 +1089,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  - the test passes because ``import src.doe`` brings in an :ref:`object<everything is an object>` for the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``
+  - the test passes because ``import src.doe`` brings in an :ref:`object<what is an object?>` for the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``
 
     .. code-block:: shell
 
@@ -1189,7 +1189,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import src.doe.john`` brings in an :ref:`object<everything is an object>` for the ``john.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.doe.john`` brings in an :ref:`object<what is an object?>` for the ``john.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -1289,7 +1289,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import src.doe.jane`` brings in an :ref:`object<everything is an object>` for the ``jane.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import src.doe.jane`` brings in an :ref:`object<what is an object?>` for the ``jane.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 
@@ -1392,7 +1392,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import magic`` brings in an :ref:`object (everything is an object)<everything is an object>` for the ``magic.py`` file_ that is in the ``module_not_found_error`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import magic`` brings in an :ref:`object (everything is an object)<what is an object?>` for the ``magic.py`` file_ that is in the ``module_not_found_error`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 

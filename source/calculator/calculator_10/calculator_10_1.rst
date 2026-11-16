@@ -219,7 +219,7 @@ test_streamlit_calculator_title
 
   ``streamlit.testing.v1.AppTest.from_file`` tests the website I am making with streamlit_
 
-  - AppTest_ is an :ref:`object<everything is an object>` from ``v1`` in ``testing`` in the `streamlit library`_
+  - AppTest_ is an :ref:`object<what is an object?>` from ``v1`` in ``testing`` in the `streamlit library`_
   - ``.from_file`` uses the `from_file method`_ to run the :ref:`Python module<what is a module?>` that I use to make the application
 
 ----
@@ -357,7 +357,7 @@ test_streamlit_calculator_title
 
     AssertionError: Title(tag='h1') != 'Calculator'
 
-* I use the ``value`` :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``Title`` :ref:`object<everything is an object>`
+* I use the ``value`` :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``Title`` :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:
@@ -480,7 +480,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   E           }
   E       ) is not None
 
-I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`dictionary<what is a dictionary?>`. I know how to work with :ref:`dictionaries<what is a dictionary?>`.
+I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`dictionary<what is a dictionary?>`. I know how to work with :ref:`dictionaries<what is a dictionary?>`.
 
 ----
 
@@ -546,7 +546,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     NameError: name 'Title' is not defined
 
-* I change the ``Title`` :ref:`object<everything is an object>` to ``tester.title[0]``
+* I change the ``Title`` :ref:`object<what is an object?>` to ``tester.title[0]``
 
   .. code-block:: python
     :caption:
@@ -854,7 +854,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     # Exceptions seen
 
-* I add a :ref:`variable<what is a variable?>` for the ``flex_container`` :ref:`object<everything is an object>`
+* I add a :ref:`variable<what is a variable?>` for the ``flex_container`` :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:
@@ -900,7 +900,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
             self.assertEqual(display.gap_config.gap_size, 1)
 
-* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
+* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:
@@ -927,7 +927,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
+* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:
@@ -955,7 +955,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
   the test passes.
 
-* I add the last :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
+* I add the last :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:

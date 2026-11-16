@@ -12,7 +12,7 @@ what causes AttributeError?
 
 ----
 
-AttributeError_ happens when a name that is NOT in an :ref:`object (everything in Python is an object)<everything is an object>` is used.
+AttributeError_ happens when a name that is NOT in an :ref:`object (everything in Python is an object)<what is an object?>` is used.
 
 ----
 
@@ -20,7 +20,7 @@ AttributeError_ happens when a name that is NOT in an :ref:`object (everything i
 what is an attribute?
 *********************************************************************************
 
-An :ref:`attribute<what causes AttributeError?>` is a name (:ref:`variable?<what is a variable?>`) for something that belongs to :ref:`an object (a class)<everything is an object>`, for example, a human being has :ref:`attributes<what causes AttributeError?>` like height, weight, sex and color, they are also known as properties.
+An :ref:`attribute<what causes AttributeError?>` is a name (:ref:`variable?<what is a variable?>`) for something that belongs to :ref:`an object (a class)<what is an object?>`, for example, a human being has :ref:`attributes<what causes AttributeError?>` like height, weight, sex and color, they are also known as properties.
 
 ----
 
@@ -322,7 +322,7 @@ start the project
 test_attribute_error_w_variables
 *********************************************************************************
 
-:ref:`AttributeError<what causes AttributeError?>` happens when I use a :ref:`variable<what is a variable?>` that does not exist in an :ref:`object<everything is an object>`.
+:ref:`AttributeError<what causes AttributeError?>` happens when I use a :ref:`variable<what is a variable?>` that does not exist in an :ref:`object<what is an object?>`.
 
 ----
 
@@ -428,8 +428,8 @@ test_attribute_error_w_variables
 
   the test passes because
 
-  - Python_ brings in an :ref:`object<everything is an object>` for the ``src/attribute_error/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_attribute_error.py`` as ``src.attribute_error`` when ``import src.attribute_error`` runs.
-  - Python_ looks at what the ``variable_00`` :ref:`variable<what is a variable?>` from the :ref:`object<everything is an object>` it imported for the ``src/attribute_error/__init__.py`` file_ from the ``src`` folder_ (``src.attribute_error``) points to when ``src.attribute_error.variable_00`` runs.
+  - Python_ brings in an :ref:`object<what is an object?>` for the ``src/attribute_error/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_attribute_error.py`` as ``src.attribute_error`` when ``import src.attribute_error`` runs.
+  - Python_ looks at what the ``variable_00`` :ref:`variable<what is a variable?>` from the :ref:`object<what is an object?>` it imported for the ``src/attribute_error/__init__.py`` file_ from the ``src`` folder_ (``src.attribute_error``) points to when ``src.attribute_error.variable_00`` runs.
 
   I think of ``src.attribute_error.variable_00`` like an address
 

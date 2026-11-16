@@ -81,7 +81,7 @@ I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I hav
 
 ----
 
-I add the `setUp method`_ to the ``TestCalculator`` :ref:`object<everything is an object>`
+I add the `setUp method`_ to the ``TestCalculator`` :ref:`object<what is an object?>`
 
 .. code-block:: python
   :lineno-start: 10
@@ -336,7 +336,7 @@ the only difference are the data types
   isinstance(something, str)
   isinstance(something, bool)
 
-The `isinstance function`_ can take a tuple_ as the second input, which means I can if the first input is an instance of any of the :ref:`objects<everything is an object>` in the tuple_
+The `isinstance function`_ can take a tuple_ as the second input, which means I can if the first input is an instance of any of the :ref:`objects<what is an object?>` in the tuple_
 
 * I add a new :ref:`if statement<if statements>` to the :ref:`add function<test_addition>`
 

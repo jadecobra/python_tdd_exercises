@@ -10,7 +10,7 @@
 how to make a calculator 8
 #################################################################################
 
-I can use the ``__getattribute__`` :ref:`method<what is a method?>` that comes with every :ref:`Python object<everything is an object>` in the :ref:`calculator tests<how to make a calculator>`
+I can use the ``__getattribute__`` :ref:`method<what is a method?>` that comes with every :ref:`Python object<what is an object?>` in the :ref:`calculator tests<how to make a calculator>`
 
 ----
 
@@ -111,7 +111,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.calculator' has no attribute 'BOOM!!!'
 
-* ``__getattribute__`` is a :ref:`method<what is a method?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<everything is an object>`
+* ``__getattribute__`` is a :ref:`method<what is a method?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<what is an object?>`
 
   - if the name is NOT an :ref:`attribute<what is an attribute?>` it raises :ref:`AttributeError<what causes AttributeError?>`
   - if the name is an :ref:`attribute<what is an attribute?>` it returns the object it points to
@@ -1220,7 +1220,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
     TypeError: TestCalculator.get_division_result() takes 2 positional arguments but 3 were given
 
-  I forgot to make ``get_division_result`` a staticmethod_ since it does not do anything with the rest of the :ref:`object<everything is an object>`
+  I forgot to make ``get_division_result`` a staticmethod_ since it does not do anything with the rest of the :ref:`object<what is an object?>`
 
 * I :ref:`wrap<what is a decorator function?>` ``get_division_result`` with the `staticmethod decorator`_
 
@@ -2320,7 +2320,7 @@ what is next?
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with objects<everything is an object>`
+* :ref:`what you can do with objects<what is an object?>`
 
 :ref:`Would you like to know what causes ModuleNotFoundError?<what is a module?>`
 

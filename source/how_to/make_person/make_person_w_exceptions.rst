@@ -767,7 +767,7 @@ is the same as
   except Exception:
       something else
 
-because :ref:`Exception<how to test that an Exception is raised>` is the mother of all the :ref:`Exceptions<how to test that an Exception is raised>` covered so far, they :ref:`inherit<everything is an object>` from it.
+because :ref:`Exception<how to test that an Exception is raised>` is the mother of all the :ref:`Exceptions<how to test that an Exception is raised>` covered so far, they :ref:`inherit<what is an object?>` from it.
 
 From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want to make things clearer.
 
@@ -1335,7 +1335,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

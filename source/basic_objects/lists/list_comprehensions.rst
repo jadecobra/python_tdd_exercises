@@ -944,7 +944,7 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
 
 ----
 
-* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`object<everything is an object>` and move the :ref:`object attributes<what is an object attribute?>` into it
+* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`object<what is an object?>` and move the :ref:`object attributes<what is an object attribute?>` into it
 
   .. code-block:: python
     :caption: list_comprehensions/tests/test_list_comprehensions.py
@@ -2588,7 +2588,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

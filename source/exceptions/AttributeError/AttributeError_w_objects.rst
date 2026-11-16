@@ -14,7 +14,7 @@ AttributeError with objects
 
 :ref:`test_attribute_error_w_variables` and :ref:`test_attribute_error_w_functions` show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is an object attribute?>` of the :ref:`module<what is a module?>`.
 
-Is an :ref:`object<everything is an object>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is an object attribute?>` of the :ref:`module<what is a module?>`?
+Is an :ref:`object<what is an object?>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is an object attribute?>` of the :ref:`module<what is a module?>`?
 
 *********************************************************************************
 preview
@@ -158,7 +158,7 @@ test_attribute_error_w_object_attributes
 
   the terminal_ still shows the same :ref:`Exception<how to test that an Exception is raised>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used inside the :ref:`function<what is a function?>` when it runs.
 
-* I change ``AnObject`` from a :ref:`function<what is a function?>` to an :ref:`object<everything is an object>`
+* I change ``AnObject`` from a :ref:`function<what is a function?>` to an :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:
@@ -211,7 +211,7 @@ test_attribute_error_w_object_attributes
         attribute_00 = function_09()
         # return function_09()
 
-  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<everything is an object>`
+  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<what is an object?>`
   - ``AnObject`` is an :ref:`attribute<what is an object attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AnObject.attribute_00`` or ``src.attribute_error.AnObject().attribute_00``
 
@@ -280,7 +280,7 @@ test_attribute_error_w_object_attributes
         attribute_00 = function_09()
         attribute_01 = attribute_00
 
-  - the test passes because in this case it does not matter if I use the :ref:`object<everything is an object>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
+  - the test passes because in this case it does not matter if I use the :ref:`object<what is an object?>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
   - ``attribute_01`` is now an :ref:`attribute<what is an object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_01`` or ``src.attribute_error.AnObject().attribute_01``
 
     .. code-block:: shell
@@ -754,7 +754,7 @@ test_attribute_error_w_object_attributes
 test_attribute_error_w_object_methods
 *********************************************************************************
 
-The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`objects<everything is an object>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is an object attribute?>`, and :ref:`variables<what is a variable?>` in an :ref:`object<everything is an object>` are :ref:`attributes of the class<what is an object attribute?>`.
+The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`objects<what is an object?>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is an object attribute?>`, and :ref:`variables<what is a variable?>` in an :ref:`object<what is an object?>` are :ref:`attributes of the class<what is an object attribute?>`.
 
 :ref:`Methods of a class<what is a method?>` are also :ref:`attributes of the class<what is an object attribute?>`.
 
@@ -884,7 +884,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     TypeError: AnObject.method_00() missing
                1 required positional argument: 'self'
 
-  because I :ref:`called the method<how to call a function>` with the :ref:`object<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
+  because I :ref:`called the method<how to call a function>` with the :ref:`object<what is an object?>` not an :ref:`instance of the class<how to test if something is an instance>`.
 
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` in ``tests/test_attribute_error.py``
 
@@ -900,7 +900,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<everything is an object>`
+  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<what is an object?>`
   - ``AnObject`` is an :ref:`attribute<what is an object attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can :ref:`call<how to call a function>` ``method_00`` from outside the file_ with ``src.attribute_error.AnObject().method_00()``
 
@@ -1484,7 +1484,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 
 :ref:`Would you like to test TypeError with objects?<TypeError with objects>`
 

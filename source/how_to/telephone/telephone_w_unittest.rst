@@ -105,7 +105,7 @@ add TestTelephone class
 
 ----
 
-* I add an :ref:`object<everything is an object>` named ``Telephone`` to ``test_telephone.py``
+* I add an :ref:`object<what is an object?>` named ``Telephone`` to ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -131,7 +131,7 @@ add TestTelephone class
 
   the test is still green.
 
-* I change the name of the :ref:`object<everything is an object>` to ``TestTelephone``
+* I change the name of the :ref:`object<what is an object?>` to ``TestTelephone``
 
   .. code-block:: python
     :caption:
@@ -162,7 +162,7 @@ add TestTelephone class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestTelephone``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<what is an object?>` of ``TestTelephone``
 
   .. code-block:: python
     :caption:
@@ -1963,7 +1963,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 
 :ref:`Would you like to make sure the person project always calculates the correct age?<test person with datetime>`

@@ -366,9 +366,9 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 what is a variable?
 *********************************************************************************
 
-I can define a name in Python with a variable. A variable is a name that is used to point to an :ref:`object<everything is an object>`. For example, in Mathematics_ we use ``x`` for any number.
+I can define a name in Python with a variable. A variable is a name that is used to point to an :ref:`object<what is an object?>`. For example, in Mathematics_ we use ``x`` for any number.
 
-Every time I use the name, Python_ uses the :ref:`object<everything is an object>` I pointed the name to.
+Every time I use the name, Python_ uses the :ref:`object<what is an object?>` I pointed the name to.
 
 ----
 
@@ -548,7 +548,7 @@ A call to a :ref:`function<what is a function?>` gets the output of the :ref:`fu
 
     # Exceptions seen
 
-  - The :ref:`assertion<what is an assertion?>` - ``assert w_pass() is None`` checks if the result of a :ref:`call<how to call a function>` to the ``w_pass`` :ref:`function<what is a function?>`, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_pass() is None`` checks if the result of a :ref:`call<how to call a function>` to the ``w_pass`` :ref:`function<what is a function?>`, is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`.
   - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
   - pass_ is a keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
   - The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, so I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_pass``
@@ -829,7 +829,7 @@ functions_ are made with
 
     # Exceptions seen
 
-  - The :ref:`assertion<what is an assertion?>` - ``assert w_return() is None`` checks if the result of a :ref:`call<how to call a function>` to ``w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_return() is None`` checks if the result of a :ref:`call<how to call a function>` to ``w_return``, is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`.
   - The :ref:`function definition<how to make a function>` simply says return_ and the test passes.
   - return_ is a keyword that defines what the :ref:`function<what is a function?>` gives as output.
   - The test is still green because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` the ``w_return`` :ref:`function<what is a function?>`
@@ -1175,7 +1175,7 @@ the test passes.
       └── def w_return_none():
           └── return None
 
-  - The :ref:`assertion<what is an assertion?>` - ``assert w_return_none() is None`` checks if the result of a :ref:`call<how to call a function>` to ``w_return_none``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_return_none() is None`` checks if the result of a :ref:`call<how to call a function>` to ``w_return_none``, is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`.
 
 * I remove the commented lines
 

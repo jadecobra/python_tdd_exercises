@@ -1002,7 +1002,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I move ``assert_is_not_true(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I move ``assert_is_not_true(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1024,7 +1024,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: unexpectedly identical: True
 
-* I move ``self.assertIsNot(an_object, True)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I move ``self.assertIsNot(an_object, True)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1101,7 +1101,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED(object=False) ...
         AssertionError: assert False is not False
 
-* I move ``assert_is_not_false(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I move ``assert_is_not_false(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1123,7 +1123,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: unexpectedly identical: False
 
-* I move ``self.assertIsNot(an_object, False)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I move ``self.assertIsNot(an_object, False)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1193,7 +1193,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED(object=None) ...
         AssertionError: assert None is not None
 
-* I move ``assert_is_not_none(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+* I move ``assert_is_not_none(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1217,7 +1217,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED(object=None)...
         AssertionError: unexpectedly identical: None
 
-* I move ``self.assertIsNot(an_object, None)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+* I move ``self.assertIsNot(an_object, None)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1245,7 +1245,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED(object=None) ...
         AssertionError: unexpectedly None
 
-* I move ``self.assertIsNotNone(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+* I move ``self.assertIsNotNone(an_object)`` into a :ref:`try statement<how to handle Exceptions>` for the case where ``an_object`` is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1453,7 +1453,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I move ``self.assertIsNot(first, second)`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is the same :ref:`object<everything is an object>` as the second one
+I move ``self.assertIsNot(first, second)`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is the same :ref:`object<what is an object?>` as the second one
 
 .. code-block:: python
   :caption: assertion_error/tests/test_assertion_error.py
@@ -1665,7 +1665,7 @@ the test passes.
 
   green.
 
-* I add a simple :ref:`assert statement<what is an assertion?>` for when the first :ref:`object<everything is an object>` for the cases where the first item is the same :ref:`object<everything is an object>` as the second one
+* I add a simple :ref:`assert statement<what is an assertion?>` for when the first :ref:`object<what is an object?>` for the cases where the first item is the same :ref:`object<what is an object?>` as the second one
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1692,7 +1692,7 @@ the test passes.
 
   I do not think I would have written one hundred individual tests for :ref:`AssertionError<what causes AssertionError?>`
 
-* I move ``assert first is second`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is NOT the same :ref:`object<everything is an object>` as the second one
+* I move ``assert first is second`` into a :ref:`try statement<how to handle Exceptions>` for the cases where the first item is NOT the same :ref:`object<what is an object?>` as the second one
 
   .. code-block:: python
     :caption: assertion_error/tests/test_assertion_error.py
@@ -1804,8 +1804,8 @@ review
 
 I can use :ref:`for loops<what is a for loop?>`, :ref:`object attributes<what is an object attribute?>` and :ref:`functions<what is a function?>` to remove repetition. In this case I used them to make a test that has one hundred sub tests which would not have been fun to write one at a time, yet there is a problem. Can you tell just by looking at the code, that all :ref:`test_assertion_error` is doing is :ref:`asserting<what is an assertion?>` that
 
-* an item is the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT the same :ref:`objects<everything is an object>`
-* an item is NOT the same :ref:`object<everything is an object>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are the same :ref:`objects<everything is an object>`
+* an item is the same :ref:`object<what is an object?>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT the same :ref:`objects<what is an object?>`
+* an item is NOT the same :ref:`object<what is an object?>` as another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are the same :ref:`objects<what is an object?>`
 * an item is equal to another, If this is :ref:`False<test_what_is_false>` then :ref:`assert<what is an assertion?>` that they are NOT equal
 
 ----
@@ -1835,7 +1835,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

@@ -311,7 +311,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-  :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`object<everything is an object>` and catch its changes immediately.
+  :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`object<what is an object?>` and catch its changes immediately.
 
   :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` are a problem because :ref:`object attributes<what is an object attribute?>` can change from one Python_ version to another, I have to remember the correct order of names and I am keeping two :ref:`lists<what is a list?>`. :ref:`There has to be a better way<how to make a person with a list>`.
 
@@ -2200,7 +2200,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

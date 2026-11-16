@@ -8,7 +8,7 @@
 test objects with loops
 #################################################################################
 
-I want to use :ref:`for loops<for loops>` in the :ref:`objects<everything is an object>` project.
+I want to use :ref:`for loops<for loops>` in the :ref:`objects<what is an object?>` project.
 
 ----
 
@@ -72,7 +72,7 @@ open the project
 test_what_is_an_object
 *********************************************************************************
 
-The tests other than :ref:`test_is_none_an_object` and :ref:`test_dir_object` :ref:`assert<what is an assertion?>` that an :ref:`object<everything is an object>` is an :ref:`instance<how to test if something is an instance>` and a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
+The tests other than :ref:`test_is_none_an_object` and :ref:`test_dir_object` :ref:`assert<what is an assertion?>` that an :ref:`object<what is an object?>` is an :ref:`instance<how to test if something is an instance>` and a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is an object?>`
 
 .. code-block:: python
 
@@ -354,7 +354,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

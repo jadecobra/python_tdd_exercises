@@ -814,19 +814,19 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 extract assert_is_not function
 *********************************************************************************
 
-The other :ref:`assertions<what is an assertion?>` in ``test_assertion_error.py`` are the same, they check if something is NOT the same :ref:`object<everything is an object>` as something else
+The other :ref:`assertions<what is an assertion?>` in ``test_assertion_error.py`` are the same, they check if something is NOT the same :ref:`object<what is an object?>` as something else
 
 .. code-block:: python
 
   assert something is not something_else
 
-three of the :ref:`assertions<what is an assertion?>` are the same, they check if something is the same :ref:`object<everything is an object>` as something else
+three of the :ref:`assertions<what is an assertion?>` are the same, they check if something is the same :ref:`object<what is an object?>` as something else
 
 .. code-block:: python
 
   assert something is something_else
 
-I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` if one :ref:`object<everything is an object>` is NOT the same :ref:`object<everything is an object>` as another.
+I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` if one :ref:`object<what is an object?>` is NOT the same :ref:`object<what is an object?>` as another.
 
 ----
 
@@ -837,7 +837,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`function<what is a function?>` named ``assert_is_not`` that takes two inputs and :ref:`asserts<what is an assertion?>`  that they are not the same :ref:`object<everything is an object>`, in ``test_assertion_error.py``
+* I add a :ref:`function<what is a function?>` named ``assert_is_not`` that takes two inputs and :ref:`asserts<what is an assertion?>`  that they are not the same :ref:`object<what is an object?>`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -1180,13 +1180,13 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 extract assert_is_not_none function
 *********************************************************************************
 
-All the :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_none` except the first one, use the :ref:`assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+All the :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_none` except the first one, use the :ref:`assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`
 
 .. code-block:: python
 
   assert something is not None
 
-I can use a :ref:`function<what is a function?>` to remove repetition of :ref:`None<what is None?>` from the :ref:`call<how to call a function with input>` to the :ref:`assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+I can use a :ref:`function<what is a function?>` to remove repetition of :ref:`None<what is None?>` from the :ref:`call<how to call a function with input>` to the :ref:`assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`.
 
 ----
 
@@ -1197,7 +1197,7 @@ I can use a :ref:`function<what is a function?>` to remove repetition of :ref:`N
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`function<what is a function?>` named ``assert_is_not_none`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`, in ``test_assertion_error.py``
+* I add a :ref:`function<what is a function?>` named ``assert_is_not_none`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -1394,13 +1394,13 @@ the test passes.
 extract assert_is_not_false function
 *********************************************************************************
 
-The :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_false` except ``assert False is False`` are the same, they check if something is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+The :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_false` except ``assert False is False`` are the same, they check if something is NOT the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`
 
 .. code-block:: python
 
   assert something is not False
 
-I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
+I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -1411,7 +1411,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`function<what is a function?>` named ``assert_is_not_false`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`, in ``test_assertion_error.py``
+* I add a :ref:`function<what is a function?>` named ``assert_is_not_false`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<what is an object?>` as :ref:`False<test_what_is_false>`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :caption:
@@ -1588,13 +1588,13 @@ the test passes.
 extract assert_is_not_true function
 *********************************************************************************
 
-The :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_true` except ``assert True is True`` are the same, they check if something is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+The :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_true` except ``assert True is True`` are the same, they check if something is NOT the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
   assert something is not True
 
-I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
+I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -1605,7 +1605,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`function<what is a function?>` named ``assert_is_not_true`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`, in ``test_assertion_error.py``
+* I add a :ref:`function<what is a function?>` named ``assert_is_not_true`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<what is an object?>` as :ref:`True<test_what_is_true>`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :caption:

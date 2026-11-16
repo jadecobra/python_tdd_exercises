@@ -119,7 +119,7 @@ add TestPerson object
 
 ----
 
-I add an :ref:`object<everything is an object>` named ``TestPerson`` to ``test_person.py``
+I add an :ref:`object<what is an object?>` named ``TestPerson`` to ``test_person.py``
 
 .. code-block:: python
   :lineno-start: 45
@@ -166,7 +166,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestPerson``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<what is an object?>` of ``TestPerson``
 
   .. code-block:: python
     :caption:
@@ -650,7 +650,7 @@ move test_mary to TestPerson
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_mary` because I can use it when a :ref:`method<what is a method?>` does not use anything in the :ref:`object<everything is an object>` it belongs to
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_mary` because I can use it when a :ref:`method<what is a method?>` does not use anything in the :ref:`object<what is an object?>` it belongs to
 
   .. code-block:: python
     :caption:
@@ -2498,7 +2498,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 
 :ref:`Would you like to test the telephone project with the unittest library?<test telephone with unittest>`

@@ -931,7 +931,7 @@ because
 
 ----
 
-* I want to test the error message to make sure the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` only catches :ref:`TypeError<what causes TypeError?>` with this specific message. I can use the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>` as an :ref:`object<everything is an object>` to do this
+* I want to test the error message to make sure the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` only catches :ref:`TypeError<what causes TypeError?>` with this specific message. I can use the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>` as an :ref:`object<what is an object?>` to do this
 
   .. code-block:: python
     :caption:
@@ -5624,7 +5624,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

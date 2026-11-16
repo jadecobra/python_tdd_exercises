@@ -22,7 +22,7 @@ CapWords
 
 ----
 
-:ref:`object<everything is an object>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized, for example
+:ref:`object<what is an object?>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized, for example
 
 .. code-block:: python
 
@@ -38,7 +38,7 @@ how to use object methods and attributes
 
 ----
 
-:ref:`object attributes<test_attribute_error_w_object_attributes>` and :ref:`methods<what is a method?>` can be used inside an :ref:`object<everything is an object>` with ``self``
+:ref:`object attributes<test_attribute_error_w_object_attributes>` and :ref:`methods<what is a method?>` can be used inside an :ref:`object<what is an object?>` with ``self``
 
 for example
 
@@ -205,7 +205,7 @@ tuples
 
 
 
-A tuple_ is a sequence or container of :ref:`objects<everything is an object>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), and the things in them are separated by commas, for example
+A tuple_ is a sequence or container of :ref:`objects<what is an object?>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), and the things in them are separated by commas, for example
 
 .. code-block:: python
 
@@ -222,7 +222,7 @@ lists
 *********************************************************************************
 
 
-A :ref:`list/array<what is a list?>` is a sequence or container of :ref:`objects<everything is an object>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
+A :ref:`list/array<what is a list?>` is a sequence or container of :ref:`objects<what is an object?>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
 
 .. code-block:: python
 
@@ -237,7 +237,7 @@ sets
 *********************************************************************************
 
 
-A set_ is a container of :ref:`objects<everything is an object>` that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
+A set_ is a container of :ref:`objects<what is an object?>` that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
 
 .. code-block:: python
 

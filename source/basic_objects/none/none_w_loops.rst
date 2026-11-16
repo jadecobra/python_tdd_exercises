@@ -18,7 +18,7 @@ test None with loops
 
 ----
 
-None_ is used when there is no value. In Mathematics_ we use ``0`` for no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we can use None_, it is the simplest :ref:`object<everything is an object>`.
+None_ is used when there is no value. In Mathematics_ we use ``0`` for no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we can use None_, it is the simplest :ref:`object<what is an object?>`.
 
 I used :ref:`assertIs<test_assertIs>` and :ref:`assertIsNot<test_assertIsNot>` in :ref:`test_assertion_error_w_none` in the :ref:`assertion_error project<what is an assertion?>`, where I saw that
 
@@ -400,7 +400,7 @@ the test passes.
 another way to test if something is NOT None
 *********************************************************************************
 
-I can also use another :ref:`assert method<test_dir_unittest_testcase>` from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>` - the `assertIsNotNone method`_.
+I can also use another :ref:`assert method<test_dir_unittest_testcase>` from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is NOT the same :ref:`object<what is an object?>` as :ref:`None<what is None?>` - the `assertIsNotNone method`_.
 
 ----
 
@@ -430,7 +430,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: unexpectedly None
 
-- because :ref:`assertIsNotNone<another way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` given in parentheses is :ref:`None<what is None?>`.
+- because :ref:`assertIsNotNone<another way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is an object?>` given in parentheses is :ref:`None<what is None?>`.
 - ``assertIsNot(something, None)`` and ``assertIsNotNone(something)`` are the same.
 
 ----
@@ -439,7 +439,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 another way to test if something is None
 *********************************************************************************
 
-I can use the `assertIsNone method`_ from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+I can use the `assertIsNone method`_ from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is the same :ref:`object<what is an object?>` as :ref:`None<what is None?>`.
 
 ----
 
@@ -464,7 +464,7 @@ I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to
 
   # Exceptions seen
 
-- the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNone<another way to test if something is None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` given in parentheses is NOT :ref:`None<what is None?>`.
+- the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNone<another way to test if something is None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is an object?>` given in parentheses is NOT :ref:`None<what is None?>`.
 - ``assertIs(something, None)`` and ``assertIsNone(something)`` are the same.
 
 ----
@@ -1048,7 +1048,7 @@ the test passes.
 
     # NOTES
 
-  - int_ is the :ref:`object<everything is an object>` for integers_
+  - int_ is the :ref:`object<what is an object?>` for integers_
   - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
     .. code-block:: shell
@@ -1465,7 +1465,7 @@ the test passes.
 
     # NOTES
 
-  float_ is the :ref:`object<everything is an object>` for binary floating point numbers. the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  float_ is the :ref:`object<what is an object?>` for binary floating point numbers. the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1838,7 +1838,7 @@ the test passes.
 
     # NOTES
 
-  - str_ is the :ref:`object<everything is an object>` for strings_
+  - str_ is the :ref:`object<what is an object?>` for strings_
   - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
     .. code-block:: shell
@@ -2996,7 +2996,7 @@ the test passes.
 
     # NOTES
 
-  - :ref:`dict<dictionaries>` is the :ref:`object<everything is an object>` for :ref:`dictionaries<what is a dictionary?>`
+  - :ref:`dict<dictionaries>` is the :ref:`object<what is an object?>` for :ref:`dictionaries<what is a dictionary?>`
   - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
     .. code-block:: shell
@@ -3286,7 +3286,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

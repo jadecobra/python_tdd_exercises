@@ -36,7 +36,7 @@
 what is a dictionary?
 #################################################################################
 
-A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`. The :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<everything is an object>`. I add tests to see which of :ref:`the Python basic data types<basic objects>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`. The :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<what is an object?>`. I add tests to see which of :ref:`the Python basic data types<basic objects>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
 
 I think this is the most important :ref:`data structure<basic objects>` because it can hold all the others, same as with :ref:`lists<what is a list?>` and tuples_. In programming I have had to work with JSON_ which I can read and write as dictionaries_.
 
@@ -2374,7 +2374,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I copy the ``dict_items`` :ref:`object<everything is an object>` from the terminal_ and paste  it as the expectation
+* I copy the ``dict_items`` :ref:`object<what is an object?>` from the terminal_ and paste  it as the expectation
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -2394,7 +2394,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     NameError: name 'dict_items' is not defined
 
-  this new :ref:`object<everything is an object>` has a :ref:`list<what is a list?>` and :ref:`I know how to work with lists<what is a list?>`.
+  this new :ref:`object<what is an object?>` has a :ref:`list<what is a list?>` and :ref:`I know how to work with lists<what is a list?>`.
 
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -2467,7 +2467,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test passes.
 
-This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the :ref:`dictionary<what is a dictionary?>`. The ``dict_items`` :ref:`object<everything is an object>` is :ref:`iterable<what is an iterable?>`.
+This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the :ref:`dictionary<what is a dictionary?>`. The ``dict_items`` :ref:`object<what is an object?>` is :ref:`iterable<what is an iterable?>`.
 
 ----
 
@@ -2628,7 +2628,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
 ----
 
-* I copy the ``dict_keys`` :ref:`object<everything is an object>` from the terminal_ and paste it as the expectation
+* I copy the ``dict_keys`` :ref:`object<what is an object?>` from the terminal_ and paste it as the expectation
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -2652,9 +2652,9 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     NameError: name 'dict_keys' is not defined
 
-  the ``dict_keys`` :ref:`object<everything is an object>` has a :ref:`list<what is a list?>`.
+  the ``dict_keys`` :ref:`object<what is an object?>` has a :ref:`list<what is a list?>`.
 
-* I use the :ref:`list<what is a list?>` in the ``dict_keys`` :ref:`object<everything is an object>` as the expectation
+* I use the :ref:`list<what is a list?>` in the ``dict_keys`` :ref:`object<what is an object?>` as the expectation
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -4377,7 +4377,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     NameError: name 'dict_values' is not defined
 
-* I remove the things around the :ref:`list<what is a list?>` in the ``dict_values`` :ref:`object<everything is an object>`
+* I remove the things around the :ref:`list<what is a list?>` in the ``dict_values`` :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption: dictionaries/tests/test_dictionaries.py
@@ -4916,7 +4916,7 @@ close the project
 review
 *********************************************************************************
 
-Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<everything is an object>` can be used as values.
+Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<what is an object?>` can be used as values.
 
 I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic objects<basic objects>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
@@ -4975,7 +4975,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

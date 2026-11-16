@@ -59,7 +59,7 @@ requirements
 
   the test passes.
 
-* I change the name of the :ref:`object<everything is an object>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
+* I change the name of the :ref:`object<what is an object?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
 
   .. code-block:: python
     :caption:

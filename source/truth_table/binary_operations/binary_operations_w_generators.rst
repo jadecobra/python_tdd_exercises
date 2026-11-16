@@ -4,6 +4,8 @@
 
 .. include:: ../../links.rst
 
+.. _getattribute method: https://docs.python.org/3/reference/datamodel.html#object.__getattribute__
+
 .. _binary_operations_generators:
 
 #################################################################################
@@ -276,8 +278,158 @@ the test is green again.
 ----
 
 *********************************************************************************
-use getattribute
+use __getattribute__
 *********************************************************************************
+
+I use the full path for each of the :ref:`binary operations<truth table: binary operations>`. :ref:`Python objects<what is an object?>` have a :ref:`method<what is an object attribute?>` I can use to remove the repetition of ``src.truth_table`` by passing the name of the :ref:`attribute<what is an object attribute?>` or :ref:`method<what is a method?>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`call<how to call a function with input>` to the `getattribute method`_
+
+.. code-block:: python
+  :caption: atm/tests/test_atm.py
+  :lineno-start: 60
+  :emphasize-lines: 7-9
+
+                  with self.subTest(
+                      operation.__name__,
+                      first=first,
+                      second=second
+                  ):
+                      self.assertEqual(
+                          src.truth_table.__getattribute__(
+                              operation
+                          )(first, second),
+                          expectation
+                      )
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+  TypeError: attribute name must be string, not 'function'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change the :ref:`functions<what is a function?>` to just the names as strings_
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 8
+    :emphasize-lines: 6, 8, 11, 13
+
+        def test_binary_operations(self):
+            for first, second in itertools.product(
+                (False, True), repeat=2
+            ):
+                for operation, expectation in (
+                    ('contradiction', False),
+                    (
+                        'logical_conjunction',
+                        (first, second) == (True, True)
+                    ),
+                    ('project_second', second),
+                    (
+                        'converse_non_implication',
+                        (first, second) == (False, True)
+                    ),
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 23
+    :emphasize-lines: 1, 3, 6, 8
+
+                    ('negate_first', not first),
+                    (
+                        'logical_nand',
+                        (first, second) != (True, True)
+                    ),
+                    ('tautology', True),
+                    (
+                        'logical_disjunction',
+                        (first, second) != (False, False)
+                    ),
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 33
+    :emphasize-lines: 2, 6, 9, 11
+
+                    (
+                        'exclusive_disjunction',
+                        first != second
+                    ),
+                    (
+                        'material_non_implication',
+                        (first, second) == (True, False)
+                    ),
+                    ('project_first', first),
+                    (
+                        'converse_implication',
+                        (first, second) != (False, True)
+                    ),
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 46
+    :emphasize-lines: 1, 3, 7, 11
+
+                    ('negate_second', not second),
+                    (
+                        'logical_nor',
+                        (first, second) == (False, False)
+                    ),
+                    (
+                        'logical_equality',
+                        first == second
+                    ),
+                    (
+                        'material_implication',
+                        (first, second) != (True, False)
+                    ),
+                ):
+                    with self.subTest(
+                        operation.__name__,
+                        first=first,
+                        second=second
+                    ):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    AttributeError: 'str' object has no attribute '__name__'. Did you mean: '__ne__'?
+
+* I change ``operation.__name__`` since the :ref:`object<what is an object?>` is now a string_
+
+  .. code-block:: python
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
 
 
 ----
@@ -331,7 +483,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

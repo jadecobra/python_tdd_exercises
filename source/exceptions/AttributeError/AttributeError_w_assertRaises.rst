@@ -12,7 +12,7 @@ AttributeError with assertRaises
 
 :ref:`test_attribute_error_w_variables` and :ref:`test_attribute_error_w_functions` show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is an object attribute?>` of the :ref:`module<what is a module?>`.
 
-Is an :ref:`object<everything is an object>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is an object attribute?>` of the :ref:`module<what is a module?>`?
+Is an :ref:`object<what is an object?>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is an object attribute?>` of the :ref:`module<what is a module?>`?
 
 *********************************************************************************
 preview
@@ -153,7 +153,7 @@ test_attribute_error_w_object_attributes
 
   the terminal_ still shows the same :ref:`Exception<how to test that an Exception is raised>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used inside the :ref:`function<what is a function?>` when it runs.
 
-* I change ``AnObject`` from a :ref:`function<what is a function?>` to an :ref:`object<everything is an object>`
+* I change ``AnObject`` from a :ref:`function<what is a function?>` to an :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:
@@ -207,7 +207,7 @@ test_attribute_error_w_object_attributes
         attribute_00 = function_09()
         # return function_09()
 
-  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<everything is an object>`
+  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<what is an object?>`
   - ``AnObject`` is an :ref:`attribute<what is an object attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AnObject.attribute_00`` or ``src.attribute_error.AnObject().attribute_00``
 
@@ -275,7 +275,7 @@ test_attribute_error_w_object_attributes
         attribute_00 = function_09()
         attribute_01 = attribute_00
 
-  - the test passes because in this case it does not matter if I use the :ref:`object<everything is an object>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
+  - the test passes because in this case it does not matter if I use the :ref:`object<what is an object?>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
   - ``attribute_01`` is now an :ref:`attribute<what is an object attribute?>` of ``AnObject`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_01`` or ``src.attribute_error.AnObject().attribute_01``
 
     .. code-block:: shell
@@ -740,7 +740,7 @@ test_attribute_error_w_object_attributes
 test_attribute_error_w_object_methods
 *********************************************************************************
 
-The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`objects<everything is an object>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is an object attribute?>`, and :ref:`variables<what is a variable?>` in an :ref:`object<everything is an object>` are :ref:`attributes of the class<what is an object attribute?>`.
+The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`objects<what is an object?>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is an object attribute?>`, and :ref:`variables<what is a variable?>` in an :ref:`object<what is an object?>` are :ref:`attributes of the class<what is an object attribute?>`.
 
 :ref:`Methods of a class<what is a method?>` are also :ref:`attributes of the class<what is an object attribute?>`.
 
@@ -840,7 +840,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_00():
             return None
 
-  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<everything is an object>`
+  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is an object attribute?>` of the ``AnObject`` :ref:`object<what is an object?>`
   - ``AnObject`` is an :ref:`attribute<what is an object attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can call ``method_00`` from outside the file_ with ``src.attribute_error.AnObject.method_00()`` or ``src.attribute_error.AnObject().method_00()``
 
@@ -996,7 +996,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   where ``self`` is ``AnObject``.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` sinceit does not use anything that belongs to the :ref:`object<everything is an object>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` sinceit does not use anything that belongs to the :ref:`object<what is an object?>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
 
   .. code-block:: python
     :caption:
@@ -1018,7 +1018,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     AnObject().method_02()
         AnObject.method_02()
 
-  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AnObject()``) or from the :ref:`object<everything is an object>` (``AnObject``).
+  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AnObject()``) or from the :ref:`object<what is an object?>` (``AnObject``).
 
 * I remove the commented line
 
@@ -1148,7 +1148,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     AnObject().method_04()
         AnObject.method_04()
 
-  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AnObject()``) or from the :ref:`object<everything is an object>` (``AnObject``).
+  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AnObject()``) or from the :ref:`object<what is an object?>` (``AnObject``).
 
 * I add a line for ``src.attribute_error.AnObject.method_05`` to ``test_attribute_error.py``
 
@@ -1238,7 +1238,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     AnObject.method_06()
 
-  I called the :ref:`method<what is a method?>` with the :ref:`object<everything is an object>` (``AnObject.method_06()``) not :ref:`an instance of the class<how to test if something is an instance>` (``AnObject().method_06()``).
+  I called the :ref:`method<what is a method?>` with the :ref:`object<what is an object?>` (``AnObject.method_06()``) not :ref:`an instance of the class<how to test if something is an instance>` (``AnObject().method_06()``).
 
 * I add a line for ``src.attribute_error.AnObject.method_07`` to ``test_attribute_error.py``
 
@@ -1341,7 +1341,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_positional_arguments>` (the parentheses are empty).
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` sinceit does not use anything that belongs to the :ref:`object<everything is an object>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` sinceit does not use anything that belongs to the :ref:`object<what is an object?>`
 
   .. code-block:: python
     :caption:
@@ -1362,7 +1362,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     AnObject().method_08()
         AnObject.method_08()
 
-  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AnObject()``) or from the :ref:`object<everything is an object>` (``AnObject``).
+  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AnObject()``) or from the :ref:`object<what is an object?>` (``AnObject``).
 
 * I add a line for ``src.attribute_error.AnObject.method_09`` to ``test_attribute_error.py``
 
@@ -1498,7 +1498,7 @@ close the project
 review
 *********************************************************************************
 
-All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that :ref:`because in Python everything is an object<everything is an object>`
+All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that :ref:`because in Python everything is an object<what is an object?>`
 
 * :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_object_attributes>`
 * :ref:`A function in an object is an attribute of the class<test_attribute_error_w_object_methods>`
@@ -1536,7 +1536,7 @@ what is next?
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
 
-:ref:`Would you like to know where the extra attributes and methods of the Person object came from?<everything is an object>`
+:ref:`Would you like to know where the extra attributes and methods of the Person object came from?<what is an object?>`
 
 ----
 

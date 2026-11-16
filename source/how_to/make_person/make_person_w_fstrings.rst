@@ -10,7 +10,7 @@ how to make a person with f-strings
 
 ----
 
-Since I can pass :ref:`objects<everything is an object>` to a string_ with :ref:`f-strings<what is string interpolation?>`, I can write one :ref:`function<what is a function?>` that makes a person instead of one :ref:`function<what is a function?>` for each person.
+Since I can pass :ref:`objects<what is an object?>` to a string_ with :ref:`f-strings<what is string interpolation?>`, I can write one :ref:`function<what is a function?>` that makes a person instead of one :ref:`function<what is a function?>` for each person.
 
 ----
 
@@ -2098,8 +2098,8 @@ I want to move the :ref:`person function<extract person function>` to separate i
 
   all the tests are green again because
 
-  - when ``import src.person`` runs Python_ brings in an :ref:`object<everything is an object>` for the ``__init__.py`` file_ from the ``person`` folder_ in the ``src`` folder_ so I can use it in ``tests/test_person.py`` as ``src.person``.
-  - Python_ calls the :ref:`person function<extract person function>` from the :ref:`object<everything is an object>` it imported for the ``src/person/__init__.py`` file_ (``src.person``) when ``src.person.person`` is called.
+  - when ``import src.person`` runs Python_ brings in an :ref:`object<what is an object?>` for the ``__init__.py`` file_ from the ``person`` folder_ in the ``src`` folder_ so I can use it in ``tests/test_person.py`` as ``src.person``.
+  - Python_ calls the :ref:`person function<extract person function>` from the :ref:`object<what is an object?>` it imported for the ``src/person/__init__.py`` file_ (``src.person``) when ``src.person.person`` is called.
 
   I think of ``src.person.person`` like an address
 

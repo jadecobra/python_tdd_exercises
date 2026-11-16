@@ -41,7 +41,7 @@ what is a list?
 
 ----
 
-A list_ is a container :ref:`object<everything is an object>` that can hold any :ref:`objects<everything is an object>`
+A list_ is a container :ref:`object<what is an object?>` that can hold any :ref:`objects<what is an object?>`
 
 * they are represented with ``[]``
 * they can be made with ``list()`` or ``[]``
@@ -351,7 +351,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 what is an iterable?
 *********************************************************************************
 
-An :ref:`iterable<what is an iterable?>` is an :ref:`object<everything is an object>` that can return what it has, one at a time. In order words, I can :ref:`loop<what is a for loop?>` over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries<what is a dictionary?>` are :ref:`iterable<what is an iterable?>`.
+An :ref:`iterable<what is an iterable?>` is an :ref:`object<what is an object?>` that can return what it has, one at a time. In order words, I can :ref:`loop<what is a for loop?>` over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries<what is a dictionary?>` are :ref:`iterable<what is an iterable?>`.
 
 * I change the input to a tuple_
 
@@ -3962,7 +3962,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.

@@ -425,7 +425,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 test_catching_attribute_error
 *********************************************************************************
 
-:ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+:ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<what is an object?>` that exists.
 
 ----
 
@@ -479,7 +479,7 @@ test_catching_attribute_error
   - ``exceptions`` is the ``exceptions`` folder_ in the ``src`` folder_
   - ``src.exceptions.does_not_exist`` is pointing to something named ``does_not_exist`` in ``__init__.py`` in the ``exceptions`` folder_ in the ``src`` folder_
 
-  the failure happens because Python_ cannot find ``does_not_exist`` in the ``__init__.py`` file_ in the ``exceptions`` folder_ in the ``src`` folder_. I tried to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+  the failure happens because Python_ cannot find ``does_not_exist`` in the ``__init__.py`` file_ in the ``exceptions`` folder_ in the ``src`` folder_. I tried to get something that does NOT exist from an :ref:`object<what is an object?>` that exists.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -540,7 +540,7 @@ test_catching_attribute_error
     git commit -am \
     'add test_catching_attribute_error'
 
-:ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+:ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<what is an object?>` that exists.
 
 ----
 
@@ -548,7 +548,7 @@ test_catching_attribute_error
 test_catching_type_error
 *********************************************************************************
 
-:ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
+:ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<what is an object?>` in a way that it cannot be used.
 
 ----
 
@@ -779,7 +779,7 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
     git commit -am \
     'add test_catching_type_error'
 
-:ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
+:ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<what is an object?>` in a way that it cannot be used.
 
 ----
 
@@ -1141,7 +1141,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 
         def test_catching_type_error(self):
 
-  the test passes, showing that ``src.exceptions.does_not_exist`` raises :ref:`AttributeError<what causes AttributeError?>` which happens when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+  the test passes, showing that ``src.exceptions.does_not_exist`` raises :ref:`AttributeError<what causes AttributeError?>` which happens when I try to get something that does NOT exist from an :ref:`object<what is an object?>` that exists.
 
 * I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_attribute_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
@@ -1201,7 +1201,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 
     # Exceptions seen
 
-  the test passes, showing that ``src.exceptions.function_name('the input')`` raises :ref:`TypeError<what causes TypeError?>` which happens when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
+  the test passes, showing that ``src.exceptions.function_name('the input')`` raises :ref:`TypeError<what causes TypeError?>` which happens when I try to use an :ref:`object<what is an object?>` in a way that it cannot be used.
 
 * I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_type_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
@@ -1801,7 +1801,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
 
     E       Exception
 
-  :ref:`Exception<how to test that an Exception is raised>` is the mother of all the :ref:`Exceptions<how to test that an Exception is raised>` covered so far, they :ref:`inherit<everything is an object>` from it.
+  :ref:`Exception<how to test that an Exception is raised>` is the mother of all the :ref:`Exceptions<how to test that an Exception is raised>` covered so far, they :ref:`inherit<what is an object?>` from it.
 
 * I can use the `raise statement`_ to cause any :ref:`Exception<how to test that an Exception is raised>` I want
 
@@ -1908,7 +1908,7 @@ the test passes.
 
 ----
 
-* I can use :ref:`Exception<how to test that an Exception is raised>` to catch any of the :ref:`Exceptions<how to test that an Exception is raised>` that :ref:`inherit<everything is an object>` from it (its :ref:`children/subobjects<how to test if something is a subclass>`)
+* I can use :ref:`Exception<how to test that an Exception is raised>` to catch any of the :ref:`Exceptions<how to test that an Exception is raised>` that :ref:`inherit<what is an object?>` from it (its :ref:`children/subobjects<how to test if something is a subclass>`)
 
   .. code-block:: python
     :caption:
@@ -2531,7 +2531,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know that everything in Python is an object<what is an object?>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
