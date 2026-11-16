@@ -6,12 +6,13 @@ import unittest
 class TestATM(unittest.TestCase):
 
     def test_atm(self):
-        denial = {
+        denials = {
             'card_expired': 'DENIED: Card Expired',
             'above_daily_limit': 'DENIED: Exceeded daily withdrawal limit',
             'not_right_pin': 'DENIED: Wrong PIN. Try again...',
             'not_enough_cash': 'DENIED: Not enough CASH in Account',
         }
+
         for (
             right_pin, enough_cash,
             above_daily_limit, card_expired
@@ -29,15 +30,16 @@ class TestATM(unittest.TestCase):
                       card_expired=card_expired,
                   )
                   if card_expired:
-                      expectation = denial['card_expired']
+                      expectation = denials['card_expired']
                   elif above_daily_limit:
-                      expectation = denial['above_daily_limit']
+                      expectation = denials['above_daily_limit']
                   elif not right_pin:
-                      expectation = denial['not_right_pin']
+                      expectation = denials['not_right_pin']
                   elif not enough_cash:
-                      expectation = denial['not_enough_cash']
+                      expectation = denials['not_enough_cash']
                   else:
                       expectation = 'CASH'
+
                   self.assertEqual(result, expectation)
 
 

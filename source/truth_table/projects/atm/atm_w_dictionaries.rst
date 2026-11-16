@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test atm with dictionaries in the atm project. Continues the Automated Teller Machine truth table from test atm with generators. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Add a denials dictionary mapping card_expired, above_daily_limit, not_right_pin, and not_enough_cash to their denial messages in test_atm. RED: set expectation from denials[...] or 'CASH' in each if/elif/else branch and add self.assertEqual(result, 'BOOM!!!'); terminal shows AssertionError for all 16 subtests. GREEN: change 'BOOM!!!' to expectation so the test passes. REFACTOR: remove the per-branch self.assertEqual calls so one self.assertEqual(result, expectation) covers all 16 cases; observe the test is slower due to dictionary lookup. Git commit 'test_atm with dictionaries'.
+  :keywords: Jacob Itegboje, Pumping Python, test atm with dictionaries, Automated Teller Machine, ATM project, Python dictionary, dict lookup, denials dictionary, expectation variable, itertools.product, subTest, 16 subtests, AssertionError, unittest assertEqual, uv run pytest-watcher, pytest-watcher, withdraw, truth table, red green refactor
 
 .. include:: ../../../links.rst
 
@@ -11,7 +11,7 @@ test atm with dictionaries
 #################################################################################
 
 
-I want to use a :ref:`generator<generator expressions>` in the :ref:`atm<Automated Teller Machine>` project.
+I want to use a :ref:`dictionary<what is a dictionary?>` in the :ref:`atm<Automated Teller Machine>` project.
 
 ----
 
@@ -25,7 +25,7 @@ This is the test I have at the end of the chapter
   :caption: atm/tests/test_atm.py
   :language: python
   :linenos:
-  :lines: 1-58
+  :lines: 1-51
 
 ----
 
@@ -63,50 +63,82 @@ test_atm with dictionaries
 
 ----
 
-I add a :ref:`generator expression<generator expressions>` for the :ref:`for loops<what is a for loop?>` in :ref:`test_atm<extract test_atm>`
+* I add a :ref:`dictionary<what is a dictionary?>` for the denials to :ref:`test_atm<extract test_atm>`
 
-.. code-block:: python
-  :caption: atm/tests/test_atm.py
-  :lineno-start: 7
-  :emphasize-lines: 3-16
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 8
+    :emphasize-lines: 2-7
 
-      def test_atm(self):
-          booleans = (False, True)
-          # for right_pin in booleans:
-          #     for enough_cash in booleans:
-          #         for above_daily_limit in booleans:
-          #             for card_expired in booleans:
-          for (
-              right_pin, enough_cash,
-              above_daily_limit, card_expired,
-          ) in (
-              (_, _, _, _)
-              for _ in booleans
-              for _ in booleans
-              for _ in booleans
-              for _ in booleans
-          ):
+        def test_atm(self):
+            denials = {
+                'card_expired': 'DENIED: Card Expired',
+                'above_daily_limit': 'DENIED: Exceeded daily withdrawal limit',
+                'not_right_pin': 'DENIED: Wrong PIN. Try again...',
+                'not_enough_cash': 'DENIED: Not enough CASH in Account',
+            }
 
-.. code-block:: python
-  :caption: atm/tests/test_atm.py
-  :lineno-start: 23
-  :emphasize-lines: 7
+            for (
+                right_pin, enough_cash,
+                above_daily_limit, card_expired
+            ) in itertools.product((False, True), repeat=4):
 
-                          with self.subTest(
-                              right_pin=right_pin,
-                              enough_cash=enough_cash,
-                              above_daily_limit=above_daily_limit,
-                              card_expired=card_expired,
-                          ):
-                              raise Exception
-                              result = src.atm.withdraw(
-                                  right_pin=right_pin,
-                                  enough_cash=enough_cash,
-                                  above_daily_limit=above_daily_limit,
-                                  card_expired=card_expired,
-                              )
+* I add :ref:`variables<what is a variable?>` for the expectations in the :ref:`if statements` then make one :ref:`assertion<what is an assertion?>` for the :ref:`variable<what is a variable?>`
 
-the terminal_ is my friend, and shows :ref:`Exception<how to raise an Exception>` for sixteen sub tests.
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 32
+    :emphasize-lines: 2, 8
+
+                      if card_expired:
+                          expectation = denials['card_expired']
+                          self.assertEqual(
+                              result,
+                              'DENIED: Card Expired'
+                          )
+                      elif above_daily_limit:
+                          expectation = denials['above_daily_limit']
+                          self.assertEqual(
+                              result,
+                              'DENIED: Exceeded daily withdrawal limit'
+                          )
+
+  .. code-block:: python
+    :caption: atm/tests/test_atm.py
+    :lineno-start: 44
+    :emphasize-lines: 2, 8
+
+                      elif not right_pin:
+                          expectation = denials['not_right_pin']
+                          self.assertEqual(
+                              result,
+                              'DENIED: Wrong PIN. Try again...'
+                          )
+                      elif not enough_cash:
+                          expectation = denials['not_enough_cash']
+                          self.assertEqual(
+                              result,
+                              'DENIED: '
+                              'Not enough CASH in Account'
+                          )
+
+  .. code-block:: python
+    :lineno-start: 57
+    :caption: atm/tests/test_atm.py
+    :emphasize-lines: 2, 7
+
+                      else:
+                          expectation = 'CASH'
+                          self.assertEqual(
+                              result,
+                              'CASH'
+                          )
+                      self.assertEqual(result, 'BOOM!!!')
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for sixteen sub tests.
 
 ----
 
@@ -116,44 +148,25 @@ the terminal_ is my friend, and shows :ref:`Exception<how to raise an Exception>
 
 ----
 
-I remove the :ref:`Exception<how to raise an Exception>`
+I change the expectation of the new :ref:`assertion<what is an assertion?>` to the new :ref:`variable<what is a variable?>`
 
 .. code-block:: python
   :caption: atm/tests/test_atm.py
-  :lineno-start: 23
+  :lineno-start: 57
+  :emphasize-lines: 7
 
-                          with self.subTest(
-                              right_pin=right_pin,
-                              enough_cash=enough_cash,
-                              above_daily_limit=above_daily_limit,
-                              card_expired=card_expired,
-                          ):
-                              result = src.atm.withdraw(
-                                  right_pin=right_pin,
-                                  enough_cash=enough_cash,
-                                  above_daily_limit=above_daily_limit,
-                                  card_expired=card_expired,
-                              )
+                    else:
+                        expectation = 'CASH'
+                        self.assertEqual(
+                            result,
+                            'CASH'
+                        )
+                    self.assertEqual(result, expectation)
 
-the test is green again.
 
-``_`` is a placeholder like pass_. I can use it as the name for a :ref:`variable<what is a variable?>` when I do not need the name. If I did not use ``_`` in this case I would have to repeat the names
+  # Exceptions seen
 
-.. code-block:: python
-
-  for (
-      right_pin, enough_cash,
-      above_daily_limit, card_expired,
-  ) in (
-      (
-          right_pin, enough_cash,
-          above_daily_limit, card_expired,
-      )
-      for right_pin in booleans
-      for enough_cash in booleans
-      for above_daily_limit in booleans
-      for card_expired in booleans
-  ):
+the test passes.
 
 ----
 
@@ -163,99 +176,38 @@ the test is green again.
 
 ----
 
-* I use :ref:`itertools.product<another way to make a generator for nested loops>` in place of the :ref:`generator expression<generator expressions>`
+* I remove the other :ref:`assertions<what is an assertion?>` because they are now covered by the new :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py
-    :lineno-start: 7
-    :emphasize-lines: 7-16
+    :lineno-start: 32
 
-        def test_atm(self):
-            booleans = (False, True)
-            # for right_pin in booleans:
-            #     for enough_cash in booleans:
-            #         for above_daily_limit in booleans:
-            #             for card_expired in booleans:
-            # for (
-            #     right_pin, enough_cash,
-            #     above_daily_limit, card_expired,
-            # ) in (
-            #     (_, _, _, _)
-            #     for _ in booleans
-            #     for _ in booleans
-            #     for _ in booleans
-            #     for _ in booleans
-            # ):
+                      if card_expired:
+                          expectation = denials['card_expired']
+                      elif above_daily_limit:
+                          expectation = denials['above_daily_limit']
+                      elif not right_pin:
+                          expectation = denials['not_right_pin']
+                      elif not enough_cash:
+                          expectation = denials['not_enough_cash']
+                      else:
+                          expectation = 'CASH'
 
-  .. code-block:: python
-    :caption: atm/tests/test_atm.py
-    :lineno-start: 23
-    :emphasize-lines: 1-4
-
-            for (
-                right_pin, enough_cash,
-                above_daily_limit, card_expired,
-            ) in itertools.product(booleans, repeat=4):
-                            with self.subTest(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=above_daily_limit,
-                                card_expired=card_expired,
-                            ):
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
-
-  .. code-block:: shell
-    :caption: terminal
-
-     NameError: name 'itertools' is not defined.
-                Did you forget to import 'itertools'?
-
-* I add an `import statement`_ for the `itertools library`_
-
-  .. code-block:: python
-    :caption: atm/tests/test_atm.py
-    :linenos:
-    :emphasize-lines: 1
-
-    import itertools
-    import src.atm
-    import unittest
+                      self.assertEqual(result, expectation)
 
 
-    class TestATM(unittest.TestCase):
+    # Exceptions seen
 
-  the test is green again.
-
-* I no longer need the ``booleans`` :ref:`variable<what is a variable?>` because it is only used once as input to :ref:`itertools.product<another way to make a generator for nested loops>`
-
-  .. code-block:: python
-    :caption: atm/tests/test_atm.py
-    :lineno-start: 24
-    :emphasize-lines: 4
-
-            for (
-                right_pin, enough_cash,
-                above_daily_limit, card_expired,
-            ) in itertools.product((False, True), repeat=4):
-                            with self.subTest(
-                                right_pin=right_pin,
-                                enough_cash=enough_cash,
-                                above_daily_limit=above_daily_limit,
-                                card_expired=card_expired,
-                            ):
-
-  the test is still green.
-
-* I remove the ``booleans`` :ref:`variable<what is a variable?>` and commented lines, then fix indentation in :ref:`test_atm<extract test_atm>`
+  the test passes and is slower than when I did not have a :ref:`dictionary<what is a dictionary?>` to check for the values of the denial message.
 
 * I add a git_ commit message
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'test_atm with dictionaries'
+    git commit -am \
+    'test_atm with dictionaries'
 
 ----
 
@@ -280,7 +232,7 @@ close the project
 review
 *************************************************************************************
 
-I can use a :ref:`generator expression<generator expressions>` or `itertools.product`_ for nested :ref:`for loops<what is a for loop?>`.
+In this case adding a :ref:`dictionary<what is a dictionary?>` makes the test slower than what I had before because it adds an extra step to the process - it has to look up the :ref:`value<test_values_of_a_dictionary>` of a denial.
 
 ----
 
@@ -324,9 +276,9 @@ what is next?
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
 * :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
-* :ref:`I know to use dictionaries<what is a dictionary?>`.
+* :ref:`I know how to use dictionaries<what is a dictionary?>`.
 
-:ref:`Would you like to test the Car project with dictionaries?<test car with dictionaries>`
+:ref:`Would you like to test the Microwave project with dictionaries?<test microwave with dictionaries>`
 
 ----
 

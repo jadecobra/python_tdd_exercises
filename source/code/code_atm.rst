@@ -147,3 +147,16 @@ The code in ``atm/tests/test_atm.py`` from :ref:`test atm with generators`
   :caption: atm/tests/test_atm.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+test atm with dictionaries: test
+*********************************************************************************
+
+The code in ``atm/tests/test_atm.py`` from :ref:`test atm with dictionaries`
+
+.. literalinclude:: atm/tests/test_atm_w_dictionaries.py
+  :caption: atm/tests/test_atm.py
+  :language: python
+  :linenos:

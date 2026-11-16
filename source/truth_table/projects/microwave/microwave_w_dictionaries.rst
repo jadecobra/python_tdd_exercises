@@ -277,7 +277,7 @@ what is next?
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
 * :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
-* :ref:`I know to use dictionaries<what is a dictionary?>`.
+* :ref:`I know how to use dictionaries<what is a dictionary?>`.
 
 :ref:`Would you like to test the traffic_light project with dictionaries?<test traffic_light with dictionaries>`
 

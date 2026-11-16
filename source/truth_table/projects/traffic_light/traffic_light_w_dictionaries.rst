@@ -427,7 +427,7 @@ what is next?
 * :ref:`I know how to make a person with loops<how to make a person with loops>`.
 * :ref:`I know how to use lists<what is a list?>`.
 * :ref:`I know how to use list comprehensions<what is a list comprehension?>`.
-* :ref:`I know to use dictionaries<what is a dictionary?>`.
+* :ref:`I know how to use dictionaries<what is a dictionary?>`.
 
 :ref:`Would you like to test binary operations from the truth_table project with dictionaries?<truth table: test binary operations with dictionaries>`
 
