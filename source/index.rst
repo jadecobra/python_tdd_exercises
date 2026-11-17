@@ -36,13 +36,13 @@ table of contents
   start here<setup/index>
   conventions
   make TDD manually<make_tdd/make_tdd_manually>
-  functions/index
-  make a person with strings<how_to/make_person/index>
+  functions/functions
+  make a person with strings<how_to/make_person/make_person_w_strings>
   functions/functions_w_input
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   make a person with an object<how_to/make_person/make_person_w_class>
   make a person with datetime<how_to/make_person/make_person_w_datetime>
-  basic_objects/none
+  basic_objects/none/none
   make a person with conditions<how_to/make_person/make_person_w_conditions>
   make TDD with variables<make_tdd/make_tdd_automatically_w_variables>
   make a person with exceptions<how_to/make_person/make_person_w_exceptions>

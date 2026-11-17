@@ -57,6 +57,7 @@ open the project
   the terminal_ shows I am in the ``person`` folder_
 
   .. code-block:: python
+    :caption: terminal
 
     .../pumping_python/person
 
@@ -87,6 +88,7 @@ test_joe
 * I remove the :ref:`assertion<what is an assertion?>` and comments then add a new test :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 1-2
 
@@ -100,6 +102,7 @@ test_joe
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'joe' is not defined
 
@@ -108,7 +111,7 @@ test_joe
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 5
     :emphasize-lines: 3
     :emphasize-text: NameError
@@ -128,6 +131,7 @@ test_joe
 * I add a :ref:`variable<what is a variable?>` for ``joe`` and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 1
 
@@ -143,6 +147,7 @@ test_joe
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -159,8 +164,8 @@ test_joe
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :caption:
-    :lineno-start: 7
+    :caption: person/tests/test_person.py
+    :lineno-start: 8
     :emphasize-lines: 4
     :emphasize-text: TypeError
 
@@ -172,6 +177,7 @@ test_joe
 * I change ``joe`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 1-3
 
@@ -189,10 +195,11 @@ test_joe
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == 'joe, blow, M, 1996'
 
-  because when I call ``joe`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because ``joe`` returns :ref:`None<what is None?>` when :ref:`called<how to call a function>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -204,6 +211,7 @@ test_joe
 * I change :ref:`the return statement` of ``joe``
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 3-4
 
@@ -238,6 +246,7 @@ test_joe
 * I remove the commented lines
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
 
     def joe():
@@ -250,7 +259,15 @@ test_joe
 
     # Exceptions seen
 
-* I add a git_ commit message in the other terminal_
+* I open a new terminal_ then change directories to ``person``
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    cd person
+
+* I add a git_ commit message in the new terminal_
 
   .. code-block:: python
     :caption: terminal
@@ -272,29 +289,31 @@ test_jane
 
 ----
 
-I add a test :ref:`function<what is a function?>`
+* I go back to the terminal_ where the tests are running
+* I add a test :ref:`function<what is a function?>`
 
-.. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
 
-  def test_joe():
-      assert joe() == 'joe, blow, M, 1996'
-
-
-  def test_jane():
-      assert jane() == 'jane, doe, F, 1991'
+    def test_joe():
+        assert joe() == 'joe, blow, M, 1996'
 
 
-  # Exceptions seen
+    def test_jane():
+        assert jane() == 'jane, doe, F, 1991'
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
-.. code-block:: python
+    # Exceptions seen
 
-  NameError: name 'jane' is not defined
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
-because there is no definition for ``jane`` in this file_.
+  .. code-block:: python
+    :caption: terminal
+
+    NameError: name 'jane' is not defined
+
+  because there is no definition for ``jane`` in this file_.
 
 ----
 
@@ -307,6 +326,7 @@ because there is no definition for ``jane`` in this file_.
 * I add a :ref:`variable<what is a variable?>` for ``jane`` and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 5
 
@@ -322,6 +342,7 @@ because there is no definition for ``jane`` in this file_.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -338,6 +359,7 @@ because there is no definition for ``jane`` in this file_.
 * I change ``jane`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 5-7
 
@@ -355,10 +377,11 @@ because there is no definition for ``jane`` in this file_.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == 'jane, doe, F, 1991'
 
-  because when I call ``jane`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because ``jane`` returns :ref:`None<what is None?>` when :ref:`called<how to call a function>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -370,6 +393,7 @@ because there is no definition for ``jane`` in this file_.
 * I change :ref:`the return statement` of ``jane``
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 7-8
 
@@ -404,6 +428,7 @@ because there is no definition for ``jane`` in this file_.
 * I remove the commented lines
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
 
     def joe():
@@ -446,29 +471,32 @@ test_john
 
 ----
 
-I add another test :ref:`function<what is a function?>`
+* I go back to the terminal_ where the tests are running
+* I add another test :ref:`function<what is a function?>`
 
-.. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 13
+    :emphasize-lines: 5-6
 
-  def test_jane():
-      assert jane() == 'jane, doe, F, 1991'
-
-
-  def test_john():
-      assert john() == 'john, smith, M, 1580'
+    def test_jane():
+        assert jane() == 'jane, doe, F, 1991'
 
 
-  # Exceptions seen
+    def test_john():
+        assert john() == 'john, smith, M, 1580'
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
-.. code-block:: python
+    # Exceptions seen
 
-  NameError: name 'john' is not defined
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
-because there is no definition for ``john`` in this file_, yet.
+  .. code-block:: python
+    :caption: terminal
+
+    NameError: name 'john' is not defined
+
+  because there is no definition for ``john`` in this file_, yet.
 
 ----
 
@@ -481,7 +509,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I add a :ref:`variable<what is a variable?>` for ``john`` and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 5
     :emphasize-lines: 5
 
@@ -497,6 +525,7 @@ because there is no definition for ``john`` in this file_, yet.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -513,7 +542,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I change ``john`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 5
     :emphasize-lines: 5-7
 
@@ -531,10 +560,11 @@ because there is no definition for ``john`` in this file_, yet.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == 'john, smith, M, 1580'
 
-  because when I call ``john`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because ``john`` returns :ref:`None<what is None?>` when :ref:`called<how to call a function>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -546,7 +576,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I change :ref:`the return statement` of ``john``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 5
     :emphasize-lines: 7-8
 
@@ -581,7 +611,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I remove the commented lines
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 5
 
     def jane():
@@ -616,29 +646,32 @@ test_mary
 
 ----
 
-I add another test :ref:`function<what is a function?>`
+* I go back to the terminal_ where the tests are running
+* I add another test :ref:`function<what is a function?>`
 
-.. code-block:: python
-  :lineno-start: 21
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 21
+    :emphasize-lines: 5-6
 
-  def test_john():
-      assert john() == 'john, smith, M, 1580'
-
-
-  def test_mary():
-      assert mary() == 'mary, public, F, 2000'
+    def test_john():
+        assert john() == 'john, smith, M, 1580'
 
 
-  # Exceptions seen
+    def test_mary():
+        assert mary() == 'mary, public, F, 2000'
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
-.. code-block:: python
+    # Exceptions seen
 
-  NameError: name 'mary' is not defined
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
-because there is no definition for ``mary``, it is just a name.
+  .. code-block:: python
+    :caption: terminal
+
+    NameError: name 'mary' is not defined
+
+  because there is no definition for ``mary``, it is just a name.
 
 ----
 
@@ -651,7 +684,7 @@ because there is no definition for ``mary``, it is just a name.
 * I add a :ref:`variable<what is a variable?>` for ``mary`` and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
     :emphasize-lines: 5
 
@@ -667,6 +700,7 @@ because there is no definition for ``mary``, it is just a name.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -683,7 +717,7 @@ because there is no definition for ``mary``, it is just a name.
 * I change ``mary`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
     :emphasize-lines: 5-7
 
@@ -701,10 +735,11 @@ because there is no definition for ``mary``, it is just a name.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == 'mary, public, F, 2000'
 
-  because when I call ``mary`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because ``mary`` returns :ref:`None<what is None?>` when :ref:`called<how to call a function>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -716,7 +751,7 @@ because there is no definition for ``mary``, it is just a name.
 * I change :ref:`the return statement` of ``mary``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
     :emphasize-lines: 7-8
 
@@ -751,7 +786,7 @@ because there is no definition for ``mary``, it is just a name.
 * I remove the commented lines
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
 
     def john():
