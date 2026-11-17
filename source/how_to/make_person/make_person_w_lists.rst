@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with lists — simplify test_dir_person_object and test_dir_person_instance using list extend and sort methods. Open person project; run tests with uv run pytest-watcher . --now --patterns "**/*.py". RED: in test_dir_person_object, define dir_person = dir(object), extend with ('can_get_license', 'can_vote', 'check_age', 'say_hello'), assertEqual with dir(src.person.Person) -> AssertionError: Lists differ, 'First list contains 5 additional elements'. GREEN: extend with the 5 attributes ('__dict__', '__firstlineno__', '__module__', '__static_attributes__', '__weakref__') -> AssertionError diff until dir_person.sort() is called. REFACTOR: remove old assertion, git commit. RED: in test_dir_person_instance, define dir_person_instance = dir(src.person.Person), assertEqual with dir(instance) -> AssertionError: Lists differ, 'Diff is 718 characters long. Set self.maxDiff to None to see it.'. GREEN: set self.maxDiff = None to see the 7 missing attributes ('age', 'first_name', 'is_citizen', 'last_name', 'passed_test', 'sex', 'year_of_birth'), extend dir_person_instance, and call sort(). REFACTOR: remove old assertion, git commit. All objects inherit attributes and methods from 'object'. Next: test unittest with lists.
-  :keywords: Jacob Itegboje, Pumping Python, test person with lists, python list extend sort, dir(object), dir(src.person.Person), dir instance, test_dir_person_object, test_dir_person_instance, AssertionError Lists differ, self.maxDiff = None, First list contains 5 additional elements, __dict__ __firstlineno__ __module__ __static_attributes__ __weakref__, all objects inherit from object, red green refactor, uv run pytest-watcher, git commit, test person
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with lists — simplify test_dir_person_object and test_dir_person_instance with list extend and sort, and refactor test_person_object with lists and loops. Open person project; run tests with uv run pytest-watcher . --now --patterns "**/*.py". RED: in test_dir_person_object, dir_person = dir(object) extended with ('can_get_license', 'can_vote', 'check_age', 'say_hello') -> AssertionError: Lists differ, 'First list contains 5 additional elements'. GREEN: extend with ('__dict__', '__firstlineno__', '__module__', '__static_attributes__', '__weakref__') and call dir_person.sort(). RED: in test_dir_person_instance, dir_person_instance = dir(src.person.Person) -> AssertionError: Lists differ, 'Diff is 718 characters long. Set self.maxDiff to None to see it.'. GREEN: set self.maxDiff = None, extend with the 7 instance attributes, and call sort(). Refactor TestPerson: build people with nested for loops over years_of_birth and booleans plus an if statement for not_younger_than_18; move booleans and people into test_person_object (fixing NameError: name 'years_of_birth' is not defined and NameError: name 'not_younger_than_18' is not defined with self.), unpack tuple fields in the for loop, and remove unused class attributes. All objects inherit attributes and methods from 'object'. Next: list comprehensions.
+  :keywords: Jacob Itegboje, Pumping Python, test person with lists, python list extend sort, dir(object), dir(src.person.Person), dir instance, test_dir_person_object, test_dir_person_instance, test_person_object, years_of_birth, AssertionError Lists differ, self.maxDiff = None, First list contains 5 additional elements, NameError name years_of_birth is not defined, NameError name not_younger_than_18 is not defined, all objects inherit from object, red green refactor, uv run pytest-watcher, git commit, list comprehensions
 .. include:: ../../links.rst
 
 .. _test person with lists:
@@ -24,14 +24,38 @@ I change these tests in the chapter
 .. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 165
-  :lines: 165-178
+  :linenos:
+  :lines: 1-22
 
 .. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 180
-  :lines: 180-207
+  :lineno-start: 24
+  :lines: 24-80
+
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 82
+  :lines: 82-104
+
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 106
+  :lines: 106-120
+
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 143
+  :lines: 143-156
+
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 158
+  :lines: 158-177
 
 -----
 
@@ -467,11 +491,11 @@ I can use a :ref:`list<what is a list?>` with :ref:`for loops<what is a for loop
             not_younger_than_18, younger_than_18,
             None, 2026.0, '2026', (2026,),
         ):
-            for boolean in booleans:
-                for boolean in booleans:
+            for is_citizen in booleans:
+                for passed_test in booleans:
                     people.append((
-                        year_of_birth, boolean, boolean,
-                        boolean, boolean,
+                        year_of_birth, is_citizen, passed_test,
+                        is_citizen, passed_test,
                     ))
 
         def calculate_age(self, year_of_birth):
@@ -481,13 +505,13 @@ I can use a :ref:`list<what is a list?>` with :ref:`for loops<what is a for loop
   .. code-block:: python
     :caption: terminal
 
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
         AssertionError: False != True
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
         AssertionError: False != True
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
         AssertionError: False != True
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
         AssertionError: False != True
 
 ----
@@ -511,16 +535,16 @@ I add an :ref:`if statement<if statements>` for the year of birth
           not_younger_than_18, younger_than_18,
           None, 2026.0, '2026', (2026,),
       ):
-          for boolean in booleans:
-              for boolean in booleans:
+          for is_citizen in booleans:
+              for passed_test in booleans:
                   if year_of_birth == not_younger_than_18:
                       people.append((
-                          year_of_birth, boolean, boolean,
-                          boolean, boolean,
+                          year_of_birth, is_citizen, passed_test,
+                          is_citizen, passed_test,
                       ))
                   else:
                       people.append((
-                          year_of_birth, False, False,
+                          year_of_birth, is_citizen, passed_test,
                           False, False
                       ))
 
@@ -577,14 +601,14 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 16
+    :lineno-start: 21
     :emphasize-lines: 3
 
         booleans = (True, False)
         people = []
         for year_of_birth in years_of_birth:
-            for boolean in booleans:
-                for boolean in booleans:
+            for is_citizen in booleans:
+                for passed_test in booleans:
                     if year_of_birth == not_younger_than_18:
 
   the tests are still green.
@@ -619,7 +643,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
     :caption: person/tests/test_person.py
     :lineno-start: 73
 
-        def test_say_hello_function(self):``
+        def test_say_hello_function(self):
             for year_of_birth in self.years_of_birth:
                 with self.subTest(year_of_birth):
                     try:
@@ -665,27 +689,27 @@ the test is green again and is slower than when I used a tuple_ for the ``people
             for year_of_birth in self.years_of_birth:
                 with self.subTest(year_of_birth):
 
-* I copy the ``people`` and ``booleans`` :ref:`object attributes<what is an object attribute?>` into :ref:`test_person_class<extract test_person_class>` because that is the only place where they are used
+* I copy the ``people`` and ``booleans`` :ref:`object attributes<what is an object attribute?>` into :ref:`test_person_object<extract test_person_object>` because that is the only place where they are used
 
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 40
     :emphasize-lines: 2-16
 
-        def test_person_class(self):
+        def test_person_object(self):
             booleans = (True, False)
             people = []
             for year_of_birth in years_of_birth:
-                for boolean in booleans:
-                    for boolean in booleans:
+                for is_citizen in booleans:
+                    for passed_test in booleans:
                         if year_of_birth == not_younger_than_18:
                             people.append((
-                                year_of_birth, boolean, boolean,
-                                boolean, boolean,
+                                year_of_birth, is_citizen, passed_test,
+                                is_citizen, passed_test,
                             ))
                         else:
                             people.append((
-                                year_of_birth, False, False,
+                                year_of_birth, is_citizen, passed_test,
                                 False, False
                             ))
 
@@ -712,7 +736,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
             booleans = (True, False)
             people = []
             for year_of_birth in self.years_of_birth:
-                for boolean in booleans:
+                for is_citizen in booleans:
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -728,12 +752,12 @@ the test is green again and is slower than when I used a tuple_ for the ``people
     :lineno-start: 44
     :emphasize-lines: 3
 
-                for boolean in booleans:
-                    for boolean in booleans:
+                for is_citizen in booleans:
+                    for passed_test in booleans:
                         if year_of_birth == self.not_younger_than_18:
                             people.append((
-                                year_of_birth, boolean, boolean,
-                                boolean, boolean,
+                                year_of_birth, is_citizen, passed_test,
+                                is_citizen, passed_test,
                             ))
                         else:
 
@@ -748,7 +772,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
                         else:
                             people.append((
-                                year_of_birth, False, False,
+                                year_of_birth, is_citizen, passed_test,
                                 False, False
                             ))
 
@@ -769,7 +793,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
                         else:
                             people.append((
-                                year_of_birth, False, False,
+                                year_of_birth, is_citizen, passed_test,
                                 False, False
                             ))
 
@@ -815,7 +839,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 89
-    :emphasize-lines: 1-4, 7
+    :emphasize-lines: 1-4, 7-8
 
                         self.assertEqual(
                             an_instance.can_vote(),
@@ -830,7 +854,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
   still green.
 
-* I remove the ``booleans`` and ``people`` :ref:`object attributes<what is an object attribute?>` because it is no longer used
+* I remove the ``booleans`` and ``people`` :ref:`object attributes<what is an object attribute?>` because they are no longer used
 
   .. code-block:: python
     :caption: person/tests/test_person.py

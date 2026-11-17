@@ -701,11 +701,35 @@ I change these tests in :ref:`test person with lists`
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 165
-  :lines: 165-178
+  :linenos:
+  :lines: 1-22
 
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 180
-  :lines: 180-207
+  :lineno-start: 24
+  :lines: 24-80
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 82
+  :lines: 82-104
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 106
+  :lines: 106-120
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 143
+  :lines: 143-156
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 158
+  :lines: 158-177

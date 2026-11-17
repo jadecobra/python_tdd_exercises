@@ -13,70 +13,48 @@ class TestPerson(unittest.TestCase):
     last_name = 'last_name'
     sex = 'M'
 
-    people = (
-        (
-            # is_citizen, passed_test
-            not_younger_than_18, True, True,
-            True, True,
-        ),
-        (
-            # is_citizen, not passed_test
-            not_younger_than_18, True, False,
-            True, False,
-        ),
-        (
-            # not is_citizen, passed_test
-            not_younger_than_18, False, True,
-            False, True,
-        ),
-        (
-            # not is_citizen, not passed_test
-            not_younger_than_18, False, False,
-            False, False,
-        ),
-        (
-            # underage, is_citizen, passed_test
-            younger_than_18, True, True,
-            False, False,
-        ),
-        (
-            # underage, not is_citizen, passed_test
-            younger_than_18, False, True,
-            False, False,
-        ),
-        (
-            # underage, is_citizen, not passed_test
-            younger_than_18, True, False,
-            False, False,
-        ),
-        (
-            # underage, not is_citizen, not passed_test
-            younger_than_18, False, False,
-            False, False,
-        ),
-        # year_of_birth is not an integer
-        (None, False, False,),
-        (2026.0, False, False,),
-        ('2026', False, False,),
-        ((2026,), False, False,),
+    years_of_birth = (
+        not_younger_than_18, younger_than_18,
+        None, 2026.0, '2026', (2026,),
     )
 
     def calculate_age(self, year_of_birth):
         return self.this_year - year_of_birth
 
-    def test_person_class(self):
-        for a_person in self.people:
-            year_of_birth = a_person[0]
+    def test_person_object(self):
+        booleans = (True, False)
+        people = []
+        for year_of_birth in self.years_of_birth:
+            for is_citizen in booleans:
+                for passed_test in booleans:
+                    if year_of_birth == self.not_younger_than_18:
+                        people.append((
+                            year_of_birth, is_citizen, passed_test,
+                            is_citizen, passed_test,
+                        ))
+                    else:
+                        people.append((
+                            year_of_birth, is_citizen, passed_test,
+                            False, False
+                        ))
 
-            with self.subTest(a_person):
+        for (
+            year_of_birth, is_citizen, passed_test,
+            can_vote_result, can_get_license_result,
+        ) in people:
+
+            with self.subTest((
+                year_of_birth, is_citizen, passed_test,
+                can_vote_result, can_get_license_result,
+            )):
                 try:
                     an_instance = src.person.Person(
                         first_name=self.first_name,
                         last_name=self.last_name,
                         sex=self.sex,
                         year_of_birth=year_of_birth,
-                        is_citizen=a_person[1],
-                        passed_test=a_person[2],
+                        is_citizen=is_citizen,
+                        passed_test=passed_test,
                     )
                 except TypeError as error:
                     self.assertEqual(
@@ -92,16 +70,18 @@ class TestPerson(unittest.TestCase):
                             f' {self.calculate_age(year_of_birth)}.'
                         )
                     )
-                    self.assertEqual(an_instance.can_vote(), a_person[3])
                     self.assertEqual(
-                        an_instance.can_get_license(), a_person[4]
+                        an_instance.can_vote(),
+                        can_vote_result
+                    )
+                    self.assertEqual(
+                        an_instance.can_get_license(),
+                        can_get_license_result
                     )
 
     def test_say_hello_function(self):
-        for a_person in self.people:
-            year_of_birth = a_person[0]
-
-            with self.subTest(a_person):
+        for year_of_birth in self.years_of_birth:
+            with self.subTest(year_of_birth):
                 try:
                     reality = src.person.say_hello(
                         first_name=self.first_name,
@@ -124,10 +104,8 @@ class TestPerson(unittest.TestCase):
                     )
 
     def test_person_factory(self):
-        for a_person in self.people:
-            year_of_birth = a_person[0]
-
-            with self.subTest(a_person):
+        for year_of_birth in self.years_of_birth:
+            with self.subTest(year_of_birth):
                 self.assertEqual(
                     src.person.person(
                         first_name=self.first_name,

@@ -155,7 +155,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I add a test for the :ref:`person function<extract person function>` to ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 47
 
           def assert_person_can_say_hello(
@@ -177,7 +177,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
               )
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
     :emphasize-lines: 1-11
 
@@ -263,7 +263,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I add ``jane`` to the tuple_ of ``people``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
     :emphasize-lines: 3
 
@@ -323,7 +323,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I add a tuple_ for ``mary``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
     :emphasize-lines: 5
 
@@ -385,7 +385,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I add a tuple_ for ``john``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
     :emphasize-lines: 6
 
@@ -449,7 +449,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I add a tuple_ for a person with a string_ as the ``year_of_birth``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
 
         def test_person_factory(self):
@@ -467,7 +467,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_joe` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 81
 
         def test_joe(self):
@@ -486,7 +486,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_jane` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 109
 
         def test_jane(self):
@@ -505,7 +505,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_john` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 138
 
         def test_john(self):
@@ -524,7 +524,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_mary` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 168
 
         def test_mary(self):
@@ -543,7 +543,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I no longer need the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` because it is only used by :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
 
         def test_person_factory(self):
@@ -563,7 +563,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                 )
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 81
     :emphasize-lines: 1-4, 6-14
 
@@ -593,7 +593,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I change the expectation of the :ref:`assertion<what is an assertion?>` to ``'jane, doe, F, 1991'``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 86
     :emphasize-lines: 8
 
@@ -620,7 +620,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 86
     :emphasize-lines: 8-11
 
@@ -644,7 +644,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
 
         def test_person_factory(self):
@@ -662,7 +662,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 79
 
                 self.assertEqual(
@@ -685,7 +685,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 * I remove the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
 
     class TestPerson(unittest.TestCase):
@@ -864,7 +864,7 @@ because
 * I add a message to the :ref:`calculate_age function<extract calculate_age function>` for when :ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>`, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 37
     :emphasize-lines: 3-5
 
@@ -885,7 +885,7 @@ because
 * I change the statements in the :ref:`assert_say_hello_works method<extract assert_say_hello_works functions>` to a :ref:`try statement with an else clause<how to use try...except...else>` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 13
     :emphasize-lines: 5-26
 
@@ -934,7 +934,7 @@ because
 * I want to test the error message to make sure the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` only catches :ref:`TypeError<what causes TypeError?>` with this specific message. I can use the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>` as an :ref:`object<what is an object?>` to do this
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 17
     :emphasize-lines: 7
 
@@ -953,7 +953,7 @@ because
 * I add :ref:`assertEqual<test_assertEqual>` to the :ref:`except block<how to handle Exceptions>` with the `dir built-in function`_ to see the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Exception object<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 23
     :emphasize-lines: 2
 
@@ -966,7 +966,7 @@ because
 * I change the :ref:`assertion<what is an assertion?>` to see what ``add_note`` is
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 23
     :emphasize-lines: 2-3
 
@@ -989,7 +989,7 @@ because
 * I :ref:`call<how to call a function with input>` the ``add_note`` :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 23
     :emphasize-lines: 3
 
@@ -1010,7 +1010,7 @@ because
 * I change the :ref:`assertion<what is an assertion?>` to see what ``args`` is
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 23
     :emphasize-lines: 3-4
 
@@ -1031,7 +1031,7 @@ because
 * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the error message with an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 23
     :emphasize-lines: 4-7
 
@@ -1049,7 +1049,7 @@ because
 * I change the message for :ref:`TypeError<what causes TypeError?>` in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py`` to test my change
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 37
     :emphasize-lines: 3
 
@@ -1122,7 +1122,7 @@ because
 * I undo the change
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 37
 
     def calculate_age(year_of_birth):
@@ -1145,7 +1145,7 @@ because
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_joe` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 109
 
         def test_joe(self):
@@ -1165,7 +1165,7 @@ because
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_jane` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 131
 
         def test_jane(self):
@@ -1185,7 +1185,7 @@ because
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_john` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 154
 
         def test_john(self):
@@ -1205,7 +1205,7 @@ because
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_mary` since it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 178
 
         def test_mary(self):
@@ -1225,7 +1225,7 @@ because
 * I no longer need the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` because it is only used by :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 63
 
         def test_say_hello_function(self):
@@ -1248,7 +1248,7 @@ because
                 )
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 82
     :emphasize-lines: 1-16
 
@@ -1280,7 +1280,7 @@ because
 * I change the expectation to ``'Hello, my name is jane doe and I am YY.'``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 93
     :emphasize-lines: 4
 
@@ -1304,7 +1304,7 @@ because
 * I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 93
     :emphasize-lines: 4-8
 
@@ -1325,7 +1325,7 @@ because
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 63
 
         def test_say_hello_function(self):
@@ -1342,7 +1342,7 @@ because
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 76
 
                 try:
@@ -1371,7 +1371,7 @@ because
 * I remove the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
 
     class TestPerson(unittest.TestCase):
@@ -1602,7 +1602,7 @@ the subTest method
 * I add a :ref:`call<how to call a function with input>` to the `unittest.TestCase.subTest method`_ in :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 31
     :emphasize-lines: 15-21
 
@@ -1643,7 +1643,7 @@ the subTest method
 * I add ``year_of_birth`` to the :ref:`call<how to call a function with input>` to the `subTest method`_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 39
     :emphasize-lines: 7-10
 
@@ -1685,7 +1685,7 @@ the subTest method
 * I move the statements in the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` to a :ref:`try...except...else clause<how to use try...except...else>` like I did for :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 13
     :emphasize-lines: 5-31
 
@@ -1736,7 +1736,7 @@ the subTest method
 * I change the error message for if the value of the ``year_of_birth`` parameter is not an integer_ in the :ref:`calculate_age function<extract calculate_age function>`, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 37
     :emphasize-lines: 3
 
@@ -1829,7 +1829,7 @@ the subTest method
 * I want :ref:`test_say_hello_function<extract test_say_hello_function>` to also show which person :ref:`raises an Exception<how to raise an Exception>`. I add a :ref:`call<how to call a function with input>` to the `subTest method`_ from :ref:`test_say_hello_function<extract test_say_hello_function>` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 70
 
         def test_say_hello_function(self):
@@ -1846,7 +1846,7 @@ the subTest method
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 83
     :emphasize-lines: 1-24
 
@@ -1892,7 +1892,7 @@ the subTest method
 * I change the error message in the :ref:`calculate_age function<extract calculate_age function>` for if the value of the ``year_of_birth`` parameter is not an integer_ back to the correct message, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 37
 
     def calculate_age(year_of_birth):
@@ -1906,7 +1906,7 @@ the subTest method
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_joe`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 135
 
         def test_joe(self):
@@ -1929,7 +1929,7 @@ the subTest method
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 150
 
         def test_jane(self):
@@ -1953,7 +1953,7 @@ the subTest method
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_john`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 166
 
         def test_john(self):
@@ -1978,7 +1978,7 @@ the subTest method
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_mary`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 183
 
         def test_mary(self):
@@ -2003,7 +2003,7 @@ the subTest method
 * I no longer need the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` because it is only used by :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 45
 
         def test_say_hello_method(self):
@@ -2021,7 +2021,7 @@ the subTest method
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 59
 
                 with self.subTest(
@@ -2037,7 +2037,7 @@ the subTest method
 
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 70
     :emphasize-lines: 1-17
 
@@ -2077,7 +2077,7 @@ the subTest method
 * I change the expectation of the :ref:`assertion<what is an assertion?>` to ``'Hello, my name is jane doe and I am YY.'``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 82
     :emphasize-lines: 4
 
@@ -2108,7 +2108,7 @@ the subTest method
 * I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 82
     :emphasize-lines: 4-8
 
@@ -2129,7 +2129,7 @@ the subTest method
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 45
 
         def test_say_hello_method(self):
@@ -2147,7 +2147,7 @@ the subTest method
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 59
 
                 with self.subTest(
@@ -2181,7 +2181,7 @@ the subTest method
 * I remove the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` from the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
 
     class TestPerson(unittest.TestCase):
@@ -2348,7 +2348,7 @@ extract people object attribute
 * I add an :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
     :emphasize-lines: 4-10
 
@@ -2368,7 +2368,7 @@ extract people object attribute
 * I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 20
     :emphasize-lines: 2-10
 
@@ -2389,7 +2389,7 @@ extract people object attribute
 * I remove the commented lines from :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 20
 
         def test_say_hello_method(self):
@@ -2403,7 +2403,7 @@ extract people object attribute
 * I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 53
     :emphasize-lines: 2-10
 
@@ -2424,7 +2424,7 @@ extract people object attribute
 * I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 53
 
         def test_say_hello_function(self):
@@ -2437,7 +2437,7 @@ extract people object attribute
 * I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 84
     :emphasize-lines: 2-10
 
@@ -2458,7 +2458,7 @@ extract people object attribute
 * I remove the commented lines from :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 84
 
         def test_person_factory(self):
@@ -2631,7 +2631,7 @@ the test passes.
   ==============  ============== ==============
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 104
     :emphasize-lines: 4
 
@@ -2653,7 +2653,7 @@ the test passes.
   ==============  ============== ==============
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 104
     :emphasize-lines: 5
 
@@ -2675,7 +2675,7 @@ the test passes.
 * I add the expectation to the tuples_ for the rows in the ``truth_table`` tuple_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 104
     :emphasize-lines: 3-5
 
@@ -2690,7 +2690,7 @@ the test passes.
 * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 110
     :emphasize-lines: 10
 
@@ -2722,7 +2722,7 @@ the test passes.
 * I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to the right number
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 119
     :emphasize-lines: 1
 
@@ -2739,7 +2739,7 @@ the test passes.
   ==============  ============== ==============
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 104
     :emphasize-lines: 6
 
@@ -2770,7 +2770,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_joe`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 122
 
         def test_joe(self):
@@ -2792,7 +2792,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 136
 
         def test_jane(self):
@@ -2815,7 +2815,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_john`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 151
 
         def test_john(self):
@@ -2839,7 +2839,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_mary`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 167
 
         def test_mary(self):
@@ -2863,7 +2863,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_underage_citizen<add condition to can_vote>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 183
 
         def test_underage_citizen(self):
@@ -3013,7 +3013,7 @@ the test passes.
   ==============  ============== ================
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 122
     :emphasize-lines: 3
 
@@ -3035,7 +3035,7 @@ the test passes.
 * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to change the expectation to the last item of the ``row`` tuple_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 136
     :emphasize-lines: 2
 
@@ -3056,7 +3056,7 @@ the test passes.
   ==============  ============== ================
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 124
     :emphasize-lines: 3
 
@@ -3079,7 +3079,7 @@ the test passes.
   ==============  ============== ================
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 124
     :emphasize-lines: 3
 
@@ -3097,7 +3097,7 @@ the test passes.
 * I remove :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  since they are now repetitions of :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 122
 
         def test_if_person_can_get_license(self):
@@ -3142,7 +3142,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 * I add an :ref:`object attribute<what is an object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
     :emphasize-lines: 11-16
 
@@ -3168,7 +3168,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 * I use the :ref:`object attribute<what is an object attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_if_person_can_vote<extract test_if_person_can_vote>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 110
     :emphasize-lines: 2-9
 
@@ -3188,7 +3188,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 * I remove the commented lines from :ref:`test_if_person_can_vote<extract test_if_person_can_vote>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 110
 
         def test_if_person_can_vote(self):
@@ -3208,7 +3208,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 * I use the :ref:`object attribute<what is an object attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 122
     :emphasize-lines:
 
@@ -3228,7 +3228,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_if_person_can_vote<extract
 * I remove the commented lines from :ref:`test_if_person_can_vote<extract test_if_person_can_vote>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 122
 
         def test_if_person_can_get_license(self):
@@ -3404,7 +3404,7 @@ the test passes.
 * I remove :ref:`test_say_hello_method<extract test_say_hello method>` because it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 49
 
                     else:
@@ -3422,7 +3422,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` to :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 49
     :emphasize-lines: 10
 
@@ -3455,7 +3455,7 @@ the test passes.
 * I add values for ``is_citizen`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
     :emphasize-lines: 5-24
 
@@ -3488,7 +3488,7 @@ the test passes.
 * I use the values for the ``is_citizen`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person object<add Person object>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 41
     :emphasize-lines: 7
 
@@ -3501,7 +3501,7 @@ the test passes.
                 is_citizen = a_person[4]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 49
     :emphasize-lines: 11
 
@@ -3524,7 +3524,7 @@ the test passes.
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` to use the value of the ``is_citizen`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 66
     :emphasize-lines: 10
 
@@ -3546,7 +3546,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` to :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 66
     :emphasize-lines: 11
 
@@ -3580,7 +3580,7 @@ the test passes.
 * I add values for ``passed_test`` to the ``people`` :ref:`object attribute<what is an object attribute?>` of the :ref:`TestPerson object<add TestPerson object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
     :emphasize-lines: 4, 8, 12, 16, 20
 
@@ -3610,7 +3610,7 @@ the test passes.
 * I use the values for the ``passed_test`` parameter when making an :ref:`instance<how to test if something is an instance>` of  the :ref:`Person object<add Person object>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 41
     :emphasize-lines: 8
 
@@ -3625,7 +3625,7 @@ the test passes.
 
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 49
     :emphasize-lines: 12
 
@@ -3649,7 +3649,7 @@ the test passes.
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` to use the value of the ``passed_test`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 68
     :emphasize-lines: 11-13
 
@@ -3701,7 +3701,7 @@ the test passes.
   I add tuples_ for these cases to the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
 
     people = (
@@ -3723,7 +3723,7 @@ the test passes.
         ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 26
     :emphasize-lines: 1-24
 
@@ -3773,7 +3773,7 @@ the test passes.
 * I change the names in :ref:`the subTest method` to show the entire tuple_ in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
     :emphasize-lines: 10
 
@@ -3805,7 +3805,7 @@ the test passes.
 * I add the expectation for all the cases of the :ref:`can_vote method<add can_vote method>` to the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
     :emphasize-lines: 4, 8, 12
 
@@ -3824,7 +3824,7 @@ the test passes.
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 22
     :emphasize-lines: 3, 9, 15
 
@@ -3846,7 +3846,7 @@ the test passes.
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 38
     :emphasize-lines: 5, 11, 15
 
@@ -3871,7 +3871,7 @@ the test passes.
 * I remove the ``is_citizen`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` in :ref:`test_person_object<extract test_person_object>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
     :emphasize-lines: 7
 
@@ -3885,7 +3885,7 @@ the test passes.
                 passed_test = a_person[5]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 74
     :emphasize-lines: 8-9
 
@@ -3903,7 +3903,7 @@ the test passes.
                     except TypeError as error:
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 90
     :emphasize-lines: 10-11
 
@@ -3938,7 +3938,7 @@ the test passes.
 * I add the expectation for all the cases of the :ref:`can_get_license method<add can_get_license method>` to the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 9
     :emphasize-lines: 4, 8, 12
 
@@ -3957,7 +3957,7 @@ the test passes.
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 22
     :emphasize-lines: 3, 9, 15
 
@@ -3979,7 +3979,7 @@ the test passes.
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 38
     :emphasize-lines: 5, 11, 15
 
@@ -4012,7 +4012,7 @@ the test passes.
 * I remove the ``passed_test`` :ref:`variable<what is a variable?>` then change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>` to the new item I added to the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
     :emphasize-lines: 8
 
@@ -4026,7 +4026,7 @@ the test passes.
                 # passed_test = a_person[5]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 74
     :emphasize-lines: 10-11
 
@@ -4045,7 +4045,7 @@ the test passes.
                     except TypeError as error:
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 91
     :emphasize-lines: 13-14
 
@@ -4072,7 +4072,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 65
 
         def test_person_object(self):
@@ -4083,7 +4083,7 @@ the test passes.
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 72
 
                 with self.subTest(a_person):
@@ -4103,7 +4103,7 @@ the test passes.
                         )
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 87
 
                     else:
@@ -4126,7 +4126,7 @@ the test passes.
 * I remove :ref:`test_if_person_can_get_license<extract test_if_person_can_get_license>` because it is now a repetition
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 132
 
         def test_person_factory(self):
@@ -4154,7 +4154,7 @@ the test passes.
 * I remove the ``truth_table`` :ref:`object_attribute<what is an object attribute?>` because it is no longer used
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 50
 
             (
@@ -4207,7 +4207,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I make an :ref:`object attribute<what is an object attribute?>` for ``datetime.date.today().year-17``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
     :emphasize-lines: 4
 
@@ -4220,7 +4220,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I change the comments then use the new :ref:`object attribute<what is an object attribute?>` for ``datetime.date.today().year-17`` from the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 27
     :emphasize-lines: 2, 4, 8, 10, 14, 16, 20, 22
 
@@ -4259,7 +4259,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I add a new :ref:`object attribute<what is an object attribute?>` for if a person is :red:`NOT younger` than ``18``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
 
     class TestPerson(unittest.TestCase):
@@ -4272,7 +4272,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I add comments then use the new :ref:`object attribute<what is an object attribute?>` for the ``year_of_birth`` values of ``jane``, ``joe``, ``mary`` and ``john`` in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 11
     :emphasize-lines: 3-5, 9-11, 15-17, 21-23
 
@@ -4307,7 +4307,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I change the values for ``first_name``, ``last_name`` and ``sex`` to ``'first_name', 'last_name', 'M',`` for all the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 11
     :emphasize-lines: 4, 10, 16, 22
 
@@ -4342,7 +4342,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I add :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 6
     :emphasize-lines: 7-9
 
@@ -4361,7 +4361,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``, move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 74
     :emphasize-lines: 2-4, 7
 
@@ -4380,7 +4380,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name`` and ``last_name``, then move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 111
     :emphasize-lines: 2-3, 6, 8
 
@@ -4399,7 +4399,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I use the new :ref:`object attributes<what is an object attribute?>` for ``first_name``, ``last_name`` and ``sex``, then move them out of the :ref:`for loop<what is a for loop?>` in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 140
     :emphasize-lines: 2-4, 7
 
@@ -4412,7 +4412,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                 year_of_birth = a_person[3]
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 148
     :emphasize-lines: 1-13
 
@@ -4437,7 +4437,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_person_factory<extract test_person_factory>` (I do not need the :ref:`variables<what is a variable?>`)
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 140
     :emphasize-lines: 2, 8-11, 14-15
 
@@ -4466,7 +4466,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 111
     :emphasize-lines: 2, 8-10
 
@@ -4483,7 +4483,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                         )
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 122
     :emphasize-lines: 10-11
 
@@ -4507,7 +4507,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I use the :ref:`object attributes<what is an object attribute?>` directly in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 74
     :emphasize-lines: 2, 8-10
 
@@ -4527,7 +4527,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
                         )
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 88
     :emphasize-lines: 10-11
 
@@ -4555,7 +4555,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I remove the values of ``first_name``, ``last_name`` amd ``sex`` from the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 16
     :emphasize-lines: 4
 
@@ -4581,7 +4581,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I undo the change
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 16
     :emphasize-lines: 4
 
@@ -4598,7 +4598,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I change the values for the first three items of the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>` to the ``year_of_birth`` value and the :ref:`boolean<what are booleans?>` for ``is_citizen`` and ``passed_test``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 16
     :emphasize-lines: 4, 10, 16
 
@@ -4623,7 +4623,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 35
     :emphasize-lines: 3, 9, 15
 
@@ -4647,7 +4647,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 53
     :emphasize-lines: 3, 9, 14-15
 
@@ -4677,7 +4677,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 75
     :emphasize-lines: 3, 12-13
 
@@ -4702,7 +4702,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 108
     :emphasize-lines: 3
 
@@ -4717,7 +4717,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 134
     :emphasize-lines: 3
 
@@ -4732,7 +4732,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I remove the repeated values from the tuples_ in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 16
     :emphasize-lines: 5, 10, 15
 
@@ -4754,7 +4754,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 32
     :emphasize-lines: 4, 9, 14
 
@@ -4775,7 +4775,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
             ),
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 47
     :emphasize-lines: 4, 9, 13
 
@@ -4821,7 +4821,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 * I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 85
     :emphasize-lines: 10, 12
 
@@ -4920,7 +4920,7 @@ the test passes.
 * I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertRaisesRegex<how to test the message of an Exception>` to test the message of the :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 143
     :emphasize-lines: 3-4, 6-9, 14-15
 
@@ -4954,7 +4954,7 @@ the test passes.
 * I add a message to the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 37
     :emphasize-lines: 13-15
 
@@ -4980,7 +4980,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 143
 
         def test_when_person_is_older_than_120(self):
@@ -5082,7 +5082,7 @@ the test passes.
 * I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertRaisesRegex<how to test the message of an Exception>` to test the message of the :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 151
     :emphasize-lines: 3-5, 12-13
 
@@ -5115,7 +5115,7 @@ the test passes.
 * I change the message of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 37
     :emphasize-lines: 14
 
@@ -5150,7 +5150,7 @@ the test passes.
 * I change the error message in :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 143
     :emphasize-lines: 7
 
@@ -5176,7 +5176,7 @@ the test passes.
 * I change the error message in :ref:`test_when_year_of_birth_is_the_future`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 158
     :emphasize-lines: 3-4, 7-8, 14-15
 
@@ -5204,7 +5204,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_when_year_of_birth_is_the_future`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 158
 
         def test_when_year_of_birth_is_the_future(self):
@@ -5369,7 +5369,7 @@ the test passes.
 * I put the two `with statements`_ together
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 143
     :emphasize-lines: 8-20
 
@@ -5402,7 +5402,7 @@ the test passes.
 * I remove :ref:`test_when_year_of_birth_is_the_future` because it is now covered by :ref:`test_if_person_is_not_alive<extract test_if_person_is_not_alive>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 157
 
                     src.person.Person(
@@ -5435,7 +5435,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 * I add tuples_ for the cases in :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 52
     :emphasize-lines: 6-10
 
@@ -5462,7 +5462,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 * I change the expected :ref:`Exception<how to test that an Exception is raised>` in :ref:`test_person_object<extract test_person_object>` to test my change
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 76
     :emphasize-lines: 10
 
@@ -5502,7 +5502,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 * I undo the change
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 85
     :emphasize-lines: 1
 
@@ -5518,7 +5518,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 * I remove the last tuple_ from the ``people`` :ref:`object attribute<what is an object attribute?>` because it is a repetition of when ``year_of_birth`` is a string_ (``('2026', False, False,),``)
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 57
 
             # year_of_birth is not an integer
@@ -5533,7 +5533,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 * I remove :ref:`test_when_year_of_birth_is_not_an_integer` because it is now covered by :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 144
 
         def test_if_person_is_not_alive(self):
