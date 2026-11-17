@@ -30,17 +30,23 @@ class TestATM(unittest.TestCase):
                       card_expired=card_expired,
                   )
                   if card_expired:
-                      self.assertEqual(denials['card_expired'])
+                      self.assertEqual(
+                          result, denials['card_expired']
+                      )
                   elif above_daily_limit:
-                      expectation = denials['above_daily_limit']
+                      self.assertEqual(
+                          result, denials['above_daily_limit']
+                      )
                   elif not right_pin:
-                      expectation = denials['not_right_pin']
+                      self.assertEqual(
+                          result, denials['not_right_pin']
+                      )
                   elif not enough_cash:
-                      expectation = denials['not_enough_cash']
+                      self.assertEqual(
+                          result, denials['not_enough_cash']
+                      )
                   else:
-                      expectation = 'CASH'
-
-                  self.assertEqual(result, expectation)
+                      self.assertEqual(result, 'CASH')
 
 
 # Exceptions seen

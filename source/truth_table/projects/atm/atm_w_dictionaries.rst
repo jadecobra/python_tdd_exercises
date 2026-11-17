@@ -83,7 +83,7 @@ test_atm with dictionaries
                 above_daily_limit, card_expired
             ) in itertools.product((False, True), repeat=4):
 
-* I add :ref:`variables<what is a variable?>` for the expectations in the :ref:`if statements` then make one :ref:`assertion<what is an assertion?>` for the :ref:`variable<what is a variable?>`
+* I add :ref:`assertions<what is an assertion?>` for the :ref:`values<test_values_of_a_dictionary>` of the ``denials`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :caption: atm/tests/test_atm.py

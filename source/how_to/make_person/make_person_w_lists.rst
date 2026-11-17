@@ -393,7 +393,7 @@ with a note about the difference
 ----
 
 *********************************************************************************
-use list with for loops for people
+refactor test_person with lists and loops
 *********************************************************************************
 
 The ``people`` :ref:`object attribute<what is an object attribute?>` is a tuple_ with some repetition and :ref:`conditions<if statements?>`.
@@ -536,7 +536,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
 ----
 
-* I remove the ``people`` tuple_ :ref:`assertion<what is an assertion?>` from :ref:`test_dir_person_instance`
+* I remove the ``people`` tuple_
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -559,19 +559,301 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 6
-
+    :lineno-start: 12
+    :emphasize-lines: 5-8
 
         first_name = 'first_name'
         last_name = 'last_name'
         sex = 'M'
 
-        year_of_birth = (
+        years_of_birth = (
             not_younger_than_18, younger_than_18,
             None, 2026.0, '2026', (2026,),
         )
 
         booleans = (True, False)
+
+* I use the new :ref:`object attribute<what is an object attribute>` in the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 16
+    :emphasize-lines: 3
+
+        booleans = (True, False)
+        people = []
+        for year_of_birth in years_of_birth:
+            for boolean in booleans:
+                for boolean in booleans:
+                    if year_of_birth == not_younger_than_18:
+
+  the tests are still green.
+
+* I use the new :ref:`object attribute<what is an object attribute>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 73
+    :emphasize-lines: 2-3, 5-7
+
+        def test_say_hello_function(self):
+            # for a_person in self.people:
+            #     year_of_birth = a_person[0]
+
+            #     with self.subTest(a_person):
+            for year_of_birth in self.years_of_birth:
+                with self.subTest(year_of_birth):
+                    try:
+                        reality = src.person.say_hello(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            year_of_birth=year_of_birth,
+                        )
+                    except TypeError as error:
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 73
+
+        def test_say_hello_function(self):``
+            for year_of_birth in self.years_of_birth:
+                with self.subTest(year_of_birth):
+                    try:
+
+* I use the new :ref:`object attribute<what is an object attribute>` in :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 97
+    :emphasize-lines: 2-3, 5-7
+
+        def test_person_factory(self):
+            # for a_person in self.people:
+            #     year_of_birth = a_person[0]
+
+            #     with self.subTest(a_person):
+            for year_of_birth in self.years_of_birth:
+                with self.subTest(year_of_birth):
+                    self.assertEqual(
+                        src.person.person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                        ),
+                        (
+                            f'{self.first_name}, {self.last_name},'
+                            f' {self.sex}, {year_of_birth}'
+                        )
+                    )
+
+        def test_if_person_is_not_alive(self):
+
+  still green.
+
+* I remove the commented lines from :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 97
+
+        def test_person_factory(self):
+            for year_of_birth in self.years_of_birth:
+                with self.subTest(year_of_birth):
+
+* I copy the ``people`` and ``booleans`` :ref:`object attributes<what is an object attribute?>` into :ref:`test_person_class<extract test_person_class>` because that is the only place where they are used
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 40
+    :emphasize-lines: 2-16
+
+        def test_person_class(self):
+            booleans = (True, False)
+            people = []
+            for year_of_birth in years_of_birth:
+                for boolean in booleans:
+                    for boolean in booleans:
+                        if year_of_birth == not_younger_than_18:
+                            people.append((
+                                year_of_birth, boolean, boolean,
+                                boolean, boolean,
+                            ))
+                        else:
+                            people.append((
+                                year_of_birth, False, False,
+                                False, False
+                            ))
+
+            for a_person in self.people:
+                year_of_birth = a_person[0]
+
+                with self.subTest(a_person):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    NameError: name 'years_of_birth' is not defined
+
+* I add ``self.`` to ``years_of_birth``
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 40
+    :emphasize-lines: 4
+
+        def test_person_object(self):
+            booleans = (True, False)
+            people = []
+            for year_of_birth in self.years_of_birth:
+                for boolean in booleans:
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    NameError: name 'not_younger_than_18' is not defined
+
+* I add ``self.`` to ``not_younger_than_18``
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 44
+    :emphasize-lines: 3
+
+                for boolean in booleans:
+                    for boolean in booleans:
+                        if year_of_birth == self.not_younger_than_18:
+                            people.append((
+                                year_of_birth, boolean, boolean,
+                                boolean, boolean,
+                            ))
+                        else:
+
+  the test passes.
+
+* I change ``self.people`` to ``people`` to use the new :ref:`variable<what is a variable?>` instead of the :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 51
+    :emphasize-lines: 7
+
+                        else:
+                            people.append((
+                                year_of_birth, False, False,
+                                False, False
+                            ))
+
+            for a_person in people:
+                year_of_birth = a_person[0]
+
+                with self.subTest(a_person):
+                    try:
+
+  the test is still green.
+
+* I change the :ref:`for loop<what is a for loop?>` for the test to use names instead of :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 51
+    :emphasize-lines: 7-10, 12-15
+
+                        else:
+                            people.append((
+                                year_of_birth, False, False,
+                                False, False
+                            ))
+
+            for (
+                year_of_birth, is_citizen, passed_test,
+                can_vote_result, can_get_license_result,
+            ) in people:
+
+                with self.subTest((
+                    year_of_birth, is_citizen, passed_test,
+                    can_vote_result, can_get_license_result,
+                )):
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 66
+    :emphasize-lines: 7-8
+
+                    try:
+                        an_instance = src.person.Person(
+                            first_name=self.first_name,
+                            last_name=self.last_name,
+                            sex=self.sex,
+                            year_of_birth=year_of_birth,
+                            is_citizen=is_citizen,
+                            passed_test=passed_test,
+                        )
+                    except TypeError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+                    else:
+                        self.assertEqual(
+                            an_instance.say_hello(),
+                            (
+                                f'Hello, my name is {self.first_name}'
+                                f' {self.last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 89
+    :emphasize-lines: 1-4, 7
+
+                        self.assertEqual(
+                            an_instance.can_vote(),
+                            can_vote_result
+                        )
+                        self.assertEqual(
+                            an_instance.can_get_license(),
+                            can_get_license_result
+                        )
+
+        def test_say_hello_function(self):
+
+  still green.
+
+* I remove the ``booleans`` and ``people`` :ref:`object attributes<what is an object attribute?>` because it is no longer used
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 6
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+        younger_than_18 = this_year - 17
+        not_younger_than_18 = this_year - 18
+
+        first_name = 'first_name'
+        last_name = 'last_name'
+        sex = 'M'
+
+        years_of_birth = (
+            not_younger_than_18, younger_than_18,
+            None, 2026.0, '2026', (2026,),
+        )
+
+        def calculate_age(self, year_of_birth):
+
+  still green.
 
 * I add a git_ commit message
 
@@ -580,7 +862,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
     :emphasize-lines: 1-2
 
     git commit -am \
-    'test_dir_person_instance with extend and sort'
+    'refactor test_person with lists and loops'
 
 ----
 
