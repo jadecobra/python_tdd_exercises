@@ -862,7 +862,7 @@ review
 
 I ran tests to make :ref:`functions<what is a function?>` that return strings_ with information for people. There are a few problems with what I have so far
 
-- I made a :ref:`function<what is a function?>` for each person. What happens if I have to make 10 or 100 or 1000 people? I am not ready to make 1000 :ref:`functions<what is a function?>`.
+- I made a :ref:`function<what is a function?>` for each person. What happens if I have to make ten or one hundred or one thousand people? I do not want to type one thousand :ref:`functions<what is a function?>`.
 - Each test is basically a repetition of the information for each person.
 
 I want something that will take in information for a person and return a string_ for the person. That way I can use one thing to make as many people as I want. I can do that with :ref:`functions that take input<functions that take input>`.
