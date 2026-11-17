@@ -393,6 +393,198 @@ with a note about the difference
 ----
 
 *********************************************************************************
+use list with for loops for people
+*********************************************************************************
+
+The ``people`` :ref:`object attribute<what is an object attribute?>` is a tuple_ with some repetition and :ref:`conditions<if statements?>`.
+
+.. code-block:: python
+
+  year_of_birth (not_younger_than_18 | younger_than_18),
+  is_citizen, passed_test,
+  result of can_vote(),
+  result of can_get_license(),
+
+the last items in the tuple_ do not bother with the results because they trigger an :ref:`Exception<how to raise an Exception>` since the values for ``year_of_birth`` are not integers_
+
+.. code-block:: python
+
+  (None, False, False,),
+  (2026.0, False, False,),
+  ('2026', False, False,),
+  ((2026,), False, False,),
+
+I can use a :ref:`list<what is a list?>` with :ref:`for loops<what is a for loop?>` and :ref:`if statements` to make the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add values for the result of the :ref:`calls<how to call a function with input>` to the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` to make the ``people`` tuple_ more balanced
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 52
+    :emphasize-lines: 7-10
+
+            (
+                # underage, not is_citizen, not passed_test
+                younger_than_18, False, False,
+                False, False,
+            ),
+            # year_of_birth is not an integer
+            (None, False, False, False, False),
+            (2026.0, False, False, False, False),
+            ('2026', False, False, False, False),
+            ((2026,), False, False, False, False),
+        )
+
+      def calculate_age(self, year_of_birth):
+
+  the test is still green.
+
+* I use :ref:`for loops<what is a for loop?>` to make a :ref:`list<what is a list?>` for the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 57
+    :emphasize-lines: 8-19
+
+            # year_of_birth is not an integer
+            (None, False, False, False, False),
+            (2026.0, False, False, False, False),
+            ('2026', False, False, False, False),
+            ((2026,), False, False, False, False),
+        )
+
+        booleans = (True, False)
+        people = []
+        for year_of_birth in (
+            not_younger_than_18, younger_than_18,
+            None, 2026.0, '2026', (2026,),
+        ):
+            for boolean in booleans:
+                for boolean in booleans:
+                    people.append((
+                        year_of_birth, boolean, boolean,
+                        boolean, boolean,
+                    ))
+
+        def calculate_age(self, year_of_birth):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+        AssertionError: False != True
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+        AssertionError: False != True
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+        AssertionError: False != True
+    SUBFAILED[(2009, True, True, True, True)] ...test_person_class -
+        AssertionError: False != True
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add an :ref:`if statement<if statements>` for the year of birth
+
+.. code-block:: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 64
+  :emphasize-lines: 9-18
+
+      booleans = (True, False)
+      people = []
+      for year_of_birth in (
+          not_younger_than_18, younger_than_18,
+          None, 2026.0, '2026', (2026,),
+      ):
+          for boolean in booleans:
+              for boolean in booleans:
+                  if year_of_birth == not_younger_than_18:
+                      people.append((
+                          year_of_birth, boolean, boolean,
+                          boolean, boolean,
+                      ))
+                  else:
+                      people.append((
+                          year_of_birth, False, False,
+                          False, False
+                      ))
+
+      def calculate_age(self, year_of_birth):
+
+the test is green again and is slower than when I used a tuple_ for the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the ``people`` tuple_ :ref:`assertion<what is an assertion?>` from :ref:`test_dir_person_instance`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 6
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+        younger_than_18 = this_year - 17
+        not_younger_than_18 = this_year - 18
+
+        first_name = 'first_name'
+        last_name = 'last_name'
+        sex = 'M'
+
+        booleans = (True, False)
+        people = []
+
+* I make an :ref:`object attribute<what is an object attribute?>` for the different values for ``year_of_birth``
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 6
+
+
+        first_name = 'first_name'
+        last_name = 'last_name'
+        sex = 'M'
+
+        year_of_birth = (
+            not_younger_than_18, younger_than_18,
+            None, 2026.0, '2026', (2026,),
+        )
+
+        booleans = (True, False)
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_dir_person_instance with extend and sort'
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
