@@ -45,7 +45,7 @@ open the project
 *********************************************************************************
 
 * I open a terminal_
-* I `change directory`_ to the :ref:`traffic_light folder<Traffic Light>` in the ``pumping_python`` folder_
+* I `change directory`_ to the :ref:`traffic_light folder<Traffic Light Control>` in the ``pumping_python`` folder_
 
   .. code-block:: python
     :caption: terminal

@@ -197,68 +197,68 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
   the test is still green.
 
-* I made a tuple_ named ``people`` that contains a tuple_ for ``joe``
+  * I made a tuple_ named ``people`` that contains a tuple_ for ``joe``
 
-  .. code-block:: python
+    .. code-block:: python
 
-    people = (
-        ('joe', 'blow', 'M', 1996),
-    )
+      people = (
+          ('joe', 'blow', 'M', 1996),
+      )
 
-* I use a :ref:`for loop<what is a for loop?>` to repeat the same commands for each item in the ``people`` tuple, in this case there is only one item - the tuple_ for ``joe``
+  * I use a :ref:`for loop<what is a for loop?>` to repeat the same commands for each item in the ``people`` tuple, in this case there is only one item - the tuple_ for ``joe``
 
-  .. code-block:: python
+    .. code-block:: python
 
-    for a_person in (
-        ('joe', 'blow', 'M', 1996),
-    ):
+      for a_person in (
+          ('joe', 'blow', 'M', 1996),
+      ):
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
+  * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    for a_person in people:
-    ├── a_person = ('joe', 'blow', 'M', 1996)
-    └── self.assert_person_factory_works(
-            first_name=a_person[0],     # 'joe'
-            last_name=a_person[1],      # 'blow'
-            sex=a_person[2],            # 'M'
-            year_of_birth=a_person[3],  # 1996
-        )
-        └── def assert_person_factory_works(
-                self, first_name, last_name,
-                sex, year_of_birth
-            ):
-            ├── first_name    = 'joe'   # a_person[0]
-            ├── last_name     = 'blow'  # a_person[1]
-            ├── sex           = 'M'     # a_person[2]
-            ├── year_of_birth = 1996    # a_person[3]
-            └── self.assertEqual(
-            ┌────── src.person.person(
-            │           first_name=first_name,        # 'joe'
-            │           last_name=last_name,          # 'blow'
-            │           sex=sex,                      # 'M'
-            │           year_of_birth=year_of_birth,  # 1996
-            │       ),
-            │       (
-            │           f'{first_name}, {last_name},'
-            │           f' {sex}, {year_of_birth}'
-            │       )
-            │   )
-            └────── src/person/__init__.py
-                    └── def person(
-                            first_name, last_name,
-                            sex, year_of_birth,
-                        ):
-                        ├── first_name    = 'joe'   # a_person[0]
-                        ├── last_name     = 'blow'  # a_person[1]
-                        ├── sex           = 'M'     # a_person[2]
-                        ├── year_of_birth = 1996    # a_person[3]
-                        └── return (
-                                f'{first_name}, {last_name},'
-                                f' {sex}, {year_of_birth}'
-                            )
-                            return 'joe, blow, M, 1996'
+      for a_person in people:
+      ├── a_person = ('joe', 'blow', 'M', 1996)
+      └── self.assert_person_factory_works(
+              first_name=a_person[0],     # 'joe'
+              last_name=a_person[1],      # 'blow'
+              sex=a_person[2],            # 'M'
+              year_of_birth=a_person[3],  # 1996
+          )
+          └── def assert_person_factory_works(
+                  self, first_name, last_name,
+                  sex, year_of_birth
+              ):
+              ├── first_name    = 'joe'   # a_person[0]
+              ├── last_name     = 'blow'  # a_person[1]
+              ├── sex           = 'M'     # a_person[2]
+              ├── year_of_birth = 1996    # a_person[3]
+              └── self.assertEqual(
+              ┌────── src.person.person(
+              │           first_name=first_name,        # 'joe'
+              │           last_name=last_name,          # 'blow'
+              │           sex=sex,                      # 'M'
+              │           year_of_birth=year_of_birth,  # 1996
+              │       ),
+              │       (
+              │           f'{first_name}, {last_name},'
+              │           f' {sex}, {year_of_birth}'
+              │       )
+              │   )
+              └────── src/person/__init__.py
+                      └── def person(
+                              first_name, last_name,
+                              sex, year_of_birth,
+                          ):
+                          ├── first_name    = 'joe'   # a_person[0]
+                          ├── last_name     = 'blow'  # a_person[1]
+                          ├── sex           = 'M'     # a_person[2]
+                          ├── year_of_birth = 1996    # a_person[3]
+                          └── return (
+                                  f'{first_name}, {last_name},'
+                                  f' {sex}, {year_of_birth}'
+                              )
+                              return 'joe, blow, M, 1996'
 
 * I add ``jane`` to the tuple_ of ``people``
 

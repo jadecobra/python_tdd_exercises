@@ -10,14 +10,6 @@ how tos
 
 Here are a few exercises that get you up and running in Python right now, they briefly touch concepts that are later covered in depth in the book
 
-
-
-----
-
-*********************************************************************************
-how to
-*********************************************************************************
-
 .. toctree::
   :titlesonly:
   :maxdepth: 1

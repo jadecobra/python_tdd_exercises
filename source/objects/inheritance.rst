@@ -2703,7 +2703,7 @@ what is next?
 
   ../exceptions/AttributeError/AttributeError_w_objects
   ../exceptions/TypeError/TypeError_w_objects
-  unittest
+  ../unittest/index
 
 :ref:`Would you like to test AttributeError with objects?<AttributeError with objects>`
 

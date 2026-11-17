@@ -78,7 +78,7 @@ open the project
 *********************************************************************************
 
 * I open a terminal_
-* I `change directory`_ to the :ref:`microwave folder<microwave>` in the ``pumping_python`` folder_
+* I `change directory`_ to the :ref:`microwave folder<Microwave Controller>` in the ``pumping_python`` folder_
 
   .. code-block:: python
     :caption: terminal

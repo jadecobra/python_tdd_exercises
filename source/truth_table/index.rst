@@ -10,8 +10,6 @@
 truth table
 #################################################################################
 
-
-
 Sometimes I want programs_ to choose what to do based on inputs or :ref:`conditions<if statements>`, and can make this happen with :ref:`if statements<if statements>`. For example
 
 * If a person is younger than ``18``

@@ -74,7 +74,7 @@ open the project
 *********************************************************************************
 
 * I open a terminal_
-* I `change directory`_ to the :ref:`traffic_light folder<Traffic Light>` in the ``pumping_python`` folder_
+* I `change directory`_ to the :ref:`traffic_light folder<Traffic Light Control>` in the ``pumping_python`` folder_
 
   .. code-block:: python
     :caption: terminal
@@ -591,7 +591,7 @@ The :ref:`Traffic Light` only shows :green:`WALK` if the :red:`RED` phase is ``'
 
 ----
 
-* I open ``__init__.py`` from the :ref:`traffic_light folder<Traffic Light>` in the ``src`` folder_
+* I open ``__init__.py`` from the :ref:`traffic_light folder<Traffic Light Control>` in the ``src`` folder_
 * I add :ref:`global variables<what is a variable?>` for ``'WALK'`` and ``'DO NOT WALK'`` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python

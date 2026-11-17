@@ -8,11 +8,9 @@
 basic objects
 #################################################################################
 
-
-
 Programming involves taking some information as input and doing something with it to give back some other information as output. The input and output are called data.
 
-These chapters test basic :ref:`Python objects<what is an object?>`, which are a way for information.
+These chapters test basic :ref:`Python objects<what is an object?>`, which are a way to represent information.
 
 .. toctree::
   :titlesonly:
@@ -21,7 +19,7 @@ These chapters test basic :ref:`Python objects<what is an object?>`, which are a
   None (the simplest object)<none/index>
   booleans/index
   Lists: anything in [ ]<lists/index>
-  Dictionaries: key-value pairs<dictionaries/index>
+  Dictionaries: key-value pairs<dictionaries>
 
 ----
 
