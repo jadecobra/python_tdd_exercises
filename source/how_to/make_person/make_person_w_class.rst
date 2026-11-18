@@ -163,6 +163,7 @@ I made a :ref:`function<what is a function?>` that makes a string_ for a person 
 I make an :ref:`instance<how to test if something is an instance>` of an :ref:`object<what is an object?>` for ``joe`` in :ref:`test_joe` in ``tests/test_person.py``
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 38
   :emphasize-lines: 20-25
   :emphasize-text: Person
@@ -199,8 +200,9 @@ I make an :ref:`instance<how to test if something is an instance>` of an :ref:`o
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
+    :caption: terminal
 
-  NameError: name 'Person' is not defined
+    NameError: name 'Person' is not defined
 
 because there is no definition for ``Person`` in ``tests/test_person.py``.
 
@@ -234,8 +236,9 @@ because there is no definition for ``Person`` in ``tests/test_person.py``.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
+      :caption: terminal
 
-      TypeError: Person() takes no arguments
+    TypeError: Person() takes no arguments
 
     because :ref:`objects<what is an object?>` do not take arguments like a :ref:`function<what is a function?>` and I "called" this one with four arguments.
 
@@ -252,7 +255,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add the `constructor method`_ to the :ref:`Person object<add Person object>` so it can take arguments
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 3-5
 
@@ -271,6 +274,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() got
@@ -300,7 +304,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``first_name`` in parentheses so that the :ref:`__init__ method<the constructor method>` can take input
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 4-5
 
@@ -314,6 +318,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() got
@@ -321,14 +326,14 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
-  The test :ref:`calls the function<how to call a function with input>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth)``.
+  - The test :ref:`calls the function<how to call a function with input>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth)``.
 
-  Python_ does not know which value to use for the first argument if I use its :ref:`name<test_keyword_arguments>` and :ref:`position<test_positional_arguments>`.
+  - Python_ does not know which value to use for the first argument if I use its :ref:`name<test_keyword_arguments>` and :ref:`position<test_positional_arguments>`.
 
 * I add ``self`` as the first argument
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -345,8 +350,9 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: shell
+      :caption: terminal
 
-      TypeError:
+    TypeError:
           Person.__init__() got
           an unexpected keyword argument 'last_name'.
           Did you mean 'first_name'?
@@ -379,7 +385,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of :ref:`__init__<the constructor method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 6-7
 
@@ -395,6 +401,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() got
@@ -427,7 +434,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 7-12
 
@@ -447,6 +454,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() got
                an unexpected keyword argument 'year_of_birth'
@@ -481,7 +489,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 10-11
 
@@ -512,7 +520,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 * I remove the commented lines from the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
 
     class Person:
@@ -565,28 +573,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` with the :ref:`attributes<what is an object attribute?>` of ``joe`` in :ref:`test_joe`
 
   .. code-block:: python
-    :caption:
-    :lineno-start: 47
-    :emphasize-lines: 20-25, 27-37
-
-    def test_joe():
-        first_name = 'joe'
-        last_name = 'blow'
-        sex = 'M'
-        year_of_birth = 1996
-
-        assert_person_factory_works(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth
-        )
-
-        assert_say_hello_works(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
+    :caption: person/tests/test_person.py
+    :lineno-start: 66
+    :emphasize-lines: 8-18
 
         joe = Person(
             first_name=first_name,
@@ -603,7 +592,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -613,8 +602,10 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
-    AttributeError: 'Person' object has no attribute 'first_name'
+    AttributeError: 'Person' object
+                      has no attribute 'first_name'
 
   because there is nothing named ``first_name`` in the :ref:`Person object<add Person object>`, so Python_ cannot reach the ``first_name`` :ref:`attribute<what is an object attribute?>` of ``joe``.
 
@@ -629,7 +620,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``self.first_name`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 7
 
@@ -647,7 +638,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I point ``self.first_name`` to the value for ``first_name`` when the :ref:`__init__ method<the constructor method>` is :ref:`called<how to call a function with input>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 7-8
 
@@ -664,6 +655,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
     AttributeError: 'Person' object
                     has no attribute 'last_name'.
@@ -671,10 +663,10 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   because there is nothing named ``last_name`` in the :ref:`Person object<add Person object>`, so Python_ cannot reach the ``last_name`` :ref:`attribute<what is an object attribute?>` of ``joe``.
 
-* I add ``self.last_name`` and point it to the value for ``last_name`` when the :ref:`__init__ method<the constructor method>` is called
+* I add ``self.last_name`` and point it to the value for ``last_name`` when the :ref:`__init__ method<the constructor method>` is :ref:`called<how to call a function with input>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 9
 
@@ -692,16 +684,17 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Person' object
                     has no attribute 'year_of_birth'
 
   because there is nothing named ``year_of_birth`` in the :ref:`Person object<add Person object>`, so Python_ cannot reach the ``year_of_birth`` :ref:`attribute<what is an object attribute?>` of ``joe``.
 
-* I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the :ref:`__init__ constructor method<the constructor method>` is called
+* I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the :ref:`__init__ constructor method<the constructor method>` is :ref:`called<how to call a function with input>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 10
 
@@ -768,9 +761,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                     └── return (
                             f'Hello, my name is {first_name}'
                             f' {last_name} and I am'
-                            f' {2026-year_of_birth}.'
+                            f' {2027-year_of_birth}.'
                         )
-                        return 'Hello, my name is joe blow and I am XX.'
+                        return 'Hello, my name is joe blow and I am 31.'
 
 ----
 
@@ -783,7 +776,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I remove the commented line from the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
 
     class Person:
@@ -803,10 +796,10 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             year_of_birth,
         ):
 
-* I change the :ref:`call<how to call a function with input>` to ``src.person.say_hello`` in :ref:`test_joe` to a call to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>`
+* I change the :ref:`call<how to call a function with input>` to ``src.person.say_hello`` in :ref:`test_joe` to a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 69
     :emphasize-lines: 8-9
     :emphasize-text: joe
@@ -827,7 +820,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -837,16 +830,17 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: type object 'Person'
-                    has no attribute 'say_hello'
+                  has no attribute 'say_hello'
 
   because the test :ref:`calls<how to call a function with input>` the :ref:`say_hello method<add say_hello method>` which does not yet exist in the :ref:`Person object<add Person object>`.
 
 * I add a :ref:`method definition<how to make a function>` for ``say_hello`` to the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 12-13
 
@@ -873,6 +867,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'first_name'
@@ -882,7 +877,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``first_name`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 1-2
 
@@ -893,6 +888,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'last_name'.
@@ -903,7 +899,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``last_name`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 2-3
 
@@ -915,6 +911,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'year_of_birth'
@@ -924,7 +921,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``year_of_birth`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 3-4
 
@@ -937,15 +934,16 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert None
-            == 'Hello, my name is joe blow and I am XX.'
+            == 'Hello, my name is joe blow and I am 31.'
 
 * I change :ref:`the return statement` to match
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 5-6
 
@@ -954,7 +952,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         # def say_hello(first_name, last_name):
         def say_hello(first_name, last_name, year_of_birth):
             # return None
-            return 'Hello, my name is joe blow and I am XX.'
+            return 'Hello, my name is joe blow and I am 31.'
 
 
     def assert_say_hello_works(
@@ -976,12 +974,12 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             ├── first_name    = 'joe'
             ├── last_name     = 'blow'
             ├── year_of_birth = 1996
-            └── return 'Hello, my name is joe blow and I am XX.'
+            └── return 'Hello, my name is joe blow and I am 31.'
 
 * I add a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>` in :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 97
     :emphasize-lines: 20-25, 27-37
 
@@ -1019,7 +1017,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1029,14 +1027,15 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
-    AssertionError: assert 'Hello, my name ... and I am XX.'
-                        == 'Hello, my name ... and I am YY.'
+    AssertionError: assert 'Hello, my name ... and I am 36.'
+                        == 'Hello, my name ... and I am 31.'
 
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` like I did with the :ref:`say_hello function<test say_hello function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 6-11
 
@@ -1045,11 +1044,11 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         # def say_hello(first_name, last_name):
         def say_hello(first_name, last_name, year_of_birth):
             # return None
-            # return 'Hello, my name is joe blow and I am XX.'
+            # return 'Hello, my name is joe blow and I am 31.'
             return (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
 
 
@@ -1102,14 +1101,14 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         └── return (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
-            return 'Hello, my name is jane doe and I am YY.'
+            return 'Hello, my name is jane doe and I am 36.'
 
 * I add an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person object<add Person object>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` because the :ref:`instance<how to test if something is an instance>` has the :ref:`attributes<what is an object attribute?>` I use in the :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 88
     :emphasize-lines: 3
 
@@ -1123,7 +1122,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1133,6 +1132,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'person'
@@ -1142,7 +1142,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add ``person`` to the :ref:`method definition for say_hello<add say_hello method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 4-7
 
@@ -1154,16 +1154,17 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                 person, first_name, last_name, year_of_birth,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am XX.'
+            # return 'Hello, my name is joe blow and I am 31.'
             return (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() missing
                1 required positional argument: 'person'
@@ -1173,7 +1174,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I add the ``person`` :ref:`keyword argument<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 132
     :emphasize-lines: 2
 
@@ -1186,7 +1187,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1198,7 +1199,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I change :ref:`the return statement` of the :ref:`say_hello method<add say_hello method>` to use the :ref:`attributes<what is an object attribute?>` of the :ref:`class instance<how to test if something is an instance>` it receives as input
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 11-16
 
@@ -1210,14 +1211,14 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                 person, first_name, last_name, year_of_birth,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am XX.'
+            # return 'Hello, my name is joe blow and I am 31.'
             return (
                 # f'Hello, my name is {first_name}'
                 # f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
+                # f' {2027-year_of_birth}.'
                 f'Hello, my name is {person.first_name}'
                 f' {person.last_name} and I am'
-                f' {2026-person.year_of_birth}.'
+                f' {2027-person.year_of_birth}.'
             )
 
 
@@ -1276,18 +1277,18 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             └── return (
                     f'Hello, my name is {person.first_name}'
                     f' {person.last_name} and I am'
-                    f' {2026-person.year_of_birth}.'
+                    f' {2027-person.year_of_birth}.'
                 )
                 return (
                     f'Hello, my name is {instance.first_name}'
                     f' {instance.last_name} and I am'
-                    f' {2026-instance.year_of_birth}.'
+                    f' {2027-instance.year_of_birth}.'
                 )
 
 * I remove the ``first_name``, ``last_name`` and ``year_of_birth`` arguments from the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` since they are repetitions of the :ref:`object attributes<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 94
     :emphasize-lines: 4-6
 
@@ -1301,7 +1302,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1311,6 +1312,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() missing
                3 required positional arguments:
@@ -1319,7 +1321,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I remove ``first_name``, ``last_name`` and ``year_of_birth`` from the :ref:`definition of the say_hello method<add say_hello method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 6-7
 
@@ -1332,19 +1334,20 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                 person,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am XX.'
+            # return 'Hello, my name is joe blow and I am 31.'
             return (
                 # f'Hello, my name is {first_name}'
                 # f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
+                # f' {2027-year_of_birth}.'
                 f'Hello, my name is {person.first_name}'
                 f' {person.last_name} and I am'
-                f' {2026-person.year_of_birth}.'
+                f' {2027-person.year_of_birth}.'
             )
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'first_name'
@@ -1354,7 +1357,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I remove the ``first_name``, ``last_name`` and ``year_of_birth`` arguments from the :ref:`call<how to call a function with input>` from :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 136
     :emphasize-lines: 3-5
 
@@ -1367,7 +1370,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1379,7 +1382,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 * I change the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person object<add Person object>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 136
     :emphasize-lines: 1-2
 
@@ -1393,7 +1396,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1403,6 +1406,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() got
                multiple values for argument 'person'
@@ -1418,7 +1422,7 @@ what is the staticmethod decorator?
 * I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`object<what is an object?>`, so I do not send more than what the :ref:`method<what is a method?>` needs. I add :ref:`@staticmethod<what is the staticmethod decorator?>`` to the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 5
 
@@ -1437,7 +1441,7 @@ what is the staticmethod decorator?
 * I change the :ref:`call<how to call a function with input>` to ``Person.say_hello`` from :ref:`test_joe` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person object<add Person object>`, there is no need for it to take a copy of the :ref:`Person object<add Person object>` as input since it should be able to use its own :ref:`attributes<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 96
     :emphasize-lines: 2-4
 
@@ -1452,7 +1456,7 @@ what is the staticmethod decorator?
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1462,6 +1466,7 @@ what is the staticmethod decorator?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() missing
                1 required positional argument: 'person'
@@ -1469,7 +1474,7 @@ what is the staticmethod decorator?
 * I make ``person`` :ref:`optional<test_optional_arguments>` in the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 8-9
 
@@ -1487,6 +1492,7 @@ what is the staticmethod decorator?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'NoneType' object
                     has no attribute 'first_name'
@@ -1494,7 +1500,7 @@ what is the staticmethod decorator?
 * I change ``person.`` to ``self.`` in :ref:`the return statement`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 17-22
 
@@ -1509,29 +1515,30 @@ what is the staticmethod decorator?
                 person=None,
             ):
             # return None
-            # return 'Hello, my name is joe blow and I am XX.'
+            # return 'Hello, my name is joe blow and I am 31.'
             return (
                 # f'Hello, my name is {first_name}'
                 # f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
+                # f' {2027-year_of_birth}.'
                 # f'Hello, my name is {person.first_name}'
                 # f' {person.last_name} and I am'
-                # f' {2026-person.year_of_birth}.'
+                # f' {2027-person.year_of_birth}.'
                 f'Hello, my name is {self.first_name}'
                 f' {self.last_name} and I am'
-                f' {2026-self.year_of_birth}.'
+                f' {2027-self.year_of_birth}.'
             )
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
 * I add ``self`` to the parentheses
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 9-10
 
@@ -1550,6 +1557,7 @@ what is the staticmethod decorator?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() missing
                1 required positional argument: 'self'
@@ -1557,7 +1565,7 @@ what is the staticmethod decorator?
 * I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<add say_hello method>` is using :ref:`object attributes<what is an object attribute?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 15
     :emphasize-lines: 5
 
@@ -1610,12 +1618,12 @@ what is the staticmethod decorator?
             └── return (
                     f'Hello, my name is {self.first_name}'
                     f' {self.last_name} and I am'
-                    f' {2026-self.year_of_birth}.'
+                    f' {2027-self.year_of_birth}.'
                 )
                 return (
                     f'Hello, my name is {instance.first_name}'
                     f' {instance.last_name} and I am'
-                    f' {2026-instance.year_of_birth}.'
+                    f' {2027-instance.year_of_birth}.'
                 )
 
   a simple way to think of ``instance.say_hello()`` is
@@ -1633,7 +1641,7 @@ what is the staticmethod decorator?
 * I remove ``person=jane`` from the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 143
     :emphasize-lines: 3
 
@@ -1647,7 +1655,7 @@ what is the staticmethod decorator?
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -1659,7 +1667,7 @@ what is the staticmethod decorator?
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` to :ref:`test_john`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 158
     :emphasize-lines: 20-25, 27-33
 
@@ -1693,7 +1701,7 @@ what is the staticmethod decorator?
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == None
 
@@ -1703,6 +1711,7 @@ what is the staticmethod decorator?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert 'Hello, my name is john smith and I am AAA.'
@@ -1711,7 +1720,7 @@ what is the staticmethod decorator?
 * I change my expectation to match ``reality`` in :ref:`test_john`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 184
     :emphasize-lines: 7-8
 
@@ -1719,7 +1728,7 @@ what is the staticmethod decorator?
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         # assert reality == None
         assert reality == my_expectation
@@ -1732,7 +1741,7 @@ what is the staticmethod decorator?
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` to :ref:`test_mary`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 194
     :emphasize-lines: 20-25, 27-33
 
@@ -1766,7 +1775,7 @@ what is the staticmethod decorator?
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == None
 
@@ -1776,6 +1785,7 @@ what is the staticmethod decorator?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert 'Hello, my name is mary public and I am ZZ.'
@@ -1784,7 +1794,7 @@ what is the staticmethod decorator?
 * I change my expectation to match ``reality`` in :ref:`test_mary`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 220
     :emphasize-lines: 7-8
 
@@ -1792,7 +1802,7 @@ what is the staticmethod decorator?
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         # assert reality == None
         assert reality == my_expectation
@@ -1838,7 +1848,7 @@ separate and equal Person object
 * I change ``mary`` in :ref:`test_mary` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the :ref:`Person object<add Person object>` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 213
     :emphasize-lines: 1-2
 
@@ -1854,7 +1864,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         # assert reality == None
         assert reality == my_expectation
@@ -1865,6 +1875,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.person'
                     has no attribute 'Person'
@@ -1884,6 +1895,7 @@ separate and equal Person object
 * I add the name to ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1
 
@@ -1897,12 +1909,14 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'Person' is not defined
 
 * I point ``Person`` to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1-2
 
@@ -1917,6 +1931,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1925,6 +1940,7 @@ separate and equal Person object
 * I change ``Person`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 2-4
 
@@ -1941,6 +1957,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person() got
                an unexpected keyword argument 'first_name'
@@ -1950,6 +1967,7 @@ separate and equal Person object
 * I add ``first_name`` to the parentheses
 
   .. code-block:: python
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 3-4
 
@@ -1962,6 +1980,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
     TypeError: Person() got
                an unexpected keyword argument 'last_name'.
@@ -1972,6 +1991,7 @@ separate and equal Person object
 * I add ``last_name`` to the parentheses
 
   .. code-block:: python
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 4-5
 
@@ -1985,6 +2005,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person() got
                an unexpected keyword argument 'sex'
@@ -2008,6 +2029,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person() got
                an unexpected keyword argument 'year_of_birth'
@@ -2035,6 +2057,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'NoneType' object
                     has no attribute 'say_hello'
@@ -2091,13 +2114,14 @@ separate and equal Person object
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: 'return' outside function
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 231
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
@@ -2137,6 +2161,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'first_name' is not defined
 
@@ -2176,6 +2201,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() got
                multiple values for argument 'first_name'
@@ -2185,7 +2211,7 @@ separate and equal Person object
 * I add ``self`` to :ref:`the constructor method`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 12
     :emphasize-lines: 4-5
 
@@ -2202,6 +2228,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Person' object has no attribute 'say_hello'
 
@@ -2210,7 +2237,7 @@ separate and equal Person object
 * I add the name to the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 12
     :emphasize-lines: 3
 
@@ -2229,13 +2256,14 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'say_hello' is not defined
 
 * I point ``say_hello`` to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 12
     :emphasize-lines: 3-4
 
@@ -2255,6 +2283,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -2263,7 +2292,7 @@ separate and equal Person object
 * I change ``say_hello`` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 12
     :emphasize-lines: 4, 14-15
 
@@ -2291,6 +2320,7 @@ separate and equal Person object
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.say_hello() takes
                0 positional arguments but 1 was given
@@ -2298,7 +2328,7 @@ separate and equal Person object
 * I add a name to the parentheses
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 25
     :emphasize-lines: 1-2
 
@@ -2309,6 +2339,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert None
@@ -2317,7 +2348,7 @@ separate and equal Person object
 * I copy and paste the string_ from the terminal_ to use as :ref:`the return statement`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 25
     :emphasize-lines: 3-4
 
@@ -2344,7 +2375,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_mary` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 194
 
     def test_mary():
@@ -2377,7 +2408,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2387,7 +2418,7 @@ separate and equal Person object
 * I change ``john`` in :ref:`test_john` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 171
     :emphasize-lines: 7-8
 
@@ -2409,7 +2440,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         # assert reality == None
         assert reality == my_expectation
@@ -2420,6 +2451,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'Hello, my name ... and I am ZZ.'
                         == 'Hello, my name ...and I am AAA.'
@@ -2427,7 +2459,7 @@ separate and equal Person object
 * I change :ref:`the return statement` of the :ref:`say_hello method<add say_hello method>` to return the input, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 25
     :emphasize-lines: 4-5
 
@@ -2445,6 +2477,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert <src.person.Person object at 0xffffb012cd34>
@@ -2455,7 +2488,7 @@ separate and equal Person object
 * I change :ref:`the return statement` to use :ref:`object attributes<what is an object attribute?>` in an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 25
     :emphasize-lines: 5-10
 
@@ -2467,7 +2500,7 @@ separate and equal Person object
             return (
                 f'Hello, my name is {argument.first_name}'
                 f' {argument.last_name} and I am'
-                f' {2026-argument.year_of_birth}.'
+                f' {2027-argument.year_of_birth}.'
             )
 
 
@@ -2478,6 +2511,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Person' object
                     has no attribute 'first_name'
@@ -2487,7 +2521,7 @@ separate and equal Person object
 * I add ``self.first_name`` to the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 12
     :emphasize-lines: 12-13
 
@@ -2510,6 +2544,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
     AttributeError: 'Person' object
                     has no attribute 'last_name'.
@@ -2520,7 +2555,7 @@ separate and equal Person object
 * I add ``self.last_name`` to the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 17
     :emphasize-lines: 9
 
@@ -2539,6 +2574,7 @@ separate and equal Person object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Person' object
                     has no attribute 'year_of_birth'
@@ -2548,7 +2584,7 @@ separate and equal Person object
 * I add ``self.year_of_birth`` to the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 17
     :emphasize-lines: 10
 
@@ -2570,7 +2606,7 @@ separate and equal Person object
 * I change ``argument`` to ``self`` in the :ref:`say_hello method<add say_hello method>` to follow :ref:`Python convention<conventions>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 28
     :emphasize-lines: 2-3, 8-13
 
@@ -2583,10 +2619,10 @@ separate and equal Person object
             return (
                 # f'Hello, my name is {argument.first_name}'
                 # f' {argument.last_name} and I am'
-                # f' {2026-argument.year_of_birth}.'
+                # f' {2027-argument.year_of_birth}.'
                 f'Hello, my name is {self.first_name}'
                 f' {self.last_name} and I am'
-                f' {2026-self.year_of_birth}.'
+                f' {2027-self.year_of_birth}.'
             )
 
 
@@ -2609,7 +2645,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_john` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 158
 
     def test_john():
@@ -2642,7 +2678,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2652,7 +2688,7 @@ separate and equal Person object
 * I change ``jane`` in :ref:`test_jane` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 130
     :emphasize-lines: 7-8
 
@@ -2680,7 +2716,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2692,7 +2728,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 117
 
     def test_jane():
@@ -2725,7 +2761,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2735,7 +2771,7 @@ separate and equal Person object
 * I change ``joe`` in :ref:`test_joe` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 88
     :emphasize-lines: 7-8
 
@@ -2764,7 +2800,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2776,7 +2812,7 @@ separate and equal Person object
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 75
 
     def test_joe():
@@ -2809,7 +2845,7 @@ separate and equal Person object
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2884,7 +2920,7 @@ extract assert_person_can_say_hello function
   my_expectation = (
       f'Hello, my name is {first_name}'
       f' {last_name} and I am'
-      f' {2026-year_of_birth}.'
+      f' {2027-year_of_birth}.'
   )
   assert reality == my_expectation
 
@@ -2902,7 +2938,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 * I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters, in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
     :emphasize-lines: 4-13, 15-21
 
@@ -2924,7 +2960,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality != my_expectation
 
@@ -2937,7 +2973,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_joe`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 58
     :emphasize-lines: 20-39
 
@@ -2971,7 +3007,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_person_can_say_hello(
@@ -2987,9 +3023,10 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
-    AssertionError: assert 'Hello, my name is joe blow and I am XX.'
-                        != 'Hello, my name is joe blow and I am XX.'
+    AssertionError: assert 'Hello, my name is joe blow and I am 31.'
+                        != 'Hello, my name is joe blow and I am 31.'
 
 ----
 
@@ -3002,6 +3039,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>`
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 4
   :emphasize-lines: 18-19
 
@@ -3020,7 +3058,7 @@ I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_person_
       my_expectation = (
           f'Hello, my name is {first_name}'
           f' {last_name} and I am'
-          f' {2026-year_of_birth}.'
+          f' {2027-year_of_birth}.'
       )
       # assert reality != my_expectation
       assert reality == my_expectation
@@ -3064,12 +3102,12 @@ the test passes.
       │                     └── return (
       │                             f'Hello, my name is {self.first_name}'
       │                             f' {self.last_name} and I am'
-      │                             f' {2026-self.year_of_birth}.'
+      │                             f' {2027-self.year_of_birth}.'
       │                         )
       ├── my_expectation = (
       │       f'Hello, my name is {first_name}'
       │       f' {last_name} and I am'
-      │       f' {2026-year_of_birth}.'
+      │       f' {2027-year_of_birth}.'
       │   )
       └── assert reality == my_expectation
 
@@ -3085,7 +3123,7 @@ the test passes.
 * I remove the commented line from :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
 
     def assert_person_can_say_hello(
@@ -3103,7 +3141,7 @@ the test passes.
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -3116,7 +3154,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 58
 
     def test_joe():
@@ -3151,7 +3189,7 @@ the test passes.
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 85
     :emphasize-lines: 20-39
 
@@ -3185,7 +3223,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_person_can_say_hello(
@@ -3203,7 +3241,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 85
 
     def test_jane():
@@ -3238,7 +3276,7 @@ the test passes.
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_john`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 112
     :emphasize-lines: 20-39
 
@@ -3272,7 +3310,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_person_can_say_hello(
@@ -3290,7 +3328,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_john`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 112
 
     def test_john():
@@ -3325,7 +3363,7 @@ the test passes.
 * I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_mary`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 139
     :emphasize-lines: 20-39
 
@@ -3359,7 +3397,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_person_can_say_hello(
@@ -3377,7 +3415,7 @@ the test passes.
 * I remove the commented lines from :ref:`test_mary`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 139
 
     def test_mary():
@@ -3462,7 +3500,7 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 8
     :emphasize-lines: 18-19
 
@@ -3481,7 +3519,7 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         # assert reality == my_expectation
         assert_equal(reality, my_expectation)
@@ -3495,11 +3533,12 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ...::test_joe - AssertionError:
-        assert 'Hello, my name is joe blow and I am XX.' != ...
+        assert 'Hello, my name is joe blow and I am 31.' != ...
     FAILED ...::test_jane - AssertionError:
-        assert 'Hello, my name is jane doe and I am YY.' != ...
+        assert 'Hello, my name is jane doe and I am 36.' != ...
     FAILED ...::test_john - AssertionError:
         assert 'Hello, my name is john smith and I am AAA.' ...
     FAILED ...::test_mary - AssertionError:
@@ -3516,6 +3555,7 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
 I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_equal function<extract assert_equal function>`
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 4
   :emphasize-lines: 18-19
 
@@ -3542,7 +3582,7 @@ the test passes.
 * I remove the commented line from :ref:`assert_equal<extract assert_equal function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 4
 
     def assert_equal(left, right):
@@ -3557,7 +3597,7 @@ the test passes.
 * I use the value of ``my_expectation`` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` without a :ref:`variable<what is a variable?>` since it is only used once
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 19
     :emphasize-lines: 2-16
 
@@ -3565,7 +3605,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         # assert_equal(reality, my_expectation)
@@ -3574,7 +3614,7 @@ the test passes.
             (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
         )
 
@@ -3589,7 +3629,7 @@ the test passes.
 * I do the same thing with ``reality`` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 19
     :emphasize-lines: 1, 10-11
 
@@ -3597,7 +3637,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         # assert_equal(reality, my_expectation)
@@ -3607,7 +3647,7 @@ the test passes.
             (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
         )
 
@@ -3622,7 +3662,7 @@ the test passes.
 * I use the :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` directly without a :ref:`variable<what is a variable?>` since it is only used once
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 8
     :emphasize-lines: 5-10, 22-28
 
@@ -3641,7 +3681,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         # assert_equal(reality, my_expectation)
@@ -3657,7 +3697,7 @@ the test passes.
             (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
         )
 
@@ -3666,7 +3706,7 @@ the test passes.
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 27
     :emphasize-lines: 5-27
 
@@ -3682,7 +3722,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_equal(
@@ -3694,7 +3734,7 @@ the test passes.
             (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
         )
 
@@ -3709,7 +3749,7 @@ the test passes.
 * I remove the commented lines from :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 27
 
     def assert_say_hello_works(
@@ -3725,7 +3765,7 @@ the test passes.
             (
                 f'Hello, my name is {first_name}'
                 f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
+                f' {2027-year_of_birth}.'
             )
         )
 
@@ -3738,7 +3778,7 @@ the test passes.
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 45
     :emphasize-lines: 5-27
 
@@ -3778,7 +3818,7 @@ the test passes.
 * I remove the commented lines from :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 45
 
     def assert_person_factory_works(
@@ -3834,7 +3874,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 * I add a new test with the `dir built-in function`_ in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 163
     :emphasize-lines: 9-13
 
@@ -3858,6 +3898,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert ['__class__', '__delattr__', '__dict__',
@@ -3877,7 +3918,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as the expectation
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 171
     :emphasize-lines: 4-8
 
@@ -3897,6 +3938,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E         AssertionError:
                   assert ['__class__',...'__eq__', ...]
@@ -3961,7 +4003,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
   .. caution:: Your list of attributes and methods may be different because of your Python version.
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 171
     :emphasize-lines: 4-15
     :emphasize-text: __init__ say_hello
@@ -4016,6 +4058,7 @@ test_dir_person_instance
 I add a test to see the difference between the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`object<what is an object?>`
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 182
   :emphasize-lines: 7-29
 
@@ -4094,6 +4137,7 @@ because ``first_name``, ``last_name`` and ``year_of_birth`` are missing. Why is 
 I add the missing :ref:`attributes<what is an object attribute?>` to the expectation of the :ref:`assertion<what is an assertion?>` of :ref:`test_dir_person_instance`
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 198
   :emphasize-lines: 11-12
   :emphasize-text: first_name last_name year_of_birth
@@ -4129,7 +4173,7 @@ the test passes.
 * I add ``sex`` to the :ref:`list<what is a list?>` of :ref:`attributes and methods of the instance of the Person object<test_dir_person_instance>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 188
     :emphasize-lines: 22
 
@@ -4202,7 +4246,7 @@ the test passes.
 * I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 12
     :emphasize-lines: 16
 
@@ -4247,7 +4291,7 @@ the test passes.
             return (
                 f'Hello, my name is {self.first_name}'
                 f' {self.last_name} and I am'
-                f' {2026-self.year_of_birth}.'
+                f' {2027-self.year_of_birth}.'
             )
 
 

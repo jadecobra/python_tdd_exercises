@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one person function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now --patterns "**/*.py". Progressively introduce f-strings in the return, required args then keyword arguments, extract assert_person_factory_works and assert_say_hello_works, move person and say_hello to src/person/__init__.py (AttributeError: module 'src.person' has no attribute 'person'), rewrite src/person/__init__.py from scratch (None, TypeError, identity return), use local variables in tests to remove repetition, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: how to make a person with an object (class). Code: person/tests/test_person.py (source/code/person/tests/test_person_w_fstrings.py) and person/src/person/__init__.py (source/code/person/src/person_w_fstrings.py).
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string person function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'person', TypeError missing required positional argument, TypeError unexpected keyword argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, assert_person_factory_works, assert_say_hello_works, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next how to make a person with an object
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string person function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'person', TypeError missing required positional argument, TypeError unexpected keyword argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2027-year_of_birth, assert_person_factory_works, assert_say_hello_works, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next how to make a person with an object
 
 .. include:: ../../links.rst
 
@@ -2262,7 +2262,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2382,7 +2382,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
     :caption: terminal
 
     AssertionError: assert None
-        == 'Hello, my name is joe blow and I am 30.'
+        == 'Hello, my name is joe blow and I am 31.'
 
 * I change :ref:`the return statement` to give the test what it wants
 
@@ -2399,7 +2399,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             year_of_birth,
         ):
         # return None
-        return 'Hello, my name is joe blow and I am 30.'
+        return 'Hello, my name is joe blow and I am 31.'
 
 
     def assert_person_factory_works(
@@ -2418,12 +2418,12 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
-        ) -> 'Hello, my name is joe blow and I am 30.'
+        ) -> 'Hello, my name is joe blow and I am 31.'
         └── def say_hello(
                 first_name, last_name,
                 year_of_birth,
             ):
-            └── return 'Hello, my name is joe blow and I am 30.'
+            └── return 'Hello, my name is joe blow and I am 31.'
 
 ----
 
@@ -2461,7 +2461,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2473,10 +2473,10 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert 'Hello, my name ... and I am 30.'
-                        == 'Hello, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am 31.'
+                        == 'Hello, my name ... and I am 36.'
 
-  - because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is joe blow and I am 30.'`` when it is :ref:`called<how to call a function with input>`. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
+  - because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is joe blow and I am 31.'`` when it is :ref:`called<how to call a function with input>`. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
   - :ref:`I need better error messages<another way to write tests>`.
 
 * I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
@@ -2494,10 +2494,10 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             year_of_birth,
         ):
         # return None
-        # return 'Hello, my name is joe blow and I am 30.'
+        # return 'Hello, my name is joe blow and I am 31.'
         return (
             f'Hello, my name is {first_name}'
-            ' blow and I am 30.'
+            ' blow and I am 31.'
         )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2505,8 +2505,8 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert 'Hello, my name ... and I am 30.'
-                        == 'Hello, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am 31.'
+                        == 'Hello, my name ... and I am 36.'
 
   the first names now match and :ref:`I still need better error messages<another way to write tests>`.
 
@@ -2525,11 +2525,11 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             year_of_birth,
         ):
         # return None
-        # return 'Hello, my name is joe blow and I am 30.'
+        # return 'Hello, my name is joe blow and I am 31.'
         return (
             f'Hello, my name is {first_name}'
-            # ' blow and I am 30.'
-            f' {last_name} and I am 30.'
+            # ' blow and I am 31.'
+            f' {last_name} and I am 31.'
         )
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2537,8 +2537,8 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert 'Hello, my name ... and I am 30.'
-                        == 'Hello, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am 31.'
+                        == 'Hello, my name ... and I am 36.'
 
   the ages are different.
 
@@ -2557,13 +2557,13 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             year_of_birth,
         ):
         # return None
-        # return 'Hello, my name is joe blow and I am 30.'
-        age = 2026 - year_of_birth
+        # return 'Hello, my name is joe blow and I am 31.'
+        age = 2027 - year_of_birth
 
         return (
             f'Hello, my name is {first_name}'
-            # ' blow and I am 30.'
-            # f' {last_name} and I am 30.'
+            # ' blow and I am 31.'
+            # f' {last_name} and I am 31.'
             f' {last_name} and I am {age}.'
         )
 
@@ -2578,7 +2578,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
-        ) -> 'Hello, my name is jane doe and I am 35.'
+        ) -> 'Hello, my name is jane doe and I am 36.'
         └── def say_hello(
                 first_name, last_name,
                 year_of_birth,
@@ -2586,13 +2586,13 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             ├── first_name    = 'jane'
             ├── last_name     = 'doe'
             ├── year_of_birth = 1991
-            ├── age           = 2026 - year_of_birth
-            │                 = 35
+            ├── age           = 2027 - year_of_birth
+            │                 = 36
             └── return (
                     f'Hello, my name is {first_name}'
                     f' {last_name} and I am {age}.'
                 )
-                return 'Hello, my name is jane doe and I am 35.'
+                return 'Hello, my name is jane doe and I am 36.'
 
 * I remove the commented lines from the :ref:`say_hello function<test say_hello function>`
 
@@ -2607,7 +2607,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             first_name, last_name,
             year_of_birth,
         ):
-        age = 2026 - year_of_birth
+        age = 2027 - year_of_birth
 
         return (
             f'Hello, my name is {first_name}'
@@ -2648,7 +2648,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         my_expectation = (
             'Hello, my name is jane'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2660,8 +2660,8 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert 'Hello, my name ...and I am 446.'
-                        == 'Hello, my name ...and I am 446.'
+    AssertionError: assert 'Hello, my name ...and I am 447.'
+                        == 'Hello, my name ...and I am 447.'
 
   - The first names are different.
   - :ref:`I want more detail in the error messages<another way to write tests>`.
@@ -2677,7 +2677,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             # 'Hello, my name is jane'
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2695,7 +2695,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
-        ) -> 'Hello, my name is john smith and I am 446.'
+        ) -> 'Hello, my name is john smith and I am 447.'
         └── def say_hello(
                 first_name, last_name,
                 year_of_birth,
@@ -2703,13 +2703,13 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             ├── first_name    = 'john'
             ├── last_name     = 'smith'
             ├── year_of_birth = 1580
-            ├── age           = 2026 - year_of_birth
-            │                 = 446
+            ├── age           = 2027 - year_of_birth
+            │                 = 447
             └── return (
                     f'Hello, my name is {first_name}'
                     f' {last_name} and I am {age}.'
                 )
-                return 'Hello, my name is john smith and I am 446.'
+                return 'Hello, my name is john smith and I am 447.'
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_mary`
 
@@ -2739,7 +2739,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         my_expectation = (
             f'Hello, my name is {first_name}'
             ' smith and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2751,8 +2751,8 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert 'Hello, my name ... and I am 26.'
-                        == 'Hello, my name ... and I am 26.'
+    AssertionError: assert 'Hello, my name ... and I am 27.'
+                        == 'Hello, my name ... and I am 27.'
 
   - The last names are different.
   - I want better messages that show all of the differences in the summary.
@@ -2768,7 +2768,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             f'Hello, my name is {first_name}'
             # ' smith and I am'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -2786,7 +2786,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
-        ) -> 'Hello, my name is mary public and I am 26.'
+        ) -> 'Hello, my name is mary public and I am 27.'
         └── def say_hello(
                 first_name, last_name,
                 year_of_birth,
@@ -2794,13 +2794,13 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
             ├── first_name    = 'mary'
             ├── last_name     = 'public'
             ├── year_of_birth = 2000
-            ├── age           = 2026 - year_of_birth
-            │                 = 26
+            ├── age           = 2027 - year_of_birth
+            │                 = 27
             └── return (
                     f'Hello, my name is {first_name}'
                     f' {last_name} and I am {age}.'
                 )
-                return 'Hello, my name is mary public and I am 26.'
+                return 'Hello, my name is mary public and I am 27.'
 
 * I add a git_ commit message in the other terminal_
 
@@ -2832,7 +2832,7 @@ extract assert_say_hello_works function
   my_expectation = (
       f'Hello, my name is {first_name}'
       f' {last_name} and I am'
-      f' {2026-year_of_birth}.'
+      f' {2027-year_of_birth}.'
   )
   assert reality == my_expectation
 
@@ -2858,7 +2858,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
             first_name, last_name,
             year_of_birth,
         ):
-        age = 2026 - year_of_birth
+        age = 2027 - year_of_birth
 
         return (
             f'Hello, my name is {first_name}'
@@ -2878,7 +2878,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality != my_expectation
 
@@ -2916,7 +2916,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_say_hello_works(
@@ -2933,8 +2933,8 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert 'Hello, my name is joe blow and I am 30.'
-                        != 'Hello, my name is joe blow and I am 30.'
+    AssertionError: assert 'Hello, my name is joe blow and I am 31.'
+                        != 'Hello, my name is joe blow and I am 31.'
 
 ----
 
@@ -2963,7 +2963,7 @@ I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_say_hel
       my_expectation = (
           f'Hello, my name is {first_name}'
           f' {last_name} and I am'
-          f' {2026-year_of_birth}.'
+          f' {2027-year_of_birth}.'
       )
       # assert reality != my_expectation
       assert reality == my_expectation
@@ -2996,7 +2996,7 @@ the test passes.
       │           first_name, last_name,
       │           year_of_birth,
       │       ):
-      │       ├── age = 2026 - year_of_birth
+      │       ├── age = 2027 - year_of_birth
       │       └── return (
       │               f'Hello, my name is {first_name}'
       │               f' {last_name} and I am {age}.'
@@ -3004,7 +3004,7 @@ the test passes.
       ├── my_expectation = (
       │       f'Hello, my name is {first_name}'
       │       f' {last_name} and I am'
-      │       f' {2026-year_of_birth}.'
+      │       f' {2027-year_of_birth}.'
       │   )
       └── assert reality == my_expectation
 
@@ -3035,7 +3035,7 @@ the test passes.
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -3101,7 +3101,7 @@ the test passes.
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_say_hello_works(
@@ -3172,7 +3172,7 @@ the test passes.
         #     # f'Hello, my name is jane'
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_say_hello_works(
@@ -3243,7 +3243,7 @@ the test passes.
         #     f'Hello, my name is {first_name}'
         #     # ' smith and I am'
         #     f' {last_name} and I am'
-        #     f' {2026-year_of_birth}.'
+        #     f' {2027-year_of_birth}.'
         # )
         # assert reality == my_expectation
         assert_say_hello_works(
@@ -3335,7 +3335,7 @@ I want to move the :ref:`say_hello function<test say_hello function>` to separat
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -3384,7 +3384,7 @@ I add a copy of the :ref:`say_hello function<test say_hello function>` to ``src/
           first_name, last_name,
           year_of_birth,
       ):
-      age = 2026 - year_of_birth
+      age = 2027 - year_of_birth
 
       return (
           f'Hello, my name is {first_name}'
@@ -3403,7 +3403,7 @@ the test passes.
                       first_name, last_name,
                       year_of_birth,
                   ):
-                  ├── age = 2026 - year_of_birth
+                  ├── age = 2027 - year_of_birth
                   └── return (
                           f'Hello, my name is {first_name}'
                           f' {last_name} and I am {age}.'
@@ -3427,7 +3427,7 @@ the test passes.
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
         assert reality == my_expectation
 
@@ -3845,7 +3845,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :caption: terminal
 
     AssertionError: assert None
-        == 'Hello, my name is mary public and I am 26.'
+        == 'Hello, my name is mary public and I am 27.'
 
 * I use :kbd:`ctrl/command+c` (Windows_ & Linux_/MacOS_) on the keyboard to copy the string_ from the terminal and :kbd:`ctrl/command+v` to paste it to replace :ref:`None<what is None?>` in :ref:`the return statement`
 
@@ -3863,7 +3863,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name, year_of_birth,
         ):
         # return None
-        return 'Hello, my name is mary public and I am 26.'
+        return 'Hello, my name is mary public and I am 27.'
 
 
     # person
@@ -3939,10 +3939,10 @@ Since the solutions are separate from the tests, I can write the programs_ that 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert 'Hello, my name ... and I am 26.'
-                        == 'Hello, my name ...and I am 446.'
+    AssertionError: assert 'Hello, my name ... and I am 27.'
+                        == 'Hello, my name ...and I am 447.'
 
-  because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is mary public and I am 26.'`` and this test expects ``'Hello, my name is john smith and I am 446.'``
+  because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is mary public and I am 27.'`` and this test expects ``'Hello, my name is john smith and I am 447.'``
 
 * I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to see the difference between the input and the expected output
 
@@ -3960,7 +3960,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name, year_of_birth,
         ):
         # return None
-        # return 'Hello, my name is mary public and I am 26.'
+        # return 'Hello, my name is mary public and I am 27.'
         return first_name, last_name, year_of_birth,
 
 
@@ -3972,7 +3972,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :caption: terminal
 
     AssertionError: assert ('mary', 'public', 2000)
-        == 'Hello, my name is mary public and I am 26.'
+        == 'Hello, my name is mary public and I am 27.'
 
   the ``first_name`` and ``last_name`` are part of the output.
 
@@ -3992,7 +3992,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name, year_of_birth,
         ):
         # return None
-        # return 'Hello, my name is mary public and I am 26.'
+        # return 'Hello, my name is mary public and I am 27.'
         # return first_name, last_name, year_of_birth,
         return (
             f'Hello, my name is {first_name}'
@@ -4008,7 +4008,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :caption: terminal
 
     AssertionError: assert 'Hello, my name ...nd I am 2000.'
-                        == 'Hello, my name ... and I am 26.'
+                        == 'Hello, my name ... and I am 27.'
 
   It looks like ``26`` is the age.
 
@@ -4028,13 +4028,13 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name, year_of_birth,
         ):
         # return None
-        # return 'Hello, my name is mary public and I am 26.'
+        # return 'Hello, my name is mary public and I am 27.'
         # return first_name, last_name, year_of_birth,
         return (
             f'Hello, my name is {first_name}'
             # f' {last_name} and I am {year_of_birth}.'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
 
 
@@ -4054,7 +4054,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         return (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
+            f' {2027-year_of_birth}.'
         )
 
 
