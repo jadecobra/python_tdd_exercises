@@ -20,6 +20,19 @@ The :ref:`factory<extract person function>` and :ref:`say_hello functions<test s
 * ``last_name``
 * ``year_of_birth``
 
+.. code-block:: python
+
+  def say_hello(
+          first_name, last_name, year_of_birth,
+      ):
+
+.. code-block:: python
+
+  def person(
+          first_name, last_name,
+          sex, year_of_birth,
+      ):
+
 I want to give those values once, and get a representation for a person. I can do that with an :ref:`object<what is an object?>`.
 
 I think of :ref:`objects<what is an object?>` as :ref:`attributes (variables)<what is an object attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
@@ -4323,7 +4336,7 @@ what is next?
   :maxdepth: 1
 
   ../../objects/inheritance
-  ../../objects/unittest
+  ../unittest/index
 
 :ref:`Would you like to know where the extra attributes and methods of the Person object came from?<what is an object?>`
 

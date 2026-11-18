@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one person function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now --patterns "**/*.py". Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person/__init__.py (AttributeError: module 'src.person' has no attribute 'person'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/src/person_w_fstrings.py.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string person function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'person', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one person function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now --patterns "**/*.py". Progressively introduce f-strings in the return, required args then keyword arguments, extract assert_person_factory_works and assert_say_hello_works, move person and say_hello to src/person/__init__.py (AttributeError: module 'src.person' has no attribute 'person'), rewrite src/person/__init__.py from scratch (None, TypeError, identity return), use local variables in tests to remove repetition, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: how to make a person with an object (class). Code: person/tests/test_person.py (source/code/person/tests/test_person_w_fstrings.py) and person/src/person/__init__.py (source/code/person/src/person_w_fstrings.py).
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string person function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'person', TypeError missing required positional argument, TypeError unexpected keyword argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, assert_person_factory_works, assert_say_hello_works, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next how to make a person with an object
 
 .. include:: ../../links.rst
 
@@ -2030,7 +2030,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``reality`` in the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to be the result of a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`person function<extract person function>` in ``tests/test_person.py``
+* I change ``reality`` in the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to be the result of a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` in ``tests/test_person.py``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -2117,7 +2117,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 * I delete all the text in the file_ then add a copy of the :ref:`person function<extract person function>` to ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1-8
 
@@ -2198,26 +2198,10 @@ I want to move the :ref:`person function<extract person function>` to separate i
     import src.person
 
 
-    def test_joe():
-        first_name = 'joe'
-        last_name = 'blow'
-        sex = 'M'
-        year_of_birth = 1996
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    def test_jane():
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
 
   all the tests are still green
 
@@ -2232,7 +2216,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can write solutions in a different module from the tests<separate and equal>`.
+:ref:`I can write solutions in a different module than the tests<separate and equal>`.
 
 ----
 
@@ -2374,7 +2358,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
                got an unexpected keyword argument
                'year_of_birth'
 
-  because the :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` only allows two arguments (``first_name``, ``last_name``).
+  because the :ref:`function definition (signature)<how to make a function that takes input>` of ``say_hello`` only allows two arguments (``first_name``, ``last_name``).
 
 * I add ``year_of_birth`` in parentheses
 
@@ -2640,7 +2624,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 85
+    :lineno-start: 79
     :emphasize-lines: 14-24
 
     def test_john():
@@ -2657,9 +2641,9 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         )
 
         reality = say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            year_of_birth,
         )
         my_expectation = (
             'Hello, my name is jane'
@@ -2686,7 +2670,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 103
+    :lineno-start: 97
     :emphasize-lines: 2-3
 
         my_expectation = (
@@ -2731,7 +2715,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 112
+    :lineno-start: 106
     :emphasize-lines: 14-24
 
     def test_mary():
@@ -2777,7 +2761,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 130
+    :lineno-start: 124
     :emphasize-lines: 3-4
 
         my_expectation = (
@@ -2832,7 +2816,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 extract assert_say_hello_works function
 *********************************************************************************
 
-:ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` use the same process to test the :ref:`say_hello function<test say_hello function>`, they
+:ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` use the same process to test the :ref:`say_hello function<test say_hello function>`, they
 
 - :ref:`call<how to call a function with input>` the :ref:`say_hello function<test say_hello function>` with values for ``first_name``, ``last_name`` and ``year_of_birth``
 - make a string_ with the values of ``first_name``, ``last_name`` and ``year_of_birth``
@@ -2899,7 +2883,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         assert reality != my_expectation
 
 
-    def assert_say_hello_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -3001,7 +2985,7 @@ the test passes.
   ) -> None
   └── def assert_say_hello_works(
           first_name, last_name,
-          sex, year_of_birth,
+          year_of_birth,
       ):
       ├── reality = say_hello(
       │       first_name=first_name,
@@ -3180,9 +3164,9 @@ the test passes.
         )
 
         # reality = say_hello(
-        #     first_name=first_name,
-        #     last_name=last_name,
-        #     year_of_birth=year_of_birth,
+        #     first_name,
+        #     last_name,
+        #     year_of_birth,
         # )
         # my_expectation = (
         #     # f'Hello, my name is jane'
@@ -3192,9 +3176,9 @@ the test passes.
         # )
         # assert reality == my_expectation
         assert_say_hello_works(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            year_of_birth,
         )
 
 
@@ -3222,9 +3206,9 @@ the test passes.
         )
 
         assert_say_hello_works(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            year_of_birth,
         )
 
 
@@ -3331,7 +3315,7 @@ I want to move the :ref:`say_hello function<test say_hello function>` to separat
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change ``reality`` in the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hello function<test say_hello function>` in ``tests/test_person.py``
+* I change ``reality`` in the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to be the result of a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` in ``tests/test_person.py``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -3382,7 +3366,7 @@ I want to move the :ref:`say_hello function<test say_hello function>` to separat
 I add a copy of the :ref:`say_hello function<test say_hello function>` to ``src/person/__init__.py``
 
 .. code-block:: python
-  :caption: person/tests/test_person.py
+  :caption: person/src/person/__init__.py
   :linenos:
   :emphasize-lines: 11-20
 
@@ -3397,9 +3381,9 @@ I add a copy of the :ref:`say_hello function<test say_hello function>` to ``src/
 
 
   def say_hello(
-      first_name, last_name,
-      year_of_birth,
-  ):
+          first_name, last_name,
+          year_of_birth,
+      ):
       age = 2026 - year_of_birth
 
       return (
@@ -3520,7 +3504,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add the name to ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1
 
@@ -3536,7 +3520,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I point ``person`` to :ref:`None (the simplest object)<what is None?>` to define it
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1-2
 
@@ -3555,7 +3539,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change ``person`` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 2-4
 
@@ -3578,7 +3562,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add ``first_name`` in the parentheses so the :ref:`function<what is a function?>` can take input
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 3-4
 
@@ -3601,7 +3585,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add ``last_name`` to the parentheses
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 4-5
 
@@ -3626,7 +3610,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add ``sex`` to the parentheses
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 5-6
 
@@ -3652,7 +3636,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add ``year_of_birth`` to the parentheses
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 6-10
 
@@ -3678,7 +3662,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change :ref:`the return statement` to match the expectation of the test
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 11-12
 
@@ -3706,7 +3690,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add the name
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1
 
@@ -3736,7 +3720,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1-2
 
@@ -3758,7 +3742,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I make ``say_hello`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 2-4
 
@@ -3784,7 +3768,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add ``first_name`` in the parentheses
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 3-4
 
@@ -3810,7 +3794,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add ``last_name`` to the parentheses
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 4-5
 
@@ -3838,7 +3822,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I add ``year_of_birth`` to the parentheses
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 5-8
 
@@ -3866,7 +3850,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I use :kbd:`ctrl/command+c` (Windows_ & Linux_/MacOS_) on the keyboard to copy the string_ from the terminal and :kbd:`ctrl/command+v` to paste it to replace :ref:`None<what is None?>` in :ref:`the return statement`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 9-10
 
@@ -3897,7 +3881,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change :ref:`the return statement` of the :ref:`person function<extract person function>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 13
     :emphasize-lines: 12-13
 
@@ -3928,7 +3912,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with those values
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 13
     :emphasize-lines: 13-17
 
@@ -3963,7 +3947,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to see the difference between the input and the expected output
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 10-11
 
@@ -3987,15 +3971,15 @@ Since the solutions are separate from the tests, I can write the programs_ that 
   .. code-block:: python
     :caption: terminal
 
-    AssertionError: assert ('mary', 'public', 'F', 2000)
-                         == 'mary, public, F, 2000'
+    AssertionError: assert ('mary', 'public', 2000)
+        == 'Hello, my name is mary public and I am 26.'
 
   the ``first_name`` and ``last_name`` are part of the output.
 
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with the input values
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 11-15
 
@@ -4031,9 +4015,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I change the ``year_of_birth`` value to a calculation of the age
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
-    :emphasize-lines: 14-15
+    :emphasize-lines: 14-16
 
     # say_hello
     # say_hello = None
@@ -4061,7 +4045,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 * I remove the commented lines from ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :linenos:
 
     def say_hello(
@@ -4123,12 +4107,12 @@ close the project
 review
 *************************************************************************************
 
-* I ran tests to write one :ref:`function<what is a function?>` that makes a string_ for a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
+* I ran tests to write one :ref:`function<what is a function?>` that makes an :ref:`f-string<what is string interpolation?>` for a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
 * I also ran tests to make another :ref:`function<what is a function?>` that makes an :ref:`f-string<what is string interpolation?>` for the person saying hello when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
 
 * My tests and solutions have a few problems,
 
-  - Each test is the same two tests, there has to be a way that I can use one test for all the people.
+  - Each test is the same two tests, :ref:`there has to be a way that I can use one test for all the people<how to make a person with loops>`.
   - The :ref:`person factory<extract person function>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
 
     * ``first_name``
@@ -4136,8 +4120,6 @@ review
     * ``year_of_birth``
 
     There has to be :ref:`a better way<how to make a person with an object>`, where I can give those values once, and get a representation for a person when I :ref:`call<how to call a function with input>` the :ref:`person function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
-
-For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files_.
 
 ----
 

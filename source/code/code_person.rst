@@ -10,7 +10,7 @@ how to make a person with strings: tests
 * The code in ``person/tests/test_person.py`` from :ref:`how to make a person with strings`
 
   .. literalinclude:: person/tests/test_person_w_strings.py
-    :caption: person/tests/test_person.py``
+    :caption: person/tests/test_person.py
     :language: python
     :linenos:
 

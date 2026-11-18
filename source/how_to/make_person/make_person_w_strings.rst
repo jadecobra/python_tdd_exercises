@@ -271,7 +271,7 @@ test_joe
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
     git commit -am 'add test_joe'
 
@@ -293,6 +293,7 @@ test_jane
 * I add a test :ref:`function<what is a function?>`
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :lineno-start: 5
     :emphasize-lines: 5-6
 
@@ -453,7 +454,7 @@ test_jane
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
     git commit -am 'add test_jane'
 
@@ -628,7 +629,7 @@ test_john
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
     git commit -am 'add test_john'
 
@@ -822,7 +823,7 @@ test_mary
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
     git commit -am 'add test_mary'
 
