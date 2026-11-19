@@ -4804,7 +4804,7 @@ Would you like to test the other projects with unittest?
   :maxdepth: 1
 
   ../exceptions/AssertionError/AssertionError_w_unittest
-  inheritance_w_unittest
+  ../objects/inheritance_w_unittest
   ../functions/functions_w_unittest
   ../how_to/make_person/make_person_w_unittest
   ../how_to/telephone/telephone_w_unittest

@@ -4405,7 +4405,8 @@ what is next?
   :maxdepth: 1
 
   ../../objects/inheritance
-  ../unittest/index
+  ../../exceptions/AttributeError/AttributeError_w_objects
+  ../../exceptions/TypeError/TypeError_w_objects
 
 :ref:`Would you like to know where the extra attributes and methods of the Person object came from?<what is an object?>`
 

@@ -2697,14 +2697,6 @@ what is next?
 * :ref:`I know how to make a person with an object<how to make a person with an object>`.
 * :ref:`I know that everything in Python is an object<what is an object?>`.
 
-.. toctree::
-  :titlesonly:
-  :maxdepth: 1
-
-  ../exceptions/AttributeError/AttributeError_w_objects
-  ../exceptions/TypeError/TypeError_w_objects
-  ../unittest/index
-
 :ref:`Would you like to test AttributeError with objects?<AttributeError with objects>`
 
 ----
