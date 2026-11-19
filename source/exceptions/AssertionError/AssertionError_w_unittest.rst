@@ -345,7 +345,7 @@ test_assert_keyword with unittest
         TestAssertionError.test_assert_keyword()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -688,7 +688,7 @@ test_assertion_error_w_none with unittest
         TestAssertionError.test_assertion_error_w_none()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -1995,7 +1995,7 @@ test_assertion_error_w_true with unittest
         TestAssertionError.test_assertion_error_w_true()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -2906,7 +2906,7 @@ test_assertion_error_w_is_vs_equal with unittest
         TestAssertionError.test_assertion_error_w_is_vs_equal()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 

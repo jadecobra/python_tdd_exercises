@@ -329,7 +329,7 @@ test_making_an_object_w_pass with unittest
         TestObjects.test_making_an_object_w_pass()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -505,7 +505,7 @@ test_making_an_object_w_parentheses with unittest
         TestObjects.test_making_an_object_w_parentheses()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -691,7 +691,7 @@ test_making_an_object_w_object with unittest
         TestObjects.test_making_an_object_w_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -1055,7 +1055,7 @@ test_is_a_boolean_an_object with unittest
         TestObjects.test_is_a_boolean_an_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -1888,7 +1888,7 @@ test_is_a_list_an_object with unittest
         TestObjects.test_is_a_list_an_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -2055,7 +2055,7 @@ test_is_a_set_an_object with unittest
         TestObjects.test_is_a_set_an_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) ...
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) ...
 
 ----
 
@@ -2222,7 +2222,7 @@ test_is_a_dictionary_an_object with unittest
         TestObjects.test_is_a_dictionary_an_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -2399,7 +2399,7 @@ test_dir_object with unittest
         TestObjects.test_dir_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 

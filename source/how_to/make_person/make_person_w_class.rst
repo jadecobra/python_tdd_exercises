@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with an object. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now --patterns "**/*.py". RED: Person(...) -> TypeError (Person() takes no arguments), empty __init__ -> TypeError unexpected keyword then multiple values for first_name until self is first; GREEN: store attrs on self, f-string say_hello with self; move Person to src/person/__init__.py (AttributeError: module has no attribute 'Person'); extract assert_person_can_say_hello + assert_equal; add dir() tests on class vs instance (self.sex last). REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError ('return' outside function). Review: each test is the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/src/person_w_class.py. What is next: everything is an object (inheritance).
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with an object, python class __init__ constructor self, Person object say_hello method, src.person.Person, src/person/__init__.py, TypeError: Person() takes no arguments, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError module 'src.person' has no attribute 'Person', SyntaxError return outside function, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now --patterns "**/*.py", red green refactor class, remove the commented lines, test_joe, test_dir_person_object, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with an object, python class __init__ constructor self, Person object say_hello method, src.person.Person, src/person/__init__.py, TypeError: Person() takes no arguments, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError module 'src.person' has no attribute 'Person', SyntaxError return outside function, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now --patterns "**/*.py", red green refactor class, remove the commented lines, test_joe, test_dir_person_object, test_dir_person_instance, first_name last_name sex year_of_birth, 2027 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
 
 .. include:: ../../links.rst
 
@@ -176,7 +176,7 @@ I make an :ref:`instance<how to test if something is an instance>` of an :ref:`o
           first_name=first_name,
           last_name=last_name,
           sex=sex,
-          year_of_birth=year_of_birth
+          year_of_birth=year_of_birth,
       )
 
       assert_say_hello_works(
@@ -328,7 +328,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         Person.__init__() got
         multiple values for argument 'first_name'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
   - The test :ref:`calls the function<how to call a function with input>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth)``.
 
@@ -350,7 +350,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
             return None
 
   - ``self`` is Python_ convention, I can use any name I want.
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: shell
@@ -361,7 +361,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
             an unexpected keyword argument 'last_name'.
             Did you mean 'first_name'?
 
-  - ``self`` is for the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is for the :ref:`instance of the object<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I :ref:`call<how to call a function with input>` it in a way that is different from its :ref:`definition<how to make a function that takes input>`
 
     .. code-block:: shell
@@ -379,7 +379,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               sex='M',
               year_of_birth=1996,
           )
-          └── def __init__(first_name):
+          └── def __init__(self, first_name):
                   return None
 
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
@@ -411,7 +411,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         Person.__init__() got
         an unexpected keyword argument 'sex'
 
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I :ref:`call<how to call a function with input>` it in a way that is different from its :ref:`definition<how to make a function that takes input>`.
 
     .. code-block:: shell
@@ -463,7 +463,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     TypeError: Person.__init__() got
                an unexpected keyword argument 'year_of_birth'
 
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I :ref:`call<how to call a function with input>` it in a way that is different from its :ref:`definition<how to make a function that takes input>`.
 
     .. code-block:: shell
@@ -744,7 +744,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                   ├── self.year_of_birth = 1996
                   └── return None
 
-  ``self`` is the :ref:`instance of the class<how to test if something is an instance>`, ``joe`` in this case.
+  ``self`` is the :ref:`instance of the object<how to test if something is an instance>`, ``joe`` in this case.
 
   .. code-block:: shell
 
@@ -1396,7 +1396,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     TypeError: Person.say_hello() got
                multiple values for argument 'person'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument and I gave a value when I :ref:`called the method<how to call a function with input>`.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument and I gave a value when I :ref:`called the method<how to call a function with input>`.
 
 ----
 
@@ -1584,7 +1584,7 @@ what is the staticmethod decorator?
             ├── self.year_of_birth = year_of_birth
             └── return None
 
-  ``self`` is the :ref:`instance of the class<how to test if something is an instance>`, ``instance`` in this case
+  ``self`` is the :ref:`instance of the object<how to test if something is an instance>`, ``instance`` in this case
 
   .. code-block:: shell
 
@@ -1883,7 +1883,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
@@ -1905,7 +1905,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1931,7 +1931,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -2130,7 +2130,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
@@ -2171,7 +2171,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -2182,7 +2182,7 @@ separate and equal Person object
      TypeError: Person.__init__() takes
                 4 positional arguments but 5 were given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add ``self`` to :ref:`the constructor method`
 
@@ -2291,7 +2291,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
@@ -2336,7 +2336,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the test passes.
@@ -2440,7 +2440,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2474,7 +2474,7 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -2596,10 +2596,10 @@ separate and equal Person object
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
-  the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which means
+  the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument which means
 
   .. code-block:: python
 
@@ -2848,7 +2848,7 @@ separate and equal Person object
 extract assert_person_can_say_hello function
 *********************************************************************************
 
-:ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` use the same process to test the :ref:`say_hello method<add say_hello method>`, they
+:ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` use the same process to test the :ref:`say_hello method<add say_hello method>`, they
 
 - make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` with values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``
 - :ref:`call<how to call a function with input>` the :ref:`say_hello method of the Person object<add say_hello method>` with the values of ``first_name``, ``last_name`` and ``year_of_birth``
@@ -2934,7 +2934,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
         assert_say_hello_works(
@@ -3119,7 +3119,7 @@ the test passes.
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
   .. code-block:: python
@@ -3219,7 +3219,7 @@ the test passes.
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 85
+    :lineno-start: 98
 
         assert_say_hello_works(
             first_name=first_name,
@@ -3442,7 +3442,7 @@ the test passes.
 use assert_equal function
 *********************************************************************************
 
-:ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`, :ref:`assert_say_hello_works<extract assert_say_hello_works function>` and :ref:`assert_person_factory_works<assert_person_factory_works function>` all :ref:`assert<what is an assertion?>` that something is equal to something else
+:ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`, :ref:`assert_say_hello_works<extract assert_say_hello_works function>` and :ref:`assert_person_factory_works<extract assert_person_factory_works function>` all :ref:`assert<what is an assertion?>` that something is equal to something else
 
 .. code-block:: python
 
@@ -3462,6 +3462,7 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
 * I add the :ref:`assert_equal function<extract assert_equal function>` to ``tests/test_person.py``
 
   .. code-block:: python
+    :caption: person/tests/test_person.py
     :linenos:
     :emphasize-lines: 4-5
 
@@ -3537,7 +3538,7 @@ I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_equal f
 .. code-block:: python
   :caption: person/tests/test_person.py
   :lineno-start: 4
-  :emphasize-lines: 18-19
+  :emphasize-lines: 2-3
 
   def assert_equal(left, right):
       # assert left != right
@@ -3644,7 +3645,7 @@ the test passes.
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 8
-    :emphasize-lines: 5-10, 22-28
+    :emphasize-lines: 5-10
 
     def assert_person_can_say_hello(
             first_name, last_name,
@@ -3665,6 +3666,12 @@ the test passes.
         # )
         # assert reality == my_expectation
         # assert_equal(reality, my_expectation)
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 27
+    :emphasize-lines: 3-9
+
         assert_equal(
             # reality,
             # instance.say_hello(),
@@ -3683,12 +3690,39 @@ the test passes.
 
   green and not as easy to read.
 
+* I remove the commented lines from :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 8
+
+    def assert_person_can_say_hello(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        assert_equal(
+            src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            ).say_hello(),
+            (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {2027-year_of_birth}.'
+            )
+        )
+
+
+    def assert_say_hello_works(
+
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 27
-    :emphasize-lines: 5-27
+    :emphasize-lines: 5-14
 
     def assert_say_hello_works(
             first_name, last_name,
@@ -3697,19 +3731,25 @@ the test passes.
         # reality = src.person.say_hello(
         #     first_name=first_name,
         #     last_name=last_name,
-        #     year_of_birth=year_of_birth
+        #     year_of_birth=year_of_birth,
         # )
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
         #     f' {last_name} and I am'
         #     f' {2027-year_of_birth}.'
         # )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 41
+    :emphasize-lines: 1-13
+
         # assert reality == my_expectation
         assert_equal(
             src.person.say_hello(
                 first_name=first_name,
                 last_name=last_name,
-                year_of_birth=year_of_birth
+                year_of_birth=year_of_birth,
             ),
             (
                 f'Hello, my name is {first_name}'
@@ -3721,7 +3761,7 @@ the test passes.
 
     def assert_person_factory_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
   the tests are still green.
@@ -3740,7 +3780,7 @@ the test passes.
             src.person.say_hello(
                 first_name=first_name,
                 last_name=last_name,
-                year_of_birth=year_of_birth
+                year_of_birth=year_of_birth,
             ),
             (
                 f'Hello, my name is {first_name}'
@@ -3752,7 +3792,7 @@ the test passes.
 
     def assert_person_factory_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
 * I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
@@ -3760,11 +3800,11 @@ the test passes.
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 45
-    :emphasize-lines: 5-27
+    :emphasize-lines: 5-14
 
     def assert_person_factory_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         # reality = src.person.person(
         #     first_name=first_name,
@@ -3776,6 +3816,12 @@ the test passes.
         #     f'{first_name}, {last_name},'
         #     f' {sex}, {year_of_birth}'
         # )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 59
+    :emphasize-lines: 1-13
+
         # assert reality == my_expectation
         assert_equal(
             src.person.person(
@@ -3803,7 +3849,7 @@ the test passes.
 
     def assert_person_factory_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         assert_equal(
             src.person.person(
@@ -4011,7 +4057,7 @@ I want to use it to see the :ref:`attributes and methods of the Person object<te
   - the test passes.
   - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<add say_hello method>` I defined are in the :ref:`list of attributes and methods<test_dir_person_object>`.
   - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<what is an object?>`
-  - The :ref:`attributes<what is an object attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`object<what is an object?>`, not :ref:`an instance of the class<how to test if something is an instance>`.
+  - The :ref:`attributes<what is an object attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`object<what is an object?>`, not :ref:`an instance of the object<how to test if something is an instance>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -4040,13 +4086,14 @@ I add a test to see the difference between the :ref:`attributes<what is an objec
 .. code-block:: python
   :caption: person/tests/test_person.py
   :lineno-start: 182
-  :emphasize-lines: 7-29
+  :emphasize-lines: 8-17
 
                 '__repr__', '__setattr__', '__sizeof__',
                 '__static_attributes__', '__str__',
                 '__subclasshook__', '__weakref__', 'say_hello'
             ]
         )
+
 
     def test_dir_person_instance():
         assert_equal(
@@ -4055,9 +4102,15 @@ I add a test to see the difference between the :ref:`attributes<what is an objec
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth=2026,
+                    year_of_birth=2027,
                 )
             ),
+
+.. code-block:: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 199
+  :emphasize-lines: 1-13
+
             [
                 '__class__', '__delattr__', '__dict__',
                 '__dir__', '__doc__', '__eq__',
@@ -4078,7 +4131,7 @@ I add a test to see the difference between the :ref:`attributes<what is an objec
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
-  :emphasize-lines: 11
+  :emphasize-lines: 10-11, 21
   :emphasize-text: first_name last_name year_of_birth
 
   AssertionError:
@@ -4118,7 +4171,7 @@ I add the missing :ref:`attributes<what is an object attribute?>` to the expecta
 
 .. code-block:: python
   :caption: person/tests/test_person.py
-  :lineno-start: 198
+  :lineno-start: 199
   :emphasize-lines: 11-12
   :emphasize-text: first_name last_name year_of_birth
 
@@ -4154,19 +4207,10 @@ the test passes.
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 188
-    :emphasize-lines: 22
+    :lineno-start: 199
+    :emphasize-lines: 12
+    :emphasize-text: sex
 
-    def test_dir_person_instance():
-        assert_equal(
-            dir(
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=2026,
-                )
-            ),
             [
                 '__class__', '__delattr__', '__dict__',
                 '__dir__', '__doc__', '__eq__',
@@ -4194,7 +4238,7 @@ the test passes.
 
   .. code-block:: python
     :caption: terminal
-    :emphasize-lines: 22
+    :emphasize-lines: 10-11, 21-22
     :emphasize-text: sex
 
       AssertionError:
@@ -4226,7 +4270,7 @@ the test passes.
 * I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 12
     :emphasize-lines: 16
 
@@ -4254,6 +4298,7 @@ the test passes.
 * I remove the commented lines from the :ref:`Person object<separate and equal Person object>`
 
   .. code-block:: python
+    :caption: person/src/person/__init__.py
     :linenos:
 
     class Person:
@@ -4276,7 +4321,7 @@ the test passes.
 
 
     def say_hello(
-            first_name, last_name, year_of_birth
+            first_name, last_name, year_of_birth,
         ):
 
 * I add a git_ commit message in the other terminal_

@@ -732,7 +732,7 @@ how to call the parent from the child
     Doe.__init__('the_first')
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the :ref:`__init__ method<the constructor method>` of ``Doe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
 
 * I add a parameter for ``first_name`` to the :ref:`__init__ method<the constructor method>` of ``Doe`` in ``family_ties.py``
 
@@ -767,7 +767,7 @@ how to call the parent from the child
     Person.__init__()
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the :ref:`__init__ method<the constructor method>` of ``Person`` requires a :ref:`positional argument<test_positional_arguments>` for ``first_name`` and it was called with ``self``
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
 
 * I add the required parameter to ``super().__init__()`` in ``Doe``
 
@@ -1206,7 +1206,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Blow`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
 
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
 
 
 * I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method definition<how to make a function>`
@@ -1422,7 +1422,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
            Smith.__init__('john')
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the :ref:`__init__ method<the constructor method>` of ``Smith`` takes only one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
 
 * I add ``first_name`` to the parentheses of the :ref:`__init__ method<the constructor method>`
 
@@ -2120,7 +2120,7 @@ the test passes.
           Person.__init__()
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`
 
 * I add the :ref:`__init__ method<the constructor method>` to ``Joe``
 
@@ -2586,7 +2586,7 @@ what happens when a child has more than one parent?
            Joe.__init__('mary')
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Joe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
 
 * I change the :ref:`__init__ method<the constructor method>` of ``Joe`` to take a ``first_name`` argument
 
@@ -3493,7 +3493,7 @@ what happens when a child has more than one parent?
           )
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Mary`` was called with a :ref:`keyword argument<test_keyword_arguments>` and it only takes ``self``
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
+  - ``self`` is the :ref:`instance of the object<how to test if something is an instance>`.
 
 * I add ``first_name`` with a :ref:`default value<test_optional_arguments>` to the :ref:`__init__ method<the constructor method>` of ``Mary``
 

@@ -783,7 +783,7 @@ test_assertIsNot
                 3 required positional arguments:
                 'self', 'expr1', and 'expr2'
 
-  - because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  - because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - The :ref:`definition<how to make a function that takes input>` of the `assertIsNot method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertIsNot``) has two required :ref:`positional arguments<test_positional_arguments>`. I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is :ref:`called<how to call a function with input>`
 
     .. code-block:: shell
@@ -840,7 +840,7 @@ test_assertIsNot
                2 required positional arguments:
                'expr1' and 'expr2'
 
-  I no longer need to provide ``self`` because it is the :ref:`instance of the class<how to test if something is an instance>` (``unittest.TestCase()``).
+  I no longer need to provide ``self`` because it is the :ref:`instance of the object<how to test if something is an instance>` (``unittest.TestCase()``).
 
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIsNot`_
 
@@ -1075,7 +1075,7 @@ the test passes.
                3 required positional arguments:
                'self', 'expr1', and 'expr2'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of the `unittest.TestCase class`_
 
@@ -1101,7 +1101,7 @@ the test passes.
                2 required positional arguments:
                'expr1' and 'expr2'
 
-  I no longer need to provide ``self`` because it is the :ref:`instance of the class<how to test if something is an instance>` (``unittest.TestCase()``)
+  I no longer need to provide ``self`` because it is the :ref:`instance of the object<how to test if something is an instance>` (``unittest.TestCase()``)
 
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIs`_
 
@@ -1575,7 +1575,7 @@ test_assertNotIsInstance
                'self', 'obj', and 'cls'
 
   - The :ref:`definition<how to make a function that takes input>` of the `assertNotIsInstance method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertNotIsInstance``) has three required :ref:`positional arguments<test_positional_arguments>` (``self``, ``obj`` and ``cls``)
-  - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
   - ``cls`` is for the :ref:`object<what is an object?>`.
 
@@ -1804,7 +1804,7 @@ test_assertIs_instance
                3 required positional arguments:
                'self', 'obj', and 'cls'
 
-  - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
   - ``cls`` is for the :ref:`object<what is an object?>`.
 
@@ -2396,7 +2396,7 @@ test_assertIs_subclass
                missing 3 required positional arguments:
                'self', 'cls', and 'superclass'
 
-  - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``cls`` is for the :ref:`subclass<how to test if something is a subclass>` being tested
   - ``superclass`` is for the :ref:`parent class<what is an object?>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
 
@@ -2944,7 +2944,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
     TypeError: TestUnittest.test_failure() takes 0
                positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -3172,7 +3172,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
         TestUnittest.test_assertIsNot()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIsNot`
 
@@ -3212,7 +3212,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
         TestUnittest.test_assertIs()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIs`
 
@@ -3292,7 +3292,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
         TestUnittest.test_assertEqual()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertEqual`
 
@@ -3381,7 +3381,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
         TestUnittest.test_assertIs_instance()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIs_instance`
 
@@ -3473,7 +3473,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
         TestUnittest.test_assertIs_subclass()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assertIs_subclass`
 

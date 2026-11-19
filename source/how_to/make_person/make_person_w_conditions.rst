@@ -2062,7 +2062,7 @@ because I added a new :ref:`method<what is a method?>`.
     TypeError: Person.check_age() takes
                1 positional arguments but 2 were given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add ``self`` to the parentheses of the :ref:`check_age method<extract check_age method>`
 

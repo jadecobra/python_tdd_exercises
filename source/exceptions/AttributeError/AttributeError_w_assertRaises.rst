@@ -275,7 +275,7 @@ test_attribute_error_w_object_attributes
         attribute_00 = function_09()
         attribute_01 = attribute_00
 
-  - the test passes because in this case it does not matter if I use the :ref:`object<what is an object?>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
+  - the test passes because in this case it does not matter if I use the :ref:`object<what is an object?>` (``AnObject``) or an :ref:`instance of the object<how to test if something is an instance>`  (``AnObject()``).
   - ``attribute_01`` is now an :ref:`attribute<what is an object attribute?>` of ``AnObject`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_01`` or ``src.attribute_error.AnObject().attribute_01``
 
     .. code-block:: shell
@@ -1238,7 +1238,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     AnObject.method_06()
 
-  I called the :ref:`method<what is a method?>` with the :ref:`object<what is an object?>` (``AnObject.method_06()``) not :ref:`an instance of the class<how to test if something is an instance>` (``AnObject().method_06()``).
+  I called the :ref:`method<what is a method?>` with the :ref:`object<what is an object?>` (``AnObject.method_06()``) not :ref:`an instance of the object<how to test if something is an instance>` (``AnObject().method_06()``).
 
 * I add a line for ``src.attribute_error.AnObject.method_07`` to ``test_attribute_error.py``
 

@@ -280,7 +280,7 @@ test_attribute_error_w_object_attributes
         attribute_00 = function_09()
         attribute_01 = attribute_00
 
-  - the test passes because in this case it does not matter if I use the :ref:`object<what is an object?>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
+  - the test passes because in this case it does not matter if I use the :ref:`object<what is an object?>` (``AnObject``) or an :ref:`instance of the object<how to test if something is an instance>`  (``AnObject()``).
   - ``attribute_01`` is now an :ref:`attribute<what is an object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_01`` or ``src.attribute_error.AnObject().attribute_01``
 
     .. code-block:: shell
@@ -884,9 +884,9 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     TypeError: AnObject.method_00() missing
                1 required positional argument: 'self'
 
-  because I :ref:`called the method<how to call a function>` with the :ref:`object<what is an object?>` not an :ref:`instance of the class<how to test if something is an instance>`.
+  because I :ref:`called the method<how to call a function>` with the :ref:`object<what is an object?>` not an :ref:`instance of the object<how to test if something is an instance>`.
 
-* I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` in ``tests/test_attribute_error.py``
+* I use an :ref:`instance of the object<how to test if something is an instance>` to :ref:`call the method<how to call a function>` in ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :caption:
