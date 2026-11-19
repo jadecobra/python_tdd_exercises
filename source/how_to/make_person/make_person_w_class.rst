@@ -2923,7 +2923,6 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 58
-    :emphasize-lines: 20-39
 
     def test_joe():
         first_name = 'joe'
@@ -2943,6 +2942,11 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 77
+    :emphasize-lines: 1-6, 8-20
 
         # joe = src.person.Person(
         #     first_name=first_name,
@@ -3118,6 +3122,10 @@ the test passes.
             year_of_birth=year_of_birth
         )
 
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 71
+
         assert_say_hello_works(
             first_name=first_name,
             last_name=last_name,
@@ -3139,7 +3147,6 @@ the test passes.
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 85
-    :emphasize-lines: 20-39
 
     def test_jane():
         first_name = 'jane'
@@ -3148,10 +3155,10 @@ the test passes.
         year_of_birth = 1991
 
         assert_person_factory_works(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            sex,
+            year_of_birth,
         )
 
         assert_say_hello_works(
@@ -3159,6 +3166,11 @@ the test passes.
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 104
+    :emphasize-lines: 1-6, 8-20
 
         # jane = src.person.Person(
         #     first_name=first_name,
@@ -3199,11 +3211,15 @@ the test passes.
         year_of_birth = 1991
 
         assert_person_factory_works(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            sex,
+            year_of_birth,
         )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 85
 
         assert_say_hello_works(
             first_name=first_name,
@@ -3226,7 +3242,6 @@ the test passes.
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 112
-    :emphasize-lines: 20-39
 
     def test_john():
         first_name = 'john'
@@ -3242,10 +3257,15 @@ the test passes.
         )
 
         assert_say_hello_works(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            year_of_birth,
         )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 131
+    :emphasize-lines: 1-6, 8-20
 
         # john = src.person.Person(
         #     first_name=first_name,
@@ -3292,10 +3312,14 @@ the test passes.
             year_of_birth=year_of_birth,
         )
 
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 125
+
         assert_say_hello_works(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            year_of_birth,
         )
 
         assert_person_can_say_hello(
@@ -3313,7 +3337,6 @@ the test passes.
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 139
-    :emphasize-lines: 20-39
 
     def test_mary():
         first_name = 'mary'
@@ -3334,11 +3357,16 @@ the test passes.
             year_of_birth=year_of_birth,
         )
 
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 158
+    :emphasize-lines: 1-6, 8-20
+
         # mary = src.person.Person(
-        #     first_name=first_name,
-        #     last_name=last_name,
-        #     sex=sex,
-        #     year_of_birth=year_of_birth,
+        #     first_name,
+        #     last_name,
+        #     sex,
+        #     year_of_birth,
         # )
 
         # reality = mary.say_hello()
@@ -3349,10 +3377,10 @@ the test passes.
         # )
         # assert reality == my_expectation
         assert_person_can_say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            sex,
+            year_of_birth,
         )
 
 
@@ -3379,6 +3407,10 @@ the test passes.
             year_of_birth=year_of_birth,
         )
 
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 152
+
         assert_say_hello_works(
             first_name=first_name,
             last_name=last_name,
@@ -3386,10 +3418,10 @@ the test passes.
         )
 
         assert_person_can_say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            sex,
+            year_of_birth,
         )
 
 
