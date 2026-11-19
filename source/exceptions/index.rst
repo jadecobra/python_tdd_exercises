@@ -14,8 +14,8 @@ These chapters cover :ref:`Exceptions<what causes AttributeError?>`
   :titlesonly:
   :maxdepth: 1
 
-  AssertionError/index
-  AttributeError/index
-  exception_handling/index
+  <AssertionError>AssertionError/AssertionError
+  <AttributeError>AttributeError/AttributeError
   ModuleNotFoundError/index
-  TypeError/index
+  <TypeError>TypeError/TypeError
+  exception_handling/index

@@ -6728,9 +6728,9 @@ what is next?
   :titlesonly:
   :maxdepth: 1
 
-  ../exceptions/TypeError/index
+  ../exceptions/TypeError/TypeError
   ../exceptions/AssertionError/AssertionError_w_functions
-  ../how_to/telephone/index
+  ../how_to/telephone/telephone
   ../exceptions/ModuleNotFoundError/separate_and_equal
 
 I am going for a walk. :ref:`Would you like to test TypeError?<what causes TypeError?>`

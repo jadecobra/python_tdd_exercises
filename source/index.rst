@@ -52,10 +52,10 @@ table of contents
   basic_objects/lists/list_comprehensions
   basic_objects/dictionaries
   questions the book answers<review>
-  all the projects<projects>
   make TDD manually<make_tdd/make_tdd_manually>
 
   connect the dots<dot_notation>
+  all the projects<projects>
   exceptions/index
   basic_objects/index
   how to<how_to/index>

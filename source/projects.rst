@@ -12,7 +12,7 @@ These are all the projects in the book
 
 .. toctree::
   :titlesonly:
-  :maxdepth: 1
+  :maxdepth: 2
 
   exceptions/AssertionError/index
   truth_table/projects/atm/index
