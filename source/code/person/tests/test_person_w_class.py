@@ -217,4 +217,4 @@ def test_dir_person_instance():
 # NameError
 # TypeError
 # AttributeError
-# Syntaxerror
+# SyntaxError

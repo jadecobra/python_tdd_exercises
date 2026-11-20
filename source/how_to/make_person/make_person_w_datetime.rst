@@ -422,7 +422,7 @@ I add a test for the ``year`` :ref:`attribute<what is an object attribute?>` of 
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with only :ref:`attributes<what is an object attribute?>` that start and end with double underscore (``__``)
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with only :ref:`attributes<what is an object attribute?>` that start and end with double underscore (``__``).
 
 ----
 
@@ -780,8 +780,6 @@ test age with current year
                 sex, year_of_birth,
             ):
 
-  all the tests are still green.
-
 * I change the age calculation in the expectation of the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` to :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
@@ -809,8 +807,6 @@ test age with current year
             )
 
         def test_joe(self):
-
-  still green.
 
 * I open a new terminal_ then make sure I am in the ``person`` folder_
 
@@ -886,8 +882,6 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
                 sex, year_of_birth,
             ):
 
-  still green.
-
 * I use the :ref:`attribute<what is an object attribute?>` for ``datetime.date.today().year`` in the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
@@ -916,8 +910,6 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
             )
 
         def test_joe(self):
-
-  the tests are still green.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1058,8 +1050,6 @@ I add ``self`` to the parentheses of :ref:`calculate_age<extract calculate_age m
               year_of_birth,
           ):
 
-the test passes.
-
 ----
 
 =================================================================================
@@ -1125,8 +1115,6 @@ the test passes.
             )
 
         def test_joe(self):
-
-  the test is still green.
 
 * I remove the commented lines from the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
 
@@ -1198,18 +1186,17 @@ the test passes.
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 27
-    :emphasize-lines: 1-3
+    :emphasize-lines: 3-4
 
+        # def calculate_age(year_of_birth):
         @staticmethod
-        def calculate_age(year_of_birth):
         # def calculate_age(self, year_of_birth):
+        def calculate_age(year_of_birth):
             # return self.this_year - year_of_birth
             return (
                 datetime.date.today().year
               - year_of_birth
             )
-
-  the test is green again.
 
 * I remove the commented lines from the :ref:`calculate_age method<extract calculate_age method>`
 
@@ -1312,7 +1299,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 * I add a :ref:`function<what is a function?>` to calculate the age, with the same body as the :ref:`calculate_age method<extract calculate_age method>`, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 12
     :emphasize-lines: 9-13
 
@@ -1338,7 +1325,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 * I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 12
     :emphasize-lines: 5-6
 
@@ -1353,15 +1340,6 @@ The tests use the right calculation for the age, and the solution still uses a f
 
     def calculate_age(year_of_birth):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
-
-  .. code-block:: shell
-
-    NameError: name 'datetime' is not defined.
-               Did you forget to import 'datetime'?
-
-  I did.
-
 ----
 
 =================================================================================
@@ -1373,6 +1351,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 * I add an `import statement`_ at the top of ``src/person/__init__.py``
 
   .. code-block:: python
+    :caption: person/src/person/__init__.py
     :linenos:
     :emphasize-lines: 1
 
@@ -1381,12 +1360,10 @@ The tests use the right calculation for the age, and the solution still uses a f
 
     class Person:
 
-  all tests are green again.
-
 * I remove the commented line from the :ref:`say_hello method<test_classy_person_says_hello>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 12
 
         def say_hello(self):
@@ -1402,7 +1379,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 * I use the :ref:`function<what is a function?>` in the :ref:`say_hello function<test say_hello function>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 30
     :emphasize-lines: 7-8
 
@@ -1422,12 +1399,12 @@ The tests use the right calculation for the age, and the solution still uses a f
             sex, year_of_birth,
         ):
 
-  still green.
+  all the tests are green.
 
 * I remove the commented line from the :ref:`say_hello function<test say_hello function>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 30
 
     def say_hello(
@@ -1515,7 +1492,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a :ref:`variable<what is a variable?>` with an :ref:`assert statement<what is an assertion?>` to the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 23
     :emphasize-lines: 2-3, 7-8
 
@@ -1556,6 +1533,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 I change the value of ``year_of_birth`` in :ref:`test_john` in ``tests/test_person.py``
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 119
   :emphasize-lines: 5-6
 
@@ -1628,7 +1606,7 @@ the test passes.
             first_name='first_name',
             last_name='last_name',
             sex='M',
-            year_of_birth=datetime.date.today().year-121
+            year_of_birth=datetime.date.today().year-121,
         ).say_hello()
 
     def test_dir_person_object(self):
@@ -1665,7 +1643,7 @@ the test passes.
 
         def test_dir_person_object(self):
 
-  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
+  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions>`.
 
 * I remove the commented line from the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
@@ -1756,7 +1734,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 * I add an :ref:`assertion<what is an assertion?>` to the :ref:`calculate age function<add calculate_age function>` to make sure that it never returns a number that is less than ``0``, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 23
     :emphasize-lines: 6
 
@@ -1786,7 +1764,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 
     FAILED ...test_when_year_of_birth_is_the_future - AssertionError
 
-* I remove the :ref:`assertion<what is an assertion?>` and :ref:`call to the say_hello method<test_classy_person_can_say_hello>` in :ref:`test_when_year_of_birth_is_the_future`, in ``tests/test_person.py``
+* I remove the :ref:`assertion<what is an assertion?>` and :ref:`call to the say_hello method<add say_hello method>` in :ref:`test_when_year_of_birth_is_the_future`, in ``tests/test_person.py``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -1807,7 +1785,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 
         def test_dir_person_object(self):
 
-  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
+  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions>`.
 
 * I remove the commented lines from :ref:`test_when_year_of_birth_is_the_future` then add a comment about the test
 
@@ -1878,7 +1856,7 @@ I made an :ref:`object attribute for this_year earlier<extract this_year attribu
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 27
-    :emphasize-lines: 3-4
+    :emphasize-lines: 4-5
 
         @staticmethod
         def calculate_age(year_of_birth):
@@ -1903,7 +1881,7 @@ I made an :ref:`object attribute for this_year earlier<extract this_year attribu
 
 ----
 
-I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` then add ``self`` to the parentheses of the :ref:`calculate_age method<extract calculate_age method>`
+I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` then add ``self`` to the parentheses of the :ref:`calculate_age method<extract calculate_age method>`, again
 
 .. code-block:: python
   :lineno-start: 27
@@ -1933,6 +1911,7 @@ the tests are green again.
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 27
+    :emphasize-lines: 2
 
     def calculate_age(self, year_of_birth):
         return self.this_year - year_of_birth
@@ -2084,7 +2063,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`constructor method<the constructor method>` of the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 4
     :emphasize-lines: 5-6
 
@@ -2108,7 +2087,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add an :ref:`assertion<what is an assertion?>` with the :ref:`isinstance built-in function<how to test if something is an instance>` to make sure the :ref:`calculate age function<add calculate_age function>` only works with integers_
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 24
     :emphasize-lines: 2
 
@@ -2242,12 +2221,12 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
         def test_dir_person_object(self):
 
-  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
+  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions>`.
 
 * I remove the commented line from the :ref:`Person object<add Person object>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 4
 
     class Person:
@@ -2298,8 +2277,8 @@ close the project
 review
 *************************************************************************************
 
-* I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year for the calculation of a person's age.
-* I can use :ref:`assertions<what is an assertion?>` to make sure certain :ref:`conditions<if statements>` are met before a program does something.
+* I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year.
+* I can use :ref:`assertions<what is an assertion?>` to make sure certain :ref:`conditions<if statements>` are met before a program_ does something.
 * My tests have a new problem - when they cause an :ref:`Exception<how to test that an Exception is raised>` the test stops in a :red:`RED` state. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the :ref:`Exception<how to test that an Exception is raised>` is to remove the comments. :ref:`There has to be a better way<how to test that an Exception is raised>`
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. :ref:`There has to be a better way<how to make a person with loops>`.
 

@@ -32,7 +32,7 @@ class TestPerson(unittest.TestCase):
         (False, True),
         (False, True)
     )
-    
+
     people = {
         this_year-17: itertools.product()
     }

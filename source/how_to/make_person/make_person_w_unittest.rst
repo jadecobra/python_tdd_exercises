@@ -406,7 +406,7 @@ move test_jane to TestPerson
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 86
-    :emphasize-lines: 8-12, 14-19, 21-25, 27-32
+    :emphasize-lines: 8-12, 14-19
 
             assert_person_can_say_hello(
                 first_name=first_name,
@@ -781,10 +781,10 @@ I add ``self`` to the parentheses of :ref:`test_dir_person_object`
   :emphasize-lines: 8-9
 
           assert_person_can_say_hello(
-              first_name=first_name,
-              last_name=last_name,
-              sex=sex,
-              year_of_birth=year_of_birth,
+              first_name,
+              last_name,
+              sex,
+              year_of_birth,
           )
 
       # def test_dir_person_object():
@@ -875,7 +875,7 @@ green again.
     :caption: terminal
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'move test_dir_person_object to TestPerson'
 
 ----
@@ -1078,7 +1078,7 @@ the test is green again.
     :caption: terminal
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'move test_dir_person_instance to TestPerson'
 
 ----
@@ -1260,7 +1260,7 @@ move assert_person_can_say_hello to TestPerson
 
         def assert_person_can_say_hello(
                 # first_name, last_name,
-                self,first_name, last_name,
+                self, first_name, last_name,
                 sex, year_of_birth,
             ):
             # assert_equal(
@@ -1621,7 +1621,7 @@ move assert_person_can_say_hello to TestPerson
     :caption: terminal
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'move assert_person_can_say_hello to TestPerson'
 
 ----
@@ -1727,7 +1727,7 @@ move assert_say_hello_works to TestPerson
 
         def assert_say_hello_works(
                 # first_name, last_name,
-                self,first_name, last_name,
+                self, first_name, last_name,
                 year_of_birth,
             ):
 
@@ -1978,7 +1978,7 @@ move assert_say_hello_works to TestPerson
     :caption: terminal
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'move assert_say_hello_works to TestPerson'
 
 ----
@@ -2494,7 +2494,7 @@ move assert_person_factory_works to TestPerson
     :caption: terminal
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'move assert_person_factory_works to TestPerson'
 
 ----
