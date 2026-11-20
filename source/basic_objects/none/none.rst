@@ -3299,8 +3299,8 @@ Would you like to use :ref:`assertIsNotNone<another way to test if something is 
   :titlesonly:
   :maxdepth: 1
 
-  ../exceptions/AssertionError/AssertionError_w_none
-  ../functions/functions_w_none
+  ../../exceptions/AssertionError/AssertionError_w_none
+  ../../functions/functions_w_none
 
 :ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<test AssertionError with None>`
 
