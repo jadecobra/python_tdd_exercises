@@ -83,7 +83,13 @@ I add the following code by the end of the chapter
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 189
-  :lines: 189-202
+  :lines: 189-200
+
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 219
+  :lines: 219-242
 
 -----
 
