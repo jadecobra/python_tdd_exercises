@@ -439,7 +439,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: unexpectedly None
+  AssertionError: unexpectedly None
 
 - because :ref:`assertIsNotNone<another way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is an object?>` given in parentheses is :ref:`None<what is None?>`.
 - ``assertIsNot(something, None)`` and ``assertIsNotNone(something)`` are the same.
@@ -1355,7 +1355,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: -0.1 is not None
+  AssertionError: -0.1 is not None
 
 ----
 

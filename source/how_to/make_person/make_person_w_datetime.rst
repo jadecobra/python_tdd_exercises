@@ -534,7 +534,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion:
+  AssertionError:
       <built-in method today
        of type object at 0xffff0fab2345>
    != []
@@ -691,7 +691,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: YYYY != 1900
+  AssertionError: YYYY != 1900
 
 where ``YYYY`` is the current year.
 

@@ -155,7 +155,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.person' has no attribute 'Person'
+  AttributeError: module 'src.person' has no attribute 'Person'
 
 because there is no definition for ``Person`` in ``src/person/__init__.py`` in the ``src`` folder_
 
@@ -3167,7 +3167,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: Lists differ:
+  AssertionError: Lists differ:
       ['__c[393 chars]ef__', 'first_name', 'last_name',
         'say_hello', 'year_of_birth']
    != ['__c[393 chars]ef__', 'say_hello']

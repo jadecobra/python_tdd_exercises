@@ -242,7 +242,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                              != []
 
 ----
@@ -749,7 +749,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  Type: list.extend() takes exactly
+  TypeError: list.extend() takes exactly
              one argument (0 given)
 
 ----
@@ -1120,7 +1120,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: Lists differ: [0, 1, 2, 3, ...] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
 ----
 
@@ -1321,7 +1321,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: Lists differ: [0, 2, 4, 6, 8, ...]
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, ...]
                              != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
 the numbers on the left are even numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`
@@ -2061,7 +2061,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: Lists differ: [0, 1, 4, 9, ...]
+  AssertionError: Lists differ: [0, 1, 4, 9, ...]
                              != [0, 1, 2, 3, ...]
 
 the numbers on the left are squares of the numbers on the right.

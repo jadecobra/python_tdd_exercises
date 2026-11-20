@@ -1465,7 +1465,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.calculator' has no attribute 'subtract'
+  AttributeError: module 'src.calculator' has no attribute 'subtract'
 
 ``calculator.py`` in the ``src`` folder_ does not have anything named ``subtract`` in it
 
@@ -1629,7 +1629,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.calculator' has no attribute 'multiply'
+  AttributeError: module 'src.calculator' has no attribute 'multiply'
 
 ----
 
@@ -1723,7 +1723,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.calculator' has no attribute 'divide'
+  AttributeError: module 'src.calculator' has no attribute 'divide'
 
 ----
 

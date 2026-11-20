@@ -577,7 +577,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  E       Assertion: assert
+  E       AssertionError: assert
             ['__call__', ...__doc__', ...] == []
   E
   E         Left contains 108 more items,
@@ -986,7 +986,7 @@ Compare the error message for ``assertIsNot(None, None)`` with the one for ``ass
 .. code-block:: python
   :caption: terminal
 
-  Assertion: unexpectedly identical: None
+  AssertionError: unexpectedly identical: None
 
 vs
 
@@ -1204,7 +1204,7 @@ Compare the error message for ``assertIs(False, True)`` with the one for ``asser
 .. code-block:: python
   :caption: terminal
 
-  Assertion: False is not True
+  AssertionError: False is not True
 
 vs
 
@@ -1392,7 +1392,7 @@ Compare the error message for ``assertNotEqual(True, True)`` with the one for ``
 .. code-block:: python
   :caption: terminal
 
-  Assertion: True == True
+  AssertionError: True == True
 
 vs
 
@@ -1551,14 +1551,14 @@ Compare the error message for ``assertEqual(0.0, '0.0')`` with the one for ``ass
 .. code-block:: python
   :caption: terminal
 
-  Assertion: 0.0 != '0.0'
+  AssertionError: 0.0 != '0.0'
 
 vs
 
 .. code-block:: python
   :caption: terminal
 
-  Assertion: assert 0.0 == '0.0'
+  AssertionError: assert 0.0 == '0.0'
 
 ----
 
@@ -1795,7 +1795,7 @@ vs
 .. code-block:: python
   :caption: terminal
 
-  Assertion: assert not True
+  AssertionError: assert not True
 
 ----
 
@@ -2085,7 +2085,7 @@ vs
 .. code-block:: python
   :caption: terminal
 
-  Assertion: assert False
+  AssertionError: assert False
 
 ----
 
@@ -2329,7 +2329,7 @@ vs
 .. code-block:: python
   :caption: terminal
 
-  Assertion: assert not True
+  AssertionError: assert not True
 
 ----
 
@@ -2594,7 +2594,7 @@ vs
 .. code-block:: python
   :caption: terminal
 
-  Assertion: assert False
+  AssertionError: assert False
 
 Which of the error messages in this chapter do you like better?
 

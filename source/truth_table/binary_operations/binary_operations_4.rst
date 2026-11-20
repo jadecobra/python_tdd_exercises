@@ -199,7 +199,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.truth_table'
+  AttributeError: module 'src.truth_table'
                   has no attribute 'negate_second'
 
 I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src/truth_table/__init__.py``

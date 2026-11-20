@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows TypeError_
 .. code-block:: python
   :caption: terminal
 
-  Type: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+  TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
 ----
 
@@ -283,7 +283,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: '11' != '2'
+  AssertionError: '11' != '2'
 
 ----
 
@@ -540,7 +540,7 @@ the terminal_ is my friend, and shows TypeError_
 .. code-block:: python
   :caption: terminal
 
-  Type: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+  TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
 ----
 

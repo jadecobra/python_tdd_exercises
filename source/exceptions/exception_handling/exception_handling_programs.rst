@@ -556,7 +556,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: 'failed' != 'succeeded'
+  AssertionError: 'failed' != 'succeeded'
 
 ``src.exceptions.an_exception_handler`` always returns ``'failed'``, the :ref:`assertion<what is an assertion?>` expects ``'succeeded'``.
 

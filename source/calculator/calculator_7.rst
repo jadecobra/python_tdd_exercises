@@ -155,7 +155,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
+  AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
 ----
 
@@ -399,7 +399,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  Type: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
+  TypeError: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
 
 the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :ref:`dictionary<what is a dictionary?>` must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``
 

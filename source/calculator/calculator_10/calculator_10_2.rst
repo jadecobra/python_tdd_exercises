@@ -695,7 +695,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: 0 != 4
+  AssertionError: 0 != 4
 
 - ``len(self.tester.columns)`` returns the length of the columns object
 - `streamlit columns`_ are :ref:`lists<what is a list?>` and I know how to work with :ref:`lists<what is a list?>`
@@ -1972,7 +1972,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: 'secondary' != ''
+  AssertionError: 'secondary' != ''
 
 ----
 

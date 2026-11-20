@@ -110,7 +110,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.calculator' has no attribute 'BOOM!!!'
+  AttributeError: module 'src.calculator' has no attribute 'BOOM!!!'
 
 * ``__getattribute__`` is a :ref:`method<what is a method?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<what is an object?>`
 

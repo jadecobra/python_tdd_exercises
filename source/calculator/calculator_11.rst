@@ -859,7 +859,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: 404 != 200
+  AssertionError: 404 != 200
 
 this is like :ref:`AttributeError<what causes AttributeError?>`, the address for ``calculate`` does not exist yet.
 
@@ -1903,7 +1903,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: '<!doctype html>\n<html lang=en>\n<title>5[225 chars]p>\n' != 'brmph?! I cannot divide by 0.
+  AssertionError: '<!doctype html>\n<html lang=en>\n<title>5[225 chars]p>\n' != 'brmph?! I cannot divide by 0.
 
 and in the traceback it shows the :ref:`AssertionError<what causes AssertionError?>` was caused by :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 

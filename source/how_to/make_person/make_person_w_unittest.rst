@@ -161,7 +161,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: 'TestPerson' object
+  AttributeError: 'TestPerson' object
                   has no attribute 'assertEqual'
 
 ----

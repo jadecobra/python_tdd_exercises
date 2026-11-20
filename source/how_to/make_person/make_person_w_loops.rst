@@ -1598,7 +1598,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  E           Type: 'a_string' is not an integer
+  E           TypeError: 'a_string' is not an integer
 
 this is the correct :ref:`Exception<how to test that an Exception is raised>` for when the ``year_of_birth`` is not an integer. I need :ref:`a better way to know which item in the people tuple raised the Exception<the subTest method>`.
 
@@ -2591,7 +2591,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  SUBFAILED(row=(2009, True)) ...Assertion: False != True
+  SUBFAILED(row=(2009, True)) ...AssertionError: False != True
 
 ----
 
@@ -5062,7 +5062,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion:
+  AssertionError:
       "BOOM!!!" does not match
       "a -1 year old person is too old to be alive."
 
@@ -5335,7 +5335,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  SUBFAILED(year_of_birth=XXXX) ...Assertion:
+  SUBFAILED(year_of_birth=XXXX) ...AssertionError:
       "BOOM!!!" does not match "a -1 year old person is not alive."
   SUBFAILED(year_of_birth=YYYY) ...AssertionError:
       "BOOM!!!" does not match "a 121 year old person is not alive."

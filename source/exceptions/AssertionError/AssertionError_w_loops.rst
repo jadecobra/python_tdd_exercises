@@ -256,7 +256,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-    Assertion: assert None is not None
+    AssertionError: assert None is not None
 
 ----
 
@@ -418,7 +418,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: assert False is not False
+  AssertionError: assert False is not False
 
 ----
 

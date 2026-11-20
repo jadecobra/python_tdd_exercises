@@ -288,7 +288,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  Type:
+  TypeError:
       test_identity_function.<locals>.identity()
       takes 0 positional arguments but 1 was given
 
@@ -1601,7 +1601,7 @@ the test passes.
 
     TypeError:
         test_positional_arguments.<locals>.positional_arguments()
-        takes 1 positional arguments but 2 was given
+        takes 1 positional argument but 2 was given
 
   because
 

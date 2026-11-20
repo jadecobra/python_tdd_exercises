@@ -159,7 +159,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.truth_table'
+  AttributeError: module 'src.truth_table'
                   has no attribute 'exclusive_disjunction'
 
 because ``src/truth_table/__init__.py`` does not have anything in it with that name.

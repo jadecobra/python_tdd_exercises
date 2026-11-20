@@ -109,7 +109,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: module 'src.type_error'
+  AttributeError: module 'src.type_error'
                   has no attribute 'AnObject'
 
 because ``AnObject`` is not defined in ``src/type_error/__init__.py``.

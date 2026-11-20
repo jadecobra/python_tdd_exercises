@@ -1456,7 +1456,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: '9' != '-9'
+  AssertionError: '9' != '-9'
 
 ----
 

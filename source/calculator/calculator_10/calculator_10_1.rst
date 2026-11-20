@@ -481,7 +481,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  E       Assertion: SpecialBlock(
+  E       AssertionError: SpecialBlock(
   E           type='main',
   E           children={
   E               0: Title(tag='h1')

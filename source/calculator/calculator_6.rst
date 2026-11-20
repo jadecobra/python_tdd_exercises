@@ -100,7 +100,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
   :caption: terminal
 
-  Attribute: 'TestCalculator' object has no attribute 'random_first_number'
+  AttributeError: 'TestCalculator' object has no attribute 'random_first_number'
 
 ``random_first_number`` and ``random_second_number`` can no longer be reached because they belong to the `setUp method`_, I have to make sure they are :ref:`object attributes<test_attribute_error_w_object_attributes>`
 
@@ -212,7 +212,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'s
+  AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'s
 
 ----
 

@@ -105,7 +105,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: unexpectedly None
+  AssertionError: unexpectedly None
 
 ----
 
@@ -181,7 +181,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: unexpectedly None
+  AssertionError: unexpectedly None
 
 ----
 
@@ -259,7 +259,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: unexpectedly None
+  AssertionError: unexpectedly None
 
 ----
 
@@ -342,7 +342,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: unexpectedly None
+  AssertionError: unexpectedly None
 
 ----
 
@@ -435,7 +435,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: unexpectedly None
+  AssertionError: unexpectedly None
 
 ----
 

@@ -310,7 +310,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 [
@@ -427,7 +427,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 * I add ``is_citizen`` to the :ref:`instance of the Person object<add Person object>` for ``mary``
 
   .. code-block:: python
-    :caption: person/src/person/__init__.py
+    :caption: person/tests/test_person.py
     :lineno-start: 177
     :emphasize-lines: 6
 
@@ -449,7 +449,7 @@ I want :ref:`can_vote<add can_vote method>` to return
                an unexpected keyword argument
                'is_citizen'
 
-  because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and it got :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
+  because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and it got :ref:`called<how to call a function with input>` with ``is_citizen`` which is not one of those names.
 
 * I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``src/person/__init__.py``
 
@@ -565,7 +565,7 @@ I want :ref:`can_vote<add can_vote method>` to return
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 [
@@ -999,7 +999,7 @@ add can_get_license method
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 15
     :emphasize-lines: 3
 
@@ -1050,7 +1050,7 @@ add can_get_license method
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 [
@@ -1268,8 +1268,9 @@ I want :ref:`can_get_license<add can_get_license method>` to return
             self.is_citizen = is_citizen
             self.passed_test = passed_test
 
-        @staticmethod
-        def can_get_license():
+        # @staticmethod
+        # def can_get_license():
+        def can_get_license(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_mary`
 
@@ -1311,7 +1312,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 [
@@ -1788,9 +1789,9 @@ I can use the `unittest.skip decorator`_ to skip a test. The problem with skippi
                 last_name='last_name',
                 sex='M',
                 # year_of_birth=None,     # fails
-                # year_of_birth=2026.0,   # fails
-                # year_of_birth='2026',   # fails
-                # year_of_birth=(2026,),  # fails
+                # year_of_birth=2027.0,   # fails
+                # year_of_birth='2027',   # fails
+                # year_of_birth=(2027,),  # fails
             )
             # ).say_hello() fails
             # because year_of_birth is not an integer
@@ -1812,9 +1813,9 @@ I can use the `unittest.skip decorator`_ to skip a test. The problem with skippi
                 last_name='last_name',
                 sex='M',
                 # year_of_birth=None,     # fails
-                # year_of_birth=2026.0,   # fails
-                # year_of_birth='2026',   # fails
-                # year_of_birth=(2026,),  # fails
+                # year_of_birth=2027.0,   # fails
+                # year_of_birth='2027',   # fails
+                # year_of_birth=(2027,),  # fails
             )
 
         def test_dir_person_object(self):
@@ -1842,7 +1843,7 @@ I can use the `unittest.skip decorator`_ to skip a test. The problem with skippi
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 [
@@ -1987,7 +1988,7 @@ I can make a :ref:`method<what is a method?>` that removes the repetition.
 I add a :ref:`method<what is a method?>` to the :ref:`Person object<add Person object>` that checks if the age is less than ``18`` and returns something else if it is not
 
 .. code-block:: python
-    :caption: person/src/person/__init__.py
+  :caption: person/src/person/__init__.py
   :lineno-start: 16
   :emphasize-lines: 4-7
 
@@ -2006,7 +2007,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  FAILED ...test_dir_person_object - Assertion:
+  FAILED ...test_dir_person_object - AssertionError:
       Lists differ: ['__c[393 chars]ef__', 'can_get_li...
   FAILED ...test_dir_person_instance - AssertionError:
       Lists differ: ['__c[434 chars]e', 'check_age', '...
@@ -2034,7 +2035,7 @@ because I added a new :ref:`method<what is a method?>`.
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 [
@@ -2123,14 +2124,14 @@ because I added a new :ref:`method<what is a method?>`.
     :caption: terminal
 
     TypeError: Person.check_age() takes
-               1 positional arguments but 2 were given
+               1 positional argument but 2 were given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the object<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add ``self`` to the parentheses of the :ref:`check_age method<extract check_age method>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 16
     :emphasize-lines: 4
 
@@ -2149,7 +2150,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I remove the other statements from the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 24
 
         def can_get_license(self):
@@ -2160,7 +2161,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 27
     :emphasize-lines: 2
 
@@ -2179,7 +2180,7 @@ because I added a new :ref:`method<what is a method?>`.
 * I remove the other statements from the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 27
 
         def can_vote(self):

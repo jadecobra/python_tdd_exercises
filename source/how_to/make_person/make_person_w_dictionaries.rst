@@ -160,7 +160,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion: 'joe, blow, M, 1996' != None
+  AssertionError: 'joe, blow, M, 1996' != None
 
 ----
 
@@ -718,7 +718,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion:
+  AssertionError:
       'Hello, my name is jane doe and I am YY.'
    != None
 
@@ -1524,7 +1524,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
   :caption: terminal
 
-  Assertion:
+  AssertionError:
       'Hello, my name is jane doe and I am YY.'
     != None
 
