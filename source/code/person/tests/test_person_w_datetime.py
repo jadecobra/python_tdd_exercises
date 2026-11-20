@@ -193,7 +193,7 @@ class TestPerson(unittest.TestCase):
             sex='M',
             # year_of_birth=None,     # fails
             # year_of_birth=2027.0,   # fails
-            # year_of_birth='2027'    # fails
+            # year_of_birth='2027',   # fails
             # year_of_birth=(2027,),  # fails
         )
         # ).say_hello() fails
