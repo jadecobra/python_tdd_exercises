@@ -32,7 +32,7 @@ def calculate_age(year_of_birth):
 
 
 def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
     return (
         f'Hello, my name is {first_name}'

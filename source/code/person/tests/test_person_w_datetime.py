@@ -9,7 +9,7 @@ class TestPerson(unittest.TestCase):
 
     def assert_person_factory_works(
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         self.assertEqual(
             src.person.person(
@@ -35,7 +35,7 @@ class TestPerson(unittest.TestCase):
             src.person.say_hello(
                 first_name=first_name,
                 last_name=last_name,
-                year_of_birth=year_of_birth
+                year_of_birth=year_of_birth,
             ),
             (
                 f'Hello, my name is {first_name}'
@@ -45,7 +45,7 @@ class TestPerson(unittest.TestCase):
         )
 
     def assert_person_can_say_hello(
-            self,first_name, last_name,
+            self, first_name, last_name,
             sex, year_of_birth,
         ):
         self.assertEqual(
@@ -72,7 +72,7 @@ class TestPerson(unittest.TestCase):
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
         self.assert_say_hello_works(
@@ -85,7 +85,7 @@ class TestPerson(unittest.TestCase):
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
     def test_jane(self):
@@ -95,10 +95,10 @@ class TestPerson(unittest.TestCase):
         year_of_birth = 1991
 
         self.assert_person_factory_works(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            sex,
+            year_of_birth,
         )
 
         self.assert_say_hello_works(
@@ -128,9 +128,9 @@ class TestPerson(unittest.TestCase):
         )
 
         self.assert_say_hello_works(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            year_of_birth,
         )
 
         self.assert_person_can_say_hello(
@@ -160,10 +160,10 @@ class TestPerson(unittest.TestCase):
         )
 
         self.assert_person_can_say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
+            first_name,
+            last_name,
+            sex,
+            year_of_birth,
         )
 
     def test_when_person_is_older_than_120(self):
@@ -171,7 +171,7 @@ class TestPerson(unittest.TestCase):
             first_name='first_name',
             last_name='last_name',
             sex='M',
-            year_of_birth=self.this_year-121
+            year_of_birth=self.this_year-121,
         )
         # ).say_hello() fails
         # because age > 120
@@ -192,9 +192,9 @@ class TestPerson(unittest.TestCase):
             last_name='last_name',
             sex='M',
             # year_of_birth=None,     # fails
-            # year_of_birth=2026.0,   # fails
-            # year_of_birth='2026',   # fails
-            # year_of_birth=(2026,),  # fails
+            # year_of_birth=2027.0,   # fails
+            # year_of_birth='2027'    # fails
+            # year_of_birth=(2027,),  # fails
         )
         # ).say_hello() fails
         # because year_of_birth is not an integer
@@ -223,7 +223,7 @@ class TestPerson(unittest.TestCase):
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth=2026,
+                    year_of_birth=2027,
                 )
             ),
             [
@@ -247,4 +247,4 @@ class TestPerson(unittest.TestCase):
 # NameError
 # TypeError
 # AttributeError
-# SyntaxError
+# Syntaxerror
