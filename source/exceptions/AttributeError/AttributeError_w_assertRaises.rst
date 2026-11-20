@@ -105,6 +105,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'AnObject'
@@ -134,6 +135,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'function' object
                     has no attribute 'attribute_00'
@@ -963,6 +965,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_02() takes
                0 positional arguments but 1 was given
@@ -1114,6 +1117,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_04() takes
                0 positional arguments but 1 was given
@@ -1328,6 +1332,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_08() takes
                0 positional arguments but 1 was given

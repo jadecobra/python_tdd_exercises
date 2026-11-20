@@ -398,6 +398,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: []
                                != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -470,6 +471,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -496,6 +498,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.list_comprehensions'
                     has no attribute 'a_for_loop'
@@ -527,6 +530,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: a_for_loop() takes 0 positional arguments
                but 1 was given
@@ -556,6 +560,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -607,6 +612,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...]
                                != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -669,6 +675,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                                != [0, 1, 2, 3, ...]
@@ -788,6 +795,7 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
@@ -888,6 +896,7 @@ the test is green again because the :ref:`extend method<test_extend_adds_items_f
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 1, 2, 3, ... XYZ, 0, 1, 2, 3, ...XYZ] != [0, 1, 2, 3, ...XYZ]
 
@@ -993,6 +1002,7 @@ The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`metho
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'TestListComprehensions' object
                     has no attribute 'a_list'
@@ -1200,6 +1210,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.list_comprehensions'
                     has no attribute 'a_list_comprehension'
@@ -1340,6 +1351,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 2, 4, 6, 8, ...]
                                != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
@@ -1402,6 +1414,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.list_comprehensions'
                     has no attribute 'get_even_numbers'
@@ -1441,6 +1454,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...]
                                != [0, 2, 4, 6, ...]
@@ -1485,6 +1499,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 2, 4, 6, ...]
                                != [0, 3, 6, 9, ...]
@@ -1630,6 +1645,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...]
                                != [0, 2, 4, 6, ...]
@@ -1713,6 +1729,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [1, 3, 5, 7, ...]
                                != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
@@ -1881,6 +1898,7 @@ There is a `Python Built-in Function`_ I can use to do the same thing as this `l
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: <filter object at 0xffffab1c23d4>
                  != [0, 2, ...]
@@ -1920,6 +1938,7 @@ There is a `Python Built-in Function`_ I can use to do the same thing as this `l
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'bool' object is not callable
 
@@ -2096,6 +2115,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.list_comprehensions'
                     has no attribute 'square'
@@ -2146,6 +2166,7 @@ There is a `Python Built-in Function`_ that I can use to process a :ref:`list<wh
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: <map object at 0xffffa1b234c5>
                  != [0, 1, 4, 9, ...]
@@ -2350,6 +2371,7 @@ the numbers on the left are the squares of the even numbers on the right.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [0, 4, 16, 36, ...]
     != [0, 2, 4, 6, ...]
@@ -2413,6 +2435,7 @@ the numbers on the left are the squares of the even numbers on the right.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [1, 9, 25, 49, ...]
                                != [0, 1, 2, 3, 4, 5, 6, 7, ...]
@@ -2440,6 +2463,7 @@ the numbers on the left are the squares of the even numbers on the right.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ: [1, 9, 25, 49, ...]
                                != [1, 3, 5, 7, ...]

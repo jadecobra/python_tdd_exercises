@@ -252,6 +252,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -687,6 +688,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -741,6 +743,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1455,6 +1458,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'tautology'
@@ -1900,6 +1904,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2254,6 +2259,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   the terminal_ is my friend and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 

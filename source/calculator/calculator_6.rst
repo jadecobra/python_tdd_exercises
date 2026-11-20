@@ -236,6 +236,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ABC.DEFGHIJKLMNOPQR != 'brmph?! Numbers only. Try again...'
 
@@ -453,6 +454,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(data_type=True) ...  - AssertionError: Y.ZABCDEFGHIJKLMNOP != 'brmph?! Numbers only. Try again...'
     SUBFAILED(data_type=False) ... - AssertionError: Q.R != 'brmph?! Numbers only. Try again...'
@@ -511,6 +513,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(data_type=None) ...  - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
     SUBFAILED(data_type=True) ...  - AssertionError: ST.UVWXYZABCDEFGHI != 'BOOM!!!'
@@ -540,6 +543,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(data_type=True) ...  - AssertionError: -LMN.OPQRSTUVWXYZAB != 'brmph?! Numbers only. Try again...'
     SUBFAILED(data_type=False) ... - AssertionError: -C.D != 'brmph?! Numbers only. Try again...'
@@ -654,6 +658,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(data_type=None) ...  - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
     SUBFAILED(data_type=True) ...  - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
@@ -684,6 +689,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(data_type=True) ... - AssertionError: EFG.HIJKLMNOPQRSTU != 'brmph?! Numbers only. Try again...'
     SUBFAILED(data_type=False) ... - AssertionError: VWX.YZABCDEFGHIJK != 'brmph?! Numbers only. Try again...'
@@ -1109,6 +1115,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
 

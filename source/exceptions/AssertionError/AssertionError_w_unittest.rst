@@ -159,6 +159,7 @@ add TestAssertionError object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'TestAssertionError' object
                     has no attribute 'assertEqual'
@@ -239,6 +240,7 @@ add TestAssertionError object
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -340,6 +342,7 @@ test_assert_keyword with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestAssertionError.test_assert_keyword()
@@ -416,6 +419,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 2 == 2
 
@@ -441,6 +445,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '11' == '11'
 
@@ -466,6 +471,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'I am alive' == 'I am alive'
 
@@ -683,6 +689,7 @@ test_assertion_error_w_none with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestAssertionError.test_assertion_error_w_none()
@@ -778,6 +785,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: None
 
@@ -805,6 +813,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not None
 
@@ -830,6 +839,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not None
 
@@ -855,6 +865,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not None
 
@@ -874,6 +885,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 is not None
 
@@ -893,6 +905,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' is not None
 
@@ -912,6 +925,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () is not None
 
@@ -931,6 +945,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] is not None
 
@@ -950,6 +965,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() is not None
 
@@ -969,6 +985,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not None
 
@@ -1347,6 +1364,7 @@ test_assertion_error_w_false with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestAssertionError.test_assertion_error_w_false()
@@ -1439,6 +1457,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: False
 
@@ -1466,6 +1485,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not False
 
@@ -1485,6 +1505,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not False
 
@@ -1504,6 +1525,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not False
 
@@ -1523,6 +1545,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 is not False
 
@@ -1542,6 +1565,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' is not False
 
@@ -1561,6 +1585,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () is not False
 
@@ -1580,6 +1605,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] is not False
 
@@ -1599,6 +1625,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() is not False
 
@@ -1618,6 +1645,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not False
 
@@ -1990,6 +2018,7 @@ test_assertion_error_w_true with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestAssertionError.test_assertion_error_w_true()
@@ -2075,6 +2104,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: True
 
@@ -2102,6 +2132,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not True
 
@@ -2121,6 +2152,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not True
 
@@ -2140,6 +2172,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not True
 
@@ -2159,6 +2192,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 is not True
 
@@ -2178,6 +2212,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' is not True
 
@@ -2197,6 +2232,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () is not True
 
@@ -2216,6 +2252,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] is not True
 
@@ -2235,6 +2272,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() is not True
 
@@ -2254,6 +2292,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not True
 
@@ -2622,6 +2661,7 @@ test_assertion_error_w_equality with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestAssertionError.test_assertion_error_w_equality()
@@ -2694,6 +2734,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None == None
 
@@ -2721,6 +2762,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False == False
 
@@ -2740,6 +2782,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True == True
 
@@ -2759,6 +2802,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False != None
 
@@ -2778,6 +2822,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False != True
 
@@ -2803,6 +2848,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != None
 
@@ -2901,6 +2947,7 @@ test_assertion_error_w_is_vs_equal with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestAssertionError.test_assertion_error_w_is_vs_equal()
@@ -2957,6 +3004,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not 0.0
 
@@ -2995,6 +3043,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 == 0.0
 
@@ -3237,6 +3286,7 @@ test_failure with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestAssertionError.test_failure()
@@ -3298,6 +3348,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False == False
 

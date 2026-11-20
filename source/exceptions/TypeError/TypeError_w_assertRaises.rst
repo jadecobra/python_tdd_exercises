@@ -136,6 +136,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: type object 'AnObject' has no attribute 'method_00'
 
@@ -156,6 +157,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'method_00' is not defined
 
@@ -175,6 +177,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -251,6 +254,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_01() takes
                0 positional arguments but 1 was given
@@ -319,6 +323,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_02() takes
                0 positional arguments but 1 was given
@@ -341,6 +346,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -359,6 +365,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_02() missing
                1 required positional argument: 'self'
@@ -419,6 +426,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'method_02' is not defined
 
@@ -436,6 +444,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_02() missing
                1 required positional argument: 'self'
@@ -499,6 +508,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_02() missing
                1 required positional argument: 'self'
@@ -560,6 +570,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_05() takes
                0 positional arguments but 1 was given
@@ -580,6 +591,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'method_02' is not defined
 
@@ -639,6 +651,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_06() takes
                0 positional arguments but 1 was given
@@ -697,6 +710,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_07() missing
                1 required positional argument: 'self'
@@ -724,6 +738,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_00() takes
                0 positional arguments but 1 was given
@@ -785,6 +800,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_08() missing
                1 required positional argument: 'self'
@@ -809,6 +825,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_04() takes
                0 positional arguments but 1 was given
@@ -880,6 +897,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
      TypeError: AnObject.method_03() takes
                 0 positional arguments but 1 was given
@@ -1281,6 +1299,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'int' object is not callable
 

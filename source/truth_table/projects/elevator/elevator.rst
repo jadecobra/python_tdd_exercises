@@ -244,6 +244,7 @@ test_number_pushed
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -284,6 +285,7 @@ test_number_pushed
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.elevator'
                     has no attribute 'controller'
@@ -317,6 +319,7 @@ test_number_pushed
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: elevator() got
                an unexpected keyword argument 'number_pushed'
@@ -349,6 +352,7 @@ test_number_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -423,6 +427,7 @@ test_number_not_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -515,6 +520,7 @@ test_doors_closed_number_pushed
         def test_number_not_pushed(self):
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: elevator() got
                an unexpected keyword argument 'doors_closed'
@@ -541,6 +547,7 @@ test_doors_closed_number_pushed
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: elevator() missing
                1 required positional argument: 'doors_closed'
@@ -643,6 +650,7 @@ test_doors_open_number_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -840,6 +848,7 @@ test_doors_open_number_not_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1021,6 +1030,7 @@ test_above_weight_doors_open_number_not_pushed
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: elevator() got
                an unexpected keyword argument 'above_weight'
@@ -1052,6 +1062,7 @@ test_above_weight_doors_open_number_not_pushed
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default follows
                  parameter with a default
@@ -1184,6 +1195,7 @@ test_below_weight_doors_open_number_not_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1374,6 +1386,7 @@ test_below_weight_doors_closed_number_not_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1563,6 +1576,7 @@ test_below_weight_doors_open_number_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1676,6 +1690,7 @@ test_above_weight_doors_closed_number_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1796,6 +1811,7 @@ test_below_weight_doors_closed_number_pushed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2088,6 +2104,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: elevator() got
                an unexpected keyword argument 'emergency'
@@ -2116,6 +2133,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default follows
                  parameter with a default
@@ -2186,6 +2204,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2332,6 +2351,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2462,6 +2482,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2644,6 +2665,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2839,6 +2861,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3034,6 +3057,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3229,6 +3253,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3424,6 +3449,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3626,6 +3652,7 @@ floor button       doors            weight limit   emergency button   output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 

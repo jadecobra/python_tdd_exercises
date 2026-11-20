@@ -159,6 +159,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not None
 
@@ -175,6 +176,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '0' is not None : 0
 
@@ -242,6 +244,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '01' != '0'
 
@@ -277,6 +280,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '01234' != '01'
 
@@ -323,6 +327,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '01' != '1'
 
@@ -386,6 +391,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows. :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'X' != '1'
 
@@ -415,6 +421,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   when ``x`` is not ``1``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'X234' != '1234'
 
@@ -442,6 +449,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'XYZA' != '1234'
 
@@ -459,6 +467,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   when ``x`` is ``0``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'YZA' != '0YZA'
 
@@ -553,6 +562,7 @@ what is a while loop?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'XYZABCDEFGHIJK' != 'XBCDEFGHIJK'
 
@@ -723,6 +733,7 @@ test_streamlit_calculator_w_decimals
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '.23.5.6.7.89' != '0.2356789'
 
@@ -903,6 +914,7 @@ test_streamlit_calculator_w_decimals
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '0.235678902356789' != '0.2356789'
 
@@ -1101,6 +1113,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '1234' != '123'
 
@@ -1226,6 +1239,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
   I use :kbd:`ctrl+s` on the keyboard to run the test a few times because I am using random numbers. If the number is positive, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'LMN.OPQRSTUVWXYZ' != 'LMN.OPQRSTUVWXYZA'
 
@@ -1234,6 +1248,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
   If the random number is negative, the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: '-'
 
@@ -1257,6 +1272,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
   I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'BCD.EFGHIJKLMNOP' != 'BCD.EFGHIJKLMNOPQ'
 
@@ -1277,6 +1293,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'RS.TUVWXYZABCDEF123' != '123'
 
@@ -1317,6 +1334,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'GHI.JKLMNOPQRS' != '123'
 
@@ -1538,6 +1556,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '-9' != '9'
 
@@ -1677,6 +1696,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: '96'
 
@@ -1792,6 +1812,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   and :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: plus_minus() missing 1 required positional argument: 'number'
 
@@ -1848,12 +1869,14 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'RST.UVWXYZABCDEFGH' != 'RST.UVWXYZABCDEFG'
 
   it also shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: backspace() missing 1 required positional argument: 'number'
 
@@ -2371,6 +2394,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ... - KeyError: 'I'
     FAILED ... - KeyError: '2'
@@ -2379,6 +2403,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   and :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: on_click() missing 1 required positional argument: 'value'
 
@@ -2461,12 +2486,14 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'MNO.PQRSTUVWXYZABCD' != 'MNO.PQRSTUVWXYZABC'
 
   and :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: backspace() missing 2 required positional arguments: 'display' and 'number'
 
@@ -2541,6 +2568,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   and :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: plus_minus() missing 2 required positional arguments: 'display' and 'number'
 

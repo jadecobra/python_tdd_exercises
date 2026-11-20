@@ -221,6 +221,7 @@ this means
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
 
@@ -266,6 +267,7 @@ this means
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
 
@@ -311,6 +313,7 @@ this means
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 != FGH.IJKLMNOPQRSTU
 
@@ -424,6 +427,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: 'x'
 
@@ -468,6 +472,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
 
@@ -489,6 +494,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
             )
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
 
@@ -675,6 +681,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: VWX.YZABCDEFGHIJK != LMN.OPQRSTUVWXYZABC
 
@@ -719,6 +726,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
 
@@ -755,6 +763,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
 
@@ -791,6 +800,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
 
@@ -1119,6 +1129,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='addition', bad_input=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
     SUBFAILED(operation='subtraction', bad_input=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
@@ -1320,6 +1331,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 arithmetic operations
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='addition') ...       - AssertionError: QRS.TUVWXYZABCDEF != 'BOOM!!!'
     SUBFAILED(operation='subtraction') ...    - AssertionError: GHI.JKLMNOPQRSTUVWX != 'BOOM!!!'
@@ -1523,6 +1535,7 @@ this means all these statements are the same
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`:
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='addition') ...       - AssertionError: HIJ.KLMNOPQRSTUVW != 'BOOM!!!'
     SUBFAILED(operation='subtraction') ...    - AssertionError: XYZA.BCDEFGHIJKLMN != 'BOOM!!!'
@@ -1620,6 +1633,7 @@ this means all these statements are the same
   the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     ZeroDivisionError: float division by zero
 
@@ -1653,6 +1667,7 @@ this means all these statements are the same
   try to point ``division_result`` to the result of dividing ``x`` by ``y``
 
   .. code-block:: python
+    :caption: terminal
 
     except ZeroDivisionError:
         division_result = 'BOOM!!!'
@@ -1689,6 +1704,7 @@ this means all these statements are the same
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'brmph?! I cannot divide by 0. Try again...' != 'BOOM!!!'
 
@@ -1911,6 +1927,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='addition') ...       - NameError: name 'x' is not defined
     SUBFAILED(operation='subtraction') ...    - NameError: name 'x' is not defined
@@ -2106,6 +2123,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>` for all 4 cases
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='addition') ...       - TypeError: src.calculator.numbers_only.<locals>.decorator() argument after ** must be a m...
     SUBFAILED(operation='subtraction') ...    - TypeError: src.calculator.numbers_only.<locals>.decorator() argument after ** must be a m...
@@ -2279,6 +2297,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='addition') ...       - AssertionError: XYZ.ABCDEFGHIJKLM != 'BOOM!!!'
     SUBFAILED(operation='subtraction') ...    - AssertionError: NOP.QRSTUVWXYZABC != 'BOOM!!!'
@@ -2434,6 +2453,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='addition') ...       - AssertionError: JK.LMNOPQRSTUVWXYZ != 'BOOM!!!'
     SUBFAILED(operation='subtraction') ...    - AssertionError: ABCD.EFGHIJKLMNOPQ != 'BOOM!!!'

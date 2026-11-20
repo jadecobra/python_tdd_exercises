@@ -138,6 +138,7 @@ I want to add buttons for the numbers and operations.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: '<-'
 
@@ -192,6 +193,7 @@ I want to add buttons for the numbers and operations.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Button(key='<-', label='<-') is not None
 
@@ -210,6 +212,7 @@ I want to add buttons for the numbers and operations.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '<-' is not None
 
@@ -225,6 +228,7 @@ I want to add buttons for the numbers and operations.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '<-' is not None : <-
 
@@ -292,6 +296,7 @@ I want to add buttons for the numbers and operations.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: '7'
 
@@ -744,6 +749,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not None
 
@@ -828,6 +834,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: Button(key='<-', label='<-')} != {}
 
@@ -851,6 +858,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '<-' != ''
 
@@ -895,12 +903,14 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the ``<-`` button
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='<-') ... - AssertionError: '<-' != 'BOOM!!!'
 
   and :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='7') ... - KeyError: '7'
     SUBFAILED(key='4') ... - KeyError: '4'
@@ -1025,6 +1035,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='<-') ... - KeyError: '<-'
     SUBFAILED(key='7') ... - KeyError: '7'
@@ -1056,6 +1067,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='C') ... - KeyError: 'C'
     SUBFAILED(key='8') ... - KeyError: '8'
@@ -1175,6 +1187,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='AC') ... - KeyError: 'AC'
     SUBFAILED(key='9') ... - KeyError: '9'
@@ -1321,6 +1334,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='/') ... - KeyError: '/'
     SUBFAILED(key='X') ... - KeyError: 'X'
@@ -1792,6 +1806,7 @@ how to use raw strings and escape characters
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: '-'
 
@@ -1836,6 +1851,7 @@ how to use raw strings and escape characters
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: '+'
 
@@ -2001,6 +2017,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'secondary' != 'primary'
 
@@ -2050,6 +2067,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='X') ... - AssertionError: 'secondary' != 'primary'
     SUBFAILED(key='\\-') ... - AssertionError: 'secondary' != 'primary'
@@ -2107,6 +2125,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='C') ... - AssertionError: 'secondary' != 'primary'
     SUBFAILED(key='AC') ... - AssertionError: 'secondary' != 'primary'
@@ -2131,6 +2150,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='C') ... - AssertionError: 'secondary' != 'primary'
 
@@ -2229,6 +2249,7 @@ I want the calculator to show the number when I press a button
   the terminal_ for the application shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'display' is not defined
 
@@ -2244,6 +2265,7 @@ I want the calculator to show the number when I press a button
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for 27 sub tests and the terminal_ for the streamlit_ application shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: add_buttons_to_column_1() missing 1 required positional argument: 'display'
 
@@ -2343,6 +2365,7 @@ I want the calculator to show the number when I press a button
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for 22 sub tests and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: add_buttons_to_column_2() missing 1 required positional argument: 'display'
 
@@ -2404,6 +2427,7 @@ I want the calculator to show the number when I press a button
   and the terminal_ for the application shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'display' is not defined
 
@@ -2419,6 +2443,7 @@ I want the calculator to show the number when I press a button
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: add_buttons_to_column_3() missing 1 required positional argument: 'display'
 

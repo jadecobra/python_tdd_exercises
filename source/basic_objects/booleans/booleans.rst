@@ -158,6 +158,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -166,6 +167,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -179,6 +181,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/test_booleans.py
@@ -187,6 +190,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/test_booleans.py
@@ -218,6 +222,7 @@ start the project
     * I use echo_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest" > requirements.txt
@@ -225,6 +230,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest-watcher" >> requirements.txt
@@ -237,6 +243,7 @@ start the project
     * I use `Out-File`_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest" | Out-File requirements.txt -Encoding UTF8
@@ -244,6 +251,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
@@ -860,6 +868,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: False
 
@@ -920,6 +929,7 @@ I can test if Python_ groups an :ref:`object<what is an object?>` as :ref:`False
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: False
 
@@ -1020,6 +1030,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1094,6 +1105,7 @@ the test passes because ``bool(False)`` is :ref:`False<test_what_is_false>`.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1328,6 +1340,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: True
 
@@ -1388,6 +1401,7 @@ I can test if Python_ groups an :ref:`object<what is an object?>` as :ref:`True<
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: True
 
@@ -1488,6 +1502,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1570,6 +1585,7 @@ the test passes because ``bool(True)`` is :ref:`True<test_what_is_true>`.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1661,6 +1677,7 @@ Is :ref:`None<what is None?>` grouped as :ref:`False<test_what_is_false>` or :re
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != False
 
@@ -1713,6 +1730,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not False
 
@@ -1751,6 +1769,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != True
 
@@ -1788,6 +1807,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not True
 
@@ -1825,6 +1845,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1879,6 +1900,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -1964,6 +1986,7 @@ Is an integer_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_wh
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 != False
 
@@ -2016,6 +2039,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 is not False
 
@@ -2054,6 +2078,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 != True
 
@@ -2091,6 +2116,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 is not True
 
@@ -2128,6 +2154,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2180,6 +2207,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 is not false
 
@@ -2294,6 +2322,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 == False
 
@@ -2333,6 +2362,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not False
 
@@ -2370,6 +2400,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 != True
 
@@ -2407,6 +2438,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not True
 
@@ -2444,6 +2476,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2503,6 +2536,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not true
 
@@ -2560,6 +2594,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 != False
 
@@ -2597,6 +2632,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 is not False
 
@@ -2634,6 +2670,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 == True
 
@@ -2673,6 +2710,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 is not True
 
@@ -2708,6 +2746,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2764,6 +2803,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 is not false
 
@@ -2906,6 +2946,7 @@ Is a float_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -0.1 != False
 
@@ -2958,6 +2999,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -0.1 is not False
 
@@ -2995,6 +3037,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -0.1 != True
 
@@ -3032,6 +3075,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -0.1 is not True
 
@@ -3069,6 +3113,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -3121,6 +3166,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -0.1 is not false
 
@@ -3179,6 +3225,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 == False
 
@@ -3218,6 +3265,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 is not False
 
@@ -3255,6 +3303,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 != True
 
@@ -3292,6 +3341,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 is not True
 
@@ -3329,6 +3379,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3385,6 +3436,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 is not true
 
@@ -3443,6 +3495,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.1 != False
 
@@ -3482,6 +3535,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.1 is not False
 
@@ -3520,6 +3574,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.1 != True
 
@@ -3557,6 +3612,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.1 is not True
 
@@ -3592,6 +3648,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -3644,6 +3701,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.1 is not false
 
@@ -3771,6 +3829,7 @@ Is a string_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' != False
 
@@ -3828,6 +3887,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' is not False
 
@@ -3866,6 +3926,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' != True
 
@@ -3903,6 +3964,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' is not True
 
@@ -3938,6 +4000,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3990,6 +4053,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' is not true
 
@@ -4054,6 +4118,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'string with things' != False
 
@@ -4093,6 +4158,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'string with things' is not False
 
@@ -4131,6 +4197,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'string with things' != True
 
@@ -4168,6 +4235,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'string with things' is not True
 
@@ -4205,6 +4273,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -4257,6 +4326,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'string with things' is not false
 
@@ -4370,6 +4440,7 @@ Is a tuple_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () != False
 
@@ -4426,6 +4497,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () is not False
 
@@ -4466,6 +4538,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () != True
 
@@ -4503,6 +4576,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () is not True
 
@@ -4542,6 +4616,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -4593,6 +4668,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () is not true
 
@@ -4652,6 +4728,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (0, 1, 2, 'n') != False
 
@@ -4691,6 +4768,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (0, 1, 2, 'n') is not False
 
@@ -4729,6 +4807,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (0, 1, 2, 'n') != True
 
@@ -4766,6 +4845,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (0, 1, 2, 'n') is not True
 
@@ -4803,6 +4883,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -4854,6 +4935,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (0, 1, 2, 'n') is not false
 
@@ -4938,6 +5020,7 @@ Is a :ref:`list<what is a list?>` grouped as :ref:`False<test_what_is_false>` or
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] != False
 
@@ -4994,6 +5077,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] is not False
 
@@ -5034,6 +5118,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] != True
 
@@ -5073,6 +5158,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] is not True
 
@@ -5112,6 +5198,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -5163,6 +5250,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] is not true
 
@@ -5222,6 +5310,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [0, 1, 2, 'n'] != False
 
@@ -5261,6 +5350,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [0, 1, 2, 'n'] is not False
 
@@ -5299,6 +5389,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [0, 1, 2, 'n'] != True
 
@@ -5336,6 +5427,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [0, 1, 2, 'n'] is not True
 
@@ -5373,6 +5465,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -5424,6 +5517,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [0, 1, 2, 'n'] is not false
 
@@ -5508,6 +5602,7 @@ Is a set_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() != False
 
@@ -5564,6 +5659,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() is not False
 
@@ -5604,6 +5700,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() != True
 
@@ -5643,6 +5740,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() is not True
 
@@ -5682,6 +5780,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -5733,6 +5832,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() is not true
 
@@ -5791,6 +5891,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0, 1, 2, 'n'} != False
 
@@ -5830,6 +5931,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0, 1, 2, 'n'} is not False
 
@@ -5868,6 +5970,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0, 1, 2, 'n'} != True
 
@@ -5905,6 +6008,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0, 1, 2, 'n'} is not True
 
@@ -5942,6 +6046,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -5993,6 +6098,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0, 1, 2, 'n'} is not false
 
@@ -6077,6 +6183,7 @@ Is a :ref:`dictionary<what is a dictionary?>` grouped as :ref:`False<test_what_i
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} != False
 
@@ -6133,6 +6240,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not False
 
@@ -6173,6 +6281,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} != True
 
@@ -6212,6 +6321,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not True
 
@@ -6251,6 +6361,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -6310,6 +6421,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not true
 
@@ -6369,6 +6481,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} != False
 
@@ -6408,6 +6521,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} is not False
 
@@ -6446,6 +6560,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} != True
 
@@ -6483,6 +6598,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} is not True
 
@@ -6520,6 +6636,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -6579,6 +6696,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'key': 'value'} is not false
 
@@ -6706,6 +6824,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != False
 
@@ -6732,6 +6851,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not False
 
@@ -6750,6 +6870,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != True
 
@@ -6768,6 +6889,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not True
 
@@ -6786,6 +6908,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -6881,6 +7004,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 == False
 
@@ -6935,6 +7059,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 == False
 
@@ -7224,6 +7349,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 != False
 
@@ -7250,6 +7376,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 is not False
 
@@ -7266,6 +7393,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
             self.assertEqual(an_object, True)
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 != True
 
@@ -7284,6 +7412,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 is not True
 
@@ -7302,6 +7431,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -7320,6 +7450,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 is not false
 
@@ -7394,6 +7525,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 == True
 

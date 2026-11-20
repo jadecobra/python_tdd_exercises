@@ -251,6 +251,7 @@ test_green_light_timer_not_done
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -291,6 +292,7 @@ test_green_light_timer_not_done
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.traffic_light'
                     has no attribute 'control'
@@ -324,6 +326,7 @@ test_green_light_timer_not_done
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: control() got
                an unexpected keyword argument 'timer_done'
@@ -354,6 +357,7 @@ test_green_light_timer_not_done
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: control() got an
                unexpected keyword argument 'current_light'
@@ -370,6 +374,7 @@ test_green_light_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != 'GREEN'
 
@@ -446,6 +451,7 @@ test_green_light_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'GREEN' != 'YELLOW'
 
@@ -638,6 +644,7 @@ test_yellow_light_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'GREEN' != 'YELLOW'
 
@@ -832,6 +839,7 @@ test_yellow_light_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'YELLOW' != 'RED'
 
@@ -927,6 +935,7 @@ test_red_light_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'GREEN' != 'RED'
 
@@ -1121,6 +1130,7 @@ test_red_light_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'YELLOW' != 'GREEN'
 
@@ -1621,6 +1631,7 @@ test_cross_red_parallel_red_timer_done
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: control() got
                an unexpected keyword argument 'current_parallel'
@@ -1681,6 +1692,7 @@ test_cross_red_parallel_red_timer_done
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: control() got
                an unexpected keyword argument 'current_cross'
@@ -1699,6 +1711,7 @@ test_cross_red_parallel_red_timer_done
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
      TypeError: control() missing
                 1 required positional argument: 'current_light'
@@ -1717,6 +1730,7 @@ test_cross_red_parallel_red_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'GREEN' != ('GREEN', 'RED')
 
@@ -1819,6 +1833,7 @@ test_cross_red_parallel_red_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('RED', 'RED')
 
@@ -1958,6 +1973,7 @@ test_cross_yellow_parallel_red_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('RED', 'RED')
 
@@ -2118,6 +2134,7 @@ test_cross_yellow_parallel_red_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('RED', 'YELLOW')
 
@@ -2278,6 +2295,7 @@ test_cross_green_parallel_red_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('RED', 'YELLOW')
 
@@ -2396,6 +2414,7 @@ test_cross_green_parallel_red_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('RED', 'GREEN')
 
@@ -2561,6 +2580,7 @@ test_parallel_red_cross_red_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('GREEN', 'RED') != ('RED', 'GREEN')
 
@@ -2648,6 +2668,7 @@ test_parallel_red_cross_red_timer_done
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: control() got an
                unexpected keyword argument 'red_phase'
@@ -2926,6 +2947,7 @@ test_parallel_yellow_cross_red_timer_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('RED', 'RED')
 
@@ -3139,6 +3161,7 @@ test_parallel_yellow_cross_red_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('YELLOW', 'RED')
 
@@ -3299,6 +3322,7 @@ test_parallel_green_cross_red_timer_done
   the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('YELLOW', 'RED')
 
@@ -3469,6 +3493,7 @@ test_parallel_green_cross_red_timer_not_done
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != ('GREEN', 'RED')
 
@@ -4195,6 +4220,7 @@ It should be :red:`RED` for both ``'cross'`` and ``'parallel'`` traffic for any 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('BAP', 'RED') != ('RED', 'RED')
 
@@ -4273,6 +4299,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('RED', 'RED') != ('RED', 'POW')
 
@@ -4344,6 +4371,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('GREEN', 'GREEN') != ('RED', 'RED')
 
@@ -4416,6 +4444,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('GREEN', 'YELLOW') != ('RED', 'RED')
 
@@ -4486,6 +4515,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('YELLOW', 'GREEN') != ('RED', 'RED')
 
@@ -4562,6 +4592,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Tuples differ: ('YELLOW', 'YELLOW') != ('RED', 'RED')
 

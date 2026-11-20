@@ -167,6 +167,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: <function numbers_only.<locals>.decorator at 0xffffa1234bc0> != DEF.GHIJKLMNOPQRS
 
@@ -307,6 +308,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: OPQ.RSTUVWXYZABCDE != FGH.IJKLMNOPQRSTUV
 
@@ -361,6 +363,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: WXYZA.BCDEFGHIJKLMNO != PQ.RSTUVWXYZABCDE
 
@@ -416,6 +419,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: F.GHIJKLMNOPQRST != UVWXY.ZABCDEFGH
 
@@ -1217,6 +1221,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCalculator.get_division_result() takes 2 positional arguments but 3 were given
 
@@ -1287,6 +1292,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * then I delete everything in ``calculator.py``, the terminal_ is my friend, and shows 3 passing tests and :ref:`AttributeError<what causes AttributeError?>` for 70 failing tests, I start with the last one
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
@@ -1301,6 +1307,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'add' is not defined
 
@@ -1323,6 +1330,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1338,6 +1346,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
@@ -1353,6 +1362,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: add() takes 1 positional argument but 2 were given
 
@@ -1368,6 +1378,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != TUV.WXYZABCDEFGHIJ
 
@@ -1383,6 +1394,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
 
@@ -1402,6 +1414,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
@@ -1422,6 +1435,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
@@ -1442,6 +1456,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: divide() got an unexpected keyword argument 'first_input'
 
@@ -1460,6 +1475,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: divide() missing 1 required positional argument: 'first_input'
 
@@ -1476,6 +1492,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: divide() got an unexpected keyword argument 'second_input'
 
@@ -1492,6 +1509,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: divide() missing 2 required positional arguments: 'x' and 'y'
 
@@ -1508,6 +1526,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'x' is not defined
 
@@ -1524,6 +1543,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: multiply() got an unexpected keyword argument 'first_input'
 
@@ -1540,6 +1560,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: divide() got an unexpected keyword argument 'second_input'
 
@@ -1556,6 +1577,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: subtract() got an unexpected keyword argument 'first_input'
 
@@ -1574,6 +1596,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: add() got an unexpected keyword argument 'first_input'
 
@@ -1589,6 +1612,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='divide', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for /: 'dict' and 'float'
 
@@ -1610,6 +1634,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != 'brmph?! Numbers only. Try again...'
 
@@ -1628,6 +1653,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='multiply', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for *: 'dict' and 'float'
 
@@ -1647,6 +1673,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != 'brmph?! Numbers only. Try again...'
 
@@ -1666,6 +1693,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='subtract', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for -: 'dict' and 'float'
 
@@ -1687,6 +1715,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='add', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for +: 'dict' and 'float'
 
@@ -1705,6 +1734,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='divide', bad_input={'n', 0, 2, 1}) ... - TypeError: unsupported operand type(s) for /: 'set' and 'float'
 
@@ -1726,6 +1756,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='multiply', bad_input={0, 1, 2, 'n'}) ... - TypeError: unsupported operand type(s) for *: 'set' and 'float'
 
@@ -1745,6 +1776,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='subtract', bad_input={0, 1, 2, 'n'}) ... - TypeError: unsupported operand type(s) for -: 'set' and 'float'
 
@@ -1764,6 +1796,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='add', bad_input={0, 1, 2, 'n'}) ... - TypeError: unsupported operand type(s) for +: 'set' and 'float'
 
@@ -1782,6 +1815,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='divide', bad_input=[0, 1, 2, 'n']) ... - TypeError: unsupported operand type(s) for /: 'list' and 'float'
 
@@ -1803,6 +1837,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='multiply', bad_input=[0, 1, 2, 'n']) ... - TypeError: can't multiply sequence by non-int of type 'float'
 
@@ -1841,6 +1876,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='divide', bad_input=(0, 1, 2, 'n')) ... - TypeError: unsupported operand type(s) for /: 'tuple' and 'float'
 
@@ -1864,6 +1900,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='multiply', bad_input=(0, 1, 2, 'n')) ... - TypeError: can't multiply sequence by non-int of type 'float'
 
@@ -1903,6 +1940,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: can only concatenate str (not "float") to str
 
@@ -1941,6 +1979,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='divide', bad_input=False) ... - AssertionError: 0.0 != 'brmph?! Numbers only. Try again...'
 
@@ -1993,6 +2032,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='divide', bad_input=None) ... - TypeError: unsupported operand type(s) for /: 'NoneType' and 'float'
 
@@ -2017,6 +2057,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
 
@@ -2040,6 +2081,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='multiply', bad_input=None) ... - TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
 
@@ -2089,6 +2131,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: TypeError not raised
 

@@ -161,6 +161,7 @@ add TestObjects class
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'TestObjects' object
                     has no attribute 'assertEqual'
@@ -225,6 +226,7 @@ add TestObjects class
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -324,6 +326,7 @@ test_making_an_object_w_pass with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_making_an_object_w_pass()
@@ -500,6 +503,7 @@ test_making_an_object_w_parentheses with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_making_an_object_w_parentheses()
@@ -686,6 +690,7 @@ test_making_an_object_w_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_making_an_object_w_object()
@@ -864,6 +869,7 @@ test_is_none_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_none_an_object()
@@ -961,12 +967,14 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not a class
 
   compare this with the error message for ``assert issubclass(None, object)``
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: issubclass() arg 1 must be a class
 
@@ -1050,6 +1058,7 @@ test_is_a_boolean_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_a_boolean_an_object()
@@ -1218,6 +1227,7 @@ test_is_an_integer_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_an_integer_an_object()
@@ -1383,6 +1393,7 @@ test_is_a_float_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_a_float_an_object()
@@ -1551,6 +1562,7 @@ test_is_a_string_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_a_string_an_object()
@@ -1716,6 +1728,7 @@ test_is_a_tuple_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_a_tuple_an_object()
@@ -1883,6 +1896,7 @@ test_is_a_list_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_a_list_an_object()
@@ -2050,6 +2064,7 @@ test_is_a_set_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_a_set_an_object()
@@ -2217,6 +2232,7 @@ test_is_a_dictionary_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_is_a_dictionary_an_object()
@@ -2394,6 +2410,7 @@ test_dir_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestObjects.test_dir_object()

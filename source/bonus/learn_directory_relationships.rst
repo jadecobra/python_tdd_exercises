@@ -177,6 +177,7 @@ requirements
     * I type this in a terminal_ to make sure the `tree program`_ is installed
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -1980,6 +1981,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
     * I use touch_ to make an empty file_ in ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch a_file_in_doe
@@ -1989,6 +1991,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
     * I use touch_ to make an empty hidden file_ in ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch .a_hidden_file_in_doe
@@ -1996,6 +1999,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
     * I use ls_ to see what is in the folder_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls
@@ -2009,6 +2013,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
     * I use ls_ with the ``-a`` option
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a
@@ -2031,6 +2036,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
     * I use `New-Item`_ to make an empty file_ in ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item a_file_in_doe
@@ -2040,6 +2046,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
     * I use `New-Item`_ to make an empty hidden file_ in ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item .a_hidden_file_in_doe
@@ -2047,6 +2054,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
     * I use ls_ to show what is in ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls
@@ -2304,6 +2312,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -2327,6 +2336,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
       I use tree_ with the ``-a`` option
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a
@@ -2357,6 +2367,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -2378,6 +2389,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
       I use tree_ with the ``/F`` option to show files_ and folders_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F
@@ -2692,6 +2704,7 @@ how to use touch with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -2820,6 +2833,7 @@ how to use touch with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a
@@ -2942,6 +2956,7 @@ how to use touch with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a
@@ -3001,6 +3016,7 @@ how to use touch with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -3026,6 +3042,7 @@ how to use touch with directory relationships
       I use tree_ with the ``-a`` option
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a
@@ -3062,6 +3079,7 @@ how to use touch with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F
@@ -3108,6 +3126,7 @@ how to use touch with directory relationships
     * I use touch_ to make an empty file_ in ``jane`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch jane/child_of_doe
@@ -3117,6 +3136,7 @@ how to use touch with directory relationships
     * I use touch_ to make an empty file_ in ``mary`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch jane/mary/grandchild_of_doe
@@ -3126,6 +3146,7 @@ how to use touch with directory relationships
     * I use touch_ to make an empty file_ in ``john`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch john/child_of_doe
@@ -3135,6 +3156,7 @@ how to use touch with directory relationships
     * I use touch_ to make an empty file_ in ``lil`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch john/lil/grandchild_of_doe
@@ -3147,6 +3169,7 @@ how to use touch with directory relationships
     * I use `New-Item`_ to make an empty file_ in ``jane`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item jane/child_of_doe
@@ -3156,6 +3179,7 @@ how to use touch with directory relationships
     * I use `New-Item`_ to make an empty file_ in ``mary`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item jane/mary/grandchild_of_doe
@@ -3165,6 +3189,7 @@ how to use touch with directory relationships
     * I use `New-Item`_ to make an empty file_ in ``john`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item john/child_of_doe
@@ -3174,6 +3199,7 @@ how to use touch with directory relationships
     * I use `New-Item`_ to make an empty file_ in ``lil`` from inside ``doe``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item john/lil/grandchild_of_doe
@@ -3189,6 +3215,7 @@ how to use touch with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -3219,6 +3246,7 @@ how to use touch with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F
@@ -3420,6 +3448,7 @@ mv_ means move, it takes two arguments
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -3454,6 +3483,7 @@ mv_ means move, it takes two arguments
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F
@@ -3633,6 +3663,7 @@ mv_ means move, it takes two arguments
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -3671,6 +3702,7 @@ mv_ means move, it takes two arguments
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F
@@ -3835,6 +3867,7 @@ mv_ means move, it takes two arguments
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../..
@@ -3877,6 +3910,7 @@ mv_ means move, it takes two arguments
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../.. /F
@@ -4053,6 +4087,7 @@ mv_ means move, it takes two arguments
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a ../../../doe
@@ -4067,6 +4102,7 @@ mv_ means move, it takes two arguments
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../../../doe /F
@@ -4117,6 +4153,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a doe
@@ -4125,6 +4162,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls doe
@@ -4161,6 +4199,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a doe/jane
@@ -4169,6 +4208,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls doe/jane
@@ -4197,6 +4237,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a doe/jane/mary
@@ -4205,6 +4246,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls doe/jane/mary
@@ -4240,6 +4282,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a ../../john
@@ -4248,6 +4291,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls ../../john
@@ -4276,6 +4320,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a ../../john/lil
@@ -4284,6 +4329,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls ../../john/lil
@@ -4319,6 +4365,7 @@ how to use tree with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../../john/lil
@@ -4341,6 +4388,7 @@ how to use tree with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../../john/lil /F
@@ -4369,6 +4417,7 @@ how to use tree with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../../john
@@ -4397,6 +4446,7 @@ how to use tree with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F ../../john
@@ -4450,6 +4500,7 @@ how to use tree with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls -a ../../jane/mary
@@ -4458,6 +4509,7 @@ how to use tree with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ls ../../jane/mary
@@ -4485,6 +4537,7 @@ how to use tree with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../../jane/mary
@@ -4507,6 +4560,7 @@ how to use tree with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../../jane/mary /F
@@ -4535,6 +4589,7 @@ how to use tree with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree ../../jane
@@ -4563,6 +4618,7 @@ how to use tree with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F ../../jane
@@ -4614,6 +4670,7 @@ how to use tree with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree doe -ad
@@ -4639,6 +4696,7 @@ how to use tree with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree doe
@@ -4667,6 +4725,7 @@ how to use tree with directory relationships
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a doe
@@ -4733,6 +4792,7 @@ how to use tree with directory relationships
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree /F doe

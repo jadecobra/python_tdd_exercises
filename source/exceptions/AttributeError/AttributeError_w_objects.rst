@@ -110,6 +110,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'AnObject'
@@ -139,6 +140,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'function' object
                     has no attribute 'attribute_00'
@@ -843,6 +845,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'attribute_09' is not defined
 
@@ -862,6 +865,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -880,6 +884,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: AnObject.method_00() missing
                1 required positional argument: 'self'

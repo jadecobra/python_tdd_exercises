@@ -1942,6 +1942,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: 'value', 1: 'value'} != {}
 

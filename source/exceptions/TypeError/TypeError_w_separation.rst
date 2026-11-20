@@ -143,6 +143,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'function_00'
@@ -177,6 +178,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_00() takes
                0 positional arguments but 1 was given
@@ -259,6 +261,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_01() takes
                0 positional arguments but 2 were given
@@ -327,6 +330,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_02() takes
                0 positional arguments but 3 were given
@@ -396,6 +400,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_03() takes
                0 positional arguments but 4 were given
@@ -465,6 +470,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_04() takes
                0 positional arguments but 1 was given
@@ -534,6 +540,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_05() takes
                0 positional arguments but 2 were given
@@ -604,6 +611,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_06() takes
                0 positional arguments but 3 were given
@@ -676,6 +684,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_07() takes
                0 positional arguments but 4 were given
@@ -747,6 +756,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_08() takes
                0 positional arguments but 2 were given
@@ -818,6 +828,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_00() got
                an unexpected keyword argument 'the_input'
@@ -884,6 +895,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_01() got
                an unexpected keyword argument 'first'
@@ -981,6 +993,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_02() got
                an unexpected keyword argument 'third'
@@ -1112,6 +1125,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_03() got
                an unexpected keyword argument 'first'
@@ -1286,6 +1300,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_04() got
                an unexpected keyword argument 'argument'
@@ -1324,6 +1339,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_05() got
                an unexpected keyword argument 'argument_0'
@@ -1387,6 +1403,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_06() got
                an unexpected keyword argument 'argument_0'
@@ -1474,6 +1491,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_07() got
                an unexpected keyword argument 'argument_0'
@@ -1600,6 +1618,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_08() got
                an unexpected keyword argument 'argument'
@@ -1621,6 +1640,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
      TypeError: function_08() got
                 an unexpected keyword argument 'name'.
@@ -1883,6 +1903,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_08() got
                multiple values for argument 'argument'

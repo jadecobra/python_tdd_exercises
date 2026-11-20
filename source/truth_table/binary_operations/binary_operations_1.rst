@@ -265,6 +265,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: contradiction() takes
                1 positional argument but 2 were given
@@ -742,6 +743,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -780,6 +782,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -846,6 +849,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1682,6 +1686,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2102,6 +2107,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2201,6 +2207,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 

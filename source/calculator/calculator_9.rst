@@ -179,6 +179,7 @@ test_home_page
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.website'
 
@@ -197,6 +198,7 @@ test_home_page
 * then I add ``website.py`` to the ``src`` folder_ and the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.website' has no attribute 'app'
 
@@ -249,6 +251,7 @@ test_home_page
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 404 != 'BOOM!!!'
 
@@ -302,6 +305,7 @@ test_home_page
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 404 != 200
 
@@ -324,6 +328,7 @@ test_home_page
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 500 != 200
 
@@ -412,6 +417,7 @@ how to view the website
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: b'' != '<h1>Calculator</h1>'
 
@@ -442,6 +448,7 @@ how to view the website
 * I go back to ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the test, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: b'<h1>Calculator</h1>' != '<h1>Calculator</h1>'
 
@@ -579,6 +586,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'calculator
 
@@ -596,6 +604,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the test passes and the terminal_ for the website shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src'
 
@@ -618,6 +627,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'calculator'
 
@@ -702,6 +712,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: b'<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>' != 'BOOM!!!'
 
@@ -723,6 +734,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for +: 'float' and 'str'
 
@@ -749,6 +761,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: b'<h2>0.0 + 1.0 = 1.0</h2>' != 'BOOM!!!'
 
@@ -816,6 +829,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: b'<h2>ABC.DEFGHIJKLMNOP + 1.0 = ABQ.DEFGHIJKLMNOP</h2>' != b'<h2>0.0 + 1.0 = 1.0</h2>'
 
@@ -836,6 +850,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -878,6 +893,7 @@ how to change a bytes object to a string
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '<h2>RS.TUVWXYZABCDEFG + 1.0 = RH.TUVWXYZABCDEFG</h2>' != '<h2>0.0 + 1.0 = 1.0</h2>'
 
@@ -932,6 +948,7 @@ how to change a bytes object to a string
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '<h2>HIJ.KLMNOPQRSTUVWX + YZA.BCDEFGHIJKLMNOP = QRS.TUVWXYZABCDEFG</h2>' != '<h2>-HIJ.KLMNOPQRSTUVWX + 1.0 = HIY.KLMNOPQRSTUVWX</h2>'
 
@@ -1089,6 +1106,7 @@ how to change a bytes object to a string
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '<h2>YZA.BCDEFGHIJKLMNO + PQR.STUVWXYZABCDEFG = HIJ.KLMNOPQRSTUVWXY</h2>' != '<h2>YZA.BCDEFGHIJKLMNO * PQR.STUVWXYZABCDEFG = ZABCD.EFGHIJKLMNO</h2>'
 
@@ -1274,6 +1292,7 @@ how to make a form
 * I click on ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the tests again, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: b'<h1>Calculator</h1>\n<form method="post" action="/calculate">\n</form>' != b'<h1>Calculator</h1>'
 
@@ -1584,6 +1603,7 @@ good
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '<h2>PQ.RSTUVWXYZABCDEF / 0.0 = brmph?! I cannot divide by 0. Try again...</h2>' != 'brmph?! I cannot divide by 0. Try again...'
 
@@ -2019,6 +2039,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for /: 'float' and 'dict
 
@@ -2054,6 +2075,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='add', bad_input=None) ... - TypeError: unsupported operand type(s) for +: 'float' and 'NoneType'
     SUBFAILED(operation='subtract', bad_input=None) ... - TypeError: unsupported operand type(s) for -: 'float' and 'NoneType'

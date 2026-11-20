@@ -156,6 +156,7 @@ the test passes.
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for /: 'NoneType' and 'NoneType'
 
@@ -187,6 +188,7 @@ the test passes.
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
 
@@ -218,6 +220,7 @@ the test passes.
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
@@ -321,6 +324,7 @@ the test passes.
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
@@ -391,6 +395,7 @@ the test passes.
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
@@ -436,6 +441,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: TypeError not raised
 
@@ -591,6 +597,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for /: 'NoneType' and 'NoneType'
 
@@ -612,6 +619,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: TypeError not raised
 
@@ -662,6 +670,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
 
@@ -705,6 +714,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
@@ -968,6 +978,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
@@ -1069,6 +1080,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 

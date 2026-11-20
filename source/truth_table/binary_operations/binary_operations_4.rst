@@ -269,6 +269,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -731,6 +732,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -994,6 +996,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -1313,6 +1316,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1367,6 +1371,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1433,6 +1438,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1841,6 +1847,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -2218,6 +2225,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2310,6 +2318,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2617,6 +2626,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 

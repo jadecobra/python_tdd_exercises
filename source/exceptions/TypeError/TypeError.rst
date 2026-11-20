@@ -137,6 +137,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -145,6 +146,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -160,6 +162,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/test_type_error.py
@@ -168,6 +171,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/test_type_error.py
@@ -196,6 +200,7 @@ start the project
     * I use echo_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest" > requirements.txt
@@ -203,6 +208,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest-watcher" >> requirements.txt
@@ -215,6 +221,7 @@ start the project
     * I use `Out-File`_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest" | Out-File requirements.txt -Encoding UTF8
@@ -222,6 +229,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
@@ -350,6 +358,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_00' is not defined
 
@@ -465,6 +474,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_01' is not defined
 
@@ -539,6 +549,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_02' is not defined
 
@@ -613,6 +624,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_03' is not defined
 
@@ -770,6 +782,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_04' is not defined
 
@@ -802,6 +815,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_type_error_w_keyword_arguments
@@ -862,6 +876,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_05' is not defined
 
@@ -983,6 +998,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_06' is not defined
 
@@ -1083,6 +1099,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_07' is not defined
 
@@ -1282,6 +1299,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_08' is not defined
 
@@ -1317,6 +1335,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_type_error_w_args_and_kwargs
@@ -1396,6 +1415,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_type_error_w_args_and_kwargs
@@ -1452,6 +1472,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_01' is not defined
 
@@ -1479,6 +1500,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_01() got
                multiple values for argument 'first'
@@ -1527,6 +1549,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_02' is not defined
 
@@ -1563,6 +1586,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_02() got
                multiple values for argument 'first'
@@ -1595,6 +1619,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_02() missing
                1 required positional argument: 'third'
@@ -1625,6 +1650,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_02() got
                multiple values for argument 'first'
@@ -1676,6 +1702,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_03' is not defined
 
@@ -1711,6 +1738,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_03() got
                multiple values for argument 'first'
@@ -1767,6 +1795,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_07' is not defined
 
@@ -1815,6 +1844,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_07() got
                multiple values for argument 'argument_0'
@@ -1883,6 +1913,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_00' is not defined
 
@@ -1918,6 +1949,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_00() got
                multiple values for argument 'the_input'
@@ -1983,6 +2015,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_04' is not defined
 
@@ -2023,6 +2056,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_04() got
                multiple values for argument 'argument'
@@ -2079,6 +2113,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_05' is not defined
 
@@ -2124,6 +2159,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_05() got
                multiple values for argument 'argument_0'
@@ -2180,6 +2216,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_06' is not defined
 
@@ -2268,6 +2305,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_06() got
                multiple values for argument 'argument_0'
@@ -2403,6 +2441,7 @@ test TypeError with required and unexpected arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_03() missing
                1 required positional argument: 'fourth'
@@ -2466,6 +2505,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_02() got
                an unexpected keyword argument 'fourth'
@@ -2516,6 +2556,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_01() missing
                1 required positional argument: 'first'
@@ -2554,6 +2595,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_00() got
                an unexpected keyword argument 'second'
@@ -2578,6 +2620,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_00() got
                an unexpected keyword argument 'first'
@@ -2603,6 +2646,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_00() missing
                1 required positional argument: 'the_input'
@@ -2671,6 +2715,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'function_08' is not defined
 
@@ -2785,6 +2830,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_04() missing
                1 required positional argument: 'argument'
@@ -2823,6 +2869,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_05() takes
                2 positional arguments but 3 were given
@@ -2861,6 +2908,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_06() missing
                1 required positional argument: 'argument_2'
@@ -2899,6 +2947,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_07() takes
                4 positional arguments but 5 were given
@@ -2937,6 +2986,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_08() missing
                1 required positional argument: 'argument'

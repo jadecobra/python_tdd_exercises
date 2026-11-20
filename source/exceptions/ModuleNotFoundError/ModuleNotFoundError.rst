@@ -102,6 +102,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/module_not_found_error.py
@@ -110,6 +111,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/module_not_found_error.py
@@ -137,6 +139,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -145,6 +148,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -171,6 +175,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1-2
 
         mv tests/module_not_found_error.py \
@@ -180,6 +185,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1-2
 
         Move-Item tests/module_not_found_error.py \
@@ -200,6 +206,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -208,6 +215,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -225,6 +233,7 @@ start the project
     * I make the ``tests`` directory_ a `Python package`_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -232,6 +241,7 @@ start the project
     * I try to run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -242,6 +252,7 @@ start the project
     * I make the ``tests`` directory_ a `Python package`_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -249,6 +260,7 @@ start the project
     * I try to run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -307,6 +319,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -315,6 +328,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -375,6 +389,7 @@ test_module_not_found_error
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -383,6 +398,7 @@ test_module_not_found_error
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -445,6 +461,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
     * I use touch_ to make ``module_00.py`` in the ``src`` folder_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/module_00.py
@@ -452,6 +469,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
     * I run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -462,6 +480,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
     * I use `New-Item`_ to make ``module_00.py`` in the ``src`` folder_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/module_00.py
@@ -469,6 +488,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
     * I run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -514,6 +534,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -522,6 +543,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -529,6 +551,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.module_01'
 
@@ -541,6 +564,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/module_01.py
@@ -549,6 +573,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/module_01.py
@@ -564,6 +589,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -572,6 +598,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -608,6 +635,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -616,6 +644,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -623,6 +652,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.module_02'
 
@@ -635,6 +665,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/module_02.py
@@ -643,6 +674,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/module_02.py
@@ -658,6 +690,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -666,6 +699,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -701,6 +735,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -709,6 +744,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -716,6 +752,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.module_03'
 
@@ -728,6 +765,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/module_03.py
@@ -736,6 +774,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/module_03.py
@@ -751,6 +790,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -759,6 +799,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -795,6 +836,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -803,6 +845,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -810,6 +853,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.module_04'
 
@@ -822,6 +866,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/module_04.py
@@ -830,6 +875,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/module_04.py
@@ -845,6 +891,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -853,6 +900,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -890,6 +938,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -898,6 +947,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -905,6 +955,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.module_05'
 
@@ -917,6 +968,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/module_05.py
@@ -925,6 +977,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/module_05.py
@@ -940,6 +993,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -948,6 +1002,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -986,6 +1041,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -994,6 +1050,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1040,6 +1097,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1048,6 +1106,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1055,6 +1114,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.doe'
 
@@ -1077,6 +1137,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1085,6 +1146,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1127,6 +1189,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1135,6 +1198,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1142,6 +1206,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.doe.john'
 
@@ -1154,6 +1219,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/doe/john.py
@@ -1162,6 +1228,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/doe/john.py
@@ -1177,6 +1244,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1185,6 +1253,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1227,6 +1296,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1235,6 +1305,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1242,6 +1313,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'src.doe.jane'
 
@@ -1254,6 +1326,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch src/doe/jane.py
@@ -1262,6 +1335,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item src/doe/jane.py
@@ -1277,6 +1351,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1285,6 +1360,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1330,6 +1406,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1338,6 +1415,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -1345,6 +1423,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     ModuleNotFoundError: No module named 'magic'
 
@@ -1357,6 +1436,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch magic.py
@@ -1365,6 +1445,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item magic.py
@@ -1380,6 +1461,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -1388,6 +1470,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest

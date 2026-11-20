@@ -233,6 +233,7 @@ test_start_pressed
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -273,6 +274,7 @@ test_start_pressed
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.car' has no attribute 'ignition'
 
@@ -305,6 +307,7 @@ test_start_pressed
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: ignition() got
                an unexpected keyword argument 'start_is_pressed'
@@ -337,6 +340,7 @@ test_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -408,6 +412,7 @@ test_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -501,6 +506,7 @@ test_key_close_start_pressed
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: ignition() got
                an unexpected keyword argument 'key_is_close'
@@ -527,6 +533,7 @@ test_key_close_start_pressed
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: ignition() missing
                1 required positional argument: 'key_is_close'
@@ -620,6 +627,7 @@ test_key_not_close_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -822,6 +830,7 @@ test_key_not_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -881,6 +890,7 @@ test_key_not_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1234,6 +1244,7 @@ test_brake_pressed_key_close_start_pressed
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default follows
                  parameter with a default
@@ -1362,6 +1373,7 @@ test_brake_not_pressed_key_close_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1599,6 +1611,7 @@ test_brake_not_pressed_key_not_close_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1841,6 +1854,7 @@ test_brake_not_pressed_key_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2022,6 +2036,7 @@ test_brake_not_pressed_key_not_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2274,6 +2289,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
   the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: ignition() got
                an unexpected keyword argument 'in_park'
@@ -2306,6 +2322,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default follows
                  parameter with a default
@@ -2377,6 +2394,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2546,6 +2564,7 @@ test_park_w_brake_pressed_key_not_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2722,6 +2741,7 @@ test_park_w_brake_not_pressed_key_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2898,6 +2918,7 @@ test_park_w_brake_pressed_key_close_start_not_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3074,6 +3095,7 @@ test_park_w_brake_not_pressed_key_not_close_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3250,6 +3272,7 @@ test_park_w_brake_pressed_key_not_close_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3426,6 +3449,7 @@ test_park_w_brake_not_pressed_key_close_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3602,6 +3626,7 @@ test_park_w_brake_pressed_key_close_start_pressed
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 

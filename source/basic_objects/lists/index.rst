@@ -3631,6 +3631,7 @@ the test passes.
   the terminal_ is my friend, and shows IndexError_
 
   .. code-block:: python
+    :caption: terminal
 
     IndexError: list index out of range
 
@@ -3670,6 +3671,7 @@ the test passes.
   the terminal_ is my friend, and shows IndexError_
 
   .. code-block:: python
+    :caption: terminal
 
     IndexError: pop from empty list
 
@@ -3707,6 +3709,7 @@ the test passes.
   the terminal_ is my friend, and shows IndexError_
 
   .. code-block:: python
+    :caption: terminal
 
     IndexError: list index out of range
 

@@ -132,6 +132,7 @@ add exception handler to test_when_person_is_older_than_120
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
@@ -290,6 +291,7 @@ add exception handler to test_when_year_of_birth_is_the_future
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
@@ -505,6 +507,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
@@ -899,6 +902,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E           TypeError
 
@@ -962,6 +966,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E           TypeError
 
@@ -1030,6 +1035,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E           TypeError
 
@@ -1236,6 +1242,7 @@ the test passes.
   the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: python
+    :caption: terminal
 
     E           ValueError
 

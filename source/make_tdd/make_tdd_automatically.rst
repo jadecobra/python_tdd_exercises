@@ -100,6 +100,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
     * I use touch_ to make ``makePythonTdd.sh``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch makePythonTdd.sh
@@ -112,6 +113,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
     * I use New-Item_ to make ``makePythonTdd.ps1``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item makePythonTdd.ps1
@@ -532,6 +534,7 @@ how to use makePythonTdd to make a different project
       I run ``makePythonTdd.sh`` in the terminal_ to make a project named ``more_magic``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ./makePythonTdd.sh
@@ -547,6 +550,7 @@ how to use makePythonTdd to make a different project
       I run ``makePythonTdd.ps1`` in the terminal_ to make a project named ``more_magic``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .\makePythonTdd.ps1

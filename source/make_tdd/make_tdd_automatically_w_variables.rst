@@ -155,6 +155,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
     * I run ``makePythonTdd.sh`` in the terminal_ to make the ``pro_magic`` project
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ./makePythonTdd.sh
@@ -170,6 +171,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
     * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``pro_magic`` project
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .\makePythonTdd.ps1
@@ -338,6 +340,7 @@ Here are a few other examples
     * I try the program_ again, this time with a name for the project in the terminal_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ./makePythonTdd.sh pro_magic_plus
@@ -358,6 +361,7 @@ Here are a few other examples
     * I try the program_ again, this time with a name for the project in the terminal_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .\makePythonTdd.ps1 pro_magic_plus
@@ -395,6 +399,7 @@ Here are a few other examples
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -aL 1 pro_magic_plus
@@ -433,6 +438,7 @@ Here are a few other examples
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ./makePythonTdd.sh exceptions
@@ -441,6 +447,7 @@ Here are a few other examples
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .\makePythonTdd.ps1 exceptions

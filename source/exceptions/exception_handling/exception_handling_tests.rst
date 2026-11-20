@@ -105,6 +105,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ./makePythonTdd.sh exceptions
@@ -113,6 +114,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .\makePythonTdd.ps1 exceptions
@@ -915,6 +917,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -967,6 +970,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E           AssertionError
 
@@ -1063,6 +1067,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'not_defined' is not defined
 
@@ -1115,6 +1120,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.exceptions'
                     has no attribute 'does_not_exist'
@@ -1173,6 +1179,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function_name() takes
                0 positional arguments but 1 was given
@@ -1298,6 +1305,7 @@ test_catching_index_error
   the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     IndexError: string index out of range
 
@@ -1399,6 +1407,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     IndexError: string index out of range
 
@@ -1455,6 +1464,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     IndexError: tuple index out of range
 
@@ -1513,6 +1523,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     IndexError: tuple index out of range
 
@@ -1699,6 +1710,7 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
   the terminal_ is my friend, and shows ZeroDivisionError_
 
   .. code-block:: python
+    :caption: terminal
 
     ZeroDivisionError: division by zero
 
@@ -1819,6 +1831,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
   the terminal_ shows the :ref:`Exception<how to test that an Exception is raised>` I give the `raise statement`_
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
@@ -1836,6 +1849,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
   the terminal_ shows the :ref:`Exception<how to test that an Exception is raised>` I give the `raise statement`_
 
   .. code-block:: python
+    :caption: terminal
 
     E       ValueError
 
@@ -2218,12 +2232,14 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: IndexError not raised
 
   a better error message than the one from my :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError
 
@@ -2354,6 +2370,7 @@ assertRaises_ checks that the code in its context :ref:`raises the Exception<how
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ModuleNotFoundError not raised
 

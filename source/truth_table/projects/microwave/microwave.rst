@@ -233,6 +233,7 @@ test_pressed_start
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -273,6 +274,7 @@ test_pressed_start
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.microwave'
                     has no attribute 'microwave'
@@ -307,6 +309,7 @@ test_pressed_start
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: microwave() got
                an unexpected keyword argument 'pressed_start'
@@ -339,6 +342,7 @@ test_pressed_start
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -413,6 +417,7 @@ test_not_pressed_start
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -517,6 +522,7 @@ test_open_door_not_pressed_start
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: microwave() got
                an unexpected keyword argument 'closed_door'
@@ -543,6 +549,7 @@ test_open_door_not_pressed_start
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ...test_not_pressed_start - TypeError:
         microwave() missing
@@ -563,6 +570,7 @@ test_open_door_not_pressed_start
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default follows
                  parameter with a default
@@ -651,6 +659,7 @@ test_open_door_pressed_start
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -935,6 +944,7 @@ test_timer_set_closed_door_pressed_start
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: microwave() got
                an unexpected keyword argument 'timer_set'
@@ -1134,6 +1144,7 @@ test_not_timer_set_closed_door_pressed_start
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1236,6 +1247,7 @@ test_not_timer_set_closed_door_not_pressed_start
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1506,6 +1518,7 @@ test_not_timer_set_open_door_pressed_start
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1612,6 +1625,7 @@ test_not_timer_set_open_door_not_pressed_start
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1906,6 +1920,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: microwave() got
                an unexpected keyword argument 'too_hot'
@@ -1990,6 +2005,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2160,6 +2176,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2345,6 +2362,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2530,6 +2548,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2715,6 +2734,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2900,6 +2920,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3085,6 +3106,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -3270,6 +3292,7 @@ door            timer           start button        too hot             output
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -3762,6 +3785,7 @@ refactor microwave function
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 

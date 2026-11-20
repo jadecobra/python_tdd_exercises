@@ -143,6 +143,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -162,6 +163,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.telephone'
                     has no attribute 'text'
@@ -425,6 +427,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
 * I delete the text in ``src/telephone/__init__.py`` and the terminal_ :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.telephone'
                     has no attribute 'text'
@@ -450,6 +453,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'text' is not defined
 
@@ -465,6 +469,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -484,6 +489,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: text() takes 0 positional arguments
                but 1 was given

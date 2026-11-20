@@ -127,6 +127,7 @@ test_streamlit_calculator_title
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'streamlit' is not defined
 
@@ -174,6 +175,7 @@ test_streamlit_calculator_title
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'streamlit' has no attribute 'testing'
 
@@ -202,6 +204,7 @@ test_streamlit_calculator_title
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'streamlit.testing' has no attribute 'v1'
 
@@ -262,6 +265,7 @@ test_streamlit_calculator_title
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ElementList() != 'Calculator'
 
@@ -297,6 +301,7 @@ test_streamlit_calculator_title
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ElementList() != 'Calculator'
 
@@ -317,6 +322,7 @@ test_streamlit_calculator_title
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ElementList(_list=[Title(tag='h1')]) != 'Calculator'
 
@@ -354,6 +360,7 @@ test_streamlit_calculator_title
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Title(tag='h1') != 'Calculator'
 
@@ -502,6 +509,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: Title(tag='h1')} is not None : {}
 
@@ -518,6 +526,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: Title(tag='h1')} != {}
 
@@ -543,6 +552,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'Title' is not defined
 
@@ -582,6 +592,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {0: Title(tag='h1'), 1: Block(
        type='flex_container'
@@ -607,6 +618,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'Block' is not defined
 
@@ -629,6 +641,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Block(
        type='flex_container'
@@ -652,6 +665,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {'children': {}, 'proto': flex_container {[503 chars] )
 
@@ -761,6 +775,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError: flex_container {
     E         gap_config {
@@ -783,6 +798,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError: gap_config {
     E         gap_size: SMALL
@@ -809,6 +825,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 != {}
 
@@ -913,6 +930,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 != ''
 
@@ -941,6 +959,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 != ''
 
@@ -970,6 +989,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 != ''
 
@@ -1010,6 +1030,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False != ''
 
@@ -1053,6 +1074,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 

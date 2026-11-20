@@ -587,6 +587,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'jane, doe, F, 1991' != None
 
@@ -612,6 +613,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'joe, blow, M, 1996' != 'jane, doe, F, 1991'
 
@@ -877,6 +879,7 @@ because
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'a string' is not an integer
 
@@ -1001,6 +1004,7 @@ because
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: BaseException.add_note() takes
                exactly one argument (0 given)
@@ -1023,6 +1027,7 @@ because
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ("'a string' is not an integer",) != None
 
@@ -1063,6 +1068,7 @@ because
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'BOOM!!!' != "'a string' is not an integer"
 
@@ -1274,6 +1280,7 @@ because
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'Hello, my name is jane doe and I am YY.' != None
 
@@ -1295,6 +1302,7 @@ because
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'Hello, my name is joe blow and I am XX.'
                  != 'Hello, my name is jane doe and I am YY.'
@@ -4946,6 +4954,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         "a 121 year old person is too old to be alive."
@@ -5105,6 +5114,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         "BOOM!!!" does not match

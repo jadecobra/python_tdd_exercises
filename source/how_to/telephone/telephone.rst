@@ -134,6 +134,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -142,6 +143,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -157,6 +159,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/test_telephone.py
@@ -165,6 +168,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/test_telephone.py
@@ -193,6 +197,7 @@ start the project
     * I use echo_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest" > requirements.txt
@@ -200,6 +205,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest-watcher" >> requirements.txt
@@ -212,6 +218,7 @@ start the project
     * I use `Out-File`_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest" | Out-File requirements.txt -Encoding UTF8
@@ -219,6 +226,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
@@ -350,6 +358,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'text' is not defined
 
@@ -393,6 +402,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: test_passing_none.<locals>.text()
                takes 0 positional arguments but 1 was given
@@ -552,6 +562,7 @@ Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'text' is not defined
 
@@ -584,6 +595,7 @@ Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: None'
                         == 'I got: False'
@@ -606,6 +618,7 @@ Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: False' == 'I got: None'
 
@@ -658,6 +671,7 @@ how to write an f-string
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: {the_input}'
                         == 'I got: False'
@@ -790,6 +804,7 @@ how to write an f-string
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: None' == 'I got: BOOM!!!'
 
@@ -984,6 +999,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: 1234'
                         == 'I got: an_integer'
@@ -1148,6 +1164,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: 5.678'
                         == 'I got: a_float'
@@ -1236,6 +1253,7 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: hello'
                         == 'I got: hi'
@@ -1313,6 +1331,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I got: hello'
                         == 'I got: a_string'

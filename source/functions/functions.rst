@@ -126,6 +126,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -134,6 +135,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -149,6 +151,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/test_functions.py
@@ -157,6 +160,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/test_functions.py
@@ -185,6 +189,7 @@ start the project
     * I use echo_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest" > requirements.txt
@@ -192,6 +197,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest-watcher" >> requirements.txt
@@ -204,6 +210,7 @@ start the project
     * I use `Out-File`_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest" | Out-File requirements.txt -Encoding UTF8
@@ -211,6 +218,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
@@ -495,6 +503,7 @@ A call to a :ref:`function<what is a function?>` gets the output of the :ref:`fu
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -751,6 +760,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -936,6 +946,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'w_return_none' is not defined
 
@@ -1041,6 +1052,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1125,6 +1137,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'something' is None
 
@@ -1274,6 +1287,7 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'return_leaves_the_function'
                is not defined
@@ -1329,6 +1343,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None is 'something'
 
@@ -1380,6 +1395,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1439,6 +1455,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError: assert 'something' is None
 
@@ -1586,6 +1603,7 @@ There are :ref:`functions<what is a function?>` that always return the same thin
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'constant' is not defined
 
@@ -1640,6 +1658,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None is 'the same thing'
 
@@ -1691,6 +1710,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1756,6 +1776,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'the same thing' is None
 

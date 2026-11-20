@@ -170,6 +170,7 @@ add TestFunctions object
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'TestFunctions' object
                     has no attribute 'assertEqual'
@@ -217,6 +218,7 @@ add TestFunctions object
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -317,6 +319,7 @@ test_making_a_function_w_pass with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestFunctions.test_making_a_function_w_pass() takes
                0 positional arguments but 1 was given
@@ -373,6 +376,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: None
 
@@ -452,6 +456,7 @@ test_making_a_function_w_return with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_making_a_function_w_return()
@@ -509,6 +514,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: None
 
@@ -589,6 +595,7 @@ test_making_a_function_w_return_none with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_making_a_function_w_return_none()
@@ -648,6 +655,7 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: None
 
@@ -735,6 +743,7 @@ test_what_happens_after_functions_return with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_what_happens_after_functions_return()
@@ -800,6 +809,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: None
 
@@ -891,6 +901,7 @@ test_constant_function with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_constant_function()
@@ -955,6 +966,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'the same thing' == 'the same thing'
 
@@ -1043,6 +1055,7 @@ test_identity_function with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_identity_function()
@@ -1110,6 +1123,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: None
 
@@ -1237,6 +1251,7 @@ test_why_use_a_function with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_why_use_a_function()
@@ -1506,6 +1521,7 @@ test_positional_arguments with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_positional_arguments()
@@ -1877,6 +1893,7 @@ test_keyword_arguments with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_keyword_arguments()
@@ -2263,6 +2280,7 @@ test_args_and_kwargs with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_args_and_kwargs()
@@ -2339,6 +2357,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: ('first', 'last') == ('first', 'last')
 
@@ -2511,6 +2530,7 @@ test_optional_arguments with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_optional_arguments()
@@ -2905,6 +2925,7 @@ test_unknown_number_of_arguments with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestFunctions.test_unknown_number_of_arguments()

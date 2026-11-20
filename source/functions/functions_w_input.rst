@@ -1470,6 +1470,7 @@ test_positional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'positional_arguments' is not defined
 
@@ -1534,6 +1535,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_positional_arguments.<locals>.positional_arguments()
@@ -1593,6 +1595,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_positional_arguments.<locals>.positional_arguments()
@@ -1653,6 +1656,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == ('first', 'last')
 
@@ -1743,6 +1747,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('last', 'first') == ('first', 'last')
 
@@ -1962,6 +1967,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
       AssertionError:
           assert ([1, 2, 3, 'n...0, 1, 2, 'n'))
@@ -2123,6 +2129,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('first', 'last') == ('last', 'first')
 
@@ -2204,6 +2211,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('last', 'first') == ('first', 'last')
 
@@ -2330,6 +2338,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ([0, 1, 2, 'n...0, 1, 2, 'n'))
                         == ((0, 1, 2, 'n...0, 1, 2, 'n']
@@ -2666,6 +2675,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'the same thing'
                         == 'not the same thing'
@@ -3204,6 +3214,7 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'keyword_arguments' is not defined
 
@@ -3278,6 +3289,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_keyword_arguments.<locals>.keyword_arguments()
@@ -3476,6 +3488,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == ('first', 'last')
 
@@ -3574,6 +3587,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('first', 'last') == ('last', 'first')
 
@@ -3825,6 +3839,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert ([1, 2, 3, 'n...0, 1, 2, 'n'))
@@ -4021,6 +4036,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'positional_arguments' is not defined
 
@@ -4128,6 +4144,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'keyword_arguments' is not defined
 
@@ -4329,6 +4346,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: positional argument follows keyword argument
 
@@ -4379,6 +4397,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'args_and_kwargs' is not defined
 
@@ -4409,6 +4428,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_args_and_kwargs.<locals>.args_and_kwargs()
@@ -4446,6 +4466,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_args_and_kwargs.<locals>.args_and_kwargs()
@@ -4517,6 +4538,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: duplicate argument 'last_input'
                  in function definition
@@ -4540,6 +4562,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == ('first', 'last')
 
@@ -4730,6 +4753,7 @@ I can make an argument_ of a :ref:`function<what is a function?>` optional, whic
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'optional_arguments' is not defined
 
@@ -4800,6 +4824,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_optional_arguments.<locals>.optional_arguments()
@@ -4898,6 +4923,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('joe', 'blow') == ()
 
@@ -4965,6 +4991,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('john', 'doe') == ()
 
@@ -5044,6 +5071,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('john', 'smith')
                         == ('smith', 'john')
@@ -5295,6 +5323,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'unknown_number_of_arguments' is not defined
 
@@ -5332,6 +5361,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_unknown_number_of_arguments
@@ -5355,6 +5385,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_unknown_number_of_arguments
@@ -5394,6 +5425,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_unknown_number_of_arguments
@@ -5418,6 +5450,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: arguments cannot follow var-keyword argument
 
@@ -5442,6 +5475,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_unknown_number_of_arguments
@@ -5574,6 +5608,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_unknown_number_of_arguments
@@ -5603,6 +5638,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         test_unknown_number_of_arguments
@@ -5699,6 +5735,7 @@ how Python treats starred and double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
                         == None
@@ -5750,6 +5787,7 @@ how Python treats starred and double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1), {'a': 2, 'b': 3, 'c': 4})
                         == None
@@ -5804,6 +5842,7 @@ how Python treats starred and double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5})
@@ -5920,6 +5959,7 @@ how Python treats starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert (((0, 1), {'a... 'b': 3}), {})
                         == ((0, 1), {'a': 2, 'b': 3})
@@ -5968,6 +6008,7 @@ how Python treats starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1, {'a': 2, 'b': 3}), {})
                         == ((0, 1), {'a': 2, 'b': 3})
@@ -6085,6 +6126,7 @@ how Python treats double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert (((0, 1), {'a... 'c': 4}), {})
@@ -6134,6 +6176,7 @@ how Python treats double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert (((0, 1),), {...': 3, 'c': 4})
                         == ((0, 1), {'a'...': 3, 'c': 4})
@@ -6249,6 +6292,7 @@ how Python treats double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert (((0, 1, 2), ... 'c': 5}), {})
                         == ((0, 1, 2), {...': 4, 'c': 5})
@@ -6364,6 +6408,7 @@ how Python treats double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1, 2, 'n'), {}) == ()
 
@@ -6443,6 +6488,7 @@ how Python treats double starred expressions
   the terminal_ is my friend, and shows
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((), {'a': 1,... 3, 'd': 'n'}) == ()
 

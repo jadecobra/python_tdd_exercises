@@ -101,6 +101,7 @@ a better way to test why use a function
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(y=0) ... - AssertionError: 4 != 8
     SUBFAILED(y=1) ... - AssertionError: 5 != 8

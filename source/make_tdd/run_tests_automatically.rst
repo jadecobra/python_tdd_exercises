@@ -109,6 +109,7 @@ open the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 2
@@ -117,6 +118,7 @@ open the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -156,6 +158,7 @@ open the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 2
@@ -164,6 +167,7 @@ open the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -212,6 +216,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
     * I can use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest" > requirements.txt
@@ -224,6 +229,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
     * I can use `Out-File`_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest" | Out-File requirements.txt -Encoding UTF8
@@ -242,6 +248,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 1
@@ -250,6 +257,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -279,6 +287,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest-watcher" >> requirements.txt
@@ -287,6 +296,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
@@ -364,6 +374,7 @@ how to install Python packages with uv
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 1
@@ -372,6 +383,7 @@ how to install Python packages with uv
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -416,6 +428,7 @@ When I want to work in a `virtual environment`_, I make sure I am in the parent 
     * I change the `Execution Policy`_ to allow running of scripts
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -423,6 +436,7 @@ When I want to work in a `virtual environment`_, I make sure I am in the parent 
     * I activate the `virtual environment`_ in the terminal_ to use it
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .venv/Scripts/activate.ps1
@@ -430,6 +444,7 @@ When I want to work in a `virtual environment`_, I make sure I am in the parent 
       or
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .venv/Scripts/activate.bat

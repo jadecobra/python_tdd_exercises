@@ -130,6 +130,7 @@ test_logical_true
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_true'
@@ -171,6 +172,7 @@ test_logical_true
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -290,6 +292,7 @@ test_logical_false
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -395,6 +398,7 @@ test_logical_identity
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_identity'
@@ -426,6 +430,7 @@ test_logical_identity
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: logical_identity() takes
                0 positional arguments but 1 was given
@@ -459,6 +464,7 @@ test_logical_identity
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -513,6 +519,7 @@ test_logical_identity
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -533,6 +540,7 @@ test_logical_identity
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -671,6 +679,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -724,6 +733,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -744,6 +754,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -764,6 +775,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 

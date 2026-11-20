@@ -144,6 +144,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'X' != '0'
 
@@ -214,6 +215,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 != '0'
 
@@ -279,6 +281,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'X' != '0'
 
@@ -353,6 +356,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(key='C') ... - AssertionError: '0' != 'BOOM!!!'
     SUBFAILED(key='AC') ... - AssertionError: '0' != 'BOOM!!!'
@@ -476,6 +480,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ... - AssertionError: '12' != 3.0
 
@@ -538,6 +543,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '0' != '1'
 
@@ -626,6 +632,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '2' != 3.0
 
@@ -695,6 +702,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '0' != '2'
 
@@ -748,6 +756,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '0' != 3.0
 
@@ -774,6 +783,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '12' != 3.0
 
@@ -815,6 +825,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 * I try another number, the browser and the terminal_ for the application show :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for +=: 'float' and 'str'
 
@@ -841,6 +852,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '3.0' != 3.0
 
@@ -915,6 +927,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '4.0120000000000005' != '-1.0'
 
@@ -1000,6 +1013,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<test_assertion_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '=' != '\\+'
 
@@ -1023,6 +1037,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '0' != '1'
 
@@ -1060,6 +1075,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '4.0120000000000005' != '-1.0'
 
@@ -1122,6 +1138,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '\\+' != '\\-'
 
@@ -1158,6 +1175,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '5.01' != '-1.0'
 
@@ -1218,6 +1236,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '2' != '3.0'
 
@@ -1242,12 +1261,14 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '2' != '-1.0'
 
   and :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     KeyError: '\\-'
 
@@ -1284,6 +1305,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '1.0099999999999998' != '-1.0'
 
@@ -1353,6 +1375,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '3.01' != '1'
 
@@ -1530,6 +1553,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='\\+') ... - AssertionError: '1' != 'BOOM!!!'
     SUBFAILED(operation='\\-') ... - AssertionError: '1' != 'BOOM!!!'
@@ -1552,6 +1576,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '111' != '1'
 
@@ -1611,6 +1636,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='\\+') ... - AssertionError: '\\+' != 'BOOM!!!'
     SUBFAILED(operation='\\-') ... - AssertionError: '\\-' != 'BOOM!!!'
@@ -1633,6 +1659,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='X') ... - AssertionError: '\\-' != 'X'
     SUBFAILED(operation='/') ... - AssertionError: '\\-' != '/'
@@ -1669,6 +1696,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='/') ... - AssertionError: 'X' != '/'
     FAILED ... - AssertionError: '11' != '1'
@@ -1749,6 +1777,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='\\+') ... - AssertionError: '2' != 'BOOM!!!'
     SUBFAILED(operation='\\-') ... - AssertionError: '3.01' != '1'
@@ -1757,6 +1786,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   and :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='/') t... - KeyError: '1'
     FAILED ... - KeyError: '1'
@@ -1792,6 +1822,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='/') ... - KeyError: 'AC'
     FAILED ... - KeyError: '1'
@@ -1910,6 +1941,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='\\+') ... - AssertionError: '3.0' != 'brmph?! Numbers only. Try again...'
     SUBFAILED(operation='\\-') ... - AssertionError: '3.01' != '1'
@@ -1935,6 +1967,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     SUBFAILED(operation='\\+') ... - AssertionError: '3.0' != 3.0
     SUBFAILED(operation='\\-') ... - AssertionError: '3.01' != '1'

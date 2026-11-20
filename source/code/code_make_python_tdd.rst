@@ -48,6 +48,7 @@ makePythonTdd with no variables
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ./makePythonTdd.sh
@@ -56,6 +57,7 @@ makePythonTdd with no variables
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .\makePythonTdd.ps1
@@ -103,6 +105,7 @@ makePythonTdd with variables
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         ./makePythonTdd.sh person
@@ -111,6 +114,7 @@ makePythonTdd with variables
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         .\makePythonTdd.ps1 person

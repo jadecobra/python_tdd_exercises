@@ -202,6 +202,7 @@ I want to see what comes with the `datetime module`_.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         Lists differ: [
@@ -478,6 +479,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: function missing
                required argument 'year' (pos 1)
@@ -1005,6 +1007,7 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestPerson.calculate_age() takes
@@ -1176,6 +1179,7 @@ I add ``self`` to the parentheses of :ref:`calculate_age<extract calculate_age m
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestPerson.calculate_age() missing
@@ -1513,12 +1517,14 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
   another problem, the error message does not tell me much. At least the ``short test summary info`` shows me what test the error happened in
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ...::TestPerson::test_john - AssertionError
 
@@ -1614,6 +1620,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
@@ -1621,6 +1628,7 @@ the test passes.
   - The ``short test summary info`` shows me what test the error happened in
 
     .. code-block:: python
+    :caption: terminal
 
       FAILED ...test_when_person_is_older_than_120 - AssertionError
 
@@ -1755,12 +1763,14 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
   the error message is still a problem. The ``short test summary info`` shows me what test the error happened in
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ...test_when_year_of_birth_is_the_future - AssertionError
 
@@ -2047,6 +2057,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() missing
@@ -2078,6 +2089,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unsupported operand type(s) for -:
                'int' and 'NoneType'
@@ -2109,12 +2121,14 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError
 
   another bad error message. The ``short test summary info`` shows me what test the error happened in
 
   .. code-block:: python
+    :caption: terminal
 
     FAILED ...test_when_year_of_birth_is_not_an_integer - AssertionError
 

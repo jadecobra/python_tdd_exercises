@@ -240,6 +240,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -281,6 +282,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
+    :caption: terminal
 
       AttributeError: module 'src.family_ties'
                       has no attribute 'Doe'
@@ -390,6 +392,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'person' is not defined
 
@@ -410,6 +413,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E   ModuleNotFoundError: No module named 'person'
 
@@ -445,6 +449,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   the terminal_ is my friend, it goes back to :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'person' is not defined
 
@@ -623,6 +628,7 @@ what happens when a child calls the parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
@@ -685,6 +691,7 @@ how to call the parent from the child
   - the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
+    :caption: terminal
 
       TypeError: Person.__init__() missing 1
                  required positional argument: 'first_name'
@@ -720,6 +727,7 @@ how to call the parent from the child
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Doe.__init__() takes
                1 positional argument but 2 were given
@@ -753,6 +761,7 @@ how to call the parent from the child
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
@@ -823,6 +832,7 @@ how to call the parent from the child
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ:
         ['__class__', '__delattr__', '__dict__',
@@ -1044,6 +1054,7 @@ I want to test how the :ref:`attributes<what is an object attribute?>` of :ref:`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'doe' != ''
 
@@ -1112,6 +1123,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.family_ties' has no attribute 'Blow'
 
@@ -1135,6 +1147,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'doe' != 'blow'
 
@@ -1193,6 +1206,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Blow.__init__() takes
                1 positional argument but 2 were given
@@ -1281,6 +1295,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'doe' != 'blow'
 
@@ -1320,6 +1335,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'doe' != 'blow'
 
@@ -1359,6 +1375,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.family_ties'
                     has no attribute 'Smith'
@@ -1381,6 +1398,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'doe' != 'smith'
 
@@ -1410,6 +1428,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Smith.__init__() takes 1
                positional argument but 2 were given
@@ -1485,6 +1504,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'smith' != 'doe'
 
@@ -1615,6 +1635,7 @@ Can an :ref:`object<what is an object?>` have more than one parent? How are the 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.family_ties'
                     has no attribute 'Jane'
@@ -1645,6 +1666,7 @@ Can an :ref:`object<what is an object?>` have more than one parent? How are the 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
@@ -1676,6 +1698,7 @@ Can an :ref:`object<what is an object?>` have more than one parent? How are the 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Jane' object has no attribute 'first_name'
 
@@ -1810,6 +1833,7 @@ the test passes.
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Doe.__init__() missing 1
                required positional argument: 'first_name'
@@ -1885,6 +1909,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Jane.__init__() takes 1
                positional argument but 2 were given
@@ -1920,6 +1945,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Jane.__init__() missing 1
                required positional argument: 'first_name'
@@ -1956,6 +1982,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'jane' != 'mary'
 
@@ -2033,6 +2060,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'doe' != 'mary'
 
@@ -2108,6 +2136,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
@@ -2138,6 +2167,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Joe' object has no attribute 'first_name'
 
@@ -2334,6 +2364,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.family_ties'
                     has no attribute 'Mary'
@@ -2567,6 +2598,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Joe.__init__() takes 1
                positional argument but 2 were
@@ -2604,6 +2636,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Joe.__init__() missing 1
                required positional argument: 'first_name'
@@ -2627,6 +2660,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'joe' != 'mary'
 
@@ -2665,6 +2699,7 @@ what happens when a child has more than one parent?
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'blow' != 'doe'
 
@@ -2748,6 +2783,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Jane' object has no attribute 'eye_color'
 
@@ -2795,6 +2831,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Mary' object has no attribute 'eye_color'
 
@@ -2860,6 +2897,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Mary' object has no attribute 'eye_color'
 
@@ -2882,6 +2920,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'blue' != 'green'
 
@@ -2993,6 +3032,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.family_ties'
                     has no attribute 'John'
@@ -3015,6 +3055,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
@@ -3222,6 +3263,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.family_ties' has no attribute 'Lil'
 
@@ -3301,6 +3343,7 @@ what happens when a child has more than one parent?
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'john' != 'lil'
 
@@ -3397,6 +3440,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: John.__init__() takes 1
                positional argument but 2 were given
@@ -3429,6 +3473,7 @@ what happens when a child has more than one parent?
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'smith' != 'blow'
 
@@ -3535,6 +3580,7 @@ what happens when a child has more than one parent?
   the terminal_ shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default
                  follows parameter with a default
@@ -3692,6 +3738,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default
                  follows parameter with a default
@@ -3724,6 +3771,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'doe' != 'blow'
 
@@ -3913,6 +3961,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'blue' != 'green'
 
@@ -3964,6 +4013,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'blue' != ''
 
@@ -4004,6 +4054,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'John' object has no attribute 'eye_color'
 
@@ -4027,6 +4078,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'brown' != ''
 

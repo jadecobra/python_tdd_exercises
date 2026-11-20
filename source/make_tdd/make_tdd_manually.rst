@@ -233,6 +233,7 @@ how to change directory to the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 2
@@ -243,6 +244,7 @@ how to change directory to the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -321,6 +323,7 @@ how to run a Python program
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 src/person/__init__.py
@@ -329,6 +332,7 @@ how to run a Python program
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python src/person/__init__.py
@@ -380,6 +384,7 @@ how to manually run tests
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -390,6 +395,7 @@ how to manually run tests
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -435,6 +441,7 @@ how to make a directory for the tests
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 1
@@ -443,6 +450,7 @@ how to make a directory for the tests
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -466,6 +474,7 @@ how to make a Python file for the tests in the 'tests' directory
     * I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/person.py
@@ -473,6 +482,7 @@ how to make a Python file for the tests in the 'tests' directory
     * I use tree_ to see what the project looks like now
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 2
@@ -480,6 +490,7 @@ how to make a Python file for the tests in the 'tests' directory
     * I run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -490,6 +501,7 @@ how to make a Python file for the tests in the 'tests' directory
     * I use New-Item_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/person.py
@@ -497,6 +509,7 @@ how to make a Python file for the tests in the 'tests' directory
     * I use tree_ to see what the project looks like now
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -504,6 +517,7 @@ how to make a Python file for the tests in the 'tests' directory
     * I run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -553,6 +567,7 @@ because I have not set up the test correctly.
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -561,6 +576,7 @@ because I have not set up the test correctly.
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -594,6 +610,7 @@ how to make the tests a Python package
     * I use touch_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -601,6 +618,7 @@ how to make the tests a Python package
     * I run the tree_ command to see what changed
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 2
@@ -608,6 +626,7 @@ how to make the tests a Python package
     * I try to run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -618,6 +637,7 @@ how to make the tests a Python package
     * I use New-Item_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -625,6 +645,7 @@ how to make the tests a Python package
     * I run the tree_ command to see what changed
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -632,6 +653,7 @@ how to make the tests a Python package
     * I try to run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -667,6 +689,7 @@ how to change the name of a file
     * I use the `mv program`_ to change the name of ``tests/person.py`` to ``tests/test_person.py``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         mv tests/person.py tests/test_person.py
@@ -674,6 +697,7 @@ how to change the name of a file
     * I use tree_ with the ``-L`` option to see what I have so far
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree -a -L 2
@@ -681,6 +705,7 @@ how to change the name of a file
     * I run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -691,6 +716,7 @@ how to change the name of a file
     * I use `Move-Item`_ to change the name of ``tests/person.py`` to ``tests/test_person.py``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         Move-Item tests/person.py tests/test_person.py
@@ -698,6 +724,7 @@ how to change the name of a file
     * I use tree_ to see what I have so far
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         tree
@@ -705,6 +732,7 @@ how to change the name of a file
     * I run the test again
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -729,6 +757,7 @@ the terminal_ still shows ``NO TESTS RAN``
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -737,6 +766,7 @@ the terminal_ still shows ``NO TESTS RAN``
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest
@@ -829,6 +859,7 @@ the terminal_ still shows ``NO TESTS RAN``
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python3 -m unittest
@@ -837,6 +868,7 @@ the terminal_ still shows ``NO TESTS RAN``
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         python -m unittest

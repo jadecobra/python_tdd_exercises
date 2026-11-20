@@ -316,6 +316,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly None
 
@@ -538,6 +539,7 @@ I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_tru
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert True is not True
 

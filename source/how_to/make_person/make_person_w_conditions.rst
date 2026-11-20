@@ -208,6 +208,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.can_vote() takes
                0 positional arguments but 1 was given
@@ -387,6 +388,7 @@ I want :ref:`can_vote<add can_vote method>` to return
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -419,6 +421,7 @@ I want :ref:`can_vote<add can_vote method>` to return
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() got
                an unexpected keyword argument
@@ -444,6 +447,7 @@ I want :ref:`can_vote<add can_vote method>` to return
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default
          follows parameter with a default
@@ -507,6 +511,7 @@ I want :ref:`can_vote<add can_vote method>` to return
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -782,6 +787,7 @@ I can do that with an :ref:`if statement<if statements>`
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -953,6 +959,7 @@ add can_get_license method
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.can_get_license()
                takes 0 positional arguments but 1 was given
@@ -1119,6 +1126,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.__init__() got
                an unexpected keyword argument
@@ -1144,6 +1152,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default
          follows parameter with a default
@@ -1182,6 +1191,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -1201,6 +1211,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'Person' object has no attribute 'passed_test'
 
@@ -1229,6 +1240,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_mary`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False != True
 
@@ -1332,6 +1344,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False != True
 
@@ -1377,6 +1390,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False != True
 
@@ -1467,6 +1481,7 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -1609,6 +1624,7 @@ I can make an :ref:`attribute<what is an object attribute?>` to remove the repet
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
       FAILED ...test_dir_person_instance - AssertionError:
           Lists differ: ['__c[396 chars]_', 'age', 'can_ge...
@@ -2058,6 +2074,7 @@ because I added a new :ref:`method<what is a method?>`.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: Person.check_age() takes
                1 positional arguments but 2 were given

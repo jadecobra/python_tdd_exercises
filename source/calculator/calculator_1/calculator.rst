@@ -67,6 +67,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1-2
 
         touch src/calculator.py
@@ -76,6 +77,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1-2
 
         New-Item src/calculator.py
@@ -104,6 +106,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -112,6 +115,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -166,6 +170,7 @@ start the project
     * I use echo_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest" > requirements.txt
@@ -173,6 +178,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest-watcher" >> requirements.txt
@@ -185,6 +191,7 @@ start the project
     * I use `Out-File`_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest" | Out-File requirements.txt -Encoding UTF8
@@ -192,6 +199,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
@@ -348,6 +356,7 @@ test_addition
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -388,6 +397,7 @@ test_addition
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
@@ -417,6 +427,7 @@ test_addition
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'add' is not defined
 
@@ -433,6 +444,7 @@ test_addition
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -464,6 +476,7 @@ test_addition
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
@@ -481,6 +494,7 @@ test_addition
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != 1
 
@@ -522,6 +536,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1 != 2
 
@@ -539,6 +554,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 2 != 1
 
@@ -578,6 +594,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 3 != 2
 
@@ -608,6 +625,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 4 != 3
 
@@ -639,6 +657,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 912468 != 4
 
@@ -671,6 +690,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -1 != 912468
 
@@ -700,6 +720,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -5 != -1
 
@@ -729,6 +750,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 1.1 != -5
 
@@ -758,6 +780,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.30000000000000004 != 1.1
 
@@ -799,6 +822,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -5.555499999999999 != 0.30000000000000004
 
@@ -1153,6 +1177,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
   I use (:kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_)) a few times to run the tests and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: -X.YZABCDEFGHIJKLM != A.BCDEFGHIJKLMNOPQ
 
@@ -1299,6 +1324,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: R.STUVWXYZABCDEFG != H.IJKLMNOPQRSTUVWX
 
@@ -1351,6 +1377,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
   the terminal_ is my friend, and shows OverflowError_
 
   .. code-block:: python
+    :caption: terminal
 
     OverflowError: (34, 'Numerical result out of range')
 
@@ -1463,6 +1490,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'subtract' is not defined
 
@@ -1478,6 +1506,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1496,6 +1525,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
@@ -1512,6 +1542,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMNOP
 
@@ -2113,6 +2144,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 * I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
@@ -2137,6 +2169,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'subtract' is not defined
 
@@ -2151,6 +2184,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -2166,6 +2200,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
@@ -2181,6 +2216,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMN
 
@@ -2196,6 +2232,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (XYZ.ABCDEFGHIJKLMN, YZA.BCDEFGHIJKLMNO) != ZAB.CDEFGHIJKLMNOP
 
@@ -2213,6 +2250,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
@@ -2234,6 +2272,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
@@ -2250,6 +2289,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != XY.ZABCDEFGHIJKLM
 
@@ -2266,6 +2306,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (XYZ.ABCDEFGHIJKLMNO, -YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
@@ -2282,6 +2323,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
 
@@ -2304,6 +2346,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (-XYZ.ABCDEFGHIJKLMNO, YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
@@ -2320,6 +2363,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 

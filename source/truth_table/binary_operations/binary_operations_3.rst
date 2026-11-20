@@ -230,6 +230,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -283,6 +284,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -344,6 +346,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -1316,6 +1319,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -1403,6 +1407,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2093,6 +2098,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2582,6 +2588,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -2638,6 +2645,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -2899,6 +2907,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 

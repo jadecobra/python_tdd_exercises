@@ -169,6 +169,7 @@ because ``src`` is not defined in ``tests/test_functions.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions' has no attribute 'w_pass'
 
@@ -276,6 +277,7 @@ move w_return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'w_return'
@@ -379,6 +381,7 @@ move w_return_none
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'w_return_none'
@@ -485,6 +488,7 @@ move return_leaves_the_function
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'return_leaves_the_function'
@@ -594,6 +598,7 @@ move constant function
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'constant'
@@ -705,6 +710,7 @@ move identity function
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'identity'
@@ -824,6 +830,7 @@ move positional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'positional_arguments'
                is not defined
@@ -852,6 +859,7 @@ move positional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'positional_arguments' is not defined
 
@@ -881,6 +889,7 @@ move positional_arguments
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'positional_arguments'
@@ -994,6 +1003,7 @@ move keyword_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'keyword_arguments' is not defined
 
@@ -1021,6 +1031,7 @@ move keyword_arguments
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'keyword_arguments'
@@ -1045,6 +1056,7 @@ move keyword_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'keyword_arguments' is not defined
 
@@ -1239,6 +1251,7 @@ move args_and_kwargs
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'args_and_kwargs'
@@ -1348,6 +1361,7 @@ move optional_arguments
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'optional_arguments'
                is not defined
@@ -1481,6 +1495,7 @@ move unknown_number_of_arguments function
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'unknown_number_of_arguments'
               is not defined
@@ -1667,6 +1682,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unknown_number_of_arguments() got an
                unexpected keyword argument 'a'
@@ -1684,6 +1700,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unknown_number_of_arguments() got
                multiple values for argument 'a'
@@ -1720,6 +1737,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unknown_number_of_arguments() got
                an unexpected keyword argument 'b'
@@ -1744,6 +1762,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == ((0, 1), {'a': 2, 'b': 3})
 
@@ -1766,6 +1785,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unknown_number_of_arguments() got
                an unexpected keyword argument 'c'
@@ -1792,6 +1812,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: unknown_number_of_arguments() missing
                1 required keyword-only argument: 'c'.
@@ -1819,6 +1840,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
                         == ((0, 1), {'a'...': 3, 'c': 4})
@@ -1845,6 +1867,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1), 2, 3, None)
                         == ((0, 1), {'a': 2, 'b': 3})
@@ -1874,6 +1897,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
                         == ((0, 1), {'a'...': 3, 'c': 4})
@@ -1903,6 +1927,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
                         == ((0, 1), {'a'...': 3, 'c': 4})
@@ -1931,6 +1956,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'optional_arguments'
@@ -1951,6 +1977,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: optional_arguments() takes
                0 positional arguments but 1 was given
@@ -1969,6 +1996,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == ('jane', 'doe')
 
@@ -1987,6 +2015,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: optional_arguments() takes
                1 positional argument but 2 were given
@@ -2007,6 +2036,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: optional_arguments() missing
                1 required positional argument: 'argument_b'
@@ -2028,6 +2058,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('jane', 'doe')
                         == ('joe', 'blow')
@@ -2050,6 +2081,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('jane', None)
                         == ('jane', 'doe')
@@ -2075,6 +2107,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
      TypeError: optional_arguments() got
                 an unexpected keyword argument 'first_input'
@@ -2103,6 +2136,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default
          follows parameter with a default
@@ -2133,6 +2167,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: optional_arguments() missing
                1 required positional argument: 'first_input'
@@ -2162,6 +2197,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: optional_arguments() missing
                1 required positional argument: 'argument'
@@ -2193,6 +2229,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert (None, 'doe')
                         == ('jane', 'doe')
@@ -2226,6 +2263,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('jane', None, 'doe')
                         == ('jane', 'doe')
@@ -2298,6 +2336,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default
          follows parameter with a default
@@ -2335,6 +2374,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('john', 'doe')
                         == ('john', 'smith')
@@ -2373,6 +2413,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('jane', 'doe', None)
                         == ('jane', 'doe')
@@ -2413,6 +2454,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'args_and_kwargs'
@@ -2433,6 +2475,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: args_and_kwargs() got
                an unexpected keyword argument 'last_input'
@@ -2451,6 +2494,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: args_and_kwargs() got
                multiple values for argument 'last_input'
@@ -2472,6 +2516,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == ('first', 'last')
 
@@ -2491,6 +2536,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'keyword_arguments'
@@ -2511,6 +2557,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: keyword_arguments() got
                an unexpected keyword argument 'first_input'
@@ -2551,6 +2598,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == ('first', 'last')
 
@@ -2570,6 +2618,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('first', 'last') == (1, 0)
 
@@ -2611,6 +2660,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: positional_arguments() got
                an unexpected keyword argument 'last_input'
@@ -2653,6 +2703,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None
         == ({3, 1, 2, 'n'}, {'key': 'value'})
@@ -2673,6 +2724,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert ({1, 2, 3, 'n...ey': 'value'})
@@ -2695,6 +2747,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         assert ({'key': 'val...3, 1, 'n', 2})
@@ -2721,6 +2774,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert ('last', 'first')
                         == ('first', 'last')
@@ -2746,6 +2800,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'identity'
@@ -2766,6 +2821,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: identity() takes
                0 positional arguments but 1 was given
@@ -2784,6 +2840,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == object
 
@@ -2821,6 +2878,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'constant'
@@ -2841,6 +2899,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert None == 'the same thing'
 
@@ -2858,6 +2917,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'return_leaves_the_function'
@@ -2878,6 +2938,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'w_return_none'
@@ -2899,6 +2960,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'w_return'
@@ -2920,6 +2982,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'w_pass'

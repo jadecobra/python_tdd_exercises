@@ -168,6 +168,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -176,6 +177,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -189,6 +191,7 @@ start the project
       :sync: unix
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         touch tests/test_unittest.py
@@ -197,6 +200,7 @@ start the project
       :sync: no_wsl
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         New-Item tests/test_unittest.py
@@ -223,6 +227,7 @@ start the project
     * I use echo_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest" > requirements.txt
@@ -230,6 +235,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         echo "pytest-watcher" >> requirements.txt
@@ -242,6 +248,7 @@ start the project
     * I use `Out-File`_ to add pytest_ to ``requirements.txt``
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest" | Out-File requirements.txt -Encoding UTF8
@@ -249,6 +256,7 @@ start the project
     * I add `pytest-watcher`_ to the requirements file_
 
       .. code-block:: python
+        :caption: terminal
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
@@ -414,6 +422,7 @@ I want to see what comes with the `unittest module`_.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError:
               assert ['BaseTestSui...tLoader', ...]
@@ -778,6 +787,7 @@ test_assertIsNot
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
      TypeError: TestCase.assertIsNot() missing
                 3 required positional arguments:
@@ -835,6 +845,7 @@ test_assertIsNot
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertIsNot() missing
                2 required positional arguments:
@@ -860,6 +871,7 @@ test_assertIsNot
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly identical: None
 
@@ -1070,6 +1082,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertIs() missing
                3 required positional arguments:
@@ -1096,6 +1109,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertIs() missing
                2 required positional arguments:
@@ -1123,6 +1137,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not True
 
@@ -1230,6 +1245,7 @@ test_assertNotEqual
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertNotEqual() missing
                2 required positional arguments:
@@ -1262,6 +1278,7 @@ test_assertNotEqual
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True == True
 
@@ -1414,6 +1431,7 @@ test_assertEqual
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 0.0 == '0.0'
 
@@ -1466,6 +1484,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 != '0.0'
 
@@ -1569,6 +1588,7 @@ test_assertNotIsInstance
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertNotIsInstance() missing
                3 required positional arguments:
@@ -1604,6 +1624,7 @@ test_assertNotIsInstance
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertNotIsInstance()
                missing 2 required positional arguments:
@@ -1687,6 +1708,7 @@ test_assertNotIsInstance
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError: assert not True
 
@@ -1799,6 +1821,7 @@ test_assertIs_instance
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertIsInstance() missing
                3 required positional arguments:
@@ -1833,6 +1856,7 @@ test_assertIs_instance
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertIsInstance()
                missing 2 required positional arguments:
@@ -1918,6 +1942,7 @@ test_assertIs_instance
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert False
 
@@ -2086,6 +2111,7 @@ test_assertNotIsSubclass
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertNotIsSubclass() missing
                2 required positional arguments:
@@ -2207,6 +2233,7 @@ test_assertNotIsSubclass
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     E       AssertionError: assert not True
 
@@ -2324,6 +2351,7 @@ test_assertIs_subclass
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: issubclass() arg 1 must be a class
 
@@ -2352,6 +2380,7 @@ test_assertIs_subclass
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert False
 
@@ -2391,6 +2420,7 @@ test_assertIs_subclass
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestCase.assertIsSubclass()
                missing 3 required positional arguments:
@@ -2422,6 +2452,7 @@ test_assertIs_subclass
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         <unittest.case.TestCase testMethod=runTest>
@@ -2940,6 +2971,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: TestUnittest.test_failure() takes 0
                positional arguments but 1 was given
@@ -2974,6 +3006,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -3029,6 +3062,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_dir_unittest()
@@ -3098,6 +3132,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_dir_unittest_testcase()
@@ -3167,6 +3202,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertIsNot()
@@ -3207,6 +3243,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertIs()
@@ -3247,6 +3284,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertNotEqual()
@@ -3287,6 +3325,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertEqual()
@@ -3331,6 +3370,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertNotIsInstance()
@@ -3376,6 +3416,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertIs_instance()
@@ -3424,6 +3465,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertNotIsSubclass()
@@ -3468,6 +3510,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestUnittest.test_assertIs_subclass()
@@ -3526,6 +3569,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3588,6 +3632,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3626,6 +3671,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3661,6 +3707,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3696,6 +3743,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3731,6 +3779,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3770,6 +3819,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3810,6 +3860,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3849,6 +3900,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3886,6 +3938,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -3961,6 +4014,7 @@ It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is an 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'TestUnittest' object
                     has no attribute 'assertEqual'

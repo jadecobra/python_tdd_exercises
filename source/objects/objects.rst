@@ -196,6 +196,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   - the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
+    :caption: terminal
 
       TypeError: Person() takes no arguments
 
@@ -217,6 +218,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() got an
@@ -242,6 +244,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() got
@@ -295,6 +298,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() got
@@ -325,6 +329,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError:
         'Person' object has no attribute 'get'
@@ -362,6 +367,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError:
         'Person' object has no attribute 'say_hello'
@@ -394,6 +400,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.say_hello() takes 0 positional arguments
@@ -428,6 +435,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.say_hello() takes 1 positional argument
@@ -512,6 +520,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != 'Hello, my name is joe blow and I am XX'
 
@@ -566,6 +575,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() got an
@@ -598,6 +608,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() missing
@@ -623,6 +634,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         Person.__init__() missing
@@ -649,6 +661,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default follows
                  parameter with a default
@@ -675,6 +688,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
           'Hello, my name is joe blow and I am XX'
@@ -702,6 +716,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError:
         'Person' object has no attribute 'first_name'
@@ -724,6 +739,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is jane blow and I am XX'
@@ -761,6 +777,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is jane blow and I am XX'
@@ -844,6 +861,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is joe doe and I am XX'
@@ -879,6 +897,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is joe doe and I am XX'
@@ -1019,6 +1038,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is joe blow and I am YY'
@@ -1052,6 +1072,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is joe blow and I am YY'
@@ -1203,6 +1224,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'self' is not defined
 
@@ -1320,6 +1342,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is john smith and I am AAA'
@@ -1380,6 +1403,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         'Hello, my name is mary public and I am ZZ'
@@ -1677,6 +1701,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
   the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'Hello, my name is Z Y and I am X' != ''
 
@@ -2864,6 +2889,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ:
         ['__class__', '__delattr__', '__dict__',
@@ -2932,6 +2958,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
   the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ:
         ['__c[32 chars]_', '__dir__', '__doc__', '__eq__',
@@ -2993,6 +3020,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
   the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'E' is not defined
 
@@ -3254,6 +3282,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: Lists differ:
         ['__c[400 chars]'first_name', 'last_name',

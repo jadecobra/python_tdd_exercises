@@ -278,6 +278,7 @@ because I do not have a definition for ``src`` in this file_.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.atm'
                     has no attribute 'withdraw'
@@ -311,6 +312,7 @@ because I do not have a definition for ``src`` in this file_.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: withdraw() got
                an unexpected keyword argument 'right_pin'
@@ -343,6 +345,7 @@ because I do not have a definition for ``src`` in this file_.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: withdraw() got
                an unexpected keyword argument 'enough_cash'
@@ -361,6 +364,7 @@ because I do not have a definition for ``src`` in this file_.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None != 'CASH'
 
@@ -435,6 +439,7 @@ test_right_pin_not_enough_cash
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'CASH' != 'DENIED'
 
@@ -603,6 +608,7 @@ test_wrong_pin_enough_cash
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'CASH' != 'DENIED'
 
@@ -786,6 +792,7 @@ test_wrong_pin_not_enough_cash
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -1107,6 +1114,7 @@ PIN                 cash                    daily limit             withdrawal
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: withdraw() got
               an unexpected keyword argument 'above_daily_limit'
@@ -1179,6 +1187,7 @@ PIN                 cash                    daily limit             withdrawal
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'CASH' != 'DENIED'
 
@@ -1542,6 +1551,7 @@ PIN                 cash                    daily limit             withdrawal
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -1756,6 +1766,7 @@ PIN                 cash                    daily limit             withdrawal
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -1973,6 +1984,7 @@ PIN                 cash                    daily limit             withdrawal
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -2672,6 +2684,7 @@ PIN                 cash                  daily limit             card expired  
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: withdraw() got
                an unexpected keyword argument 'card_expired'
@@ -2700,6 +2713,7 @@ PIN                 cash                  daily limit             card expired  
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: parameter without a default follows
                  parameter with a default
@@ -2809,6 +2823,7 @@ PIN                 cash                  daily limit             card expired  
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'CASH' != 'DENIED'
 
@@ -2998,6 +3013,7 @@ PIN                 cash                  daily limit             card expired  
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -3184,6 +3200,7 @@ PIN                 cash                    daily limit             card expired
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -3368,6 +3385,7 @@ PIN                 cash                    daily limit             card expired
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -3552,6 +3570,7 @@ PIN                 cash                    daily limit             card expired
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -3735,6 +3754,7 @@ PIN                 cash                    daily limit             card expired
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -3919,6 +3939,7 @@ PIN                 cash                    daily limit             card expired
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 
@@ -4106,6 +4127,7 @@ PIN                 cash                    daily limit             card expired
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'DENIED' != 'CASH'
 

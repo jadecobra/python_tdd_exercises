@@ -150,6 +150,7 @@ add TestTelephone class
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: 'TestTelephone' object
                     has no attribute 'assertEqual'
@@ -197,6 +198,7 @@ add TestTelephone class
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True != False
 
@@ -295,6 +297,7 @@ test_passing_none with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_none()
@@ -350,6 +353,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'I got: None' == 'I got: None'
 
@@ -428,6 +432,7 @@ test_passing_booleans with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_booleans()
@@ -487,6 +492,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'I got: False' == 'I got: False'
 
@@ -508,6 +514,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'I got: True' == 'I got: True'
 
@@ -592,6 +599,7 @@ test_passing_an_integer with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_an_integer()
@@ -653,6 +661,7 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'I got: 1234' == 'I got: 1234'
 
@@ -739,6 +748,7 @@ test_passing_a_float with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_a_float()
@@ -802,6 +812,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'I got: 5.678' == 'I got: 5.678'
 
@@ -890,6 +901,7 @@ test_passing_a_string with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_a_string()
@@ -953,6 +965,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 'I got: hello' == 'I got: hello'
 
@@ -1041,6 +1054,7 @@ test_passing_a_tuple with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_a_tuple()
@@ -1102,6 +1116,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: "I got: (0, 1, 2, 'n')"
                  == "I got: (0, 1, 2, 'n')"
@@ -1191,6 +1206,7 @@ test_passing_a_list with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_a_list()
@@ -1255,6 +1271,7 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: "I got: [0, 1, 2, 'n']"
                  == "I got: [0, 1, 2, 'n']"
@@ -1345,6 +1362,7 @@ test_passing_a_set with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_a_set()
@@ -1404,6 +1422,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: "I got: {0, 1, 2, 'n'}"
                  == "I got: {0, 1, 2, 'n'}"
@@ -1495,6 +1514,7 @@ test_passing_a_dictionary with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_a_dictionary()
@@ -1559,6 +1579,7 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError:
         "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
@@ -1661,6 +1682,7 @@ test_passing_an_object with unittest
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError:
         TestTelephone.test_passing_an_object()
@@ -1758,6 +1780,7 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
      AssertionError: "I got: <class 'object'>"
                   == "I got: <class 'object'>"

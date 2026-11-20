@@ -82,6 +82,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: unexpectedly None
 
@@ -120,6 +121,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not None
 
@@ -155,6 +157,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not None
 
@@ -190,6 +193,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0 is not None
 
@@ -225,6 +229,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: 0.0 is not None
 
@@ -260,6 +265,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: '' is not None
 
@@ -295,6 +301,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: () is not None
 
@@ -330,6 +337,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: [] is not None
 
@@ -365,6 +373,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: set() is not None
 
@@ -400,6 +409,7 @@ use assertIsNotNone and assertIsNone
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: {} is not None
 

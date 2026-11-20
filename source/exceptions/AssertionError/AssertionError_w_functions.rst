@@ -205,6 +205,7 @@ test_assert_keyword with assert_equal
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert '11' == '2'
 
@@ -235,6 +236,7 @@ test_assert_keyword with assert_equal
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: assert 'I am alive' == 'I am a ghost'
 

@@ -110,6 +110,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
+    :caption: terminal
 
     NameError: name 'logical_negation' is not defined
 
@@ -124,6 +125,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -142,6 +144,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: logical_negation() takes
                0 positional arguments but 1 was given
@@ -160,6 +163,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -180,6 +184,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -201,6 +206,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -221,6 +227,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -249,6 +256,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ shows ``19 failed, 1 passed``, progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_identity'
@@ -269,6 +277,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: logical_identity() takes
                0 positional arguments but 1 was given
@@ -287,6 +296,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -305,6 +315,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -326,6 +337,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -352,6 +364,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ shows ``18 failed, 2 passed``, more progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_true'
@@ -372,6 +385,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -410,6 +424,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ shows ``16 failed, 4 passed``, simple again. I am getting it. The terminal_ also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'tautology'
@@ -448,6 +463,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -486,6 +502,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: project_second() takes
                0 positional arguments but 2 were given
@@ -504,6 +521,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -522,6 +540,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -543,6 +562,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -569,6 +589,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -612,6 +633,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     TypeError: project_first() takes
                0 positional arguments but 2 were given
@@ -632,6 +654,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: None is not true
 
@@ -650,6 +673,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: True is not false
 
@@ -671,6 +695,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: False is not true
 
@@ -697,6 +722,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -740,6 +766,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True) is not false
 
@@ -757,6 +784,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -775,6 +803,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``12 failed, 8 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'negate_first'
@@ -795,6 +824,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True)
 
@@ -812,6 +842,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -830,6 +861,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``11 failed, 9 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'material_non_implication'
@@ -850,6 +882,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True) is not false
 
@@ -867,6 +900,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -885,6 +919,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, False) is not false
 
@@ -904,6 +939,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``10 failed, 10 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'material_implication'
@@ -924,6 +960,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -941,6 +978,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``9 failed, 11 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_nor'
@@ -961,6 +999,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True) is not false
 
@@ -978,6 +1017,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -996,6 +1036,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -1036,6 +1077,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True) is not false
 
@@ -1074,6 +1116,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -1091,6 +1134,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -1109,6 +1153,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``6 failed, 14 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_disjunction'
@@ -1129,6 +1174,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, False) is not false
 
@@ -1167,6 +1213,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -1184,6 +1231,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -1202,6 +1250,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, False) is not false
 
@@ -1221,6 +1270,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``4 failed, 16 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'exclusive_disjunction'
@@ -1241,6 +1291,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True) is not false
 
@@ -1258,6 +1309,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, False) is not false
 
@@ -1297,6 +1349,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True) is not false
 
@@ -1314,6 +1367,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -1332,6 +1386,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, False) is not false
 
@@ -1372,6 +1427,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -1389,6 +1445,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``1 failed, 19 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'contradiction'
@@ -1409,6 +1466,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, True) is not false
 
@@ -1426,6 +1484,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (True, False) is not false
 
@@ -1444,6 +1503,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, True) is not false
 
@@ -1463,6 +1523,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :caption: terminal
 
     AssertionError: (False, False) is not false
 
@@ -1603,6 +1664,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -1808,6 +1870,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -1894,6 +1957,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -2078,6 +2142,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -2258,6 +2323,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -2297,6 +2363,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -2361,6 +2428,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -2564,6 +2632,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows `SyntaxError`_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
@@ -2661,6 +2730,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows `SyntaxError`_
 
   .. code-block:: python
+    :caption: terminal
 
     SyntaxError: invalid syntax
 
