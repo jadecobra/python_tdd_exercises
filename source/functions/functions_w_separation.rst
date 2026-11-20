@@ -1396,6 +1396,7 @@ move optional_arguments
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'optional_arguments'.
@@ -1530,6 +1531,7 @@ move unknown_number_of_arguments function
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'unknown_number_of_arguments'
@@ -2300,6 +2302,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: optional_arguments() got
                an unexpected keyword argument 'last_input'.
@@ -2579,6 +2582,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: keyword_arguments() got
                an unexpected keyword argument 'last_input'.
@@ -2640,6 +2644,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.functions'
                     has no attribute 'positional_arguments'.
@@ -2682,6 +2687,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: positional_arguments() got
                an unexpected keyword argument 'first_input'.
@@ -2862,7 +2868,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: assert <class 'object'> == None
+    AssertionError: assert <class 'object'> == None
 
 * I :ref:`return<the return statement>` the input
 

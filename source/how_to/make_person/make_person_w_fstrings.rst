@@ -2332,6 +2332,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: say_hello()
                got an unexpected keyword argument 'last_name'.
@@ -3575,6 +3576,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: person() got
                an unexpected keyword argument 'last_name'.
@@ -3784,6 +3786,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: say_hello() got
                an unexpected keyword argument 'last_name'.

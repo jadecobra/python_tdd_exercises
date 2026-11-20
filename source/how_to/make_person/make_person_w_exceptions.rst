@@ -91,6 +91,7 @@ open the project
   the terminal_ shows
 
   .. code-block:: python
+    :caption: terminal
 
     tests/test_person.py .......sss                 [100%]
 

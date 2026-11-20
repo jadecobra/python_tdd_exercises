@@ -65,7 +65,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: -3 != '-3:00'
+    AssertionError: -3 != '-3:00'
     AssertionError: 0 != '00:00'
     AssertionError: 8 != '08:00'
     AssertionError: 16 != '16:00'
@@ -129,7 +129,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: '-18:00' != '-18:44'
+    AssertionError: '-18:00' != '-18:44'
     AssertionError: '05:00' != '05:-16'
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
@@ -164,7 +164,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: '20:20' != '20:-6'
+    AssertionError: '20:20' != '20:-6'
     AssertionError: '06:06' != '06:17'
     AssertionError: '-16:-16' != '-16:-7'
     AssertionError: '02:02' != '02:07'
@@ -219,6 +219,7 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` when I add ``test_duration_calculation``
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: '01:-29' != '00:31'
 
@@ -246,7 +247,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: -458 != '-7:-38'
+    AssertionError: -458 != '-7:-38'
     AssertionError: -936 != '-15:-36'
     AssertionError: -31 != '-1:29'
     AssertionError: 213 != '03:33'
@@ -264,7 +265,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 31 != '00:31'
+    AssertionError: 31 != '00:31'
 
   the :ref:`function<what is a function?>` returns the right number of minutes for the difference. I need a way to change it to hours and minutes to match the expectations of the tests. I add the `unittest.skip decorator`_ to skip it while I test the solution
 
@@ -297,7 +298,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 2 != 0
+    AssertionError: 2 != 0
 
   the result of ``120`` divided by ``60`` is ``2`` with a remainder of ``0``. I change the expectation to the right value.
 
@@ -318,7 +319,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 2 != 0
+    AssertionError: 2 != 0
 
   the result of ``150`` divided by ``60`` is also ``2``, and it has a remainder of ``30``. I change the expectation to the right value
 
@@ -350,7 +351,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 0 != 2
+    AssertionError: 0 != 2
 
   the remainder when ``120`` is divided by ``60`` is ``0``. I change the expectation to the right value
 
@@ -371,7 +372,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 30 != 0
+    AssertionError: 30 != 0
 
   the remainder when ``150`` is divided by ``60`` is ``30``. I change the expected value in the test to the right value
 
@@ -446,7 +447,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: '-11:46' != '-10:-14'
+    AssertionError: '-11:46' != '-10:-14'
     AssertionError: '-6:04' != '-5:-56'
     AssertionError: '10:50' != '11:-10'
     AssertionError: '16:50' != '17:-10'

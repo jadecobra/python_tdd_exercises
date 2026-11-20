@@ -90,6 +90,7 @@ requirements
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
@@ -126,6 +127,7 @@ requirements
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -154,7 +156,7 @@ requirements
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: <module 'src.sleep_duration' from '/workspace[46 chars].py'> != None
+    AssertionError: <module 'src.sleep_duration' from '/workspace[46 chars].py'> != None
 
 * I use something in the ``sleep_duration`` :ref:`module<what is a module?>`
 
@@ -168,6 +170,7 @@ requirements
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
@@ -188,6 +191,7 @@ requirements
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'duration' is not defined
 
@@ -209,6 +213,7 @@ requirements
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -233,6 +238,7 @@ requirements
   then get :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
@@ -258,6 +264,7 @@ requirements
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
@@ -285,7 +292,7 @@ requirements
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: None != ('08:00', '07:00')
+    AssertionError: None != ('08:00', '07:00')
 
   the ``duration`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, I change it to match the expectation
 
@@ -330,7 +337,7 @@ requirements
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
+    AssertionError: Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
 
 * I change ``duration`` to match
 
@@ -354,7 +361,7 @@ requirements
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
+    AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
 
   then change ``duration`` to match the expectation
 
@@ -404,7 +411,7 @@ requirements
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Tuples differ: ('09:00', '06:00') != ('10:00', '02:00')
+    AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '02:00')
     AssertionError: Tuples differ: ('09:00', '06:00') != ('23:00', '00:00')
     AssertionError: Tuples differ: ('09:00', '06:00') != ('07:00', '03:00')
     AssertionError: Tuples differ: ('09:00', '06:00') != ('00:00', '22:00')
@@ -433,6 +440,7 @@ requirements
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
@@ -502,6 +510,7 @@ I add a failing test for the `str.split`_ :ref:`method<what is a method?>` to se
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: ['01:23'] != None
 
@@ -536,7 +545,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Lists differ: ['01:23'] != ['01', '23']
+    AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
   the `documentation <Python documentation for strings>`_ showed that `str.split`_ takes in a separator. I want to see what happens when I pass in ``':'`` as the separator
 
@@ -568,7 +577,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Tuples differ: ('00:00', '10:00') != (['00', '00'], ['10', '00'])
+    AssertionError: Tuples differ: ('00:00', '10:00') != (['00', '00'], ['10', '00'])
     AssertionError: Tuples differ: ('23:00', '08:00') != (['23', '00'], ['08', '00'])
     AssertionError: Tuples differ: ('06:00', '11:00') != (['06', '00'], ['11', '00'])
     AssertionError: Tuples differ: ('13:00', '13:00') != (['13', '00'], ['13', '00'])
@@ -606,7 +615,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: '01' != 0
+    AssertionError: '01' != 0
 
 * I change the value in the test to ``'01'``
 
@@ -628,7 +637,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: '23' != '01'
+    AssertionError: '23' != '01'
 
   the second item (index 1) from splitting ``'01:23'`` on the separator ``':'`` is ``'23'``, the minutes part of the timestamp. I change the ``'01'`` to ``'23'``
 
@@ -658,7 +667,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Tuples differ: (['00', '00'], ['19', '00']) != ('00', '19')
+    AssertionError: Tuples differ: (['00', '00'], ['19', '00']) != ('00', '19')
     AssertionError: Tuples differ: (['14', '00'], ['17', '00']) != ('14', '17')
     AssertionError: Tuples differ: (['05', '00'], ['08', '00']) != ('05', '08')
     AssertionError: Tuples differ: (['23', '00'], ['04', '00']) != ('23', '04')
@@ -696,7 +705,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 1 != 0
+    AssertionError: 1 != 0
 
 * I change the expectation to ``1``
 
@@ -717,7 +726,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 23 != 1
+    AssertionError: 23 != 1
 
 * I change the number from ``1`` to ``23``
 
@@ -749,7 +758,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Tuples differ: ('00', '05') != (0, 5)
+    AssertionError: Tuples differ: ('00', '05') != (0, 5)
     AssertionError: Tuples differ: ('08', '21') != (8, 21)
     AssertionError: Tuples differ: ('04', '04') != (4, 4)
     AssertionError: Tuples differ: ('16', '14') != (16, 14)
@@ -786,7 +795,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: (7, 23) != -16
+    AssertionError: (7, 23) != -16
     AssertionError: (11, 4) != 7
     AssertionError: (12, 21) != -9
     AssertionError: (14, 2) != 12

@@ -208,6 +208,7 @@ add TestAssertionError object
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'unittest' is not defined.
                Did you forget to import 'unittest'?

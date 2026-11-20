@@ -232,6 +232,7 @@ test_catching_module_not_found_error
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     ModuleNotFoundError: No module named 'does_not_exist'
 
@@ -359,6 +360,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
   the terminal_ is my friend, and shows NameError_
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'not_defined' is not defined
 
@@ -456,6 +458,7 @@ test_catching_attribute_error
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -471,6 +474,7 @@ test_catching_attribute_error
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.exceptions'
                     has no attribute 'does_not_exist'
@@ -579,6 +583,7 @@ test_catching_type_error
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.exceptions'
                     has no attribute 'function_name'
@@ -597,6 +602,7 @@ test_catching_type_error
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'function_name' is not defined
 
@@ -613,6 +619,7 @@ test_catching_type_error
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -742,6 +749,7 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     E           AssertionError
 
@@ -977,6 +985,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
   because the string_ (``'import does_not_exist'``) does not :ref:`raise ModuleNotFoundError<how to raise an Exception>`
 
   .. code-block:: shell
+  :caption: terminal
 
     assert_raises('import does_not_exist', ModuleNotFoundError)
     └── def assert_raises(code, exception):
@@ -1020,6 +1029,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
   the test passes, showing that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` which happens when I try to import a :ref:`module<what is a module?>` that does NOT exist.
 
   .. code-block:: shell
+  :caption: terminal
 
     assert_raises('import does_not_exist', ModuleNotFoundError)
     └── def assert_raises(code, exception):
@@ -1616,6 +1626,7 @@ test_catching_key_error
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     KeyError: 'not_in_dictionary'
 
@@ -1988,6 +1999,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     IndexError: tuple index out of range
 

@@ -272,6 +272,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
   - the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: shell
+  :caption: terminal
 
       TypeError:
           Person.__init__() got
@@ -838,6 +839,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'Person' object has no attribute 'last_name'.
@@ -1015,6 +1017,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'Person' object has no attribute 'year_of_birth'
@@ -2595,6 +2598,7 @@ I want each test to get new random values every time they run and the :ref:`unit
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     FAILED ...test_classy_person_says_hello - AttributeError:
         'TestPerson' object has no attribute 'random_last_name'.

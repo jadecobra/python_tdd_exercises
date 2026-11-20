@@ -223,7 +223,7 @@ class TestPerson(unittest.TestCase):
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth=2027,
+                    year_of_birth=self.this_year,
                 )
             ),
             [

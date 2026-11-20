@@ -199,6 +199,7 @@ add TestFunctions object
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'unittest' is not defined.
                Did you forget to import 'unittest'?
@@ -1151,7 +1152,7 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: <class 'object'> == <class 'object'>
+    AssertionError: <class 'object'> == <class 'object'>
 
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 

@@ -385,6 +385,7 @@ I want to see what comes with the `unittest module`_.
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'unittest' is not defined.
                Did you forget to import 'unittest'?
@@ -1659,7 +1660,7 @@ test_assertNotIsInstance
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <unittest.case.TestCase testMethod=runTest>
         is an instance of
         <class 'unittest.case.TestCase'>
@@ -1782,6 +1783,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsInstance`
 Compare the error message for ``unittest.TestCase().assertNotIsInstance(unittest.TestCase(), unittest.TestCase)`` with the one for ``assert not isinstance(unittest.TestCase(), unittest.TestCase)``
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError:
       <unittest.case.TestCase testMethod=runTest>
@@ -1893,7 +1895,7 @@ test_assertIs_instance
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'unittest.case.TestCase'>
         is not an instance of
         <class 'unittest.case.TestCase'>
@@ -2071,6 +2073,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsInstance`_ i
 Compare the error message for ``unittest.TestCase().assertIsInstance(unittest.TestCase, unittest.TestCase)`` with the one for ``assert isinstance(unittest.TestCase, unittest.TestCase)``
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError:
       <class 'unittest.case.TestCase'>
@@ -2160,7 +2163,7 @@ test_assertNotIsSubclass
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <unittest.case.TestCase testMethod=runTest>
         is not a class
 
@@ -2188,7 +2191,7 @@ test_assertNotIsSubclass
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'unittest.case.TestCase'>
         is a subclass of <class 'object'>
 
@@ -2315,6 +2318,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsSubclass`
 Compare the error message for ``unittest.TestCase().assertNotIsSubclass(unittest.TestCase, object)`` with the one for ``assert not issubclass(unittest.TestCase, object)``
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError:
       <class 'unittest.case.TestCase'>
@@ -2499,7 +2503,7 @@ test_assertIs_subclass
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'unittest.case.TestCase'>
         is not a subclass of <class 'set'>
 
@@ -2579,6 +2583,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsSubclass`_ i
 Compare the error message for ``unittest.TestCase().assertIsSubclass(unittest.TestCase, tuple)`` with the one for ``assert issubclass(unittest.TestCase, set)``
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError:
       <class 'unittest.case.TestCase'>
@@ -4161,7 +4166,7 @@ the test passes because
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'tests.test_unittest.TestUnittest'>
         is a subclass of
         <class 'unittest.case.TestCase'>
@@ -4357,7 +4362,7 @@ the test passes because
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <
             tests.test_unittest.TestUnittest
             testMethod=test_assertIs_instance

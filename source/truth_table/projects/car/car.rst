@@ -1212,6 +1212,7 @@ test_brake_pressed_key_close_start_pressed
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: ignition() got
                an unexpected keyword argument 'brake_is_pressed'.

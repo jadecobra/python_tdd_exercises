@@ -27,6 +27,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 * then delete all the text in ``sleep_duration.py`` the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.sleep_duration' has no attribute 'get_datetime'
 
@@ -50,6 +51,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'get_datetime' is not defined
 
@@ -70,6 +72,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -92,6 +95,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: get_datetime() takes 0 positional arguments
                but 1 was given
@@ -131,6 +135,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -149,7 +154,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
+    AssertionError: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
 
   the expected values of the test changed
 
@@ -165,7 +170,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: '2006/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
+    AssertionError: '2006/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
     AssertionError: '2006/11/21 03:14' != datetime.datetime(2006, 11, 21, 3, 14)
     AssertionError: '2006/11/21 08:30' != datetime.datetime(2006, 11, 21, 8, 30)
     AssertionError: '2006/11/21 23:41' != datetime.datetime(2006, 11, 21, 23, 41)
@@ -184,6 +189,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
@@ -196,6 +202,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'duration' is not defined
 
@@ -210,6 +217,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -223,6 +231,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
@@ -235,6 +244,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
@@ -249,14 +259,14 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: ValueError not raised
+    AssertionError: ValueError not raised
 
   or
 
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: None != '2944049 days, 15:58:00'
+    AssertionError: None != '2944049 days, 15:58:00'
     AssertionError: None != '130331 days, 11:57:00'
     AssertionError: None != '1829637 days, 5:10:00'
     AssertionError: None != '2846203 days, 15:15:00'
@@ -275,7 +285,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: "wake_time: "3133/04/18 05:11" is earlier than sleep_time: "6999/09/22 05:07"" does not match "('6999/09/22 05:07', '3133/04/18 05:11')"
+    AssertionError: "wake_time: "3133/04/18 05:11" is earlier than sleep_time: "6999/09/22 05:07"" does not match "('6999/09/22 05:07', '3133/04/18 05:11')"
     AssertionError: "wake_time: "5856/04/20 15:58" is earlier than sleep_time: "7186/01/12 06:39"" does not match "('7186/01/12 06:39', '5856/04/20 15:58')"
     AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
     AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
@@ -283,6 +293,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   this tells me that the :ref:`assertion<what is an assertion?>` expects a message with the ValueError_, or I get ValueError_ that looks like this
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: ('0887/08/27 17:21', '5668/08/15 20:16')
     ValueError: ('2880/08/20 10:10', '9134/08/22 20:28')
@@ -303,12 +314,14 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: shell
+  :caption: terminal
 
     SyntaxError: invalid syntax. Perhaps you forgot a comma?
 
   or this message
 
   .. code-block:: shell
+  :caption: terminal
 
     SyntaxError: leading zeros in decimal integer literals are not first_inputermitted; use an 0o prefix for octal integers
 
@@ -338,7 +351,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: "wake_time: "1184/07/11 12:07" is earlier than sleep_time: "3059/12/16 04:30"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
+    AssertionError: "wake_time: "1184/07/11 12:07" is earlier than sleep_time: "3059/12/16 04:30"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "2476/05/07 19:46" is earlier than sleep_time: "9204/03/10 20:53"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "3208/04/09 09:10" is earlier than sleep_time: "3957/12/23 22:44"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "7169/09/04 15:18" is earlier than sleep_time: "9367/03/02 03:17"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
@@ -346,6 +359,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   or ValueError_
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"
 
@@ -378,6 +392,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: wake_time: "9251/06/04 01:20" is earlier than sleep_time: "1034/03/24 22:35"
     ValueError: wake_time: "2669/08/09 17:30" is earlier than sleep_time: "2520/01/27 06:40"
@@ -414,7 +429,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: ('0435/03/20 02:03', '0711/05/03 10:35') != '100850 days, 8:32:00'
+    AssertionError: ('0435/03/20 02:03', '0711/05/03 10:35') != '100850 days, 8:32:00'
     AssertionError: ('2544/12/29 13:05', '4351/03/05 09:47') != '659692 days, 20:42:00'
     AssertionError: ('1583/06/02 07:48', '3962/03/06 17:07') != '868824 days, 9:19:00'
     AssertionError: ('1820/06/12 16:07', '8786/05/18 04:27') != '2544253 days, 12:20:00'
@@ -438,6 +453,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
@@ -465,7 +481,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: datetime.timedelta(days=-43256, seconds=82860) != '43255 days, 0:59:00'
+    AssertionError: datetime.timedelta(days=-43256, seconds=82860) != '43255 days, 0:59:00'
     AssertionError: datetime.timedelta(days=-28643, seconds=68100) != '28642 days, 5:05:00'
     AssertionError: datetime.timedelta(days=-744003, seconds=22500) != '744002 days, 17:45:00'
     AssertionError: datetime.timedelta(days=-1226280, seconds=76800) != '1226279 days, 2:40:00'
@@ -494,7 +510,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: '-2681410 days, 19:19:00' != '2681409 days, 4:41:00'
+    AssertionError: '-2681410 days, 19:19:00' != '2681409 days, 4:41:00'
     AssertionError: '-1492190 days, 13:23:00' != '1492189 days, 10:37:00'
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'

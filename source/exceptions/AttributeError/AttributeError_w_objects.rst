@@ -265,6 +265,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'attribute_01'.
@@ -313,6 +314,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'attribute_02'.
@@ -362,6 +364,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'attribute_03'.
@@ -413,6 +416,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'attribute_04'.
@@ -467,6 +471,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'attribute_05'.
@@ -522,6 +527,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'attribute_06'.
@@ -579,6 +585,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'attribute_07'.
@@ -638,6 +645,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'attribute_08'.
@@ -699,6 +707,7 @@ test_attribute_error_w_object_attributes
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'attribute_09'.
@@ -788,6 +797,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'method_00'
@@ -825,6 +835,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -977,6 +988,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_01'.
@@ -1022,6 +1034,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_02'.
@@ -1069,6 +1082,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_03'.
@@ -1118,6 +1132,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_04'.
@@ -1168,6 +1183,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_05'.
@@ -1211,6 +1227,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_06'.
@@ -1256,6 +1273,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_07'.
@@ -1303,6 +1321,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_08'.
@@ -1357,6 +1376,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_09'.

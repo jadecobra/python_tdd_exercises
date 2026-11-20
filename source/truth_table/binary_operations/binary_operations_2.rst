@@ -622,6 +622,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_nand'.
@@ -1756,6 +1757,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_disjunction'.

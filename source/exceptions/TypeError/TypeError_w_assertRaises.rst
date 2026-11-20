@@ -235,6 +235,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_01'.
@@ -300,6 +301,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_02'.
@@ -404,6 +406,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'method_03'.
@@ -486,6 +489,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'method_04'.
@@ -549,6 +553,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_05'.
@@ -629,6 +634,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_06'.
@@ -689,6 +695,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'method_07'.
@@ -780,6 +787,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: type object 'AnObject'
                     has no attribute 'method_08'.
@@ -877,6 +885,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'AnObject' object
                     has no attribute 'method_09'.
@@ -1063,6 +1072,7 @@ Is every :ref:`object callable<how to make a function>`?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
@@ -1087,6 +1097,7 @@ Is every :ref:`object callable<how to make a function>`?
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1143,6 +1154,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'false'
@@ -1166,6 +1178,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'bool' object is not callable
 
@@ -1214,6 +1227,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'true'
@@ -1238,6 +1252,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'bool' object is not callable
 
@@ -1278,6 +1293,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'an_integer'
@@ -1349,6 +1365,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'a_float'
@@ -1371,6 +1388,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'float' object is not callable
 
@@ -1419,6 +1437,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'a_string'
@@ -1441,6 +1460,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'str' object is not callable
 
@@ -1489,6 +1509,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'a_tuple'
@@ -1511,6 +1532,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'tuple' object is not callable
 
@@ -1559,6 +1581,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'a_list'
@@ -1581,6 +1604,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'list' object is not callable
 
@@ -1630,6 +1654,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'a_set'
@@ -1652,6 +1677,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'set' object is not callable
 
@@ -1705,6 +1731,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.type_error'
                     has no attribute 'a_dictionary'
@@ -1727,6 +1754,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
   the terminal_ is my friend, and shows TypeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'dict' object is not callable
 

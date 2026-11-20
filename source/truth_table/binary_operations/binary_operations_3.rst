@@ -1249,6 +1249,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'material_non_implication'.
@@ -1997,6 +1998,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_first'
@@ -2492,6 +2494,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'converse_implication'.

@@ -403,6 +403,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_positional_arguments
@@ -501,6 +502,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_positional_arguments
@@ -576,6 +578,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_positional_arguments
@@ -651,6 +654,7 @@ test_type_error_w_positional_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_positional_arguments
@@ -904,6 +908,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_keyword_arguments
@@ -942,6 +947,7 @@ test_type_error_w_keyword_arguments
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_keyword_arguments
@@ -1030,6 +1036,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_keyword_arguments
@@ -1136,6 +1143,7 @@ test_type_error_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_type_error_w_keyword_arguments
@@ -2276,6 +2284,7 @@ test_type_error_w_args_and_kwargs
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: function_06() got
                multiple values for argument 'argument_1'

@@ -742,6 +742,7 @@ I see that the ``children`` :ref:`object<what is an object?>` is a :ref:`diction
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: shell
+  :caption: terminal
 
     SyntaxError: invalid syntax. Perhaps you forgot a comma?
 

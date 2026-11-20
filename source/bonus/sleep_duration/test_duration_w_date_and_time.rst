@@ -63,6 +63,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 03'
     ValueError: invalid literal for int() with base 10: '1999/12/31 07'
@@ -97,6 +98,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   the terminal_ is my friend, and shows ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
@@ -143,6 +145,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration_a'...
 
@@ -163,6 +166,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
@@ -196,7 +200,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: None != ('1999/12/31 09:52', '1999/12/31 07:11')
+    AssertionError: None != ('1999/12/31 09:52', '1999/12/31 07:11')
     AssertionError: None != ('1999/12/31 18:16', '1999/12/31 11:21')
     AssertionError: None != ('1999/12/31 13:10', '1999/12/31 12:00')
     AssertionError: None != ('1999/12/31 16:41', '1999/12/31 12:35')
@@ -256,6 +260,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: shell
+  :caption: terminal
 
   NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -275,6 +280,7 @@ I add an `import statement`_ for the datetime_ module
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AttributeError: module 'datetime' has no attribute 'strptime'
 
@@ -294,6 +300,7 @@ because my `import statement`_ is different from `the example in the documentati
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
@@ -347,7 +354,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: datetime.datetime(2021, 11, 6, 16, 30) != datetime.datetime(2006, 11, 21, 16, 30)
+    AssertionError: datetime.datetime(2021, 11, 6, 16, 30) != datetime.datetime(2006, 11, 21, 16, 30)
 
   when I change the pattern to match
 
@@ -384,6 +391,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
   the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: time data '2006/11/21 16:30' does not match format '%y/%m/%d %H:%M'
 
@@ -441,7 +449,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Tuples differ: ('1999/12/31 07:20', '1999/12/31 03:08') != (datetime.datetime(1999, 12, 31, 7, 20), datetime.datetime(1999, 12, 31, 3, 8))
+    AssertionError: Tuples differ: ('1999/12/31 07:20', '1999/12/31 03:08') != (datetime.datetime(1999, 12, 31, 7, 20), datetime.datetime(1999, 12, 31, 3, 8))
     AssertionError: Tuples differ: ('1999/12/31 15:01', '1999/12/31 00:37') != (datetime.datetime(1999, 12, 31, 15, 1), datetime.datetime(1999, 12, 31, 0, 37))
     AssertionError: Tuples differ: ('1999/12/31 20:50', '1999/12/31 14:22') != (datetime.datetime(1999, 12, 31, 20, 50), [35 chars] 22))
     AssertionError: Tuples differ: ('1999/12/31 16:40', '1999/12/31 13:39') != (datetime.datetime(1999, 12, 31, 16, 40), [35 chars] 39))
@@ -470,6 +478,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -572,6 +581,7 @@ then add a :ref:`variable<what is a variable?>` for a random timestamp
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: datetime.datetime(1999, 12, 31, 0, 23) != datetime.datetime(2006, 11, 21, 16, 30)
   AssertionError: datetime.datetime(1999, 12, 31, 8, 55) != datetime.datetime(2006, 11, 21, 16, 30)
@@ -671,7 +681,7 @@ and the test is still green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: (datetime.datetime(1999, 12, 31, 16, 1), datetime.datetime(1999, 12, 31, 14, 6)) != datetime.timedelta(seconds=6900)
+    AssertionError: (datetime.datetime(1999, 12, 31, 16, 1), datetime.datetime(1999, 12, 31, 14, 6)) != datetime.timedelta(seconds=6900)
     AssertionError: (datetime.datetime(1999, 12, 31, 9, 57), datetime.datetime(1999, 12, 31, 1, 3)) != datetime.timedelta(seconds=32040)
     AssertionError: (datetime.datetime(1999, 12, 31, 23, 59),[35 chars], 1)) != datetime.timedelta(seconds=7080)
     AssertionError: (datetime.datetime(1999, 12, 31, 16, 1), [35 chars] 55)) != datetime.timedelta(seconds=7560)
@@ -730,7 +740,7 @@ and the test is still green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: datetime.timedelta(seconds=4440) != '1:14:00'
+    AssertionError: datetime.timedelta(seconds=4440) != '1:14:00'
     AssertionError: datetime.timedelta(seconds=15780) != '4:23:00'
     AssertionError: datetime.timedelta(seconds=31020) != '8:37:00'
     AssertionError: datetime.timedelta(seconds=49920) != '13:52:00'
@@ -758,12 +768,14 @@ and the test is still green.
 * which means I can remove ``read_timestamp`` because no one calls it anymore. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'...
 
 * I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with ValueError_
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: time data '04:51' does not match format '%Y/%m/%d %H:%M'
     ValueError: time data '13:35' does not match format '%Y/%m/%d %H:%M'
@@ -798,6 +810,7 @@ and the test is still green.
   the terminal_ is my friend, and shows a random ValueError_
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: day is out of range for month
 

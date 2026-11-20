@@ -984,7 +984,7 @@ because
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <built-in method add_note
           of TypeError object at 0xffff7ed65c43>
      != None

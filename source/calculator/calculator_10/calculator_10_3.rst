@@ -125,6 +125,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     KeyError: 'st.session_state has no key "number".
     Did you forget to initialize it?

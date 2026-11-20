@@ -1790,6 +1790,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.list_comprehensions'
                     has no attribute 'get_odd_numbers'.

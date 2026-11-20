@@ -3134,6 +3134,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
   - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it raises :ref:`KeyError<test_key_error>` if no value is given for the ``default`` parameter
 
     .. code-block:: shell
+  :caption: terminal
 
       a_dictionary.pop('not_in_dictionary') -> KeyError
       └── def pop(self, key, default=something):

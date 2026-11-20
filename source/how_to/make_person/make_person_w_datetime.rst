@@ -113,6 +113,7 @@ open the project
   the terminal_ shows
 
   .. code-block:: python
+    :caption: terminal
 
     tests/test_person.py ......                         [100%]
 
@@ -174,6 +175,7 @@ I want to see what comes with the `datetime module`_.
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'datetime' is not defined.
                Did you forget to import 'datetime'?
@@ -308,6 +310,7 @@ I add :ref:`test_dir_datetime_date` to ``tests/test_person.py``
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError:
       Lists differ: [
@@ -455,7 +458,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <attribute 'year' of 'datetime.date' objects>
      != []
 
@@ -570,7 +573,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: datetime.date(YYYY, MM, DD) != []
+    AssertionError: datetime.date(YYYY, MM, DD) != []
 
   where ``YYYY`` is the current year, ``MM`` is the current month and ``DD`` is the current date. Progress!
 
@@ -1730,7 +1733,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         'Hello, my name is first_name last_name and I am -1.'
      != <class 'AssertionError'>
 
@@ -2013,6 +2016,27 @@ the tests are green again.
             # because age < 0
 
         def test_dir_person_object(self):
+
+* I use the :ref:`attribute<what is an object attribute?>` as the value for the ``year_of_birth`` parameter in :ref:`test_dir_person_instance`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 213
+    :emphasize-lines: 8
+
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=self.this_year,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
 
 * I add a git_ commit message in the other terminal_
 

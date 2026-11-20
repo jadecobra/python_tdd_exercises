@@ -126,6 +126,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: 'TestCalculator' object has no attribute 'random_second_number'. Did you mean: 'random_first_number'?
 

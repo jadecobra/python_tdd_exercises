@@ -2578,7 +2578,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: assert None == <class 'object'>
+    AssertionError: assert None == <class 'object'>
 
 * I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
@@ -2605,7 +2605,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: assert <class 'object'> == None
+    AssertionError: assert <class 'object'> == None
 
 * I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
@@ -3112,7 +3112,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: assert <class 'object'> is None
+    AssertionError: assert <class 'object'> is None
 
 * I change the input in :ref:`call<how to call a function with input>` to the :ref:`identity function<test_identity_function>` from :ref:`object<what is an object?>` to :ref:`None<what is None?>`
 
@@ -3385,6 +3385,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         test_keyword_arguments.<locals>.keyword_arguments()
@@ -6574,7 +6575,7 @@ how Python treats double starred expressions
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: assert ((), {}) == <class 'TypeError'>
+    AssertionError: assert ((), {}) == <class 'TypeError'>
 
   because ``unknown_number_of_arguments`` gets called with no arguments_ so I get a tuple_ with
 

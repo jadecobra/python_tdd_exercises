@@ -409,6 +409,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'variable_00' is not defined
 
@@ -481,6 +482,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_01'.
@@ -499,6 +501,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'variable_01' is not defined
 
@@ -588,6 +591,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_03'.
@@ -636,6 +640,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_04'.
@@ -686,6 +691,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_05'.
@@ -738,6 +744,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_06'.
@@ -792,6 +799,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_07'.
@@ -848,6 +856,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_08'.
@@ -906,6 +915,7 @@ test_attribute_error_w_variables
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_09'.
@@ -1029,6 +1039,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -1108,6 +1119,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_01'.
@@ -1151,6 +1163,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_02'.
@@ -1196,6 +1209,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_03'.
@@ -1243,6 +1257,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_04'.
@@ -1292,6 +1307,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_05'.
@@ -1343,6 +1359,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_06'.
@@ -1396,6 +1413,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_07'.
@@ -1451,6 +1469,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_08'.
@@ -1508,6 +1527,7 @@ test_attribute_error_w_functions
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'function_09'.

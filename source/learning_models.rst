@@ -62,6 +62,7 @@ An Infinite Learning Model
 * the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.learning' has no attribute 'model'
 

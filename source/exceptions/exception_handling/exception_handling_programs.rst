@@ -116,6 +116,7 @@ test_catching_exceptions_w_messages
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.exceptions'
                     has no attribute 'raise_exception'
@@ -143,6 +144,7 @@ test_catching_exceptions_w_messages
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'raise_exception' is not defined
 
@@ -158,6 +160,7 @@ test_catching_exceptions_w_messages
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -197,7 +200,7 @@ test_catching_exceptions_w_messages
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: Exception not raised
+    AssertionError: Exception not raised
 
 * I add a :ref:`raise statement<how to raise an Exception>` to the ``raise_exception`` :ref:`function<what is a function?>` in ``src/exceptions/__init__.py``
 
@@ -242,6 +245,7 @@ I change :ref:`assertRaises<another way to test if an Exception is raised>` to a
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: "BOOM!!!" does not match ""
 
@@ -318,7 +322,7 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: <class 'ModuleNotFoundError'> not raised
+    AssertionError: <class 'ModuleNotFoundError'> not raised
 
   it is now closer to the message of :ref:`the assertRaises method<another way to test if an Exception is raised>`, just not as good.
 
@@ -427,6 +431,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'an_exception_handler' is not defined
 
@@ -442,6 +447,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: 'NoneType' object is not callable
 
@@ -458,6 +464,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: an_exception_handler() takes
                0 positional arguments but 1 was given
@@ -477,7 +484,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: None != 'failed'
+    AssertionError: None != 'failed'
 
   the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'failed'``.
 
@@ -575,6 +582,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     ...test_catching_failure - AssertionError:
             <function raise_exception at 0xabcd12e34567> != 'failed'
@@ -682,7 +690,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: None != 'succeeded'
+    AssertionError: None != 'succeeded'
 
   because ``an_exception_handler`` returns the result of :ref:`calling<how to call a function with input>` the ``function_name`` :ref:`function<what is a function?>` which is :ref:`None<what is None?>`.
 

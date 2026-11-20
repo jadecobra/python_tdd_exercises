@@ -514,6 +514,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     KeyError: 'st.session_state has no key "first_number".
     Did you forget to initialize it?
@@ -672,6 +673,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     KeyError: 'st.session_state has no key "second_number".
     Did you forget to initialize it?
@@ -982,6 +984,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     KeyError: 'st.session_state has no key "operation".
     Did you forget to initialize it?
@@ -1244,6 +1247,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   and :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'calculator' is not defined. Did you mean: 'calculate'?
 

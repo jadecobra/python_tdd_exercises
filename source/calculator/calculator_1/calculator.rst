@@ -2138,6 +2138,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 * I delete all the text in ``calculator.py``, the terminal_ is my friend, and shows 4 failures
 
   .. code-block:: shell
+  :caption: terminal
 
     FAILED ... - AttributeError: module 'src.calculator' has no attribute 'add'
     FAILED ... - AttributeError: module 'src.calculator' has no attribute 'divide'

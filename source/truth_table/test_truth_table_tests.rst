@@ -85,6 +85,7 @@ open the project
 * I delete everything in ``src/truth_table/__init__.py``, the terminal_ is my friend, and shows 20 failures, I start with the last one
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_negation'
@@ -403,6 +404,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   ``17 failed, 3 passed``. That was simple. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_false'.
@@ -445,6 +447,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: tautology() takes
                0 positional arguments but 2 were given
@@ -482,6 +485,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal shows ``15 failed, 5 passed``, Yes! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_second'
@@ -613,6 +617,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ shows ``14 failed, 6 passed``, and :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_first'
@@ -746,6 +751,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ shows ``13 failed, 7 passed``, and :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'negate_second'
@@ -1056,6 +1062,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``8 failed, 12 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_nand'.
@@ -1095,6 +1102,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``7 failed, 13 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_equality'.
@@ -1192,6 +1200,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``5 failed, 15 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_conjunction'.
@@ -1328,6 +1337,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``3 failed, 17 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'converse_non_implication'.
@@ -1406,6 +1416,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   the terminal_ is my friend, and shows ``2 passed, 18 failed`` for :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'converse_implication'.

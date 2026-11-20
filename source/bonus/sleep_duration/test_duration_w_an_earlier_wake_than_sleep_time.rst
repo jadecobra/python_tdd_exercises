@@ -47,6 +47,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: '-1:00' != ''
   AssertionError: '-2:12' != ''
@@ -84,7 +85,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: ValueError not raised
+    AssertionError: ValueError not raised
 
   I add a :ref:`condition<if statements>` to the ``duration`` :ref:`function<what is a function?>` to raise the ValueError_
 
@@ -123,6 +124,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: shell
+  :caption: terminal
 
     ValueError: wake_time: "07:33" is earlier than sleep_time: "08:12"
     ValueError: wake_time: "07:46" is earlier than sleep_time: "14:47"
@@ -270,7 +272,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: ValueError not raised
+    AssertionError: ValueError not raised
 
   the `assertRaisesRegex`_ works as expected. I remove the comments the test is green again
 

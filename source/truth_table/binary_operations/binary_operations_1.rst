@@ -189,6 +189,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'contradiction'
@@ -233,6 +234,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: contradiction() takes
                0 positional arguments but 2 were given
@@ -670,6 +672,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_conjunction'.
@@ -1617,6 +1620,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_second'
@@ -1992,6 +1996,7 @@ first input     second input   return
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'converse_non_implication'

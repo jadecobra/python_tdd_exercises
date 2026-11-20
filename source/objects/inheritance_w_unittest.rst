@@ -208,6 +208,7 @@ add TestObjects class
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'unittest' is not defined.
                Did you forget to import 'unittest'?
@@ -385,7 +386,7 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <tests.test_objects.WPass object at 0xffff01234a567>
         is an instance of <class 'object'>
 
@@ -424,7 +425,7 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'tests.test_objects.WPass'>
         is a subclass of <class 'object'>
 
@@ -566,7 +567,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <tests.test_objects.WParentheses object at 0xffff45ab67cd8>
         is an instance of <class 'object'>
 
@@ -609,7 +610,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'tests.test_objects.WParentheses'>
         is a subclass of <class 'object'>
 
@@ -753,7 +754,7 @@ green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <tests.test_objects.WObject object at 0xffff345a6b789>
         is an instance of <class 'object'>
 
@@ -792,7 +793,7 @@ green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'tests.test_objects.WObject'>
         is a subclass of <class 'object'>
 
@@ -936,7 +937,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         None is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
@@ -1129,7 +1130,7 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'bool'>
         is an instance of <class 'object'>
 
@@ -1153,7 +1154,7 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'bool'>
         is a subclass of <class 'object'>
 
@@ -1297,7 +1298,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'int'>
         is an instance of <class 'object'>
 
@@ -1322,7 +1323,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'int'>
         is a subclass of <class 'object'>
 
@@ -1468,7 +1469,7 @@ green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'float'>
         is an instance of <class 'object'>
 
@@ -1493,7 +1494,7 @@ green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'float'>
         is a subclass of <class 'object'>
 
@@ -1636,7 +1637,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'str'>
         is an instance of <class 'object'>
 
@@ -1661,7 +1662,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'str'>
         is a subclass of <class 'object'>
 
@@ -1806,7 +1807,7 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'tuple'>
         is an instance of <class 'object'>
 
@@ -1831,7 +1832,7 @@ the test is green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'tuple'>
         is a subclass of <class 'object'>
 
@@ -1976,7 +1977,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'list'>
         is an instance of <class 'object'>
 
@@ -2001,7 +2002,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'list'>
         is a subclass of <class 'object'>
 
@@ -2146,7 +2147,7 @@ green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'set'>
         is an instance of <class 'object'>
 
@@ -2171,7 +2172,7 @@ green.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'set'>
         is a subclass of <class 'object'>
 
@@ -2316,7 +2317,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'dict'>
         is an instance of <class 'object'>
 
@@ -2341,7 +2342,7 @@ green again.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'dict'>
         is a subclass of <class 'object'>
 

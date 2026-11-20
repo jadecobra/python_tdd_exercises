@@ -316,7 +316,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.person.Person'>
 
@@ -376,7 +376,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.Doe'> is not a
         subclass of <class 'src.person.Person'>
 
@@ -514,7 +514,7 @@ more about instances vs subobjects
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.family_ties.Doe'>
 
@@ -1747,6 +1747,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'Jane' object has no attribute 'last_name'.
@@ -1795,7 +1796,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.Jane'> is not
         a subclass of <class 'src.family_ties.Doe'>
 
@@ -2117,6 +2118,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         module 'src.family_ties' has no attribute 'Joe'.
@@ -2206,6 +2208,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'Joe' object has no attribute 'last_name'.
@@ -2248,7 +2251,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.Joe'> is
         not a subclass of <class 'src.family_ties.Blow'>
 
@@ -2290,6 +2293,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'Joe' object has no attribute 'first_name'.
@@ -2394,7 +2398,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 'jane' != 'mary'
+    AssertionError: 'jane' != 'mary'
 
   because this happens when ``mary = src.family_ties.Mary()`` runs
 
@@ -2430,6 +2434,7 @@ the test passes.
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'Mary' object has no attribute 'last_name'.
@@ -2519,7 +2524,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.Mary'> is
         a subclass of <class 'src.family_ties.Jane'>
 
@@ -2581,7 +2586,7 @@ what happens when a child has more than one parent?
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.Mary'> is not
         a subclass of <class 'src.family_ties.Joe'>
 
@@ -3113,7 +3118,7 @@ what happens when a child has more than one parent?
   .. code-block:: shell
     :caption: terminal
 
-    $1Error:
+    AssertionError:
         <class 'src.family_ties.John'> is
         a subclass of <class 'src.family_ties.Smith'>
 
@@ -3155,6 +3160,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'John' object has no attribute 'last_name'.
@@ -3199,6 +3205,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'John' object has no attribute 'first_name'.
@@ -3316,7 +3323,7 @@ what happens when a child has more than one parent?
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: <class 'src.family_ties.Lil'> is not
+    AssertionError: <class 'src.family_ties.Lil'> is not
                     a subclass of <class 'src.family_ties.Mary'>
 
 * I add ``Mary`` as a parent to ``Lil`` in ``family_ties.py``
@@ -3409,6 +3416,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AttributeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     AttributeError:
         'Lil' object has no attribute 'last_name'.
@@ -3523,6 +3531,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: Mary.__init__() got
                an unexpected keyword argument 'first_name'
@@ -3567,6 +3576,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: Mary.__init__() got
                an unexpected keyword argument 'last_name'.
@@ -3700,6 +3710,7 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError:
         Jane.__init__() got

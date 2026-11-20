@@ -106,6 +106,7 @@ I add a test to see what happens when I send a :ref:`list<what is a list?>` as i
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
 
@@ -165,7 +166,7 @@ the test passes.
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 'brmph?! Numbers only. Try again...' != 'BAP!!!'
+    AssertionError: 'brmph?! Numbers only. Try again...' != 'BAP!!!'
 
 * I change the expectation
 
@@ -249,7 +250,7 @@ how to multiply a list
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: [0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
+    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
 
   :ref:`oh wow! I now know how to multiply a list<how to multiply a list>`
 
@@ -270,7 +271,7 @@ how to multiply a list
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'brmph?! Numbers only. Try again...'
+    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'brmph?! Numbers only. Try again...'
 
 * I open ``calculator.py``
 
@@ -317,7 +318,7 @@ how to multiply a list
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
 
 * I change the expectation to match
 
@@ -494,6 +495,7 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
@@ -560,7 +562,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
+    AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
 
 * I change the calculation to division
 
@@ -609,7 +611,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
+    AssertionError: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
 
 * I change the expectation
 
@@ -658,7 +660,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: 0.0 != FGH.IJKLMNOPQRSTU
+    AssertionError: 0.0 != FGH.IJKLMNOPQRSTU
 
 * I change the expectation to match
 
@@ -716,6 +718,7 @@ I can use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   AssertionError: GHI.JKLMNOPQRSTUVW != XYZ.ABCDEFGHIJKLMN
 
@@ -776,7 +779,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
+    AssertionError: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
 
 * I change the calculation
 
@@ -813,7 +816,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
+    AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
 
 * I change the calculation in the expectation to :ref:`multiplication<test_multiplication>`
 
@@ -850,7 +853,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
   .. code-block:: shell
     :caption: terminal
 
-    $1Error: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
+    AssertionError: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
 
 * I change the expectation to :ref:`subtraction<test_subtraction>`
 
@@ -953,6 +956,7 @@ I add a new test to show the problem when I have more than 2 inputs and use a `s
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
+  :caption: terminal
 
   TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
@@ -1003,6 +1007,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
@@ -1034,6 +1039,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
@@ -1065,6 +1071,7 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
+  :caption: terminal
 
     TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 

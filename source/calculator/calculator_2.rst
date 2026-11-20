@@ -99,6 +99,7 @@ I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` 
 the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 .. code-block:: shell
+  :caption: terminal
 
   ZeroDivisionError: float division by zero
 

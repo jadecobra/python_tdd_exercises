@@ -139,6 +139,7 @@ test_home_page
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'src' is not defined
 
@@ -572,6 +573,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
+  :caption: terminal
 
     NameError: name 'calculator' is not defined. Did you mean: 'calculate'?
 
