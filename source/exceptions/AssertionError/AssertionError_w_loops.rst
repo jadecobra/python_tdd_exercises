@@ -254,8 +254,9 @@ I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_non
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-    AssertionError: assert None is not None
+    Assertion: assert None is not None
 
 ----
 
@@ -415,8 +416,9 @@ I add a :ref:`for loop<what is a for loop?>` to :ref:`test_assertion_error_w_fal
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: assert False is not False
+  Assertion: assert False is not False
 
 ----
 

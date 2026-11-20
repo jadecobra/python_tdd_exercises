@@ -96,6 +96,7 @@ start the project
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `type-error`
     at `../pumping_python/type_error`

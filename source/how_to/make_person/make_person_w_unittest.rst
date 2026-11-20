@@ -158,8 +158,9 @@ I add an :ref:`object<what is an object?>` named ``TestPerson`` to ``test_person
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: 'TestPerson' object
+  Attribute: 'TestPerson' object
                   has no attribute 'assertEqual'
 
 ----

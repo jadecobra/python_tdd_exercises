@@ -240,8 +240,9 @@ I change :ref:`test_failure` to :ref:`test_making_a_list_w_a_for_loop` to show w
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  Assertion: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                              != []
 
 ----
@@ -746,8 +747,9 @@ I add a test for making a :ref:`list<what is a list?>` with the :ref:`extend met
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  TypeError: list.extend() takes exactly
+  Type: list.extend() takes exactly
              one argument (0 given)
 
 ----
@@ -1116,8 +1118,9 @@ I add a failing test
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
+  Assertion: Lists differ: [0, 1, 2, 3, ...] != []
 
 ----
 
@@ -1316,8 +1319,9 @@ I add a failing test to ``tests/test_list_comprehensions.py``
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: Lists differ: [0, 2, 4, 6, 8, ...]
+  Assertion: Lists differ: [0, 2, 4, 6, 8, ...]
                              != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
 the numbers on the left are even numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`
@@ -2054,8 +2058,9 @@ I add a failing test to ``tests/test_list_comprehensions.py``
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: Lists differ: [0, 1, 4, 9, ...]
+  Assertion: Lists differ: [0, 1, 4, 9, ...]
                              != [0, 1, 2, 3, ...]
 
 the numbers on the left are squares of the numbers on the right.

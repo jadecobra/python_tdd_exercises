@@ -84,6 +84,7 @@ start the project
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `attribute-error`
     at `.../pumping_python/attribute_error`

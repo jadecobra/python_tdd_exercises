@@ -153,8 +153,9 @@ I add a new test to ``test_person.py``
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: module 'src.person' has no attribute 'Person'
+  Attribute: module 'src.person' has no attribute 'Person'
 
 because there is no definition for ``Person`` in ``src/person/__init__.py`` in the ``src`` folder_
 
@@ -3160,8 +3161,9 @@ I add a test for the :ref:`attributes<what is an object attribute?>` and :ref:`m
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: Lists differ:
+  Assertion: Lists differ:
       ['__c[393 chars]ef__', 'first_name', 'last_name',
         'say_hello', 'year_of_birth']
    != ['__c[393 chars]ef__', 'say_hello']

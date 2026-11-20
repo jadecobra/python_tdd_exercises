@@ -383,8 +383,9 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <tests.test_objects.WPass object at 0xffff01234a567>
         is an instance of <class 'object'>
 
@@ -421,8 +422,9 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'tests.test_objects.WPass'>
         is a subclass of <class 'object'>
 
@@ -562,8 +564,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <tests.test_objects.WParentheses object at 0xffff45ab67cd8>
         is an instance of <class 'object'>
 
@@ -604,8 +607,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'tests.test_objects.WParentheses'>
         is a subclass of <class 'object'>
 
@@ -747,8 +751,9 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <tests.test_objects.WObject object at 0xffff345a6b789>
         is an instance of <class 'object'>
 
@@ -785,8 +790,9 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'tests.test_objects.WObject'>
         is a subclass of <class 'object'>
 
@@ -928,8 +934,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         None is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
@@ -1120,8 +1127,9 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'bool'>
         is an instance of <class 'object'>
 
@@ -1143,8 +1151,9 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'bool'>
         is a subclass of <class 'object'>
 
@@ -1286,8 +1295,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'int'>
         is an instance of <class 'object'>
 
@@ -1310,8 +1320,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'int'>
         is a subclass of <class 'object'>
 
@@ -1455,8 +1466,9 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'float'>
         is an instance of <class 'object'>
 
@@ -1479,8 +1491,9 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'float'>
         is a subclass of <class 'object'>
 
@@ -1621,8 +1634,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'str'>
         is an instance of <class 'object'>
 
@@ -1645,8 +1659,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'str'>
         is a subclass of <class 'object'>
 
@@ -1789,8 +1804,9 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'tuple'>
         is an instance of <class 'object'>
 
@@ -1813,8 +1829,9 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'tuple'>
         is a subclass of <class 'object'>
 
@@ -1957,8 +1974,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'list'>
         is an instance of <class 'object'>
 
@@ -1981,8 +1999,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'list'>
         is a subclass of <class 'object'>
 
@@ -2125,8 +2144,9 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'set'>
         is an instance of <class 'object'>
 
@@ -2149,8 +2169,9 @@ green.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'set'>
         is a subclass of <class 'object'>
 
@@ -2293,8 +2314,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'dict'>
         is an instance of <class 'object'>
 
@@ -2317,8 +2339,9 @@ green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'dict'>
         is a subclass of <class 'object'>
 

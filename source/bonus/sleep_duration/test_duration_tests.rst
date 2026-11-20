@@ -147,8 +147,9 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
+    $1Error: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
 
   the expected values of the test changed
 
@@ -162,8 +163,9 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: '2006/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
+    $1Error: '2006/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
     AssertionError: '2006/11/21 03:14' != datetime.datetime(2006, 11, 21, 3, 14)
     AssertionError: '2006/11/21 08:30' != datetime.datetime(2006, 11, 21, 8, 30)
     AssertionError: '2006/11/21 23:41' != datetime.datetime(2006, 11, 21, 23, 41)
@@ -245,14 +247,16 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows this :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: ValueError not raised
+    $1Error: ValueError not raised
 
   or
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None != '2944049 days, 15:58:00'
+    $1Error: None != '2944049 days, 15:58:00'
     AssertionError: None != '130331 days, 11:57:00'
     AssertionError: None != '1829637 days, 5:10:00'
     AssertionError: None != '2846203 days, 15:15:00'
@@ -269,8 +273,9 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 * I raise ValueError_ in ``duration`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: "wake_time: "3133/04/18 05:11" is earlier than sleep_time: "6999/09/22 05:07"" does not match "('6999/09/22 05:07', '3133/04/18 05:11')"
+    $1Error: "wake_time: "3133/04/18 05:11" is earlier than sleep_time: "6999/09/22 05:07"" does not match "('6999/09/22 05:07', '3133/04/18 05:11')"
     AssertionError: "wake_time: "5856/04/20 15:58" is earlier than sleep_time: "7186/01/12 06:39"" does not match "('7186/01/12 06:39', '5856/04/20 15:58')"
     AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
     AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
@@ -331,8 +336,9 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` because the timestamps in the ValueError_ message are not the same
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: "wake_time: "1184/07/11 12:07" is earlier than sleep_time: "3059/12/16 04:30"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
+    $1Error: "wake_time: "1184/07/11 12:07" is earlier than sleep_time: "3059/12/16 04:30"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "2476/05/07 19:46" is earlier than sleep_time: "9204/03/10 20:53"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "3208/04/09 09:10" is earlier than sleep_time: "3957/12/23 22:44"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "7169/09/04 15:18" is earlier than sleep_time: "9367/03/02 03:17"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
@@ -406,8 +412,9 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: ('0435/03/20 02:03', '0711/05/03 10:35') != '100850 days, 8:32:00'
+    $1Error: ('0435/03/20 02:03', '0711/05/03 10:35') != '100850 days, 8:32:00'
     AssertionError: ('2544/12/29 13:05', '4351/03/05 09:47') != '659692 days, 20:42:00'
     AssertionError: ('1583/06/02 07:48', '3962/03/06 17:07') != '868824 days, 9:19:00'
     AssertionError: ('1820/06/12 16:07', '8786/05/18 04:27') != '2544253 days, 12:20:00'
@@ -456,8 +463,9 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: datetime.timedelta(days=-43256, seconds=82860) != '43255 days, 0:59:00'
+    $1Error: datetime.timedelta(days=-43256, seconds=82860) != '43255 days, 0:59:00'
     AssertionError: datetime.timedelta(days=-28643, seconds=68100) != '28642 days, 5:05:00'
     AssertionError: datetime.timedelta(days=-744003, seconds=22500) != '744002 days, 17:45:00'
     AssertionError: datetime.timedelta(days=-1226280, seconds=76800) != '1226279 days, 2:40:00'
@@ -484,8 +492,9 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: '-2681410 days, 19:19:00' != '2681409 days, 4:41:00'
+    $1Error: '-2681410 days, 19:19:00' != '2681409 days, 4:41:00'
     AssertionError: '-1492190 days, 13:23:00' != '1492189 days, 10:37:00'
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'

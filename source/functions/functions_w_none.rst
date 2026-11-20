@@ -103,8 +103,9 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: unexpectedly None
+  Assertion: unexpectedly None
 
 ----
 
@@ -178,8 +179,9 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: unexpectedly None
+  Assertion: unexpectedly None
 
 ----
 
@@ -255,8 +257,9 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: unexpectedly None
+  Assertion: unexpectedly None
 
 ----
 
@@ -337,8 +340,9 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: unexpectedly None
+  Assertion: unexpectedly None
 
 ----
 
@@ -429,8 +433,9 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: unexpectedly None
+  Assertion: unexpectedly None
 
 ----
 

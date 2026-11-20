@@ -451,8 +451,9 @@ I add a test for a calculation in ``test_streamlit_calculator.py``
 the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  KeyError: '+'
+  Key: '+'
 
 I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for :ref:`addition<test_addition>`
 

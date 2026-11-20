@@ -479,8 +479,9 @@ I add a test to see all the :ref:`attributes<what is an object attribute?>` of t
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  E       AssertionError: SpecialBlock(
+  E       Assertion: SpecialBlock(
   E           type='main',
   E           children={
   E               0: Title(tag='h1')

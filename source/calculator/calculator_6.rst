@@ -98,8 +98,9 @@ I add the `setUp method`_ to the ``TestCalculator`` :ref:`object<what is an obje
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: 'TestCalculator' object has no attribute 'random_first_number'
+  Attribute: 'TestCalculator' object has no attribute 'random_first_number'
 
 ``random_first_number`` and ``random_second_number`` can no longer be reached because they belong to the `setUp method`_, I have to make sure they are :ref:`object attributes<test_attribute_error_w_object_attributes>`
 
@@ -208,8 +209,9 @@ I add a new test with a :ref:`for loop<what is a for loop?>` and an :ref:`assert
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'s
+  Assertion: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'s
 
 ----
 

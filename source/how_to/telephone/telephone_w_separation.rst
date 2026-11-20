@@ -118,8 +118,9 @@ I comment out the ``text`` :ref:`function<what is a function?>` in ``tests/test_
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  NameError: name 'text' is not defined
+  Name: name 'text' is not defined
 
 ----
 

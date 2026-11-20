@@ -153,8 +153,9 @@ I add a new test
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
+  Assertion: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
 ----
 
@@ -396,8 +397,9 @@ I use ``**`` like I did for the :ref:`keyword arguments<test_keyword_arguments>`
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  TypeError: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
+  Type: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
 
 the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :ref:`dictionary<what is a dictionary?>` must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``
 
@@ -905,8 +907,9 @@ I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` 
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  NameError: name 'two_numbers' is not defined
+  Name: name 'two_numbers' is not defined
 
 ----
 

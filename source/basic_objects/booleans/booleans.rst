@@ -457,8 +457,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False
+    $1Error: False
         is an instance of <class 'int'>
 
   in Python_, False_ is a :ref:`boolean<what are booleans?>` and an integer_.
@@ -524,8 +525,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is an instance
+    $1Error: False is an instance
                     of <class 'bool'>
 
 * I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>` for ``(False, (bool, int))``
@@ -583,8 +585,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is not an
+    $1Error: False is not an
                     instance of <class 'float'>
 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, float)``
@@ -621,8 +624,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is not an instance
+    $1Error: False is not an instance
                     of <class 'str'>
 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, str)``
@@ -659,8 +663,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is not an instance
+    $1Error: False is not an instance
                     of <class 'tuple'>
 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, tuple)``
@@ -697,8 +702,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is not an instance
+    $1Error: False is not an instance
                     of <class 'list'>
 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, list)``
@@ -735,8 +741,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is not an instance
+    $1Error: False is not an instance
                     of <class 'set'>
 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, set)``
@@ -773,8 +780,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is not an instance
+    $1Error: False is not an instance
                     of <class 'dict'>
 
 * I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, dict)``
@@ -816,8 +824,9 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is not an instance
+    $1Error: False is not an instance
                     of any of (
                         <class 'float'>, <class 'tuple'>,
                         <class 'str'>, <class 'list'>,
@@ -1288,8 +1297,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: True is not an instance
+    $1Error: True is not an instance
                     of any of (
                         <class 'float'>, <class 'tuple'>,
                         <class 'str'>, <class 'list'>,

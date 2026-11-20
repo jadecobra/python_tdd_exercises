@@ -856,8 +856,9 @@ I add a new test for doing calculations with the website
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 404 != 200
+  Assertion: 404 != 200
 
 this is like :ref:`AttributeError<what causes AttributeError?>`, the address for ``calculate`` does not exist yet.
 
@@ -1898,14 +1899,16 @@ I add a new test
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` in ``short test summary info``
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: '<!doctype html>\n<html lang=en>\n<title>5[225 chars]p>\n' != 'brmph?! I cannot divide by 0.
+  Assertion: '<!doctype html>\n<html lang=en>\n<title>5[225 chars]p>\n' != 'brmph?! I cannot divide by 0.
 
 and in the traceback it shows the :ref:`AssertionError<what causes AssertionError?>` was caused by :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  ZeroDivisionError: float division by zero
+  ZeroDivision: float division by zero
 
 good
 

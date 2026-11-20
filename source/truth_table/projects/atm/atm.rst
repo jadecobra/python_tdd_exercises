@@ -238,8 +238,9 @@ PIN                 cash                    withdrawal
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  NameError: name 'src' is not defined
+  Name: name 'src' is not defined
 
 because I do not have a definition for ``src`` in this file_.
 

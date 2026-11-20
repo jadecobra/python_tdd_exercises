@@ -115,8 +115,9 @@ I change the :ref:`call<how to call a function with input>` to ``function_00`` i
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  NameError: name 'src' is not defined
+  Name: name 'src' is not defined
 
 because ``src`` is not defined in ``tests/test_type_error.py``.
 

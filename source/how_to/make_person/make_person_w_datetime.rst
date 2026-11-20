@@ -453,8 +453,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <attribute 'year' of 'datetime.date' objects>
      != []
 
@@ -528,8 +529,9 @@ I change :ref:`test_dir_datetime_date_year` to a test for the ``today`` :ref:`at
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError:
+  Assertion:
       <built-in method today
        of type object at 0xffff0fab2345>
    != []
@@ -566,8 +568,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: datetime.date(YYYY, MM, DD) != []
+    $1Error: datetime.date(YYYY, MM, DD) != []
 
   where ``YYYY`` is the current year, ``MM`` is the current month and ``DD`` is the current date. Progress!
 
@@ -683,8 +686,9 @@ I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: YYYY != 1900
+  Assertion: YYYY != 1900
 
 where ``YYYY`` is the current year.
 
@@ -1724,8 +1728,9 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         'Hello, my name is first_name last_name and I am -1.'
      != <class 'AssertionError'>
 

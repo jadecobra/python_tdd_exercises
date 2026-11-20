@@ -157,8 +157,9 @@ I add a test for the :ref:`person function<extract person function>` to ``tests/
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 'joe, blow, M, 1996' != None
+  Assertion: 'joe, blow, M, 1996' != None
 
 ----
 
@@ -714,8 +715,9 @@ I add a test for the :ref:`say_hello function<test say_hello function>`
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError:
+  Assertion:
       'Hello, my name is jane doe and I am YY.'
    != None
 
@@ -1003,8 +1005,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <built-in method add_note
           of TypeError object at 0xffff7ed65c43>
      != None
@@ -1518,8 +1521,9 @@ I add a test for the :ref:`Person object<add Person object>`
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError:
+  Assertion:
       'Hello, my name is jane doe and I am YY.'
     != None
 

@@ -65,6 +65,7 @@ start the project
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `module-not-found-error`
     at `.../pumping_python/module_not_found_error`

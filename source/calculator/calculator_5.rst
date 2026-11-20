@@ -163,8 +163,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 'brmph?! Numbers only. Try again...' != 'BAP!!!'
+    $1Error: 'brmph?! Numbers only. Try again...' != 'BAP!!!'
 
 * I change the expectation
 
@@ -246,8 +247,9 @@ how to multiply a list
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
+    $1Error: [0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
 
   :ref:`oh wow! I now know how to multiply a list<how to multiply a list>`
 
@@ -266,8 +268,9 @@ how to multiply a list
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'brmph?! Numbers only. Try again...'
+    $1Error: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'brmph?! Numbers only. Try again...'
 
 * I open ``calculator.py``
 
@@ -312,8 +315,9 @@ how to multiply a list
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    $1Error: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
 
 * I change the expectation to match
 
@@ -554,8 +558,9 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
+    $1Error: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
 
 * I change the calculation to division
 
@@ -602,8 +607,9 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
+    $1Error: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
 
 * I change the expectation
 
@@ -650,8 +656,9 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 0.0 != FGH.IJKLMNOPQRSTU
+    $1Error: 0.0 != FGH.IJKLMNOPQRSTU
 
 * I change the expectation to match
 
@@ -767,8 +774,9 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
+    $1Error: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
 
 * I change the calculation
 
@@ -803,8 +811,9 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
+    $1Error: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
 
 * I change the calculation in the expectation to :ref:`multiplication<test_multiplication>`
 
@@ -839,8 +848,9 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
+    $1Error: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
 
 * I change the expectation to :ref:`subtraction<test_subtraction>`
 

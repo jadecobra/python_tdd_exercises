@@ -1149,8 +1149,9 @@ the test is green again.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: <class 'object'> == <class 'object'>
+    $1Error: <class 'object'> == <class 'object'>
 
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 

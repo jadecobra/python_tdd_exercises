@@ -634,8 +634,9 @@ I want :ref:`can_vote<add can_vote method>` to return
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: True != False
+    $1Error: True != False
 
 * I add ``is_citizen`` to the :ref:`instance of the Person object<add Person object>` for ``john``
 
@@ -691,8 +692,9 @@ I want :ref:`can_vote<add can_vote method>` to return
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: True != False
+    $1Error: True != False
 
   because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>` and the default value for ``is_citizen`` is :ref:`True<test_what_is_true>`.
 
@@ -1094,8 +1096,9 @@ I want :ref:`can_get_license<add can_get_license method>` to return
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: True != False
+    $1Error: True != False
 
 ----
 
@@ -1959,8 +1962,9 @@ I add a :ref:`method<what is a method?>` to the :ref:`Person object<add Person o
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  FAILED ...test_dir_person_object - AssertionError:
+  FAILED ...test_dir_person_object - Assertion:
       Lists differ: ['__c[393 chars]ef__', 'can_get_li...
   FAILED ...test_dir_person_instance - AssertionError:
       Lists differ: ['__c[434 chars]e', 'check_age', '...

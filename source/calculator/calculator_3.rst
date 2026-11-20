@@ -103,8 +103,9 @@ I change the :ref:`assertRaises<another way to test if an Exception is raised>` 
 the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  ZeroDivisionError: float division by zero
+  ZeroDivision: float division by zero
 
 ----
 

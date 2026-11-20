@@ -110,8 +110,9 @@ I add a new failing test to show that the :ref:`calculator<how to make a calcula
 the terminal_ is my friend, and shows TypeError_
 
 .. code-block:: python
+  :caption: terminal
 
-  TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+  Type: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
 ----
 
@@ -280,8 +281,9 @@ I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: '11' != '2'
+  Assertion: '11' != '2'
 
 ----
 
@@ -536,8 +538,9 @@ I change the :ref:`assertRaises<another way to test if an Exception is raised>` 
 the terminal_ is my friend, and shows TypeError_
 
 .. code-block:: python
+  :caption: terminal
 
-  TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
+  Type: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
 ----
 
@@ -1114,8 +1117,9 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 the :ref:`divide function<test_division>` is different because it has another :ref:`except clause<how to use try...except...else>`
 
 .. code-block:: python
+  :caption: terminal
 
-  except ZeroDivisionError:
+  except ZeroDivision:
       return 'brmph?! I cannot divide by 0. Try again...'
 
 I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the repetition of the :ref:`exception handler<how to use try...except...else>` from the :ref:`functions<what is a function?>`

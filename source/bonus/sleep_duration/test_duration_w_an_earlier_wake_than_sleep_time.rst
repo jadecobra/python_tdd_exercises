@@ -82,8 +82,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: ValueError not raised
+    $1Error: ValueError not raised
 
   I add a :ref:`condition<if statements>` to the ``duration`` :ref:`function<what is a function?>` to raise the ValueError_
 
@@ -267,8 +268,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: ValueError not raised
+    $1Error: ValueError not raised
 
   the `assertRaisesRegex`_ works as expected. I remove the comments the test is green again
 

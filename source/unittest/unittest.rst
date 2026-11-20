@@ -131,6 +131,7 @@ start the project
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `unittest`
     at `.../pumping_python/unittest`
@@ -573,8 +574,9 @@ I add a new test for the :ref:`attributes and methods of TestCase<test_dir_unitt
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  E       AssertionError: assert
+  E       Assertion: assert
             ['__call__', ...__doc__', ...] == []
   E
   E         Left contains 108 more items,
@@ -981,8 +983,9 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is :re
 Compare the error message for ``assertIsNot(None, None)`` with the one for ``assert None is not None``
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: unexpectedly identical: None
+  Assertion: unexpectedly identical: None
 
 vs
 
@@ -1198,8 +1201,9 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIs`_ is :ref:`
 Compare the error message for ``assertIs(False, True)`` with the one for ``assert False is True``
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: False is not True
+  Assertion: False is not True
 
 vs
 
@@ -1385,8 +1389,9 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotEqual`_ is 
 Compare the error message for ``assertNotEqual(True, True)`` with the one for ``assert True != True``
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: True == True
+  Assertion: True == True
 
 vs
 
@@ -1543,14 +1548,16 @@ I imagine Python_ follows this path when `unittest.TestCase.assertEqual`_ is :re
 Compare the error message for ``assertEqual(0.0, '0.0')`` with the one for ``assert 0.0 == '0.0'``
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 0.0 != '0.0'
+  Assertion: 0.0 != '0.0'
 
 vs
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: assert 0.0 == '0.0'
+  Assertion: assert 0.0 == '0.0'
 
 ----
 
@@ -1650,8 +1657,9 @@ test_assertNotIsInstance
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <unittest.case.TestCase testMethod=runTest>
         is an instance of
         <class 'unittest.case.TestCase'>
@@ -1783,8 +1791,9 @@ Compare the error message for ``unittest.TestCase().assertNotIsInstance(unittest
 vs
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: assert not True
+  Assertion: assert not True
 
 ----
 
@@ -1882,8 +1891,9 @@ test_assertIs_instance
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'unittest.case.TestCase'>
         is not an instance of
         <class 'unittest.case.TestCase'>
@@ -2070,8 +2080,9 @@ Compare the error message for ``unittest.TestCase().assertIsInstance(unittest.Te
 vs
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: assert False
+  Assertion: assert False
 
 ----
 
@@ -2147,8 +2158,9 @@ test_assertNotIsSubclass
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <unittest.case.TestCase testMethod=runTest>
         is not a class
 
@@ -2174,8 +2186,9 @@ test_assertNotIsSubclass
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'unittest.case.TestCase'>
         is a subclass of <class 'object'>
 
@@ -2310,8 +2323,9 @@ Compare the error message for ``unittest.TestCase().assertNotIsSubclass(unittest
 vs
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: assert not True
+  Assertion: assert not True
 
 ----
 
@@ -2483,8 +2497,9 @@ test_assertIs_subclass
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'unittest.case.TestCase'>
         is not a subclass of <class 'set'>
 
@@ -2572,8 +2587,9 @@ Compare the error message for ``unittest.TestCase().assertIsSubclass(unittest.Te
 vs
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: assert False
+  Assertion: assert False
 
 Which of the error messages in this chapter do you like better?
 
@@ -4143,8 +4159,9 @@ the test passes because
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'tests.test_unittest.TestUnittest'>
         is a subclass of
         <class 'unittest.case.TestCase'>
@@ -4338,8 +4355,9 @@ the test passes because
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <
             tests.test_unittest.TestUnittest
             testMethod=test_assertIs_instance

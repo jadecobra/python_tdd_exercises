@@ -195,8 +195,9 @@ test_catching_exceptions_w_messages
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: Exception not raised
+    $1Error: Exception not raised
 
 * I add a :ref:`raise statement<how to raise an Exception>` to the ``raise_exception`` :ref:`function<what is a function?>` in ``src/exceptions/__init__.py``
 
@@ -315,8 +316,9 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: <class 'ModuleNotFoundError'> not raised
+    $1Error: <class 'ModuleNotFoundError'> not raised
 
   it is now closer to the message of :ref:`the assertRaises method<another way to test if an Exception is raised>`, just not as good.
 
@@ -473,8 +475,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None != 'failed'
+    $1Error: None != 'failed'
 
   the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'failed'``.
 
@@ -544,8 +547,9 @@ Exception         output
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 'failed' != 'succeeded'
+  Assertion: 'failed' != 'succeeded'
 
 ``src.exceptions.an_exception_handler`` always returns ``'failed'``, the :ref:`assertion<what is an assertion?>` expects ``'succeeded'``.
 
@@ -676,8 +680,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   :ref:`test_catching_failure` passes. The terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_catching_success`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None != 'succeeded'
+    $1Error: None != 'succeeded'
 
   because ``an_exception_handler`` returns the result of :ref:`calling<how to call a function with input>` the ``function_name`` :ref:`function<what is a function?>` which is :ref:`None<what is None?>`.
 

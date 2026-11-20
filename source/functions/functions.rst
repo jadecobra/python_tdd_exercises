@@ -86,6 +86,7 @@ start the project
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `functions`
     at `.../pumping_python/functions`

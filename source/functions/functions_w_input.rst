@@ -210,8 +210,9 @@ I add a test to ``test_functions.py``
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
+  :caption: terminal
 
-  NameError: name 'identity' is not defined
+  Name: name 'identity' is not defined
 
 is it because ``test_functions.py`` has no ``identity``?
 
@@ -285,8 +286,9 @@ I add input to the :ref:`function call<how to call a function>`
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  TypeError:
+  Type:
       test_identity_function.<locals>.identity()
       takes 0 positional arguments but 1 was given
 
@@ -2574,8 +2576,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: assert None == <class 'object'>
+    $1Error: assert None == <class 'object'>
 
 * I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
@@ -2600,8 +2603,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: assert <class 'object'> == None
+    $1Error: assert <class 'object'> == None
 
 * I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
@@ -3106,8 +3110,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: assert <class 'object'> is None
+    $1Error: assert <class 'object'> is None
 
 * I change the input in :ref:`call<how to call a function with input>` to the :ref:`identity function<test_identity_function>` from :ref:`object<what is an object?>` to :ref:`None<what is None?>`
 
@@ -6567,8 +6572,9 @@ how Python treats double starred expressions
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: assert ((), {}) == <class 'TypeError'>
+    $1Error: assert ((), {}) == <class 'TypeError'>
 
   because ``unknown_number_of_arguments`` gets called with no arguments_ so I get a tuple_ with
 

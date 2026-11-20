@@ -195,6 +195,7 @@ how to setup a project with uv
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `person` at `.../pumping_python/person`
 

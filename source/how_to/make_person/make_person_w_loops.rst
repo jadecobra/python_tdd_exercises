@@ -791,8 +791,9 @@ I add a test for the :ref:`say_hello function<test say_hello function>`
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  E           TypeError
+  E           Type
 
 because
 
@@ -981,8 +982,9 @@ because
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <built-in method add_note
           of TypeError object at 0xffff7ed65c43>
      != None
@@ -1594,8 +1596,9 @@ I add a test for the :ref:`say_hello method<add say_hello method>` of the :ref:`
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  E           TypeError: 'a_string' is not an integer
+  E           Type: 'a_string' is not an integer
 
 this is the correct :ref:`Exception<how to test that an Exception is raised>` for when the ``year_of_birth`` is not an integer. I need :ref:`a better way to know which item in the people tuple raised the Exception<the subTest method>`.
 
@@ -2586,8 +2589,9 @@ age < 18        is citizen     can vote
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  SUBFAILED(row=(2009, True)) ...AssertionError: False != True
+  SUBFAILED(row=(2009, True)) ...Assertion: False != True
 
 ----
 
@@ -4894,8 +4898,9 @@ I use the :ref:`assertRaises method<another way to test if an Exception is raise
 the terminal_ is my friend, and shows ValueError_
 
 .. code-block:: python
+  :caption: terminal
 
-  E           ValueError
+  E           Value
 
 ----
 
@@ -5055,8 +5060,9 @@ I use the :ref:`assertRaisesRegex method<how to test the message of an Exception
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError:
+  Assertion:
       "BOOM!!!" does not match
       "a -1 year old person is too old to be alive."
 
@@ -5327,8 +5333,9 @@ I add a test with an :ref:`assertion<what is an assertion?>` for if a person is 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  SUBFAILED(year_of_birth=XXXX) ...AssertionError:
+  SUBFAILED(year_of_birth=XXXX) ...Assertion:
       "BOOM!!!" does not match "a -1 year old person is not alive."
   SUBFAILED(year_of_birth=YYYY) ...AssertionError:
       "BOOM!!!" does not match "a 121 year old person is not alive."

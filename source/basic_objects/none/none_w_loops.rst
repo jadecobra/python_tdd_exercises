@@ -115,6 +115,7 @@ start the project
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `none`
     at `.../pumping_python/none`
@@ -436,8 +437,9 @@ I add an :ref:`assertion<what is an assertion?>` with the `assertIsNotNone metho
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: unexpectedly None
+  Assertion: unexpectedly None
 
 - because :ref:`assertIsNotNone<another way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is an object?>` given in parentheses is :ref:`None<what is None?>`.
 - ``assertIsNot(something, None)`` and ``assertIsNotNone(something)`` are the same.
@@ -708,8 +710,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: False is an instance of <class 'bool'>
+    $1Error: False is an instance of <class 'bool'>
 
   because :ref:`False is an instance of the bool class<test_what_is_false>`.
 
@@ -756,8 +759,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: True is an instance of <class 'bool'>
+    $1Error: True is an instance of <class 'bool'>
 
   because :ref:`True is an instance of the bool class<test_what_is_true>`.
 
@@ -807,8 +811,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'bool'>
+    $1Error: None is not an instance of <class 'bool'>
 
   because :ref:`None is NOT a boolean<test_is_none_a_boolean>`.
 
@@ -1118,8 +1123,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 0 is an instance of <class 'int'>
+    $1Error: 0 is an instance of <class 'int'>
 
   because ``0`` is an integer_.
 
@@ -1173,8 +1179,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 1 is an instance of <class 'int'>
+    $1Error: 1 is an instance of <class 'int'>
 
   - because ``1`` is an integer_.
   - I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``.
@@ -1233,8 +1240,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'int'>
+    $1Error: None is not an instance of <class 'int'>
 
   because :ref:`None is NOT an integer<test_is_none_an_integer>`.
 
@@ -1344,8 +1352,9 @@ Is :ref:`None<what is None?>` a float_?
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: -0.1 is not None
+  Assertion: -0.1 is not None
 
 ----
 
@@ -1484,8 +1493,9 @@ the test passes.
   float_ is the :ref:`object<what is an object?>` for binary floating point numbers. the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: -0.1 is an instance of <class 'float'>
+    $1Error: -0.1 is an instance of <class 'float'>
 
   - because ``-0.1`` is a float_.
   - I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``.
@@ -1536,8 +1546,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 0.0 is an instance of <class 'float'>
+    $1Error: 0.0 is an instance of <class 'float'>
 
   because ``0.0`` is a float_.
 
@@ -1591,8 +1602,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 0.1 is an instance of <class 'float'>
+    $1Error: 0.1 is an instance of <class 'float'>
 
   - because ``0.1`` is a float_.
   - I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``.
@@ -1651,8 +1663,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'float'>
+    $1Error: None is not an instance of <class 'float'>
 
   because :ref:`None is NOT a float<test_is_none_a_float>`.
 
@@ -1907,8 +1920,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 'characters' is an instance of <class 'str'>
+    $1Error: 'characters' is an instance of <class 'str'>
 
   because anything in :ref:`quotes` is a string_.
 
@@ -1958,8 +1972,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'str'>
+    $1Error: None is not an instance of <class 'str'>
 
   because :ref:`None is NOT a string<test_is_none_a_string>`.
 
@@ -2164,8 +2179,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: () is an instance of <class 'tuple'>
+    $1Error: () is an instance of <class 'tuple'>
 
   because in Python_ empty parentheses (``( )``) is a tuple_.
 
@@ -2211,8 +2227,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: (0, 1, 2, 'n')
+    $1Error: (0, 1, 2, 'n')
         is an instance of <class 'tuple'>
 
   because in Python_ anything in parentheses (``( )``) separated by commas is a tuple_.
@@ -2263,8 +2280,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'tuple'>
+    $1Error: None is not an instance of <class 'tuple'>
 
   because :ref:`None is NOT a tuple<test_is_none_a_tuple>`.
 
@@ -2469,8 +2487,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: [] is an instance of <class 'list'>
+    $1Error: [] is an instance of <class 'list'>
 
   because in Python_ anything in square brackets (``[ ]``) is a :ref:`list<what is a list?>`.
 
@@ -2516,8 +2535,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: [0, 1, 2, 'n']
+    $1Error: [0, 1, 2, 'n']
         is an instance of <class 'list'>
 
   because in Python_ anything in square brackets (``[ ]``) is a :ref:`list<what is a list?>`.
@@ -2568,8 +2588,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'list'>
+    $1Error: None is not an instance of <class 'list'>
 
   because :ref:`None is NOT a list<test_is_none_a_list>`.
 
@@ -2775,8 +2796,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: {0, 1, 2, 'n'}
+    $1Error: {0, 1, 2, 'n'}
         is an instance of <class 'set'>
 
 * I make the statement :ref:`True<test_what_is_true>`
@@ -2821,8 +2843,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'set'>
+    $1Error: None is not an instance of <class 'set'>
 
   because :ref:`None is NOT a set<test_is_none_a_set>`.
 
@@ -3076,8 +3099,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         {'key': 'value'} is an instance of <class 'dict'>
 
 * I make the statement :ref:`True<test_what_is_true>`
@@ -3130,8 +3154,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: None is not an instance of <class 'dict'>
+    $1Error: None is not an instance of <class 'dict'>
 
   because :ref:`None is NOT a dictionary<test_is_none_a_dictionary>`.
 

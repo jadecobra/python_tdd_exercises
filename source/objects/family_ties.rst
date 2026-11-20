@@ -314,8 +314,9 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.person.Person'>
 
@@ -373,8 +374,9 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.Doe'> is not a
         subclass of <class 'src.person.Person'>
 
@@ -510,8 +512,9 @@ more about instances vs subobjects
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.family_ties.Doe'>
 
@@ -1790,8 +1793,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.Jane'> is not
         a subclass of <class 'src.family_ties.Doe'>
 
@@ -2242,8 +2246,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.Joe'> is
         not a subclass of <class 'src.family_ties.Blow'>
 
@@ -2387,8 +2392,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: 'jane' != 'mary'
+    $1Error: 'jane' != 'mary'
 
   because this happens when ``mary = src.family_ties.Mary()`` runs
 
@@ -2511,8 +2517,9 @@ the test passes.
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.Mary'> is
         a subclass of <class 'src.family_ties.Jane'>
 
@@ -2572,8 +2579,9 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.Mary'> is not
         a subclass of <class 'src.family_ties.Joe'>
 
@@ -3103,8 +3111,9 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError:
+    $1Error:
         <class 'src.family_ties.John'> is
         a subclass of <class 'src.family_ties.Smith'>
 
@@ -3305,8 +3314,9 @@ what happens when a child has more than one parent?
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :caption: terminal
 
-    AssertionError: <class 'src.family_ties.Lil'> is not
+    $1Error: <class 'src.family_ties.Lil'> is not
                     a subclass of <class 'src.family_ties.Mary'>
 
 * I add ``Mary`` as a parent to ``Lil`` in ``family_ties.py``

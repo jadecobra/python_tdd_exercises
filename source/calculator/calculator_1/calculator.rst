@@ -44,6 +44,7 @@ start the project
   the terminal_ shows
 
   .. code-block:: shell
+    :caption:
 
     Initialized project `calculator` at `.../pumping_python/calculator`
 
@@ -1462,8 +1463,9 @@ I add a test for subtraction in ``test_calculator.py``
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: module 'src.calculator' has no attribute 'subtract'
+  Attribute: module 'src.calculator' has no attribute 'subtract'
 
 ``calculator.py`` in the ``src`` folder_ does not have anything named ``subtract`` in it
 
@@ -1625,8 +1627,9 @@ I add a failing test for multiplication in ``test_calculator.py``
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: module 'src.calculator' has no attribute 'multiply'
+  Attribute: module 'src.calculator' has no attribute 'multiply'
 
 ----
 
@@ -1718,8 +1721,9 @@ Time for division. I add a new test to ``test_calculator.py``
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: module 'src.calculator' has no attribute 'divide'
+  Attribute: module 'src.calculator' has no attribute 'divide'
 
 ----
 

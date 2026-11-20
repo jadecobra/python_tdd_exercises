@@ -197,8 +197,9 @@ first input     second input   return
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: module 'src.truth_table'
+  Attribute: module 'src.truth_table'
                   has no attribute 'negate_second'
 
 I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src/truth_table/__init__.py``

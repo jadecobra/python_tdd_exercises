@@ -107,8 +107,9 @@ I add a test with a :ref:`call<how to call a function with input>` to ``AnObject
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: module 'src.type_error'
+  Attribute: module 'src.type_error'
                   has no attribute 'AnObject'
 
 because ``AnObject`` is not defined in ``src/type_error/__init__.py``.

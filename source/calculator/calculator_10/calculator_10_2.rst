@@ -693,8 +693,9 @@ I add a new test to make sure the Calculator has 4 columns
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 0 != 4
+  Assertion: 0 != 4
 
 - ``len(self.tester.columns)`` returns the length of the columns object
 - `streamlit columns`_ are :ref:`lists<what is a list?>` and I know how to work with :ref:`lists<what is a list?>`
@@ -1969,8 +1970,9 @@ I add a test for the ``type`` parameter of `streamlit buttons`_
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: 'secondary' != ''
+  Assertion: 'secondary' != ''
 
 ----
 

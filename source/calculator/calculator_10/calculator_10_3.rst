@@ -1453,8 +1453,9 @@ I add a new test for the ``+/-`` button
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AssertionError: '9' != '-9'
+  Assertion: '9' != '-9'
 
 ----
 

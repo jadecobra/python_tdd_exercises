@@ -648,8 +648,9 @@ input           output
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
+  :caption: terminal
 
-  AttributeError: module 'src.truth_table'
+  Attribute: module 'src.truth_table'
                   has no attribute 'logical_negation'
 
 there is no definition for :ref:`logical_negation<test_logical_negation>` in ``src/truth_table/__init__.py``.
