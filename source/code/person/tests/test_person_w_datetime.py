@@ -247,4 +247,4 @@ class TestPerson(unittest.TestCase):
 # NameError
 # TypeError
 # AttributeError
-# Syntaxerror
+# SyntaxError
