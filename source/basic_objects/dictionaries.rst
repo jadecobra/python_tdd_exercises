@@ -4576,7 +4576,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'value' != ''
 
-I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a :ref:`dictionary<what is a dictionary?>` by giving the :ref:`key<test_key_error>` in ``[]``, the same way :ref:`I can get items from a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in ``[]``.
+I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a :ref:`dictionary<what is a dictionary?>` by giving the :ref:`key<test_key_error>` in ``[]``, the same way :ref:`I can get items from a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` in ``[]``.
 
 ----
 

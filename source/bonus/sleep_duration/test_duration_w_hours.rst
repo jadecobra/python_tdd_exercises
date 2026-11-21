@@ -594,7 +594,7 @@ the test passes.
 
   the test is green again
 
-* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_first_position_of_item_in_a_list>` I know I can get it by using its index, Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a :ref:`variable<what is a variable?>` to ``test_string_splitting``
+* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_the_first_position_of_a_given_item>` I know I can get it by using its index, Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a :ref:`variable<what is a variable?>` to ``test_string_splitting``
 
   .. code-block:: python
 

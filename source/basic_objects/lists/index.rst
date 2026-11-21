@@ -135,7 +135,7 @@ questions about lists
 * :ref:`how can I copy a list?<test_copy_a_list>`
 * :ref:`how can I count the number of times an item is in a list?<test_count_number_of_times_item_is_in_a_list>`
 * :ref:`how can I add items from an iterable to the end of a list?<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
-* :ref:`how can I get the first position of an item in a list?<test_index_returns_first_position_of_item_in_a_list>`
+* :ref:`how can I get the first position of an item in a list?<test_index_returns_the_first_position_of_a_given_item>`
 * :ref:`how can I put an item at a position in a list?<test_insert_item_at_position_in_a_list>`
 * :ref:`how can I remove the last item from a list?<test_pop_removes_and_returns_last_item_from_a_list>`
 * :ref:`how can I remove the first time an item is in a list?<test_remove_first_time_item_is_in_a_list>`
@@ -1446,7 +1446,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when :r
 ----
 
 *********************************************************************************
-test_index_returns_first_position_of_item_in_a_list
+test_index_returns_the_first_position_of_a_given_item
 *********************************************************************************
 
 =================================================================================
@@ -1576,7 +1576,7 @@ the test passes.
     # TypeError
     # ValueError
 
-* I remove the things around the :ref:`call to the index method<test_index_returns_first_position_of_item_in_a_list>` and change the value to make it clearer
+* I remove the things around the :ref:`call to the index method<test_index_returns_the_first_position_of_a_given_item>` and change the value to make it clearer
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
@@ -1833,7 +1833,7 @@ the test passes.
 
             self.assertEqual(another_list, a_list)
 
-        def test_index_returns_first_position_of_item_in_a_list(self):
+        def test_index_returns_the_first_position_of_a_given_item(self):
             a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
 * I remove index_ from the TODO list
@@ -1860,9 +1860,9 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_index_returns_first_position_of_item_in_a_list'
+    'add test_index_returns_the_first_position_of_a_given_item'
 
-:ref:`I know how to find the position of something in a list<test_index_returns_first_position_of_item_in_a_list>`.
+:ref:`I know how to find the position of something in a list<test_index_returns_the_first_position_of_a_given_item>`.
 
 ----
 
@@ -1967,8 +1967,8 @@ the test passes.
 
   The `insert method`_
 
-  - puts the second input given at the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the list_ given as the first input
-  - it also moves the original items from that :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and after in the list_, to the right
+  - puts the second input given at the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the list_ given as the first input
+  - it also moves the original items from that :ref:`index<test_index_returns_the_first_position_of_a_given_item>` and after in the list_, to the right
 
 * I change the second input in the :ref:`call<how to call a function with input>`
 
@@ -2035,7 +2035,7 @@ the test passes.
 
             self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
-  the test passes. The `insert method`_ moved everything in the list_ from the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` I gave and after, to the right.
+  the test passes. The `insert method`_ moved everything in the list_ from the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` I gave and after, to the right.
 
 * I change the name of the test
 
@@ -2857,7 +2857,7 @@ the test passes.
 test_getting_items_of_a_list
 *********************************************************************************
 
-When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``) to get it.
+When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_the_first_position_of_a_given_item>` in square brackets(``[]``) to get it.
 
 ----
 
@@ -2890,7 +2890,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: '1st' != ''
 
-the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``0``.
+the first item has an :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of ``0``.
 
 ----
 
@@ -2919,7 +2919,7 @@ the test passes.
 
 ----
 
-* this is the opposite of the `index method`_ which takes in the item and returns its position, in this case I provide the :ref:`index (position)<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
+* this is the opposite of the `index method`_ which takes in the item and returns its position, in this case I provide the :ref:`index (position)<test_index_returns_the_first_position_of_a_given_item>` and it returns the item, which means I can write this
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
@@ -2955,7 +2955,7 @@ the test passes.
   - ``a_list.index('1st')`` returns ``0``
   - ``a_list[0]`` returns ``1st``
 
-* I can also use negative numbers. The last item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``-1`` and the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of negative the length of the list_
+* I can also use negative numbers. The last item has an :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of ``-1`` and the first item has an :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of negative the length of the list_
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
@@ -3181,7 +3181,7 @@ the test passes.
 test_setting_items_in_a_list
 *********************************************************************************
 
-I can also use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item in a list_ to change the item.
+I can also use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of an item in a list_ to change the item.
 
 ----
 
@@ -3218,7 +3218,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th']
                              != ['1st', '2nd', '3rd', '...last']
 
-I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_ the way I point a name to a value when I make a :ref:`variable<what is a variable?>`.
+I can use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of an item to change its value in a list_ the way I point a name to a value when I make a :ref:`variable<what is a variable?>`.
 
 ----
 
@@ -3261,7 +3261,7 @@ I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` 
 test_getting_parts_of_a_list_aka_slicing
 *********************************************************************************
 
-I can use :ref:`indices<test_index_returns_first_position_of_item_in_a_list>` to look at parts of a list_, this is called slicing_.
+I can use :ref:`indices<test_index_returns_the_first_position_of_a_given_item>` to look at parts of a list_, this is called slicing_.
 
 ----
 
@@ -3317,8 +3317,8 @@ the test passes.
 
 I give two values in square brackets(``[]``), separated by a ``:``
 
-* the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start from
-* the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at, plus ``1`` because Python_ uses `zero-based indexing`_
+* the first value is the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the item I want to start from
+* the second value is the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the item I want to stop at, plus ``1`` because Python_ uses `zero-based indexing`_
 
 ----
 
@@ -3328,7 +3328,7 @@ I give two values in square brackets(``[]``), separated by a ``:``
 
 ----
 
-* I can skip the first number if the starting :ref:`index<test_index_returns_first_position_of_item_in_a_list>` is ``0``
+* I can skip the first number if the starting :ref:`index<test_index_returns_the_first_position_of_a_given_item>` is ``0``
 
   .. code-block:: python
     :caption: lists/tests/test_lists.py
@@ -3571,7 +3571,7 @@ the terminal_ is my friend, and shows IndexError_
 
   IndexError: list index out of range
 
-when I use an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` that is greater than or the same as the number of things in the list_, I am pointing to something that is NOT in the list_.
+when I use an :ref:`index<test_index_returns_the_first_position_of_a_given_item>` that is greater than or the same as the number of things in the list_, I am pointing to something that is NOT in the list_.
 
 ----
 
@@ -3728,7 +3728,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes. Any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ raises IndexError_.
+  the test passes. Any :ref:`index<test_index_returns_the_first_position_of_a_given_item>` given to an empty list_ raises IndexError_.
 
 * I add a git_ commit message
 
@@ -3920,7 +3920,7 @@ I ran tests to show that I can make a list_ with ``list()`` or square brackets (
 * :ref:`test_copy_a_list`
 * :ref:`test_count_number_of_times_item_is_in_a_list`
 * :ref:`test_extend_adds_items_from_an_iterable_to_end_of_a_list`
-* :ref:`test_index_returns_first_position_of_item_in_a_list`
+* :ref:`test_index_returns_the_first_position_of_a_given_item`
 * :ref:`test_insert_item_at_position_in_a_list`
 * :ref:`test_pop_removes_and_returns_last_item_from_a_list`
 * :ref:`test_remove_first_time_item_is_in_a_list`

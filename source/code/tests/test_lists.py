@@ -56,7 +56,7 @@ class TestLists(unittest.TestCase):
             another_list.append(number)
         self.assertEqual(another_list, a_list)
 
-    def test_index_returns_first_position_of_item_in_a_list(self):
+    def test_index_returns_the_first_position_of_a_given_item(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
         self.assertEqual(a_list.index('1st', 0), 0)
         self.assertEqual(a_list.index('3rd', 0), 2)

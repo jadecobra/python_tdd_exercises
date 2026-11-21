@@ -464,7 +464,7 @@ I can use a :ref:`list<what is a list?>` to test the :ref:`calculator functions<
 
 ----
 
-I add a new test to use the :ref:`index of the items in the list<test_index_returns_first_position_of_item_in_a_list>` to test the :ref:`calculator<how to make a calculator>`
+I add a new test to use the :ref:`index of the items in the list<test_index_returns_the_first_position_of_a_given_item>` to test the :ref:`calculator<how to make a calculator>`
 
 .. code-block:: python
   :lineno-start: 107

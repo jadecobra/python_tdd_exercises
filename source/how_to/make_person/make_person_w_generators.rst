@@ -213,7 +213,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
         ('joe', 'blow', 'M', 1996),
     ):
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
 
   .. code-block:: shell
 
@@ -793,11 +793,11 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  E           Type
+  E           TypeError
 
 because
 
-- the the :ref:`say_hello function<test say_hello function>` :ref:`calls<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>`
+- the :ref:`say_hello function<test say_hello function>` :ref:`calls<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>`
 - the :ref:`calculate_age function<extract calculate_age function>` raises :ref:`TypeError<what causes TypeError?>` when ``year_of_birth`` is not an integer_. ``year_of_birth`` is a string_ in the last tuple_ in the ``people`` tuple_ (``('first_name', 'last_name', 'F', 'a_string')``)
 
   .. code-block:: shell
@@ -1035,7 +1035,7 @@ because
 
   fantastic! ``args`` is a tuple_ that has the error message as its first and only item.
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the error message with an :ref:`f-string<what is string interpolation?>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the error message with an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :caption:
@@ -2699,7 +2699,7 @@ the test passes.
             )
             for row in truth_table:
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption:
@@ -2731,7 +2731,7 @@ the test passes.
     SUBFAILED(row=(2008, True, True)) ...test_if_person_can_vote -
         IndexError: tuple index out of range
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to the right number
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` to the right number
 
   .. code-block:: python
     :caption:
@@ -3044,7 +3044,7 @@ the test passes.
         test_if_person_can_get_license - AssertionError:
             True != False
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to change the expectation to the last item of the ``row`` tuple_
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` to change the expectation to the last item of the ``row`` tuple_
 
   .. code-block:: python
     :caption:
@@ -4588,7 +4588,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
     SUBFAILED[(2008, True, True, True, True)] ...test_say_hello_function -
         ValueError
 
-  because the positions changed when I changed the tuple_. I would have to change all the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` if I change the tuple_, there has to be :ref:`a better way<how to make a person with dictionaries>`
+  because the positions changed when I changed the tuple_. I would have to change all the :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>` if I change the tuple_, there has to be :ref:`a better way<how to make a person with dictionaries>`
 
 * I undo the change
 
@@ -4686,7 +4686,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   the tests are still green.
 
-* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_object<extract test_person_object>`
+* I change the :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :caption:
@@ -4711,7 +4711,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   still green.
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` for ``year_of_birth`` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
     :caption:
@@ -4726,7 +4726,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   green.
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_person_factory<extract test_person_factory>`
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` for ``year_of_birth`` in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
     :caption:
@@ -4830,7 +4830,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
     SUBFAILED[(2009, False, False, False, False)] ...test_person_object -
         IndexError: tuple index out of range
 
-* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>`
+* I change the :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :caption:

@@ -210,7 +210,7 @@ the test passes.
         ('joe', 'blow', 'M', 1996),
     ):
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
 
   .. code-block:: shell
 
@@ -1059,7 +1059,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   fantastic! ``args`` is a tuple_ that has the error message as its first and only item.
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the error message with an :ref:`f-string<what is string interpolation?>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the error message with an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :caption:
@@ -2526,7 +2526,7 @@ the test passes.
             )
             for row in truth_table:
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption:
@@ -2560,7 +2560,7 @@ the test passes.
     SUBFAILED(row=(2008, True, True)) ...test_can_person_vote -
         IndexError: tuple index out of range
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to the right number
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` to the right number
 
   .. code-block:: python
     :caption:
@@ -2864,7 +2864,7 @@ the test passes.
         test_can_person_get_license - AssertionError:
             True != False
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to change the expectation to the last item of the ``row`` tuple_
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` to change the expectation to the last item of the ``row`` tuple_
 
   .. code-block:: python
     :caption:

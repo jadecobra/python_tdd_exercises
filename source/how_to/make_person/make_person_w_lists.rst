@@ -784,7 +784,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
   the test is still green.
 
-* I change the :ref:`for loop<what is a for loop?>` for the test to use names instead of :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>`
+* I change the :ref:`for loop<what is a for loop?>` for the test to use names instead of :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py

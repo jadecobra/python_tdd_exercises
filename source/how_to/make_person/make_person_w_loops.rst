@@ -14,17 +14,71 @@ how to make a person with loops
 I have a problem in ``person/tests/test_person.py``
 
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` have the same :ref:`assertions<what is an assertion?>`.
+
+  .. code-block:: python
+
+    self.assert_person_factory_works(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
+
+  .. code-block:: python
+
+    self.assert_say_hello_works(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+
+  .. code-block:: python
+
+    self.assert_person_can_say_hello(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
+
+  .. code-block:: python
+
+    an_instance = src.person.Person(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+        is_citizen=True | False,
+        passed_test=True | False,
+    )
+    self.assertEqual(an_instance.can_vote(), True | False)
+    self.assertEqual(an_instance.can_get_license(), True | False)
+
+  If I add more people I would have to add more tests.
+
 * :ref:`test_when_year_of_birth_is_not_an_integer` also has :ref:`assertions<what is an assertion?>` that are basically the same, the only thing that changes are the values for the ``year_of_birth`` parameter.
 
-This means that if I add more people or more cases where ``year_of_birth`` is not an integer_ I would have to add more tests.
+  .. code-block:: python
+
+    try:
+        src.person.Person(
+            first_name='first_name',
+            last_name='last_name',
+            sex='M',
+            year_of_birth=not an integer,
+        )
+    except TypeError:
+        pass
+
+  If I add more cases where ``year_of_birth`` is not an integer_ I would have to add more tests.
 
 I want to use one test for each of the three tests for each person, and one test for every case where ``year_of_birth`` is not an integer. I can do this with :ref:`for loops<what is a for loop?>`.
 
-A :ref:`for loop<what is a for loop?>` is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items), it is written like this
+A :ref:`for loop<what is a for loop?>` is a way to repeat something over an :ref:`iterable<what is an iterable?>` (a collection of items), it is written like this
 
 .. code-block:: python
 
-  for item in collection:
+  for item in an_iterable:
       do something
 
 ----
@@ -152,6 +206,12 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
 ----
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
 * I add a test for the :ref:`person function<extract person function>` to ``tests/test_person.py``
 
   .. code-block:: python
@@ -213,7 +273,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
           ('joe', 'blow', 'M', 1996),
       ):
 
-  * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
+  * I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
 
     .. code-block:: shell
 
@@ -451,6 +511,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 15
+    :emphasize-lines: 7
 
         def test_person_factory(self):
             people = (
@@ -515,9 +576,9 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
             year_of_birth = 1980
 
             self.assert_say_hello_works(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+                first_name,
+                last_name,
+                year_of_birth,
             )
             ...
 
@@ -540,7 +601,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
             )
             ...
 
-* I no longer need the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` because it is only used by :ref:`test_person_factory<extract test_person_factory>`
+* I no longer need the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` because it is only used by :ref:`test_person_factory<extract test_person_factory>`, I can use the code from it directly in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -591,6 +652,14 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
     AssertionError: 'jane, doe, F, 1991' != None
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 * I change the expectation of the :ref:`assertion<what is an assertion?>` to ``'jane, doe, F, 1991'``
 
   .. code-block:: python
@@ -617,7 +686,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
     AssertionError: 'joe, blow, M, 1996' != 'jane, doe, F, 1991'
 
-  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``'joe'``)
+  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``('joe', 'blow', 'M', 1996)``)
 
 * I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>`
 
@@ -642,6 +711,14 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
         def test_joe(self):
 
   the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_person_factory<extract test_person_factory>`
 
@@ -683,6 +760,70 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
         def test_joe(self):
 
   the tests are still green.
+
+* I change the :ref:`for loop<what is a for loop?>` in :ref:`test_person_factory<extract test_person_factory>` to use names instead of :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 65
+    :emphasize-lines: 2-11
+
+        def test_person_factory(self):
+            for (
+                first_name, last_name,
+                sex, year_of_birth,
+            ) in (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a string'),
+            ):
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    NameError: name 'a_person' is not defined
+
+* I remove the :ref:`variables<what is a variable?>` that point to ``a_person`` because they are no longer needed
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 65
+
+        def test_person_factory(self):
+            for (
+                first_name, last_name,
+                sex, year_of_birth,
+            ) in (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a string'),
+            ):
+                self.assertEqual(
+                    src.person.person(
+                      first_name=first_name,
+                      last_name=last_name,
+                      sex=sex,
+                      year_of_birth=year_of_birth,
+                    ),
+                    (
+                        f'{first_name}, {last_name},'
+                        f' {sex}, {year_of_birth}'
+                    )
+                )
+
+        def test_joe(self):
+
+  the test is green again
 
 * I remove the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from the :ref:`TestPerson object<add TestPerson object>`
 
@@ -793,12 +934,12 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
   :caption: terminal
 
-  E           Type
+  E           TypeError
 
 because
 
-- the the :ref:`say_hello function<test say_hello function>` :ref:`calls<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>`
-- the :ref:`calculate_age function<extract calculate_age function>` raises :ref:`TypeError<what causes TypeError?>` when ``year_of_birth`` is not an integer_. ``year_of_birth`` is a string_ in the last tuple_ in the ``people`` tuple_ (``('first_name', 'last_name', 'F', 'a_string')``)
+- the :ref:`say_hello function<test say_hello function>` :ref:`calls<how to call a function with input>` the :ref:`calculate_age function<add calculate_age function>`
+- the :ref:`calculate_age function<add calculate_age function>` raises :ref:`TypeError<what causes TypeError?>` when ``year_of_birth`` is not an integer_. ``year_of_birth`` is a string_ in the last tuple_ in the ``people`` tuple_ (``('first_name', 'last_name', 'F', 'a_string')``)
 
   .. code-block:: shell
 
@@ -864,10 +1005,10 @@ because
 
 * I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
 
-* I add a message to the :ref:`calculate_age function<extract calculate_age function>` for when :ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>`, in ``src/person/__init__.py``
+* I add a message to the :ref:`calculate_age function<add calculate_age function>` for when :ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` to make it clearer, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 3-5
 
@@ -886,7 +1027,7 @@ because
 
   better.
 
-* I change the statements in the :ref:`assert_say_hello_works method<extract assert_say_hello_works functions>` to a :ref:`try statement with an else clause<how to use try...except...else>` in ``tests/test_person.py``
+* I change the statements in the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` to a :ref:`try statement with an else clause<how to use try...except...else>` in ``tests/test_person.py``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -1035,7 +1176,7 @@ because
 
   fantastic! ``args`` is a tuple_ that has the error message as its first and only item.
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the error message with an :ref:`f-string<what is string interpolation?>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the error message with an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -1053,10 +1194,10 @@ because
 
   the test passes.
 
-* I change the message for :ref:`TypeError<what causes TypeError?>` in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py`` to test my change
+* I change the message for :ref:`TypeError<what causes TypeError?>` in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py`` to test my change
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 3
 
@@ -1066,6 +1207,8 @@ because
             raise TypeError(
                 f"'{year_of_birth}' is not an integer"
             )
+
+            ...
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1130,7 +1273,7 @@ because
 * I undo the change
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
 
     def calculate_age(year_of_birth):
@@ -1139,22 +1282,13 @@ because
                 f"'{year_of_birth}' is not an integer"
             )
 
-        age = (
-            datetime.date.today().year
-          - year_of_birth
-        )
-
-        if age < 0 or age > 120:
-            raise ValueError
-        return age
-
   the test is green again.
 
 * I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from :ref:`test_joe` since it is now a repetition
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 109
+    :lineno-start: 101
 
         def test_joe(self):
             first_name = 'joe'
@@ -1174,7 +1308,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 131
+    :lineno-start: 123
 
         def test_jane(self):
             first_name = 'jane'
@@ -1194,7 +1328,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 154
+    :lineno-start: 146
 
         def test_john(self):
             first_name = 'john'
@@ -1214,7 +1348,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 178
+    :lineno-start: 170
 
         def test_mary(self):
             first_name = 'mary'
@@ -1223,18 +1357,18 @@ because
             year_of_birth = 2000
 
             self.assert_person_can_say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
+                first_name,
+                last_name,
+                sex,
+                year_of_birth,
             )
             ...
 
-* I no longer need the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` because it is only used by :ref:`test_say_hello_function<extract test_say_hello_function>`
+* I add the code from the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` to :ref:`test_say_hello_function<extract test_say_hello_function>` because this is now the only place it is used
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 63
+    :lineno-start: 58
 
         def test_say_hello_function(self):
             people = (
@@ -1257,7 +1391,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 82
+    :lineno-start: 77
     :emphasize-lines: 1-16
 
                 try:
@@ -1286,11 +1420,13 @@ because
 
     AssertionError: 'Hello, my name is jane doe and I am YY.' != None
 
+  where ``YY`` is the age.
+
 * I change the expectation to ``'Hello, my name is jane doe and I am YY.'``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 93
+    :lineno-start: 88
     :emphasize-lines: 4
 
                 else:
@@ -1309,13 +1445,13 @@ because
     AssertionError: 'Hello, my name is joe blow and I am XX.'
                  != 'Hello, my name is jane doe and I am YY.'
 
-  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``'joe'``)
+  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``('joe', 'blow', 'M', 1996),``)
 
 * I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 93
+    :lineno-start: 88
     :emphasize-lines: 4-8
 
                 else:
@@ -1377,6 +1513,86 @@ because
                     )
 
         def test_person_factory(self):
+
+* I change the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>` to use names instead of :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 58
+    :emphasize-lines: 2-11
+
+        def test_say_hello_function(self):
+            for (
+                first_name, last_name,
+                _, year_of_birth,
+            ) in (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a string'),
+            ):
+                first_name = a_person[0]
+                last_name = a_person[1]
+                year_of_birth = a_person[3]
+
+                try:
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+    :caption: terminal
+
+    NameError: name 'a_person' is not defined
+
+  I use ``_`` as a placeholder for the third item in the ``people`` tuple_ because I do not use the name or the value in the :ref:`for loop<what is a for loop?>`
+
+* I remove the :ref:`variables<what is a variable?>` that point to ``a_person`` because they are no longer needed
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 58
+
+        def test_say_hello_function(self):
+            for (
+                first_name, last_name,
+                _, year_of_birth,
+            ) in (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a string'),
+            ):
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 69
+
+                try:
+                    reality = src.person.say_hello(
+                        first_name=first_name,
+                        last_name=last_name,
+                        year_of_birth=year_of_birth,
+                    )
+                except TypeError as error:
+                    self.assertEqual(
+                        error.args[0],
+                        f"'{year_of_birth}' is not an integer"
+                    )
+                else:
+                    self.assertEqual(
+                        reality,
+                        (
+                            f'Hello, my name is {first_name}'
+                            f' {last_name} and I am'
+                            f' {self.calculate_age(year_of_birth)}.'
+                        )
+                    )
+
+        def test_person_factory(self):
+
+  the test is green again
 
 * I remove the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>` from the :ref:`TestPerson object<add TestPerson object>`
 
@@ -1459,7 +1675,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
                   else:
                       ...
 
-* If the :ref:`call to the calculate_age function<extract calculate_age function>` from the :ref:`say_hello function<test say_hello function>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` matches the expectation
+* If the :ref:`call to the calculate_age function<add calculate_age function>` from the :ref:`say_hello function<test say_hello function>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` matches the expectation
 
   .. code-block:: shell
 
@@ -1744,10 +1960,10 @@ the subTest method
 
 ----
 
-* I change the error message for if the value of the ``year_of_birth`` parameter is not an integer_ in the :ref:`calculate_age function<extract calculate_age function>`, in ``src/person/__init__.py``
+* I change the error message for if the value of the ``year_of_birth`` parameter is not an integer_ in the :ref:`calculate_age function<add calculate_age function>`, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 3
 
@@ -1900,10 +2116,10 @@ the subTest method
         test_say_hello_function - AssertionError:
             'BAP!!!' != "'a string' is not an integer"
 
-* I change the error message in the :ref:`calculate_age function<extract calculate_age function>` for if the value of the ``year_of_birth`` parameter is not an integer_ back to the correct message, in ``src/person/__init__.py``
+* I change the error message in the :ref:`calculate_age function<add calculate_age function>` for if the value of the ``year_of_birth`` parameter is not an integer_ back to the correct message, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
 
     def calculate_age(year_of_birth):
@@ -2212,7 +2428,7 @@ the subTest method
 
     git commit -am 'extract test_say_hello_method'
 
-For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` which makes an ``age`` :ref:`attribute<what is an object attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age function<extract calculate_age function>` with the given ``year_of_birth`` parameter.
+For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person object<add Person object>` which makes an ``age`` :ref:`attribute<what is an object attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age function<add calculate_age function>` with the given ``year_of_birth`` parameter.
 
 * If the :ref:`call raises TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the error message is correct
 
@@ -2277,7 +2493,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
                   else:
                       ...
 
-* If the :ref:`call to the calculate_age function<extract calculate_age function>` from the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<add say_hello method>` matches the expectation
+* If the :ref:`call to the calculate_age function<add calculate_age function>` from the :ref:`__init__ method<the constructor method>` of the :ref:`Person object<add Person object>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<add say_hello method>` matches the expectation
 
   .. code-block:: shell
 
@@ -2699,7 +2915,7 @@ the test passes.
             )
             for row in truth_table:
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -2731,7 +2947,7 @@ the test passes.
     SUBFAILED(row=(2008, True, True)) ...test_if_person_can_vote -
         IndexError: tuple index out of range
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to the right number
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` to the right number
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -3044,7 +3260,7 @@ the test passes.
         test_if_person_can_get_license - AssertionError:
             True != False
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to change the expectation to the last item of the ``row`` tuple_
+* I use the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` to change the expectation to the last item of the ``row`` tuple_
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -4588,7 +4804,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
     SUBFAILED[(2008, True, True, True, True)] ...test_say_hello_function -
         ValueError
 
-  because the positions changed when I changed the tuple_. I would have to change all the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` if I change the tuple_, there has to be :ref:`a better way<how to make a person with dictionaries>`
+  because the positions changed when I changed the tuple_. I would have to change all the :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>` if I change the tuple_, there has to be :ref:`a better way<how to make a person with dictionaries>`
 
 * I undo the change
 
@@ -4686,7 +4902,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   the tests are still green.
 
-* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_object<extract test_person_object>`
+* I change the :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>` for ``year_of_birth``, ``is_citizen`` and ``passed_test`` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -4711,7 +4927,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   still green.
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` for ``year_of_birth`` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -4726,7 +4942,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   green.
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for ``year_of_birth`` in :ref:`test_person_factory<extract test_person_factory>`
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` for ``year_of_birth`` in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -4830,7 +5046,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
     SUBFAILED[(2009, False, False, False, False)] ...test_person_object -
         IndexError: tuple index out of range
 
-* I change the :ref:`indexes<test_index_returns_first_position_of_item_in_a_list>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>`
+* I change the :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>` for the expectations of the results to :ref:`calls<how to call a function with input>` of the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` in :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -4968,7 +5184,7 @@ the test passes.
 * I add a message to the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 13-15
 
@@ -5131,7 +5347,7 @@ the test passes.
 * I change the message of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption: person/tests/test_person.py
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 14
 

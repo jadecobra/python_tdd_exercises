@@ -1250,7 +1250,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 test_catching_index_error
 *********************************************************************************
 
-:ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
+:ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_the_first_position_of_a_given_item>`, tuple_ or string_ with a number that is
 
 - bigger than or the same as the number of items in the :ref:`list<what is a list?>`, tuple_ or string_
 - smaller than the negative of the number of items in the :ref:`list<what is a list?>`, tuple_ or string_
@@ -1282,9 +1282,9 @@ test_catching_index_error
 
     # Exceptions seen
 
-  the test is still green because the first item in a :ref:`list<what is a list?>`, tuple_ or string_ has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` (its position in the container).
+  the test is still green because the first item in a :ref:`list<what is a list?>`, tuple_ or string_ has ``0`` as its :ref:`index<test_index_returns_the_first_position_of_a_given_item>` (its position in the container).
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` from ``0`` to ``7``
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` from ``0`` to ``7``
 
   .. code-block:: python
     :caption:
@@ -1297,9 +1297,9 @@ test_catching_index_error
 
     # Exceptions seen
 
-  the test is still green because the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the last item is the total number of items minus ``1``, which is ``7`` in this case.
+  the test is still green because the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` for the last item is the total number of items minus ``1``, which is ``7`` in this case.
 
-* If I use a number that is bigger than the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the last item
+* If I use a number that is bigger than the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the last item
 
   .. code-block:: python
     :caption:
@@ -1368,7 +1368,7 @@ the test passes.
 
 ----
 
-* I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item is ``-1``, like reading from right to left
+* I can also :ref:`index<test_index_returns_the_first_position_of_a_given_item>` with negative numbers, the one for the last item is ``-1``, like reading from right to left
 
   .. code-block:: python
     :caption:
@@ -1384,7 +1384,7 @@ the test passes.
 
   the test is still green.
 
-* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` from ``-1`` to ``-8`` for the first item, which is negative the total number of items (like reading from right to left)
+* I change the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` from ``-1`` to ``-8`` for the first item, which is negative the total number of items (like reading from right to left)
 
   .. code-block:: python
     :caption:
@@ -1435,7 +1435,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test is green again. I cannot use a number that is smaller than the negative of the total number of items in the string_ to :ref:`index the string<test_index_returns_first_position_of_item_in_a_list>`.
+  the test is green again. I cannot use a number that is smaller than the negative of the total number of items in the string_ to :ref:`index the string<test_index_returns_the_first_position_of_a_given_item>`.
 
 * I add a tuple_ to :ref:`test_catching_index_error`
 
@@ -1453,7 +1453,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test is still green because ``1`` is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the second item.
+  the test is still green because ``1`` is the :ref:`index<test_index_returns_the_first_position_of_a_given_item>` of the second item.
 
 * I use a number that is bigger than the number of items in the tuple_
 
@@ -1498,7 +1498,7 @@ the test passes.
 
   the test passes.
 
-* I use a negative number to :ref:`index<test_index_returns_first_position_of_item_in_a_list>` the tuple_
+* I use a negative number to :ref:`index<test_index_returns_the_first_position_of_a_given_item>` the tuple_
 
   .. code-block:: python
     :caption:
@@ -1570,7 +1570,7 @@ the test passes.
     git commit -am \
     'add test_catching_index_error'
 
-:ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
+:ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_the_first_position_of_a_given_item>`, tuple_ or string_ with a number that is
 
 - bigger than or the same as the number of items in the :ref:`list<what is a list?>`, tuple_ or string_.
 - smaller than the negative of the number of items in the :ref:`list<what is a list?>`, tuple_ or string_.
