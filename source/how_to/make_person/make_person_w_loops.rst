@@ -1820,7 +1820,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   E           TypeError: 'a_string' is not an integer
 
-this is the correct :ref:`Exception<how to test that an Exception is raised>` for when the ``year_of_birth`` is not an integer. I need :ref:`a better way to know which item in the people tuple raised the Exception<the subTest method>`.
+this is the correct :ref:`Exception<how to test that an Exception is raised>` for when the ``year_of_birth`` is not an integer. I need :ref:`a way to know which item in the people tuple raised the Exception<the subTest method>`.
 
 ----
 

@@ -69,6 +69,7 @@ open the project
 
     cd booleans
 
+* I open ``test_booleans.py`` from the ``tests`` folder_
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
