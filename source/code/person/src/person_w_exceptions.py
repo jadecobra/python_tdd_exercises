@@ -14,7 +14,7 @@ class Person:
         self.sex = sex
         self.is_citizen = is_citizen
         self.passed_test = passed_test
-        self.age = calculate_age(year_of_birth)
+        self.age = calculate_age(self.year_of_birth)
 
     def check_age(self, status):
         if self.age < 18:
@@ -45,11 +45,12 @@ def calculate_age(year_of_birth):
 
     if age < 0 or age > 120:
         raise ValueError
+
     return age
 
 
 def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
     return (
         f'Hello, my name is {first_name}'

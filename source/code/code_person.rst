@@ -555,19 +555,19 @@ The code in ``person/src/person/__init__.py`` after :ref:`how to make a person w
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 37
-  :lines: 37-48
+  :lines: 37-49
 
 .. literalinclude:: person/src/person_w_exceptions.py
   :caption: person/src/person/__init__.py
   :language: python
-  :lineno-start: 51
-  :lines: 51-58
+  :lineno-start: 52
+  :lines: 52-59
 
 .. literalinclude:: person/src/person_w_exceptions.py
   :caption: person/src/person/__init__.py
   :language: python
-  :lineno-start: 61
-  :lines: 61-
+  :lineno-start: 62
+  :lines: 62-
 
 
 ----

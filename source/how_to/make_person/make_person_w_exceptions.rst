@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with Exceptions — use try/except so the person project can raise and handle age and year_of_birth errors without skipping tests. Continues the person project after conditions (uv run pytest-watcher . --now --patterns "**/*.py": 7 passed, 3 skipped). RED: comment out the skip on test_when_person_is_older_than_120 (year_of_birth=self.this_year-121) → AssertionError from assert age <= 120. GREEN: raise Exception when age > 120. An if that compares the constructor to Exception still raises, because the raise stops that line. try/except pass makes the test pass. Same path for test_when_year_of_birth_is_the_future (self.this_year+1): AssertionError from assert age >= 0, then raise Exception when age < 0. REFACTOR: one if age < 0 or age > 120: raise Exception. Unskip test_when_year_of_birth_is_not_an_integer (year_of_birth=None) → AssertionError from assert isinstance(..., int); raise Exception when not an int; try/except. Same handler for float 2026.0, string '2026', tuple (2026,). Bare except is the same as except Exception. Narrow those four handlers to except TypeError (a child cannot catch its parent); raise TypeError for a non-int year_of_birth. Wrong except AssertionError / NameError / ValueError on the other cases still show TypeError. test_when_year_of_birth_is_the_future narrows to except ValueError while calculate_age still raises Exception, so the test shows Exception. Then raise ValueError when age < 0 or age > 120. REFACTOR on test_when_person_is_older_than_120: except Exception stays green, except TypeError shows ValueError, except ValueError passes. Both age tests end on except ValueError. Review: try/except in a test shows a raise; raise stops past a point; dir tests, four identical person tests, and four year_of_birth cases still need a better way. Catalog: test_person_w_exceptions.py + person_w_exceptions.py.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with Exceptions, try except, bare except, except Exception, raise Exception, raise TypeError, raise ValueError, year_of_birth not an integer, age greater than 120, age less than 0, self.this_year-121, self.this_year+1, 2026.0, '2026', (2026,), 7 passed 3 skipped, test_when_person_is_older_than_120, test_when_year_of_birth_is_the_future, test_when_year_of_birth_is_not_an_integer, except TypeError, except ValueError, child cannot catch parent Exception, Explicit is better than implicit, PEP 20 Zen of Python, calculate_age, person project, uv run pytest-watcher . --now --patterns "**/*.py", red green refactor, git commit -am, test_person_w_exceptions, person_w_exceptions
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with Exceptions — use try/except so the person project can raise and handle age and year_of_birth errors without skipping tests. Continues the person project after conditions (uv run pytest-watcher . --now --patterns "**/*.py": 7 passed, 3 skipped). RED: comment out the skip on test_when_person_is_older_than_120 (year_of_birth=self.this_year-121) → AssertionError from assert age <= 120. GREEN: raise Exception when age > 120. An if that compares the constructor to Exception still raises, because the raise stops that line. try/except pass makes the test pass. Same path for test_when_year_of_birth_is_the_future (self.this_year+1): AssertionError from assert age >= 0, then raise Exception when age < 0. REFACTOR: one if age < 0 or age > 120: raise Exception. Unskip test_when_year_of_birth_is_not_an_integer (year_of_birth=None) → AssertionError from assert isinstance(..., int); raise Exception when not an int; try/except. Same handler for float 2027.0, string '2027', tuple (2027,). Bare except is the same as except Exception. Narrow those four handlers to except TypeError (a child cannot catch its parent); raise TypeError for a non-int year_of_birth. Wrong except AssertionError / NameError / ValueError on the other cases still show TypeError. test_when_year_of_birth_is_the_future narrows to except ValueError while calculate_age still raises Exception, so the test shows Exception. Then raise ValueError when age < 0 or age > 120. REFACTOR on test_when_person_is_older_than_120: except Exception stays green, except TypeError shows ValueError, except ValueError passes. Both age tests end on except ValueError. Review: try/except in a test shows a raise; raise stops past a point; dir tests, four identical person tests, and four year_of_birth cases still need a better way. Catalog: test_person_w_exceptions.py + person_w_exceptions.py.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with Exceptions, try except, bare except, except Exception, raise Exception, raise TypeError, raise ValueError, year_of_birth not an integer, age greater than 120, age less than 0, self.this_year-121, self.this_year+1, 2027.0, '2027', (2027,), 7 passed 3 skipped, test_when_person_is_older_than_120, test_when_year_of_birth_is_the_future, test_when_year_of_birth_is_not_an_integer, except TypeError, except ValueError, child cannot catch parent Exception, Explicit is better than implicit, PEP 20 Zen of Python, calculate_age, person project, uv run pytest-watcher . --now --patterns "**/*.py", red green refactor, git commit -am, test_person_w_exceptions, person_w_exceptions
 
 .. include:: ../../links.rst
 
@@ -14,12 +14,23 @@ how to make a person with Exceptions
 
 I had a problem when I :ref:`made a person with conditions<how to make a person with conditions>`, I :ref:`skipped<how to skip a test>` :ref:`test_when_person_is_older_than_120`, :ref:`test_when_year_of_birth_is_the_future` and :ref:`test_when_year_of_birth_is_not_an_integer` because they are always in a :red:`RED` state since they cause :ref:`Exceptions<how to test that an Exception is raised>`.
 
-Python_ has a way that allows programs to make a choice when they encounter an :ref:`Exception<how to test that an Exception is raised>` and continue running without stopping. It is the :ref:`try statement<how to handle Exceptions>`.
+.. code-block:: python
 
-I want to use the :ref:`try statement<how to handle Exceptions>` to handle making sure the program raises an :ref:`Exception<how to test that an Exception is raised>`
+  @unittest.skip('fails because age > 120')
+  def test_when_person_is_older_than_120(self):
+      ...
 
-* if the age is older than ``120``
-* if the ``year_of_birth`` is not an integer_
+  @unittest.skip('fails because age < 0')
+  def test_when_year_of_birth_is_the_future(self):
+      ...
+
+  @unittest.skip(
+      'fails because year of birth is not an integer'
+  )
+  def test_when_year_of_birth_is_not_an_integer(self):
+      ...
+
+I can use the :ref:`try statement<how to handle Exceptions>` in programs_ to make a choice when an :ref:`Exception is raised<how to test that an Exception is raised>` so they can continue running without stopping.
 
 ----
 
@@ -30,39 +41,39 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 222
-  :caption: person/tests/test_person.py
   :lines: 222-231
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 233
-  :caption: person/tests/test_person.py
   :lines: 233-242
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 244
-  :caption: person/tests/test_person.py
   :lines: 244-253
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 255
-  :caption: person/tests/test_person.py
   :lines: 255-263
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 265
-  :caption: person/tests/test_person.py
   :lines: 265-273
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 275
-  :caption: person/tests/test_person.py
   :lines: 275-283
 
 -----
@@ -114,7 +125,7 @@ add exception handler to test_when_person_is_older_than_120
 * I comment out the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 222
     :emphasize-lines: 1
 
@@ -141,7 +152,7 @@ add exception handler to test_when_person_is_older_than_120
 * I change ``assert age <= 120`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` if the age is greater than ``120`` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 8-10
 
@@ -155,24 +166,26 @@ add exception handler to test_when_person_is_older_than_120
         # assert age <= 120
         if age > 120:
             raise Exception
+
         return age
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: shell
+    :caption: terminal
 
     E           Exception
 
 * I put the failing statement in an :ref:`if statement<if statements>` in :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 222
     :emphasize-lines: 3-11
 
         # @unittest.skip('fails because age > 120')
         def test_when_person_is_older_than_120(self):
-            if(
+            if (
                 src.person.Person(
                     first_name='first_name',
                     last_name='last_name',
@@ -190,7 +203,7 @@ add exception handler to test_when_person_is_older_than_120
 * I change the :ref:`if statement<if statements>` to a :ref:`try statement<how to handle Exceptions>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 222
     :emphasize-lines: 3, 10
 
@@ -210,15 +223,15 @@ add exception handler to test_when_person_is_older_than_120
 
   It tells the program_ what to do if an :ref:`Exception<how to test that an Exception is raised>` is :ref:`raised<how to raise an Exception>`. A simple way to think of it is
 
-    - ``try`` **something**
-    - ``except`` - if **something** raises an :ref:`Exception<how to test that an Exception is raised>` do something else
+  - ``try`` **something**
+  - ``except`` - if **something** raises an :ref:`Exception<how to test that an Exception is raised>` do something else
 
   pass_ is a special keyword that allows the :ref:`try statement<how to handle Exceptions>` to follow Python_ language rules (the :ref:`except block<how to handle Exceptions>` must have a body), it does not do anything.
 
 * I remove the commented line from :ref:`test_when_person_is_older_than_120`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 219
 
             self.assertEqual(underage.can_vote(), False)
@@ -271,7 +284,7 @@ add exception handler to test_when_year_of_birth_is_the_future
 * I comment out the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_year_of_birth_is_the_future` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 233
     :emphasize-lines: 1
 
@@ -304,10 +317,10 @@ add exception handler to test_when_year_of_birth_is_the_future
 
 ----
 
-* I change ``assert age >= 0`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is in the future, in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py``
+* I change ``assert age >= 0`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is in the future, in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 7-9
 
@@ -323,6 +336,7 @@ add exception handler to test_when_year_of_birth_is_the_future
         # assert age <= 120
         if age > 120:
             raise Exception
+
         return age
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
@@ -334,7 +348,7 @@ add exception handler to test_when_year_of_birth_is_the_future
 * I put the failing statement in an :ref:`if statement<if statements>` in :ref:`test_when_year_of_birth_is_the_future` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 233
     :emphasize-lines: 3-11
 
@@ -360,7 +374,7 @@ add exception handler to test_when_year_of_birth_is_the_future
 * I change the :ref:`if statement<if statements>` to a :ref:`try statement<how to handle Exceptions>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 233
     :emphasize-lines: 3, 10
 
@@ -376,7 +390,7 @@ add exception handler to test_when_year_of_birth_is_the_future
             except:
                 pass
 
-  the test passes because :ref:`try statement<how to handle Exceptions>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<how to test that an Exception is raised>`. It tells the program_ what to do if an :ref:`Exception<how to test that an Exception is raised>` is :ref:`raised<how to raise an Exception>`
+  the test passes because the :ref:`try statement<how to handle Exceptions>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<how to test that an Exception is raised>`. It tells the program_ what to do if an :ref:`Exception<how to test that an Exception is raised>` is :ref:`raised<how to raise an Exception>`
 
 ----
 
@@ -389,17 +403,9 @@ add exception handler to test_when_year_of_birth_is_the_future
 * I remove the commented line from :ref:`test_when_year_of_birth_is_the_future`
 
   .. code-block:: python
-    :caption:
-    :lineno-start: 222
+    :caption: person/tests/test_person.py
+    :lineno-start: 230
 
-        def test_when_person_is_older_than_120(self):
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=self.this_year-121
-                )
             except:
                 pass
 
@@ -419,10 +425,10 @@ add exception handler to test_when_year_of_birth_is_the_future
         )
         def test_when_year_of_birth_is_not_an_integer(self):
 
-* I put the two new :ref:`if statements` in the :ref:`calculate_age function<extract calculate_age function>` together as one because they return the same thing, in ``src/person/__init__.py``
+* I put the two new :ref:`if statements` in the :ref:`calculate_age function<add calculate_age function>` together as one because they return the same thing, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 8-9, 11-13
 
@@ -439,14 +445,15 @@ add exception handler to test_when_year_of_birth_is_the_future
         # if age > 120:
         if age < 0 or age > 120:
             raise Exception
+
         return age
 
   the test is still green.
 
-* I remove the commented lines from the :ref:`calculate_age function<extract calculate_age function>`
+* I remove the commented lines from the :ref:`calculate_age function<add calculate_age function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
 
     def calculate_age(year_of_birth):
@@ -458,6 +465,7 @@ add exception handler to test_when_year_of_birth_is_the_future
 
         if age < 0 or age > 120:
             raise Exception
+
         return age
 
 * I add a git_ commit message in the other terminal_
@@ -482,10 +490,10 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 ----
 
 * I go back to the terminal_ where the tests are running
-* I comment out the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_year_of_birth_is_not_an_integer` and remove the comment from ``year_of_birth=None`` to test when ``year_of_birth`` is :ref:`None<what is None?>`, in ``tests/test_person.py``
+* I comment out the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_year_of_birth_is_not_an_integer` and remove the comments from ``year_of_birth=None`` to test when ``year_of_birth`` is :ref:`None<what is None?>`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 244
     :emphasize-lines: 1-3, 9
 
@@ -498,9 +506,9 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                 last_name='last_name',
                 sex='M',
                 year_of_birth=None,
-                # year_of_birth=2026.0,   # fails
-                # year_of_birth='2026',   # fails
-                # year_of_birth=(2026,),  # fails
+                # year_of_birth=2027.0,   # fails
+                # year_of_birth='2027',   # fails
+                # year_of_birth=(2027,),  # fails
             )
 
         def test_dir_person_object(self):
@@ -520,10 +528,10 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 
 ----
 
-* I change ``assert isinstance(year_of_birth, int)`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is not an integer_ in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py``
+* I change ``assert isinstance(year_of_birth, int)`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is not an integer_ in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
     :emphasize-lines: 2-4
 
@@ -539,6 +547,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 
         if age < 0 or age > 120:
             raise Exception
+
         return age
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
@@ -547,12 +556,40 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 
     E           Exception
 
-* I move the failing statement to a :ref:`try statement<how to handle Exceptions>` for when ``year_of_birth`` is :ref:`None<what is None?>` in :ref:`test_when_year_of_birth_is_not_an_integer` in ``tests/test_person.py``
+* I put the failing statement in an :ref:`if statement<if statements>` in :ref:`test_when_year_of_birth_is_not_an_integer` in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 244
     :emphasize-lines: 5-16
+
+        # @unittest.skip(
+        #     'fails because year of birth is not an integer'
+        # )
+        def test_when_year_of_birth_is_not_an_integer(self):
+            if (
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=None,
+                    # year_of_birth=2027.0,   # fails
+                    # year_of_birth='2027',   # fails
+                    # year_of_birth=(2027,),  # fails
+                )
+            ) == Exception:
+                pass
+
+        def test_dir_person_object(self):
+
+  the terminal_ still shows :ref:`Exception<how to test that an Exception is raised>`, because an :ref:`Exception<how to test that an Exception is raised>` breaks execution of a program_, nothing past the line that caused it will run.
+
+* I change the :ref:`if statement<if statements>` to a :ref:`try statement<how to handle Exceptions>` for when ``year_of_birth`` is :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 244
+    :emphasize-lines: 5, 12, 14-16
 
         # @unittest.skip(
         #     'fails because year_of_birth is not an integer'
@@ -567,9 +604,9 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                 )
             except:
                 pass
-            # year_of_birth=2026.0,   # fails
-            # year_of_birth='2026',   # fails
-            # year_of_birth=(2026,),  # fails
+            # year_of_birth=2027.0,   # fails
+            # year_of_birth='2027',   # fails
+            # year_of_birth=(2027,),  # fails
 
         def test_dir_person_object(self):
 
@@ -586,7 +623,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 * I make a person with a float_ as the value for ``year_of_birth``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 255
     :emphasize-lines: 4-9
 
@@ -597,18 +634,18 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
             first_name='first_name',
             last_name='last_name',
             sex='F',
-            year_of_birth=2026.0,
+            year_of_birth=2027.0,
         )
 
-        # year_of_birth='2026',   # fails
-        # year_of_birth=(2026,),  # fails
+        # year_of_birth='2027',   # fails
+        # year_of_birth=(2027,),  # fails
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
 * I move the failing statement for when the ``year_of_birth`` is a float_ to a :ref:`try statement<how to handle Exceptions>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 255
     :emphasize-lines: 4-12
 
@@ -620,19 +657,19 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                     first_name='first_name',
                     last_name='last_name',
                     sex='F',
-                    year_of_birth=2026.0,
+                    year_of_birth=2027.0,
                 )
             except:
                 pass
 
-            # year_of_birth='2026',  # fails
+            # year_of_birth='2027',  # fails
 
   the test passes.
 
 * I make a person with a string_ as the value for ``year_of_birth``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 265
     :emphasize-lines: 4-9
 
@@ -643,17 +680,17 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth='2026',
+                year_of_birth='2027',
             )
 
-            # year_of_birth=(2026,),  # fails
+            # year_of_birth=(2027,),  # fails
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
 * I move the statement for when the ``year_of_birth`` is a string_ to a :ref:`try statement<how to handle Exceptions>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 265
     :emphasize-lines: 4-12
 
@@ -665,19 +702,19 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth='2026',
+                    year_of_birth='2027',
                 )
             except:
                 pass
 
-            # year_of_birth=(2026,),  # fails
+            # year_of_birth=(2027,),  # fails
 
   the test passes.
 
 * I make a person with a tuple_ as the value for ``year_of_birth``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 275
     :emphasize-lines: 4-9
 
@@ -688,7 +725,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                 first_name='first_name',
                 last_name='last_name',
                 sex='F',
-                year_of_birth=(2026,),
+                year_of_birth=(2027,),
             )
 
         def test_dir_person_object(self):
@@ -698,7 +735,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 * I move the statement for when the ``year_of_birth`` is a tuple_ to a :ref:`try statement<how to handle Exceptions>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 275
     :emphasize-lines: 4-12
 
@@ -710,7 +747,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
                     first_name='first_name',
                     last_name='last_name',
                     sex='F',
-                    year_of_birth=(2026,),
+                    year_of_birth=(2027,),
                 )
             except:
                 pass
@@ -719,10 +756,10 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 
   the test passes.
 
-* I remove the commented line from the :ref:`calculate_age function<extract calculate_age function>`  in ``src/person/__init__.py``
+* I remove the commented line from the :ref:`calculate_age function<add calculate_age function>`  in ``src/person/__init__.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
 
     def calculate_age(year_of_birth):
@@ -736,6 +773,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 
         if age < 0 or age > 120:
             raise Exception
+
         return age
 
 * I add a git_ commit message in the other terminal_
@@ -785,28 +823,7 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a tuple_ to show that it :ref:`catches Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
-    :caption:
-    :lineno-start: 278
-    :emphasize-lines: 8
-
-          try:
-              src.person.Person(
-                  first_name='first_name',
-                  last_name='last_name',
-                  sex='F',
-                  year_of_birth=(2026,),
-              )
-          except Exception:
-              pass
-
-      def test_dir_person_object(self):
-
-  the test is still green.
-
-* I change the :ref:`except clause<how to handle Exceptions>` to make it only :ref:`catch TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 278
     :emphasize-lines: 8
 
@@ -815,7 +832,28 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want
                     first_name='first_name',
                     last_name='last_name',
                     sex='F',
-                    year_of_birth=(2026,),
+                    year_of_birth=(2027,),
+                )
+            except Exception:
+                pass
+
+        def test_dir_person_object(self):
+
+  the test is still green.
+
+* I change the :ref:`except clause<how to handle Exceptions>` to make it only :ref:`catch TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 278
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    year_of_birth=(2027,),
                 )
             except TypeError:
                 pass
@@ -838,9 +876,10 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want
 
 ----
 
-I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` for when the ``year_of_birth`` is not an integer_ to make it clearer, in ``src/person/__init__.py``
+I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calculate_age function<add calculate_age function>` for when the ``year_of_birth`` is not an integer_ to make it clearer, in ``src/person/__init__.py``
 
 .. code-block:: python
+  :caption: person/src/person/__init__.py
   :lineno-start: 37
   :emphasize-lines: 3
 
@@ -864,10 +903,10 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 
 ----
 
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when ``year_of_birth`` is a string_  to show that it :ref:`catches Exception<how to test that an Exception is raised>`
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when ``year_of_birth`` is a string_  to show that it :ref:`catches Exception<how to test that an Exception is raised>`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 268
     :emphasize-lines: 8
 
@@ -876,7 +915,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth='2026',
+                    year_of_birth='2027',
                 )
             except Exception:
                 pass
@@ -886,7 +925,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` to make it only :ref:`catch AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 268
     :emphasize-lines: 8
 
@@ -895,7 +934,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth='2026',
+                    year_of_birth='2027',
                 )
             except AssertionError:
                 pass
@@ -912,7 +951,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when ``year_of_birth`` is a string_ to only :ref:`catch TypeError<how to handle Exceptions in programs>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 268
     :emphasize-lines: 8
 
@@ -921,7 +960,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth='2026',
+                    year_of_birth='2027',
                 )
             except TypeError:
                 pass
@@ -931,7 +970,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when ``year_of_birth`` is a float_  to show that it :ref:`catches Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 258
     :emphasize-lines: 8
 
@@ -940,7 +979,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
                     first_name='first_name',
                     last_name='last_name',
                     sex='F',
-                    year_of_birth=2026.0,
+                    year_of_birth=2027.0,
                 )
             except Exception:
                 pass
@@ -950,7 +989,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` to make it only :ref:`catch NameError<test_catching_name_error>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 258
     :emphasize-lines: 8
 
@@ -959,7 +998,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
                     first_name='first_name',
                     last_name='last_name',
                     sex='F',
-                    year_of_birth=2026.0,
+                    year_of_birth=2027.0,
                 )
             except NameError:
                 pass
@@ -976,7 +1015,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to make it only catch :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 258
     :emphasize-lines: 8
 
@@ -985,7 +1024,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
                     first_name='first_name',
                     last_name='last_name',
                     sex='F',
-                    year_of_birth=2026.0,
+                    year_of_birth=2027.0,
                 )
             except TypeError:
                 pass
@@ -995,7 +1034,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to show that it :ref:`catches Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 244
     :emphasize-lines: 12
 
@@ -1018,7 +1057,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` to make it only :ref:`catch<how to handle Exceptions in programs>` ValueError_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 247
     :emphasize-lines: 9
 
@@ -1045,7 +1084,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to make it :ref:`catch/handle TypeError<what causes TypeError?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 244
     :emphasize-lines: 12
 
@@ -1068,17 +1107,9 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 * I remove the commented lines from :ref:`test_when_year_of_birth_is_not_an_integer`
 
   .. code-block:: python
-    :caption:
-    :lineno-start: 233
+    :caption: person/tests/test_person.py
+    :lineno-start: 241
 
-        def test_when_year_of_birth_is_the_future(self):
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='F',
-                    year_of_birth=self.this_year+1,
-                )
             except:
                 pass
 
@@ -1118,7 +1149,7 @@ raise ValueError when age is greater than 120 or less than 0
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_the_future` to catch ValueError_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 233
     :emphasize-lines: 9
 
@@ -1151,10 +1182,11 @@ raise ValueError when age is greater than 120 or less than 0
 
 ----
 
-I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` for when the age is greater than ``120`` or less than ``0`` to make it clearer, in ``src/person/__init__.py``
+I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calculate_age function<add calculate_age function>` for when the age is greater than ``120`` or less than ``0`` to make it clearer, in ``src/person/__init__.py``
 
 
 .. code-block:: python
+  :caption: person/src/person/__init__.py
   :lineno-start: 37
   :emphasize-lines: 12
 
@@ -1171,6 +1203,7 @@ I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calc
       if age < 0 or age > 120:
           raise ValueError
           raise Exception
+
       return age
 
 the test passes.
@@ -1183,10 +1216,10 @@ the test passes.
 
 ----
 
-* I remove ``raise Exception`` from the :ref:`calculate_age function<extract calculate_age function>`
+* I remove ``raise Exception`` from the :ref:`calculate_age function<add calculate_age function>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/src/person/__init__.py
     :lineno-start: 37
 
     def calculate_age(year_of_birth):
@@ -1200,12 +1233,13 @@ the test passes.
 
         if age < 0 or age > 120:
             raise ValueError
+
         return age
 
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_person_is_older_than_120` to show that it :ref:`catches Exception<how to test that an Exception is raised>`
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_person_is_older_than_120` to show that it :ref:`catches Exception<how to test that an Exception is raised>`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 222
     :emphasize-lines: 9
 
@@ -1225,7 +1259,7 @@ the test passes.
 * I change the :ref:`except clause<how to handle Exceptions>` to make it only :ref:`catch TypeError<what causes TypeError?>`
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 222
     :emphasize-lines: 9
 
@@ -1250,7 +1284,7 @@ the test passes.
 * I change the :ref:`except clause<how to handle Exceptions>` to make it only :ref:`catch<how to handle Exceptions in programs>` ValueError_
 
   .. code-block:: python
-    :caption:
+    :caption: person/tests/test_person.py
     :lineno-start: 222
     :emphasize-lines: 9
 
@@ -1300,7 +1334,7 @@ review
 
 * :ref:`Exceptions<how to test that an Exception is raised>` break execution of a program_, nothing past the line that causes an :ref:`Exception<how to test that an Exception is raised>` will run.
 * I can use the :ref:`try statement<how to handle Exceptions>` to make sure a program_ can make a decision when an :ref:`Exception is raised<how to test that an Exception is raised>`.
-* I can use the :ref:`try statement<how to handle Exceptions>` in a test to show that a program_ :ref:`raises an Exception<how to raise an Exception>` when certain conditions are met.
+* I can use the :ref:`try statement<how to handle Exceptions>` in a test to show that a :ref:`program raises an Exception<how to raise an Exception>` when certain conditions are met.
 * I can use the :ref:`raise statement<how to raise an Exception>` to make an :ref:`Exception<how to test that an Exception is raised>` happen to stop a program_ from running past a certain point.
 
 My tests still have problems:
