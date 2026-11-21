@@ -1048,12 +1048,12 @@ because
                 pass
             else:
                 self.assertEqual(
-                    reality,
                     # src.person.say_hello(
                     #     first_name=first_name,
                     #     last_name=last_name,
                     #     year_of_birth=year_of_birth,
                     # ),
+                    reality,
                     (
                         f'Hello, my name is {first_name}'
                         f' {last_name} and I am'
@@ -1288,7 +1288,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 101
+    :lineno-start: 106
 
         def test_joe(self):
             first_name = 'joe'
@@ -1308,7 +1308,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 123
+    :lineno-start: 128
 
         def test_jane(self):
             first_name = 'jane'
@@ -1328,7 +1328,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 146
+    :lineno-start: 151
 
         def test_john(self):
             first_name = 'john'
@@ -1348,7 +1348,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 170
+    :lineno-start: 175
 
         def test_mary(self):
             first_name = 'mary'
@@ -1368,7 +1368,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 58
+    :lineno-start: 63
 
         def test_say_hello_function(self):
             people = (
@@ -1391,7 +1391,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 77
+    :lineno-start: 82
     :emphasize-lines: 1-16
 
                 try:
@@ -1420,13 +1420,13 @@ because
 
     AssertionError: 'Hello, my name is jane doe and I am YY.' != None
 
-  where ``YY`` is the age.
+  change ``YY`` to the actual age.
 
 * I change the expectation to ``'Hello, my name is jane doe and I am YY.'``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 88
+    :lineno-start: 93
     :emphasize-lines: 4
 
                 else:
@@ -1445,13 +1445,15 @@ because
     AssertionError: 'Hello, my name is joe blow and I am XX.'
                  != 'Hello, my name is jane doe and I am YY.'
 
-  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``('joe', 'blow', 'M', 1996),``)
+  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``('joe', 'blow', 'M', 1996)``).
+
+  ``XX`` and ``YY`` are for the ages.
 
 * I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_say_hello_works method<extract assert_say_hello_works function>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 88
+    :lineno-start: 93
     :emphasize-lines: 4-8
 
                 else:
@@ -1518,7 +1520,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 58
+    :lineno-start: 63
     :emphasize-lines: 2-11
 
         def test_say_hello_function(self):
@@ -1551,7 +1553,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 58
+    :lineno-start: 63
 
         def test_say_hello_function(self):
             for (
@@ -1567,7 +1569,7 @@ because
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 69
+    :lineno-start: 74
 
                 try:
                     reality = src.person.say_hello(
@@ -1762,6 +1764,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 I add a test for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person object<add Person object>`
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 13
 
         def assert_person_can_say_hello(
@@ -1783,6 +1786,7 @@ I add a test for the :ref:`say_hello method<add say_hello method>` of the :ref:`
             )
 
 .. code-block:: python
+  :caption: person/tests/test_person.py
   :lineno-start: 31
   :emphasize-lines: 1-13, 15-20
 
@@ -1830,17 +1834,9 @@ the subTest method
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 31
-    :emphasize-lines: 15-21
+    :lineno-start: 39
+    :emphasize-lines: 7-13
 
-        def test_say_hello_method(self):
-            people = (
-                ('jane', 'doe', 'F', 1991),
-                ('joe', 'blow', 'M', 1996),
-                ('mary', 'public', 'F', 2000),
-                ('john', 'smith', 'M', 1980),
-                ('first_name', 'last_name', 'F', 'a_string')
-            )
             for a_person in people:
                 first_name = a_person[0]
                 last_name = a_person[1]
@@ -1891,7 +1887,7 @@ the subTest method
                         year_of_birth=year_of_birth
                     )
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` with the extra name and value.
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the extra name and value.
 
   .. code-block:: python
     :emphasize-text: year_of_birth SUBFAILED
