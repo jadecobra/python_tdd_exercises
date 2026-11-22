@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   auto-merge:
+    timeout-minutes: 5
     if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'uv-minor-and-patch')
     runs-on: ubuntu-latest
     steps:

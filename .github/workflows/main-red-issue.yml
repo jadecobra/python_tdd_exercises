@@ -1,0 +1,52 @@
+# .github/workflows/main-red-issue.yml  (fleet draft 2026-11-22, Jacob 👍 9:20am CST)
+# Red main run -> one open issue per workflow, assigned to Jacob (GitHub Mobile pushes on
+# assignment). Same workflow green on main -> closes it. Uses only GITHUB_TOKEN (issues: write).
+# No checkout, no PR code; workflow_run always runs this file from the default branch.
+# EDIT PER REPO: the `workflows:` list (exact `name:` of each workflow that runs on main).
+name: Main red issue
+on:
+  workflow_run:
+    workflows: ["Deploy Pumping Python"]
+    types: [completed]
+    branches: [main]
+permissions: {}
+concurrency:
+  group: main-red-${{ github.event.workflow_run.workflow_id }}
+  cancel-in-progress: false
+jobs:
+  track:
+    if: >-
+      github.event.workflow_run.event != 'pull_request' &&
+      github.event.workflow_run.event != 'pull_request_target' &&
+      github.event.workflow_run.actor.login != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - name: Open, update or close the red-main issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          WF_NAME: ${{ github.event.workflow_run.name }}
+          ASSIGNEE: jakeitegsy
+        run: |
+          set -euo pipefail
+          title="main is red: ${WF_NAME}"
+          open=$(gh issue list --state open --label main-red --limit 50 --json number,title \
+            | jq -r --arg t "$title" '[.[] | select(.title == $t)][0].number // empty')
+          case "$CONCLUSION" in
+            failure|timed_out|startup_failure)
+              if [ -z "$open" ]; then
+                gh label create main-red --color B60205 --description "default branch CI red" --force >/dev/null
+                gh issue create --title "$title" --label main-red --assignee "$ASSIGNEE" \
+                  --body "Run: ${RUN_URL} (conclusion: ${CONCLUSION}). Policy: revert to the last green sha, no forward fix (main-ci-red-escalation). Closes itself when this workflow is green on main."
+              else
+                gh issue comment "$open" --body "Still red: ${RUN_URL} (${CONCLUSION})."
+              fi ;;
+            success)
+              if [ -n "$open" ]; then gh issue close "$open" --comment "Green again: ${RUN_URL}"; fi ;;
+            *) echo "conclusion ${CONCLUSION}: no change" ;;
+          esac
