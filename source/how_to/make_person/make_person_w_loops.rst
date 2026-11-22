@@ -1032,7 +1032,7 @@ because
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 13
-    :emphasize-lines: 5-26
+    :emphasize-lines: 5-12
 
         def assert_say_hello_works(
                 self, first_name, last_name,
@@ -1046,6 +1046,12 @@ because
                 )
             except TypeError:
                 pass
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 25
+    :emphasize-lines: 1-14
+
             else:
                 self.assertEqual(
                     # src.person.say_hello(
@@ -1932,8 +1938,7 @@ the subTest method
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 29
-    :emphasize-lines: 1-14
-
+    :emphasize-lines: 1-15
 
             else:
                 self.assertEqual(
