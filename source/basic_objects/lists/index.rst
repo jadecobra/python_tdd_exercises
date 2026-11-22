@@ -153,7 +153,7 @@ start the project
 *********************************************************************************
 
 * I open a terminal_
-* I give ``lists`` as the first argument to the :ref:`makePythonTdd<makePythonTdd with variables>` program_
+* I give ``lists`` as the first argument to the :ref:`makePythonTdd program<makePythonTdd with variables>`
 
   .. tab-set::
     :sync-group: os

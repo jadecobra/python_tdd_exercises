@@ -1987,11 +1987,11 @@ the subTest method
   .. code-block:: python
     :emphasize-text: SUBFAILED
 
-    SUBFAILED(first_name='first_name', year_of_birth='a string') ...
-        test_say_hello_method - AssertionError:
-            'BAP!!!' != "'a string' is not an integer"
     FAILED tests/test_person.py...
         test_say_hello_function - AssertionError:
+            'BAP!!!' != "'a string' is not an integer"
+    SUBFAILED(first_name='first_name', year_of_birth='a string') ...
+        test_say_hello_method - AssertionError:
             'BAP!!!' != "'a string' is not an integer"
 
   because the error messages do not match
@@ -2066,25 +2066,19 @@ the subTest method
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 70
+    :emphasize-lines: 12-21
 
         def test_say_hello_function(self):
-            people = (
+            for (
+                first_name, last_name,
+                _, year_of_birth,
+            ) in (
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
                 ('mary', 'public', 'F', 2000),
                 ('john', 'smith', 'M', 1980),
-                ('first_name', 'last_name', 'F', 'a_string')
-            )
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                year_of_birth = a_person[3]
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 83
-    :emphasize-lines: 1-24
-
+                ('first_name', 'last_name', 'F', 'a string'),
+            ):
                 with self.subTest(
                     first_name=first_name,
                     year_of_birth=year_of_birth,
@@ -2095,6 +2089,12 @@ the subTest method
                             last_name=last_name,
                             year_of_birth=year_of_birth,
                         )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 83
+    :emphasize-lines: 1-14
+
                     except TypeError as error:
                         self.assertEqual(
                             error.args[0],
@@ -2112,16 +2112,16 @@ the subTest method
 
         def test_person_factory(self):
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the first name and year_of_birth of the person that :ref:`raised the Exception<how to raise an Exception>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the first name and year of birth of the person that :ref:`raised the Exception<how to raise an Exception>`
 
   .. code-block:: python
     :emphasize-text: SUBFAILED year_of_birth
 
     SUBFAILED(first_name='first_name', year_of_birth='a string') ...
-        test_say_hello_method - AssertionError:
+        test_say_hello_function - AssertionError:
             'BAP!!!' != "'a string' is not an integer"
     SUBFAILED(first_name='first_name', year_of_birth='a string') ...
-        test_say_hello_function - AssertionError:
+        test_say_hello_method - AssertionError:
             'BAP!!!' != "'a string' is not an integer"
 
 * I change the error message in the :ref:`calculate_age function<add calculate_age function>` for if the value of the ``year_of_birth`` parameter is not an integer_ back to the correct message, in ``src/person/__init__.py``
@@ -2136,13 +2136,15 @@ the subTest method
                 f"'{year_of_birth}' is not an integer"
             )
 
+        ...
+
   the tests are green again.
 
-* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_joe`
+* I remove the :ref:`call<how to call a function with input>` to :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_joe`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 135
+    :lineno-start: 130
 
         def test_joe(self):
             first_name = 'joe'
@@ -2151,21 +2153,21 @@ the subTest method
             year_of_birth = 1996
 
             joe = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
+                first_name,
+                last_name,
+                sex,
+                year_of_birth,
             )
             self.assertEqual(joe.can_vote(), True)
             self.assertEqual(joe.can_get_license(), False)
 
         def test_jane(self):
 
-* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_jane`
+* I remove the :ref:`call<how to call a function with input>` to :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_jane`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 150
+    :lineno-start: 145
 
         def test_jane(self):
             first_name = 'jane'
@@ -2185,11 +2187,11 @@ the subTest method
 
         def test_john(self):
 
-* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_john`
+* I remove the :ref:`call<how to call a function with input>` to :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_john`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 166
+    :lineno-start: 161
 
         def test_john(self):
             first_name = 'john'
@@ -2210,11 +2212,11 @@ the subTest method
 
         def test_mary(self):
 
-* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_mary`
+* I remove the :ref:`call<how to call a function with input>` to :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` from :ref:`test_mary`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 183
+    :lineno-start: 178
 
         def test_mary(self):
             first_name = 'mary'

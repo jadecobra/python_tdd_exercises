@@ -95,7 +95,7 @@ start the project
 *********************************************************************************
 
 * I open a terminal_
-* I give ``list_comprehensions`` as the first argument to the :ref:`makePythonTdd<makePythonTdd with variables>` program_
+* I give ``list_comprehensions`` as the first argument to the :ref:`makePythonTdd program<makePythonTdd with variables>`
 
   .. tab-set::
     :sync-group: os

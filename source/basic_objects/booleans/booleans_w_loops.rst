@@ -218,7 +218,7 @@ add for loop to assert_is_not_the_same_as_false_or_true
 
 ----
 
-I add an :ref:`for loop<what is a for loop?>` to the :ref:`assert_is_not_the_same_as_false_or_true method<extract assert_is_not_the_same_as_false_or_true method>`
+I add a :ref:`for loop<what is a for loop?>` to the :ref:`assert_is_not_the_same_as_false_or_true method<extract assert_is_not_the_same_as_false_or_true method>`
 
 .. code-block:: python
   :caption: booleans/tests/test_booleans.py
