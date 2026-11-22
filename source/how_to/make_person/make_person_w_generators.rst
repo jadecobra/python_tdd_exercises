@@ -1758,7 +1758,7 @@ the subTest method
                 f"'{year_of_birth}' is not an integer"
             )
 
-  the terminal_ is my friend, and shows :ref:`ASsertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-text: SUBFAILED

@@ -1910,10 +1910,10 @@ the subTest method
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 13
-    :emphasize-lines: 5-31
+    :emphasize-lines: 5-16
 
         def assert_person_can_say_hello(
-                self,first_name, last_name,
+                self, first_name, last_name,
                 sex, year_of_birth,
             ):
             try:
@@ -1928,15 +1928,22 @@ the subTest method
                     error.args[0],
                     f"'{year_of_birth}' is not an integer"
                 )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 29
+    :emphasize-lines: 1-14
+
+
             else:
                 self.assertEqual(
-                    reality,
                     # src.person.Person(
                     #     first_name=first_name,
                     #     last_name=last_name,
                     #     sex=sex,
                     #     year_of_birth=year_of_birth,
                     # ).say_hello(),
+                    reality,
                     (
                         f'Hello, my name is {first_name}'
                         f' {last_name} and I am'
@@ -1970,7 +1977,7 @@ the subTest method
                 f"'{year_of_birth}' is not an integer"
             )
 
-  the terminal_ is my friend, and shows :ref:`ASsertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-text: SUBFAILED
