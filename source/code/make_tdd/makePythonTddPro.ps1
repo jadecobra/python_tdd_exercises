@@ -29,5 +29,6 @@ class Test$($CLASS_NAME)(unittest.TestCase):
 
 "pytest" | Out-File requirements.txt -Encoding UTF8
 "pytest-watcher" >> Out-File requirements.txt
+"watchdog==6.0.0" >> Out-File requirements.txt
 uv add --requirement requirements.txt
-uv run pytest-watcher . --now"
+uv run pytest-watcher . --now

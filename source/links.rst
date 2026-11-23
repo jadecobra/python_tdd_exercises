@@ -127,6 +127,7 @@
 .. _uv Python package manager: uv_
 .. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
 .. _unittest.TestCase.subTest method: `subTest method`_
+.. _watchdog: https://github.com/gorakhargosh/watchdog
 .. _with statement: https://docs.python.org/3/reference/compound_stmts.html#the-with-statement
 .. _with statements: `with statement`_
 .. _while: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement

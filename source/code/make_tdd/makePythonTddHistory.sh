@@ -33,6 +33,7 @@ uv run pytest-watcher
 echo "pytest"
 echo "pytest" > requirements.txt
 echo "pytest-watcher" >> requirements.txt
+echo "watchdog==6.0.0" >> requirements.txt
 tree -a -L 2
 cat requirements.txt
 uv add --requirement requirements.txt
@@ -40,6 +41,6 @@ tree -a -L 1
 cat pyproject.toml
 source .venv/bin/activate
 deactivate
-uv run pytest-watcher . --now"
+uv run pytest-watcher . --now
 cd ..
 history

@@ -1,7 +1,7 @@
 :orphan:
 
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test elevator with generators in the elevator project. Continues the Elevator truth table (test_elevator_controller). Open existing project with cd elevator and uv run pytest-watcher . --now". Refactor four nested for loops over booleans (number_pushed, doors_closed, above_weight, emergency) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product((False, True), repeat=4). Terminal shows NameError: name 'itertools' is not defined. Did you forget to import 'itertools'? Add import itertools at the top of tests/test_elevator.py, remove booleans and commented lines, and fix indentation. Git commit 'test_elevator_controller with generators'.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test elevator with generators in the elevator project. Continues the Elevator truth table (test_elevator_controller). Open existing project with cd elevator and uv run pytest-watcher . --now. Refactor four nested for loops over booleans (number_pushed, doors_closed, above_weight, emergency) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product((False, True), repeat=4). Terminal shows NameError: name 'itertools' is not defined. Did you forget to import 'itertools'? Add import itertools at the top of tests/test_elevator.py, remove booleans and commented lines, and fix indentation. Git commit 'test_elevator_controller with generators'.
   :keywords: Jacob Itegboje, Pumping Python, test elevator with generators, Elevator project, test_elevator_controller, generator expressions, itertools.product, repeat parameter, nested for loops, subTest, 16 subtests, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, src.elevator.controller, truth table, red green refactor
 
 .. include:: ../../../links.rst
@@ -47,7 +47,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now"
+    uv run pytest-watcher . --now
 
 ----
 

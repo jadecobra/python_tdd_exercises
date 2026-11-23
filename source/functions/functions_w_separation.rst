@@ -101,7 +101,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now"
+    uv run pytest-watcher . --now
 
   the terminal_ shows
 

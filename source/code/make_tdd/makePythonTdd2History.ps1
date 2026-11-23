@@ -8,6 +8,8 @@ tree
 cat requirements.txt
 "pytest-watcher" >> requirements.txt
 cat requirements.txt
+"watchdog==6.0.0" >> requirements.txt
+cat requirements.txt
 cat pyproject.toml
 uv add --requirement requirements.txt
 tree
@@ -15,7 +17,7 @@ cat pyproject.toml
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 .venv/Scripts/activate.ps1
 deactivate
-uv run pytest-watcher . --now"
+uv run pytest-watcher . --now
 git add .
 git commit --all --message 'automate tests'
 cd ..

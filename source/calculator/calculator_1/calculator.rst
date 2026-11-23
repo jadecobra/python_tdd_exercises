@@ -239,7 +239,7 @@ start the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now"
+    uv run pytest-watcher . --now
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -268,7 +268,7 @@ start the project
     * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
-    and try ``uv run pytest-watcher . --now"`` again
+    and try ``uv run pytest-watcher . --now`` again
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to put the cursor on line 7
 

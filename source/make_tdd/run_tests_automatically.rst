@@ -1,5 +1,5 @@
 .. meta::
-  :description: Run Python tests automatically with pytest-watcher and uv on the person project from manual TDD setup. Jacob Itegboje writes requirements.txt with echo pytest then echo pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now", source .venv/bin/activate and deactivate. Module-level assert False is True is ERROR collecting tests/test_person.py (E assert False is True); after assert False is False pytest shows collected 0 items and no tests ran. Press q to stop the watcher (Press w for the menu). Covers virtual environment .venv, pyproject.toml dependencies, uv.lock, and why repeating python3 -m unittest is replaced. Pumping Python make TDD project 1 part 2 after the manual person setup.
+  :description: Run Python tests automatically with pytest-watcher and uv on the person project from manual TDD setup. Jacob Itegboje writes requirements.txt with echo pytest then echo pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, source .venv/bin/activate and deactivate. Module-level assert False is True is ERROR collecting tests/test_person.py (E assert False is True); after assert False is False pytest shows collected 0 items and no tests ran. Press q to stop the watcher (Press w for the menu). Covers virtual environment .venv, pyproject.toml dependencies, uv.lock, and why repeating python3 -m unittest is replaced. Pumping Python make TDD project 1 part 2 after the manual person setup.
   :keywords: Jacob Itegboje, Pumping Python, pytest-watcher automatic tests, uv add requirement requirements.txt, uv run pytest-watcher --now, python virtual environment activate deactivate, source .venv/bin/activate, echo pytest requirements.txt, no tests ran pytest, collected 0 items, ERROR collecting tests/test_person.py, assert False is True collection error, person project pumping_python, automate python3 -m unittest, pyproject.toml dependencies pytest-watcher, Press q stop pytest-watcher, ctrl click tests/test_person.py terminal
 
 .. include:: ../links.rst
@@ -278,7 +278,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
     pytest
 
-* I add `pytest-watcher`_ to the requirements file_ as well
+* I add `pytest-watcher`_ to the requirements file_
 
   .. tab-set::
     :sync-group: os
@@ -301,10 +301,10 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
         "pytest-watcher" >> requirements.txt
 
-  - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it
-  - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
+  - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it.
+  - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project.
 
-* I use cat_ to look at what is in ``requirements.txt`` now
+* I use cat_ to look at what is in ``requirements.txt``
 
   .. code-block:: python
     :caption: terminal
@@ -319,6 +319,49 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
     pytest
     pytest-watcher
 
+* I add `watchdog`_ to the requirements file_ as well
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
+
+        echo "watchdog==6.0.0" >> requirements.txt
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
+
+        "watchdog==6.0.0" >> requirements.txt
+
+  - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it.
+  - `watchdog`_ is a `Python program`_ that tells `pytest-watcher`_ when files change in the project.
+  - ``==X.Y.Z`` makes sure that only version ``X.Y.Z`` of the program_ will be installed.
+
+* I use the `cat program`_ to look at what is in ``requirements.txt``
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1
+
+    cat requirements.txt
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    pytest
+    pytest-watcher
+    watchdog==6.0.0
+
   life is good!
 
 ----
@@ -326,7 +369,6 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 *********************************************************************************
 how to install Python packages with uv
 *********************************************************************************
-
 
 * I use cat_ to show what is in ``pyproject.toml``
 
@@ -398,7 +440,7 @@ how to install Python packages with uv
 
     cat pyproject.toml
 
-  it added `pytest`_ and `pytest-watcher`_ to the dependencies of the project.
+  it added `pytest`_, `pytest-watcher`_ and `watchdog`_ to the dependencies of the project.
 
 ----
 
@@ -505,7 +547,7 @@ how to run tests automatically with uv and pytest-watcher
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now"
+    uv run pytest-watcher . --now
 
   the terminal_ is my friend, and shows an error without going back to the command line
 
@@ -679,14 +721,14 @@ how to view all the commands I typed to automate running tests
 
       .. literalinclude:: ../code/make_tdd/makePythonTdd2History.sh
         :language: python
-        :emphasize-lines: 6, 9, 12, 17
+        :emphasize-lines: 6, 9, 11, 14, 19
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. literalinclude:: ../code/make_tdd/makePythonTdd2History.ps1
         :language: python
-        :emphasize-lines: 6, 9, 12, 16, 18
+        :emphasize-lines: 6, 9, 11, 14, 20
 
   the `history program`_ shows all the commands I typed in the terminal_.
 
@@ -707,8 +749,9 @@ how to view all the commands I typed to automate running tests
         touch tests/test_NAME_OF_THE_PROJECT.py
         echo "pytest" > requirements.txt
         echo "pytest-watcher" >> requirements.txt
+        echo "watchdog==6.0.0" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now"
+        uv run pytest-watcher . --now
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -722,8 +765,9 @@ how to view all the commands I typed to automate running tests
         touch tests/test_NAME_OF_THE_PROJECT.py
         "pytest" | Out-File requirements.txt
         "pytest-watcher" >> requirements.txt
+        "watchdog==6.0.0" >> requirements.txt
         uv add --requirement requirements.txt
-        uv run pytest-watcher . --now"
+        uv run pytest-watcher . --now
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project.
 

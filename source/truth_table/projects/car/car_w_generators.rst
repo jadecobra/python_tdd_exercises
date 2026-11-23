@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test car with generators in the car project. Continues the Car truth table (test_car_ignition). Open existing project with uv run pytest-watcher . --now". Refactor four nested for loops over booleans (start_is_pressed, key_is_close, brake_is_pressed, in_park) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product((False, True), repeat=4). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools at the top of tests/test_car.py, remove booleans and commented lines, and fix indentation. Git commit 'test_car_ignition with generators'.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test car with generators in the car project. Continues the Car truth table (test_car_ignition). Open existing project with uv run pytest-watcher . --now. Refactor four nested for loops over booleans (start_is_pressed, key_is_close, brake_is_pressed, in_park) into a generator expression using placeholder variable _ to unpack tuples. RED: add raise Exception inside with self.subTest to verify all 16 subtests fail. GREEN: remove raise Exception to make tests pass. REFACTOR: replace the generator expression with itertools.product((False, True), repeat=4). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools at the top of tests/test_car.py, remove booleans and commented lines, and fix indentation. Git commit 'test_car_ignition with generators'.
   :keywords: Jacob Itegboje, Pumping Python, test car with generators, Car project, test_car_ignition, generator expressions, itertools.product, repeat parameter, nested for loops, subTest, 16 subtests, NameError name itertools is not defined, raise Exception, uv run pytest-watcher, pytest-watcher, python tdd generator, src.car.ignition, truth table, red green refactor
 
 .. include:: ../../../links.rst
@@ -48,7 +48,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now"
+    uv run pytest-watcher . --now
 
 ----
 
