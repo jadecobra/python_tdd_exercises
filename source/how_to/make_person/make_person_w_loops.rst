@@ -2275,7 +2275,7 @@ the subTest method
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 70
+    :lineno-start: 71
     :emphasize-lines: 1-17
 
                     try:
@@ -2315,7 +2315,7 @@ the subTest method
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 82
+    :lineno-start: 83
     :emphasize-lines: 4
 
                     else:
@@ -2346,7 +2346,7 @@ the subTest method
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 82
+    :lineno-start: 83
     :emphasize-lines: 4-8
 
                     else:
@@ -2367,24 +2367,6 @@ the subTest method
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 45
-
-        def test_say_hello_method(self):
-            people = (
-                ('jane', 'doe', 'F', 1991),
-                ('joe', 'blow', 'M', 1996),
-                ('mary', 'public', 'F', 2000),
-                ('john', 'smith', 'M', 1980),
-                ('first_name', 'last_name', 'F', 'a_string')
-            )
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
     :lineno-start: 59
 
                 with self.subTest(
@@ -2399,21 +2381,63 @@ the subTest method
                             year_of_birth=year_of_birth,
                         ).say_hello()
                     except TypeError as error:
-                        self.assertEqual(
-                            error.args[0],
-                            f"'{year_of_birth}' is not an integer"
-                        )
-                    else:
-                        self.assertEqual(
-                            reality,
-                            (
-                                f'Hello, my name is {first_name}'
-                                f' {last_name} and I am'
-                                f' {self.calculate_age(year_of_birth)}.'
-                            )
-                        )
+                        ...
 
-        def test_say_hello_function(self):
+* I change the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`to use names instead of :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 45
+    :emphasize-lines: 2-11
+
+        def test_say_hello_method(self):
+            for (
+                first_name, last_name,
+                sex, year_of_birth,
+            ) in (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a string'),
+            ):
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python:
+    :caption: terminal
+
+    NameError: name 'a_person' is not defined
+
+* I remove the :ref:`variables<what is a variable?>` that point to ``a_person`` because they are no longer needed
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 45
+
+        def test_say_hello_method(self):
+            for (
+                first_name, last_name,
+                sex, year_of_birth,
+            ) in (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a string'),
+            ):
+                with self.subTest(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ):
+                    try:
+                        ...
+
+  the test is green again
 
 * I remove the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` from the :ref:`TestPerson object<add TestPerson object>`
 
@@ -2580,7 +2604,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 extract people object attribute
 *********************************************************************************
 
-:ref:`test_person_factory<extract test_person_factory>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
+:ref:`test_person_factory<extract test_person_factory>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of people.
 
 * I add an :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson object<add TestPerson object>`
 
@@ -2607,104 +2631,54 @@ extract people object attribute
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 20
-    :emphasize-lines: 2-10
+    :emphasize-lines: 5
 
         def test_say_hello_method(self):
-            # people = (
-            #     ('jane', 'doe', 'F', 1991),
-            #     ('joe', 'blow', 'M', 1996),
-            #     ('mary', 'public', 'F', 2000),
-            #     ('john', 'smith', 'M', 1980),
-            #     ('first_name', 'last_name', 'F', 'a_string')
-            # )
-            # for a_person in people:
-            for a_person in self.people:
-                first_name = a_person[0]
+            for (
+                first_name, last_name,
+                sex, year_of_birth,
+            ) in self.people:
+                with self.subTest(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ):
 
   the test is still green.
-
-* I remove the commented lines from :ref:`test_say_hello_method<extract test_say_hello_method>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 20
-
-        def test_say_hello_method(self):
-            for a_person in self.people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
-                ...
 
 * I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 53
-    :emphasize-lines: 2-10
+    :emphasize-lines: 5
 
         def test_say_hello_function(self):
-            # people = (
-            #     ('jane', 'doe', 'F', 1991),
-            #     ('joe', 'blow', 'M', 1996),
-            #     ('mary', 'public', 'F', 2000),
-            #     ('john', 'smith', 'M', 1980),
-            #     ('first_name', 'last_name', 'F', 'a_string')
-            # )
-            # for a_person in people:
-            for a_person in self.people:
-                first_name = a_person[0]
+            for (
+                first_name, last_name,
+                _, year_of_birth,
+            ) in self.people:
+                with self.subTest(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ):
 
   still green.
-
-* I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 53
-
-        def test_say_hello_function(self):
-            for a_person in self.people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                year_of_birth = a_person[3]
-                ...
 
 * I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_person_factory<extract test_person_factory>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 84
-    :emphasize-lines: 2-10
+    :emphasize-lines: 5
 
-        def test_person_factory(self):
-            # people = (
-            #     ('jane', 'doe', 'F', 1991),
-            #     ('joe', 'blow', 'M', 1996),
-            #     ('mary', 'public', 'F', 2000),
-            #     ('john', 'smith', 'M', 1980),
-            #     ('first_name', 'last_name', 'F', 'a_string')
-            # )
-            # for a_person in people:
-            for a_person in self.people:
-                first_name = a_person[0]
+    def test_person_factory(self):
+        for (
+            first_name, last_name,
+            sex, year_of_birth,
+        ) in self.people:
+            self.assertEqual(
 
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_person_factory<extract test_person_factory>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 84
-
-        def test_person_factory(self):
-            for a_person in self.people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
-                ...
+  green.
 
 * I add a git_ commit message
 
