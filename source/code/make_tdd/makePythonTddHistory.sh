@@ -40,6 +40,6 @@ tree -a -L 1
 cat pyproject.toml
 source .venv/bin/activate
 deactivate
-uv run pytest-watcher . --now --patterns "**/*.py"
+uv run pytest-watcher . --now"
 cd ..
 history

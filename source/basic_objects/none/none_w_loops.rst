@@ -226,6 +226,16 @@ start the project
 
       the terminal_ goes back to the command line.
 
+    * I add `watchdog`_ to the requirements file_
+
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
+
+        echo "watchdog=6.0.0" >> requirements.txt
+
+      the terminal_ goes back to the command line.
+
   .. tab-item:: no WSL
     :sync: no_wsl
 
@@ -244,6 +254,14 @@ start the project
         :emphasize-lines: 1
 
         "pytest-watcher" >> requirements.txt
+
+    * I add `watchdog`_ to the requirements file_
+
+      .. code-block:: python
+        :caption: terminal
+        :emphasize-lines: 1
+
+        "watchdog=6.0.0" >> requirements.txt
 
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
@@ -277,7 +295,7 @@ start the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now --patterns "**/*.py"
+    uv run pytest-watcher . --now"
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -306,7 +324,7 @@ start the project
     * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
-    and try ``uv run pytest-watcher . --now --patterns "**/*.py"`` again
+    and try ``uv run pytest-watcher . --now"`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_none.py``
 

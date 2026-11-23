@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): truth table: test binary operations with dictionaries. Continues the truth_table project in tests/test_binary.py using unittest and uv run pytest-watcher . --now --patterns "**/*.py". Replaces nested for loops in test_binary_operations with a generator expression, raising Exception across sixty four subtests (16 binary operations over (False, True)), then refactors to itertools.product((False, True), repeat=2), hitting NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?) before adding import itertools and removing booleans and commented lines. Second refactor uses src.truth_table.__getattribute__(operation)(first, second) to remove src.truth_table repetition, hitting TypeError: attribute name must be string, not 'function' and AttributeError: 'str' object has no attribute '__name__'. Did you mean: '__ne__'? before switching operation tuples to string names and updating self.subTest. Preview test_binary_w_dictionaries.py.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): truth table: test binary operations with dictionaries. Continues the truth_table project in tests/test_binary.py using unittest and uv run pytest-watcher . --now". Replaces nested for loops in test_binary_operations with a generator expression, raising Exception across sixty four subtests (16 binary operations over (False, True)), then refactors to itertools.product((False, True), repeat=2), hitting NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?) before adding import itertools and removing booleans and commented lines. Second refactor uses src.truth_table.__getattribute__(operation)(first, second) to remove src.truth_table repetition, hitting TypeError: attribute name must be string, not 'function' and AttributeError: 'str' object has no attribute '__name__'. Did you mean: '__ne__'? before switching operation tuples to string names and updating self.subTest. Preview test_binary_w_dictionaries.py.
   :keywords: Jacob Itegboje, Pumping Python, truth table test binary operations with dictionaries, test_binary_operations, test_binary.py, test_binary_w_dictionaries.py, generator expression, itertools.product, repeat parameter, __getattribute__, unittest subTest, sixty four sub tests, NameError name itertools is not defined, TypeError attribute name must be string not function, AttributeError str object has no attribute __name__, raise Exception, uv run pytest-watcher, pytest-watcher, truth_table, red green refactor
 
 .. include:: ../../links.rst
@@ -48,7 +48,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now --patterns "**/*.py"
+    uv run pytest-watcher . --now"
 
 ----
 

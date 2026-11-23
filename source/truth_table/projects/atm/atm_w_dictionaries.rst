@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test atm with dictionaries in the atm project. Continues the Automated Teller Machine truth table from test atm with generators. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Add a denials dictionary mapping card_expired, above_daily_limit, not_right_pin, and not_enough_cash to their denial messages in test_atm. RED: set expectation from denials[...] or 'CASH' in each if/elif/else branch and add self.assertEqual(result, 'BOOM!!!'); terminal shows AssertionError for all 16 subtests. GREEN: change 'BOOM!!!' to expectation so the test passes. REFACTOR: remove the per-branch self.assertEqual calls so one self.assertEqual(result, expectation) covers all 16 cases; observe the test is slower due to dictionary lookup. Git commit 'test_atm with dictionaries'.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test atm with dictionaries in the atm project. Continues the Automated Teller Machine truth table from test atm with generators. Open existing project with uv run pytest-watcher . --now". Add a denials dictionary mapping card_expired, above_daily_limit, not_right_pin, and not_enough_cash to their denial messages in test_atm. RED: set expectation from denials[...] or 'CASH' in each if/elif/else branch and add self.assertEqual(result, 'BOOM!!!'); terminal shows AssertionError for all 16 subtests. GREEN: change 'BOOM!!!' to expectation so the test passes. REFACTOR: remove the per-branch self.assertEqual calls so one self.assertEqual(result, expectation) covers all 16 cases; observe the test is slower due to dictionary lookup. Git commit 'test_atm with dictionaries'.
   :keywords: Jacob Itegboje, Pumping Python, test atm with dictionaries, Automated Teller Machine, ATM project, Python dictionary, dict lookup, denials dictionary, expectation variable, itertools.product, subTest, 16 subtests, AssertionError, unittest assertEqual, uv run pytest-watcher, pytest-watcher, withdraw, truth table, red green refactor
 
 .. include:: ../../../links.rst
@@ -49,7 +49,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now --patterns "**/*.py"
+    uv run pytest-watcher . --now"
 
 ----
 

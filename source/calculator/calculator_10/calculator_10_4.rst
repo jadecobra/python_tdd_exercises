@@ -36,7 +36,7 @@ open the project
     :emphasize-lines: 1
     :emphasize-text: .
 
-    uv run pytest-watcher . --now --patterns "**/*.py"
+    uv run pytest-watcher . --now"
 
   the terminal_ is my friend, and shows
 

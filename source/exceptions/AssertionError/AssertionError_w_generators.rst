@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test AssertionError with generators in the assertion_error project. Open existing project with uv run pytest-watcher . --now --patterns "**/*.py". Replace nested for loops across basic_objects with a generator expression ((first, second) for first in self.basic_objects for second in self.basic_objects). RED: add raise Exception inside with self.subTest(pair=(first, second)) to verify all one hundred subtests fail. GREEN: remove raise Exception. REFACTOR: remove commented loops and fix indentation. Another way: replace the generator expression with itertools.product(self.basic_objects, self.basic_objects). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools to pass. Verify with raise Exception again. Simplify with the repeat parameter: itertools.product(self.basic_objects, repeat=3) triggers ValueError: too many values to unpack (expected 2, got 3). Fix to repeat=2. Git commit 'test_assertion_error with a generator'.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test AssertionError with generators in the assertion_error project. Open existing project with uv run pytest-watcher . --now". Replace nested for loops across basic_objects with a generator expression ((first, second) for first in self.basic_objects for second in self.basic_objects). RED: add raise Exception inside with self.subTest(pair=(first, second)) to verify all one hundred subtests fail. GREEN: remove raise Exception. REFACTOR: remove commented loops and fix indentation. Another way: replace the generator expression with itertools.product(self.basic_objects, self.basic_objects). Terminal shows NameError: name 'itertools' is not defined (Did you forget to import 'itertools'?). Add import itertools to pass. Verify with raise Exception again. Simplify with the repeat parameter: itertools.product(self.basic_objects, repeat=3) triggers ValueError: too many values to unpack (expected 2, got 3). Fix to repeat=2. Git commit 'test_assertion_error with a generator'.
   :keywords: Jacob Itegboje, Pumping Python, test AssertionError with generators, generator expressions, itertools.product, repeat parameter itertools, nested for loops, subTest, basic_objects, 100 subtests, NameError name itertools is not defined, ValueError too many values to unpack, expected 2 got 3, raise Exception, uv run pytest-watcher, assertion_error project, red green refactor, python tdd generator, test_assertion_error
 
 .. include:: ../../links.rst
@@ -61,7 +61,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now --patterns "**/*.py"
+    uv run pytest-watcher . --now"
 
 ----
 

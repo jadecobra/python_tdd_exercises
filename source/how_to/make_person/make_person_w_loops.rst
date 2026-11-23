@@ -177,7 +177,7 @@ open the project
     :caption: terminal
     :emphasize-lines: 1
 
-    uv run pytest-watcher . --now --patterns "**/*.py"
+    uv run pytest-watcher . --now"
 
 ----
 
@@ -2237,7 +2237,7 @@ the subTest method
 
         def test_underage_citizen(self):
 
-* I no longer need the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` because it is only used by :ref:`test_say_hello_method<extract test_say_hello_method>`
+* I add the code from the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` to :ref:`test_say_hello_method<extract test_say_hello_method>` because it is now the only place where it is used
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -2249,7 +2249,7 @@ the subTest method
                 ('joe', 'blow', 'M', 1996),
                 ('mary', 'public', 'F', 2000),
                 ('john', 'smith', 'M', 1980),
-                ('first_name', 'last_name', 'F', 'a_string')
+                ('first_name', 'last_name', 'F', 'a string'),
             )
             for a_person in people:
                 first_name = a_person[0]
@@ -2265,13 +2265,13 @@ the subTest method
                     first_name=first_name,
                     year_of_birth=year_of_birth,
                 ):
+
                     self.assert_person_can_say_hello(
                         first_name=first_name,
                         last_name=last_name,
                         sex=sex,
-                        year_of_birth=year_of_birth
+                        year_of_birth=year_of_birth,
                     )
-
 
   .. code-block:: python
     :caption: person/tests/test_person.py

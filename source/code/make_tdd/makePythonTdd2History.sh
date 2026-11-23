@@ -14,7 +14,7 @@ tree -a -L 1
 cat pyproject.toml
 source .venv/bin/activate
 deactivate
-uv run pytest-watcher . --now --patterns "**/*.py"
+uv run pytest-watcher . --now"
 git add .
 git commit --all --message 'automate tests'
 cd ..
