@@ -675,7 +675,7 @@ the test is green again and is slower than when I used a tuple_ for the ``people
                         )
                     )
 
-        def test_if_person_is_not_alive(self):
+        def test_when_person_is_not_alive(self):
 
   still green.
 

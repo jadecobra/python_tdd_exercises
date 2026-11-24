@@ -119,7 +119,7 @@ class TestPerson(unittest.TestCase):
                     )
                 )
 
-    def test_if_person_is_not_alive(self):
+    def test_when_person_is_not_alive(self):
         for year_of_birth in (
             self.this_year+1,
             self.this_year-121,
