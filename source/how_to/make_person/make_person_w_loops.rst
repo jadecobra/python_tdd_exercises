@@ -5780,28 +5780,66 @@ the test passes.
 move test_when_year_of_birth_is_not_an_integer to test_person_object
 *********************************************************************************
 
-:ref:`test_when_year_of_birth_is_not_an_integer` has multiple :ref:`try statements<how to handle Exceptions>` for if ``year_of_birth`` is not an integer_. It is also the last tuple_ in the ``people`` :ref:`object attribute<what is an object attribute?>` - its ``year_of_birth`` values are not integers_. I can use the :ref:`object attributes<what is an object attribute?>`  to remove the repetition
+:ref:`test_when_year_of_birth_is_not_an_integer` has multiple :ref:`try statements<how to handle Exceptions>` for if ``year_of_birth`` is not an integer_.
 
-* I add tuples_ for the cases in :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>`
+.. code-block:: python
+
+  try:
+      src.person.Person(
+          first_name='first_name',
+          last_name='last_name',
+          sex='M',
+          year_of_birth=None | 2027.0 | '2027' | (2027,),
+      )
+  except TypeError:
+      pass
+
+The last tuple_ in the ``people`` :ref:`object attribute<what is an object attribute?>` is also used to test when the ``year_of_birth`` is not an integer_ because it uses a string_.
+
+.. code-block:: python
+
+  (
+      'a string',
+      False, False, False, False,
+  )
+
+
+I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  to remove the repetition
+
+* I add tuples_ for the cases from :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>` and remove ``'a string', False, False, False, False,`` because it is a repetition of when ``year_of_birth`` is a string_ (``('2026', False, False,),``)
 
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 52
-    :emphasize-lines: 6-10
+    :emphasize-lines: 6-14
 
             (
-                # underage, not is_citizen, not passed_test
-                younger_than_18, False, False,
-                False, False,
+                # not is_citizen, not passed_test
+                younger_than_18,
+                False, False, False, False,
             ),
             # year_of_birth is not an integer
-            (None, False, False,),
-            (2026.0, False, False,),
-            ('2026', False, False,),
-            ((2026,), False, False,),
             (
-                'a_string', False, False,
-                False, False,
+                None,
+                False, False, False, False,
+            ),
+            (
+                2026.0,
+                False, False, False, False,
+            ),
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 66
+    :emphasize-lines: 1-8
+
+            (
+                '2026',
+                False, False, False, False,
+            ),
+            (
+                (2026,),
+                False, False, False, False,
             ),
         )
 
@@ -5813,17 +5851,17 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 76
+    :lineno-start: 93
     :emphasize-lines: 10
 
                     try:
-                        person = src.person.Person(
+                        an_instance = src.person.Person(
                             first_name=self.first_name,
                             last_name=self.last_name,
                             sex=self.sex,
                             year_of_birth=year_of_birth,
-                            is_citizen=a_person[1],
-                            passed_test=a_person[2],
+                            is_citizen=is_citizen,
+                            passed_test=passed_test,
                         )
                     except IndexError as error:
                         self.assertEqual(
@@ -5837,16 +5875,18 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
   .. code-block:: python
     :caption: terminal
 
-    SUBFAILED[(None, False, False)] ...test_person_object -
-        TypeError: 'None' is not an integer
-    SUBFAILED[(2026.0, False, False)] ...test_person_object -
-        TypeError: '2026.0' is not an integer
-    SUBFAILED[('2026', False, False)] ...test_person_object -
-        TypeError: '2026' is not an integer
-    SUBFAILED[((2026,), False, False)] ...test_person_object -
-        TypeError: '(2026,)' is not an integer
-    SUBFAILED[('a_string', False, False, False, False)] ...test_person_object -
-        TypeError: 'a_string' is not an integer
+    SUBFAILED(a_person=(
+        'first_name', 'last_name', 'M', None, False, False, ...
+    )) - TypeError: 'None' is not an integer
+    SUBFAILED(a_person=(
+        'first_name', 'last_name', 'M', 2026.0, False, False, ...
+    )) - TypeError: '2026.0' is not an integer
+    SUBFAILED(a_person=(
+        'first_name', 'last_name', 'M', '2026', False, False, ...
+    )) - TypeError: '2026' is not an integer
+    SUBFAILED(a_person=(
+        'first_name', 'last_name', 'M', (2026,), False, False, ...
+    )) - TypeError: '(2026,)' is not an integer
 
   good, the test works.
 
@@ -5854,7 +5894,7 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 85
+    :lineno-start: 102
     :emphasize-lines: 1
 
                     except TypeError as error:
@@ -5866,41 +5906,12 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
 
   the test is green again.
 
-* I remove the last tuple_ from the ``people`` :ref:`object attribute<what is an object attribute?>` because it is a repetition of when ``year_of_birth`` is a string_ (``('2026', False, False,),``)
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 57
-
-            # year_of_birth is not an integer
-            (None, False, False,),
-            (2026.0, False, False,),
-            ('2026', False, False,),
-            ((2026,), False, False,),
-        )
-
-        def calculate_age(self, year_of_birth):
-
 * I remove :ref:`test_when_year_of_birth_is_not_an_integer` because it is now covered by :ref:`test_person_object<extract test_person_object>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 144
+    :lineno-start: 180
 
-        def test_when_person_is_not_alive(self):
-            for year_of_birth in (
-                self.this_year+1,
-                self.this_year-121,
-            ):
-                age = self.calculate_age(year_of_birth)
-
-                with (
-                    self.subTest(year_of_birth),
-                    self.assertRaisesRegex(
-                        ValueError,
-                        f'a {age} year old person is not alive.'
-                    ),
-                ):
                     src.person.Person(
                         first_name=self.first_name,
                         last_name=self.last_name,
@@ -5909,6 +5920,36 @@ move test_when_year_of_birth_is_not_an_integer to test_person_object
                     )
 
         def test_dir_person_object(self):
+
+* I use a :ref:`try statement<how to handle Exceptions>` for the :ref:`if statement<if statements>` for when the ``year_of_birth`` is not an integer_ in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :caption: person/src/person/__init__.py
+    :emphasize-lines: 2-7, 11-16
+
+    def calculate_age(year_of_birth):
+        try:
+            age = (
+                datetime.date.today().year
+              - year_of_birth
+            )
+        except TypeError:
+            raise TypeError(
+                f"'{year_of_birth}' is not an integer"
+            )
+        else:
+            if age < 0 or age > 120:
+                raise ValueError(
+                    f'a {age} year old person is not alive.'
+                )
+            return age
+
+
+    def say_hello(
+            first_name, last_name, year_of_birth,
+        ):
+
+  the tests are still green.
 
 * I add a git_ commit message
 
