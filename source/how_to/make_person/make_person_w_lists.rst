@@ -1,6 +1,7 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with lists — simplify test_dir_person_object and test_dir_person_instance with list extend and sort, and refactor test_person_object with lists and loops. Open person project; run tests with uv run pytest-watcher . --now. RED: in test_dir_person_object, dir_person = dir(object) extended with ('can_get_license', 'can_vote', 'check_age', 'say_hello') -> AssertionError: Lists differ, 'First list contains 5 additional elements'. GREEN: extend with ('__dict__', '__firstlineno__', '__module__', '__static_attributes__', '__weakref__') and call dir_person.sort(). RED: in test_dir_person_instance, dir_person_instance = dir(src.person.Person) -> AssertionError: Lists differ, 'Diff is 718 characters long. Set self.maxDiff to None to see it.'. GREEN: set self.maxDiff = None, extend with the 7 instance attributes, and call sort(). Refactor TestPerson: build people with nested for loops over years_of_birth and booleans plus an if statement for not_younger_than_18; move booleans and people into test_person_object (fixing NameError: name 'years_of_birth' is not defined and NameError: name 'not_younger_than_18' is not defined with self.), unpack tuple fields in the for loop, and remove unused class attributes. All objects inherit attributes and methods from 'object'. Next: list comprehensions.
-  :keywords: Jacob Itegboje, Pumping Python, test person with lists, python list extend sort, dir(object), dir(src.person.Person), dir instance, test_dir_person_object, test_dir_person_instance, test_person_object, years_of_birth, AssertionError Lists differ, self.maxDiff = None, First list contains 5 additional elements, NameError name years_of_birth is not defined, NameError name not_younger_than_18 is not defined, all objects inherit from object, red green refactor, uv run pytest-watcher, git commit, list comprehensions
+  :description:
+  :keywords:
+
 .. include:: ../../links.rst
 
 .. _test person with lists:
@@ -11,7 +12,7 @@ test person with lists
 
 ----
 
-I want to use a :ref:`list<what is a list?>` like I did in :ref:`test_dir_list with extend and sort` to make :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` simpler.
+I want to use :ref:`lists<what is a list?>` in the ``person`` project.
 
 ----
 
@@ -84,339 +85,6 @@ open the project
 ----
 
 *********************************************************************************
-test_dir_person_object with extend and sort
-*********************************************************************************
-
-The :ref:`attributes and methods of the Person object<test_dir_person_object>` are the :ref:`attributes and methods of 'object'<test_dir_object>` with extra things. I can make the :ref:`attributes and methods of the Person object<test_dir_person_object>` by adding the "extra" to the :ref:`attributes and methods of 'object'<test_dir_object>`, since they are both :ref:`lists<what is a list?>`.
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of the Person object<test_dir_person_object>`, then add an :ref:`assertion<what is an assertion?>` for it, in :ref:`test_dir_person_object`
-
-.. code-block:: python
-  :caption: person/tests/test_person.py
-  :lineno-start: 165
-  :emphasize-lines: 2-10
-
-      def test_dir_person_object(self):
-          dir_person = dir(object)
-          dir_person.extend((
-              'can_get_license', 'can_vote',
-              'check_age', 'say_hello',
-          ))
-          self.assertEqual(
-              dir(src.person.Person),
-              dir_person
-          )
-
-          self.assertEqual(
-              dir(src.person.Person),
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-  :caption: terminal
-
-  AssertionError: Lists differ: [
-      '__c[24 chars]'__dict__', '__dir__', '__doc__',
-      '__eq__', '_[381 chars]llo'
-  ] != [
-      '__c[24 chars]'__dir__', '__doc__', '__eq__',
-      '__format__', [296 chars]llo'
-  ]
-
-with a note about the difference
-
-.. code-block:: python
-  :caption: terminal
-
-  First list contains 5 additional elements.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the five additional elements
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 165
-    :emphasize-lines: 4-6
-
-        def test_dir_person_object(self):
-            dir_person = dir(object)
-            dir_person.extend((
-                '__dict__', '__firstlineno__',
-                '__module__', '__static_attributes__',
-                '__weakref__',
-                'can_get_license', 'can_vote',
-                'check_age', 'say_hello',
-            ))
-            self.assertEqual(
-                dir(src.person.Person),
-                dir_person
-            )
-
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
-
-* I add a :ref:`call to the sort method<test_sort_a_list>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 167
-    :emphasize-lines: 8
-
-            dir_person.extend((
-                '__dict__', '__firstlineno__',
-                '__module__', '__static_attributes__',
-                '__weakref__',
-                'can_get_license', 'can_vote',
-                'check_age', 'say_hello',
-            ))
-            dir_person.sort()
-            self.assertEqual(
-                dir(src.person.Person),
-                dir_person
-            )
-
-            self.assertEqual(
-                dir(src.person.Person),
-                [
-                    '__class__', '__delattr__', '__dict__',
-                    '__dir__', '__doc__', '__eq__',
-
-  the test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_person_object`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 174
-
-            dir_person.sort()
-            self.assertEqual(
-                dir(src.person.Person),
-                dir_person
-            )
-
-        def test_dir_person_instance(self):
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :caption: terminal
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'test_dir_person_object with extend and sort'
-
-:ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
-
-----
-
-*********************************************************************************
-test_dir_person_instance with extend and sort
-*********************************************************************************
-
-The :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` are the :ref:`attributes and methods of the Person object<test_dir_person_object>` with extra. Since they are both :ref:`lists<what is a list?>` I can make the :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` by adding the "extra" to the :ref:`attributes and methods of the Person object<test_dir_person_object>`.
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>`, then add an :ref:`assertion<what is an assertion?>` for it
-
-.. code-block:: python
-  :caption: person/tests/test_person.py
-  :lineno-start: 180
-  :emphasize-lines: 2-13
-
-      def test_dir_person_instance(self):
-          dir_person_instance = dir(src.person.Person)
-          self.assertEqual(
-              dir(
-                  src.person.Person(
-                      first_name='first_name',
-                      last_name='last_name',
-                      sex='M',
-                      year_of_birth=2026,
-                  )
-              ),
-              dir_person_instance
-          )
-
-          self.assertEqual(
-              dir(
-                  src.person.Person(
-                      first_name='first_name',
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-  :caption: terminal
-
-  AssertionError: Lists differ: [
-      '__c[396 chars]_', 'age', 'can_get_license',
-      'can_vote', 'che[96 chars]rth'
-  ] != [
-      '__c[396 chars]_', 'can_get_license', 'can_vote',
-      'check_age', 'say_hello'
-  ]
-
-with a note about the difference
-
-.. code-block:: python
-  :caption: terminal
-
-  Diff is 718 characters long. Set self.maxDiff to None to see it.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add ``self.maxDiff = None``
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 180
-    :emphasize-lines: 2
-
-        def test_dir_person_instance(self):
-            self.maxDiff = None
-            dir_person_instance = dir(src.person.Person)
-
-  the terminal_ is my friend, and shows the difference.
-
-* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the seven additional elements
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 180
-    :emphasize-lines: 4-8
-
-        def test_dir_person_instance(self):
-            self.maxDiff = None
-            dir_person_instance = dir(src.person.Person)
-            dir_person_instance.extend((
-                'age', 'first_name', 'is_citizen',
-                'last_name', 'passed_test',
-                'sex', 'year_of_birth',
-            ))
-            self.assertEqual(
-                dir(
-                    src.person.Person(
-                        first_name='first_name',
-                        last_name='last_name',
-                        sex='M',
-                        year_of_birth=2026,
-                    )
-                ),
-                dir_person_instance
-            )
-
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
-
-* I add a :ref:`call to the sort method<test_sort_a_list>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 183
-    :emphasize-lines: 6
-
-            dir_person_instance.extend((
-                'age', 'first_name', 'is_citizen',
-                'last_name', 'passed_test',
-                'sex', 'year_of_birth',
-            ))
-            dir_person_instance.sort()
-            self.assertEqual(
-                dir(
-                    src.person.Person(
-                        first_name='first_name',
-                        last_name='last_name',
-                        sex='M',
-                        year_of_birth=2026,
-                    )
-                ),
-                dir_person_instance
-            )
-
-            self.assertEqual(
-                dir(
-                    src.person.Person(
-                        first_name='first_name',
-
-  the test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_person_instance`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 189
-
-            self.assertEqual(
-                dir(
-                    src.person.Person(
-                        first_name='first_name',
-                        last_name='last_name',
-                        sex='M',
-                        year_of_birth=2026,
-                    )
-                ),
-                dir_person_instance
-            )
-
-
-    # Exceptions seen
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :caption: terminal
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'test_dir_person_instance with extend and sort'
-
-:ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
-
-----
-
-*********************************************************************************
 refactor test_person with lists and loops
 *********************************************************************************
 
@@ -425,20 +93,12 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` is a tuple_
 .. code-block:: python
 
   year_of_birth (not_younger_than_18 | younger_than_18),
-  is_citizen, passed_test,
-  result of can_vote(),
-  result of can_get_license(),
+  is_citizen (False | True),
+  passed_test (False | True),
+  can_vote (False | True),
+  can_get_license (False | True),
 
-the last items in the tuple_ do not bother with the results because they trigger an :ref:`Exception<how to raise an Exception>` since the values for ``year_of_birth`` are not integers_
-
-.. code-block:: python
-
-  (None, False, False,),
-  (2026.0, False, False,),
-  ('2026', False, False,),
-  ((2026,), False, False,),
-
-I can use a :ref:`list<what is a list?>` with :ref:`for loops<what is a for loop?>` and :ref:`if statements` to make the ``people`` :ref:`object attribute<what is an object attribute?>`
+The ``year_of_birth`` values are repeated for each combination of :ref:`booleans<what are booleans?>`. I want to make a :ref:`list<what is a list?>` that has the ``year_of_birth`` values once, and has the combinations for ``is_citizen``, ``passed_test``, ``can_vote`` and ``can_get_license`` tied to it.
 
 ----
 
@@ -448,71 +108,39 @@ I can use a :ref:`list<what is a list?>` with :ref:`for loops<what is a for loop
 
 ----
 
-* I add values for the result of the :ref:`calls<how to call a function with input>` to the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>` to make the ``people`` tuple_ more balanced
+I add a :ref:`list<what is a list?>` to :ref:`test_person_object`
 
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 52
-    :emphasize-lines: 7-10
+.. code-block:: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 79
+  :emphasize-lines: 2-8
 
-            (
-                # underage, not is_citizen, not passed_test
-                younger_than_18, False, False,
-                False, False,
-            ),
-            # year_of_birth is not an integer
-            (None, False, False, False, False),
-            (2026.0, False, False, False, False),
-            ('2026', False, False, False, False),
-            ((2026,), False, False, False, False),
-        )
+      def test_person_object(self):
+          people = []
+          for year_of_birth in (
+              self.not_younger_than_18,
+              self.younger_than_18,
+              None, 2027.0, '2027', (2027,),
+          ):
+              people.append((year_of_birth, ()))
 
-      def calculate_age(self, year_of_birth):
+          self.assertEqual(people, [])
 
-  the test is still green.
+          for (
+              year_of_birth,
+              is_citizen, passed_test,
+              can_vote, can_get_license,
+          ) in self.people:
 
-* I use :ref:`for loops<what is a for loop?>` to make a :ref:`list<what is a list?>` for the ``people`` :ref:`object attribute<what is an object attribute?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 57
-    :emphasize-lines: 8-19
+.. code-block:: python
+  :caption: terminal
 
-            # year_of_birth is not an integer
-            (None, False, False, False, False),
-            (2026.0, False, False, False, False),
-            ('2026', False, False, False, False),
-            ((2026,), False, False, False, False),
-        )
-
-        booleans = (True, False)
-        people = []
-        for year_of_birth in (
-            not_younger_than_18, younger_than_18,
-            None, 2026.0, '2026', (2026,),
-        ):
-            for is_citizen in booleans:
-                for passed_test in booleans:
-                    people.append((
-                        year_of_birth, is_citizen, passed_test,
-                        is_citizen, passed_test,
-                    ))
-
-        def calculate_age(self, year_of_birth):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :caption: terminal
-
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
-        AssertionError: False != True
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
-        AssertionError: False != True
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
-        AssertionError: False != True
-    SUBFAILED[(2009, True, True, True, True)] ...test_person_object -
-        AssertionError: False != True
+  AssertionError: Lists differ: [
+      (XXXX, ()), (YYYY, ()), (None, ()),
+      (2027.0, ()), ('2027', ()), ((2027,), ())
+  ] != []
 
 ----
 
@@ -522,35 +150,32 @@ I can use a :ref:`list<what is a list?>` with :ref:`for loops<what is a for loop
 
 ----
 
-I add an :ref:`if statement<if statements>` for the year of birth
+I copy the :ref:`list<what is a list?>` from the terminal_ and paste it as the expectation of the new :ref:`assertion<what is an assertion?>` in :ref:`test_person_object<extract test_person_object>`
 
 .. code-block:: python
   :caption: person/tests/test_person.py
-  :lineno-start: 64
-  :emphasize-lines: 9-18
+  :lineno-start: 86
+  :emphasize-lines: 8-12
 
-      booleans = (True, False)
-      people = []
-      for year_of_birth in (
-          not_younger_than_18, younger_than_18,
-          None, 2026.0, '2026', (2026,),
-      ):
-          for is_citizen in booleans:
-              for passed_test in booleans:
-                  if year_of_birth == not_younger_than_18:
-                      people.append((
-                          year_of_birth, is_citizen, passed_test,
-                          is_citizen, passed_test,
-                      ))
-                  else:
-                      people.append((
-                          year_of_birth, is_citizen, passed_test,
-                          False, False
-                      ))
+              people.append((year_of_birth, ()))
 
-      def calculate_age(self, year_of_birth):
+          self.assertEqual(
+              people,
+              [
+                  (2008, ()),
+                  (2009, ()),
+                  (None, ()),
+                  (2027.0, ()),
+                  ('2027', ()),
+                  ((2027,), ())
+              ]
+          )
 
-the test is green again and is slower than when I used a tuple_ for the ``people`` :ref:`object attribute<what is an object attribute?>`
+          for (
+              year_of_birth,
+              is_citizen, passed_test,
+              can_vote, can_get_license,
+          ) in self.people:
 
 ----
 
@@ -887,6 +512,339 @@ the test is green again and is slower than when I used a tuple_ for the ``people
 
     git commit -am \
     'refactor test_person with lists and loops'
+
+*********************************************************************************
+test_dir_person_object with extend and sort
+*********************************************************************************
+
+The :ref:`attributes and methods of the Person object<test_dir_person_object>` are the :ref:`attributes and methods of 'object'<test_dir_object>` with extra things. I can make the :ref:`attributes and methods of the Person object<test_dir_person_object>` by adding the "extra" to the :ref:`attributes and methods of 'object'<test_dir_object>`, since they are both :ref:`lists<what is a list?>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of the Person object<test_dir_person_object>`, then add an :ref:`assertion<what is an assertion?>` for it, in :ref:`test_dir_person_object`
+
+.. code-block:: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 165
+  :emphasize-lines: 2-10
+
+      def test_dir_person_object(self):
+          dir_person = dir(object)
+          dir_person.extend((
+              'can_get_license', 'can_vote',
+              'check_age', 'say_hello',
+          ))
+          self.assertEqual(
+              dir(src.person.Person),
+              dir_person
+          )
+
+          self.assertEqual(
+              dir(src.person.Person),
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+  AssertionError: Lists differ: [
+      '__c[24 chars]'__dict__', '__dir__', '__doc__',
+      '__eq__', '_[381 chars]llo'
+  ] != [
+      '__c[24 chars]'__dir__', '__doc__', '__eq__',
+      '__format__', [296 chars]llo'
+  ]
+
+with a note about the difference
+
+.. code-block:: python
+  :caption: terminal
+
+  First list contains 5 additional elements.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the five additional elements
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 165
+    :emphasize-lines: 4-6
+
+        def test_dir_person_object(self):
+            dir_person = dir(object)
+            dir_person.extend((
+                '__dict__', '__firstlineno__',
+                '__module__', '__static_attributes__',
+                '__weakref__',
+                'can_get_license', 'can_vote',
+                'check_age', 'say_hello',
+            ))
+            self.assertEqual(
+                dir(src.person.Person),
+                dir_person
+            )
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
+
+* I add a :ref:`call to the sort method<test_sort_a_list>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 167
+    :emphasize-lines: 8
+
+            dir_person.extend((
+                '__dict__', '__firstlineno__',
+                '__module__', '__static_attributes__',
+                '__weakref__',
+                'can_get_license', 'can_vote',
+                'check_age', 'say_hello',
+            ))
+            dir_person.sort()
+            self.assertEqual(
+                dir(src.person.Person),
+                dir_person
+            )
+
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    '__dir__', '__doc__', '__eq__',
+
+  the test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_person_object`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 174
+
+            dir_person.sort()
+            self.assertEqual(
+                dir(src.person.Person),
+                dir_person
+            )
+
+        def test_dir_person_instance(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_dir_person_object with extend and sort'
+
+:ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
+
+----
+
+*********************************************************************************
+test_dir_person_instance with extend and sort
+*********************************************************************************
+
+The :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` are the :ref:`attributes and methods of the Person object<test_dir_person_object>` with extra. Since they are both :ref:`lists<what is a list?>` I can make the :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>` by adding the "extra" to the :ref:`attributes and methods of the Person object<test_dir_person_object>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and methods of an instance of the Person object<test_dir_person_instance>`, then add an :ref:`assertion<what is an assertion?>` for it
+
+.. code-block:: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 180
+  :emphasize-lines: 2-13
+
+      def test_dir_person_instance(self):
+          dir_person_instance = dir(src.person.Person)
+          self.assertEqual(
+              dir(
+                  src.person.Person(
+                      first_name='first_name',
+                      last_name='last_name',
+                      sex='M',
+                      year_of_birth=2026,
+                  )
+              ),
+              dir_person_instance
+          )
+
+          self.assertEqual(
+              dir(
+                  src.person.Person(
+                      first_name='first_name',
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :caption: terminal
+
+  AssertionError: Lists differ: [
+      '__c[396 chars]_', 'age', 'can_get_license',
+      'can_vote', 'che[96 chars]rth'
+  ] != [
+      '__c[396 chars]_', 'can_get_license', 'can_vote',
+      'check_age', 'say_hello'
+  ]
+
+with a note about the difference
+
+.. code-block:: python
+  :caption: terminal
+
+  Diff is 718 characters long. Set self.maxDiff to None to see it.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``self.maxDiff = None``
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 180
+    :emphasize-lines: 2
+
+        def test_dir_person_instance(self):
+            self.maxDiff = None
+            dir_person_instance = dir(src.person.Person)
+
+  the terminal_ is my friend, and shows the difference.
+
+* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the seven additional elements
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 180
+    :emphasize-lines: 4-8
+
+        def test_dir_person_instance(self):
+            self.maxDiff = None
+            dir_person_instance = dir(src.person.Person)
+            dir_person_instance.extend((
+                'age', 'first_name', 'is_citizen',
+                'last_name', 'passed_test',
+                'sex', 'year_of_birth',
+            ))
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                dir_person_instance
+            )
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
+
+* I add a :ref:`call to the sort method<test_sort_a_list>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 183
+    :emphasize-lines: 6
+
+            dir_person_instance.extend((
+                'age', 'first_name', 'is_citizen',
+                'last_name', 'passed_test',
+                'sex', 'year_of_birth',
+            ))
+            dir_person_instance.sort()
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                dir_person_instance
+            )
+
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+
+  the test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the other :ref:`assertion<what is an assertion?>` from :ref:`test_dir_person_instance`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 189
+
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                dir_person_instance
+            )
+
+
+    # Exceptions seen
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_dir_person_instance with extend and sort'
+
+:ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
+
+
 
 ----
 

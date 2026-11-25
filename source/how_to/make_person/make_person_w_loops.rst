@@ -1,5 +1,5 @@
 .. meta::
-  :description: Pumping Python, how to make a person with loops, by Jacob Itegboje. Repeated person checks become one for loop over a people tuple of tuples on TestPerson. Each row is year_of_birth, is_citizen, passed_test, then the expected can_vote and can_get_license results. test_person_object, test_say_hello_function, and test_person_factory share self.first_name, self.last_name, self.sex, self.this_year, younger_than_18, and not_younger_than_18. subTest(a_person=...) names the failing row. Non-integer rows None, 2026.0, '2026', and (2026,) hit except TypeError and assert "'{year_of_birth}' is not an integer". test_when_person_is_not_alive uses one with for subTest and assertRaisesRegex(ValueError, f'a {age} year old person is not alive.') on this_year+1 and this_year-121. test_when_person_is_older_than_120 and test_when_year_of_birth_is_the_future are removed because that test covers both. A wrong regex such as BOOM!!! fails as AssertionError: "BOOM!!!" does not match "a -1 year old person is too old to be alive." before the message becomes "is not alive." dir(Person) tests remain.
+  :description: Pumping Python, how to make a person with loops, by Jacob Itegboje. Repeated person checks become one for loop over a people tuple of tuples on TestPerson. Each row is year_of_birth, is_citizen, passed_test, then the expected can_vote and can_get_license results. test_person_object, test_say_hello_function, and test_person_factory share self.first_name, self.last_name, self.sex, self.this_year, younger_than_18, and not_younger_than_18. subTest(a_person=...) names the failing row. Non-integer rows None, 2027.0, '2027', and (2027,) hit except TypeError and assert "'{year_of_birth}' is not an integer". test_when_person_is_not_alive uses one with for subTest and assertRaisesRegex(ValueError, f'a {age} year old person is not alive.') on this_year+1 and this_year-121. test_when_person_is_older_than_120 and test_when_year_of_birth_is_the_future are removed because that test covers both. A wrong regex such as BOOM!!! fails as AssertionError: "BOOM!!!" does not match "a -1 year old person is too old to be alive." before the message becomes "is not alive." dir(Person) tests remain.
   :keywords: for loop, people tuple, subTest, test_person_object, test_person_factory, test_say_hello_function, test_when_person_is_not_alive, assertRaisesRegex, ValueError, TypeError, year_of_birth, can_vote, can_get_license, this_year, Pumping Python, Jacob Itegboje
 
 .. include:: ../../links.rst
@@ -5807,7 +5807,7 @@ The last tuple_ in the ``people`` :ref:`object attribute<what is an object attri
 
 I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  to remove the repetition
 
-* I add tuples_ for the cases from :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>` and remove ``'a string', False, False, False, False,`` because it is a repetition of when ``year_of_birth`` is a string_ (``('2026', False, False, False, False),``)
+* I add tuples_ for the cases from :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>` and remove ``'a string', False, False, False, False,`` because it is a repetition of when ``year_of_birth`` is a string_ (``('2027', False, False, False, False),``)
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -5825,7 +5825,7 @@ I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  
                 False, False, False, False,
             ),
             (
-                2026.0,
+                2027.0,
                 False, False, False, False,
             ),
 
@@ -5835,11 +5835,11 @@ I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  
     :emphasize-lines: 1-8
 
             (
-                '2026',
+                '2027',
                 False, False, False, False,
             ),
             (
-                (2026,),
+                (2027,),
                 False, False, False, False,
             ),
         )
@@ -5880,14 +5880,14 @@ I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  
         'first_name', 'last_name', 'M', None, False, False, ...
     )) - TypeError: 'None' is not an integer
     SUBFAILED(a_person=(
-        'first_name', 'last_name', 'M', 2026.0, False, False, ...
-    )) - TypeError: '2026.0' is not an integer
+        'first_name', 'last_name', 'M', 2027.0, False, False, ...
+    )) - TypeError: '2027.0' is not an integer
     SUBFAILED(a_person=(
-        'first_name', 'last_name', 'M', '2026', False, False, ...
-    )) - TypeError: '2026' is not an integer
+        'first_name', 'last_name', 'M', '2027', False, False, ...
+    )) - TypeError: '2027' is not an integer
     SUBFAILED(a_person=(
-        'first_name', 'last_name', 'M', (2026,), False, False, ...
-    )) - TypeError: '(2026,)' is not an integer
+        'first_name', 'last_name', 'M', (2027,), False, False, ...
+    )) - TypeError: '(2027,)' is not an integer
 
   good, the test works.
 
@@ -5922,37 +5922,6 @@ I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  
 
         def test_dir_person_object(self):
 
-* I use a :ref:`try statement<how to handle Exceptions>` for the :ref:`if statement<if statements>` for when the ``year_of_birth`` is not an integer_ in the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
-
-  .. code-block:: python
-    :caption: person/src/person/__init__.py
-    :lineno-start: 37
-    :emphasize-lines: 2-7, 11-16
-
-    def calculate_age(year_of_birth):
-        try:
-            age = (
-                datetime.date.today().year
-              - year_of_birth
-            )
-        except TypeError:
-            raise TypeError(
-                f"'{year_of_birth}' is not an integer"
-            )
-        else:
-            if age < 0 or age > 120:
-                raise ValueError(
-                    f'a {age} year old person is not alive.'
-                )
-            return age
-
-
-    def say_hello(
-            first_name, last_name, year_of_birth,
-        ):
-
-  the tests are still green.
-
 * I add a git_ commit message
 
   .. code-block:: python
@@ -5986,11 +5955,11 @@ review
 
 I can use :ref:`for loops<what is a for loop?>` for things that repeat.
 
-My tests still have problems:
+The tests still have problems:
 
 * The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<test person with lists>`.
 * The ``people`` :ref:`object attribute<what is an object attribute?>` is confusing, anyone who reads it without going through the process of making it would not know what the :ref:`booleans<what are booleans?>` stand for.
-* My tests check that the values given for ``first_name``, ``last_name`` and ``sex`` are the same values. What happens when I pass a value that is not a string_?
+* The tests check that the values given for ``first_name``, ``last_name`` and ``sex`` are the same values returned. What happens when I pass a value that is not a string_?
 
 ----
 

@@ -84,7 +84,7 @@ open the project
 extract test_what_are_booleans
 *********************************************************************************
 
-:ref:`test_what_is_false` and :ref:`test_what_is_true` both check if a :ref:`boolean<what is a boolean?>` is an :ref:`instance<how to test if something is an instance>` of bool_ and int_ and is NOT an :ref:`instance<how to test if something is an instance>` of any of the other :ref:`basic objects`.
+:ref:`test_what_is_false` and :ref:`test_what_is_true` both check if a :ref:`boolean<what are booleans?>` is an :ref:`instance<how to test if something is an instance>` of bool_ and int_ and is NOT an :ref:`instance<how to test if something is an instance>` of any of the other :ref:`basic objects`.
 
 .. code-block:: python
 

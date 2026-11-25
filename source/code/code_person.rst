@@ -682,19 +682,19 @@ The code in ``person/src/person/__init__.py`` after :ref:`how to make a person w
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 37
-  :lines: 37-52
+  :lines: 37-53
 
 .. literalinclude:: person/src/person_w_loops.py
   :caption: person/src/person/__init__.py
   :language: python
-  :lineno-start: 55
-  :lines: 55-62
+  :lineno-start: 56
+  :lines: 55-63
 
 .. literalinclude:: person/src/person_w_loops.py
   :caption: person/src/person/__init__.py
   :language: python
-  :lineno-start: 65
-  :lines: 65-72
+  :lineno-start: 66
+  :lines: 65-73
 
 ----
 

@@ -35,21 +35,22 @@ class Person:
 
 
 def calculate_age(year_of_birth):
-    try:
-        age = (
-            datetime.date.today().year
-          - year_of_birth
-        )
-    except TypeError:
+    if not isinstance(year_of_birth, int):
         raise TypeError(
             f"'{year_of_birth}' is not an integer"
         )
-    else:
-        if age < 0 or age > 120:
-            raise ValueError(
-                f'a {age} year old person is not alive.'
-            )
-        return age
+
+    age = (
+        datetime.date.today().year
+      - year_of_birth
+    )
+
+    if age < 0 or age > 120:
+        raise ValueError(
+            f'a {age} year old person is not alive.'
+        )
+
+    return age
 
 
 def say_hello(
