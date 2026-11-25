@@ -1,6 +1,7 @@
 .. meta::
-  :description: Pumping Python, how to make a person with loops, by Jacob Itegboje. Repeated person checks become one for loop over a people tuple of tuples on TestPerson. Each row is year_of_birth, is_citizen, passed_test, then the expected can_vote and can_get_license results. test_person_object, test_say_hello_function, and test_person_factory share self.first_name, self.last_name, self.sex, self.this_year, younger_than_18, and not_younger_than_18. subTest(a_person) names the failing row. Non-integer rows None, 2026.0, '2026', and (2026,) hit except TypeError and assert "'{year_of_birth}' is not an integer". test_when_person_is_not_alive uses one with for subTest and assertRaisesRegex(ValueError, f'a {age} year old person is not alive.') on this_year+1 and this_year-121. test_when_person_is_older_than_120 and test_when_year_of_birth_is_the_future are removed because that test covers both. A wrong regex such as BOOM!!! fails as AssertionError: "BOOM!!!" does not match "a -1 year old person is too old to be alive." before the message becomes "is not alive." dir(Person) tests remain.
+  :description: Pumping Python, how to make a person with loops, by Jacob Itegboje. Repeated person checks become one for loop over a people tuple of tuples on TestPerson. Each row is year_of_birth, is_citizen, passed_test, then the expected can_vote and can_get_license results. test_person_object, test_say_hello_function, and test_person_factory share self.first_name, self.last_name, self.sex, self.this_year, younger_than_18, and not_younger_than_18. subTest(a_person=...) names the failing row. Non-integer rows None, 2026.0, '2026', and (2026,) hit except TypeError and assert "'{year_of_birth}' is not an integer". test_when_person_is_not_alive uses one with for subTest and assertRaisesRegex(ValueError, f'a {age} year old person is not alive.') on this_year+1 and this_year-121. test_when_person_is_older_than_120 and test_when_year_of_birth_is_the_future are removed because that test covers both. A wrong regex such as BOOM!!! fails as AssertionError: "BOOM!!!" does not match "a -1 year old person is too old to be alive." before the message becomes "is not alive." dir(Person) tests remain.
   :keywords: for loop, people tuple, subTest, test_person_object, test_person_factory, test_say_hello_function, test_when_person_is_not_alive, assertRaisesRegex, ValueError, TypeError, year_of_birth, can_vote, can_get_license, this_year, Pumping Python, Jacob Itegboje
+
 .. include:: ../../links.rst
 
 .. _how to make a person with loops:
@@ -99,61 +100,61 @@ I have these tests by the end of the chapter
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 16
-  :lines: 16-31
+  :lines: 16-36
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 32
-  :lines: 32-46
+  :lineno-start: 37
+  :lines: 37-56
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 47
-  :lines: 47-65
+  :lineno-start: 57
+  :lines: 57-74
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
   :caption: person/tests/test_person.py
-  :lineno-start: 67
-  :lines: 67-99
+  :lineno-start: 76
+  :lines: 76-107
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
   :caption: person/tests/test_person.py
-  :lineno-start: 100
-  :lines: 100-124
+  :lineno-start: 108
+  :lines: 108-122
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 126
-  :lines: 126-143
+  :lineno-start: 124
+  :lines: 124-150
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 144
-  :lines: 144-163
+  :lineno-start: 152
+  :lines: 152-166
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 165
-  :lines: 165-182
+  :lineno-start: 168
+  :lines: 168-185
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 184
-  :lines: 184-210
+  :lineno-start: 187
+  :lines: 187-204
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 213
-  :lines: 213-218
+  :lineno-start: 206
+  :lines: 206-240
 
 -----
 
@@ -378,7 +379,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                                     f'{first_name}, {last_name},'
                                     f' {sex}, {year_of_birth}'
                                 )
-                                return 'jane, doe, M, 1991'
+                                return 'jane, doe, F, 1991'
 
 * I add a tuple_ for ``mary``
 
@@ -440,7 +441,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
                                     f'{first_name}, {last_name},'
                                     f' {sex}, {year_of_birth}'
                                 )
-                                return 'mary, public, M, 2000'
+                                return 'mary, public, F, 2000'
 
 * I add a tuple_ for ``john``
 
@@ -510,7 +511,7 @@ I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what i
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 15
+    :lineno-start: 65
     :emphasize-lines: 7
 
         def test_person_factory(self):
@@ -961,7 +962,7 @@ because
                 last_name=last_name,
                 year_of_birth=year_of_birth,
             )
-            └── def assert_person_factory_works(
+            └── def assert_say_hello_works(
                     self, first_name, last_name,
                     sex, year_of_birth
                 ):
@@ -1895,7 +1896,7 @@ the subTest method
                         year_of_birth=year_of_birth
                     )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the extra name and value.
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>` with the extra name and value.
 
   .. code-block:: python
     :emphasize-text: year_of_birth SUBFAILED
@@ -2367,7 +2368,7 @@ the subTest method
 
   the test passes.
 
-* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_say_hello_method<extract test_say_hello_method>`
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_can_say_hello method<extract assert_person_can_say_hello function>` from :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -2387,7 +2388,7 @@ the subTest method
                     except TypeError as error:
                         ...
 
-* I change the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`to use names instead of :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>`
+* I change the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>` to use names instead of :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -2574,7 +2575,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
             │       │                   year_of_birth
             │       │                )
             │       │                └── def calculate_age(year_of_birth):
-            │       │                    ├── year_of_birth = 'a string'
+            │       │                    ├── year_of_birth = 1996
             │       │                    └── if not isinstance(
             │       │                           year_of_birth, int
             │       │                        ):
@@ -3469,10 +3470,10 @@ The ``truth_table`` tuple_ was used in both :ref:`test_person_can_vote_method<ex
             ('first_name', 'last_name', 'F', 'a_string')
         )
         truth_table = (
-            (self.this_year-17, True, False),
-            (self.this_year-17, False, False),
-            (self.this_year-18, True, True),
-            (self.this_year-18, False, False),
+            (this_year-17, True, False),
+            (this_year-17, False, False),
+            (this_year-18, True, True),
+            (this_year-18, False, False),
         )
 
         def calculate_age(self, year_of_birth):
@@ -4186,7 +4187,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED[('first_name', 'last_name', 'M', YYYY, True, False)] ...
         AssertionError: False != True
 
-  because I used the value for the ``is_citizen`` :ref:`variable<what is a variable?>` as the expectation of the :ref:`assertion<what is an assertion>` for the :ref:`can_vote method<add can_vote method>` which is wrong when the person is :green:`younger` than ``18``, the expectation should always be :red:`False`.
+  because I used the value for the ``is_citizen`` :ref:`variable<what is a variable?>` as the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` which is wrong when the person is :green:`younger` than ``18``, the expectation should always be :red:`False`.
 
 * I add the expectation for all the cases of the :ref:`can_vote method<add can_vote method>` to the ``people`` :ref:`object attribute<what is an object attribute?>`
 
@@ -4342,7 +4343,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     SUBFAILED[('first_name', 'last_name', 'M', YYYY, False, True, False)] ...
         AssertionError: False != True
 
-  because I used the value for the ``passed_test`` :ref:`variable<what is a variable?>` as the expectation of the :ref:`assertion<what is an assertion>` for the :ref:`can_get_license method<add can_get_license method>` which is wrong when the person is :green:`younger` than ``18``, the expectation should always be :red:`False`.
+  because I used the value for the ``passed_test`` :ref:`variable<what is a variable?>` as the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` which is wrong when the person is :green:`younger` than ``18``, the expectation should always be :red:`False`.
 
 * I add the expectation for all the cases of the :ref:`can_get_license method<add can_get_license method>` to the ``people`` :ref:`object attribute<what is an object attribute?>`
 
@@ -4952,7 +4953,7 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` can be desc
 
   still green.
 
-* I remove the values of ``first_name``, ``last_name`` amd ``sex`` from the first tuples in the ``people`` :ref:`object attribute<what is an object attribute?>`
+* I remove the values of ``first_name``, ``last_name`` and ``sex`` from the first tuples in the ``people`` :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -5806,7 +5807,7 @@ The last tuple_ in the ``people`` :ref:`object attribute<what is an object attri
 
 I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  to remove the repetition
 
-* I add tuples_ for the cases from :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>` and remove ``'a string', False, False, False, False,`` because it is a repetition of when ``year_of_birth`` is a string_ (``('2026', False, False,),``)
+* I add tuples_ for the cases from :ref:`test_when_year_of_birth_is_not_an_integer` to the ``people`` :ref:`object attribute<what is an object attribute?>` and remove ``'a string', False, False, False, False,`` because it is a repetition of when ``year_of_birth`` is a string_ (``('2026', False, False, False, False),``)
 
   .. code-block:: python
     :caption: person/tests/test_person.py
@@ -5925,6 +5926,7 @@ I can use the ``people`` :ref:`object attribute<what is an object attribute?>`  
 
   .. code-block:: python
     :caption: person/src/person/__init__.py
+    :lineno-start: 37
     :emphasize-lines: 2-7, 11-16
 
     def calculate_age(year_of_birth):
@@ -5987,7 +5989,8 @@ I can use :ref:`for loops<what is a for loop?>` for things that repeat.
 My tests still have problems:
 
 * The :ref:`attribute<what is an object attribute?>` tests - :ref:`test_dir_person_object` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person object<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<test person with lists>`.
-* The ``people`` :ref:`object attribute<what is an object attribute>` is confusing, anyone who reads it without going through the process of making it would not know what the :ref:`booleans<what is a boolean?>` stands for and the last few tuples_ I added are a different length than the others. :ref:`There has to be a better way<how to make a person with dictionaries>`.
+* The ``people`` :ref:`object attribute<what is an object attribute?>` is confusing, anyone who reads it without going through the process of making it would not know what the :ref:`booleans<what are booleans?>` stand for.
+* My tests check that the values given for ``first_name``, ``last_name`` and ``sex`` are the same values. What happens when I pass a value that is not a string_?
 
 ----
 

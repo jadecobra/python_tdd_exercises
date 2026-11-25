@@ -582,7 +582,7 @@ how to make a person with loops: tests
 
 ----
 
-The tests I changed in ``person/tests/test_person.py`` after :ref:`how to make a person with loops`
+The code in ``person/tests/test_person.py`` after :ref:`how to make a person with loops`
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
@@ -594,61 +594,61 @@ The tests I changed in ``person/tests/test_person.py`` after :ref:`how to make a
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 16
-  :lines: 16-31
+  :lines: 16-36
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 32
-  :lines: 32-46
+  :lineno-start: 37
+  :lines: 37-56
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 47
-  :lines: 47-65
+  :lineno-start: 57
+  :lines: 57-74
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :language: python
   :caption: person/tests/test_person.py
-  :lineno-start: 67
-  :lines: 67-99
+  :lineno-start: 76
+  :lines: 76-107
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :language: python
   :caption: person/tests/test_person.py
-  :lineno-start: 100
-  :lines: 100-124
+  :lineno-start: 108
+  :lines: 108-122
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 126
-  :lines: 126-143
+  :lineno-start: 124
+  :lines: 124-150
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 144
-  :lines: 144-163
+  :lineno-start: 152
+  :lines: 152-166
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 165
-  :lines: 165-182
+  :lineno-start: 168
+  :lines: 168-185
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 184
-  :lines: 184-210
+  :lineno-start: 187
+  :lines: 187-204
 
 .. literalinclude:: person/tests/test_person_w_loops.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 213
-  :lines: 213-218
+  :lineno-start: 206
+  :lines: 206-240
 
 ----
 

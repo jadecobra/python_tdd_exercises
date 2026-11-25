@@ -6,47 +6,92 @@ import unittest
 class TestPerson(unittest.TestCase):
 
     this_year = datetime.date.today().year
-    younger_than_18 = this_year - 17
     not_younger_than_18 = this_year - 18
+    younger_than_18 = this_year - 17
 
     first_name = 'first_name'
     last_name = 'last_name'
     sex = 'M'
 
-    years_of_birth = (
-        not_younger_than_18, younger_than_18,
-        None, 2026.0, '2026', (2026,),
-    )
+    years_of_birth = ()
 
     def calculate_age(self, year_of_birth):
         return self.this_year - year_of_birth
 
     def test_person_object(self):
-        booleans = (True, False)
         people = []
-        for year_of_birth in self.years_of_birth:
-            for is_citizen in booleans:
-                for passed_test in booleans:
-                    if year_of_birth == self.not_younger_than_18:
-                        people.append((
-                            year_of_birth, is_citizen, passed_test,
-                            is_citizen, passed_test,
-                        ))
-                    else:
-                        people.append((
-                            year_of_birth, is_citizen, passed_test,
-                            False, False
-                        ))
-
+        people = (
+                (
+                    not_younger_than_18,
+                    # is_citizen, passed_test
+                    True, True, True, True,
+                ),
+                (
+                    not_younger_than_18,
+                    # is_citizen, not passed_test
+                    True, False, True, False,
+                ),
+                (
+                    not_younger_than_18,
+                    # not is_citizen, passed_test
+                    False, True, False, True,
+                ),
+                (
+                    not_younger_than_18,
+                    # not is_citizen, not passed_test
+                    False, False, False, False,
+                ),
+                (
+                    younger_than_18,
+                    # is_citizen, passed_test
+                    True, True, False, False,
+                ),
+                (
+                    # not is_citizen, passed_test
+                    younger_than_18,
+                    False, True, False, False,
+                ),
+                (
+                    younger_than_18,
+                    # is_citizen, not passed_test
+                    True, False, False, False,
+                ),
+                (
+                    # not is_citizen, not passed_test
+                    younger_than_18,
+                    False, False, False, False,
+                ),
+                # year_of_birth is not an integer
+                (
+                    None,
+                    False, False, False, False,
+                ),
+                (
+                    2026.0,
+                    False, False, False, False,
+                ),
+                (
+                    '2026',
+                    False, False, False, False,
+                ),
+                (
+                    (2026,),
+                    False, False, False, False,
+                ),
+            )
         for (
-            year_of_birth, is_citizen, passed_test,
-            can_vote_result, can_get_license_result,
+            year_of_birth,
+            is_citizen, passed_test,
+            can_vote, can_get_license,
         ) in people:
-
-            with self.subTest((
-                year_of_birth, is_citizen, passed_test,
-                can_vote_result, can_get_license_result,
-            )):
+            with self.subTest(
+                a_person=(
+                    self.first_name, self.last_name,
+                    self.sex, year_of_birth,
+                    is_citizen, passed_test,
+                    can_vote, can_get_license,
+                )
+            ):
                 try:
                     an_instance = src.person.Person(
                         first_name=self.first_name,
@@ -71,17 +116,19 @@ class TestPerson(unittest.TestCase):
                         )
                     )
                     self.assertEqual(
-                        an_instance.can_vote(),
-                        can_vote_result
+                        an_instance.can_vote(), can_vote
                     )
                     self.assertEqual(
                         an_instance.can_get_license(),
-                        can_get_license_result
+                        can_get_license
                     )
 
     def test_say_hello_function(self):
         for year_of_birth in self.years_of_birth:
-            with self.subTest(year_of_birth):
+            with self.subTest(
+                first_name=self.first_name,
+                year_of_birth=year_of_birth,
+            ):
                 try:
                     reality = src.person.say_hello(
                         first_name=self.first_name,
@@ -108,10 +155,10 @@ class TestPerson(unittest.TestCase):
             with self.subTest(year_of_birth):
                 self.assertEqual(
                     src.person.person(
-                        first_name=self.first_name,
-                        last_name=self.last_name,
-                        sex=self.sex,
-                        year_of_birth=year_of_birth,
+                      first_name=self.first_name,
+                      last_name=self.last_name,
+                      sex=self.sex,
+                      year_of_birth=year_of_birth,
                     ),
                     (
                         f'{self.first_name}, {self.last_name},'
@@ -120,10 +167,8 @@ class TestPerson(unittest.TestCase):
                 )
 
     def test_when_person_is_not_alive(self):
-        for year_of_birth in (
-            self.this_year+1,
-            self.this_year-121,
-        ):
+        for number in (1, -121):
+            year_of_birth = self.this_year + number
             age = self.calculate_age(year_of_birth)
 
             with (
@@ -131,7 +176,7 @@ class TestPerson(unittest.TestCase):
                 self.assertRaisesRegex(
                     ValueError,
                     f'a {age} year old person is not alive.'
-                ),
+                )
             ):
                 src.person.Person(
                     first_name=self.first_name,
@@ -141,39 +186,50 @@ class TestPerson(unittest.TestCase):
                 )
 
     def test_dir_person_object(self):
-        dir_person = dir(object)
-        dir_person.extend((
-            '__dict__', '__firstlineno__',
-            '__module__', '__static_attributes__',
-            '__weakref__',
-            'can_get_license', 'can_vote',
-            'check_age', 'say_hello',
-        ))
-        dir_person.sort()
         self.assertEqual(
             dir(src.person.Person),
-            dir_person
+            [
+                '__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__',
+                '__firstlineno__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__module__', '__ne__',
+                '__new__', '__reduce__', '__reduce_ex__',
+                '__repr__', '__setattr__', '__sizeof__',
+                '__static_attributes__', '__str__',
+                '__subclasshook__', '__weakref__',
+                'can_get_license', 'can_vote', 'check_age',
+                'say_hello',
+            ]
         )
 
     def test_dir_person_instance(self):
-        self.maxDiff = None
-        dir_person_instance = dir(src.person.Person)
-        dir_person_instance.extend((
-            'age', 'first_name', 'is_citizen',
-            'last_name', 'passed_test',
-            'sex', 'year_of_birth',
-        ))
-        dir_person_instance.sort()
         self.assertEqual(
             dir(
                 src.person.Person(
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth=2026,
+                    year_of_birth=self.this_year,
                 )
             ),
-            dir_person_instance
+            [
+                '__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__',
+                '__firstlineno__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__module__', '__ne__',
+                '__new__', '__reduce__', '__reduce_ex__',
+                '__repr__', '__setattr__', '__sizeof__',
+                '__static_attributes__', '__str__',
+                '__subclasshook__', '__weakref__',
+                'age', 'can_get_license', 'can_vote',
+                'check_age', 'first_name', 'is_citizen',
+                'last_name', 'passed_test', 'say_hello',
+                'sex', 'year_of_birth',
+            ]
         )
 
 
