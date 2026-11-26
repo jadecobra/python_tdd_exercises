@@ -85,7 +85,7 @@ open the project
 ----
 
 *********************************************************************************
-refactor test_person with lists and loops
+add people list to test_person_object
 *********************************************************************************
 
 The ``people`` :ref:`object attribute<what is an object attribute?>` is a tuple_ with some repetition and :ref:`conditions<if statements?>`.
@@ -100,6 +100,39 @@ The ``people`` :ref:`object attribute<what is an object attribute?>` is a tuple_
 
 The ``year_of_birth`` values are repeated for each combination of :ref:`booleans<what are booleans?>`. I want to make a :ref:`list<what is a list?>` that has the ``year_of_birth`` values once, and has the combinations for ``is_citizen``, ``passed_test``, ``can_vote`` and ``can_get_license`` tied to it.
 
+- If ``year_of_birth`` is :red:`NOT an integer`
+
+  ============== ============== ==============  ================
+  is citizen     passed_test    can vote        can_get_license
+  ============== ============== ==============  ================
+  :green:`True`  :green:`True`  :red:`False`    :red:`False`
+  :red:`False`   :green:`True`  :red:`False`    :red:`False`
+  :green:`True`  :red:`False`   :red:`False`    :red:`False`
+  :red:`False`   :red:`False`   :red:`False`    :red:`False`
+  ============== ============== ==============  ================
+
+- If a person is :green:`younger` than ``18``
+
+  ============== ============== ==============  ================
+  is citizen     passed_test    can vote        can_get_license
+  ============== ============== ==============  ================
+  :green:`True`  :green:`True`  :red:`False`    :red:`False`
+  :red:`False`   :green:`True`  :red:`False`    :red:`False`
+  :green:`True`  :red:`False`   :red:`False`    :red:`False`
+  :red:`False`   :red:`False`   :red:`False`    :red:`False`
+  ============== ============== ==============  ================
+
+- If a person is :red:`NOT younger` than ``18``
+
+  ============== ============== ==============  ================
+  is citizen     passed_test    can vote        can_get_license
+  ============== ============== ==============  ================
+  :green:`True`  :green:`True`  :green:`True`   :green:`True`
+  :red:`False`   :green:`True`  :red:`False`    :green:`True`
+  :green:`True`  :red:`False`   :green:`True`   :red:`False`
+  :red:`False`   :red:`False`   :red:`False`    :red:`False`
+  ============== ============== ==============  ================
+
 ----
 
 =================================================================================
@@ -108,12 +141,12 @@ The ``year_of_birth`` values are repeated for each combination of :ref:`booleans
 
 ----
 
-I add a :ref:`list<what is a list?>` to :ref:`test_person_object`
+I add a :ref:`list<what is a list?>` with an :ref:`assertion<what is an assertion?>` to :ref:`test_person_object`
 
 .. code-block:: python
   :caption: person/tests/test_person.py
   :lineno-start: 79
-  :emphasize-lines: 2-8
+  :emphasize-lines: 2-8, 10
 
       def test_person_object(self):
           people = []
@@ -155,15 +188,15 @@ I copy the :ref:`list<what is a list?>` from the terminal_ and paste it as the e
 .. code-block:: python
   :caption: person/tests/test_person.py
   :lineno-start: 86
-  :emphasize-lines: 8-12
+  :emphasize-lines: 3-13
 
               people.append((year_of_birth, ()))
 
           self.assertEqual(
               people,
               [
-                  (2008, ()),
-                  (2009, ()),
+                  (XXXX, ()),
+                  (YYYY, ()),
                   (None, ()),
                   (2027.0, ()),
                   ('2027', ()),
@@ -177,6 +210,8 @@ I copy the :ref:`list<what is a list?>` from the terminal_ and paste it as the e
               can_vote, can_get_license,
           ) in self.people:
 
+the test passes.
+
 ----
 
 =================================================================================
@@ -185,324 +220,489 @@ I copy the :ref:`list<what is a list?>` from the terminal_ and paste it as the e
 
 ----
 
-* I remove the ``people`` tuple_
+* I use a :ref:`for loop<what is a for loop?>` to add the values of ``is_citizen`` to the tuple_ for each ``year_of_birth``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 6
-
-    class TestPerson(unittest.TestCase):
-
-        this_year = datetime.date.today().year
-        younger_than_18 = this_year - 17
-        not_younger_than_18 = this_year - 18
-
-        first_name = 'first_name'
-        last_name = 'last_name'
-        sex = 'M'
-
-        booleans = (True, False)
-        people = []
-
-* I make an :ref:`object attribute<what is an object attribute?>` for the different values for ``year_of_birth``
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 12
-    :emphasize-lines: 5-8
-
-        first_name = 'first_name'
-        last_name = 'last_name'
-        sex = 'M'
-
-        years_of_birth = (
-            not_younger_than_18, younger_than_18,
-            None, 2026.0, '2026', (2026,),
-        )
-
-        booleans = (True, False)
-
-* I use the new :ref:`object attribute<what is an object attribute>` in the ``people`` :ref:`object attribute<what is an object attribute?>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 21
-    :emphasize-lines: 3
-
-        booleans = (True, False)
-        people = []
-        for year_of_birth in years_of_birth:
-            for is_citizen in booleans:
-                for passed_test in booleans:
-                    if year_of_birth == not_younger_than_18:
-
-  the tests are still green.
-
-* I use the new :ref:`object attribute<what is an object attribute>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 73
-    :emphasize-lines: 2-3, 5-7
-
-        def test_say_hello_function(self):
-            # for a_person in self.people:
-            #     year_of_birth = a_person[0]
-
-            #     with self.subTest(a_person):
-            for year_of_birth in self.years_of_birth:
-                with self.subTest(year_of_birth):
-                    try:
-                        reality = src.person.say_hello(
-                            first_name=self.first_name,
-                            last_name=self.last_name,
-                            year_of_birth=year_of_birth,
-                        )
-                    except TypeError as error:
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 73
-
-        def test_say_hello_function(self):
-            for year_of_birth in self.years_of_birth:
-                with self.subTest(year_of_birth):
-                    try:
-
-* I use the new :ref:`object attribute<what is an object attribute>` in :ref:`test_person_factory<extract test_person_factory>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 97
-    :emphasize-lines: 2-3, 5-7
-
-        def test_person_factory(self):
-            # for a_person in self.people:
-            #     year_of_birth = a_person[0]
-
-            #     with self.subTest(a_person):
-            for year_of_birth in self.years_of_birth:
-                with self.subTest(year_of_birth):
-                    self.assertEqual(
-                        src.person.person(
-                            first_name=self.first_name,
-                            last_name=self.last_name,
-                            sex=self.sex,
-                            year_of_birth=year_of_birth,
-                        ),
-                        (
-                            f'{self.first_name}, {self.last_name},'
-                            f' {self.sex}, {year_of_birth}'
-                        )
-                    )
-
-        def test_when_person_is_not_alive(self):
-
-  still green.
-
-* I remove the commented lines from :ref:`test_person_factory<extract test_person_factory>`
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 97
-
-        def test_person_factory(self):
-            for year_of_birth in self.years_of_birth:
-                with self.subTest(year_of_birth):
-
-* I copy the ``people`` and ``booleans`` :ref:`object attributes<what is an object attribute?>` into :ref:`test_person_object<extract test_person_object>` because that is the only place where they are used
-
-  .. code-block:: python
-    :caption: person/tests/test_person.py
-    :lineno-start: 40
-    :emphasize-lines: 2-16
+    :lineno-start: 79
+    :emphasize-lines: 2, 9-12
 
         def test_person_object(self):
-            booleans = (True, False)
+            booleans = (False, True)
             people = []
-            for year_of_birth in years_of_birth:
+            for year_of_birth in (
+                self.not_younger_than_18,
+                self.younger_than_18,
+                None, 2027.0, '2027', (2027,),
+            ):
+                row = []
                 for is_citizen in booleans:
-                    for passed_test in booleans:
-                        if year_of_birth == not_younger_than_18:
-                            people.append((
-                                year_of_birth, is_citizen, passed_test,
-                                is_citizen, passed_test,
-                            ))
-                        else:
-                            people.append((
-                                year_of_birth, is_citizen, passed_test,
-                                False, False
-                            ))
+                    row.append(is_citizen)
+                people.append((year_of_birth, row))
 
-            for a_person in self.people:
-                year_of_birth = a_person[0]
+            self.assertEqual(
+                people,
+                ...
 
-                with self.subTest(a_person):
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :caption: terminal
 
-    NameError: name 'years_of_birth' is not defined
+    AssertionError: Lists differ: [
+        (XXXX, [False, True]), (YYYY, [False, True]),
+        (N[91 chars]ue])
+    ] != [
+        (XXXX, ()), (YYYY, ()), (None, ()),
+        (2027.0, ())[25 chars] ())
+    ]
 
-* I add ``self.`` to ``years_of_birth``
+  close, but not quite. I want each value of ``is_citizen`` to be its own tuple_ since I will be adding values for ``passed_test``, ``can_vote`` and ``can_get_license``
+
+  .. code-block:: python
+
+    (
+        XXXX, [
+            (True, True, True, True),
+            (True, False, True, False),
+            (False, True, False, True),
+            (False, False, False, False),
+        ],
+        ...
+    )
+
+* I change the append statement for ``row``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 40
-    :emphasize-lines: 4
+    :lineno-start: 87
+    :emphasize-lines: 3
 
-        def test_person_object(self):
-            booleans = (True, False)
-            people = []
-            for year_of_birth in self.years_of_birth:
+                row = []
                 for is_citizen in booleans:
+                    row.append((is_citizen,))
+                people.append((year_of_birth, row))
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+  the terminal_ shows
 
   .. code-block:: python
     :caption: terminal
 
-    NameError: name 'not_younger_than_18' is not defined
+    AssertionError: Lists differ: [
+        (XXXX, [(False,), (True,)]), (YYYY, [(False,), ([127 chars],)])
+    ] != [
+        (XXXX, ()), (YYYY, ()), (None, ()),
+        (2027.0, ())[25 chars] ())
+    ]
 
-* I add ``self.`` to ``not_younger_than_18``
+  better.
+
+* I add a :ref:`for loop<what is a for loop?>` for ``passed_test``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 44
-    :emphasize-lines: 3
+    :lineno-start: 87
+    :emphasize-lines: 3-4
 
+                row = []
                 for is_citizen in booleans:
                     for passed_test in booleans:
-                        if year_of_birth == self.not_younger_than_18:
-                            people.append((
-                                year_of_birth, is_citizen, passed_test,
+                        row.append((is_citizen, passed_test,))
+                people.append((year_of_birth, row))
+
+  the terminal_ shows
+
+  .. code-block:: python
+    :caption: terminal
+
+    AssertionError: Lists differ: [
+        (XXXX, [
+            (False, False),
+            (False, True),
+            (True, Fa[373 chars]e)])
+    ] != [
+        (XXXX, ()), (YYYY, ()), (None, ()),
+        (2027.0, ())[25 chars] ())
+    ]
+
+  closer.
+
+* I add a :ref:`for loop<what is a for loop?>` for ``can_vote``
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 87
+    :emphasize-lines: 4-8
+
+                row = []
+                for is_citizen in booleans:
+                    for passed_test in booleans:
+                        for can_vote in booleans:
+                            row.append((
                                 is_citizen, passed_test,
+                                can_vote,
                             ))
-                        else:
+                people.append((year_of_birth, row))
 
-  the test passes.
+  the terminal_ shows
 
-* I change ``self.people`` to ``people`` to use the new :ref:`variable<what is a variable?>` instead of the :ref:`object attribute<what is an object attribute?>`
+  .. code-block:: python
+    :caption: terminal
+
+    AssertionError: Lists differ: [
+        (XXXX, [
+            (False, False, False),
+            (False, False, Tr[1045 chars]e)])
+    ] != [
+        (XXXX, ()), (YYYY, ()), (None, ()),
+        (2027.0, ())[25 chars] ())
+    ]
+
+* I add a :ref:`for loop<what is a for loop?>` for ``can_get_license``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 51
-    :emphasize-lines: 7
+    :lineno-start: 87
+    :emphasize-lines: 5, 8
 
-                        else:
-                            people.append((
-                                year_of_birth, is_citizen, passed_test,
-                                False, False
-                            ))
+                row = []
+                for is_citizen in booleans:
+                    for passed_test in booleans:
+                        for can_vote in booleans:
+                            for can_get_license in booleans:
+                                row.append((
+                                    is_citizen, passed_test,
+                                    can_vote, can_get_license,
+                                ))
+                people.append((year_of_birth, row))
 
-            for a_person in people:
-                year_of_birth = a_person[0]
+  the terminal_ shows
 
-                with self.subTest(a_person):
-                    try:
+  .. code-block:: python
+    :caption: terminal
 
-  the test is still green.
+    AssertionError: Lists differ: [
+        (XXXX, [
+            (False, False, False, False),
+            (False, Fa[2701 chars]e)])
+    ] != [
+        (XXXX, ()), (YYYY, ()),
+        (None, ()), (2027.0, ())[25 chars] ())
+    ]
 
-* I change the :ref:`for loop<what is a for loop?>` for the test to use names instead of :ref:`indexes<test_index_returns_the_first_position_of_a_given_item>`
+  lovely.
+
+* I set maxDiff_ to :ref:`None<what is None?>` to see the entire difference between the :ref:`lists<what is a list?>`
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 51
-    :emphasize-lines: 7-10, 12-15
+    :lineno-start: 79
+    :emphasize-lines: 2
 
-                        else:
-                            people.append((
-                                year_of_birth, is_citizen, passed_test,
-                                False, False
-                            ))
+        def test_person_object(self):
+            self.maxDiff = None
 
-            for (
-                year_of_birth, is_citizen, passed_test,
-                can_vote_result, can_get_license_result,
-            ) in people:
+            booleans = (False, True)
+            people = []
 
-                with self.subTest((
-                    year_of_birth, is_citizen, passed_test,
-                    can_vote_result, can_get_license_result,
-                )):
+  each ``year_of_birth`` now has the sixteen combinations of ``is_citizen``, ``passed_test``, ``can_vote`` and  ``can_get_license``. It removes repetition of ``year_of_birth`` and is better than the ``people`` :ref:`object attribute<what is an object attribute?>` because it covers more cases.
+
+* I remove the :ref:`assertion<what is an assertion?>` for the ``people`` :ref:`variable<what is a variable?>` then try the :ref:`variable` in place of ``self.people``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 66
+    :lineno-start: 98
     :emphasize-lines: 7-8
 
-                    try:
-                        an_instance = src.person.Person(
-                            first_name=self.first_name,
-                            last_name=self.last_name,
-                            sex=self.sex,
-                            year_of_birth=year_of_birth,
-                            is_citizen=is_citizen,
-                            passed_test=passed_test,
+                people.append((year_of_birth, row))
+
+            for (
+                year_of_birth,
+                is_citizen, passed_test,
+                can_vote, can_get_license,
+            ) in people:
+            # ) in self.people:
+                with self.subTest(
+                    a_person=(
+                        self.first_name, self.last_name,
+                        self.sex, year_of_birth,
+                        is_citizen, passed_test,
+                        can_vote, can_get_license,
+                    )
+                ):
+
+  the terminal_ is my friend, and shows ValueError_
+
+  .. code-block:: python
+    :caption: terminal
+
+    ValueError: not enough values to unpack (expected 5, got 2)
+
+  because the ``people`` :ref:`variable<what is a variable?>` is a :ref:`list<what is a list?>` that contains tuples_ and each tuple_ contains two items not five.
+
+  .. code-block:: python
+
+    [
+        (
+            year_of_birth,
+            [
+                (False, False, False, False),
+                (False, False, False, True),
+                (False, False, True, False),
+                (False, False, True, True),
+                (False, True, False, False),
+                (False, True, False, True),
+                (False, True, True, False),
+                (False, True, True, True),
+                (True, False, False, False),
+                (True, False, False, True),
+                (True, False, True, False),
+                (True, False, True, True),
+                (True, True, False, False),
+                (True, True, False, True),
+                (True, True, True, False),
+                (True, True, True, True)
+            ]
+        ),
+        ...
+    ]
+
+* I change the :ref:`for loop<what is a for loop?>` to match what is in the :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 100
+    :emphasize-lines: 2, 4-24
+
+            for (
+                year_of_birth, inputs_outputs
+            ) in people:
+                for (
+                    is_citizen, passed_test,
+                    can_vote, can_get_license,
+                ) in inputs_outputs:
+                    with self.subTest(
+                        a_person=(
+                            self.first_name, self.last_name,
+                            self.sex, year_of_birth,
+                            is_citizen, passed_test,
+                            can_vote, can_get_license,
                         )
-                    except TypeError as error:
-                        self.assertEqual(
-                            error.args[0],
-                            f"'{year_of_birth}' is not an integer"
-                        )
-                    else:
-                        self.assertEqual(
-                            an_instance.say_hello(),
-                            (
-                                f'Hello, my name is {self.first_name}'
-                                f' {self.last_name} and I am'
-                                f' {self.calculate_age(year_of_birth)}.'
+                    ):
+                        try:
+                            an_instance = src.person.Person(
+                                first_name=self.first_name,
+                                last_name=self.last_name,
+                                sex=self.sex,
+                                year_of_birth=year_of_birth,
+                                is_citizen=is_citizen,
+                                passed_test=passed_test,
                             )
-                        )
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 100
+    :emphasize-lines: 1-21
+
+                        except TypeError as error:
+                            self.assertEqual(
+                                error.args[0],
+                                f"'{year_of_birth}' is not an integer"
+                            )
+                        else:
+                            self.assertEqual(
+                                an_instance.say_hello(),
+                                (
+                                    f'Hello, my name is {self.first_name}'
+                                    f' {self.last_name} and I am'
+                                    f' {self.calculate_age(year_of_birth)}.'
+                                )
+                            )
+                            self.assertEqual(
+                                an_instance.can_vote(), can_vote
+                            )
+                            self.assertEqual(
+                                an_instance.can_get_license(),
+                                can_get_license
+                            )
+
+        def test_say_hello_function(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for twenty four sub tests because the values for ``can_vote`` from the ``people`` :ref:`variable<what is a variable?>` do not match the expectation of the test. For example
+
+  * since a person that is younger than ``18`` cannot vote or get a license even if they are a citizen and pass the test
+
+    ``(younger_than_18, True, True, True, True)`` should be ``(younger_than_18, True, True, False, False)``
+
+  * since a person that is NOT younger than ``18`` AND is NOT a citizen AND did not pass the test cannot vote or get a license
+
+    ``(not_younger_than_18, False, False, True, True)`` should be ``(not_younger_than_18, False, False, False, False)``
+
+* I change the values given to the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for the results of ``can_vote`` and ``passed_test``
 
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 89
-    :emphasize-lines: 1-4, 7-8
+    :emphasize-lines: 8
 
-                        self.assertEqual(
-                            an_instance.can_vote(),
-                            can_vote_result
-                        )
-                        self.assertEqual(
-                            an_instance.can_get_license(),
-                            can_get_license_result
-                        )
+                row = []
+                for is_citizen in booleans:
+                    for passed_test in booleans:
+                        for can_vote in booleans:
+                            for can_get_license in booleans:
+                                row.append((
+                                    is_citizen, passed_test,
+                                    is_citizen, passed_test,
+                                ))
+                people.append((year_of_birth, row))
 
-        def test_say_hello_function(self):
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for twelve sub tests. I got twelve to pass.
 
-  still green.
-
-* I remove the ``booleans`` and ``people`` :ref:`object attributes<what is an object attribute?>` because they are no longer used
+* I remove the :ref:`for loops<what is a for loop?>` for ``can_vote`` and ``can_get_license`` since their values are based on ``is_citizen`` and ``passed_test``, a lot of the tuples_ are now repetitions
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 6
+    :lineno-start: 89
+    :emphasize-lines: 4-7
 
-    class TestPerson(unittest.TestCase):
+                row = []
+                for is_citizen in booleans:
+                    for passed_test in booleans:
+                        row.append((
+                            is_citizen, passed_test,
+                            is_citizen, passed_test,
+                        ))
+                people.append((year_of_birth, row))
 
-        this_year = datetime.date.today().year
-        younger_than_18 = this_year - 17
-        not_younger_than_18 = this_year - 18
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for three sub tests
 
-        first_name = 'first_name'
-        last_name = 'last_name'
-        sex = 'M'
+  .. code-block:: python
+    :caption: terminal
 
-        years_of_birth = (
-            not_younger_than_18, younger_than_18,
-            None, 2026.0, '2026', (2026,),
-        )
+    SUBFAILED(a_person=(
+        'first_name', 'last_name', 'M',
+        YYYY, False, True, ...
+    )) ... AssertionError: False != True
+    SUBFAILED(a_person=(
+        'first_name', 'last_name', 'M',
+        YYYY, True, False, ...
+    )) ... AssertionError: False != True
+    SUBFAILED(a_person=(
+        'first_name', 'last_name', 'M',
+        YYYY, True, True, ...
+    )) ... AssertionError: False != True
 
-        def calculate_age(self, year_of_birth):
+* The remaining cases are for when ``year_of_birth`` makes the person younger than ``18`` or is NOT an integer, which means the expectation for those cases is :ref:`False<test_what_is_false>`. I add an :ref:`if statement<if statements>`
 
-  still green.
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 89
+    :emphasize-lines: 4-13
+
+                row = []
+                for is_citizen in booleans:
+                    for passed_test in booleans:
+                        if year_of_birth == self.not_younger_than_18:
+                            row.append((
+                                is_citizen, passed_test,
+                                is_citizen, passed_test,
+                            ))
+                        else:
+                            row.append((
+                                is_citizen, passed_test,
+                                False, False,
+                            ))
+                people.append((year_of_birth, row))
+
+  the test passes.
+
+* I use a :ref:`conditional expression<conditional expression>` with a :ref:`variable<what is a variable?>` to remove duplication of the tuple_
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 89
+    :emphasize-lines: 4-11
+
+                row = []
+                for is_citizen in booleans:
+                    for passed_test in booleans:
+                        is_not_younger_than_18 = (
+                            year_of_birth == self.not_younger_than_18
+                        )
+                        row.append((
+                            is_citizen, passed_test,
+                            is_citizen and is_not_younger_than_18,
+                            passed_test and is_not_younger_than_18,
+                        ))
+                people.append((year_of_birth, row))
+
+  the test is still green.
+
+* I add an :ref:`assertion<what is an assertion?>` to see what is in the ``people`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 100
+    :emphasize-lines: 3
+
+                people.append((year_of_birth, row))
+
+            self.assertEqual(people, [])
+
+            for (
+                year_of_birth, inputs_outputs
+            ) in people:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`. The ``people`` :ref:`list<what is a list?>` has tuples_ which have a value for ``year_of_birth`` and a tuple_ of the combinations for ``is_citizen``, ``passed_test`` and the expected result of a :ref:`call<how to call a function with input>` to the :ref:`can_vote<add can_vote method>` and :ref:`can_get_license methods<add can_get_license method>`.
+
+  .. code-block:: python
+
+    [
+        (
+            not_younger_than_18,
+            [
+                (False, False, False, False),
+               (False, True, False, True),
+               (True, False, True, False),
+               (True, True, True, True)
+            ]
+        ),
+        (
+            younger_than_18,
+            [
+                (False, False, False, False),
+                 (False, True, False, False),
+                 (True, False, False, False),
+                 (True, True, False, False)
+            ]
+        ),
+        (
+            not an integer,
+            [
+                (False, False, False, False),
+                (False, True, False, False),
+                (True, False, False, False),
+                (True, True, False, False)
+            ]
+        ),
+        ...
+    ]
+
+  I like this better than the ``people`` :ref:`object attribute<what is an object attribute?>` because it covers all combinations for ``is_citizen`` and ``passed_test`` for when ``year_of_birth`` is NOT an integer. The ``people`` :ref:`list<what is a list?>` is more complicated to make than the ``people`` :ref:`object attribute<what is an object attribute?>`.
+
+* I undo the change
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 100
+
+                people.append((year_of_birth, row))
+
+            for (
+                year_of_birth, inputs_outputs
+            ) in people:
+
+  the test is green again
 
 * I add a git_ commit message
 
@@ -511,7 +711,229 @@ I copy the :ref:`list<what is a list?>` from the terminal_ and paste it as the e
     :emphasize-lines: 1-2
 
     git commit -am \
-    'refactor test_person with lists and loops'
+    'add people list to test_person_object'
+
+----
+
+*********************************************************************************
+extract years_of_birth object attribute
+*********************************************************************************
+
+:ref:`test_person_object<extract test_person_object>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_person_factory<extract test_person_factory>` all use the same values for ``year_of_birth``
+
+.. code-block:: python
+
+  class TestPerson(unittest.TestCase):
+
+      this_year = datetime.date.today().year
+      not_younger_than_18 = this_year - 18
+      younger_than_18 = this_year - 17
+
+.. code-block:: python
+
+  for year_of_birth in (
+      self.not_younger_than_18,
+      self.younger_than_18,
+      None, 2027.0, '2027', (2027,),
+  ):
+
+.. code-block:: python
+
+  for a_person in self.people:
+      year_of_birth = a_person[0]
+
+I can use an :ref:`object attribute<what is an object attribute?>` to remove the repetition.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I remove the ``people`` :ref:`object attribute<what is an object attribute?>`
+
+.. code-block:: python
+  :caption: person/tests/test_person.py
+  :lineno-start: 6
+
+  class TestPerson(unittest.TestCase):
+
+      this_year = datetime.date.today().year
+      not_younger_than_18 = this_year - 18
+      younger_than_18 = this_year - 17
+
+      first_name = 'first_name'
+      last_name = 'last_name'
+      sex = 'M'
+
+      def calculate_age(self, year_of_birth):
+
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>` for :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_person_factory<extract test_person_factory>`
+
+.. code-block:: python
+  :caption: terminal
+
+  AttributeError: 'TestPerson' object
+                  has no attribute 'people'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I copy the :ref:`for loop<what is a for loop?>` for ``year_of_birth`` from :ref:`test_person_object<extract test_person_object>` and paste it in :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 88
+    :emphasize-lines: 2-6
+
+        def test_say_hello_function(self):
+            for year_of_birth in (
+                self.not_younger_than_18,
+                self.younger_than_18,
+                None, 2027.0, '2027', (2027,),
+            ):
+                with self.subTest(
+                    first_name=self.first_name,
+                    year_of_birth=year_of_birth,
+                ):
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for :ref:`test_person_factory<extract test_person_factory>`.
+
+* I paste the :ref:`for loop<what is a for loop?>` for ``year_of_birth`` from :ref:`test_person_object<extract test_person_object>` in :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 119
+    :emphasize-lines: 2-6
+
+        def test_person_factory(self):
+            for year_of_birth in (
+                self.not_younger_than_18,
+                self.younger_than_18,
+                None, 2027.0, '2027', (2027,),
+            ):
+                self.assertEqual(
+                    src.person.person(
+                      first_name=self.first_name,
+                      last_name=self.last_name,
+                      sex=self.sex,
+                      year_of_birth=year_of_birth,
+                    ),
+                    (
+                        f'{self.first_name}, {self.last_name},'
+                        f' {self.sex}, {year_of_birth}'
+                    )
+                )
+
+        def test_when_person_is_not_alive(self):
+
+  the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`object attribute<what is an object attribute?>` for the years of birth
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 6
+    :emphasize-lines: 7-11
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+        not_younger_than_18 = this_year - 18
+        younger_than_18 = this_year - 17
+
+        years_of_birth = (
+            not_younger_than_18,
+            younger_than_18,
+            None, 2027.0, '2027', (2027,),
+        )
+
+        first_name = 'first_name'
+
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_person_object<extract test_person_object>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 25
+    :emphasize-lines: 6
+
+        def test_person_object(self):
+            self.maxDiff = None
+
+            booleans = (False, True)
+            people = []
+            for year_of_birth in self.years_of_birth:
+                row = []
+
+  the test is still green.
+
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 90
+    :emphasize-lines: 1
+
+        def test_say_hello_function(self):
+            for year_of_birth in self.years_of_birth:
+                with self.subTest(
+                    first_name=self.first_name,
+                    year_of_birth=year_of_birth,
+                ):
+
+  still green.
+
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :caption: person/tests/test_person.py
+    :lineno-start: 117
+    :emphasize-lines: 2
+
+        def test_person_factory(self):
+            for year_of_birth in self.people:
+                self.assertEqual(
+                    src.person.person(
+                      first_name=self.first_name,
+                      last_name=self.last_name,
+                      sex=self.sex,
+                      year_of_birth=year_of_birth,
+                    ),
+                    (
+                        f'{self.first_name}, {self.last_name},'
+                        f' {self.sex}, {year_of_birth}'
+                    )
+                )
+
+        def test_when_person_is_not_alive(self):
+
+  green.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :caption: terminal
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract years_of_birth object attribute'
+
+----
 
 *********************************************************************************
 test_dir_person_object with extend and sort
