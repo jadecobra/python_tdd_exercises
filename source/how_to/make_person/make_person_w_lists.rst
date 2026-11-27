@@ -26,37 +26,49 @@ I change these tests in the chapter
   :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :lines: 1-22
+  :lines: 1-23
 
 .. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 24
-  :lines: 24-80
+  :lineno-start: 25
+  :lines: 25-42
 
 .. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 82
-  :lines: 82-104
+  :lineno-start: 44
+  :lines: 44-88
 
 .. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 106
-  :lines: 106-120
+  :lineno-start: 90
+  :lines: 90-115
 
 .. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 143
-  :lines: 143-156
+  :lineno-start: 117
+  :lines: 117-130
 
 .. literalinclude:: ../../code/person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 158
-  :lines: 158-177
+  :lineno-start: 132
+  :lines: 132-150
+
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 151
+  :lines: 151-164
+
+.. literalinclude:: ../../code/person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 166
+  :lines: 166-193
 
 -----
 
@@ -887,7 +899,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   .. code-block:: python
     :caption: person/tests/test_person.py
     :lineno-start: 90
-    :emphasize-lines: 1
+    :emphasize-lines: 2
 
         def test_say_hello_function(self):
             for year_of_birth in self.years_of_birth:
@@ -906,7 +918,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :emphasize-lines: 2
 
         def test_person_factory(self):
-            for year_of_birth in self.people:
+            for year_of_birth in self.years_of_birth:
                 self.assertEqual(
                     src.person.person(
                       first_name=self.first_name,
@@ -953,7 +965,7 @@ I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and method
 
 .. code-block:: python
   :caption: person/tests/test_person.py
-  :lineno-start: 165
+  :lineno-start: 151
   :emphasize-lines: 2-10
 
       def test_dir_person_object(self):
@@ -998,11 +1010,11 @@ with a note about the difference
 
 ----
 
-* I use :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to :ref:`append<test_append_adds_item_to_end_of_a_list>` the five additional elements
+* I add the five additional elements
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 165
+    :lineno-start: 151
     :emphasize-lines: 4-6
 
         def test_dir_person_object(self):
@@ -1025,7 +1037,7 @@ with a note about the difference
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 167
+    :lineno-start: 153
     :emphasize-lines: 8
 
             dir_person.extend((
@@ -1061,7 +1073,7 @@ with a note about the difference
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 174
+    :lineno-start: 160
 
             dir_person.sort()
             self.assertEqual(
@@ -1102,7 +1114,7 @@ I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and method
 
 .. code-block:: python
   :caption: person/tests/test_person.py
-  :lineno-start: 180
+  :lineno-start: 166
   :emphasize-lines: 2-13
 
       def test_dir_person_instance(self):
@@ -1113,7 +1125,7 @@ I add a :ref:`variable<what is a variable?>` for the :ref:`attributes and method
                       first_name='first_name',
                       last_name='last_name',
                       sex='M',
-                      year_of_birth=2026,
+                      year_of_birth=self.this_year,
                   )
               ),
               dir_person_instance
@@ -1156,7 +1168,7 @@ with a note about the difference
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 180
+    :lineno-start: 166
     :emphasize-lines: 2
 
         def test_dir_person_instance(self):
@@ -1169,7 +1181,7 @@ with a note about the difference
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 180
+    :lineno-start: 166
     :emphasize-lines: 4-8
 
         def test_dir_person_instance(self):
@@ -1186,7 +1198,7 @@ with a note about the difference
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 dir_person_instance
@@ -1198,7 +1210,7 @@ with a note about the difference
 
   .. code-block:: python
     :caption: person/tests/test_person.py
-    :lineno-start: 183
+    :lineno-start: 169
     :emphasize-lines: 6
 
             dir_person_instance.extend((
@@ -1207,13 +1219,14 @@ with a note about the difference
                 'sex', 'year_of_birth',
             ))
             dir_person_instance.sort()
+
             self.assertEqual(
                 dir(
                     src.person.Person(
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 dir_person_instance
@@ -1246,7 +1259,7 @@ with a note about the difference
                         first_name='first_name',
                         last_name='last_name',
                         sex='M',
-                        year_of_birth=2026,
+                        year_of_birth=self.this_year,
                     )
                 ),
                 dir_person_instance
@@ -1254,6 +1267,11 @@ with a note about the difference
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+    # SyntaxError
 
 * I add a git_ commit message
 
@@ -1265,8 +1283,6 @@ with a note about the difference
     'test_dir_person_instance with extend and sort'
 
 :ref:`All objects inherit attributes and methods from 'object'<test_making_an_object_w_object>`.
-
-
 
 ----
 

@@ -1,0 +1,102 @@
+diff --git a/.github/workflows/dependabot-automerge.yml b/.github/workflows/dependabot-automerge.yml
+index 0e66615..a77e528 100644
+--- a/.github/workflows/dependabot-automerge.yml
++++ b/.github/workflows/dependabot-automerge.yml
+@@ -9,6 +9,7 @@ permissions:
+
+ jobs:
+   auto-merge:
++    timeout-minutes: 5
+     if: github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'uv-minor-and-patch')
+     runs-on: ubuntu-latest
+     steps:
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index f00acaf..7c7e6aa 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -8,6 +8,7 @@ permissions:
+
+ jobs:
+   docs:
++    timeout-minutes: 10
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+diff --git a/.github/workflows/main-red-issue.yml b/.github/workflows/main-red-issue.yml
+new file mode 100644
+index 0000000..2d3cccc
+--- /dev/null
++++ b/.github/workflows/main-red-issue.yml
+@@ -0,0 +1,52 @@
++# .github/workflows/main-red-issue.yml  (fleet draft 2026-11-22, Jacob 👍 9:20am CST)
++# Red main run -> one open issue per workflow, assigned to Jacob (GitHub Mobile pushes on
++# assignment). Same workflow green on main -> closes it. Uses only GITHUB_TOKEN (issues: write).
++# No checkout, no PR code; workflow_run always runs this file from the default branch.
++# EDIT PER REPO: the `workflows:` list (exact `name:` of each workflow that runs on main).
++name: Main red issue
++on:
++  workflow_run:
++    workflows: ["Deploy Pumping Python"]
++    types: [completed]
++    branches: [main]
++permissions: {}
++concurrency:
++  group: main-red-${{ github.event.workflow_run.workflow_id }}
++  cancel-in-progress: false
++jobs:
++  track:
++    if: >-
++      github.event.workflow_run.event != 'pull_request' &&
++      github.event.workflow_run.event != 'pull_request_target' &&
++      github.event.workflow_run.actor.login != 'dependabot[bot]'
++    runs-on: ubuntu-latest
++    timeout-minutes: 5
++    permissions:
++      issues: write
++    steps:
++      - name: Open, update or close the red-main issue
++        env:
++          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++          GH_REPO: ${{ github.repository }}
++          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
++          RUN_URL: ${{ github.event.workflow_run.html_url }}
++          WF_NAME: ${{ github.event.workflow_run.name }}
++          ASSIGNEE: jakeitegsy
++        run: |
++          set -euo pipefail
++          title="main is red: ${WF_NAME}"
++          open=$(gh issue list --state open --label main-red --limit 50 --json number,title \
++            | jq -r --arg t "$title" '[.[] | select(.title == $t)][0].number // empty')
++          case "$CONCLUSION" in
++            failure|timed_out|startup_failure)
++              if [ -z "$open" ]; then
++                gh label create main-red --color B60205 --description "default branch CI red" --force >/dev/null
++                gh issue create --title "$title" --label main-red --assignee "$ASSIGNEE" \
++                  --body "Run: ${RUN_URL} (conclusion: ${CONCLUSION}). Policy: revert to the last green sha, no forward fix (main-ci-red-escalation). Closes itself when this workflow is green on main."
++              else
++                gh issue comment "$open" --body "Still red: ${RUN_URL} (${CONCLUSION})."
++              fi ;;
++            success)
++              if [ -n "$open" ]; then gh issue close "$open" --comment "Green again: ${RUN_URL}"; fi ;;
++            *) echo "conclusion ${CONCLUSION}: no change" ;;
++          esac
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 85e2589..54ac42d 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -23,6 +23,7 @@ jobs:
+   # Build job: produce the site (or reuse a previous identical build).
+   # We only run Sphinx when the input tree actually changed (see paths: filter + html cache).
+   build:
++    timeout-minutes: 15
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+@@ -68,6 +69,7 @@ jobs:
+   # This is the official recommended split (build produces artifact, deploy consumes it).
+   deploy:
+     needs: build
++    timeout-minutes: 15
+     environment:
+       name: github-pages
+       url: ${{ steps.deployment.outputs.page_url }}

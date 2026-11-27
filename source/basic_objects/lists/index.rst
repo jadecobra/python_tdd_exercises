@@ -3984,7 +3984,9 @@ what is next?
   :titlesonly:
   :maxdepth: 1
 
+  ../../truth_table/projects/traffic_light/traffic_light_w_lists
   ../../how_to/make_person/make_person_w_lists
+  ../../truth_table/binary_operations/binary_operations_w_lists
 
 :ref:`Would you like to refactor the attributes of the person object and instance with lists?<test person with lists>`
 

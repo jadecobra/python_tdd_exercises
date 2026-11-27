@@ -702,40 +702,52 @@ The code in ``person/src/person/__init__.py`` after :ref:`how to make a person w
 test person with lists: tests
 *********************************************************************************
 
-I change these tests in :ref:`test person with lists`
+The code in ``person/tests/test_person.py`` after :ref:`test person with lists`
 
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :lines: 1-22
+  :lines: 1-23
 
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 24
-  :lines: 24-80
+  :lineno-start: 25
+  :lines: 25-42
 
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 82
-  :lines: 82-104
+  :lineno-start: 44
+  :lines: 44-88
 
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 106
-  :lines: 106-120
+  :lineno-start: 90
+  :lines: 90-115
 
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 143
-  :lines: 143-156
+  :lineno-start: 117
+  :lines: 117-130
 
 .. literalinclude:: person/tests/test_person_w_lists.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 158
-  :lines: 158-177
+  :lineno-start: 132
+  :lines: 132-150
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 151
+  :lines: 151-164
+
+.. literalinclude:: person/tests/test_person_w_lists.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 166
+  :lines: 166-193
